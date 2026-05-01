@@ -3,17 +3,24 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+type RegisterResponse = {
+  error?: string;
+  message?: string;
+};
+
 export default function RegisterPage() {
   const router = useRouter();
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
-  async function handleRegister(e: React.FormEvent<HTMLFormElement>) {
+  async function handleRegister(
+    e: React.FormEvent<HTMLFormElement>
+  ): Promise<void> {
     e.preventDefault();
 
     setError("");
@@ -32,10 +39,10 @@ export default function RegisterPage() {
         }),
       });
 
-      const data = await res.json();
+      const data = (await res.json()) as RegisterResponse;
 
       if (!res.ok) {
-        setError(data.error || "Register failed");
+        setError(data.error ?? "Register failed");
         return;
       }
 
@@ -75,7 +82,9 @@ export default function RegisterPage() {
             <input
               className="mt-1 w-full rounded-xl border px-4 py-3 text-sm outline-none focus:border-blue-500"
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setName(e.target.value)
+              }
               placeholder="Your name"
             />
           </div>
@@ -85,7 +94,9 @@ export default function RegisterPage() {
             <input
               className="mt-1 w-full rounded-xl border px-4 py-3 text-sm outline-none focus:border-blue-500"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setEmail(e.target.value)
+              }
               placeholder="you@example.com"
               type="email"
               required
@@ -99,7 +110,9 @@ export default function RegisterPage() {
             <input
               className="mt-1 w-full rounded-xl border px-4 py-3 text-sm outline-none focus:border-blue-500"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setPassword(e.target.value)
+              }
               placeholder="Minimum 6 characters"
               type="password"
               required
