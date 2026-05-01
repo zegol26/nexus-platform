@@ -14,9 +14,9 @@ type PlatformAppAccessRow = {
   };
 };
 
-
 function formatDate(date?: Date | null) {
   if (!date) return "No expiry set";
+
   return new Intl.DateTimeFormat("en", {
     month: "short",
     day: "numeric",
@@ -45,11 +45,13 @@ export default async function PlatformAppsPage() {
     redirect("/login");
   }
 
-  const accessBySlug = new Map(
-  user.appAccess.map((access: PlatformAppAccessRow) => [
-    access.app.slug,
-    access,
-  ])
+  const userAppAccess = user.appAccess as PlatformAppAccessRow[];
+
+  const accessBySlug = new Map<string, PlatformAppAccessRow>(
+    userAppAccess.map((access: PlatformAppAccessRow) => [
+      access.app.slug,
+      access,
+    ])
   );
 
   return (
@@ -58,9 +60,11 @@ export default async function PlatformAppsPage() {
         <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">
           Nexus apps
         </p>
+
         <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950">
           Your app access
         </h1>
+
         <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600">
           Apps only become usable after admin grant or a validated payment.
         </p>
@@ -70,6 +74,7 @@ export default async function PlatformAppsPage() {
         {platformApps.map((app) => {
           const access = accessBySlug.get(app.slug);
           const isActive = access?.status === "ACTIVE";
+
           return (
             <article
               key={app.slug}
@@ -85,26 +90,35 @@ export default async function PlatformAppsPage() {
                 >
                   {isActive ? "Active" : app.status.replace("_", " ")}
                 </span>
+
                 {access && (
                   <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
                     {access.billingPlan}
                   </span>
                 )}
               </div>
+
               <h2 className="mt-5 text-2xl font-semibold text-slate-950">
                 {app.name}
               </h2>
+
               <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
                 {app.description}
               </p>
+
               <p className="mt-5 text-sm font-semibold text-slate-500">
                 Expires:{" "}
                 <span className="text-slate-950">
                   {formatDate(access?.accessExpiresAt)}
                 </span>
               </p>
+
               <Link
-                href={isActive || app.status === "coming_soon" ? app.href : "/platform/dashboard"}
+                href={
+                  isActive || app.status === "coming_soon"
+                    ? app.href
+                    : "/platform/dashboard"
+                }
                 className="mt-5 rounded-full bg-slate-950 px-5 py-3 text-center text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-blue-700"
               >
                 {isActive ? "Open app" : "View status"}
