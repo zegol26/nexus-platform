@@ -24,9 +24,9 @@ export async function GET(request: Request) {
 
   const questions = selected.map((card) => {
     const wrongAnswers = shuffle(
-      cards
-        .filter((item) => item.id !== card.id)
-        .map((item) => item.back)
+  cards
+    .filter((item: { id: string; back: string }) => item.id !== card.id)
+    .map((item: { id: string; back: string }) => item.back)
     ).slice(0, 3);
 
     return {
