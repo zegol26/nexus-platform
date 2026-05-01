@@ -43,10 +43,12 @@ export async function GET() {
   progress.map((p: { lessonId: string }) => p.lessonId)
   );
 
-  const lessonsWithProgress = lessons.map((lesson) => ({
+  const lessonsWithProgress = lessons.map(
+  (lesson: { id: string }) => ({
     ...lesson,
     completed: completedLessonIds.has(lesson.id),
-  }));
+  })
+  );
 
   return NextResponse.json({
     lessons: lessonsWithProgress,
