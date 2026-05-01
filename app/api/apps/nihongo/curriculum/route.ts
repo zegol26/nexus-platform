@@ -39,8 +39,8 @@ export async function GET() {
     },
   });
 
-  const completedLessonIds = new Set(
-    progress.map((p) => p.lessonId)
+  const completedLessonIds = new Set<string>(
+  progress.map((p: { lessonId: string }) => p.lessonId)
   );
 
   const lessonsWithProgress = lessons.map((lesson) => ({
