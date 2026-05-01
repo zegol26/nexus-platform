@@ -1,0 +1,45 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Nexus Talenta Indonesia</title>
+  <desc id="desc">Nexus Talenta Indonesia red NI brand mark with tagline.</desc>
+  <rect width="512" height="512" rx="24" fill="white"/>
+
+  <defs>
+    <linearGradient id="redFace" x1="127" y1="124" x2="360" y2="326" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff1717"/>
+      <stop offset="0.5" stop-color="#e60000"/>
+      <stop offset="1" stop-color="#b80000"/>
+    </linearGradient>
+    <linearGradient id="redEdge" x1="154" y1="88" x2="345" y2="337" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c90000"/>
+      <stop offset="1" stop-color="#760000"/>
+    </linearGradient>
+    <linearGradient id="whiteStem" x1="382" y1="120" x2="332" y2="336" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.56" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <filter id="markShadow" x="60" y="66" width="398" height="310" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="9" stdDeviation="7" flood-color="#020617" flood-opacity="0.22"/>
+    </filter>
+    <filter id="smallShadow" x="337" y="88" width="100" height="82" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#020617" flood-opacity="0.24"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#markShadow)">
+    <path d="M104.7 313.6L163.8 134.5C167.6 123 178.3 115.2 190.4 115.2H202.1C211.8 115.2 220.7 120.2 225.8 128.4L336.9 305.7C345.4 319.3 335.6 337 319.5 337H295.5C286 337 277.2 332.1 272.1 324.1L191.1 196.6L148.6 325.8C146.4 332.5 140.1 337 133 337H119.5C108.4 337 101.2 324.1 104.7 313.6Z" fill="url(#redFace)"/>
+    <path d="M169.9 337L226.1 150.7C232.3 130.2 251.2 116.2 272.6 116.2H354.5C373.1 116.2 386.4 134.2 380.9 152L323.5 337H276.7L331.4 161H273.2L218.6 337H169.9Z" fill="url(#redFace)"/>
+    <path d="M252.7 142.5C260.1 125.6 276.8 114.7 295.2 114.7H352.1C370.6 114.7 383.9 132.7 378.5 150.4L370.5 176.5H273.6L252.7 142.5Z" fill="#ff1414"/>
+    <path d="M191.4 196.6L272.1 324.1C277.2 332.1 286 337 295.5 337H319.5C335.6 337 345.4 319.3 336.9 305.7L225.8 128.4C220.7 120.2 211.8 115.2 202.1 115.2H190.4L191.4 196.6Z" fill="url(#redEdge)" opacity="0.45"/>
+    <path d="M146.4 337L180.6 233.3L213.7 284.8L197.4 337H146.4Z" fill="#fb1111"/>
+    <path d="M373.8 145.1C377.6 132.6 389.1 124.1 402.1 124.1H419.1C433.7 124.1 444.2 138.2 439.9 152.1L388.7 317C385 329 373.9 337.1 361.3 337.1H342.6C328.1 337.1 317.6 323.1 321.8 309.2L373.8 145.1Z" fill="url(#whiteStem)"/>
+    <rect x="389" y="113" width="53" height="32" rx="16" fill="url(#redFace)" filter="url(#smallShadow)"/>
+  </g>
+
+  <text x="256" y="388" text-anchor="middle" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" letter-spacing="0.5">
+    NEXUS TALENTA INDONESIA
+  </text>
+  <text x="256" y="419" text-anchor="middle" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="500" letter-spacing="3.6">
+    We are advancing your growth
+  </text>
+</svg>

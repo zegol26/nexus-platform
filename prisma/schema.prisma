@@ -1,0 +1,243 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum UserRole {
+  USER
+  ADMIN
+  SUPER_ADMIN
+  TEACHER
+  MODERATOR
+}
+
+enum AppStatus {
+  ACTIVE
+  DISABLED
+  COMING_SOON
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  password      String?
+  emailVerified DateTime?
+  image         String?
+  avatarUrl     String?
+
+  learningReminderEnabled Boolean @default(false)
+  learningReminderTime    String?
+  learningGoal            String?
+
+  role UserRole @default(USER)
+
+  appAccess AppUserAccess[]
+  lessonAccess LessonAccess[]
+  payments PaymentTransaction[]
+  accessAudits AccessGrantAudit[] @relation("AccessAuditActor")
+  accounts  Account[]
+  sessions  Session[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PlatformApp {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  name        String
+  description String?
+  status      AppStatus @default(ACTIVE)
+
+  users AppUserAccess[]
+  plans SubscriptionPlan[]
+  payments PaymentTransaction[]
+  accessAudits AccessGrantAudit[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AppUserAccess {
+  id     String @id @default(cuid())
+  userId String
+  appId  String
+
+  status        String    @default("ACTIVE")
+  billingPlan   String    @default("TRIAL")
+  billingPeriod String    @default("MONTHLY")
+  accessStartsAt DateTime @default(now())
+  accessExpiresAt DateTime?
+  lastOpenedAt    DateTime?
+
+  user User        @relation(fields: [userId], references: [id])
+  app  PlatformApp @relation(fields: [appId], references: [id])
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, appId])
+}
+
+model SubscriptionPlan {
+  id          String  @id @default(cuid())
+  appId       String
+  name        String
+  code        String
+  description String?
+  priceCents  Int
+  currency    String  @default("IDR")
+  durationDays Int
+  active      Boolean @default(true)
+
+  app PlatformApp @relation(fields: [appId], references: [id], onDelete: Cascade)
+  payments PaymentTransaction[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([appId, code])
+}
+
+model PaymentTransaction {
+  id          String @id @default(cuid())
+  userId      String
+  appId       String
+  planId      String?
+
+  provider    String @default("MANUAL")
+  providerRef String?
+  status      String @default("PENDING")
+  amountCents Int
+  currency    String @default("IDR")
+  durationDays Int
+  paidAt      DateTime?
+  rawPayload  String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  app PlatformApp @relation(fields: [appId], references: [id], onDelete: Cascade)
+  plan SubscriptionPlan? @relation(fields: [planId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([provider, providerRef])
+}
+
+model LessonAccess {
+  id        String @id @default(cuid())
+  userId    String
+  lessonId  String
+
+  status    String @default("ACTIVE")
+  grantedBy String?
+  expiresAt DateTime?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson NihongoLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, lessonId])
+}
+
+model AccessGrantAudit {
+  id        String @id @default(cuid())
+  actorId   String?
+  userId    String
+  appId     String?
+  lessonId  String?
+  action    String
+  reason    String?
+  metadata  String?
+
+  actor User? @relation("AccessAuditActor", fields: [actorId], references: [id])
+  app PlatformApp? @relation(fields: [appId], references: [id])
+
+  createdAt DateTime @default(now())
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model NihongoLesson {
+  id          String  @id @default(cuid())
+  level       String
+  title       String
+  description String?
+  order       Int
+  track       String?
+  module      String?
+  lessonType  String?
+
+  progress NihongoLessonProgress[]
+  access LessonAccess[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model NihongoLessonProgress {
+  id        String  @id @default(cuid())
+  userId    String
+  lessonId  String
+  completed Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  lesson NihongoLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, lessonId])
+}
+
+model NihongoFlashcard {
+  id        String   @id @default(cuid())
+
+  category  String
+  deck      String
+  level     String
+  front     String
+  back      String
+  example   String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
