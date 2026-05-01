@@ -5,6 +5,16 @@ import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
 import { platformApps } from "@/lib/platform/app-registry";
 
+type PlatformAppAccessRow = {
+  status: string;
+  billingPlan: string | null;
+  accessExpiresAt: Date | null;
+  app: {
+    slug: string;
+  };
+};
+
+
 function formatDate(date?: Date | null) {
   if (!date) return "No expiry set";
   return new Intl.DateTimeFormat("en", {
@@ -36,7 +46,10 @@ export default async function PlatformAppsPage() {
   }
 
   const accessBySlug = new Map(
-    user.appAccess.map((access) => [access.app.slug, access])
+  user.appAccess.map((access: PlatformAppAccessRow) => [
+    access.app.slug,
+    access,
+  ])
   );
 
   return (

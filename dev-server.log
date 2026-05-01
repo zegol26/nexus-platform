@@ -640,3 +640,6 @@
 ✓ Compiled in 47ms
  GET /apps/nihongo/dashboard 200 in 432ms (next.js: 117ms, proxy.ts: 92ms, application-code: 224ms)
  GET /apps/nihongo/dashboard 200 in 343ms (next.js: 16ms, proxy.ts: 232ms, application-code: 95ms)
+✓ Compiled in 64ms
+✓ Compiled in 39ms
+✓ Compiled in 57ms
