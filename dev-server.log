@@ -587,3 +587,5 @@
  GET /api/platform/profile 200 in 14ms (next.js: 1740µs, application-code: 13ms)
  PATCH /api/platform/settings 200 in 25ms (next.js: 2ms, application-code: 23ms)
  GET /platform/dashboard 200 in 72ms (next.js: 3ms, proxy.ts: 4ms, application-code: 66ms)
+ GET /platform/dashboard 200 in 840ms (next.js: 177ms, proxy.ts: 125ms, application-code: 538ms)
+ GET /platform/dashboard 200 in 390ms (next.js: 130ms, proxy.ts: 84ms, application-code: 176ms)

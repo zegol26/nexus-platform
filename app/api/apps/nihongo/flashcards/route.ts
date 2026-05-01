@@ -33,8 +33,8 @@ export async function GET(request: Request) {
 
   return NextResponse.json({
     flashcards,
-    decks: decks.map((item) => item.deck),
-    levels: levels.map((item) => item.level),
+    decks: decks.map((item: { deck: string }) => item.deck),
+    levels: levels.map((item: { level: string }) => item.level),
     total,
   });
 }
