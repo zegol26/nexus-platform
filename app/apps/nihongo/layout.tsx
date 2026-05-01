@@ -6,6 +6,14 @@ import { LogoutButton } from "@/components/platform/LogoutButton";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
 
+type AppAccessWithApp = {
+  status: string;
+  accessExpiresAt: Date | null;
+  app: {
+    slug: string;
+  };
+};
+
 export default async function NihongoLayout({
   children,
 }: {
@@ -31,13 +39,21 @@ export default async function NihongoLayout({
   }
 
   const isAdmin = user.role === "ADMIN" || user.role === "SUPER_ADMIN";
-  const nihongoAccess = user.appAccess.find(
-    (access) => access.app.slug === "nihongo" && access.status === "ACTIVE"
+
+  const appAccess = user.appAccess as AppAccessWithApp[];
+
+  const nihongoAccess = appAccess.find(
+    (access: AppAccessWithApp) =>
+      access.app.slug === "nihongo" && access.status === "ACTIVE"
   );
+
   const hasValidAccess =
     isAdmin ||
-    (nihongoAccess &&
-      (!nihongoAccess.accessExpiresAt || nihongoAccess.accessExpiresAt > new Date()));
+    Boolean(
+      nihongoAccess &&
+        (!nihongoAccess.accessExpiresAt ||
+          nihongoAccess.accessExpiresAt > new Date())
+    );
 
   if (!hasValidAccess) {
     redirect("/platform/dashboard");
@@ -58,6 +74,7 @@ export default async function NihongoLayout({
                 >
                   Back to Platform
                 </Link>
+
                 <Link
                   href="/apps/nihongo/dashboard"
                   className="hidden text-sm font-semibold text-slate-700 hover:text-slate-950 sm:inline"
@@ -73,6 +90,7 @@ export default async function NihongoLayout({
                 >
                   Learn
                 </Link>
+
                 <LogoutButton />
               </div>
             </div>

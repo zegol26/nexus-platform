@@ -616,3 +616,11 @@
  GET /api/apps/nihongo/quiz?count=10 200 in 11ms (next.js: 1471µs, application-code: 10ms)
  GET /api/apps/nihongo/quiz?count=10 200 in 12ms (next.js: 1665µs, application-code: 10ms)
  GET /api/apps/nihongo/quiz?count=10&level=N5&category=vocabulary 200 in 24ms (next.js: 1849µs, application-code: 22ms)
+✓ Compiled in 62ms
+ GET /apps/nihongo/quiz 200 in 512ms (next.js: 140ms, proxy.ts: 98ms, application-code: 274ms)
+ GET /apps/nihongo/quiz 200 in 499ms (next.js: 34ms, proxy.ts: 236ms, application-code: 228ms)
+ GET /apps/nihongo/quiz 200 in 500ms (next.js: 67ms, proxy.ts: 246ms, application-code: 187ms)
+✓ Compiled in 169ms
+ GET /apps/nihongo/quiz 200 in 466ms (next.js: 171ms, proxy.ts: 90ms, application-code: 206ms)
+ GET /apps/nihongo/quiz 200 in 478ms (next.js: 263ms, proxy.ts: 90ms, application-code: 125ms)
+ GET /apps/nihongo/quiz 200 in 398ms (next.js: 22ms, proxy.ts: 289ms, application-code: 87ms)
