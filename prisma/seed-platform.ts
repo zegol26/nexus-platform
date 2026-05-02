@@ -20,9 +20,10 @@ export async function seedPlatform() {
     });
   }
 
-  const nihongoApp = await prisma.platformApp.findUnique({
-    where: { slug: "nihongo" },
-  });
+  const [nihongoApp, englishApp] = await Promise.all([
+    prisma.platformApp.findUnique({ where: { slug: "nihongo" } }),
+    prisma.platformApp.findUnique({ where: { slug: "english" } }),
+  ]);
 
   if (nihongoApp) {
     await prisma.subscriptionPlan.upsert({
@@ -45,6 +46,35 @@ export async function seedPlatform() {
         code: "NIHONGO_MONTHLY",
         name: "Nihongo Monthly",
         description: "Monthly access to Nexus AI Nihongo",
+        priceCents: 9900000,
+        currency: "IDR",
+        durationDays: 30,
+        active: true,
+      },
+    });
+  }
+
+  if (englishApp) {
+    await prisma.subscriptionPlan.upsert({
+      where: {
+        appId_code: {
+          appId: englishApp.id,
+          code: "ENGLISH_INTERVIEW_MONTHLY",
+        },
+      },
+      update: {
+        name: "English Interview Monthly",
+        description: "Monthly access to Nexus AI English interview practice",
+        priceCents: 9900000,
+        currency: "IDR",
+        durationDays: 30,
+        active: true,
+      },
+      create: {
+        appId: englishApp.id,
+        code: "ENGLISH_INTERVIEW_MONTHLY",
+        name: "English Interview Monthly",
+        description: "Monthly access to Nexus AI English interview practice",
         priceCents: 9900000,
         currency: "IDR",
         durationDays: 30,
@@ -78,7 +108,11 @@ export async function seedPlatform() {
     },
   });
 
-  if (nihongoApp) {
+  const adminApps = [nihongoApp, englishApp].filter(
+    (app): app is NonNullable<typeof app> => Boolean(app)
+  );
+
+  for (const app of adminApps) {
     const adminExpiresAt = new Date();
     adminExpiresAt.setFullYear(adminExpiresAt.getFullYear() + 1);
 
@@ -86,7 +120,7 @@ export async function seedPlatform() {
       where: {
         userId_appId: {
           userId: admin.id,
-          appId: nihongoApp.id,
+          appId: app.id,
         },
       },
       update: {
@@ -97,7 +131,7 @@ export async function seedPlatform() {
       },
       create: {
         userId: admin.id,
-        appId: nihongoApp.id,
+        appId: app.id,
         status: "ACTIVE",
         billingPlan: "ADMIN",
         billingPeriod: "ANNUAL",

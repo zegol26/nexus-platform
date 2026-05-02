@@ -5,6 +5,7 @@ import { seedNihongoBadges } from "./seed-nihongo-badges";
 import { seedAssessmentQuestions } from "./seed-assessment-questions";
 import { seedNihongoLessonContent } from "./seed-nihongo-lesson-content";
 import { seedNihongoMockTests } from "./seed-nihongo-mock-tests";
+import { seedEnglishInterview } from "./seed-english-interview";
 import { prisma } from "./seed-client";
 
 async function main() {
@@ -15,6 +16,7 @@ async function main() {
   await seedAssessmentQuestions();
   await seedNihongoLessonContent();
   await seedNihongoMockTests();
+  await seedEnglishInterview();
 }
 
 main()

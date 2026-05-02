@@ -35,16 +35,18 @@ model User {
 
   role UserRole @default(USER)
 
-  appAccess           AppUserAccess[]
-  lessonAccess        LessonAccess[]
-  payments            PaymentTransaction[]
-  accessAudits        AccessGrantAudit[]         @relation("AccessAuditActor")
-  accounts            Account[]
-  sessions            Session[]
-  nihongoProfile      UserNihongoProfile?
-  nihongoAssessments  NihongoAssessmentSession[]
-  nihongoBadges       UserNihongoBadge[]
-  nihongoMockAttempts NihongoMockTestAttempt[]
+  appAccess               AppUserAccess[]
+  lessonAccess            LessonAccess[]
+  payments                PaymentTransaction[]
+  accessAudits            AccessGrantAudit[]         @relation("AccessAuditActor")
+  accounts                Account[]
+  sessions                Session[]
+  nihongoProfile          UserNihongoProfile?
+  nihongoAssessments      NihongoAssessmentSession[]
+  nihongoBadges           UserNihongoBadge[]
+  nihongoMockAttempts     NihongoMockTestAttempt[]
+  englishInterviewAnswers EnglishInterviewAnswer[]
+  englishInterviewReviews EnglishInterviewReview[]   @relation("EnglishInterviewReviewer")
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -506,4 +508,72 @@ model NihongoLessonListeningAsset {
   updatedAt      DateTime @updatedAt
 
   lesson NihongoLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+}
+
+model EnglishInterviewQuestion {
+  id               String   @id @default(cuid())
+  sourceKey        String   @unique
+  order            Int
+  prompt           String
+  focusArea        String
+  expectedDuration String?
+  audioText        String
+  audioBase64      String?
+  audioMimeType    String?
+  audioProvider    String?
+  isActive         Boolean  @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  answers EnglishInterviewAnswer[]
+
+  @@index([order])
+  @@index([isActive])
+}
+
+model EnglishInterviewAnswer {
+  id            String   @id @default(cuid())
+  userId        String
+  questionId    String
+  audioBase64   String
+  audioMimeType String
+  durationSec   Int
+  fileName      String?
+  transcription String?
+  status        String   @default("SUBMITTED")
+  submittedAt   DateTime @default(now())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  user     User                     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question EnglishInterviewQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  review   EnglishInterviewReview?
+
+  @@index([userId])
+  @@index([questionId])
+  @@index([submittedAt])
+}
+
+model EnglishInterviewReview {
+  id                 String   @id @default(cuid())
+  answerId           String   @unique
+  reviewerId         String
+  englishLevel       String
+  pronunciationScore Int?
+  fluencyScore       Int?
+  grammarScore       Int?
+  vocabularyScore    Int?
+  confidenceScore    Int?
+  overallScore       Int?
+  feedback           String
+  recommendation     String?
+  visibleToUser      Boolean  @default(true)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  answer   EnglishInterviewAnswer @relation(fields: [answerId], references: [id], onDelete: Cascade)
+  reviewer User                   @relation("EnglishInterviewReviewer", fields: [reviewerId], references: [id], onDelete: Cascade)
+
+  @@index([reviewerId])
+  @@index([englishLevel])
 }

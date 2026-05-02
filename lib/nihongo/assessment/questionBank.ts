@@ -270,7 +270,7 @@ const readingQuestions: AssessmentQuestion[] = [
   },
 ];
 
-const listeningQuestions: AssessmentQuestion[] = [
+export const preAssessmentListeningQuestions: AssessmentQuestion[] = [
   {
     id: "listening-001",
     category: "listening",
@@ -318,7 +318,7 @@ export function generatePreAssessmentQuestionBank(): AssessmentQuestion[] {
     ...particleQuestions,
     ...tenseQuestions,
     ...readingQuestions,
-    ...listeningQuestions,
+    ...preAssessmentListeningQuestions,
   ];
 }
 

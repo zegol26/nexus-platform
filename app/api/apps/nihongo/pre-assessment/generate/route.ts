@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
-import { generatePreAssessmentQuestionBank, getFallbackAssessmentQuestions, pronunciationPrompt } from "@/lib/nihongo/assessment/questionBank";
+import {
+  generatePreAssessmentQuestionBank,
+  getFallbackAssessmentQuestions,
+  preAssessmentListeningQuestions,
+  pronunciationPrompt,
+} from "@/lib/nihongo/assessment/questionBank";
 import { validateAssessmentQuestionBank } from "@/lib/nihongo/assessment/validators";
 import { prisma } from "@/lib/db/prisma";
 import { generateAssessmentForLevel, type AssessmentTargetLevel } from "@/lib/nihongo/assessment/generateAssessmentForLevel";
@@ -12,10 +17,8 @@ export async function GET(request: Request) {
       mode: "pre_assessment",
     });
 
-    return NextResponse.json({
-      source: "question_bank",
-      targetLevel,
-      questions: bankQuestions.map((question) => ({
+    const questions = [
+      ...bankQuestions.map((question) => ({
         id: question.id,
         category: mapSkillToCategory(question.skill),
         type: question.questionType === "reading_mcq" ? "reading_multiple_choice" : "multiple_choice",
@@ -32,10 +35,27 @@ export async function GET(request: Request) {
             }
           : undefined,
       })),
+      ...preAssessmentListeningQuestions.map((question) => ({
+        id: question.id,
+        category: question.category,
+        type: question.type,
+        prompt: question.prompt,
+        instructionIndonesian: question.instructionIndonesian,
+        options: question.options,
+        level: question.level,
+        tags: question.tags,
+        audioUrl: question.audioUrl,
+      })),
+    ];
+
+    return NextResponse.json({
+      source: "question_bank",
+      targetLevel,
+      questions,
       pronunciationPrompt,
       distribution: {
-        byLevel: countBy(bankQuestions, (question) => question.level),
-        bySkill: countBy(bankQuestions, (question) => question.skill),
+        byLevel: countBy(questions, (question) => question.level),
+        bySkill: countBy(questions, (question) => String(question.category)),
       },
     });
   } catch (error) {

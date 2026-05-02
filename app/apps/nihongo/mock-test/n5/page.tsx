@@ -118,7 +118,7 @@ export default function JLPTN5MockTestPage() {
           {readiness?.message ?? "Selesaikan pre-assessment dulu untuk menghitung readiness kamu."}
         </p>
         <p className="mt-4 text-sm text-amber-800">
-          Target unlock: {readiness?.threshold ?? 70}% readiness. Ini bukan hukuman, bro. Ini biar mock test terasa seperti
+          Target unlock: {readiness?.threshold ?? 70}% readiness. Ini bukan hukuman. Ini biar mock test terasa seperti
           latihan ujian yang pas, bukan tebak-tebakan.
         </p>
         <Link

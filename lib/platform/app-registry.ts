@@ -11,9 +11,9 @@ export const platformApps = [
     id: "english",
     slug: "english",
     name: "Nexus AI English",
-    description: "AI English learning app for speaking, grammar, and workplace practice",
+    description: "AI English interview practice for overseas work applications",
     href: "/apps/english/dashboard",
-    status: "coming_soon",
+    status: "active",
   },
   {
     id: "lessons",

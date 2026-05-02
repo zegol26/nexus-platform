@@ -31,6 +31,17 @@ export function ProfileMenu() {
     loadProfile();
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") setOpen(false);
+    }
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [open]);
+
   const avatar = profile?.avatarUrl ?? profile?.image;
   const initial = (profile?.name ?? profile?.email ?? "N").charAt(0).toUpperCase();
 
@@ -92,8 +103,24 @@ export function ProfileMenu() {
       </button>
 
       {open && profile && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/40 p-4 backdrop-blur-sm">
-          <div className="w-full max-w-xl rounded-[2rem] border border-white/70 bg-white p-6 shadow-2xl shadow-slate-950/20">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/40 p-4 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          onMouseDown={() => setOpen(false)}
+        >
+          <div
+            className="relative w-full max-w-xl rounded-[2rem] border border-white/70 bg-white p-6 shadow-2xl shadow-slate-950/20"
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-xl font-semibold text-slate-600 shadow-sm hover:bg-slate-50"
+              aria-label="Close profile"
+            >
+              ×
+            </button>
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">
@@ -106,13 +133,6 @@ export function ProfileMenu() {
                   {profile.email} • {profile.role}
                 </p>
               </div>
-              <button
-                type="button"
-                onClick={() => setOpen(false)}
-                className="rounded-full border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-600 hover:bg-slate-50"
-              >
-                Close
-              </button>
             </div>
 
             <div className="mt-6 flex items-center gap-4">
