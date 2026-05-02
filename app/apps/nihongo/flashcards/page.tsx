@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { UserBadgeHeader } from "@/components/nihongo/UserBadgeHeader";
 
 type Flashcard = {
   id: string;
@@ -74,6 +75,8 @@ export default function FlashcardsPage() {
 
   return (
     <div className="mx-auto max-w-7xl space-y-8">
+      <UserBadgeHeader />
+
       <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
           Flashcard Studio

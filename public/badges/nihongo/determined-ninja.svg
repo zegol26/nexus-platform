@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-label="Ninja Pantang Menyerah badge">
+  <rect width="160" height="160" rx="36" fill="#111827"/>
+  <circle cx="80" cy="76" r="46" fill="#22c55e"/>
+  <path d="M42 76h76M56 60h48M58 92h44" stroke="#ecfdf5" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="68" cy="76" r="5" fill="#111827"/><circle cx="92" cy="76" r="5" fill="#111827"/>
+  <text x="80" y="145" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#fff">N5+</text>
+</svg>

@@ -10,6 +10,12 @@ export async function GET(
 
     const lesson = await prisma.nihongoLesson.findUnique({
       where: { id },
+      include: {
+        templates: {
+          orderBy: { variant: "asc" },
+        },
+        listeningAsset: true,
+      },
     });
 
     if (!lesson) {
@@ -19,7 +25,11 @@ export async function GET(
       );
     }
 
-    return NextResponse.json({ lesson });
+    return NextResponse.json({
+      lesson,
+      defaultTemplate: lesson.templates.find((template) => template.variant === 1) ?? null,
+      listeningAsset: lesson.listeningAsset,
+    });
   } catch (error) {
     console.error(error);
 

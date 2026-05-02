@@ -2,11 +2,12 @@ import Link from "next/link";
 
 const nihongoMenu = [
   { label: "Dashboard", href: "/apps/nihongo/dashboard", marker: "01" },
-  { label: "Curriculum", href: "/apps/nihongo/curriculum", marker: "02" },
-  { label: "Flashcards", href: "/apps/nihongo/flashcards", marker: "03" },
-  { label: "AI Tutor", href: "/apps/nihongo/tutor", marker: "04" },
-  { label: "Quiz", href: "/apps/nihongo/quiz", marker: "05" },
-  { label: "Reading", href: "/apps/nihongo/reading", marker: "06" },
+  { label: "Pre-assessment", href: "/apps/nihongo/pre-assessment", marker: "02" },
+  { label: "Curriculum", href: "/apps/nihongo/curriculum", marker: "03" },
+  { label: "Flashcards", href: "/apps/nihongo/flashcards", marker: "04" },
+  { label: "AI Tutor", href: "/apps/nihongo/tutor", marker: "05" },
+  { label: "Quiz", href: "/apps/nihongo/quiz", marker: "06" },
+  { label: "Reading", href: "/apps/nihongo/reading", marker: "07" },
 ];
 
 export function NihongoSidebar() {

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { UserBadgeHeader } from "@/components/nihongo/UserBadgeHeader";
 
 type QuizQuestion = {
   id: string;
@@ -42,7 +43,19 @@ export default function QuizPage() {
   };
 
   useEffect(() => {
-    loadQuiz();
+    async function loadInitialQuiz() {
+      const res = await fetch("/api/apps/nihongo/quiz?count=10");
+      const data = await res.json();
+      if (res.ok) {
+        setQuestions(data.questions ?? []);
+        setIndex(0);
+        setScore(0);
+        setSelected("");
+        setAnswered(false);
+      }
+    }
+
+    loadInitialQuiz();
   }, []);
 
   const progress = useMemo(() => {
@@ -65,6 +78,8 @@ export default function QuizPage() {
 
   return (
     <div className="mx-auto max-w-5xl space-y-6">
+      <UserBadgeHeader />
+
       <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
           Quiz Mode

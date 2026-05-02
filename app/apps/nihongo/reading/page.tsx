@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { UserBadgeHeader } from "@/components/nihongo/UserBadgeHeader";
 
 type ReadingPractice = {
   title: string;
@@ -51,6 +52,8 @@ export default function ReadingPage() {
 
   return (
     <div className="mx-auto max-w-6xl space-y-6">
+      <UserBadgeHeader />
+
       <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
           Reading Practice

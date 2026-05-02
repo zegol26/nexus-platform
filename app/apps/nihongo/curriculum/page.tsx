@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { UserBadgeHeader } from "@/components/nihongo/UserBadgeHeader";
 
 type Lesson = {
   id: string;
@@ -43,6 +44,8 @@ export default function CurriculumPage() {
 
   return (
     <div className="mx-auto max-w-7xl space-y-8">
+      <UserBadgeHeader />
+
       <section className="flex flex-col justify-between gap-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8 lg:flex-row lg:items-end">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">

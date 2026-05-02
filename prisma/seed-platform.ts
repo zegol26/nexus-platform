@@ -55,20 +55,26 @@ export async function seedPlatform() {
 
   const adminEmail = process.env.ADMIN_EMAIL ?? "admin@nexus.local";
   const adminPassword = process.env.ADMIN_PASSWORD ?? "NexusAdmin123!";
-  const hashedPassword = await bcrypt.hash(adminPassword, 10);
+  const existingAdmin = await prisma.user.findUnique({
+    where: { email: adminEmail },
+    select: { password: true },
+  });
+  const passwordData = existingAdmin?.password
+    ? {}
+    : { password: await bcrypt.hash(adminPassword, 10) };
 
   const admin = await prisma.user.upsert({
     where: { email: adminEmail },
     update: {
       role: "ADMIN",
-      password: hashedPassword,
       name: "Nexus Admin",
+      ...passwordData,
     },
     create: {
       email: adminEmail,
-      password: hashedPassword,
       name: "Nexus Admin",
       role: "ADMIN",
+      ...passwordData,
     },
   });
 

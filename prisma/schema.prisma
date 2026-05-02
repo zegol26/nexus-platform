@@ -35,12 +35,15 @@ model User {
 
   role UserRole @default(USER)
 
-  appAccess AppUserAccess[]
-  lessonAccess LessonAccess[]
-  payments PaymentTransaction[]
-  accessAudits AccessGrantAudit[] @relation("AccessAuditActor")
-  accounts  Account[]
-  sessions  Session[]
+  appAccess          AppUserAccess[]
+  lessonAccess       LessonAccess[]
+  payments           PaymentTransaction[]
+  accessAudits       AccessGrantAudit[]         @relation("AccessAuditActor")
+  accounts           Account[]
+  sessions           Session[]
+  nihongoProfile     UserNihongoProfile?
+  nihongoAssessments NihongoAssessmentSession[]
+  nihongoBadges      UserNihongoBadge[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -53,9 +56,9 @@ model PlatformApp {
   description String?
   status      AppStatus @default(ACTIVE)
 
-  users AppUserAccess[]
-  plans SubscriptionPlan[]
-  payments PaymentTransaction[]
+  users        AppUserAccess[]
+  plans        SubscriptionPlan[]
+  payments     PaymentTransaction[]
   accessAudits AccessGrantAudit[]
 
   createdAt DateTime @default(now())
@@ -67,10 +70,10 @@ model AppUserAccess {
   userId String
   appId  String
 
-  status        String    @default("ACTIVE")
-  billingPlan   String    @default("TRIAL")
-  billingPeriod String    @default("MONTHLY")
-  accessStartsAt DateTime @default(now())
+  status          String    @default("ACTIVE")
+  billingPlan     String    @default("TRIAL")
+  billingPeriod   String    @default("MONTHLY")
+  accessStartsAt  DateTime  @default(now())
   accessExpiresAt DateTime?
   lastOpenedAt    DateTime?
 
@@ -83,17 +86,17 @@ model AppUserAccess {
 }
 
 model SubscriptionPlan {
-  id          String  @id @default(cuid())
-  appId       String
-  name        String
-  code        String
-  description String?
-  priceCents  Int
-  currency    String  @default("IDR")
+  id           String  @id @default(cuid())
+  appId        String
+  name         String
+  code         String
+  description  String?
+  priceCents   Int
+  currency     String  @default("IDR")
   durationDays Int
-  active      Boolean @default(true)
+  active       Boolean @default(true)
 
-  app PlatformApp @relation(fields: [appId], references: [id], onDelete: Cascade)
+  app      PlatformApp          @relation(fields: [appId], references: [id], onDelete: Cascade)
   payments PaymentTransaction[]
 
   createdAt DateTime @default(now())
@@ -103,22 +106,22 @@ model SubscriptionPlan {
 }
 
 model PaymentTransaction {
-  id          String @id @default(cuid())
-  userId      String
-  appId       String
-  planId      String?
+  id     String  @id @default(cuid())
+  userId String
+  appId  String
+  planId String?
 
-  provider    String @default("MANUAL")
-  providerRef String?
-  status      String @default("PENDING")
-  amountCents Int
-  currency    String @default("IDR")
+  provider     String    @default("MANUAL")
+  providerRef  String?
+  status       String    @default("PENDING")
+  amountCents  Int
+  currency     String    @default("IDR")
   durationDays Int
-  paidAt      DateTime?
-  rawPayload  String?
+  paidAt       DateTime?
+  rawPayload   String?
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-  app PlatformApp @relation(fields: [appId], references: [id], onDelete: Cascade)
+  user User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  app  PlatformApp       @relation(fields: [appId], references: [id], onDelete: Cascade)
   plan SubscriptionPlan? @relation(fields: [planId], references: [id])
 
   createdAt DateTime @default(now())
@@ -128,15 +131,15 @@ model PaymentTransaction {
 }
 
 model LessonAccess {
-  id        String @id @default(cuid())
-  userId    String
-  lessonId  String
+  id       String @id @default(cuid())
+  userId   String
+  lessonId String
 
-  status    String @default("ACTIVE")
+  status    String    @default("ACTIVE")
   grantedBy String?
   expiresAt DateTime?
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user   User          @relation(fields: [userId], references: [id], onDelete: Cascade)
   lesson NihongoLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
 
   createdAt DateTime @default(now())
@@ -146,17 +149,17 @@ model LessonAccess {
 }
 
 model AccessGrantAudit {
-  id        String @id @default(cuid())
-  actorId   String?
-  userId    String
-  appId     String?
-  lessonId  String?
-  action    String
-  reason    String?
-  metadata  String?
+  id       String  @id @default(cuid())
+  actorId  String?
+  userId   String
+  appId    String?
+  lessonId String?
+  action   String
+  reason   String?
+  metadata String?
 
-  actor User? @relation("AccessAuditActor", fields: [actorId], references: [id])
-  app PlatformApp? @relation(fields: [appId], references: [id])
+  actor User?        @relation("AccessAuditActor", fields: [actorId], references: [id])
+  app   PlatformApp? @relation(fields: [appId], references: [id])
 
   createdAt DateTime @default(now())
 }
@@ -207,8 +210,13 @@ model NihongoLesson {
   module      String?
   lessonType  String?
 
-  progress NihongoLessonProgress[]
-  access LessonAccess[]
+  progress               NihongoLessonProgress[]
+  access                 LessonAccess[]
+  recommendedForProfiles UserNihongoProfile[]            @relation("NextNihongoLesson")
+  templates              NihongoLessonTemplate[]
+  generatedContents      NihongoLessonGeneratedContent[]
+  tutorMessages          NihongoLessonTutorMessage[]
+  listeningAsset         NihongoLessonListeningAsset?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -229,15 +237,210 @@ model NihongoLessonProgress {
 }
 
 model NihongoFlashcard {
-  id        String   @id @default(cuid())
+  id String @id @default(cuid())
 
-  category  String
-  deck      String
-  level     String
-  front     String
-  back      String
-  example   String?
+  category String
+  deck     String
+  level    String
+  front    String
+  back     String
+  example  String?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model NihongoAssessmentSession {
+  id          String    @id @default(cuid())
+  userId      String
+  status      String    @default("IN_PROGRESS")
+  startedAt   DateTime  @default(now())
+  completedAt DateTime?
+
+  overallScore               Int?
+  estimatedLevel             String?
+  weaknessTags               String[]
+  strengthTags               String[]
+  recommendedCurriculumFocus String[]
+  recommendedLessonIds       String[]
+  recommendedDailyPlan       String?
+  aiFeedbackIndonesian       String?
+  encouragementJapanese      String?
+  badgeId                    String?
+  finalEvaluation            Json?
+
+  pronunciationScore    Int?
+  pronunciationFeedback Json?
+
+  user    User                      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  answers NihongoAssessmentAnswer[]
+  badge   NihongoBadge?             @relation(fields: [badgeId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, status])
+}
+
+model NihongoAssessmentAnswer {
+  id            String   @id @default(cuid())
+  sessionId     String
+  questionId    String
+  category      String
+  type          String
+  prompt        String
+  userAnswer    String?
+  correctAnswer String?
+  isCorrect     Boolean?
+  score         Int      @default(0)
+  maxScore      Int      @default(1)
+  metadata      Json?
+
+  session NihongoAssessmentSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@index([sessionId])
+  @@index([category])
+}
+
+model AssessmentQuestion {
+  id            String   @id @default(cuid())
+  level         String
+  skill         String
+  questionType  String
+  prompt        String
+  passage       String?
+  options       Json
+  correctAnswer String
+  explanation   String
+  difficulty    Int      @default(1)
+  tags          String[]
+  isActive      Boolean  @default(true)
+  sourceKey     String   @unique
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([level])
+  @@index([skill])
+  @@index([difficulty])
+  @@index([isActive])
+}
+
+model UserNihongoProfile {
+  id     String @id @default(cuid())
+  userId String @unique
+
+  currentLevel               String    @default("Absolute Beginner")
+  targetLevel                String    @default("N4")
+  weaknessTags               String[]
+  strengthTags               String[]
+  recommendedLessonIds       String[]
+  recommendedCurriculumFocus String[]
+  recommendedDailyPlan       String?
+  nextLessonId               String?
+  badgeId                    String?
+  assessmentCompletedAt      DateTime?
+  latestAssessmentId         String?
+
+  user       User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  nextLesson NihongoLesson? @relation("NextNihongoLesson", fields: [nextLessonId], references: [id])
+  badge      NihongoBadge?  @relation(fields: [badgeId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model NihongoBadge {
+  id                  String  @id
+  nameIndonesian      String
+  nameJapanese        String
+  archetype           String
+  levelRequirement    String
+  motivationalMessage String
+  imageUrl            String?
+  iconUrl             String?
+
+  profiles           UserNihongoProfile[]
+  assignedUsers      UserNihongoBadge[]
+  assessmentSessions NihongoAssessmentSession[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model UserNihongoBadge {
+  id                  String   @id @default(cuid())
+  userId              String
+  badgeId             String
+  assessmentSessionId String?
+  assignedAt          DateTime @default(now())
+
+  user  User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badge NihongoBadge @relation(fields: [badgeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, badgeId])
+}
+
+model NihongoLessonTemplate {
+  id          String   @id @default(cuid())
+  lessonId    String
+  variant     Int
+  title       String
+  contentJson Json
+  contentMd   String?
+  level       String?
+  topic       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  lesson NihongoLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  @@unique([lessonId, variant])
+  @@index([lessonId])
+}
+
+model NihongoLessonGeneratedContent {
+  id          String   @id @default(cuid())
+  lessonId    String
+  userId      String?
+  promptType  String
+  contentJson Json
+  contentMd   String?
+  createdAt   DateTime @default(now())
+
+  lesson NihongoLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  @@index([lessonId])
+  @@index([userId])
+}
+
+model NihongoLessonTutorMessage {
+  id        String   @id @default(cuid())
+  lessonId  String
+  userId    String
+  role      String
+  content   String
+  createdAt DateTime @default(now())
+
+  lesson NihongoLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  @@index([lessonId])
+  @@index([userId])
+}
+
+model NihongoLessonListeningAsset {
+  id             String   @id @default(cuid())
+  lessonId       String   @unique
+  scriptJapanese String
+  scriptRomaji   String?
+  translationId  String?
+  audioUrl       String?
+  audioMimeType  String?
+  audioProvider  String?
+  durationSec    Int?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  lesson NihongoLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
 }

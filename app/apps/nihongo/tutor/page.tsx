@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { UserBadgeHeader } from "@/components/nihongo/UserBadgeHeader";
 
 type ChatMessage = {
   role: "user" | "assistant";
@@ -51,7 +52,10 @@ export default function TutorPage() {
   };
 
   return (
-    <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1fr_360px]">
+    <div className="mx-auto max-w-7xl space-y-6">
+      <UserBadgeHeader />
+
+      <div className="grid gap-6 lg:grid-cols-[1fr_360px]">
       <section className="flex min-h-[720px] flex-col rounded-3xl border border-slate-200 bg-white shadow-sm">
         <div className="border-b border-slate-200 p-6 sm:p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
@@ -132,6 +136,7 @@ export default function TutorPage() {
           </div>
         </div>
       </aside>
+      </div>
     </div>
   );
 }
