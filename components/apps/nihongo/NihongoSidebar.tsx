@@ -8,6 +8,7 @@ const nihongoMenu = [
   { label: "AI Tutor", href: "/apps/nihongo/tutor", marker: "05" },
   { label: "Quiz", href: "/apps/nihongo/quiz", marker: "06" },
   { label: "Reading", href: "/apps/nihongo/reading", marker: "07" },
+  { label: "JLPT N5 Mock", href: "/apps/nihongo/mock-test/n5", marker: "08" },
 ];
 
 export function NihongoSidebar() {

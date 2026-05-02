@@ -2,6 +2,9 @@ import { seedPlatform } from "./seed-platform";
 import { seedCurriculum } from "./seed-curriculum";
 import { seedFlashcards } from "./seed-flashcards";
 import { seedNihongoBadges } from "./seed-nihongo-badges";
+import { seedAssessmentQuestions } from "./seed-assessment-questions";
+import { seedNihongoLessonContent } from "./seed-nihongo-lesson-content";
+import { seedNihongoMockTests } from "./seed-nihongo-mock-tests";
 import { prisma } from "./seed-client";
 
 async function main() {
@@ -9,6 +12,9 @@ async function main() {
   await seedCurriculum();
   await seedFlashcards();
   await seedNihongoBadges();
+  await seedAssessmentQuestions();
+  await seedNihongoLessonContent();
+  await seedNihongoMockTests();
 }
 
 main()

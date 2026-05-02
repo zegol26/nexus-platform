@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
@@ -83,7 +84,7 @@ export default async function PlatformAdminPage() {
     redirect("/platform/dashboard");
   }
 
-  const [users, apps, lessons, payments, audits] = await Promise.all([
+  const [users, apps, lessons, payments, audits, mockQuestionCount] = await Promise.all([
     prisma.user.findMany({
       include: {
         appAccess: {
@@ -110,6 +111,9 @@ export default async function PlatformAdminPage() {
       orderBy: { createdAt: "desc" },
       take: 10,
     }),
+    prisma.nihongoMockTestQuestion.count({
+      where: { level: "JLPT N5", testType: "mock_test", isActive: true },
+    }),
   ]);
 
   const typedUsers = users as AdminUserRow[];
@@ -132,6 +136,28 @@ export default async function PlatformAdminPage() {
         <p className="mt-2 text-sm text-slate-600">
           Grant/revoke app access, lesson access, and review payment validation state.
         </p>
+      </section>
+
+      <section className="rounded-[2rem] border border-cyan-200 bg-cyan-50 p-6 shadow-xl shadow-cyan-950/[0.04]">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
+              Nihongo Admin Tools
+            </p>
+            <h2 className="mt-2 text-2xl font-semibold text-slate-950">
+              JLPT N5 Mock Test Bank
+            </h2>
+            <p className="mt-2 text-sm text-slate-600">
+              {mockQuestionCount} active questions seeded. Admin can open the mock test even before 70% readiness.
+            </p>
+          </div>
+          <Link
+            href="/apps/nihongo/mock-test/n5"
+            className="rounded-full bg-slate-950 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-cyan-700"
+          >
+            Open JLPT Mock Test
+          </Link>
+        </div>
       </section>
 
       <AdminAccessPanel

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
+import { calculateN5MockReadiness } from "@/lib/nihongo/mock-tests/readiness";
 
 export async function GET() {
   const session = await getServerSession(authOptions);
@@ -19,6 +20,11 @@ export async function GET() {
           nextLesson: true,
         },
       },
+      nihongoAssessments: {
+        where: { status: "COMPLETED" },
+        orderBy: { completedAt: "desc" },
+        take: 1,
+      },
     },
   });
 
@@ -29,5 +35,10 @@ export async function GET() {
   return NextResponse.json({
     profile: user.nihongoProfile,
     completed: Boolean(user.nihongoProfile?.assessmentCompletedAt),
+    jlptN5MockReadiness: calculateN5MockReadiness({
+      role: user.role,
+      latestAssessmentScore: user.nihongoAssessments[0]?.overallScore ?? null,
+      profileLevel: user.nihongoProfile?.currentLevel,
+    }),
   });
 }

@@ -200,7 +200,7 @@ function validateQuestion(question: SeedQuestion) {
   }
 }
 
-async function main() {
+export async function seedAssessmentQuestions() {
   const questions = buildQuestions();
   questions.forEach(validateQuestion);
 
@@ -226,12 +226,14 @@ async function main() {
   console.log(`By skill: ${JSON.stringify(bySkill)}`);
 }
 
-main()
-  .then(async () => {
-    await prisma.$disconnect();
-  })
-  .catch(async (error) => {
-    console.error(error);
-    await prisma.$disconnect();
-    process.exit(1);
-  });
+if (require.main === module) {
+  seedAssessmentQuestions()
+    .then(async () => {
+      await prisma.$disconnect();
+    })
+    .catch(async (error) => {
+      console.error(error);
+      await prisma.$disconnect();
+      process.exit(1);
+    });
+}

@@ -35,15 +35,16 @@ model User {
 
   role UserRole @default(USER)
 
-  appAccess          AppUserAccess[]
-  lessonAccess       LessonAccess[]
-  payments           PaymentTransaction[]
-  accessAudits       AccessGrantAudit[]         @relation("AccessAuditActor")
-  accounts           Account[]
-  sessions           Session[]
-  nihongoProfile     UserNihongoProfile?
-  nihongoAssessments NihongoAssessmentSession[]
-  nihongoBadges      UserNihongoBadge[]
+  appAccess           AppUserAccess[]
+  lessonAccess        LessonAccess[]
+  payments            PaymentTransaction[]
+  accessAudits        AccessGrantAudit[]         @relation("AccessAuditActor")
+  accounts            Account[]
+  sessions            Session[]
+  nihongoProfile      UserNihongoProfile?
+  nihongoAssessments  NihongoAssessmentSession[]
+  nihongoBadges       UserNihongoBadge[]
+  nihongoMockAttempts NihongoMockTestAttempt[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -325,6 +326,68 @@ model AssessmentQuestion {
   @@index([skill])
   @@index([difficulty])
   @@index([isActive])
+}
+
+model NihongoMockTestQuestion {
+  id            String   @id @default(cuid())
+  sourceKey     String   @unique
+  originalId    Int?
+  level         String
+  testType      String
+  section       String
+  subCategory   String
+  question      String
+  options       Json
+  correctAnswer String
+  explanation   String
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  answers NihongoMockTestAnswer[]
+
+  @@index([level])
+  @@index([section])
+  @@index([subCategory])
+  @@index([isActive])
+}
+
+model NihongoMockTestAttempt {
+  id                 String   @id @default(cuid())
+  userId             String
+  level              String
+  status             String   @default("COMPLETED")
+  totalQuestions     Int
+  correctCount       Int
+  scorePercent       Int
+  readinessThreshold Int      @default(70)
+  completedAt        DateTime @default(now())
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  user    User                    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  answers NihongoMockTestAnswer[]
+
+  @@index([userId])
+  @@index([level])
+  @@index([scorePercent])
+}
+
+model NihongoMockTestAnswer {
+  id         String  @id @default(cuid())
+  attemptId  String
+  questionId String
+  userAnswer String?
+  isCorrect  Boolean
+
+  attempt  NihongoMockTestAttempt  @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  question NihongoMockTestQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@unique([attemptId, questionId])
+  @@index([attemptId])
+  @@index([questionId])
 }
 
 model UserNihongoProfile {

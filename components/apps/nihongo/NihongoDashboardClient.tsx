@@ -46,6 +46,14 @@ type NihongoProfilePayload = {
   } | null;
 };
 
+type MockReadinessPayload = {
+  isAdmin: boolean;
+  isReady: boolean;
+  readinessScore: number;
+  threshold: number;
+  message: string;
+};
+
 export function NihongoDashboardClient() {
   const [lessons, setLessons] = useState<Lesson[]>([]);
   const [progress, setProgress] = useState<CurriculumProgress>({
@@ -59,6 +67,7 @@ export function NihongoDashboardClient() {
     levels: [],
   });
   const [profile, setProfile] = useState<NihongoProfilePayload | null>(null);
+  const [mockReadiness, setMockReadiness] = useState<MockReadinessPayload | null>(null);
   const [badgeImageFailed, setBadgeImageFailed] = useState(false);
 
   useEffect(() => {
@@ -86,6 +95,7 @@ export function NihongoDashboardClient() {
       if (profileRes.ok) {
         const data = await profileRes.json();
         setProfile(data.profile ?? null);
+        setMockReadiness(data.jlptN5MockReadiness ?? null);
       }
     }
 
@@ -215,6 +225,45 @@ export function NihongoDashboardClient() {
               Badge akan muncul setelah assessment awal selesai.
             </p>
           )}
+        </div>
+      </section>
+
+      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-700">
+              JLPT N5 Mock Test
+            </p>
+            <h2 className="mt-2 text-2xl font-semibold text-slate-950">
+              {mockReadiness?.isReady ? "Mock test sudah kebuka." : "Mock test terbuka saat readiness 70%."}
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
+              {mockReadiness?.message ??
+                "Selesaikan pre-assessment untuk menghitung readiness dan membuka simulasi JLPT N5."}
+            </p>
+          </div>
+          <div className="min-w-48 rounded-2xl bg-slate-50 p-4 text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Readiness</p>
+            <p className="mt-2 text-3xl font-semibold text-slate-950">
+              {mockReadiness?.readinessScore ?? 0}%
+            </p>
+            <div className="mt-3 h-2 overflow-hidden rounded-full bg-slate-200">
+              <div
+                className="h-full rounded-full bg-cyan-500"
+                style={{ width: `${Math.min(mockReadiness?.readinessScore ?? 0, 100)}%` }}
+              />
+            </div>
+          </div>
+          <Link
+            href="/apps/nihongo/mock-test/n5"
+            className={`rounded-full px-5 py-3 text-center text-sm font-semibold transition ${
+              mockReadiness?.isReady
+                ? "bg-slate-950 text-white hover:bg-cyan-700"
+                : "border border-slate-300 bg-white text-slate-700 hover:bg-slate-50"
+            }`}
+          >
+            {mockReadiness?.isReady ? "Mulai Mock Test" : "Lihat Status"}
+          </Link>
         </div>
       </section>
 
