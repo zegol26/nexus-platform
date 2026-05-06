@@ -1,5 +1,51 @@
 # Release Notes
 
+## [vNext] - Sidebar and Loader UX Improvements
+
+### Improved
+
+- Reduced Nihongo and Platform sidebar width from 288px to 224px and tightened spacing to give content more room.
+- Marked the currently active route in both sidebars with a coloured background and `aria-current="page"` so users always know which page they are on.
+- Split `PlatformSidebar` into a server wrapper plus a `PlatformSidebarNav` client component so active-route detection runs in the client without losing the server-side admin session check.
+- Auto-closed the mobile sidebar drawer when the route changes by tracking `usePathname()` inside `MobileSidebarDrawer`.
+- Added a shared `EngagingLoader` and Next.js `loading.tsx` route segments under `/apps/nihongo` and `/platform` so route transitions show an animated spinner with rotating Indonesian copy instead of a blank screen.
+- Normalised the AI Tutor opening message from informal slang ("gue", "lo") to formal Indonesian ("saya", "Anda") to match the rest of the platform's tone.
+
+### Tested
+
+- `npx tsc --noEmit`
+- `npm test`
+- `npm run lint`
+- Manual UAT: navigation between sidebar entries, mobile drawer auto-close, loader visibility on slow routes.
+
+### Known Limitations
+
+- Visual palette is intentionally unchanged in this release; thematic refresh is shipped as a separate release on top of this checkpoint.
+
+## [vNext] - Production Seed Hotfix and Working Tree Sync
+
+### Fixed
+
+- Restored curriculum lessons 41 (Kanji N5 Foundation) and 42 (Kanji N4 Foundation) that were removed from production by an auto-deploy running stale seed code that called `deleteMany()` on all lessons before re-creating only 40.
+- Restored admin app access to `NON_EXPIRING` after stale seed code reset it to `ANNUAL` with a 1-year expiry on every deploy.
+
+### Changed
+
+- Synced the local working tree to `git` as a single commit on `main` covering 173 files, including 6 Prisma migrations (analytics, character content, kingdom listening, community chat, nexus kingdoms game, admin non-expiring access) and the admin/analytics/kingdoms/community/listening/reading/ai-chan/manual-billing modules that were already running in production but had never been committed.
+- Tagged the synced commit as `prod-checkpoint-20260506` for future rollback reference.
+- Promoted Vercel deployment `nexus-platform-82e16uhwb` to the production alias and kept `nexus-platform-igmao1qeq` as a fallback rollback target.
+- Tightened `.gitignore` to exclude `nexus-platform*.env` secret files, `dev-server*.log`, `.claude/`, and `public/uploads/`; untracked previously tracked dev server logs.
+
+### Tested
+
+- Vercel production build verified `Lessons seeded: 42 (2 created, 40 updated)` and `17 migrations found / No pending migrations to apply`.
+- Production alias verified pointing to the new deployment after `vercel promote`.
+
+### Known Limitations
+
+- Vercel production builds continue to run `npx prisma db seed` automatically; the seed scripts in `main` are now safe (curriculum upsert, admin non-expiring) but any new seed file that mutates user-owned data should be reviewed before merge.
+- Direct `vercel --prod` uploads bypass git history; production deploys should always go through `git push` to keep git as the single source of truth.
+
 ## [vNext] - Kingdom Load Fix and Community Board Refresh
 
 ### Fixed

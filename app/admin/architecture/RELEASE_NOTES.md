@@ -4,6 +4,8 @@
 
 | Release Note | Date/Time (JST) | Author | Status | Summary |
 | --- | --- | --- | --- | --- |
+| RN-2026.05.06-002 | 2026-05-06 22:00 +09:00 | Nexus Platform Team | Completed | Improved Nihongo and Platform sidebar UX (smaller width, active route highlighting, mobile drawer auto-closes on navigation), added engaging route loaders, normalized AI Tutor opening copy to formal "saya". |
+| RN-2026.05.06-001 | 2026-05-06 18:15 +09:00 | Nexus Platform Team | Completed | Hotfixed production data loss caused by stale seed scripts on auto-deploy and synced local working tree to git as `prod-checkpoint-20260506`. |
 | RN-2026.05.05-002 | 2026-05-05 10:20 +09:00 | Nexus Platform Team | Completed | Fixed first-time Nexus Kingdom loading and refreshed Community Board UI. |
 | RN-2026.05.05-001 | 2026-05-05 09:30 +09:00 | Nexus Platform Team | Completed | Hotfixed admin app access to be non-expiring and cleaned unsafe long expiry dates. |
 | RN-2026.05.04-004 | 2026-05-04 22:45 +09:00 | Nexus Platform Team | Completed | Added platform/app Game pages for Nexus Kingdoms: Nihongo Realms and admin authority controls for Community. |
@@ -12,6 +14,59 @@
 | RN-2026.05.04-001 | 2026-05-04 01:10 +09:00 | Nexus Platform Team | Completed | Fixed character foundation lesson access and verified kana/kanji grids in localhost. |
 | RN-2026.05.03-002 | 2026-05-03 23:45 +09:00 | Nexus Platform Team | Completed | Added seedable Nihongo character content for kana, kanji, and vocabulary compounds, linked to lesson pages. |
 | RN-2026.05.03-001 | 2026-05-03 23:09 +09:00 | Nexus Platform Team | Release Candidate | Admin Operations Console, billing/trial foundation, recording visibility, architecture docs, and Ai-chan assistant foundation. |
+
+## RN-2026.05.06-002
+
+Completed Sidebar and Loader UX Improvements.
+
+### Included Changes
+
+- Reduced both Nihongo and Platform sidebar width from `w-72` (288px) to `w-56` (224px) and tightened internal padding to free up content area.
+- Refactored both sidebars to mark the currently active route with a coloured background and `aria-current="page"`, using `usePathname()` from `next/navigation`.
+- Split `PlatformSidebar` into a server wrapper (`PlatformSidebar.tsx`) that fetches the session and a client navigation component (`PlatformSidebarNav.tsx`) so that active-route detection can run on the client without losing server-side admin checks.
+- Updated `MobileSidebarDrawer` to track `usePathname()` and auto-close when the route changes, so tapping a menu item on mobile closes the overlay instead of leaving it stuck open.
+- Added a shared `EngagingLoader` component plus `app/apps/nihongo/loading.tsx` and `app/platform/loading.tsx` route segments so that route transitions show an animated spinner with rotating Indonesian copy instead of a blank screen.
+- Normalized the AI Tutor opening message in `app/apps/nihongo/tutor/page.tsx` from `"Halo, gue Nexus AI Nihongo Tutor"` (slang) to `"Halo, saya Nexus AI Nihongo Tutor"` (formal) and replaced `"lo"` with `"Anda"` to match the rest of the platform's tone.
+
+### Verification
+
+- `npx tsc --noEmit`: passed.
+- `npm test`: 6 policy tests passed.
+- `npm run lint`: passed with existing `<img>` optimization warnings only.
+- Manual browser walk: nihongo and platform sidebars render at the new width, active route highlights, mobile drawer closes after navigation, route transition shows the engaging loader.
+
+### Known Notes
+
+- Visual palette is unchanged in this release — sidebars and loaders still use the existing slate/cyan/blue scheme; theme refresh is staged separately.
+- This release is tagged `prod-rollback-sidebar-improved-20260506` and is the rollback target if a later thematic deploy needs to be reverted.
+
+## RN-2026.05.06-001
+
+Completed Production Seed Hotfix and Working Tree Sync.
+
+### Background
+
+A production auto-deploy from `git push` to `main` removed curriculum lessons 41 (Kanji N5 Foundation) and 42 (Kanji N4 Foundation) and reset admin app access from `NON_EXPIRING` to `ANNUAL` with a `+1 year` expiry. Investigation found that the deployed commit `9ebc97e` shipped with older versions of `prisma/seed-curriculum.ts` (which performed `deleteMany()` on all lessons and re-created only 40 lessons) and `prisma/seed-platform.ts` (which forced admin access to `ANNUAL` with a 1-year expiry). Because `npx prisma db seed` runs on every Vercel build, every auto-deploy from `main` overwrote production data using these stale seeds. Fixed versions of both seed scripts already existed in the local working tree but had not been committed to git; they were applied to production on 2026-05-04 via a direct `vercel --prod` upload and then quietly drifted away from the git source of truth.
+
+### Included Changes
+
+- Rolled back production alias to `nexus-platform-igmao1qeq` (`dpl_F3MbmVXbYPquDvMP4cbJeVTrvCeR`) via `vercel rollback` to immediately stop the data loss bleed.
+- Synced 173 file changes from the local working tree to `git` as a single commit on `main`, including 6 previously untracked Prisma migrations (`add_analytics_module`, `add_nihongo_character_content`, `add_kingdom_listening_module`, `add_community_chat`, `add_nexus_kingdoms_game`, `make_admin_access_non_expiring`).
+- Brought the curriculum, platform, admin, analytics, kingdoms game, community chat, listening, reading roadmap, ai-chan, and manual billing modules under git source control to match what was already running in production.
+- Tagged the commit as `prod-checkpoint-20260506` so future rollbacks have a named reference.
+- Updated `.gitignore` to exclude `nexus-platform*.env` secret files, `dev-server*.log` dev output, the local `.claude/` agent settings, and the `public/uploads/` user-generated content directory; previously tracked `dev-server.log` and `dev-server.err.log` were untracked from git.
+- Promoted the resulting Vercel build `nexus-platform-82e16uhwb` to the production alias `nexus-platform-ai.vercel.app`.
+
+### Verification
+
+- Vercel build log for `nexus-platform-82e16uhwb` confirmed `17 migrations found in prisma/migrations`, `No pending migrations to apply`, and `Lessons seeded: 42 (2 created, 40 updated)` — the 2 created entries restored Kanji N5 and Kanji N4 foundation lessons.
+- Production alias `nexus-platform-ai.vercel.app` confirmed pointing to `nexus-platform-82e16uhwb` after `vercel promote`.
+- Previous production deployment `nexus-platform-igmao1qeq` retained as fallback rollback target.
+
+### Known Notes
+
+- `npx prisma db seed` continues to run on every Vercel production build. With the corrected seed scripts in `main`, this is now safe (curriculum uses upsert and admin access stays non-expiring), but the destructive-by-default seed pattern should be reviewed before adding any new seed file that mutates user data.
+- The 2026-05-04 manual `vercel --prod` upload deploy bypassed git history, which created the divergence that caused this incident; future production deploys should always go through `git push` to keep git as the single source of truth.
 
 ## RN-2026.05.05-002
 

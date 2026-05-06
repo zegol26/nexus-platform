@@ -21,7 +21,7 @@ export default function TutorPage() {
     {
       role: "assistant",
       content:
-        "Halo, gue Nexus AI Nihongo Tutor. Tulis pertanyaan Jepang lo, nanti gue jawab pakai penjelasan Indonesia, romaji, dan contoh kalimat.",
+        "Halo, saya Nexus AI Nihongo Tutor. Tulis pertanyaan Jepang Anda, nanti saya jawab pakai penjelasan Indonesia, romaji, dan contoh kalimat.",
     },
   ]);
   const [input, setInput] = useState("");

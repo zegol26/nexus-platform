@@ -1,6 +1,6 @@
 # Nexus Platform / Nexus AI Nihongo Architecture
 
-Last updated: 2026-05-03
+Last updated: 2026-05-06
 
 ## Release Gate Status
 
@@ -154,12 +154,16 @@ The project deploys to Vercel as a Next.js app. Production database compatibilit
 
 Local build behavior is intentionally resilient for UAT. The `npm run build` script now checks whether `DATABASE_URL` is reachable. If the database is reachable, it runs Prisma migration and seed before building. If the database is not reachable, it skips migration/seed and still runs Prisma generate plus Next production build. Use `npm run build:strict` when a database-backed build must fail on migration or seed errors.
 
+Production seed safety: every Vercel production build runs `npx prisma db seed` after Prisma migration. To keep this safe, every seed file that touches data also visible to end users must be idempotent and non-destructive — use `upsert` keyed by stable identifiers (slug, key) and avoid `deleteMany` followed by `createMany`, because the IDs change on every deploy and any user-modified row gets overwritten. Curriculum lessons use `upsert` keyed by `slug` or `order`, admin app access is reconciled to `NON_EXPIRING` with `accessExpiresAt = null`, and platform settings/subscription plans use `upsert` keyed by `key`/`code`. Direct `vercel --prod` uploads bypass git history and have caused source-of-truth drift; production deploys should always go through `git push` to `main`.
+
 Operational expectations:
 
 - run Prisma generation after schema updates;
 - run database push or migrations before production deploys when schema changes are included;
 - seed platform settings and cached reading content when provisioning a new environment;
-- verify protected routes as both admin and non-admin users.
+- verify protected routes as both admin and non-admin users;
+- deploy to production exclusively via `git push origin main` to keep git as the single source of truth and avoid divergence between deployed code and committed code;
+- when a hotfix or rollback is needed, use `vercel rollback <previous-deployment-url>` to restore service while the fix is prepared, then promote the corrected deployment with `vercel promote` once verified.
 
 ## Current Technical Debt
 
