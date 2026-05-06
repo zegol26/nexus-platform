@@ -1,5 +1,33 @@
 # Release Notes
 
+## [vNext] - Nexus AI Nihongo Squid-Inspired Theme Refresh
+
+### Changed
+
+- Repainted the entire `/apps/nihongo` route with a dark + neon-pink (#ED1A7F) + tracksuit-teal (#00B894) palette via a `[data-theme="squid"]` CSS override block in `app/globals.css`. Existing slate/cyan/blue Tailwind utility classes are translated automatically inside the theme without editing every page.
+- Reduced display text sizes inside the theme by ~12-15% (`text-5xl` → 2rem … `text-base` → 0.9rem) so headings stop dominating learning content.
+- Disabled inline gradient backgrounds inside the theme to keep card surfaces flat.
+- Restyled `<input>`, `<textarea>`, `<select>` inside the theme with dark surface and pink focus ring.
+- Refreshed `NihongoSidebar` with deep-black background, pink active-state highlight, ○ △ □ shape markers as decorative icons, soft watermark shapes, and gold/teal section dividers.
+- Refreshed the Nihongo header with dark surface, pink "Mulai Belajar" CTA, and outlined "← Back to Platform" pill.
+- Added a `theme="squid"` variant to `EngagingLoader` and switched `app/apps/nihongo/loading.tsx` to use it.
+- Replaced both the sidebar and the dashboard hero logo with `Nexustalenta.svg` (case-sensitive), framed by a soft pink halo, sized 72px in the sidebar and 120px in the dashboard hero.
+
+### Tested
+
+- `npx tsc --noEmit`
+- `npm test`
+- `npm run lint`
+- Functional regression: `npx tsx scripts/functional-test-game.ts` (17/17)
+- HTTP smoke against `/api/game/me` returns proper `401` (no `findUnique` crash)
+- Manual UAT of every Nihongo page; Platform shell verified visually unaffected.
+
+### Known Limitations
+
+- CSS override does not affect elements that use inline `style={{...}}` colours.
+- `bg-gradient-*` utilities are flattened to single-tone surfaces inside the theme.
+- Rollback target: tag `prod-rollback-sidebar-improved-20260506`.
+
 ## [vNext] - Sidebar and Loader UX Improvements
 
 ### Improved

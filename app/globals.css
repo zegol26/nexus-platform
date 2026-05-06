@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -5,11 +6,54 @@
   --foreground: #171717;
 }
 
+/* Claude design system tokens (from DESIGN.md by getdesign add claude). */
+:root {
+  --color-canvas: #faf9f5;
+  --color-surface-soft: #f5f0e8;
+  --color-surface-card: #efe9de;
+  --color-surface-cream-strong: #e8e0d2;
+  --color-surface-dark: #181715;
+  --color-surface-dark-elevated: #252320;
+  --color-surface-dark-soft: #1f1e1b;
+  --color-ink: #141413;
+  --color-body-strong: #252523;
+  --color-body: #3d3d3a;
+  --color-muted: #6c6a64;
+  --color-muted-soft: #8e8b82;
+  --color-hairline: #e6dfd8;
+  --color-hairline-soft: #ebe6df;
+  --color-on-primary: #ffffff;
+  --color-on-dark: #faf9f5;
+  --color-on-dark-soft: #a09d96;
+  --color-coral: #cc785c;
+  --color-coral-active: #a9583e;
+  --color-coral-disabled: #e6dfd8;
+  --color-accent-teal: #5db8a6;
+  --color-accent-amber: #e8a55a;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: Arial, Helvetica, sans-serif;
-  --font-mono: "Cascadia Code", "Segoe UI Mono", Consolas, monospace;
+  --color-canvas: var(--color-canvas);
+  --color-surface-soft: var(--color-surface-soft);
+  --color-surface-card: var(--color-surface-card);
+  --color-surface-cream-strong: var(--color-surface-cream-strong);
+  --color-surface-dark: var(--color-surface-dark);
+  --color-ink: var(--color-ink);
+  --color-body: var(--color-body);
+  --color-muted: var(--color-muted);
+  --color-muted-soft: var(--color-muted-soft);
+  --color-hairline: var(--color-hairline);
+  --color-coral: var(--color-coral);
+  --color-coral-active: var(--color-coral-active);
+  --font-sans:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  --font-serif:
+    "Cormorant Garamond", "Tiempos Headline", Garamond, "Times New Roman",
+    serif;
+  --font-mono: "JetBrains Mono", "Cascadia Code", "Segoe UI Mono", Consolas, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,7 +66,230 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* ---------------------------------------------------------------- *
+ * Squid-theme overrides for the Nexus AI Nihongo route.
+ * Translates the original slate/cyan/blue palette to dark + pink/teal
+ * without editing every page individually. Scoped to [data-theme="squid"]
+ * so the Platform shell and other apps stay untouched.
+ * ---------------------------------------------------------------- */
+
+[data-theme="squid"] {
+  color-scheme: dark;
+}
+
+/* Surfaces that were white/slate-light become dark cards. */
+[data-theme="squid"] .bg-white,
+[data-theme="squid"] .bg-white\/95,
+[data-theme="squid"] .bg-white\/90,
+[data-theme="squid"] .bg-white\/85,
+[data-theme="squid"] .bg-white\/80,
+[data-theme="squid"] .bg-white\/75 {
+  background-color: #141416;
+}
+[data-theme="squid"] .bg-white\/70,
+[data-theme="squid"] .bg-white\/60,
+[data-theme="squid"] .bg-white\/50,
+[data-theme="squid"] .bg-white\/40 {
+  background-color: rgba(20, 20, 22, 0.8);
+}
+[data-theme="squid"] .bg-slate-50,
+[data-theme="squid"] .bg-slate-100,
+[data-theme="squid"] .bg-gray-50,
+[data-theme="squid"] .bg-gray-100,
+[data-theme="squid"] .bg-zinc-50,
+[data-theme="squid"] .bg-zinc-100,
+[data-theme="squid"] .bg-neutral-50,
+[data-theme="squid"] .bg-neutral-100 {
+  background-color: #1a1a1d;
+}
+[data-theme="squid"] .bg-slate-200,
+[data-theme="squid"] .bg-gray-200,
+[data-theme="squid"] .bg-zinc-200,
+[data-theme="squid"] .bg-neutral-200 {
+  background-color: #232327;
+}
+[data-theme="squid"] .bg-slate-900,
+[data-theme="squid"] .bg-slate-950,
+[data-theme="squid"] .bg-gray-900,
+[data-theme="squid"] .bg-gray-950,
+[data-theme="squid"] .bg-zinc-900 {
+  background-color: #0a0a0a;
+}
+
+/* Cyan/blue accents become brand pink. */
+[data-theme="squid"] .bg-cyan-50,
+[data-theme="squid"] .bg-cyan-100,
+[data-theme="squid"] .bg-sky-50,
+[data-theme="squid"] .bg-sky-100,
+[data-theme="squid"] .bg-blue-50,
+[data-theme="squid"] .bg-blue-100,
+[data-theme="squid"] .bg-indigo-50,
+[data-theme="squid"] .bg-indigo-100 {
+  background-color: rgba(237, 26, 127, 0.12);
+}
+[data-theme="squid"] .bg-cyan-500,
+[data-theme="squid"] .bg-cyan-600,
+[data-theme="squid"] .bg-cyan-700,
+[data-theme="squid"] .bg-sky-500,
+[data-theme="squid"] .bg-sky-600,
+[data-theme="squid"] .bg-blue-500,
+[data-theme="squid"] .bg-blue-600,
+[data-theme="squid"] .bg-blue-700,
+[data-theme="squid"] .bg-indigo-500,
+[data-theme="squid"] .bg-indigo-600 {
+  background-color: #ED1A7F;
+}
+
+/* Text — dark-ink classes become white. */
+[data-theme="squid"] .text-slate-950,
+[data-theme="squid"] .text-slate-900,
+[data-theme="squid"] .text-slate-800,
+[data-theme="squid"] .text-gray-950,
+[data-theme="squid"] .text-gray-900,
+[data-theme="squid"] .text-gray-800,
+[data-theme="squid"] .text-zinc-900,
+[data-theme="squid"] .text-neutral-900,
+[data-theme="squid"] .text-black {
+  color: #f5f5f5;
+}
+[data-theme="squid"] .text-slate-700,
+[data-theme="squid"] .text-slate-600,
+[data-theme="squid"] .text-gray-700,
+[data-theme="squid"] .text-gray-600,
+[data-theme="squid"] .text-zinc-700,
+[data-theme="squid"] .text-zinc-600,
+[data-theme="squid"] .text-neutral-700 {
+  color: rgba(245, 245, 245, 0.78);
+}
+[data-theme="squid"] .text-slate-500,
+[data-theme="squid"] .text-slate-400,
+[data-theme="squid"] .text-gray-500,
+[data-theme="squid"] .text-gray-400,
+[data-theme="squid"] .text-zinc-500,
+[data-theme="squid"] .text-neutral-500 {
+  color: rgba(245, 245, 245, 0.55);
+}
+[data-theme="squid"] .text-slate-300 {
+  color: rgba(245, 245, 245, 0.4);
+}
+[data-theme="squid"] .text-cyan-700,
+[data-theme="squid"] .text-cyan-600,
+[data-theme="squid"] .text-cyan-500,
+[data-theme="squid"] .text-sky-700,
+[data-theme="squid"] .text-sky-600,
+[data-theme="squid"] .text-sky-500,
+[data-theme="squid"] .text-blue-700,
+[data-theme="squid"] .text-blue-600,
+[data-theme="squid"] .text-blue-500,
+[data-theme="squid"] .text-indigo-700,
+[data-theme="squid"] .text-indigo-600 {
+  color: #ED1A7F;
+}
+
+/* Borders — slate hairlines become subtle white, accent borders go pink. */
+[data-theme="squid"] .border-slate-200,
+[data-theme="squid"] .border-slate-300,
+[data-theme="squid"] .border-gray-200,
+[data-theme="squid"] .border-gray-300,
+[data-theme="squid"] .border-zinc-200,
+[data-theme="squid"] .border-neutral-200,
+[data-theme="squid"] .border-white\/60,
+[data-theme="squid"] .border-white\/40 {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+[data-theme="squid"] .border-cyan-200,
+[data-theme="squid"] .border-cyan-300,
+[data-theme="squid"] .border-sky-200,
+[data-theme="squid"] .border-blue-200,
+[data-theme="squid"] .border-indigo-200 {
+  border-color: rgba(237, 26, 127, 0.35);
+}
+
+/* Hover variants of common color classes. */
+[data-theme="squid"] .hover\:bg-slate-50:hover,
+[data-theme="squid"] .hover\:bg-slate-100:hover,
+[data-theme="squid"] .hover\:bg-gray-50:hover,
+[data-theme="squid"] .hover\:bg-gray-100:hover {
+  background-color: #232327;
+}
+[data-theme="squid"] .hover\:bg-cyan-50:hover,
+[data-theme="squid"] .hover\:bg-cyan-100:hover,
+[data-theme="squid"] .hover\:bg-blue-50:hover,
+[data-theme="squid"] .hover\:bg-indigo-50:hover {
+  background-color: rgba(237, 26, 127, 0.18);
+}
+[data-theme="squid"] .hover\:bg-cyan-600:hover,
+[data-theme="squid"] .hover\:bg-cyan-700:hover,
+[data-theme="squid"] .hover\:bg-blue-600:hover,
+[data-theme="squid"] .hover\:bg-blue-700:hover {
+  background-color: #FF2D8F;
+}
+[data-theme="squid"] .hover\:text-slate-950:hover,
+[data-theme="squid"] .hover\:text-slate-900:hover,
+[data-theme="squid"] .hover\:text-black:hover {
+  color: #f5f5f5;
+}
+[data-theme="squid"] .hover\:text-cyan-700:hover,
+[data-theme="squid"] .hover\:text-blue-700:hover {
+  color: #FF2D8F;
+}
+
+/* Tone down chunky display text — the user noted text felt too large. */
+[data-theme="squid"] .text-5xl {
+  font-size: 2rem;
+  line-height: 1.15;
+}
+[data-theme="squid"] .text-4xl {
+  font-size: 1.65rem;
+  line-height: 1.2;
+}
+[data-theme="squid"] .text-3xl {
+  font-size: 1.4rem;
+  line-height: 1.25;
+}
+[data-theme="squid"] .text-2xl {
+  font-size: 1.18rem;
+  line-height: 1.3;
+}
+[data-theme="squid"] .text-xl {
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+[data-theme="squid"] .text-lg {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+[data-theme="squid"] .text-base {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Drop the gradient page backgrounds that pages set inline. */
+[data-theme="squid"] [class*="bg-gradient"] {
+  background-image: none;
+  background-color: #141416;
+}
+
+/* Soft pink ring for focused inputs/buttons inside the theme. */
+[data-theme="squid"] input,
+[data-theme="squid"] textarea,
+[data-theme="squid"] select {
+  background-color: #1a1a1d;
+  color: #f5f5f5;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+[data-theme="squid"] input::placeholder,
+[data-theme="squid"] textarea::placeholder {
+  color: rgba(245, 245, 245, 0.4);
+}
+[data-theme="squid"] input:focus,
+[data-theme="squid"] textarea:focus,
+[data-theme="squid"] select:focus {
+  outline-color: #ED1A7F;
+  border-color: #ED1A7F;
 }
 
 @keyframes ai-chan-enter {

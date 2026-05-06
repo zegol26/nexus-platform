@@ -6,7 +6,7 @@ export default function PlatformLoading() {
       title="Nexus Platform lagi nyalain layar"
       messages={[
         "Menarik data terbaru kamu...",
-        "Aichan lagi cek pengingat hari ini...",
+        "Aichan lagi cek pengingat hari ini 🔔",
         "Menyusun dashboard biar enak dilihat...",
         "Sebentar ya, server lagi peregangan...",
       ]}

@@ -4,6 +4,7 @@
 
 | Release Note | Date/Time (JST) | Author | Status | Summary |
 | --- | --- | --- | --- | --- |
+| RN-2026.05.06-003 | 2026-05-06 23:30 +09:00 | Nexus Platform Team | Completed | Repainted Nexus AI Nihongo with a dark + pink/teal Squid-Game-inspired theme using `[data-theme="squid"]` CSS overrides, swapped the Nihongo logo to `Nexustalenta.svg` with a glow treatment, and shrank the heading scale ~12-15% for tighter typography. |
 | RN-2026.05.06-002 | 2026-05-06 22:00 +09:00 | Nexus Platform Team | Completed | Improved Nihongo and Platform sidebar UX (smaller width, active route highlighting, mobile drawer auto-closes on navigation), added engaging route loaders, normalized AI Tutor opening copy to formal "saya". |
 | RN-2026.05.06-001 | 2026-05-06 18:15 +09:00 | Nexus Platform Team | Completed | Hotfixed production data loss caused by stale seed scripts on auto-deploy and synced local working tree to git as `prod-checkpoint-20260506`. |
 | RN-2026.05.05-002 | 2026-05-05 10:20 +09:00 | Nexus Platform Team | Completed | Fixed first-time Nexus Kingdom loading and refreshed Community Board UI. |
@@ -14,6 +15,42 @@
 | RN-2026.05.04-001 | 2026-05-04 01:10 +09:00 | Nexus Platform Team | Completed | Fixed character foundation lesson access and verified kana/kanji grids in localhost. |
 | RN-2026.05.03-002 | 2026-05-03 23:45 +09:00 | Nexus Platform Team | Completed | Added seedable Nihongo character content for kana, kanji, and vocabulary compounds, linked to lesson pages. |
 | RN-2026.05.03-001 | 2026-05-03 23:09 +09:00 | Nexus Platform Team | Release Candidate | Admin Operations Console, billing/trial foundation, recording visibility, architecture docs, and Ai-chan assistant foundation. |
+
+## RN-2026.05.06-003
+
+Completed Nexus AI Nihongo Squid-Inspired Theme Refresh.
+
+### Background
+
+The previous palette (slate/cyan/blue, soft white surfaces) was reported as too generic for a learning product that wants to feel bold and memorable. This release repaints the entire Nexus AI Nihongo route with a dark + neon-pink (#ED1A7F) + tracksuit-teal (#00B894) palette inspired by the Squid Game visual language, while keeping all copy strictly in learning-platform tone (no game-thematic text).
+
+### Included Changes
+
+- Wrapped the Nihongo route shell in `<div data-theme="squid">` and added a scoped CSS override block to `app/globals.css` that translates the existing slate/cyan/blue Tailwind utility classes into dark surfaces, white text, and pink accents inside `[data-theme="squid"]` only. The Platform shell and other apps are not affected.
+- Reduced display text sizes inside `[data-theme="squid"]` by ~12-15% (`text-5xl` → 2rem, `text-4xl` → 1.65rem, `text-3xl` → 1.4rem, ..., `text-base` → 0.9rem) so headings stop dominating learning content.
+- Disabled inline gradient backgrounds inside `[data-theme="squid"]` so cards present a single dark surface tone consistently across the route.
+- Restyled `<input>`, `<textarea>`, and `<select>` inside the theme with dark surface, white text, and a pink focus ring.
+- Refreshed `NihongoSidebar` with deep-black background, pink active-state highlight, ○ △ □ shape markers as decorative icons, soft watermark shapes, and gold/teal section dividers.
+- Refreshed the Nihongo header with dark surface, pink "Mulai Belajar" CTA, and outlined "← Back to Platform" pill.
+- Added a `theme="squid"` variant to `EngagingLoader` and switched `app/apps/nihongo/loading.tsx` to use it (pink spinner, white text on dark, ○△□ glyph row).
+- Replaced both the sidebar and the dashboard hero logo with `Nexustalenta.svg` (case-sensitive — Vercel runs Linux), framed by a soft pink halo and pink drop-shadow, sized 72px in the sidebar and 120px in the dashboard hero.
+- Used plain `<img>` for the logo because the SVG is served as-is and `next/image` would require enabling `dangerouslyAllowSVG` in `next.config.ts`.
+
+### Verification
+
+- `npx tsc --noEmit`: passed.
+- `npm test`: 6 policy tests passed.
+- `npm run lint`: passed with existing `<img>` optimization warnings only (logo intentionally uses `<img>` for SVG).
+- Manual browser walk through `/apps/nihongo/dashboard`, `/apps/nihongo/curriculum`, `/apps/nihongo/flashcards`, `/apps/nihongo/tutor`, `/apps/nihongo/quiz`, `/apps/nihongo/game`, `/apps/nihongo/reading`, `/apps/nihongo/listening`, `/apps/nihongo/mock-test/n5`: dark surfaces apply consistently via the override, headings are tighter, sidebar active state highlights, mobile drawer auto-closes.
+- Functional regression test for Nexus Kingdom game module: `npx tsx scripts/functional-test-game.ts` reports 17/17 pass; HTTP smoke at `/api/game/me` returns proper `401` (no `findUnique` crash) — confirms the run-time Prisma client carries the game models added earlier in the day.
+- `/platform/*` routes verified visually unaffected (still slate/cyan).
+
+### Known Notes
+
+- The CSS override approach intentionally does not touch elements that use raw inline `style={{...}}` colours. Components that use `bg-gradient-*` utility classes are flattened to a single dark surface (`#141416`) inside the theme. If a specific page wants its gradient back, it can use a hardcoded class outside the standard palette.
+- `Nexustalenta.svg` (~20KB) is referenced with the exact case it lives on disk; `nexustalenta.svg` (lowercase) does not exist in the repo and would 404 on Vercel.
+- Rollback target if this thematic refresh needs to be reverted: tag `prod-rollback-sidebar-improved-20260506` (sidebar UX + engaging loaders + saya copy fix, original cool palette intact).
+- Tagged as `prod-checkpoint-20260506-squid` for future rollback reference.
 
 ## RN-2026.05.06-002
 
