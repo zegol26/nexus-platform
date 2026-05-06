@@ -2,6 +2,9 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db/prisma";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/auth-options";
+import { trackEvent } from "@/lib/analytics/trackEvent";
+import { awardGameReward } from "@/lib/gamification/kingdom";
+import { claimLearningReward } from "@/lib/game/service";
 
 export async function POST(req: Request) {
   const session = await getServerSession(authOptions);
@@ -28,6 +31,16 @@ export async function POST(req: Request) {
     );
   }
 
+  const existingProgress = await prisma.nihongoLessonProgress.findUnique({
+    where: {
+      userId_lessonId: {
+        userId: user.id,
+        lessonId,
+      },
+    },
+    select: { completed: true },
+  });
+
   const progress = await prisma.nihongoLessonProgress.upsert({
     where: {
       userId_lessonId: {
@@ -44,6 +57,25 @@ export async function POST(req: Request) {
       completed: true,
     },
   });
+
+  await trackEvent({
+    userId: user.id,
+    eventType: "LESSON_COMPLETED",
+    lessonId,
+    pagePath: `/apps/nihongo/curriculum/${lessonId}`,
+  });
+
+  if (!existingProgress?.completed) {
+    await awardGameReward({
+      userId: user.id,
+      source: "LESSON_COMPLETE",
+    });
+    await claimLearningReward({
+      userId: user.id,
+      rewardType: "LESSON_COMPLETED",
+      sourceRef: lessonId,
+    }).catch(() => null);
+  }
 
   return NextResponse.json({ progress });
 }

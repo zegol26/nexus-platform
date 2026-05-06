@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { UserBadgeHeader } from "@/components/nihongo/UserBadgeHeader";
+import { clientTrack } from "@/lib/analytics/clientTrack";
 
 type ChatMessage = {
   role: "user" | "assistant";
@@ -25,6 +26,13 @@ export default function TutorPage() {
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    clientTrack({
+      eventType: "PAGE_VIEW",
+      pagePath: "/apps/nihongo/tutor",
+    });
+  }, []);
 
   const sendMessage = async (message = input) => {
     const trimmed = message.trim();

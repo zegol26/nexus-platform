@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
+import { awardGameReward } from "@/lib/gamification/kingdom";
+import { claimLearningReward } from "@/lib/game/service";
 import { calculateN5MockReadiness } from "@/lib/nihongo/mock-tests/readiness";
 
 type SubmittedAnswer = {
@@ -95,6 +97,20 @@ export async function POST(request: Request) {
       },
     },
   });
+
+  if (correctCount > 0) {
+    await awardGameReward({
+      userId: auth.user.id,
+      source: "MOCK_TEST_CORRECT",
+      quantity: correctCount,
+    });
+  }
+
+  await claimLearningReward({
+    userId: auth.user.id,
+    rewardType: "MOCK_N5_COMPLETED",
+    sourceRef: attempt.id,
+  }).catch(() => null);
 
   return NextResponse.json({
     attemptId: attempt.id,

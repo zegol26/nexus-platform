@@ -1,7 +1,11 @@
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
+import { ManualBillingClient } from "@/components/platform/ManualBillingClient";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
+import { getBillingSettings } from "@/lib/platform/settings";
+
+export const dynamic = "force-dynamic";
 
 type BillingAppAccessRow = {
   id: string;
@@ -29,6 +33,18 @@ type BillingPaymentRow = {
   } | null;
 };
 
+type BillingPlanRow = {
+  id: string;
+  name: string;
+  code: string;
+  priceCents: number;
+  currency: string;
+  durationDays: number;
+  app: {
+    name: string;
+  };
+};
+
 function formatMoney(amountCents: number, currency: string) {
   return new Intl.NumberFormat("id-ID", {
     style: "currency",
@@ -54,19 +70,27 @@ export default async function PlatformBillingPage() {
     redirect("/login");
   }
 
-  const user = await prisma.user.findUnique({
-    where: { email: session.user.email },
-    include: {
-      appAccess: {
-        include: { app: true },
-        orderBy: { createdAt: "asc" },
+  const [user, plans, billingSettings] = await Promise.all([
+    prisma.user.findUnique({
+      where: { email: session.user.email },
+      include: {
+        appAccess: {
+          include: { app: true },
+          orderBy: { createdAt: "asc" },
+        },
+        payments: {
+          include: { app: true, plan: true },
+          orderBy: { createdAt: "desc" },
+        },
       },
-      payments: {
-        include: { app: true, plan: true },
-        orderBy: { createdAt: "desc" },
-      },
-    },
-  });
+    }),
+    prisma.subscriptionPlan.findMany({
+      where: { active: true },
+      include: { app: true },
+      orderBy: [{ appId: "asc" }, { priceCents: "asc" }],
+    }),
+    getBillingSettings(),
+  ]);
 
   if (!user) {
     redirect("/login");
@@ -74,6 +98,7 @@ export default async function PlatformBillingPage() {
 
   const appAccess = user.appAccess as BillingAppAccessRow[];
   const payments = user.payments as BillingPaymentRow[];
+  const typedPlans = plans as BillingPlanRow[];
 
   return (
     <div className="mx-auto max-w-7xl space-y-6">
@@ -131,6 +156,20 @@ export default async function PlatformBillingPage() {
           </article>
         ))}
       </section>
+
+      <ManualBillingClient
+        plans={typedPlans.map((plan) => ({
+          id: plan.id,
+          name: plan.name,
+          code: plan.code,
+          priceCents: plan.priceCents,
+          currency: plan.currency,
+          durationDays: plan.durationDays,
+          app: { name: plan.app.name },
+        }))}
+        latestPayment={payments[0] ? { id: payments[0].id, status: payments[0].status } : null}
+        billingSettings={billingSettings}
+      />
 
       <section className="rounded-[2rem] border border-white/70 bg-white/82 p-6 shadow-xl shadow-slate-950/[0.04] backdrop-blur-2xl">
         <h2 className="text-xl font-semibold text-slate-950">

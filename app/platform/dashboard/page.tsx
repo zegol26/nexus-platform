@@ -3,7 +3,11 @@ import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
+import { getOrCreateGameProfile } from "@/lib/gamification/kingdom";
 import { platformApps } from "@/lib/platform/app-registry";
+import { KingdomCard } from "@/components/nihongo/game/KingdomCard";
+
+export const dynamic = "force-dynamic";
 
 type DashboardAppAccessRow = {
   id: string;
@@ -55,13 +59,14 @@ export default async function PlatformDashboardPage() {
     redirect("/login");
   }
 
-  const [totalNihongoLessons, completedNihongoLessons, totalFlashcards] =
+  const [totalNihongoLessons, completedNihongoLessons, totalFlashcards, gameProfile] =
     await Promise.all([
       prisma.nihongoLesson.count(),
       prisma.nihongoLessonProgress.count({
         where: { userId: user.id, completed: true },
       }),
       prisma.nihongoFlashcard.count(),
+      getOrCreateGameProfile(user.id),
     ]);
 
   const appAccess = user.appAccess as DashboardAppAccessRow[];
@@ -180,6 +185,8 @@ export default async function PlatformDashboardPage() {
           </div>
         </div>
       </section>
+
+      <KingdomCard profile={gameProfile} />
 
       <section className="grid gap-4 md:grid-cols-4">
         <div className="rounded-3xl border border-white/70 bg-white/80 p-5 shadow-lg shadow-slate-950/[0.03] backdrop-blur">

@@ -4,6 +4,8 @@ import { NihongoDashboardClient } from "@/components/apps/nihongo/NihongoDashboa
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
 
+export const dynamic = "force-dynamic";
+
 export default async function DashboardPage() {
   const session = await getServerSession(authOptions);
 

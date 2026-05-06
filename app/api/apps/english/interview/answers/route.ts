@@ -44,7 +44,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "questionId is required." }, { status: 400 });
   }
 
-  if (!supportedMimeTypes.has(file.type)) {
+  if (!isSupportedAudioMimeType(file.type)) {
     return NextResponse.json({ error: "Unsupported audio format." }, { status: 400 });
   }
 
@@ -66,21 +66,61 @@ export async function POST(request: Request) {
 
   const audioBase64 = Buffer.from(await file.arrayBuffer()).toString("base64");
 
-  const answer = await prisma.englishInterviewAnswer.create({
-    data: {
+  const existing = await prisma.englishInterviewAnswer.findFirst({
+    where: {
       userId: user.id,
       questionId,
-      audioBase64,
-      audioMimeType: file.type,
-      durationSec,
-      fileName: file.name,
-      status: "SUBMITTED",
     },
+    include: {
+      review: true,
+    },
+    orderBy: { submittedAt: "desc" },
   });
+
+  if (existing?.review) {
+    await prisma.englishInterviewReview.delete({
+      where: { answerId: existing.id },
+    });
+  }
+
+  const answer = existing
+    ? await prisma.englishInterviewAnswer.update({
+        where: { id: existing.id },
+        data: {
+          audioBase64,
+          audioMimeType: file.type,
+          durationSec,
+          fileName: file.name,
+          transcription: null,
+          status: "SUBMITTED",
+          submittedAt: new Date(),
+        },
+      })
+    : await prisma.englishInterviewAnswer.create({
+        data: {
+          userId: user.id,
+          questionId,
+          audioBase64,
+          audioMimeType: file.type,
+          durationSec,
+          fileName: file.name,
+          status: "SUBMITTED",
+        },
+      });
 
   return NextResponse.json({
     answerId: answer.id,
     status: answer.status,
     submittedAt: answer.submittedAt,
+    replaced: Boolean(existing),
   });
+}
+
+function isSupportedAudioMimeType(mimeType: string) {
+  const [normalizedMimeType] = mimeType.split(";");
+
+  return (
+    supportedMimeTypes.has(normalizedMimeType) ||
+    normalizedMimeType.startsWith("audio/webm")
+  );
 }

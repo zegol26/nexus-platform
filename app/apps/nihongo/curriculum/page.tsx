@@ -3,9 +3,11 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { UserBadgeHeader } from "@/components/nihongo/UserBadgeHeader";
+import { clientTrack } from "@/lib/analytics/clientTrack";
 
 type Lesson = {
   id: string;
+  slug: string | null;
   title: string;
   description: string | null;
   level: string;
@@ -21,6 +23,11 @@ export default function CurriculumPage() {
   const [activeLevel, setActiveLevel] = useState("All");
 
   useEffect(() => {
+    clientTrack({
+      eventType: "PAGE_VIEW",
+      pagePath: "/apps/nihongo/curriculum",
+    });
+
     async function loadCurriculum() {
       const res = await fetch("/api/apps/nihongo/curriculum");
       const data = await res.json();
@@ -118,7 +125,7 @@ export default function CurriculumPage() {
             </div>
 
             <Link
-              href={`/apps/nihongo/curriculum/${lesson.id}`}
+              href={`/apps/nihongo/curriculum/${lesson.slug ?? lesson.id}`}
               className="rounded-full bg-slate-950 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-cyan-700"
             >
               {lesson.completed ? "Review" : "Start"}

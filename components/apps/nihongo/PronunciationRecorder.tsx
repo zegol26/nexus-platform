@@ -19,7 +19,7 @@ type PronunciationRecorderProps = {
 };
 
 export function PronunciationRecorder({ expectedText, onEvaluation }: PronunciationRecorderProps) {
-  const [isRecording, setIsRecording] = useState(false);
+  const [recordingState, setRecordingState] = useState<"idle" | "recording" | "stopped" | "uploading" | "saved">("idle");
   const [audioUrl, setAudioUrl] = useState<string | null>(null);
   const [audioBlob, setAudioBlob] = useState<Blob | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -31,13 +31,14 @@ export function PronunciationRecorder({ expectedText, onEvaluation }: Pronunciat
     setError(null);
 
     if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === "undefined") {
-      setError("Browser ini belum mendukung rekam langsung. Gunakan upload file audio.");
+      setError("Browser ini belum mendukung rekam langsung. Gunakan Chrome desktop/mobile atau upload file audio.");
       return;
     }
 
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const recorder = new MediaRecorder(stream);
+      const mimeType = getSupportedMimeType();
+      const recorder = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream);
       chunksRef.current = [];
 
       recorder.ondataavailable = (event) => {
@@ -45,23 +46,32 @@ export function PronunciationRecorder({ expectedText, onEvaluation }: Pronunciat
       };
 
       recorder.onstop = () => {
-        const blob = new Blob(chunksRef.current, { type: "audio/webm" });
+        const blob = new Blob(chunksRef.current, { type: recorder.mimeType || "audio/webm" });
         setAudioBlob(blob);
         setAudioUrl(URL.createObjectURL(blob));
+        setRecordingState("stopped");
         stream.getTracks().forEach((track) => track.stop());
       };
 
       recorderRef.current = recorder;
       recorder.start();
-      setIsRecording(true);
-    } catch {
-      setError("Mikrofon belum bisa diakses. Cek izin browser atau unggah file audio.");
+      setRecordingState("recording");
+    } catch (recordingError) {
+      const isPermissionDenied =
+        recordingError instanceof DOMException &&
+        (recordingError.name === "NotAllowedError" || recordingError.name === "PermissionDeniedError");
+
+      setError(
+        isPermissionDenied
+          ? "Izin mikrofon ditolak. Aktifkan permission microphone di browser, lalu coba lagi."
+          : "Mikrofon belum bisa diakses. Cek perangkat input atau unggah file audio."
+      );
+      setRecordingState("idle");
     }
   }
 
   function stopRecording() {
     recorderRef.current?.stop();
-    setIsRecording(false);
   }
 
   function resetRecording() {
@@ -69,6 +79,7 @@ export function PronunciationRecorder({ expectedText, onEvaluation }: Pronunciat
     setAudioUrl(null);
     setAudioBlob(null);
     setError(null);
+    setRecordingState("idle");
   }
 
   function onUploadFile(file: File | null) {
@@ -76,6 +87,7 @@ export function PronunciationRecorder({ expectedText, onEvaluation }: Pronunciat
     resetRecording();
     setAudioBlob(file);
     setAudioUrl(URL.createObjectURL(file));
+    setRecordingState("stopped");
   }
 
   async function submitAudio() {
@@ -85,6 +97,7 @@ export function PronunciationRecorder({ expectedText, onEvaluation }: Pronunciat
     }
 
     setIsSubmitting(true);
+    setRecordingState("uploading");
     setError(null);
 
     const formData = new FormData();
@@ -96,35 +109,44 @@ export function PronunciationRecorder({ expectedText, onEvaluation }: Pronunciat
     formData.append("audio", file);
     formData.append("expectedText", expectedText);
 
-    const response = await fetch("/api/apps/nihongo/pre-assessment/pronunciation", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const response = await fetch("/api/apps/nihongo/pre-assessment/pronunciation", {
+        method: "POST",
+        body: formData,
+      });
 
-    const payload = await response.json();
-    setIsSubmitting(false);
+      const payload = await response.json();
 
-    if (!response.ok && response.status !== 202) {
-      setError(payload.error ?? "Audio belum bisa dikirim. Coba ulangi sebentar lagi.");
-      return;
+      if (!response.ok && response.status !== 202) {
+        setError(payload.error ?? "Audio belum bisa dikirim. Coba ulangi sebentar lagi.");
+        setRecordingState("stopped");
+        return;
+      }
+
+      if (!payload.evaluation) {
+        setError(payload.error ?? "Audio tersimpan, tetapi evaluasi belum tersedia.");
+        setRecordingState("stopped");
+        return;
+      }
+
+      setRecordingState("saved");
+      onEvaluation({
+        ...payload.evaluation,
+        audioUrl: payload.audioUrl,
+        metadata: payload.metadata,
+      });
+    } catch {
+      setError("Koneksi upload terputus. Coba submit ulang recording ini.");
+      setRecordingState("stopped");
+    } finally {
+      setIsSubmitting(false);
     }
-
-    if (!payload.evaluation) {
-      setError(payload.error ?? "Audio tersimpan, tetapi evaluasi belum tersedia.");
-      return;
-    }
-
-    onEvaluation({
-      ...payload.evaluation,
-      audioUrl: payload.audioUrl,
-      metadata: payload.metadata,
-    });
   }
 
   return (
     <div className="space-y-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
       <div className="flex flex-wrap gap-3">
-        {!isRecording ? (
+        {recordingState !== "recording" ? (
           <button
             type="button"
             onClick={startRecording}
@@ -173,6 +195,10 @@ export function PronunciationRecorder({ expectedText, onEvaluation }: Pronunciat
         </p>
       )}
 
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+        Status: {recordingState === "idle" ? "ready" : recordingState}
+      </p>
+
       {error ? <p className="rounded-xl bg-rose-50 px-3 py-2 text-sm text-rose-700">{error}</p> : null}
 
       <button
@@ -181,8 +207,15 @@ export function PronunciationRecorder({ expectedText, onEvaluation }: Pronunciat
         disabled={isSubmitting || !audioBlob}
         className="w-full rounded-full bg-cyan-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-cyan-700 disabled:cursor-not-allowed disabled:bg-slate-300"
       >
-        {isSubmitting ? "Mengirim audio..." : "Submit Pronunciation"}
+        {isSubmitting ? "Uploading..." : recordingState === "saved" ? "Saved" : "Submit Pronunciation"}
       </button>
     </div>
   );
+}
+
+function getSupportedMimeType() {
+  if (MediaRecorder.isTypeSupported("audio/webm;codecs=opus")) return "audio/webm;codecs=opus";
+  if (MediaRecorder.isTypeSupported("audio/webm")) return "audio/webm";
+  if (MediaRecorder.isTypeSupported("audio/mp4")) return "audio/mp4";
+  return "";
 }

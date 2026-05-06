@@ -1,9 +1,11 @@
-import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
 import { AdminAccessPanel } from "@/components/platform/AdminAccessPanel";
+
+export const dynamic = "force-dynamic";
 
 type AdminAppAccessRow = {
   appId: string;
@@ -49,6 +51,9 @@ type AdminLessonRow = {
   title: string;
   level: string;
   order: number;
+  _count?: {
+    templates: number;
+  };
 };
 
 type AdminPaymentRow = {
@@ -81,7 +86,7 @@ export default async function PlatformAdminPage() {
   const role = session?.user ? (session.user as { role?: string }).role : undefined;
 
   if (role !== "ADMIN" && role !== "SUPER_ADMIN") {
-    redirect("/platform/dashboard");
+    notFound();
   }
 
   const [users, apps, lessons, payments, audits, mockQuestionCount] = await Promise.all([
@@ -100,7 +105,14 @@ export default async function PlatformAdminPage() {
       take: 100,
     }),
     prisma.platformApp.findMany({ orderBy: { createdAt: "asc" } }),
-    prisma.nihongoLesson.findMany({ orderBy: { order: "asc" } }),
+    prisma.nihongoLesson.findMany({
+      include: {
+        _count: {
+          select: { templates: true },
+        },
+      },
+      orderBy: { order: "asc" },
+    }),
     prisma.paymentTransaction.findMany({
       include: { user: true, app: true, plan: true },
       orderBy: { createdAt: "desc" },
@@ -136,6 +148,27 @@ export default async function PlatformAdminPage() {
         <p className="mt-2 text-sm text-slate-600">
           Grant/revoke app access, lesson access, and review payment validation state.
         </p>
+
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Link
+            href="/admin/users"
+            className="rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+          >
+            Open Operations Console
+          </Link>
+          <Link
+            href="/admin/recordings"
+            className="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+          >
+            View Recordings
+          </Link>
+          <Link
+            href="/platform/admin/analytics"
+            className="rounded-full border border-blue-200 bg-blue-50 px-5 py-3 text-sm font-semibold text-blue-700 transition hover:bg-blue-100"
+          >
+            Analytics
+          </Link>
+        </div>
       </section>
 
       <section className="rounded-[2rem] border border-cyan-200 bg-cyan-50 p-6 shadow-xl shadow-cyan-950/[0.04]">
@@ -200,6 +233,48 @@ export default async function PlatformAdminPage() {
           order: lesson.order,
         }))}
       />
+
+      <section className="rounded-[2rem] border border-white/70 bg-white/85 p-6 shadow-xl shadow-slate-950/[0.04] backdrop-blur">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
+              Lesson Cache
+            </p>
+            <h2 className="mt-2 text-xl font-semibold text-slate-950">
+              Nihongo cached AI templates
+            </h2>
+          </div>
+          <p className="text-sm text-slate-500">Target: 3 templates per lesson</p>
+        </div>
+
+        <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          {typedLessons.map((lesson: AdminLessonRow) => {
+            const cacheCount = lesson._count?.templates ?? 0;
+
+            return (
+              <div key={lesson.id} className="rounded-2xl bg-slate-50 p-4 text-sm">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="font-semibold text-slate-950">
+                      {lesson.order}. {lesson.title}
+                    </p>
+                    <p className="mt-1 text-slate-500">{lesson.level}</p>
+                  </div>
+                  <span
+                    className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                      cacheCount >= 3
+                        ? "bg-emerald-100 text-emerald-700"
+                        : "bg-amber-100 text-amber-700"
+                    }`}
+                  >
+                    {cacheCount}/3
+                  </span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
 
       <section className="grid gap-6 lg:grid-cols-2">
         <div className="rounded-[2rem] border border-white/70 bg-white/85 p-6 shadow-xl shadow-slate-950/[0.04] backdrop-blur">

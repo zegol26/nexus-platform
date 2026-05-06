@@ -3,6 +3,8 @@ import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/auth-options";
 
+export const dynamic = "force-dynamic";
+
 export default async function LessonsDashboardPage() {
   const session = await getServerSession(authOptions);
 

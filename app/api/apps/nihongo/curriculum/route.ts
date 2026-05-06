@@ -2,6 +2,14 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db/prisma";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/auth-options";
+import { canAccessLesson } from "@/lib/nexus/access-guards";
+
+const alwaysAccessibleLessonSlugs = new Set([
+  "hiragana-foundation",
+  "katakana-foundation",
+  "kanji-n5-foundation",
+  "kanji-n4-foundation",
+]);
 
 export async function GET() {
   const session = await getServerSession(authOptions);
@@ -43,12 +51,19 @@ export async function GET() {
   progress.map((p: { lessonId: string }) => p.lessonId)
   );
 
-  const lessonsWithProgress = lessons.map(
-  (lesson: { id: string }) => ({
+  const accessDecisions = await Promise.all(
+    lessons.map((lesson: { order: number; slug: string | null }) =>
+      lesson.slug && alwaysAccessibleLessonSlugs.has(lesson.slug)
+        ? { allowed: true, plan: "FOUNDATION" }
+        : canAccessLesson(user.id, lesson.order)
+    )
+  );
+
+  const lessonsWithProgress = lessons.map((lesson: { id: string }, index: number) => ({
     ...lesson,
     completed: completedLessonIds.has(lesson.id),
-  })
-  );
+    access: accessDecisions[index],
+  }));
 
   return NextResponse.json({
     lessons: lessonsWithProgress,

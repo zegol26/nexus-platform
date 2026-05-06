@@ -1,0 +1,620 @@
+{
+  "seedVersion": "nihongo-reading-articles-v1",
+  "appSlug": "nihongo",
+  "module": "reading",
+  "totalArticles": 40,
+  "levels": [
+    {
+      "level": "N5",
+      "label": "Basic/N5",
+      "articleCount": 20
+    },
+    {
+      "level": "N4",
+      "label": "JLPT N4",
+      "articleCount": 20
+    }
+  ],
+  "articles": [
+    {
+      "id": "reading-n5-01",
+      "legacyId": 1,
+      "order": 1,
+      "level": "N5",
+      "levelLabel": "Basic/N5",
+      "slug": "n5-01-gakkou-made-no-nagai-michi",
+      "title": "Perjalanan Panjang ke Sekolah (Gakkou made no Nagai Michi)",
+      "estimatedMinutes": 4,
+      "content": {
+        "japanese": "私の名前はアリです。インドネシアのジャカルタから来ました。今は東京に住んでいます。毎朝、私は六時半に起きます。まず、顔を洗います。それから、台所で朝ごはんを食べます。朝ごはんはいつもパンと卵です。時々、バナナも食べます。コーヒーが大好きですから、毎日飲みます。七時十五分に家を出ます。私の家から学校までとても遠いです。まず、十五分くらい歩いてバス停へ行きます。朝の空気は冷たいですが、気持ちがいいです。バス停でバスを待ちます。バスはいつも七時半に来ます。バスの中で、私はいつも音楽を聴きます。日本のポップスが大好きです。八時に駅に着きます。ここから電車に乗り換えます。駅はとても広くて、人がたくさんいます。みんな忙しいです。電車はとても混んでいます。私は電車の中で三十分くらい立っています。座ることができません。でも、大丈夫です。私は電車の中でいつも日本語の単語を覚えます。小さいノートに漢字を書いて練習します。八時四十分に新宿駅に着きます。新宿駅は世界で一番大きい駅だそうです。出口がたくさんありますから、時々道に迷います。駅から学校までまた十分歩きます。学校の近くにきれいな公園があります。春には桜が咲きます。夏には緑の木がたくさんあります。九時ちょうどに学校に着きます。授業は九時十五分から始まります。先生はとても親切で、教え方が上手です。クラスメートはみんな外国人です。アメリカ人、中国人、韓国人、タイ人がいます。みんなで一緒に日本語を勉強します。お昼休みは十二時十五分からです。私は友達と近くのコンビニへ行きます。お弁当やおにぎりを買います。時々、レストランでうどんを食べます。午後の授業は三時半に終わります。学校が終わってから、時々図書館へ行きます。図書館は静かですから、勉強にいいです。五時に図書館を出て、家へ帰ります。帰りもバスと電車に乗ります。家に着くのは六時半ごろです。とても長い一日ですが、毎日がとても楽しいです。将来、日本で働きたいですから、毎日一生懸命頑張ります。夜は自分で晩ごはんを作ります。十時に寝ます。明日もいい日になりますように。",
+        "romaji": "Watashi no namae wa Ari desu. Indonesia no Jakaruta kara kimashita. Ima wa Toukyou ni sunde imasu. Maiasa, watashi wa rokuji han ni okimasu. Mazu, kao o araimasu. Sorekara, daidokoro de asagohan o tabemashita. Asagohan wa itsumo pan to tamago desu. Tokidoki, banana mo tabemasu. Koohii ga daisuki desu kara, mainichi nomimasu. Nanaji juugofun ni ie o demasu. Watashi no ie kara gakkou made totemo tooi desu. Mazu, juugofun kurai aruite basutei e ikimasu. Asa no kuuki wa tsumetai desu ga, kimochi ga ii desu. Basutei de basu o machimasu. Basu wa itsumo nanaji han ni kimasu. Basu no naka de, watashi wa itsumo ongaku o kikimasu. Nihon no poppusu ga daisuki desu. Hachiji ni eki ni tsukimasu. Koko kara densha ni norikaemasu. Eki wa totemo hirokute, hito ga takusan imasu. Minna isogashii desu. Densha wa totemo konde imasu. Watashi wa densha no naka de sanjuppun kurai tatte imasu. Suwaru koto ga dekimasen. Demo, daijoubu desu. Watashi wa densha no naka de itsumo nihongo no tango o oboemasu. Chiisai nooto ni kanji o kaite renshuu shimasu. Hachiji yonjuuppun ni Shinjuku eki ni tsukimasu. Shinjuku eki wa sekai de ichiban ookii eki da sou desu. Deguchi ga takusan arimasu kara, tokidoki michi ni mayoimasu. Eki kara gakkou made mata juppun arukimasu. Gakkou no chikaku ni kireina kouen ga arimasu. Haru ni wa sakura ga sakimasu. Natsu ni wa midori no ki ga takusan arimasu. Kuji choudo ni gakkou ni tsukimasu. Jugyou wa kuji juugofun kara hajimarimasu. Sensei wa totemo shinsetsu de, oshiekata ga jouzu desu. Kurasumeeto wa minna gaikokujin desu. Amerikajin, Chuugokujin, Kankokujin, Taijin ga imasu. Minna de issho ni nihongo o benkyou shimasu. Ohiruyasumi wa juuniji juugofun kara desu. Watashi wa tomodachi to chikaku no konbini e ikimasu. Obentou ya onigiri o kaimasu. Tokidoki, resutoran de udon o tabemasu. Gogo no jugyou wa sanji han ni owarimasu. Gakkou ga owatte kara, tokidoki toshokan e ikimasu. Toshokan wa shizuka desu kara, benkyou ni ii desu. Goji ni toshokan o dete, ie e kaerimasu. Kaeri mo basu to densha ni norimasu. Ie ni tsuku no wa rokuji han goro desu. Totemo nagai ichinichi desu ga, mainichi ga totemo tanoshii desu. Shourai, Nihon de hatarakitai desu kara, mainichi isshoukenmei ganbarimasu. Yoru wa jibun de bangohan o tsukurimashita. Juuji ni nemasu. Ashita mo ii hi ni narimasu you ni.",
+        "indonesia": "Nama saya Ari. Saya berasal dari Jakarta, Indonesia. Sekarang saya tinggal di Tokyo. Setiap pagi, saya bangun jam 06.30. Pertama, saya mencuci muka. Setelah itu, saya sarapan di dapur. Sarapan saya selalu roti dan telur. Kadang-kadang, saya juga makan pisang. Karena saya sangat suka kopi, saya meminumnya setiap hari. Jam 07.15 saya keluar rumah. Dari rumah saya ke sekolah sangat jauh. Pertama, saya berjalan kaki sekitar 15 menit menuju halte bus. Udara pagi terasa dingin, tapi menyenangkan. Saya menunggu bus di halte. Bus selalu datang jam 07.30. Di dalam bus, saya selalu mendengarkan musik. Saya sangat suka pop Jepang. Jam 08.00 tiba di stasiun. Dari sini saya pindah naik kereta. Stasiunnya sangat luas dan ada banyak orang. Semuanya terlihat sibuk. Keretanya sangat ramai (padat). Saya berdiri di dalam kereta selama sekitar 30 menit. Saya tidak bisa duduk. Tapi, tidak apa-apa. Di dalam kereta saya selalu menghafal kosakata bahasa Jepang. Saya menulis kanji di buku catatan kecil untuk berlatih. Jam 08.40 tiba di stasiun Shinjuku. Katanya stasiun Shinjuku adalah stasiun terbesar di dunia. Karena pintunya ada banyak, terkadang saya tersesat. Dari stasiun ke sekolah saya berjalan lagi selama 10 menit. Di dekat sekolah ada taman yang indah. Di musim semi bunga sakura bermekaran. Di musim panas ada banyak pohon hijau. Jam 09.00 tepat saya sampai di sekolah. Pelajaran dimulai jam 09.15. Gurunya sangat baik dan cara mengajarnya bagus. Teman sekelas semuanya orang asing. Ada orang Amerika, Cina, Korea, dan Thailand. Kami semua belajar bahasa Jepang bersama-sama. Istirahat siang dimulai jam 12.15. Saya pergi ke minimarket terdekat bersama teman. Kami membeli bento atau onigiri. Kadang-kadang, kami makan udon di restoran. Pelajaran sore berakhir jam 15.30. Setelah sekolah selesai, kadang-kadang saya pergi ke perpustakaan. Karena perpustakaan tenang, bagus untuk belajar. Jam 05.00 saya keluar dari perpustakaan dan pulang ke rumah. Saat pulang pun saya naik bus dan kereta. Sampai di rumah sekitar jam 06.30. Ini adalah hari yang sangat panjang, tapi setiap hari sangat menyenangkan. Karena di masa depan saya ingin bekerja di Jepang, saya akan berusaha sungguh-sungguh setiap hari. Malam hari saya memasak makan malam sendiri. Jam 10 saya tidur. Semoga besok menjadi hari yang baik juga."
+      }
+    },
+    {
+      "id": "reading-n5-02",
+      "legacyId": 2,
+      "order": 2,
+      "level": "N5",
+      "levelLabel": "Basic/N5",
+      "slug": "n5-02-resutoran-no-arubaito",
+      "title": "Pengalaman Kerja Paruh Waktu di Restoran (Resutoran no Arubaito)",
+      "estimatedMinutes": 4,
+      "content": {
+        "japanese": "こんにちは。私はサキナです。今は日本の大学で勉強しています。日本の生活は楽しいですが、お金がたくさんかかります。ですから、私は先月からレストランでアルバイトを始めました。このレストランは新宿にあります。名前は「さくらキッチン」です。とてもきれいで、有名な店です。私のアルバイトは月曜日と水曜日と金曜日です。時間は夕方五時から夜十時までです。店に着くと、まずユニフォームに着替えます。それから、手をきれいに洗います。私の仕事は、お客さんにメニューを渡したり、料理を運んだりすることです。時々、テーブルをきれいに掃除します。お店にはいろいろなお客さんが来ます。家族や友達、会社員もいます。お客さんが店に入るとき、私は元気な声で「いらっしゃいませ」と言います。最初はとても緊張しました。日本語が上手ではありませんでしたから、注文を聞くのが難しかったです。でも、店の人はみんな親切です。店長は背が高くて、とても優しい人です。わからないことがあれば、いつも教えてくれます。ある日、外国人のお客さんが来ました。英語で質問されましたが、私は少し英語がわかりますから、答えました。店長は「サキナさん、すごいですね」と言いました。私はとても嬉しかったです。八時ごろ、店はとても忙しくなります。キッチンの中では料理を作る音が聞こえます。美味しそうな匂いもします。私は一生懸命走って料理を運びます。忙しいですが、やりがいがあります。十時に仕事が終わります。仕事の後で、店長が美味しい晩ごはんを作ってくれます。これを「まかない」と言います。昨日のまかないはカレーライスでした。とても美味しかったです。バイトが終わってから、電車で家へ帰ります。家に着くのは十一時ごろです。少し疲れますが、アルバイトのおかげで、日本語が上手になりました。新しい友達もたくさんできました。貯めたお金で、冬休みに北海道へ旅行に行きたいと思っています。これからも、勉強とアルバイトを頑張ります。",
+        "romaji": "Konnichiwa. Watashi wa Sakina desu. Ima wa Nihon no daigaku de benkyou shite imasu. Nihon no seikatsu wa tanoshii desu ga, okane ga takusan kakarimasu. Desukara, watashi wa sengetsu kara resutoran de arubaito o hajimemashita. Kono resutoran wa Shinjuku ni arimasu. Namae wa 'Sakura Kicchin' desu. Totemo kirei de, yuumeina mise desu. Watashi no arubaito wa getsuyoubi to suiyoubi to kinyoubi desu. Jikan wa yuugata go-ji kara yoru juuji made desu. Mise ni tsuku to, mazu yunifoomu ni kigaemasu. Sorekara, te o kirei ni araimasu. Watashi no shigoto wa, okyakusan ni menyuu o watashitari, ryouri o hakondari suru koto desu. Tokidoki, teeburu o kirei ni souji shimasu. Omise ni wa iroirona okyakusan ga kimasu. Kazoku ya tomodachi, kaishain mo imasu. Okyakusan ga mise ni hairu toki, watashi wa genkina koe de 'Irasshaimase' to iimasu. Saisho wa totemo kinchou shimashita. Nihongo ga jouzu dewa arimasen deshita kara, chuumon o kiku no ga muzukashikatta desu. Demo, mise no hito wa minna shinsetsu desu. Tenchou wa se ga takakute, totemo yasashii hito desu. Wakaranai koto ga areba, itsumo oshiete kuremasu. Aru hi, gaikokujin no okyakusan ga kimashita. Eigo de shitsumon saremashita ga, watashi wa sukoshi eigo ga wakarimasu kara, kotaemashita. Tenchou wa 'Sakina-san, sugoi desu ne' to iimashita. Watashi wa totemo ureshikatta desu. Hachiji goro, mise wa totemo isogashiku narimasu. Kicchin no naka dewa ryouri o tsukuru oto ga kikoemasu. Oishisouna nioi mo shimasu. Watashi wa isshoukenmei hashitte ryouri o hakobimasu. Isogashii desu ga, yarigai ga arimasu. Juuji ni shigoto ga owarimasu. Shigoto no ato de, tenchou ga oishii bangohan o tsukutte kuremasu. Kore o 'makanai' to iimasu. Kinou no makanai wa kareeraisu deshita. Totemo oishikatta desu. Baito ga owatte kara, densha de ie e kaerimasu. Ie ni tsuku no wa juuichiji goro desu. Sukoshi tsukaremasu ga, arubaito no okage de, nihongo ga jouzu ni narimashita. Atarashii tomodachi mo takusan dekimashita. Tameta okane de, fuyuyasumi ni Hokkaido e ryokou ni ikitai to omotte imasu. Korekara mo, benkyou to arubaito o ganbarimasu.",
+        "indonesia": "Halo. Nama saya Sakina. Sekarang saya sedang kuliah di universitas di Jepang. Kehidupan di Jepang menyenangkan, tapi memakan banyak biaya. Oleh karena itu, sejak bulan lalu saya mulai bekerja paruh waktu (arubaito) di sebuah restoran. Restoran ini terletak di Shinjuku. Namanya adalah 'Sakura Kitchen'. Tempatnya sangat bersih dan merupakan toko yang terkenal. Jadwal kerja paruh waktu saya adalah hari Senin, Rabu, dan Jumat. Waktunya dari jam 5 sore sampai jam 10 malam. Setibanya di toko, pertama-tama saya berganti pakaian ke seragam. Setelah itu, mencuci tangan sampai bersih. Pekerjaan saya adalah memberikan menu kepada pelanggan dan mengantarkan makanan. Kadang-kadang, saya membersihkan meja sampai bersih. Ada berbagai macam pelanggan yang datang ke toko. Ada keluarga, teman, dan juga karyawan kantor. Saat pelanggan masuk ke toko, saya mengucapkan 'Irasshaimase' (Selamat datang) dengan suara yang ceria. Awalnya saya sangat gugup. Karena bahasa Jepang saya belum mahir, sulit untuk mendengarkan pesanan. Tapi, orang-orang di toko semuanya baik. Manajer tokonya tinggi dan orangnya sangat ramah. Jika ada hal yang tidak saya mengerti, dia selalu mengajari saya. Suatu hari, ada pelanggan asing yang datang. Saya ditanya dalam bahasa Inggris, karena saya sedikit mengerti bahasa Inggris, saya menjawabnya. Manajer berkata, 'Sakina, kamu hebat ya'. Saya sangat senang. Sekitar jam 8, toko menjadi sangat sibuk. Di dalam dapur terdengar suara orang memasak. Tercium juga aroma yang lezat. Saya berlari dengan sungguh-sungguh untuk mengantarkan makanan. Melelahkan memang, tapi terasa bermakna. Jam 10 pekerjaan selesai. Setelah bekerja, manajer membuatkan makan malam yang lezat. Ini disebut 'makanai' (makan gratis untuk staf). Makanai kemarin adalah nasi kari. Rasanya sangat enak. Setelah baito selesai, saya pulang ke rumah naik kereta. Sampai di rumah sekitar jam 11 malam. Sedikit lelah, tapi berkat kerja paruh waktu ini, bahasa Jepang saya menjadi lebih pintar. Saya juga mendapat banyak teman baru. Dengan uang yang saya tabung, saya berniat pergi berwisata ke Hokkaido pada liburan musim dingin. Mulai sekarang, saya akan semangat belajar dan bekerja paruh waktu."
+      }
+    },
+    {
+      "id": "reading-n5-03",
+      "legacyId": 3,
+      "order": 3,
+      "level": "N5",
+      "levelLabel": "Basic/N5",
+      "slug": "n5-03-shumi-to-intaanetto-no-sekai",
+      "title": "Hobi dan Dunia Internet (Shumi to Intaanetto no Sekai)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "私の趣味はたくさんあります。でも、一番好きなことはインターネットを使うことです。私の部屋には新しいパソコンと黒いノートパソコンがあります。毎日、学校から帰ってから、すぐにパソコンをつけます。まず、YouTubeで日本の動画を見ます。特に、料理の動画や旅行の動画が大好きです。動画の日本語は少し速いですが、とても勉強になります。時々、面白い動画を見て、一人で笑います。それから、SNSで友達と話をします。インドネシアの友達や日本の友達と写真を見たり、メッセージを送ったりします。今はスマホがありますから、どこでもインターネットができて、とても便利です。夜、私は時々オンラインゲームをします。ゲームの中でいろいろな国の人に会います。英語や日本語を使って一緒に遊びます。ゲームは楽しいですが、時間がすぐ過ぎますから、気をつけなければなりません。また、私はブログも書いています。ブログには、日本での生活や食べた料理について書きます。先週、自分で作ったおにぎりの写真を載せました。たくさんの人が「いいね」を押してくれました。とても嬉しかったです。最近、インターネットで買い物をすることも多いです。先月、新しいヘッドホンをオンラインショップで買いました。店へ行く時間がありませんから、とても助かります。でも、インターネットばかり使うのはよくありません。目は疲れますし、運動も大切です。ですから、週末はパソコンを使いません。外へ出て、友達とサッカーをしたり、写真を撮ったりします。インターネットはとても便利で面白い道具ですが、使い方が大切だと思います。皆さんは、インターネットで何をしますか。今度、皆さんの好きなウェブサイトを教えてください。今日はこれから新しい動画を作ります。明日の朝、ブログに載せるつもりです。楽しみにしていてください。",
+        "romaji": "Watashi no shumi wa takusan arimasu. Demo, ichiban suki na koto wa intaanetto o tsukau koto desu. Watashi no heya ni wa atarashii pasokon to kuroi nooto pasokon ga arimasu. Mainichi, gakkou kara kaette kara, sugu ni pasokon o tsukemasu. Mazu, YouTube de Nihon no douga o mimasu. Tokuni, ryouri no douga ya ryokou no douga ga daisuki desu. Douga no nihongo wa sukoshi hayai desu ga, totemo benkyou ni narimasu. Tokidoki, omoshiroi douga o mite, hitori de waraimasu. Sorekara, SNS de tomodachi to hanashi o shimasu. Indonesia no tomodachi ya Nihon no tomodachi to shashin o mitari, messeeji o okuttari shimasu. Ima wa sumaho ga arimasu kara, doko demo intaanetto ga dekite, totemo benri desu. Yoru, watashi wa tokidoki onrain geemu o shimasu. Geemu no naka de iroirona kuni no hito ni aimasu. Eigo ya nihongo o tsukatte issho ni asobimasu. Geemu wa tanoshii desu ga, jikan ga sugu sugimasu kara, ki o tsukenakereba narimasen. Mata, watashi wa burogu mo kaite imasu. Burogu ni wa, Nihon de no seikatsu ya tabeta ryouri ni tsuite kakimasu. Senshuu, jibun de tsukutta onigiri no shashin o nosemashita. Takusan no hito ga 'iine' o oshite kuremashita. Totemo ureshikatta desu. Saikin, intaanetto de kaimono o suru koto mo ooi desu. Sengetsu, atarashii heddohon o onrain shoppu de kaimashita. Mise e iku jikan ga arimasen kara, totemo tasukarimasu. Demo, intaanetto bakari tsukau no wa yoku arimasen. Me wa tsukaremasu shi, undou mo taisetsu desu. Desukara, shuumatsu wa pasokon o tsukaimasen. Soto e dete, tomodachi to sakkaa o shitari, shashin o tottari shimasu. Intaanetto wa totemo benri de omoshiroi dougu desu ga, tsukaikata ga taisetsu da to omoimasu. Minasan wa, intaanetto de nani o shimasu ka. Kondo, minasan no suki na uebusaito o oshiete kudasai. Kyou wa korekara atarashii douga o tsukurimasu. Ashita no asa, burogu ni noseru tsumori desu. Tanoshimi ni shite ite kudasai.",
+        "indonesia": "Hobi saya ada banyak. Tapi, hal yang paling saya sukai adalah menggunakan internet. Di kamar saya ada komputer baru dan laptop hitam. Setiap hari, setelah pulang sekolah, saya segera menyalakan komputer. Pertama, saya menonton video Jepang di YouTube. Terutama, saya sangat suka video memasak dan video perjalanan. Bahasa Jepang di video sedikit cepat, tapi sangat membantu untuk belajar. Kadang-kadang, saya menonton video lucu dan tertawa sendiri. Setelah itu, saya mengobrol dengan teman di media sosial (SNS). Saya melihat foto atau mengirim pesan kepada teman-teman di Indonesia maupun teman di Jepang. Karena sekarang ada smartphone, saya bisa berinternet di mana saja, sangat praktis. Malam hari, kadang-kadang saya bermain game online. Di dalam game saya bertemu orang-orang dari berbagai negara. Kami bermain bersama menggunakan bahasa Inggris dan bahasa Jepang. Game itu menyenangkan, tapi karena waktu berlalu begitu cepat, saya harus berhati-hati. Selain itu, saya juga menulis blog. Di blog, saya menulis tentang kehidupan di Jepang atau makanan yang saya makan. Minggu lalu, saya memposting foto onigiri yang saya buat sendiri. Banyak orang menekan tombol 'Like'. Saya sangat senang. Belakangan ini, saya juga sering berbelanja lewat internet. Bulan lalu, saya membeli headphone baru di toko online. Karena saya tidak punya waktu untuk pergi ke toko, ini sangat membantu. Namun, terlalu sering menggunakan internet saja tidak baik. Mata menjadi lelah, dan olahraga juga penting. Oleh karena itu, pada akhir pekan saya tidak menggunakan komputer. Saya pergi keluar, bermain sepak bola dengan teman, atau mengambil foto. Internet adalah alat yang sangat praktis dan menarik, tapi menurut saya cara menggunakannya sangat penting. Apa yang kalian lakukan di internet? Lain kali, tolong beri tahu saya situs web favorit kalian. Hari ini, setelah ini saya akan membuat video baru. Besok pagi, saya berniat mempostingnya di blog. Mohon dinantikan."
+      }
+    },
+    {
+      "id": "reading-n5-04",
+      "legacyId": 4,
+      "order": 4,
+      "level": "N5",
+      "levelLabel": "Basic/N5",
+      "slug": "n5-04-mainichi-no-kenkou-na-seikatsu",
+      "title": "Hidup Sehat Setiap Hari (Mainichi no Kenkou na Seikatsu)",
+      "estimatedMinutes": 4,
+      "content": {
+        "japanese": "皆さんは、毎日元気に過ごしていますか。健康は一番大切だと思います。私は毎日、健康のためにいろいろなことをしています。まず、朝早く起きます。毎朝五時半に起きて、窓を開けます。新しい空気を吸うと、とても気持ちがいいです。それから、三十分くらい近くの公園を散歩します。公園には花や木がたくさんあります。時々、他の人と「おはようございます」と挨拶をします。散歩の後で、家でラジオ体操をします。これは日本の有名な体操です。体が軽くなります。次に、朝ご飯をしっかり食べます。私は毎日、野菜サラダと果物とヨーグルトを食べます。砂糖はあまり使いません。飲み物は水かお茶です。コーヒーも飲みますが、一日に二杯までです。仕事や学校へ行くとき、私はできるだけ歩きます。エレベーターを使いません。階段を使います。足が少し疲れますが、いい運動になります。午後、仕事の間に少しストレッチをします。ずっと座っていると、腰や肩が痛くなりますから、気をつけなければなりません。夜は自分で晩ご飯を作ります。魚や豆腐をたくさん食べます。日本の料理は油が少ないですから、健康にとてもいいです。夜九時にお風呂に入ります。お風呂の中でゆっくり休みます。疲れが取れます。寝る前に一時間くらい本を読みます。スマホは見ません。スマホの光は目に良くないですから。そして、十時半に寝ます。毎日八時間くらい寝ます。十分な睡眠はとても大切です。時々、体調が悪くなります。頭が痛かったり、熱があったりするときは、無理をしないで休みます。すぐに病院へ行って、薬をもらいます。皆さんも、自分の体を大切にしてください。たくさん食べて、よく動いて、しっかり寝てください。健康な体があれば、毎日がもっと楽しくなります。これからも、この習慣を続けたいと思っています。皆さんの健康法は何ですか。今度教えてください。",
+        "romaji": "Minasan wa, mainichi genki ni sugoshite imasu ka. Kenkou wa ichiban taisetsu da to omoimasu. Watashi wa mainichi, kenkou no tame ni iroirona koto o shite imasu. Mazu, asa hayaku okimasu. Maiasa gojihann ni okite, mado o akemasu. Atarashii kuuki o suu to, totemo kimochi ga ii desu. Sorekara, sanjuppun kurai chikaku no kouen o sanpo shimasu. Kouen ni wa hana ya ki ga takusan arimasu. Tokidoki, hoka no hito to 'Ohayou gozaimasu' to aisatsu o shimasu. Sanpo no ato de, ie de rajio taisou o shimasu. Kore wa Nihon no yuumeina taisou desu. Karada ga karuku narimasu. Tsugi ni, asagohan o shikkari tabemasu. Watashi wa mainichi, yasai sarada to kudamono to yooguruto o tabemasu. Satou wa amari tsukaimasen. Nomimono wa mizu ka ocha desu. Koohii mo nomimasu ga, ichinichi ni nihai made desu. Shigoto ya gakkou e iku toki, watashi wa dekiru dake arukimasu. Erebeetaa o tsukaimasen. Kaidan o tsukaimasu. Ashi ga sukoshi tsukaremasu ga, ii undou ni narimasu. Gogo, shigoto no aida ni sukoshi sutoretchi o shimasu. Zutto suwatte iru to, koshi ya kata ga itaku narimasu kara, ki o tsukenakereba narimasen. Yoru wa jibun de bangohan o tsukurimasu. Sakana ya toufu o takusan tabemasu. Nihon no ryouri wa abura ga sukunai desu kara, kenkou ni totemo ii desu. Yoru kuji ni ofuro ni hairimasu. Ofuro no naka de yukkuri yasumimasu. Tsukare ga toremasu. Neru mae ni ichijikan kurai hon o yomimasu. Sumaho wa mimasen. Sumaho no hikari wa me ni yokunai desu kara. Soshite, juujihan ni nemasu. Mainichi hachijikan kurai nemasu. Juubunna suimin wa totemo taisetsu desu. Tokidoki, taichou ga waruku narimasu. Atama ga itakattari, netsu ga attari suru toki wa, muri o shinaide yasumimasu. Sugu ni byouin e itte, kusuri o moraimasu. Minasan mo, jibun no karada o taisetsu ni shite kudasai. Takusan tabete, yoku ugoite, shikkari nete kudasai. Kenkou na karada ga areba, mainichi ga motto tanoshiku narimasu. Korekara mo, kono shuukan o tsuzuketai to omotte imasu. Minasan no kenkouhou wa nan desu ka. Kondo oshiete kudasai.",
+        "indonesia": "Apakah kalian semua menjalani hari dengan semangat setiap hari? Menurut saya, kesehatan adalah hal yang paling penting. Setiap hari, saya melakukan berbagai hal demi kesehatan. Pertama, saya bangun pagi-pagi. Setiap pagi saya bangun jam 05.30 dan membuka jendela. Menghirup udara segar rasanya sangat menyenangkan. Setelah itu, saya jalan santai di taman terdekat selama sekitar 30 menit. Di taman ada banyak bunga dan pohon. Kadang-kadang saya menyapa orang lain dengan mengucapkan 'Selamat pagi'. Setelah jalan santai, saya melakukan senam radio (radio taisou) di rumah. Ini adalah senam yang terkenal di Jepang. Tubuh menjadi terasa ringan. Selanjutnya, saya sarapan dengan baik. Setiap hari saya makan salad sayur, buah-buahan, dan yogurt. Saya tidak terlalu banyak menggunakan gula. Minumannya adalah air putih atau teh. Saya juga minum kopi, tapi hanya sampai dua cangkir sehari. Saat pergi bekerja atau sekolah, sebisa mungkin saya berjalan kaki. Saya tidak menggunakan lift. Saya menggunakan tangga. Kaki memang sedikit lelah, tapi itu menjadi olahraga yang bagus. Siang hari, di sela-sela pekerjaan saya melakukan peregangan sedikit. Jika duduk terus-menerus, pinggang dan bahu akan menjadi sakit, jadi harus berhati-hati. Malam hari saya memasak makan malam sendiri. Saya banyak makan ikan dan tahu. Karena masakan Jepang sedikit menggunakan minyak, itu sangat bagus untuk kesehatan. Jam 9 malam saya mandi berendam. Saya beristirahat dengan santai di dalam bak mandi. Rasa lelah pun hilang. Sebelum tidur saya membaca buku sekitar satu jam. Saya tidak melihat smartphone. Karena cahaya smartphone tidak baik untuk mata. Lalu, saya tidur jam 10.30. Setiap hari saya tidur sekitar 8 jam. Tidur yang cukup sangatlah penting. Kadang-kadang, kondisi tubuh menjadi buruk. Saat kepala sakit atau demam, saya beristirahat dan tidak memaksakan diri. Saya segera pergi ke rumah sakit dan mendapatkan obat. Kalian semua juga, tolong jaga tubuh kalian baik-baik. Makanlah yang banyak, banyaklah bergerak, dan tidurlah yang cukup. Jika memiliki tubuh yang sehat, setiap hari akan menjadi lebih menyenangkan. Mulai sekarang, saya ingin melanjutkan kebiasaan ini. Apa tips kesehatan kalian? Tolong beri tahu saya kapan-kapan."
+      }
+    },
+    {
+      "id": "reading-n5-05",
+      "legacyId": 5,
+      "order": 5,
+      "level": "N5",
+      "levelLabel": "Basic/N5",
+      "slug": "n5-05-nihon-no-shiki-to-matsuri",
+      "title": "Empat Musim dan Perayaan di Jepang (Nihon no Shiki to Matsuri)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "日本には四季があります。春、夏、秋、冬です。それぞれの季節はとても違います。まず、春は三月から五月までです。私は春が一番好きです。暖かいですから、散歩にいいです。春になると、桜の花が咲きます。とてもきれいです。日本の人は家族や友達と一緒に公園へ行きます。桜の下でご飯を食べたり、お酒を飲みたりします。これを「お花見」と言います。次に、夏は六月から八月までです。日本の夏はとても暑いです。そして、雨がたくさん降ります。これを「梅雨」と言います。夏休みには、たくさんのお祭りがあります。私は去年、友達と東京のお祭りに行きました。みんな「浴衣」を着ていました。夜、空に大きい花火が見えました。とても美しかったです。秋は九月から十一月までです。涼しくて、とても気持ちがいい季節です。山の木の色が赤や黄色になります。これを「紅葉」と言います。秋は食べ物も美味しいです。魚や果物やきのこがたくさんあります。私は秋に山へ行って、写真を撮るのが大好きです。最後に、冬は十二月から二月までです。とても寒いです。北の方は雪が降ります。私はスキーをしたことがありませんが、いつか北海道でスキーをしたいです。冬には「お正月」があります。日本の一番大切な休みです。一月一日に、神社へ行って、家族の健康を祈ります。そして、「おせち料理」という特別な料理を食べます。子供たちは大人から「お年玉」をもらいます。とても嬉しそうです。日本の四季はどれも素晴らしいです。季節によって、服や食べ物が変わります。皆さんの国には四季がありますか。どの季節が一番好きですか。今度、皆さんの国の有名な祭りについて教えてください。私はもっといろいろな国のことを知りたいです。明日は友達と冬休みの計画を立てるつもりです。冬の旅行もとても楽しみにしています。",
+        "romaji": "Nihon ni wa shiki ga arimasu. Haru, natsu, aki, fuyu desu. Sorezore no kisetsu wa totemo chigaimasu. Mazu, haru wa sangatsu kara gogatsu made desu. Watashi wa haru ga ichiban suki desu. Atatakai desu kara, sanpo ni ii desu. Haru ni naru to, sakura no hana ga sakimasu. Totemo kirei desu. Nihon no hito wa kazoku ya tomodachi to issho ni kouen e ikimasu. Sakura no shita de gohan o tabetari, osake o nomitari shimasu. Kore o 'Ohanami' to iimasu. Tsugi ni, natsu wa rokugatsu kara hachigatsu made desu. Nihon no natsu wa totemo atsui desu. Soshite, ame ga takusan furimasu. Kore o 'Tsuyu' to iimasu. Natsuyasumi ni wa, takusan no omatsuri arimasu. Watashi wa kyonen, tomodachi to Toukyou no omatsuri ni ikimashita. Minna 'Yukata' o kite imashita. Yoru, sora ni ookii hanabi ga miemashita. Totemo utsukushikatta desu. Aki wa kugatsu kara juuichigatsu made desu. Suzushikute, totemo kimochi ga ii kisetsu desu. Yama no ki no iro ga aka ya kiiro ni narimasu. Kore o 'Kouyou' to iimasu. Aki wa tabemono mo oishii desu. Sakana ya kudamono ya kinoko ga takusan arimasu. Watashi wa aki ni yama e itte, shashin o toru no ga daisuki desu. Saigo ni, fuyu wa juunigatsu kara nigatsu made desu. Totemo samui desu. Kita no hou wa yuki ga furimasu. Watashi wa sukii o shita koto ga arimasen ga, itsuka Hokkaido de sukii o shitai desu. Fuyu ni wa 'Oshougatsu' ga arimasu. Nihon no ichiban taisetsu na yasumi desu. Ichigatsu tsuitachi ni, jinja e itte, kazoku no kenkou o inorimasu. Soshite, 'Osechi ryouri' to iu tokubetsu na ryouri o tabemasu. Kodomotachi wa otona kara 'Otoshidama' o moraimasu. Totemo ureshisou desu. Nihon no shiki wa dore mo subarashii desu. Kisetsu ni yotte, fuku ya tabemono ga kawarimasu. Minasan no kuni ni wa shiki ga arimasu ka. Dono kisetsu ga ichiban suki desu ka. Kondo, minasan no kuni no yuumeina matsuri ni tsuite oshiete kudasai. Watashi wa motto iroirona kuni no koto o shiritai desu. Ashita wa tomodachi to fuyuyasumi no keikaku o tateru tsumori desu. Fuyu no ryokou mo totemo tanoshimi ni shite imasu.",
+        "indonesia": "Di Jepang ada empat musim. Musim semi, panas, gugur, dan dingin. Masing-masing musim sangat berbeda. Pertama, musim semi dari bulan Maret sampai Mei. Saya paling suka musim semi. Karena hangat, sangat bagus untuk jalan santai. Saat musim semi tiba, bunga sakura bermekaran. Sangat indah. Orang Jepang pergi ke taman bersama keluarga atau teman. Mereka makan atau minum sake di bawah pohon sakura. Ini disebut 'Ohanami'. Selanjutnya, musim panas dari bulan Juni sampai Agustus. Musim panas di Jepang sangat panas. Lalu, hujan turun dengan lebat. Ini disebut 'Tsuyu' (musim hujan). Di liburan musim panas, ada banyak festival. Tahun lalu, saya pergi ke festival di Tokyo bersama teman. Semuanya memakai 'Yukata'. Malam harinya, terlihat kembang api besar di langit. Sangat indah. Musim gugur dari bulan September sampai November. Ini adalah musim yang sejuk dan terasa sangat nyaman. Warna pepohonan di gunung berubah menjadi merah atau kuning. Ini disebut 'Kouyou'. Di musim gugur, makanan juga enak. Ada banyak ikan, buah-buahan, dan jamur. Saya sangat suka pergi ke gunung pada musim gugur untuk mengambil foto. Terakhir, musim dingin dari bulan Desember sampai Februari. Sangat dingin. Di bagian utara turun salju. Saya belum pernah bermain ski, tapi suatu saat saya ingin bermain ski di Hokkaido. Di musim dingin ada 'Oshougatsu' (Tahun Baru). Ini adalah hari libur terpenting di Jepang. Pada tanggal 1 Januari, orang-orang pergi ke kuil Shinto untuk mendoakan kesehatan keluarga. Lalu, mereka memakan masakan spesial yang disebut 'Osechi ryouri'. Anak-anak mendapatkan 'Otoshidama' (uang amplop tahun baru) dari orang dewasa. Mereka terlihat sangat senang. Semua musim di Jepang sangat luar biasa. Tergantung musimnya, pakaian dan makanan pun berubah. Apakah di negara kalian ada empat musim? Musim mana yang paling kalian sukai? Lain kali, tolong beri tahu saya tentang festival terkenal di negara kalian. Saya ingin tahu lebih banyak tentang berbagai negara. Besok saya berniat membuat rencana liburan musim dingin bersama teman. Saya juga sangat menantikan perjalanan musim dingin."
+      }
+    },
+    {
+      "id": "reading-n5-06",
+      "legacyId": 6,
+      "order": 6,
+      "level": "N5",
+      "levelLabel": "Basic/N5",
+      "slug": "n5-06-nihon-no-norimono",
+      "title": "Transportasi di Jepang (Nihon no Norimono)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "日本の乗り物はとても便利です。電車やバスやタクシーがたくさんあります。私は毎日電車で学校へ行きます。日本の電車は時間が正確です。一分も遅れませんから、とてもすごいです。駅には階段やエレベーターがあります。駅員さんはいつも親切です。私は時々新幹線に乗ります。新幹線はとても速くて、きれいです。窓から富士山が見えるとき、とても嬉しいです。タクシーは少し高いですが、夜遅いときは便利です。自転車に乗っている人も多いです。道はきれいですから、自転車は気持ちがいいです。",
+        "romaji": "Nihon no norimono wa totemo benri desu. Densha ya basu ya takushii ga takusan arimasu. Watashi wa mainichi densha de gakkou e ikimasu. Nihon no densha wa jikan ga seikaku desu. Ippun mo okuremasen kara, totemo sugoi desu. Eki ni wa kaidan ya erebeetaa ga arimasu. Ekiinsan wa itsumo shinsetsu desu. Watashi wa tokidoki shinkansen ni norimasu. Shinkansen wa totemo hayakute, kirei desu. Mado kara Fujisan ga mieru toki, totemo ureshii desu. Takushii wa sukoshi takai desu ga, yoru osoi toki wa benri desu. Jitensha ni notte iru hito mo ooi desu. Michi wa kirei desu kara, jitensha wa kimochi ga ii desu.",
+        "indonesia": "Transportasi di Jepang sangat praktis. Ada banyak kereta, bus, dan taksi. Saya pergi ke sekolah naik kereta setiap hari. Kereta di Jepang waktunya sangat akurat. Tidak terlambat meski satu menit pun, jadi sangat hebat. Di stasiun ada tangga dan lift. Petugas stasiun selalu ramah. Kadang-kadang saya naik Shinkansen. Shinkansen sangat cepat dan bersih. Saat Gunung Fuji terlihat dari jendela, saya sangat senang. Taksi sedikit mahal, tapi praktis saat malam larut. Banyak juga orang yang naik sepeda. Karena jalannya bersih, naik sepeda terasa menyenangkan."
+      }
+    },
+    {
+      "id": "reading-n5-07",
+      "legacyId": 7,
+      "order": 7,
+      "level": "N5",
+      "levelLabel": "Basic/N5",
+      "slug": "n5-07-nihon-no-ryouri",
+      "title": "Masakan Jepang (Nihon no Ryouri)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "私は日本料理が大好きです。特に寿司と天ぷらが好きです。寿司にはいろいろな魚があります。魚は新しくて、美味しいです。天ぷらはエビや野菜の料理です。サクサクしています。日本では食べる前に「いただきます」と言います。そして、食べた後に「ごちそうさまでした」と言います。これは大切なマナーです。箸を使って食べますが、最初は難しかったです。でも、今は上手になりました。日本のカレーも美味しいです。インドネシアのカレーと違いますが、甘くて大好きです。毎日美味しいものを食べて、幸せです。",
+        "romaji": "Watashi wa Nihon ryouri ga daisuki desu. Tokuni sushi to tenpura ga suki desu. Sushi ni wa iroirona sakana ga arimasu. Sakana wa atarashikute, oishii desu. Tenpura wa ebi ya yasai no ryouri desu. Sakusaku shite imasu. Nihon de wa taberu mae ni 'itadakimasu' to iimasu. Soshite, tabeta ato ni 'gochisousama deshita' to iimasu. Kore wa taisetsu na manaa desu. Hashi o tsukatte tabemasu ga, saisho wa muzukashikatta desu. Demo, ima wa jouzu ni narimashita. Nihon no karee mo oishii desu. Indonesia no karee to chigaimasu ga, amakute daisuki desu. Mainichi oishii mono o tabete, shiawase desu.",
+        "indonesia": "Saya sangat suka masakan Jepang. Terutama sushi dan tempura. Di sushi ada berbagai macam ikan. Ikannya segar dan enak. Tempura adalah masakan udang dan sayuran. Teksturnya renyah. Di Jepang, sebelum makan kita mengucapkan 'itadakimasu'. Dan setelah makan mengucapkan 'gochisousama deshita'. Ini adalah tata krama yang penting. Saya makan menggunakan sumpit, awalnya sulit. Tapi sekarang sudah mahir. Kari Jepang juga enak. Berbeda dengan kari Indonesia, tapi manis dan saya sangat suka. Setiap hari makan makanan enak, saya bahagia."
+      }
+    },
+    {
+      "id": "reading-n5-08",
+      "legacyId": 8,
+      "order": 8,
+      "level": "N5",
+      "levelLabel": "Basic/N5",
+      "slug": "n5-08-toshokan-de-benkyou",
+      "title": "Belajar di Perpustakaan (Toshokan de Benkyou)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "今日は土曜日です。学校はありませんが、図書館へ行きます。来週、テストがありますから、たくさん勉強しなければなりません。図書館はとても静かです。たくさんの本や辞書があります。私は窓の近くの席に座りました。ここは明るくて、集中できます。漢字の練習をしたり、文法を読んだりしました。二時間勉強してから、少し休みました。自動販売機で冷たいお茶を買いました。日本の自動販売機はどこにでもあります。とても便利です。午後、友達も図書館に来ました。一緒に難しい問題を考えました。一人で勉強するより楽しいです。",
+        "romaji": "Kyou wa nichiyoubi desu. Gakkou wa arimasen ga, toshokan e ikimasu. Raishuu, tesuto ga arimasu kara, takusan benkyou shinakereba narimasen. Toshokan wa totemo shizuka desu. Takusan no hon ya jisho ga arimasu. Watashi wa mado no chikaku no seki ni suwarimashita. Koko wa akarukute, shuuchuu dekimasu. Kanji no renshuu o shitari, bunpou o yondari shimashita. Nijikan benkyou shite kara, sukoshi yasumimashita. Jidou hanbaiki de tsumetai ocha o kaimashita. Nihon no jidou hanbaiki wa doko ni demo arimasu. Totemo benri desu. Gogo, tomodachi mo toshokan ni kimashita. Issho ni muzukashii mondai o kangaemashita. Hitori de benkyou suru yori tanoshii desu.",
+        "indonesia": "Hari ini hari Sabtu. Tidak ada sekolah, tapi saya pergi ke perpustakaan. Karena minggu depan ada ujian, saya harus belajar banyak. Perpustakaan sangat tenang. Ada banyak buku dan kamus. Saya duduk di kursi dekat jendela. Di sini terang dan bisa konsentrasi. Saya berlatih kanji dan membaca tata bahasa. Setelah belajar dua jam, saya istirahat sebentar. Saya membeli teh dingin di mesin penjual otomatis. Mesin penjual otomatis Jepang ada di mana-mana. Sangat praktis. Siang hari, teman saya juga datang ke perpustakaan. Kami memikirkan soal sulit bersama. Lebih menyenangkan daripada belajar sendirian."
+      }
+    },
+    {
+      "id": "reading-n5-09",
+      "legacyId": 9,
+      "order": 9,
+      "level": "N5",
+      "levelLabel": "Basic/N5",
+      "slug": "n5-09-haha-no-tanjoubi",
+      "title": "Ulang Tahun Ibu (Haha no Tanjoubi)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "明日は母の誕生日です。私はデパートへプレゼントを買いに行きました。母は花が大好きですから、きれいな花を買いました。それから、赤い帽子も買いました。母は赤が好きです。デパートには人がたくさんいて、とても賑やかでした。夜、私はケーキを作りました。料理はあまり上手ではありませんが、頑張りました。母はきっと喜んでくれると思います。明日の夜は家族みんなでパーティーをします。美味しい料理を食べて、歌を歌います。私は母に「いつもありがとう」と言いたいです。プレゼントを渡すのが楽しみです。",
+        "romaji": "Ashita wa haha no tanjoubi desu. Watashi wa depaato e purezento o kai ni ikimashita. Haha wa hana ga daisuki desu kara, kireina hana o kaimashita. Sorekara, akai boushi mo kaimashita. Haha wa aka ga suki desu. Depaato ni wa hito ga takusan ite, totemo nigiyaka deshita. Yoru, watashi wa keeki o tsukurimashita. Ryouri wa amari jouzu dewa arimasen ga, ganbarimashita. Haha wa kitto yorokonde kureru to omoimasu. Ashita no yoru wa kazoku minna de paatii o shimasu. Oishii ryouri o tabete, uta o utaimasu. Watashi wa haha ni 'itsumo arigatou' to iitai desu. Purezento o watasu no ga tanoshimi desu.",
+        "indonesia": "Besok adalah hari ulang tahun ibu. Saya pergi ke department store untuk membeli hadiah. Karena ibu sangat suka bunga, saya membeli bunga yang indah. Lalu, saya juga membeli topi merah. Ibu suka warna merah. Di department store ada banyak orang dan sangat ramai. Malam harinya, saya membuat kue. Saya tidak terlalu pandai memasak, tapi saya sudah berusaha. Saya yakin ibu pasti akan senang. Besok malam kami sekeluarga akan berpesta. Makan makanan enak dan menyanyi lagu. Saya ingin mengucapkan 'terima kasih untuk selalu ada' kepada ibu. Saya tidak sabar memberikan hadiahnya."
+      }
+    },
+    {
+      "id": "reading-n5-10",
+      "legacyId": 10,
+      "order": 10,
+      "level": "N5",
+      "levelLabel": "Basic/N5",
+      "slug": "n5-10-watashi-no-petto",
+      "title": "Binatang Peliharaan (Watashi no Petto)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "私の家には犬がいます。名前は「ぽん」です。白い犬で、耳が大きいです。ぽんはとても元気で、毎日公園へ散歩に行きます。ぽんは走るのがとても速いです。私は時々追いかけますが、すぐ疲れます。ぽんは肉が大好きで、野菜はあまり食べません。夜、私が勉強しているとき、ぽんは私の足元で寝ています。とても可愛いです。家族はみんなぽんが大好きです。動物と一緒に住むのは楽しいです。時々大変ですが、毎日が明るくなります。将来、もう一匹猫を飼いたいです。犬と猫が仲良く遊ぶのを見たいです。",
+        "romaji": "Watashi no ie ni wa inu ga arimasu. Namae wa 'Pon' desu. Shiroi inu de, mimi ga ookii desu. Pon wa totemo genki de, mainichi kouen e sanpo ni ikimasu. Pon wa hashiru no ga totemo hayai desu. Watashi wa tokidoki oikakemasu ga, sugu tsukaremu. Pon wa niku ga daisuki de, yasai wa amari tabemasen. Yoru, watashi ga benkyou shite iru toki, Pon wa watashi no ashimoto de nete imasu. Totemo kawaii desu. Kazoku wa minna Pon ga daisuki desu. Doubutsu to issho ni sumu no wa tanoshii desu. Tokidoki taihen desu ga, mainichi ga akaruku narimasu. Shourai, mou ippiki neko o kaitai desu. Inu to neko ga nakayoku asobu no o mitai desu.",
+        "indonesia": "Di rumah saya ada anjing. Namanya 'Pon'. Anjing putih dengan telinga besar. Pon sangat lincah, setiap hari kami pergi jalan-jalan ke taman. Pon berlarinya sangat cepat. Kadang-kadang saya mengejarnya, tapi cepat lelah. Pon sangat suka daging, dan tidak terlalu suka sayur. Malam hari saat saya sedang belajar, Pon tidur di dekat kaki saya. Sangat lucu. Semua anggota keluarga sangat sayang Pon. Tinggal bersama hewan peliharaan itu menyenangkan. Kadang merepotkan, tapi hari-hari jadi lebih ceria. Di masa depan, saya ingin memelihara satu ekor kucing lagi. Saya ingin melihat anjing dan kucing bermain dengan rukun."
+      }
+    },
+    {
+      "id": "reading-n5-11",
+      "legacyId": 11,
+      "order": 11,
+      "level": "N5",
+      "levelLabel": "Basic/N5",
+      "slug": "n5-11-nihon-no-natsu",
+      "title": "Musim Panas di Jepang (Nihon no Natsu)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "日本の夏はとても暑いです。六月から八月までです。私は毎日たくさん水を飲みます。夏休みには、海へ行きます。海で泳いだり、写真を撮ったりします。日本の夏はお祭りも多いです。夜、きれいな花火が見えます。私は浴衣を着て、友達と一緒にお祭りへ行きました。とても楽しかったです。",
+        "romaji": "Nihon no natsu wa totemo atsui desu. Rokugatsu kara hachigatsu made desu. Watashi wa mainichi takusan mizu o nomimasu. Natsuyasumi ni wa, umi e ikimasu. Umi de oyogidari, shashin o tottari shimasu. Nihon no natsu wa omatsuri mo ooi desu. Yoru, kireina hanabi ga miemasu. Watashi wa yukata o kite, tomodachi to issho ni omatsuri e ikimashita. Totemo tanoshikatta desu.",
+        "indonesia": "Musim panas di Jepang sangat panas. Dari Juni sampai Agustus. Setiap hari saya minum banyak air. Saat liburan musim panas, saya pergi ke laut. Saya berenang dan mengambil foto di laut. Musim panas di Jepang juga banyak festival. Malam hari, terlihat kembang api yang indah. Saya memakai yukata dan pergi ke festival bersama teman. Sangat menyenangkan."
+      }
+    },
+    {
+      "id": "reading-n5-12",
+      "legacyId": 12,
+      "order": 12,
+      "level": "N5",
+      "levelLabel": "Basic/N5",
+      "slug": "n5-12-shashin-no-shumi",
+      "title": "Hobi Fotografi (Shashin no Shumi)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "私の趣味は写真を撮ることです。去年、新しいカメラを買いました。週末、いろいろな場所へ行って、写真を撮ります。先週は、上野公園へ行きました。公園には花や動物がたくさんいました。私はパンダの写真を撮りました。とても可愛かったです。将来、世界中を旅行して、きれいな景色を撮りたいです。",
+        "romaji": "Watashi no shumi wa shashin o toru koto desu. Kyonen, atarashii kamera o kaimashita. Shuumatsu, iroirona basho e itte, shashin o torimausu. Senshuu wa, Ueno kouen e ikimashita. Kouen ni wa hana ya doubutsu ga takusan imashita. Watashi wa panda no shashin o torimashita. Totemo kawaikatta desu. Shourai, sekaijuu o ryokou shite, kireina keshiki o toritai desu.",
+        "indonesia": "Hobi saya adalah mengambil foto. Tahun lalu, saya membeli kamera baru. Akhir pekan, saya pergi ke berbagai tempat dan mengambil foto. Minggu lalu, saya pergi ke taman Ueno. Di taman ada banyak bunga dan hewan. Saya mengambil foto panda. Sangat lucu. Di masa depan, saya ingin keliling dunia dan memotret pemandangan indah."
+      }
+    },
+    {
+      "id": "reading-n5-13",
+      "legacyId": 13,
+      "order": 13,
+      "level": "N5",
+      "levelLabel": "Basic/N5",
+      "slug": "n5-13-tomodachi-e-no-tegami",
+      "title": "Surat untuk Teman (Tomodachi e no Tegami)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "お元気ですか。私は今、日本で日本語を勉強しています。クラスメートはみんな親切です。毎日、漢字を練習します。昨日は、友達と新宿で買い物をしました。青いセーターを買いました。とても安かったです。それから、一緒にピザを食べました。とても美味しかったです。またあなたに会いたいです。お返事を待っています。",
+        "romaji": "Ogenki desu ka. Watashi wa ima, Nihon de nihongo o benkyou shite imasu. Kurasumeeto wa minna shinsetsu desu. Mainichi, kanji o renshuu shimasu. Kinou wa, tomodachi to Shinjuku de kaimono o shimashita. Aoi seetaa o kaimashita. Totemo yasukatta desu. Sorekara, issho ni piza o tabemashita. Totemo oishikatta desu. Mata anata ni aitai desu. Ohenji o matte imasu.",
+        "indonesia": "Apa kabar? Saya sekarang sedang belajar bahasa Jepang di Jepang. Teman sekelas semuanya baik. Setiap hari saya berlatih kanji. Kemarin, saya belanja di Shinjuku bersama teman. Saya membeli sweter biru. Harganya sangat murah. Setelah itu, kami makan pizza bersama. Rasanya sangat enak. Saya ingin bertemu Anda lagi. Menunggu balasanmu."
+      }
+    },
+    {
+      "id": "reading-n5-14",
+      "legacyId": 14,
+      "order": 14,
+      "level": "N5",
+      "levelLabel": "Basic/N5",
+      "slug": "n5-14-ryouri-no-benkyou",
+      "title": "Belajar Memasak (Ryouri no Benkyou)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "私は料理があまり上手ではありません。ですから、時々母に習います。昨日は肉じゃがを作りました。ジャガイモと肉と人参を使います。少し難しかったですが、味は良かったです。家族は「美味しい」と言って、全部食べました。私はとても嬉しかったです。次は、美味しい魚の料理を作ってみたいです。",
+        "romaji": "Watashi wa ryouri ga amari jouzu dewa arimasen. Desukara, tokidoki haha ni naraimasu. Kinou wa nikujaga o tsukurimashita. Jagaimo to niku to ninjin o tsukaimasu. Sukoshi muzukashikatta desu ga, aji wa yokatta desu. Kazoku wa 'Oishii' to itte, zenbu tabemashita. Watashi wa totemo ureshikatta desu. Tsugi wa, oishii sakana no ryouri o tsukutte mitai desu.",
+        "indonesia": "Saya tidak terlalu pandai memasak. Karena itu, kadang saya belajar dari ibu. Kemarin saya membuat Nikujaga. Menggunakan kentang, daging, dan wortel. Sedikit sulit, tapi rasanya enak. Keluarga bilang 'Enak' dan memakan semuanya. Saya sangat senang. Selanjutnya, saya ingin mencoba memasak masakan ikan yang lezat."
+      }
+    },
+    {
+      "id": "reading-n5-15",
+      "legacyId": 15,
+      "order": 15,
+      "level": "N5",
+      "levelLabel": "Basic/N5",
+      "slug": "n5-15-honya-san",
+      "title": "Toko Buku (Honya-san)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "私は本を読むのが大好きです。毎週日曜日に、駅の近くの本屋へ行きます。この本屋はとても大きくて、静かです。いろいろな本や雑誌があります。私は日本語の教科書と漫画を買いました。漫画は絵がありますから、わかりやすいです。店の中に小さい喫茶店があります。そこでコーヒーを飲みながら本を読みます。とても幸せな時間です。",
+        "romaji": "Watashi wa hon o yomu no ga daisuki desu. Maishuu nichiyoubi ni, eki no chikaku no honya e ikimasu. Kono honya wa totemo ookikute, shizuka desu. Iroirona hon ya zasshi ga arimasu. Watashi wa nihongo no kyoukasho to manga o kaimashita. Manga wa e ga arimasu kara, wakariyasui desu. Mise no naka ni chiisai kissaten ga arimasu. Soko de koohii o nominagara hon o yomimasu. Totemo shiawase na jikan desu.",
+        "indonesia": "Saya sangat suka membaca buku. Setiap hari Minggu, saya pergi ke toko buku di dekat stasiun. Toko buku ini sangat besar dan tenang. Ada berbagai macam buku dan majalah. Saya membeli buku pelajaran bahasa Jepang dan manga. Karena manga ada gambarnya, jadi mudah dimengerti. Di dalam toko ada kafe kecil. Di sana saya membaca buku sambil minum kopi. Waktu yang sangat membahagiakan."
+      }
+    },
+    {
+      "id": "reading-n5-16",
+      "legacyId": 16,
+      "order": 16,
+      "level": "N5",
+      "levelLabel": "Basic/N5",
+      "slug": "n5-16-doubutsuen",
+      "title": "Kebun Binatang (Doubutsuen)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "昨日はいい天気でしたから、家族と動物園へ行きました。動物園には大きい象や背が高いキリンがいました。私は猿が一番好きです。猿はバナナを食べていました。子供たちはとても喜んでいました。お昼に、みんなでお弁当を食べました。外で食べるご飯はとても美味しいです。また家族で行きたいです。",
+        "romaji": "Kinou wa ii tenki deshita kara, kazoku to doubutsuen e ikimashita. Doubutsuen ni wa ookii zou ya se ga takai kirin ga imashita. Watashi wa saru ga ichiban suki desu. Saru wa banana o tabete imashita. Kodomotachi wa totemo yorokonde imashita. Ohiru ni, minna de obentou o tabemashita. Soto de taberu gohan wa totemo oishii desu. Mata kazoku de ikitai desu.",
+        "indonesia": "Karena kemarin cuacanya bagus, saya pergi ke kebun binatang bersama keluarga. Di kebun binatang ada gajah yang besar dan jerapah yang tinggi. Saya paling suka monyet. Monyet sedang makan pisang. Anak-anak sangat senang. Siang hari, kami semua makan bento. Makan di luar rasanya sangat enak. Saya ingin pergi lagi bersama keluarga."
+      }
+    },
+    {
+      "id": "reading-n5-17",
+      "legacyId": 17,
+      "order": 17,
+      "level": "N5",
+      "levelLabel": "Basic/N5",
+      "slug": "n5-17-watashi-no-apaato",
+      "title": "Apartemen Saya (Watashi no Apaato)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "私の家は新しくて、きれいです。部屋が二つあります。広い台所と明るいお風呂もあります。部屋の窓から公園が見えます。朝、鳥の声が聞こえます。アパートの隣にスーパーがありますから、買い物に便利です。家賃は少し高いですが、静かな場所です。友達を呼んで、一緒に映画を見たいです。",
+        "romaji": "Watashi no ie wa atarashikute, kirei desu. Heya ga futatsu arimasu. Hiroi daidokoro to akarui ofuro mo arimasu. Heya no mado kara kouen ga miemasu. Asa, tori no koe ga kikoemasu. Apaato no tonari ni suupaa ga arimasu kara, kaimono ni benri desu. Yachin wa sukoshi takai desu ga, shizukana basho desu. Tomodachi o yonde, issho ni eiga o mitai desu.",
+        "indonesia": "Rumah saya baru dan bersih. Ada dua kamar. Ada juga dapur yang luas dan kamar mandi yang terang. Dari jendela kamar terlihat taman. Pagi hari, terdengar suara burung. Karena di sebelah apartemen ada supermarket, belanja jadi praktis. Uang sewanya sedikit mahal, tapi tempatnya tenang. Saya ingin mengundang teman dan menonton film bersama."
+      }
+    },
+    {
+      "id": "reading-n5-18",
+      "legacyId": 18,
+      "order": 18,
+      "level": "N5",
+      "levelLabel": "Basic/N5",
+      "slug": "n5-18-byouin-e-ikimasu",
+      "title": "Pergi ke Dokter (Byouin e Ikimasu)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "今日は体調が良くありません。朝から頭が痛いです。熱も少しあります。ですから、午後に病院へ行きました。先生はとても優しかったです。「風邪ですね」と言いました。薬をもらって、家へ帰りました。今日は早く寝ます。明日は元気になりたいです。皆さんも健康に気をつけてください。",
+        "romaji": "Kyou wa taichou ga yoku arimasen. Asa kara atama ga itai desu. Netsu mo sukoshi arimasu. Desukara, gogo ni byouin e ikimashita. Sensei wa totemo yasashikatta desu. 'Kaze desu ne' to iimashita. Kusuri o moratte, ie e kaerimashita. Kyou wa hayaku nemasu. Ashita wa genki ni naritai desu. Minasan mo kenkou ni ki o tsukete kudasai.",
+        "indonesia": "Hari ini kondisi tubuh saya tidak baik. Dari pagi kepala sakit. Demam juga ada sedikit. Karena itu, siang hari saya pergi ke rumah sakit. Dokternya sangat baik. 'Ini flu ya,' katanya. Saya mendapat obat lalu pulang ke rumah. Hari ini saya akan tidur cepat. Besok saya ingin menjadi sehat kembali. Kalian semua juga tolong jaga kesehatan."
+      }
+    },
+    {
+      "id": "reading-n5-19",
+      "legacyId": 19,
+      "order": 19,
+      "level": "N5",
+      "levelLabel": "Basic/N5",
+      "slug": "n5-19-fujisan",
+      "title": "Gunung Fuji (Fujisan)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "富士山は日本で一番高い山です。とても有名で、きれいです。私は去年、富士山へ行きました。近くで見る富士山はとても大きかったです。山の上には雪がありました。多くの人が山に登っていました。私は登りませんでしたが、写真をたくさん撮りました。いつか一番上まで登ってみたいです。",
+        "romaji": "Fujisan wa Nihon de ichiban takai yama desu. Totemo yuumei de, kirei desu. Watashi wa kyonen, Fujisan e ikimashita. Chikaku de miru Fujisan wa totemo ookikatta desu. Yama no ue ni wa yuki ga arimashita. Ooku no hito ga yama ni nobotte imashita. Watashi wa noborimasen deshita ga, shashin o takusan torimashita. Itsuka ichiban ue made nobotte mitai desu.",
+        "indonesia": "Gunung Fuji adalah gunung tertinggi di Jepang. Sangat terkenal dan indah. Tahun lalu, saya pergi ke Gunung Fuji. Gunung Fuji yang dilihat dari dekat sangat besar. Di atas gunung ada salju. Banyak orang mendaki gunung tersebut. Saya tidak mendaki, tapi saya mengambil banyak foto. Suatu saat saya ingin mencoba mendaki sampai puncak."
+      }
+    },
+    {
+      "id": "reading-n5-20",
+      "legacyId": 20,
+      "order": 20,
+      "level": "N5",
+      "levelLabel": "Basic/N5",
+      "slug": "n5-20-watashi-no-yume",
+      "title": "Cita-cita Saya (Watashi no Yume)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "私の夢は日本で仕事をすることです。今は毎日日本語を一生懸命勉強しています。日本語は難しいですが、とても面白いです。将来、日本の会社でプログラマーになりたいです。日本には有名なITの会社がたくさんあります。夢のために、もっと漢字や文法を頑張ります。どうぞよろしくお願いします。",
+        "romaji": "Watashi no yume wa Nihon de shigoto o suru koto desu. Ima wa mainichi nihongo o isshoukenmei benkyou shite imasu. Nihongo wa muzukashii desu ga, totemo omoshiroi desu. Shourai, Nihon no kaisha de puroguramaa ni naritai desu. Nihon ni wa yuumeina aiti no kaisha ga takusan arimasu. Yume no tame ni, motto kanji ya bunpou o ganbarimasu. Douzo yoroshiku onegaishimasu.",
+        "indonesia": "Cita-cita saya adalah bekerja di Jepang. Sekarang setiap hari saya belajar bahasa Jepang dengan sungguh-sungguh. Bahasa Jepang itu sulit, tapi sangat menarik. Di masa depan, saya ingin menjadi programmer di perusahaan Jepang. Di Jepang ada banyak perusahaan IT yang terkenal. Demi cita-cita, saya akan semangat belajar kanji dan tata bahasa lebih lagi. Mohon bimbingannya."
+      }
+    },
+    {
+      "id": "reading-n4-01",
+      "legacyId": 1,
+      "order": 21,
+      "level": "N4",
+      "levelLabel": "JLPT N4",
+      "slug": "n4-01-jishin-no-keiken",
+      "title": "Pengalaman Gempa (Jishin no Keiken)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "日本に来てから、初めて大きい地震を経験しました。夜、家で本を読んでいたとき、急に机が揺れ始めました。最初は小さい揺れでしたが、だんだん大きくなりました。棚から本が落ちてきたので、とてもびっくりしました。学校の先生に教えられた通りに、すぐに机の下に入りました。揺れが収まってから、テレビをつけてニュースを確認しました。幸い、私の周りでは大きな被害はありませんでした。この経験を通して、地震の準備をしておくことが大切だということがよくわかりました。今は、水や食べ物を準備してあります。",
+        "romaji": "Nihon ni kite kara, hajimete ookii jishin o keiken shimashita. Yoru, ie de hon o yonde ita toki, kyuu ni tsukue ga yurehajimemashita. Saisho wa chiisai yure deshita ga, dandan ookiku narimashita. Tana kara hon ga ochite kita node, totemo bikkuri shimashita. Gakkou no sensei ni oshierareta toori ni, sugu ni tsukue no shita ni hairimashita. Yure ga osamatte kara, terebi o tsukete nyuusu o kakunin shimashita. Saiwai, watashi no mawari de wa ookina higai wa arimasen deshita. Kono keiken o tooshite, jishin no junbi o shite oku koto ga taisetsu da to iu koto ga yoku wakarimashita. Ima wa, mizu ya tabemono o junbi shite arimasu.",
+        "indonesia": "Sejak datang ke Jepang, saya mengalami gempa besar untuk pertama kalinya. Malam hari, saat sedang membaca buku di rumah, tiba-tiba meja mulai bergoyang. Awalnya goyangannya kecil, tapi lama-lama menjadi besar. Karena buku-buku jatuh dari rak, saya sangat terkejut. Sesuai dengan yang diajarkan oleh guru di sekolah, saya segera masuk ke bawah meja. Setelah getarannya reda, saya menyalakan TV dan memeriksa berita. Untungnya, tidak ada kerusakan besar di sekitar saya. Melalui pengalaman ini, saya mengerti betul bahwa mempersiapkan diri untuk gempa itu penting. Sekarang, saya sudah menyiapkan air dan makanan."
+      }
+    },
+    {
+      "id": "reading-n4-02",
+      "legacyId": 2,
+      "order": 22,
+      "level": "N4",
+      "levelLabel": "JLPT N4",
+      "slug": "n4-02-nihon-de-no-shuushoku-katsudou",
+      "title": "Mencari Kerja di Jepang (Nihon de no Shuushoku Katsudou)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "将来、日本のIT企業で働きたいと思っています。そのためには、日本語だけでなく日本のビジネスマナーも学ばなければなりません。先週、初めて会社の面接を受けました。とても緊張しましたが、一生懸命練習した敬語を使って答えました。面接官の方に「なぜ日本で働きたいのですか」と聞かれたので、「日本の技術を学んで、将来は自分の国と日本の架け橋になりたいからです」と答えました。結果はまだわかりませんが、もし合格したら、もっとプログラミングの勉強を頑張るつもりです。諦めずに続けたいです。",
+        "romaji": "Shourai, Nihon no IT kigyou de hatarakitai to omotte imasu. Sono tame ni wa, nihongo dake de naku Nihon no bijinesu manaa mo manabanakereba narimasen. Senshuu, hajimete kaisha no mensetsu o ukemashita. Totemo kinchou shimashita ga, isshoukenmei renshuu shita keigo o tsukatte kotaemashita. Mensetsukan no kata ni 'Naze Nihon de hatarakitai no desu ka' to kikareta node, 'Nihon no gijutsu o manande, shourai wa jibun no kuni to Nihon no kakehashi ni naritai kara desu' to kotaemashita. Kekka wa mada wakarimasen ga, moshi goukaku shitara, motto puroguramingu no benkyou o ganbaru tsumori desu. Akiramezu ni tsuzuketai desu.",
+        "indonesia": "Di masa depan, saya berniat bekerja di perusahaan IT Jepang. Untuk itu, saya harus mempelajari tidak hanya bahasa Jepang tetapi juga etika bisnis Jepang. Minggu lalu, saya menjalani wawancara perusahaan untuk pertama kalinya. Saya sangat gugup, tapi saya menjawab menggunakan bahasa hormat (keigo) yang telah saya latih dengan sungguh-sungguh. Karena pewawancara bertanya 'Mengapa Anda ingin bekerja di Jepang?', saya menjawab 'Karena saya ingin mempelajari teknologi Jepang dan di masa depan ingin menjadi jembatan antara negara saya dan Jepang'. Hasilnya belum tahu, tapi jika lulus, saya berniat untuk lebih semangat belajar pemrograman. Saya ingin terus lanjut tanpa menyerah."
+      }
+    },
+    {
+      "id": "reading-n4-03",
+      "legacyId": 3,
+      "order": 23,
+      "level": "N4",
+      "levelLabel": "JLPT N4",
+      "slug": "n4-03-gomi-no-mondai",
+      "title": "Masalah Sampah (Gomi no Mondai)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "日本はゴミの出し方がとても厳しいです。私の住んでいる町では、ゴミを細かく分けなければなりません。燃えるゴミ、燃えないゴミ、そしてペットボトルや缶などに分けます。最初はルールが複雑で間違えてばかりいましたが、隣の人に親切に教えてもらいました。ゴミを捨てる曜日も決まっているので、カレンダーを確認して出すようにしています。最近は環境を守るために、買い物に行くときに自分のバッグを持って行く人が増えています。私もコンビニで袋をもらわないように気をつけています。小さなことですが、みんなで協力することが大切です。",
+        "romaji": "Nihon wa gomi no dashikata ga totemo kibishii desu. Watashi no sunde iru machi de wa, gomi o komakaku wakenakereba narimasen. Moeru gomi, moenai gomi, soshite pettobotoru ya kan nado ni wakemasu. Saisho wa ruuru ga fukuzatsu de machigaete bakari imashita ga, tonari no hito ni shinsetsu ni oshiete moraimashita. Gomi o suteru youbi mo kimatte iru node, karendaa o kakunin shite dasu you ni shite imasu. Saikin wa kankyou o mamoru tame ni, kaimono ni iku toki ni jibun no baggu o motte iku hito ga fuete imasu. Watashi mo konbini de fukuro o morawanai you ni ki o tsukete imasu. Chiisana koto desu ga, minna de kyouryoku suru koto ga taisetsu desu.",
+        "indonesia": "Di Jepang, cara membuang sampah sangat ketat. Di kota tempat saya tinggal, sampah harus dipisah secara mendetail. Dipisah menjadi sampah yang bisa dibakar, tidak bisa dibakar, serta botol plastik, kaleng, dan sebagainya. Awalnya peraturannya rumit dan saya sering melakukan kesalahan, tapi tetangga saya mengajari saya dengan baik. Hari membuang sampah pun sudah ditentukan, jadi saya selalu memeriksa kalender sebelum membuangnya. Belakangan ini, demi menjaga lingkungan, orang yang membawa tas sendiri saat berbelanja semakin meningkat. Saya juga berhati-hati agar tidak menerima kantong plastik di minimarket. Meskipun hal kecil, bekerja sama dengan semua orang itu penting."
+      }
+    },
+    {
+      "id": "reading-n4-04",
+      "legacyId": 4,
+      "order": 24,
+      "level": "N4",
+      "levelLabel": "JLPT N4",
+      "slug": "n4-04-nihon-bunka-o-manabu",
+      "title": "Mempelajari Kebudayaan Jepang (Nihon Bunka o Manabu)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "日本語を勉強し始めてから、日本の文化にも興味を持つようになりました。先月、茶道の体験教室に参加しました。お茶を飲む前に甘い和菓子を食べたのですが、その後に飲んだお茶は少し苦かったです。でも、とてもいい香りがして美味しかったです。先生は「茶道はただお茶を飲むだけではなく、相手を大切にする心が必要です」と教えてくれました。畳の部屋で静かに座っていると、心が落ち着きました。日本の文化は奥が深くて面白いと思います。次は着物を着て、京都の古い街を歩いてみたいと考えています。",
+        "romaji": "Nihongo o benkyou shihajimete kara, Nihon no bunka ni mo kyoumi o motsu you ni narimashita. Sengetsu, sadou no taiken kyoushitsu ni sanka shimashita. Ocha o nomu mae ni amai wagashi o tabeta no desu ga, sono ato ni nonda ocha wa sukoshi nigakatta desu. Demo, totemo ii kaori ga shite oishikatta desu. Sensei wa 'Sadou wa tada ocha o nomu dake de wa naku, aite o taisetsu ni suru kokoro ga hitsuyou desu' to oshiete kuremashita. Tatami no heya de shizuka ni suwatte iru to, kokoro ga ochitsukimashita. Nihon no bunka wa oku ga fukukute omoshiroi to omoimasu. Tsugi wa kimono o kite, Kyouto no furui machi o aruite mitai to kangaete imasu.",
+        "indonesia": "Sejak mulai belajar bahasa Jepang, saya juga menjadi tertarik dengan budaya Jepang. Bulan lalu, saya mengikuti kelas pengalaman upacara minum teh (Sado). Sebelum minum teh, saya makan kue tradisional (Wagashi) yang manis, namun teh yang diminum setelahnya terasa sedikit pahit. Meski begitu, aromanya sangat enak dan rasanya lezat. Guru mengajari saya bahwa 'Sado bukan hanya sekadar minum teh, melainkan membutuhkan hati yang menghargai orang lain'. Saat duduk tenang di ruangan beralas tatami, hati saya menjadi tenang. Saya pikir budaya Jepang sangat dalam dan menarik. Selanjutnya, saya terpikir untuk memakai kimono dan berjalan-jalan di kota tua Kyoto."
+      }
+    },
+    {
+      "id": "reading-n4-05",
+      "legacyId": 5,
+      "order": 25,
+      "level": "N4",
+      "levelLabel": "JLPT N4",
+      "slug": "n4-05-gijutsu-no-shinpo",
+      "title": "Kemajuan Teknologi (Gijutsu no Shinpo)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "最近、私たちの生活はテクノロジーのおかげでとても便利になりました。例えば、掃除ロボットを使えば、仕事をしている間に部屋がきれいになります。また、スーパーに行かなくても、インターネットで注文すれば食べ物が家に届けられます。しかし、便利なことが増える一方で、人と直接話す機会が減っていると言われています。私の国では、近所の人と毎日挨拶をして、長い時間話すのが普通です。日本ではみんな忙しそうで、スマホばかり見ているように見えます。技術が進歩しても、人との繋がりを忘れないようにしたいものです。週末はスマホを置いて、友達と顔を見て話すようにしています。",
+        "romaji": "Saikin, watashitachi no seikatsu wa tekunorojii no okage de totemo benri ni narimashita. Tatoeba, souji robotto o tsukaeba, shigoto o shite iru aida ni heya ga kirei ni narimasu. Mata, suupaa ni ikanakute mo, intaanetto de chuumon sureba tabemono ga ie ni todokeraremasu. Shikashi, benri na koto ga fueru ippou de, hito to chokusetsu hanasu kikai ga hette iru to iwarete imasu. Watashi no kuni de wa, kinjo no hito to mainichi aisatsu o shite, nagai jikan hanasu no ga futsuu desu. Nihon de wa minna isogashisou de, sumaho bakari mite iru you ni miemasu. Gijutsu ga shinpo shite mo, hito to no tsunagari o wasurenai you ni shitai mono desu. Shuumatsu wa sumaho o oite, tomodachi to kao o mite hanasu you ni shite imasu.",
+        "indonesia": "Belakangan ini, kehidupan kita menjadi sangat praktis berkat teknologi. Misalnya, jika menggunakan robot pembersih, ruangan menjadi bersih selagi kita bekerja. Selain itu, tanpa pergi ke supermarket pun, jika memesan lewat internet, makanan akan diantarkan ke rumah. Namun, sementara hal praktis bertambah, dikatakan bahwa kesempatan berbicara langsung dengan orang lain semakin berkurang. Di negara saya, adalah hal biasa untuk menyapa tetangga setiap hari dan mengobrol lama. Di Jepang, semua orang terlihat sibuk dan sepertinya hanya melihat smartphone saja. Meskipun teknologi maju, kita harus tetap tidak melupakan hubungan antarmanusia. Pada akhir pekan, saya meletakkan smartphone dan berusaha berbicara sambil bertatap muka dengan teman."
+      }
+    },
+    {
+      "id": "reading-n4-06",
+      "legacyId": 6,
+      "order": 26,
+      "level": "N4",
+      "levelLabel": "JLPT N4",
+      "slug": "n4-06-kanji-no-benkyou",
+      "title": "Mempelajari Kanji (Kanji no Benkyou)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "日本語の勉強の中で、一番大変なのは漢字だと思います。漢字には読み方がたくさんあって、覚えるのが難しいです。例えば、「日」という漢字は「ひ」とも読みますし、「にち」や「か」とも読みます。最初は全然覚えられなくて、何度も諦めようと思いました。でも、毎日少しずつ書き続けることで、最近はようやく新聞の簡単な記事が読めるようになりました。漢字の意味を知ると、言葉の成り立ちがわかるので面白いです。今はスマホのアプリを使って、クイズ形式で楽しく勉強しています。目標は来年のJLPTでN3に合格することなので、もっとたくさんの漢字をマスターしたいです。",
+        "romaji": "Nihongo no benkyou no naka de, ichiban taihen na no wa kanji da to omoi masu. Kanji ni wa yomikata ga takusan atte, oboeru no ga muzukashii desu. Tatoeba, 'hi' to iu kanji wa 'hi' to mo yomimasu shi, 'nichi' ya 'ka' to mo yomimasu. Saisho wa zenzen oboerarenakute, nando mo akirameyou to omoimashita. Demo, mainichi sukoshizutsu kakitsuzukeru koto de, saikin wa youyaku shinbun no kantan na kiji ga yomeru you ni narimashita. Kanji no imi o shiru to, kotoba no naritachi ga wakaru node omoshiroi desu. Ima wa sumaho no apuri o tsukatte, kuizu keishiki de tanoshiku benkyou shite imasu. Mokuhyou wa rainen no JLPT de N3 ni goukaku suru koto na node, motto takusan no kanji o masutaa shitai desu.",
+        "indonesia": "Di dalam pelajaran bahasa Jepang, saya rasa yang paling sulit adalah Kanji. Kanji memiliki banyak cara baca dan sulit untuk dihafal. Misalnya, kanji 'Hari' bisa dibaca 'hi', 'nichi', maupun 'ka'. Awalnya saya sama sekali tidak bisa menghafal dan berpikir untuk menyerah berkali-kali. Namun, dengan terus menulis sedikit demi sedikit setiap hari, belakangan ini akhirnya saya bisa membaca artikel koran yang sederhana. Menarik rasanya ketika mengetahui arti kanji karena kita jadi tahu asal-usul kata. Sekarang saya menggunakan aplikasi smartphone dan belajar dengan cara yang menyenangkan dalam bentuk kuis. Karena target saya adalah lulus N3 pada JLPT tahun depan, saya ingin menguasai lebih banyak kanji lagi."
+      }
+    },
+    {
+      "id": "reading-n4-07",
+      "legacyId": 7,
+      "order": 27,
+      "level": "N4",
+      "levelLabel": "JLPT N4",
+      "slug": "n4-07-chichi-e-no-purezento",
+      "title": "Hadiah untuk Ayah (Chichi e no Purezento)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "父の日が近いので、父に何を贈ったらいいか考えていました。父はいつも家族のために一生懸命働いてくれているので、特別なものをプレゼントしたいと思いました。色々悩みましたが、父はコーヒーが好きなので、美味しい豆と新しいコーヒーカップを買うことにしました。店員さんに相談して、一番人気の豆を選んでもらいました。プレゼントを渡したとき、父はとても驚いていましたが、「ありがとう。大切に使うよ」と言って笑ってくれました。父の嬉しそうな顔が見られて、私も幸せな気持ちになりました。物だけでなく、感謝の気持ちを伝えることが一番大切だと感じました。",
+        "romaji": "Chichi no hi ga chikai node, chichi ni nani o okuttara ii ka kangaete imashita. Chichi wa itsumo kazoku no tame ni isshoukenmei hataraite kurete iru node, tokubetsu na mono o purezento shitai to omoimashita. Iroiro nayamimashita ga, chichi wa koohii ga suki node, oishii mame to atarashii koohii kappu o kau koto ni shimashita. Ten'insan ni soudan shite, ichiban ninki no mame o erande moraimashita. Purezento o watashita toki, chichi wa totemo odoroite imashita ga, 'Arigatou. Taisetsu ni tsukau yo' to itte waratte kuremashita. Chichi no ureshisou na kao ga mirarete, watashi mo shiawase na kimochi ni narimashita. Mono dake de naku, kansha no kimochi o tsutaeru koto ga ichiban taisetsu da to kanjimashita.",
+        "indonesia": "Karena Hari Ayah sudah dekat, saya memikirkan apa yang sebaiknya diberikan kepada ayah. Karena ayah selalu bekerja keras demi keluarga, saya ingin memberinya hadiah yang spesial. Saya sempat bingung, tapi karena ayah suka kopi, saya memutuskan untuk membeli biji kopi yang enak dan cangkir kopi baru. Saya berkonsultasi dengan pelayan toko dan memintanya memilihkan biji kopi yang paling populer. Saat memberikan hadiah tersebut, ayah sangat terkejut tapi dia tersenyum dan berkata, 'Terima kasih. Akan aku gunakan dengan baik'. Melihat wajah ayah yang terlihat senang, saya pun merasa bahagia. Saya merasa bahwa bukan hanya barang, tapi menyampaikan rasa terima kasih adalah hal yang terpenting."
+      }
+    },
+    {
+      "id": "reading-n4-08",
+      "legacyId": 8,
+      "order": 28,
+      "level": "N4",
+      "levelLabel": "JLPT N4",
+      "slug": "n4-08-koutsuu-ruuru",
+      "title": "Peraturan Lalu Lintas (Koutsuu Ruuru)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "日本で生活をするとき、交通ルールを守らなければなりません。特に自転車に乗るときは注意が必要です。日本では自転車は歩道ではなく、車道の左側を走るのが原則です。また、夜はライトをつけなければなりませんし、二人で乗ることは禁止されています。最近は自転車の事故が増えているので、ルールが厳しくなりました。もしルールを守らないと、警察に注意されたり、罰金を払わされたりすることもあります。車を運転する人も歩行者に気をつけています。信号が赤のときは必ず止まらなければなりません。みんながルールを守ることで、安全に暮らすことができます。私も事故に遭わないように気をつけています。",
+        "romaji": "Nihon de seikatsu o suru toki, koutsuu ruuru o mamoranakeba narimasen. Tokuni jitensha ni noru toki wa chuui ga hitsuyou desu. Nihon de wa jitensha wa hodou de wa naku, shadou no hidarigawa o hashiru no ga gensoku desu. Mata, yoru wa raito o tsukenakeba narimasen shi, futari de noru koto wa kinshi sarete imasu. Saikin wa jitensha no jiko ga fuete iru node, ruuru ga kibishiku narimashita. Moshi ruuru o mamoranai to, keisatsu ni chuui saretari, bakkin o harawasaretari suru koto mo arimasu. Kuruma o unten suru hito mo hokousha ni ki o tsukete imasu. Shingou ga aka no toki wa kanarazu tomaranakeba narimasen. Minna ga ruuru o mamoru koto de, anzen ni kurasu koto ga dekimasu. Watashi mo jiko ni awanai you ni ki o tsukete imasu.",
+        "indonesia": "Saat menjalani kehidupan di Jepang, kita harus mematuhi peraturan lalu lintas. Terutama saat naik sepeda, diperlukan kehati-hatian. Di Jepang, prinsipnya sepeda bukan berjalan di trotoar, melainkan di sisi kiri jalan raya. Selain itu, pada malam hari lampu harus dinyalakan, dan dilarang berboncengan dua orang. Belakangan ini karena kecelakaan sepeda meningkat, peraturannya menjadi ketat. Jika tidak mematuhi peraturan, bisa ditegur polisi atau dipaksa membayar denda. Orang yang menyetir mobil juga berhati-hati terhadap pejalan kaki. Saat lampu merah, harus selalu berhenti. Dengan semua orang mematuhi peraturan, kita bisa hidup dengan aman. Saya juga berhati-hati agar tidak mengalami kecelakaan."
+      }
+    },
+    {
+      "id": "reading-n4-09",
+      "legacyId": 9,
+      "order": 29,
+      "level": "N4",
+      "levelLabel": "JLPT N4",
+      "slug": "n4-09-shourai-no-keikaku",
+      "title": "Rencana Masa Depan (Shourai no Keikaku)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "大学を卒業した後、どのような進路に進むか考えています。私は子供の頃から宇宙に関心があったので、航空宇宙業界に興味があります。そのためには、もっと高度な数学や物理の知識が必要です。また、国際的なプロジェクトに参加したいので、英語と日本語の両方を完璧に話せるようになりたいです。来年は海外の大学院に留学することを計画しています。試験の準備は大変ですが、自分の夢を叶えるために一生懸命勉強しています。両親は私の決断を応援してくれています。将来、宇宙開発に貢献できるようなエンジニアになれるよう、一歩ずつ進んでいきたいです。",
+        "romaji": "Daigaku o sotsugyou shita ato, dono you na shinro ni susumu ka kangaete imasu. Watashi wa kodomo no koro kara uchuu ni kanshin ga atta node, koukuu uchuu gyoukai ni kyoumi ga arimasu. Sono tame ni wa, motto koudo na suugaku ya butsuri no chishiki ga hitsuyou desu. Mata, kokusaiteki na purojekuto ni sanka shitai node, eigo to nihongo no ryouhou o kanpeki ni hanaseru you ni naritai desu. Rainen wa kaigai no daiguakuin ni ryuugaku suru koto o keikaku shite imasu. Shiken no junbi wa taihen desu ga, jibun no yume o kanaeru tame ni isshoukenmei benkyou shite imasu. Ryoushin wa watashi no ketsudan o ouen shite kurete imasu. Shourai, uchuu kaihatsu ni kouken dekiru you na enjinia ni nareru you, ippo zutsu susunde ikitai desu.",
+        "indonesia": "Setelah lulus universitas, saya sedang memikirkan arah jalan mana yang akan diambil. Karena saya tertarik pada luar angkasa sejak kecil, saya berminat pada industri kedirgantaraan. Untuk itu, diperlukan pengetahuan matematika dan fisika yang lebih tinggi. Selain itu, karena saya ingin berpartisipasi dalam proyek internasional, saya ingin bisa berbicara bahasa Inggris dan bahasa Jepang dengan sempurna. Tahun depan saya berencana untuk studi ke luar negeri di program pascasarjana. Persiapan ujiannya berat, tapi saya belajar sungguh-sungguh untuk mewujudkan impian saya. Orang tua mendukung keputusan saya. Saya ingin melangkah selangkah demi selangkah agar bisa menjadi insinyur yang dapat berkontribusi pada pengembangan luar angkasa di masa depan."
+      }
+    },
+    {
+      "id": "reading-n4-10",
+      "legacyId": 10,
+      "order": 30,
+      "level": "N4",
+      "levelLabel": "JLPT N4",
+      "slug": "n4-10-fuyu-no-omoide",
+      "title": "Kenangan Musim Dingin (Fuyu no Omoide)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "昨年の冬、友達に誘われて長野県へスキーに行きました。私の国は一年中暑いので、本物の雪を見るのはそれが初めてでした。スキー場に着くと、周りが全部白くて、とても感動しました。最初は何度も転んでしまって、足が痛くなりましたが、友達に教えてもらっているうちに少しずつ滑れるようになりました。雪の上を滑る感覚は、まるで空を飛んでいるようで最高でした。夜は近くの温泉に入りました。寒い中で温かいお湯に入るのは、とても気持ちが良かったです。そこで食べた温かい鍋料理の味は忘れられません。また今年の冬も、みんなで雪山に行こうと約束しています。",
+        "romaji": "Sakunen no fuyu, tomodachi ni sasowarete Nagano-ken e sukii ni ikimashita. Watashi no kuni wa ichinenjuu atsui node, honmono no yuki o miru no wa sore ga hajimete deshita. Sukiijou ni tsuku to, mawari ga zenbu shirokute, totemo kandou shimashita. Saisho wa nando mo koronde shimatte, ashi ga itaku narimashita ga, tomodachi ni oshiete moratte iru uchi ni sukoshizutsu subereru you ni narimashita. Yuki no ue o suberu kankaku wa, marude sora o tonde iru you de saikou deshita. Yoru wa chikaku no onsen ni hairimashita. Samui naka de atatakai oyu ni hairu no wa, totemo kimochi ga yokatta desu. Soko de tabeta atatakai naberyouri no aji wa wasureraremasen. Mata kotoshi no fuyu mo, minna de yukiyama ni ikou to yakusoku shite imasu.",
+        "indonesia": "Musim dingin lalu, saya diajak oleh teman pergi bermain ski ke Prefektur Nagano. Karena negara saya panas sepanjang tahun, itu adalah pertama kalinya saya melihat salju sungguhan. Setibanya di tempat ski, sekeliling semuanya putih, saya sangat terharu. Awalnya saya terjatuh berkali-kali dan kaki saya menjadi sakit, tapi selagi diajari oleh teman, sedikit demi sedikit saya mulai bisa meluncur. Sensasi meluncur di atas salju rasanya seperti terbang di langit, luar biasa. Malam harinya kami masuk ke pemandian air panas (onsen) terdekat. Masuk ke air hangat di tengah udara dingin rasanya sangat nyaman. Rasa masakan nabe hangat yang dimakan di sana tidak bisa saya lupakan. Kami sudah berjanji untuk pergi ke gunung salju bersama lagi pada musim dingin tahun ini."
+      }
+    },
+    {
+      "id": "reading-n4-11",
+      "legacyId": 11,
+      "order": 31,
+      "level": "N4",
+      "levelLabel": "JLPT N4",
+      "slug": "n4-11-zangyou-no-bunka",
+      "title": "Budaya Kerja Lembur (Zangyou no Bunka)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "日本の会社員はよく残業をすると聞きました。仕事が終わっても、上司が帰るまで帰りにくいという人が多いそうです。しかし、最近は働き方が変わってきて、早く帰るように進められています。私の友達の会社では、毎週水曜日は「ノー残業デー」で、みんな定時に帰らなければなりません。健康のために、しっかり休むことは大切だと思います。私も将来日本で働くときは、効率よく仕事をして、自分の時間を大切にしたいと考えています。",
+        "romaji": "Nihon no kaishain wa yoku zangyou o suru to kikimashita. Shigoto ga owatte mo, joushi ga kaeru made kaerinikui to iu hito ga ooi sou desu. Shikashi, saikin wa hatarakikata ga kawatte kite, hayaku kaeru you ni susumerarete imasu. Watashi no tomodachi no kaisha de wa, maishuu suiyoubi wa 'noo zangyou dee' de, minna teiji ni kaeranakeba narimasen. Kenkou no tame ni, shikkari yasumu koto wa taisetsu da to omoimasu. Watashi mo shourai Nihon de hataraku toki wa, kouritsu yoku shigoto o shite, jibun no jikan o taisetsu ni shitai to kangaete imasu.",
+        "indonesia": "Saya mendengar bahwa karyawan perusahaan di Jepang sering lembur. Katanya, banyak orang yang merasa sulit untuk pulang sampai atasan mereka pulang, meskipun pekerjaan sudah selesai. Namun, belakangan ini cara kerja mulai berubah, dan orang-orang dianjurkan untuk pulang lebih awal. Di perusahaan teman saya, setiap hari Rabu adalah 'Hari Tanpa Lembur', di mana semua orang harus pulang tepat waktu. Saya pikir istirahat yang cukup itu penting untuk kesehatan. Saya juga ingin bekerja dengan efisien dan menghargai waktu pribadi saya ketika bekerja di Jepang nanti."
+      }
+    },
+    {
+      "id": "reading-n4-12",
+      "legacyId": 12,
+      "order": 32,
+      "level": "N4",
+      "levelLabel": "JLPT N4",
+      "slug": "n4-12-shippai-kara-manabu",
+      "title": "Belajar dari Kegagalan (Shippai kara Manabu)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "誰でも失敗をすることはあります。大切なのは、失敗した後にどうするかです。私は以前、大切な会議の時間を間違えて、遅刻してしまったことがあります。そのとき、上司に厳しく注意されましたが、次からは二度と同じ間違いをしないようにメモを取る習慣をつけました。失敗したときは落ち込みますが、それを経験として次に活かせば、もっと成長できるはずです。「失敗は成功の母」という言葉がある通り、恐れずに新しいことに挑戦し続けたいです。",
+        "romaji": "Dare demo shippai o suru koto wa arimasu. Taisetsu na no wa, shippai shita ato ni dou suru ka desu. Watashi wa izen, taisetsu na kaigi no jikan o machigaete, chikoku shite shimatta koto ga arimasu. Sono toki, joushi ni kibishiku chuui saremashita ga, tsugi kara wa nido to onaji machigai o shinai you ni memo o toru shuukan o tsukemashita. Shippai shita toki wa ochikomimasu ga, sore o keiken to shite tsugi ni ikaseba, motto seichou dekiru hazu desu. 'Shippai wa seikou no haha' to iu kotoba ga aru toori, osorezu ni atarashii koto ni chousenshizuketai desu.",
+        "indonesia": "Siapa pun pasti pernah melakukan kesalahan. Yang terpenting adalah apa yang dilakukan setelah melakukan kesalahan. Sebelumnya, saya pernah salah jadwal rapat penting dan datang terlambat. Saat itu, saya ditegur keras oleh atasan, tetapi sejak saat itu saya membiasakan diri untuk mencatat agar tidak mengulangi kesalahan yang sama. Saat gagal kita memang merasa sedih, tetapi jika kita menjadikannya pengalaman untuk langkah selanjutnya, kita pasti bisa lebih berkembang. Seperti pepatah 'Kegagalan adalah ibu dari keberhasilan', saya ingin terus menantang hal baru tanpa rasa takut."
+      }
+    },
+    {
+      "id": "reading-n4-13",
+      "legacyId": 13,
+      "order": 33,
+      "level": "N4",
+      "levelLabel": "JLPT N4",
+      "slug": "n4-13-manaa-no-chigai",
+      "title": "Perbedaan Sopan Santun (Manaa no Chigai)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "国によってマナーは違います。日本で驚いたのは、エスカレーターの乗り方です。東京では左側に立ちますが、大阪では右側に立つそうです。また、日本では電車の中で電話で話すのは失礼だとされています。私の国では電車で電話をするのは普通のことなので、最初は少し不便に感じました。しかし、静かな環境でみんなが気持ちよく過ごすためには、その国のルールを守ることが必要です。外国へ行くときは、その国の文化や習慣をあらかじめ調べておくのが良いでしょう。",
+        "romaji": "Kuni ni yotte manaa wa chigaimasu. Nihon de odoroita no wa, esukareetaa no norikata desu. Toukyou de wa hidarigawa ni tachimasu ga, Oosaka de wa migigawa ni tatsu sou desu. Mata, Nihon de wa densha no naka de denwa de hanasu no wa shitsurei da to sarete imasu. Watashi no kuni de wa densha de denwa o suru no wa futsuu no koto na node, saisho wa sukoshi fuben ni kanjimashita. Shikashi, shizukana kankyou de minna ga kimochiyoku sugosu tame ni wa, sono kuni no ruuru o mamoru koto ga hitsuyou desu. Gaikoku e iku toki wa, sono kuni no bunka ya shuukan o arakajime shirabete oku no ga yoi deshou.",
+        "indonesia": "Etika berbeda-beda tergantung negaranya. Yang membuat saya terkejut di Jepang adalah cara naik eskalator. Di Tokyo orang berdiri di sisi kiri, tapi katanya di Osaka orang berdiri di sisi kanan. Selain itu, di Jepang, berbicara di telepon di dalam kereta dianggap tidak sopan. Di negara saya, menelepon di kereta adalah hal biasa, jadi awalnya saya merasa sedikit tidak nyaman. Namun, agar semua orang bisa merasa nyaman di lingkungan yang tenang, mematuhi peraturan negara tersebut sangat diperlukan. Saat pergi ke luar negeri, ada baiknya mencari tahu budaya dan kebiasaan negara tersebut terlebih dahulu."
+      }
+    },
+    {
+      "id": "reading-n4-14",
+      "legacyId": 14,
+      "order": 34,
+      "level": "N4",
+      "levelLabel": "JLPT N4",
+      "slug": "n4-14-undou-no-taisetsusa",
+      "title": "Pentingnya Olahraga (Undou no Taisetsusa)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "毎日忙しくても、運動をする時間を忘れないようにしています。最近はパソコンを使う仕事が多いので、ずっと座っていると体が疲れてしまいます。私は週に三回、仕事の後にジムへ行って泳ぐことにしています。泳ぐとリフレッシュできて、夜もぐっすり眠れるようになります。もし忙しくてジムへ行けないときは、一駅分歩くように心がけています。健康な体があれば、仕事も勉強も頑張ることができます。皆さんも、無理のない範囲で運動を始めてみてはいかがでしょうか。",
+        "romaji": "Mainichi isogashikute mo, undou o suru jikan o wasurenai you ni shite imasu. Saikin wa pasokon o tsukau shigoto ga ooi node, zutto suwatte iru to karada ga tsukarete shimaimasu. Watashi wa shuu ni sankai, shigoto no ato ni jimu e itte oyogu koto ni shite imasu. Oyogu to rifuresshu dekite, yoru mo gussuri nemureru you ni narimasu. Moshi isogashikute jimu e ikenai toki wa, hitocki bun aruku you ni kokorogakete imasu. Kenkou na karada ga areba, shigoto mo benkyou mo ganbaru koto ga dekimasu. Minasan mo, muri no nai han'i de undou o hajimete mite wa ikaga deshou ka.",
+        "indonesia": "Meskipun sibuk setiap hari, saya berusaha tidak melupakan waktu untuk berolahraga. Belakangan ini karena banyak pekerjaan menggunakan komputer, tubuh menjadi lelah jika duduk terus-menerus. Saya memutuskan untuk pergi ke gym dan berenang tiga kali seminggu setelah bekerja. Berenang membuat saya segar dan bisa tidur nyenyak di malam hari. Jika terlalu sibuk untuk pergi ke gym, saya membiasakan diri untuk berjalan sejauh satu stasiun. Jika memiliki tubuh yang sehat, kita bisa semangat dalam bekerja maupun belajar. Bagaimana jika Anda semua juga mulai berolahraga dalam batasan yang wajar?"
+      }
+    },
+    {
+      "id": "reading-n4-15",
+      "legacyId": 15,
+      "order": 35,
+      "level": "N4",
+      "levelLabel": "JLPT N4",
+      "slug": "n4-15-saigai-to-anzen",
+      "title": "Bencana Alam dan Keamanan (Saigai to Anzen)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "日本は地震だけでなく、台風も多い国です。台風が来ると、強い風が吹いたり大雨が降ったりして、電車が止まることもあります。先日の台風では、私の家の近くの木が倒れてしまいました。ニュースで「外に出ないでください」と言っていたので、一日中家で過ごしました。災害はいつ起こるかわかりませんから、準備をしておくことが必要です。非常用の持ち出しバッグには、懐中電灯やラジオ、数日分の食べ物を入れています。また、避難場所がどこにあるかを確認しておくことも忘れてはいけません。自分の身は自分で守るという意識が大切です。",
+        "romaji": "Nihon wa jishin dake de naku, taifuu mo ooi kuni desu. Taifuu ga kuru to, tsuyoi kaze ga fukitari ooame ga futtari shite, densha ga tomaru koto mo arimasu. Senjitsu no taifuu de wa, watashi no ie no chikaku no ki ga taorete shimaimasu. Nyuusu de 'Soto ni denaide kudasai' to itte ita node, ichinichijuu ie de sugoshimashita. Saigai wa itsu okoru ka wakarimasen kara, junbi o shite oku koto ga hitsuyou desu. Hijouyou no mochidashi baggu ni wa, kaichuudentou ya rajio, suujitsubun no tabemono o irete imasu. Mata, hinanbasho ga doko ni aru ka o kakunin shite oku koto mo wasurete wa ikemasen. Jibun no mi wa jibun de mamoru to iu ishiki ga taisetsu desu.",
+        "indonesia": "Jepang adalah negara yang tidak hanya banyak gempa bumi, tetapi juga banyak topan. Ketika topan datang, angin kencang bertiup dan hujan deras turun, sehingga terkadang kereta berhenti beroperasi. Pada topan tempo hari, pohon di dekat rumah saya tumbang. Karena berita mengatakan 'Harap jangan keluar rumah', saya menghabiskan waktu seharian di dalam rumah. Karena kita tidak tahu kapan bencana akan terjadi, persiapan itu perlu. Di dalam tas darurat, saya memasukkan senter, radio, dan makanan untuk beberapa hari. Selain itu, jangan lupa untuk memastikan di mana lokasi tempat evakuasi berada. Kesadaran untuk melindungi diri sendiri adalah hal yang penting."
+      }
+    },
+    {
+      "id": "reading-n4-16",
+      "legacyId": 16,
+      "order": 36,
+      "level": "N4",
+      "levelLabel": "JLPT N4",
+      "slug": "n4-16-netto-shoppingu",
+      "title": "Belanja Online (Netto Shoppingu)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "最近は店に行かずに、インターネットで買い物をするのが当たり前になりました。ネットショッピングは、重い荷物を運ばなくていいし、24時間いつでも注文できるのでとても便利です。しかし、実際に商品を見ることができないので、届いたときに「思っていたものと違う」ということもあります。私は服を買うときは、サイズや色をよく確認するようにしています。また、他の人のレビューを読むことも大切です。便利すぎるので、ついつい買いすぎてしまうのが悩みです。お金を使いすぎないように、計画的に利用したいものです。",
+        "romaji": "Saikin wa mise ni ikazu ni, intaanetto de kaimono o suru no ga atarimae ni narimashita. Netto shoppingu wa, omoi nimotsu o hakobanakute ii shi, nijuyuujikan itsu demo chuumon dekiru node totemo benri desu. Shikashi, jissai ni shouhin o miru koto ga dekinai node, todoita toki ni 'Omotte ita mono to chigau' to iu koto mo arimasu. Watashi wa fuku o kau toki wa, saizu ya iro o yoku kakunin suru you ni shite imasu. Mata, hoka no hito no rebyuu o yomu koto mo taisetsu desu. Benri sugiru node, tsuitsui kaisugite shimau no ga nayami desu. Okane o tsukaisuginai you ni, keikakuteki ni riyou shitai mono desu.",
+        "indonesia": "Belakangan ini, berbelanja melalui internet tanpa pergi ke toko sudah menjadi hal yang lumrah. Belanja online sangat praktis karena tidak perlu membawa barang berat dan bisa memesan kapan saja selama 24 jam. Namun, karena kita tidak bisa melihat produk secara langsung, terkadang saat barang sampai rasanya 'berbeda dari yang dibayangkan'. Saat membeli baju, saya selalu memastikan ukuran dan warnanya dengan baik. Selain itu, membaca ulasan orang lain juga penting. Karena terlalu praktis, masalahnya saya jadi sering belanja berlebihan. Saya ingin menggunakannya secara terencana agar tidak menghabiskan terlalu banyak uang."
+      }
+    },
+    {
+      "id": "reading-n4-17",
+      "legacyId": 17,
+      "order": 37,
+      "level": "N4",
+      "levelLabel": "JLPT N4",
+      "slug": "n4-17-mori-to-shizen",
+      "title": "Hutan dan Alam (Mori to Shizen)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "日本は国土の約70パーセントが森林だと言われています。週末、都会の賑やかさに疲れたときは、山や森へ行くのがおすすめです。緑の中を歩くと、空気が美味しくてリラックスできます。私は先月、友達とハイキングに行きました。鳥の鳴き声を聞きながら歩くのは、とても気持ちが良かったです。最近は「森林浴」という言葉もあり、健康のために森へ行く人が増えています。自然を守るためには、木を植えたり、山にゴミを捨てないようにしたりすることが必要です。美しい日本の自然を、次の世代にも残していきたいです。",
+        "romaji": "Nihon wa kokudo no yaku nanajuu paasento ga shinrin da to iwarete imasu. Shuumatsu, tokai no nigiyakasa ni tsukareta toki wa, yama ya mori e iku no ga osusume desu. Midori no naka o aruku to, kuuki ga oishikute rirakkusu dekimasu. Watashi wa sengetsu, tomodachi to haikingu ni ikimashita. Tori no nakigoe o kikinagara aruku no wa, totemo kimochi ga yokatta desu. Saikin wa 'shinrin'yoku' to iu kotoba mo ari, kenkou no tame ni mori e iku hito ga fuete imasu. Shizen o mamoru tame ni wa, ki o uetari, yama ni gomi o sutenai you ni shitari suru koto ga hitsuyou desu. Utsukushii Nihon no shizen o, tsugi no sedai ni mo nokoshite ikitai desu.",
+        "indonesia": "Dikatakan bahwa sekitar 70 persen wilayah Jepang adalah hutan. Saat lelah dengan keramaian kota di akhir pekan, pergi ke gunung atau hutan sangat disarankan. Berjalan di tengah hijaunya alam membuat udara terasa segar dan kita bisa rileks. Bulan lalu saya pergi mendaki bersama teman. Berjalan sambil mendengarkan kicauan burung rasanya sangat menyenangkan. Belakangan ini ada istilah 'shinrin-yoku' (mandi hutan), dan orang yang pergi ke hutan demi kesehatan semakin meningkat. Untuk melindungi alam, diperlukan hal-hal seperti menanam pohon atau tidak membuang sampah di gunung. Saya ingin mewariskan alam Jepang yang indah ke generasi berikutnya."
+      }
+    },
+    {
+      "id": "reading-n4-18",
+      "legacyId": 18,
+      "order": 38,
+      "level": "N4",
+      "levelLabel": "JLPT N4",
+      "slug": "n4-18-gaikokugo-gakushuu-no-imi",
+      "title": "Pentingnya Belajar Bahasa Asing (Gaikokugo Gakushuu no Imi)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "外国語を学ぶことは、ただ言葉を覚えるだけではありません。その国の考え方や文化を理解することにも繋がります。例えば、日本語には「お疲れ様」という言葉がありますが、英語に直訳するのは難しいです。これは、日本人が周りの人の苦労をねぎらう文化を持っているからです。言葉を学ぶことで、自分の世界が広がり、多様な視点を持つことができます。確かに勉強は大変で時間がかかりますが、外国の人と意思疎通ができたときの喜びは大きいです。これからも、楽しみながら日本語の勉強を続けていきたいです。",
+        "romaji": "Gaikokugo o manabu koto wa, tada kotoba o oboeru dake de wa arimasen. Sono kuni no kangaekata ya bunka o rikai suru koto ni mo tsunagarimasu. Tatoeba, Nihongo ni wa 'otsukaresama' to iu kotoba ga arimasu ga, eigo ni chokuyaku suru no wa muzukashii desu. Kore wa, Nihonjin ga mawari no hito no kurou o negirau bunka o motte iru kara desu. Kotoba o manabu koto de, jibun no sekai ga hirogari, tayou na shiten o motsu koto ga dekimasu. Tashika ni benkyou wa taihen de jikan ga kakarimasu ga, gaikoku no hito to ishisotsuu ga dekita toki no yorokobi wa ookii desu. Korekara mo, tanoshiminagara Nihongo no benkyou o tsuzukete ikitai desu.",
+        "indonesia": "Belajar bahasa asing bukan hanya sekadar menghafal kata-kata. Hal itu juga terhubung dengan memahami cara berpikir dan budaya negara tersebut. Misalnya, dalam bahasa Jepang ada ungkapan 'otsukaresama', tetapi sulit untuk menerjemahkannya secara harfiah ke bahasa Inggris. Ini karena orang Jepang memiliki budaya untuk menghargai jerih payah orang di sekitarnya. Dengan mempelajari bahasa, dunia kita meluas dan kita bisa memiliki sudut pandang yang beragam. Memang benar belajar itu berat dan memakan waktu, tapi kegembiraan saat bisa berkomunikasi dengan orang asing itu sangat besar. Saya ingin terus melanjutkan belajar bahasa Jepang sambil menikmatinya."
+      }
+    },
+    {
+      "id": "reading-n4-19",
+      "legacyId": 19,
+      "order": 39,
+      "level": "N4",
+      "levelLabel": "JLPT N4",
+      "slug": "n4-19-tezukuri-no-purezento",
+      "title": "Hadiah Buatan Tangan (Tezukuri no Purezento)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "店で買ったものもいいですが、手作りのプレゼントには特別な価値があると思います。私は友達の誕生日に、自分で編んだマフラーを贈りました。編み物を習ったばかりだったので、完成させるのに一ヶ月もかかりました。何度も間違えてやり直しましたが、友達が喜んでくれる顔を想像しながら頑張りました。プレゼントを渡したとき、友達は「私のために時間を使ってくれてありがとう」と言ってくれました。心がこもった贈り物は、相手に温かい気持ちを伝えてくれます。皆さんも、大切な人に手作りのものを贈ってみてはいかかでしょうか。",
+        "romaji": "Mise de katta mono mo ii desu ga, tezukuri no purezento ni wa tokubetsu na kachi ga aru to omoimasu. Watashi wa tomodachi no tanjoubi ni, jibun de anda mafuraa o okurimashita. Amimono o naratta bakari datta node, kansei saseru no ni ikkagetsu mo kakarimashita. Nando mo machigaete yarinaoshimashita ga, tomodachi ga yorokonde kureru kao o souzou shinagara ganbarimashita. Purezento o watashita toki, tomodachi wa 'Watashi no tame ni jikan o tsukatte kurete arigatou' to itte kuremashita. Kokoro ga komotta okurimono wa, aite ni atatakai kimochi o tsutaete kuremasu. Minasan mo, taisetsu na hito ni tezukuri no mono o okutte mite wa ikaga deshou ka.",
+        "indonesia": "Barang yang dibeli di toko memang bagus, tapi saya pikir hadiah buatan tangan memiliki nilai yang spesial. Pada ulang tahun teman, saya memberikan syal yang saya rajut sendiri. Karena saya baru saja belajar merajut, butuh waktu sebulan untuk menyelesaikannya. Saya berkali-kali salah dan mengulanginya, tapi saya berusaha sambil membayangkan wajah teman yang akan merasa senang. Saat memberikan hadiah tersebut, teman saya berkata 'Terima kasih telah meluangkan waktu untukku'. Hadiah yang sepenuh hati akan menyampaikan perasaan hangat kepada si penerima. Bagaimana jika Anda semua juga mencoba memberikan sesuatu yang buatan tangan kepada orang tersayang?"
+      }
+    },
+    {
+      "id": "reading-n4-20",
+      "legacyId": 20,
+      "order": 40,
+      "level": "N4",
+      "levelLabel": "JLPT N4",
+      "slug": "n4-20-robotto-no-mirai",
+      "title": "Masa Depan Robot (Robotto no Mirai)",
+      "estimatedMinutes": 3,
+      "content": {
+        "japanese": "近い将来、ロボットは私たちの生活にもっと欠かせない存在になるでしょう。今でも掃除をしたり、レストランで料理を運んだりするロボットが活躍しています。さらに技術が進歩すれば、お年寄りの世話をしたり、危険な場所で仕事をしたりするロボットも増えるはずです。ロボットのおかげで人間はもっと楽ができるようになりますが、一方で「人間の仕事がなくなるのではないか」と心配する声もあります。大切なのは、ロボットをどのように使い、人間とどのように協力していくかです。技術を正しく使って、みんなが幸せに暮らせる未来を作っていきたいものです。",
+        "romaji": "Chikai shourai, robotto wa watashitachi no seikatsu ni motto kakasenai sonzai ni naru deshou. Ima demo souji o shitari, resutoran de ryouri o hakondari suru robotto ga katsuyaku shite imasu. Sara ni gijutsu ga shinpo sureba, otoshiyori no sewa o shitari, kiken na basho de shigoto o shitari suru robotto mo fueru hazu desu. Robotto no okage de ningen wa motto raku ga dekiru you ni narimasu ga, ippou de 'Ningen no shigoto ga nakunaru no dewa nai ka' to shinpai suru koe mo arimasu. Taisetsu na no wa, robotto o dono you ni tsukai, ningen to dono you ni kyouryoku shite iku ka desu. Gijutsu o tadashiku tsukatte, minna ga shiawase ni kuraseru mirai o tsukutte ikitai mono desu.",
+        "indonesia": "Dalam waktu dekat, robot akan menjadi keberadaan yang semakin tak terpisahkan dalam hidup kita. Bahkan sekarang, robot yang membersihkan rumah atau mengantar makanan di restoran sudah aktif digunakan. Jika teknologi semakin maju, robot yang merawat orang tua atau bekerja di tempat berbahaya pasti akan bertambah. Berkat robot, manusia bisa menjadi lebih santai, namun di sisi lain ada suara kekhawatiran bahwa 'pekerjaan manusia mungkin akan hilang'. Yang terpenting adalah bagaimana menggunakan robot dan bagaimana bekerja sama dengan manusia. Kita harus menggunakan teknologi dengan benar untuk menciptakan masa depan di mana semua orang bisa hidup bahagia."
+      }
+    }
+  ]
+}

@@ -10,12 +10,25 @@ export async function POST(req: Request) {
   const userId = String(body.userId ?? "");
   const appId = String(body.appId ?? "");
   const action = String(body.action ?? "grant");
-  const durationDays = Number(body.durationDays ?? 30);
+  const rawDurationDays = Number(body.durationDays ?? 30);
+  const durationDays = Number.isFinite(rawDurationDays)
+    ? Math.min(Math.max(Math.floor(rawDurationDays), 1), 3650)
+    : 30;
   const reason = typeof body.reason === "string" ? body.reason : undefined;
 
   if (!userId || !appId) {
     return NextResponse.json({ error: "userId and appId are required" }, { status: 400 });
   }
+
+  const targetUser = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { role: true },
+  });
+  if (!targetUser) {
+    return NextResponse.json({ error: "User not found" }, { status: 404 });
+  }
+
+  const isTargetAdmin = targetUser.role === "ADMIN" || targetUser.role === "SUPER_ADMIN";
 
   if (action === "revoke") {
     await prisma.appUserAccess.updateMany({
@@ -33,8 +46,8 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  const accessExpiresAt = new Date();
-  accessExpiresAt.setDate(accessExpiresAt.getDate() + durationDays);
+  const accessExpiresAt = isTargetAdmin ? null : new Date();
+  if (accessExpiresAt) accessExpiresAt.setDate(accessExpiresAt.getDate() + durationDays);
 
   const access = await prisma.appUserAccess.upsert({
     where: {
@@ -42,8 +55,8 @@ export async function POST(req: Request) {
     },
     update: {
       status: "ACTIVE",
-      billingPlan: "ADMIN_GRANT",
-      billingPeriod: `${durationDays}_DAYS`,
+      billingPlan: isTargetAdmin ? "ADMIN" : "ADMIN_GRANT",
+      billingPeriod: isTargetAdmin ? "NON_EXPIRING" : `${durationDays}_DAYS`,
       accessStartsAt: new Date(),
       accessExpiresAt,
     },
@@ -51,8 +64,8 @@ export async function POST(req: Request) {
       userId,
       appId,
       status: "ACTIVE",
-      billingPlan: "ADMIN_GRANT",
-      billingPeriod: `${durationDays}_DAYS`,
+      billingPlan: isTargetAdmin ? "ADMIN" : "ADMIN_GRANT",
+      billingPeriod: isTargetAdmin ? "NON_EXPIRING" : `${durationDays}_DAYS`,
       accessExpiresAt,
     },
   });
@@ -64,7 +77,7 @@ export async function POST(req: Request) {
       appId,
       action: "GRANT_APP",
       reason,
-      metadata: JSON.stringify({ durationDays }),
+      metadata: JSON.stringify({ durationDays: isTargetAdmin ? null : durationDays, nonExpiringAdmin: isTargetAdmin }),
     },
   });
 

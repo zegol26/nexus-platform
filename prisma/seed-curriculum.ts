@@ -4,11 +4,13 @@ export async function seedCurriculum() {
 
   const lessons = [
   // Foundations
-  { title: "Hiragana Foundation", description: "Belajar semua huruf hiragana dasar あ〜ん.", level: "Beginner", order: 1, track: "JLPT", module: "Foundations", lessonType: "kana" },
-  { title: "Katakana Foundation", description: "Belajar semua huruf katakana dasar ア〜ン.", level: "Beginner", order: 2, track: "JLPT", module: "Foundations", lessonType: "kana" },
+  { slug: "hiragana-foundation", title: "Hiragana Foundation", description: "Belajar semua huruf hiragana dasar あ〜ん.", level: "Beginner", order: 1, track: "JLPT", module: "Foundations", lessonType: "kana" },
+  { slug: "katakana-foundation", title: "Katakana Foundation", description: "Belajar semua huruf katakana dasar ア〜ン.", level: "Beginner", order: 2, track: "JLPT", module: "Foundations", lessonType: "kana" },
   { title: "Dakuten, Handakuten, and Youon", description: "Belajar が・ぱ・きゃ・しゅ dan kombinasi bunyi Jepang.", level: "Beginner", order: 3, track: "JLPT", module: "Foundations", lessonType: "kana" },
   { title: "Japanese Pronunciation Basics", description: "Panjang pendek bunyi, double consonant っ, dan intonasi dasar.", level: "Beginner", order: 4, track: "JLPT", module: "Foundations", lessonType: "pronunciation" },
 
+  { slug: "kanji-n5-foundation", title: "Kanji N5 Foundation", description: "Belajar kanji inti N5 dengan onyomi, kunyomi, dan arti Indonesia.", level: "N5", order: 41, track: "JLPT", module: "N5 Vocabulary", lessonType: "kanji" },
+  { slug: "kanji-n4-foundation", title: "Kanji N4 Foundation", description: "Belajar kanji inti N4 dengan onyomi, kunyomi, dan arti Indonesia.", level: "N4", order: 42, track: "JLPT", module: "N4 Vocabulary", lessonType: "kanji" },
   // N5 Core
   { title: "Basic Greetings and Self Introduction", description: "Salam, perkenalan diri, nama, negara, pekerjaan.", level: "N5", order: 5, track: "JLPT", module: "N5 Communication", lessonType: "conversation" },
   { title: "A は B です", description: "Pola kalimat dasar: saya adalah..., ini adalah....", level: "N5", order: 6, track: "JLPT", module: "N5 Grammar", lessonType: "grammar" },
@@ -52,11 +54,30 @@ export async function seedCurriculum() {
   { title: "Polite Requests at Work", description: "Meminta bantuan, konfirmasi, dan izin secara sopan.", level: "A2", order: 40, track: "JFT", module: "Workplace", lessonType: "conversation" },
 ];
 
-  await prisma.nihongoLesson.deleteMany();
+  let created = 0;
+  let updated = 0;
 
-  await prisma.nihongoLesson.createMany({
-    data: lessons,
-  });
+  for (const lesson of lessons) {
+    const existing = await prisma.nihongoLesson.findFirst({
+      where: lesson.slug
+        ? { OR: [{ slug: lesson.slug }, { order: lesson.order }] }
+        : { order: lesson.order },
+      select: { id: true },
+      orderBy: { createdAt: "asc" },
+    });
 
-  console.log(`Lessons seeded: ${lessons.length}`);
+    if (existing) {
+      await prisma.nihongoLesson.update({
+        where: { id: existing.id },
+        data: lesson,
+      });
+      updated += 1;
+      continue;
+    }
+
+    await prisma.nihongoLesson.create({ data: lesson });
+    created += 1;
+  }
+
+  console.log(`Lessons seeded: ${lessons.length} (${created} created, ${updated} updated)`);
 }

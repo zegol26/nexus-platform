@@ -3,6 +3,8 @@ import { getServerSession } from "next-auth";
 import OpenAI from "openai";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
+import { canAskAiTutor, incrementFeatureUsage } from "@/lib/nexus/access-guards";
+import { trackEvent } from "@/lib/analytics/trackEvent";
 
 export async function POST(
   request: Request,
@@ -34,6 +36,12 @@ export async function POST(
     return NextResponse.json({ error: "User not found" }, { status: 404 });
   }
 
+  const isAdmin = user.role === "ADMIN" || user.role === "SUPER_ADMIN";
+  const access = isAdmin ? { allowed: true } : await canAskAiTutor(user.id);
+  if (!access.allowed) {
+    return NextResponse.json({ error: access.reason ?? "AI Tutor trial limit reached.", access }, { status: 403 });
+  }
+
   const lesson = await prisma.nihongoLesson.findUnique({
     where: { id: lessonId },
     include: {
@@ -54,6 +62,21 @@ export async function POST(
       userId: user.id,
       role: "user",
       content: body.message,
+    },
+  });
+
+  if (!isAdmin) {
+    await incrementFeatureUsage(user.id, "AI_TUTOR_QUESTION");
+  }
+
+  await trackEvent({
+    userId: user.id,
+    eventType: "AI_TUTOR_MESSAGE",
+    lessonId,
+    pagePath: `/apps/nihongo/curriculum/${lessonId}`,
+    metadata: {
+      messageLength: body.message.length,
+      scope: "lesson",
     },
   });
 

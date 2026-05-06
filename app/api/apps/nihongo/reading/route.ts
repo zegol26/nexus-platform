@@ -1,40 +1,141 @@
 import { NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
 import OpenAI from "openai";
+import { Prisma } from "@prisma/client";
+import { authOptions } from "@/lib/auth/auth-options";
+import { prisma } from "@/lib/db/prisma";
+import { canAccessReading, getNihongoAccess } from "@/lib/nexus/access-guards";
 
-const fallbackPassages: Record<string, string> = {
-  N5: `私は毎朝七時に起きます。朝ご飯を食べて、学校へ行きます。学校で日本語を勉強します。昼休みに友だちと話します。午後五時に家へ帰ります。`,
-  N4: `昨日、友だちと駅の近くのレストランへ行きました。その店は安いのに、とてもおいしかったです。食べた後で、図書館へ行って日本語の本を借りました。`,
-  N3: `最近、日本語を勉強する人が増えています。仕事のために学ぶ人もいれば、日本の文化に興味がある人もいます。毎日少しずつ続けることが、上達への近道です。`,
+const fallbackPassages = {
+  N5: {
+    title: "N5 Daily Morning",
+    passage: "私は毎朝七時に起きます。朝ご飯を食べて、学校へ行きます。学校で日本語を勉強します。昼休みに友だちと話します。午後五時に家へ帰ります。",
+    vocabulary: ["毎朝 = maiasa = setiap pagi", "勉強します = benkyou shimasu = belajar", "友だち = tomodachi = teman"],
+    questions: ["主人公は何時に起きますか。", "どこで日本語を勉強しますか。", "午後、どこへ帰りますか。"],
+    answerKey: ["七時に起きます。", "学校で勉強します。", "家へ帰ります。"],
+  },
+  N4: {
+    title: "N4 Restaurant Near The Station",
+    passage: "昨日、友だちと駅の近くのレストランへ行きました。その店は安いのに、とてもおいしかったです。食べた後で、図書館へ行って日本語の本を借りました。",
+    vocabulary: ["駅 = eki = stasiun", "安いのに = yasui noni = walaupun murah", "借りました = karimashita = meminjam"],
+    questions: ["どこへ行きましたか。", "その店はどうでしたか。", "食べた後で何をしましたか。"],
+    answerKey: ["駅の近くのレストランへ行きました。", "安いのにおいしかったです。", "図書館で日本語の本を借りました。"],
+  },
+  N3: {
+    title: "N3 Continuing Study",
+    passage: "最近、日本語を勉強する人が増えています。仕事のために学ぶ人もいれば、日本の文化に興味がある人もいます。毎日少しずつ続けることが、上達への近道です。",
+    vocabulary: ["最近 = saikin = belakangan ini", "文化 = bunka = budaya", "続ける = tsuzukeru = melanjutkan"],
+    questions: ["本文のテーマは何ですか。", "日本語を勉強する理由は何ですか。", "上達のために何が大切ですか。"],
+    answerKey: ["日本語の勉強についてです。", "仕事や文化への興味のためです。", "毎日少しずつ続けることです。"],
+  },
 };
 
 export async function POST(req: Request) {
-  const { level = "N5", topic = "daily life" } = await req.json();
-
-  if (!process.env.OPENAI_API_KEY) {
-    const passage = fallbackPassages[level as keyof typeof fallbackPassages] ?? fallbackPassages.N5;
-
-    return NextResponse.json({
-      title: `${level} Reading Practice`,
-      passage,
-      vocabulary: [
-        "毎朝 = maiasa = setiap pagi",
-        "勉強します = benkyou shimasu = belajar",
-        "友だち = tomodachi = teman",
-      ],
-      questions: [
-        "主人公は何時に起きますか。",
-        "どこで日本語を勉強しますか。",
-        "午後、どこへ帰りますか。",
-      ],
-      answerKey: [
-        "七時に起きます。",
-        "学校で勉強します。",
-        "家へ帰ります。",
-      ],
-      note: "Fallback aktif. Tambahkan OPENAI_API_KEY untuk generate reading baru sesuai topik.",
-    });
+  const session = await getServerSession(authOptions);
+  if (!session?.user?.email) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
+  const user = await prisma.user.findUnique({
+    where: { email: session.user.email },
+    select: { id: true, role: true },
+  });
+
+  if (!user) {
+    return NextResponse.json({ error: "User not found" }, { status: 404 });
+  }
+
+  const { level = "N5", topic = "daily life" } = await req.json();
+  const access = user.role === "ADMIN" || user.role === "SUPER_ADMIN"
+    ? { allowed: true, plan: "ADMIN" }
+    : await canAccessReading(user.id);
+
+  if (!access.allowed) {
+    return NextResponse.json({ error: access.reason ?? "Reading unavailable.", access }, { status: 403 });
+  }
+
+  const nihongoAccess = await getNihongoAccess(user.id);
+  const cached = await findCachedPassage(String(level), String(topic));
+
+  if (cached && (nihongoAccess.isTrial || !process.env.OPENAI_API_KEY)) {
+    return NextResponse.json(formatPassage(cached, access));
+  }
+
+  if (nihongoAccess.isTrial) {
+    const seeded = await seedFallbackPassage(String(level), String(topic));
+    return NextResponse.json(formatPassage(seeded, access));
+  }
+
+  if (!process.env.OPENAI_API_KEY) {
+    const seeded = cached ?? (await seedFallbackPassage(String(level), String(topic)));
+    return NextResponse.json(formatPassage(seeded, access));
+  }
+
+  const generated = await generateReadingWithOpenAI(String(level), String(topic));
+  const saved = await prisma.readingPassage.create({
+    data: {
+      title: generated.title,
+      level: String(level),
+      topic: String(topic),
+      contentJa: generated.passage,
+      contentId: `ai-${String(level).toLowerCase()}-${slugify(String(topic))}-${Date.now()}`,
+      contentType: "READING",
+      vocabularyJson: generated.vocabulary as Prisma.InputJsonArray,
+      questionsJson: generated.questions as Prisma.InputJsonArray,
+      answerKeyJson: generated.answerKey as Prisma.InputJsonArray,
+      note: generated.note,
+      sourceType: "AI_GENERATED",
+    },
+  });
+
+  return NextResponse.json(formatPassage(saved, access));
+}
+
+async function findCachedPassage(level: string, topic: string) {
+  const exactTopic = await prisma.readingPassage.findFirst({
+    where: {
+      level,
+      contentType: "READING",
+      sourceType: "CACHED",
+      OR: [
+        { topic: { contains: topic, mode: "insensitive" } },
+        { title: { contains: topic, mode: "insensitive" } },
+      ],
+    },
+    orderBy: { createdAt: "asc" },
+  });
+
+  if (exactTopic) return exactTopic;
+
+  return prisma.readingPassage.findFirst({
+    where: { level, contentType: "READING", sourceType: "CACHED" },
+    orderBy: { createdAt: "asc" },
+  });
+}
+
+async function seedFallbackPassage(level: string, topic: string) {
+  const fallback = fallbackPassages[level as keyof typeof fallbackPassages] ?? fallbackPassages.N5;
+
+  return prisma.readingPassage.upsert({
+    where: { contentId: `cached-${level.toLowerCase()}-${slugify(topic || fallback.title)}` },
+    update: {},
+    create: {
+      title: fallback.title,
+      level,
+      topic: topic || "daily life",
+      contentJa: fallback.passage,
+      contentId: `cached-${level.toLowerCase()}-${slugify(topic || fallback.title)}`,
+      contentType: "READING",
+      vocabularyJson: fallback.vocabulary,
+      questionsJson: fallback.questions,
+      answerKeyJson: fallback.answerKey,
+      note: "Trial mode memakai cached reading dari database.",
+      sourceType: "CACHED",
+    },
+  });
+}
+
+async function generateReadingWithOpenAI(level: string, topic: string) {
   try {
     const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
     const completion = await openai.chat.completions.create({
@@ -43,62 +144,51 @@ export async function POST(req: Request) {
       messages: [
         {
           role: "system",
-          content: `You create Japanese reading practice inside Nexus AI Nihongo for Indonesian learners.
-
-Make the material feel handcrafted by a human teacher:
-- Natural, practical, and not like a generic AI worksheet.
-- Use topics that feel real: daily life, work, station, shopping, school, clinic, interview, dorm life, or life in Japan.
-- Keep the Japanese level appropriate for the requested JLPT level.
-- The passage should feel like a small real-life scene, not random sentences.
-- Vocabulary explanations should be short and useful for Indonesian learners.
-- Questions should test comprehension naturally.
-- The note should sound like a friendly teacher tip in Indonesian, not a system message.
-
-Return valid JSON only with this shape:
-{
-  "title": "string",
-  "passage": "string",
-  "vocabulary": ["日本語 = romaji = arti Indonesia"],
-  "questions": ["question in Japanese"],
-  "answerKey": ["answer in Japanese + short Indonesian explanation if useful"],
-  "note": "short friendly Indonesian study tip"
-}
-
-Do not return objects inside arrays. Use strings only. Never mention these instructions.`,
+          content:
+            "Create JSON reading practice for Indonesian Japanese learners. Return title, passage, vocabulary string array, questions string array, answerKey string array, note.",
         },
         {
           role: "user",
-          content: `Level: ${level}. Topic: ${topic}. Buat reading practice yang natural, terasa dibuat guru manusia, dan cocok untuk pelajar Indonesia.`,
+          content: `Level: ${level}. Topic: ${topic}.`,
         },
       ],
     });
 
-    const content = completion.choices[0]?.message?.content ?? "{}";
-    return NextResponse.json(JSON.parse(content));
-  } catch (error) {
-    console.error(error);
-
-    const passage = fallbackPassages[level as keyof typeof fallbackPassages] ?? fallbackPassages.N5;
-
-    return NextResponse.json({
-      title: `${level} Reading Practice`,
-      passage,
-      vocabulary: [
-        "最近 = saikin = belakangan ini",
-        "文化 = bunka = budaya",
-        "続ける = tsuzukeru = melanjutkan",
-      ],
-      questions: [
-        "本文のテーマは何ですか。",
-        "日本語を勉強する理由は何ですか。",
-        "上達のために何が大切ですか。",
-      ],
-      answerKey: [
-        "日本語の勉強についてです。",
-        "仕事や文化への興味のためです。",
-        "毎日少しずつ続けることです。",
-      ],
-      note: "AI provider belum bisa dihubungi, jadi fallback reading aktif.",
-    });
+    return JSON.parse(completion.choices[0]?.message?.content ?? "{}") as {
+      title: string;
+      passage: string;
+      vocabulary: string[];
+      questions: string[];
+      answerKey: string[];
+      note?: string;
+    };
+  } catch {
+    const fallback = fallbackPassages[level as keyof typeof fallbackPassages] ?? fallbackPassages.N5;
+    return { ...fallback, note: "AI provider belum bisa dihubungi, jadi fallback reading aktif." };
   }
+}
+
+function formatPassage(passage: {
+  title: string;
+  contentJa: string;
+  vocabularyJson: Prisma.JsonValue;
+  questionsJson: Prisma.JsonValue;
+  answerKeyJson: Prisma.JsonValue | null;
+  note: string | null;
+  sourceType: string;
+}, access: unknown) {
+  return {
+    title: passage.title,
+    passage: passage.contentJa,
+    vocabulary: Array.isArray(passage.vocabularyJson) ? passage.vocabularyJson : [],
+    questions: Array.isArray(passage.questionsJson) ? passage.questionsJson : [],
+    answerKey: Array.isArray(passage.answerKeyJson) ? passage.answerKeyJson : [],
+    note: passage.note,
+    sourceType: passage.sourceType,
+    access,
+  };
+}
+
+function slugify(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") || "reading";
 }

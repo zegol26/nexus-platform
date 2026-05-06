@@ -2,6 +2,8 @@ import Link from "next/link";
 import { getCurrentUserBadge } from "@/lib/nihongo/getCurrentUserBadge";
 import { prisma } from "@/lib/db/prisma";
 
+export const dynamic = "force-dynamic";
+
 export default async function NihongoBadgesPage() {
   const [profile, badges] = await Promise.all([
     getCurrentUserBadge(),

@@ -41,7 +41,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Audio file is required" }, { status: 400 });
   }
 
-  if (!supportedMimeTypes.has(file.type)) {
+  if (!isSupportedAudioMimeType(file.type)) {
     return NextResponse.json(
       { error: "Unsupported audio format. Use webm, mp3, wav, or m4a." },
       { status: 400 }
@@ -107,4 +107,8 @@ export async function POST(request: Request) {
     metadata,
     evaluation,
   });
+}
+
+function isSupportedAudioMimeType(mimeType: string) {
+  return supportedMimeTypes.has(mimeType) || mimeType.startsWith("audio/webm");
 }

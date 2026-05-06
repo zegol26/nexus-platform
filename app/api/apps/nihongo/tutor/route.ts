@@ -1,12 +1,50 @@
 import { NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
 import OpenAI from "openai";
+import { authOptions } from "@/lib/auth/auth-options";
+import { prisma } from "@/lib/db/prisma";
+import { canAskAiTutor, incrementFeatureUsage } from "@/lib/nexus/access-guards";
+import { trackEvent } from "@/lib/analytics/trackEvent";
 
 export async function POST(req: Request) {
+  const session = await getServerSession(authOptions);
+  if (!session?.user?.email) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const user = await prisma.user.findUnique({
+    where: { email: session.user.email },
+    select: { id: true, role: true },
+  });
+
+  if (!user) {
+    return NextResponse.json({ error: "User not found" }, { status: 404 });
+  }
+
   const { message } = await req.json();
 
   if (!message || typeof message !== "string") {
     return NextResponse.json({ error: "Message is required" }, { status: 400 });
   }
+
+  const isAdmin = user.role === "ADMIN" || user.role === "SUPER_ADMIN";
+  const access = isAdmin ? { allowed: true } : await canAskAiTutor(user.id);
+  if (!access.allowed) {
+    return NextResponse.json({ error: access.reason ?? "AI Tutor trial limit reached.", access }, { status: 403 });
+  }
+
+  if (!isAdmin) {
+    await incrementFeatureUsage(user.id, "AI_TUTOR_QUESTION");
+  }
+
+  await trackEvent({
+    userId: user.id,
+    eventType: "AI_TUTOR_MESSAGE",
+    pagePath: "/apps/nihongo/tutor",
+    metadata: {
+      messageLength: message.length,
+    },
+  });
 
   if (!process.env.OPENAI_API_KEY) {
     return NextResponse.json({

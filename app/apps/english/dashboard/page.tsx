@@ -3,6 +3,8 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/auth-options";
 import { EnglishInterviewClient } from "@/components/apps/english/EnglishInterviewClient";
 
+export const dynamic = "force-dynamic";
+
 export default async function EnglishDashboardPage() {
   const session = await getServerSession(authOptions);
 

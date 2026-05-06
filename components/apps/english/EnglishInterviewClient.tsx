@@ -49,6 +49,12 @@ type ReviewQueueItem = {
 };
 
 const maxRecordingSec = 180;
+const recordingMimeTypeCandidates = [
+  "audio/mp4",
+  "audio/webm;codecs=opus",
+  "audio/webm",
+  "audio/wav",
+];
 
 export function EnglishInterviewClient() {
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -60,7 +66,12 @@ export function EnglishInterviewClient() {
   const [recordingBlob, setRecordingBlob] = useState<Blob | null>(null);
   const [recordingUrl, setRecordingUrl] = useState<string | null>(null);
   const [isRecording, setIsRecording] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
   const [status, setStatus] = useState("");
+  const [microphoneStatus, setMicrophoneStatus] = useState(
+    "Mikrofon akan dicek saat kamu mulai recording."
+  );
+  const [selectedMimeType, setSelectedMimeType] = useState("");
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
   const timerRef = useRef<number | null>(null);
@@ -96,44 +107,65 @@ export function EnglishInterviewClient() {
   }, [answers]);
 
   async function startRecording(questionId: string) {
-    if (!navigator.mediaDevices?.getUserMedia) {
-      setStatus("Browser belum mendukung rekam audio. Gunakan browser modern.");
+    const capability = await checkMicrophoneCapability();
+
+    setMicrophoneStatus(capability.message);
+
+    if (!capability.canRecord) {
+      setStatus(capability.message);
       return;
     }
 
-    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-    const recorder = new MediaRecorder(stream, { mimeType: getSupportedMimeType() });
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const mimeType = getSupportedMimeType();
+      const recorder = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream);
+      const recorderMimeType = recorder.mimeType || mimeType || "audio/webm";
 
-    chunksRef.current = [];
-    recorder.ondataavailable = (event) => {
-      if (event.data.size > 0) chunksRef.current.push(event.data);
-    };
-    recorder.onstop = () => {
-      const blob = new Blob(chunksRef.current, { type: recorder.mimeType || "audio/webm" });
-      setRecordingBlob(blob);
-      setRecordingUrl(URL.createObjectURL(blob));
-      stream.getTracks().forEach((track) => track.stop());
-    };
+      chunksRef.current = [];
+      recorder.ondataavailable = (event) => {
+        if (event.data.size > 0) chunksRef.current.push(event.data);
+      };
+      recorder.onstop = () => {
+        const blob = new Blob(chunksRef.current, { type: recorderMimeType });
+        setRecordingBlob(blob);
+        setRecordingUrl(URL.createObjectURL(blob));
+        stream.getTracks().forEach((track) => track.stop());
+        setStatus("Recording stopped. Review audio lalu submit.");
+      };
 
-    recorder.start();
-    mediaRecorderRef.current = recorder;
-    setActiveQuestionId(questionId);
-    setRecordingSec(0);
-    setRecordingBlob(null);
-    if (recordingUrl) URL.revokeObjectURL(recordingUrl);
-    setRecordingUrl(null);
-    setIsRecording(true);
-    setStatus("");
+      recorder.start();
+      mediaRecorderRef.current = recorder;
+      setActiveQuestionId(questionId);
+      setRecordingSec(0);
+      setRecordingBlob(null);
+      setSelectedMimeType(recorderMimeType);
+      if (recordingUrl) URL.revokeObjectURL(recordingUrl);
+      setRecordingUrl(null);
+      setIsRecording(true);
+      setStatus(`Recording... Format: ${recorderMimeType}`);
 
-    timerRef.current = window.setInterval(() => {
-      setRecordingSec((current) => {
-        if (current + 1 >= maxRecordingSec) {
-          stopRecording();
-          return maxRecordingSec;
-        }
-        return current + 1;
-      });
-    }, 1000);
+      timerRef.current = window.setInterval(() => {
+        setRecordingSec((current) => {
+          if (current + 1 >= maxRecordingSec) {
+            stopRecording();
+            return maxRecordingSec;
+          }
+          return current + 1;
+        });
+      }, 1000);
+    } catch (recordingError) {
+      const isPermissionDenied =
+        recordingError instanceof DOMException &&
+        (recordingError.name === "NotAllowedError" || recordingError.name === "PermissionDeniedError");
+
+      setStatus(
+        isPermissionDenied
+          ? getMicrophonePermissionHelp()
+          : "Mikrofon belum bisa diakses. Cek perangkat input audio."
+      );
+      setIsRecording(false);
+    }
   }
 
   function stopRecording() {
@@ -149,28 +181,46 @@ export function EnglishInterviewClient() {
       return;
     }
 
+    setIsUploading(true);
+    setStatus("Uploading recording...");
+
     const formData = new FormData();
     formData.append("questionId", questionId);
     formData.append("durationSec", String(Math.max(recordingSec, 1)));
-    formData.append("audio", recordingBlob, `english-interview-${questionId}.webm`);
+    formData.append(
+      "audio",
+      recordingBlob,
+      `english-interview-${questionId}.${getAudioExtension(recordingBlob.type)}`
+    );
 
-    const response = await fetch("/api/apps/english/interview/answers", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const response = await fetch("/api/apps/english/interview/answers", {
+        method: "POST",
+        body: formData,
+      });
 
-    if (!response.ok) {
+      if (!response.ok) {
+        const payload = await response.json();
+        setStatus(payload.error ?? "Upload recording gagal.");
+        return;
+      }
+
       const payload = await response.json();
-      setStatus(payload.error ?? "Upload recording gagal.");
-      return;
+      setStatus(
+        payload.replaced
+          ? "Recording lama diganti. Admin atau sensei bisa memberi penilaian manual dari versi terbaru."
+          : "Jawaban tersimpan. Admin atau sensei bisa memberi penilaian manual."
+      );
+      setRecordingBlob(null);
+      setRecordingUrl(null);
+      setActiveQuestionId(null);
+      setRecordingSec(0);
+      await loadData();
+    } catch {
+      setStatus("Upload recording gagal karena koneksi terputus. Coba submit ulang.");
+    } finally {
+      setIsUploading(false);
     }
-
-    setStatus("Jawaban tersimpan. Admin atau sensei bisa memberi penilaian manual.");
-    setRecordingBlob(null);
-    setRecordingUrl(null);
-    setActiveQuestionId(null);
-    setRecordingSec(0);
-    await loadData();
   }
 
   return (
@@ -195,6 +245,15 @@ export function EnglishInterviewClient() {
         </section>
 
         {status && <div className="rounded-2xl border border-blue-200 bg-blue-50 p-4 text-sm text-blue-800">{status}</div>}
+        <div className="rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-600">
+          <span className="font-semibold text-slate-950">Microphone:</span>{" "}
+          {microphoneStatus}
+          {selectedMimeType ? (
+            <span className="ml-2 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
+              {selectedMimeType}
+            </span>
+          ) : null}
+        </div>
 
         <section className="grid gap-4">
           {questions.map((question) => {
@@ -213,7 +272,7 @@ export function EnglishInterviewClient() {
                   </div>
                   {answer && (
                     <span className="rounded-full bg-emerald-50 px-4 py-2 text-xs font-semibold text-emerald-700">
-                      {answer.status}
+                      Recorded
                     </span>
                   )}
                 </div>
@@ -231,11 +290,17 @@ export function EnglishInterviewClient() {
 
                   <div className="rounded-2xl bg-slate-50 p-4">
                     <p className="mb-3 text-sm font-semibold text-slate-700">Your answer</p>
+                    {answer ? (
+                      <div className="mb-3 rounded-2xl border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-800">
+                        Recorded Nexus AI English sudah submitted. Kalau record dan submit lagi, recording lama akan diganti.
+                      </div>
+                    ) : null}
                     <div className="flex flex-wrap gap-2">
                       {!isRecording || !isActive ? (
                         <button
                           type="button"
                           onClick={() => startRecording(question.id)}
+                          disabled={isUploading}
                           className="rounded-full bg-slate-950 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700"
                         >
                           Start Recording
@@ -244,6 +309,7 @@ export function EnglishInterviewClient() {
                         <button
                           type="button"
                           onClick={stopRecording}
+                          disabled={isUploading}
                           className="rounded-full bg-rose-600 px-4 py-2 text-sm font-semibold text-white hover:bg-rose-700"
                         >
                           Stop Recording
@@ -253,9 +319,10 @@ export function EnglishInterviewClient() {
                         <button
                           type="button"
                           onClick={() => submitRecording(question.id)}
+                          disabled={isUploading}
                           className="rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700"
                         >
-                          Submit
+                          {isUploading ? "Uploading..." : "Submit"}
                         </button>
                       )}
                     </div>
@@ -387,7 +454,88 @@ function ReviewQueue({ items, onSaved }: { items: ReviewQueueItem[]; onSaved: ()
 }
 
 function getSupportedMimeType() {
-  if (MediaRecorder.isTypeSupported("audio/webm;codecs=opus")) return "audio/webm;codecs=opus";
-  if (MediaRecorder.isTypeSupported("audio/webm")) return "audio/webm";
+  for (const mimeType of recordingMimeTypeCandidates) {
+    if (MediaRecorder.isTypeSupported(mimeType)) return mimeType;
+  }
+
   return "";
+}
+
+async function checkMicrophoneCapability() {
+  if (!window.isSecureContext) {
+    return {
+      canRecord: false,
+      message:
+        "Recording butuh HTTPS atau localhost. Buka dari domain HTTPS agar browser mengizinkan mikrofon.",
+    };
+  }
+
+  if (!navigator.mediaDevices?.getUserMedia) {
+    return {
+      canRecord: false,
+      message:
+        "Browser ini belum mendukung akses mikrofon. Gunakan Safari terbaru di iPhone atau Chrome terbaru di Android.",
+    };
+  }
+
+  if (typeof MediaRecorder === "undefined") {
+    return {
+      canRecord: false,
+      message:
+        "Browser ini belum mendukung MediaRecorder. Coba Safari/Chrome versi terbaru atau gunakan desktop.",
+    };
+  }
+
+  if (!getSupportedMimeType()) {
+    return {
+      canRecord: false,
+      message:
+        "Browser ini belum punya format audio recording yang cocok. Coba update browser atau gunakan perangkat lain.",
+    };
+  }
+
+  try {
+    const permissions = await navigator.permissions?.query({
+      name: "microphone" as PermissionName,
+    });
+
+    if (permissions?.state === "denied") {
+      return {
+        canRecord: false,
+        message: getMicrophonePermissionHelp(),
+      };
+    }
+  } catch {
+    // Safari often does not support querying microphone permission; getUserMedia will show the real prompt.
+  }
+
+  return {
+    canRecord: true,
+    message:
+      "Mikrofon siap dicek. Jika popup tidak muncul di iPhone/Android, aktifkan izin mikrofon dari Settings browser.",
+  };
+}
+
+function getMicrophonePermissionHelp() {
+  const userAgent = navigator.userAgent.toLowerCase();
+
+  if (/iphone|ipad|ipod/.test(userAgent)) {
+    return "Izin mikrofon tertutup. Di iPhone, buka Settings > Safari/Chrome > Microphone, lalu pilih Allow dan refresh halaman.";
+  }
+
+  if (/android/.test(userAgent)) {
+    return "Izin mikrofon tertutup. Di Android, buka Site settings atau App permissions untuk browser, aktifkan Microphone, lalu refresh halaman.";
+  }
+
+  return "Izin mikrofon ditolak. Aktifkan permission microphone di browser, lalu coba lagi.";
+}
+
+function getAudioExtension(mimeType: string) {
+  const normalizedMimeType = mimeType.split(";")[0];
+
+  if (normalizedMimeType === "audio/mp4" || normalizedMimeType === "audio/m4a") return "m4a";
+  if (normalizedMimeType === "audio/wav" || normalizedMimeType === "audio/x-wav") return "wav";
+  if (normalizedMimeType === "audio/mpeg" || normalizedMimeType === "audio/mp3") return "mp3";
+
+  return "webm";
 }

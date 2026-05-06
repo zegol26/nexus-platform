@@ -20,6 +20,26 @@ enum AppStatus {
   COMING_SOON
 }
 
+enum PaymentStatus {
+  PENDING
+  WAITING_VERIFICATION
+  PAID
+  REJECTED
+  EXPIRED
+}
+
+enum SubscriptionStatus {
+  TRIAL
+  ACTIVE
+  EXPIRED
+  CANCELED
+}
+
+enum ReadingSourceType {
+  CACHED
+  AI_GENERATED
+}
+
 model User {
   id            String    @id @default(cuid())
   name          String?
@@ -38,18 +58,230 @@ model User {
   appAccess               AppUserAccess[]
   lessonAccess            LessonAccess[]
   payments                PaymentTransaction[]
-  accessAudits            AccessGrantAudit[]         @relation("AccessAuditActor")
+  subscriptions           Subscription[]
+  paymentProofs           PaymentProof[]
+  featureUsage            FeatureUsage[]
+  accessAudits            AccessGrantAudit[]               @relation("AccessAuditActor")
   accounts                Account[]
   sessions                Session[]
   nihongoProfile          UserNihongoProfile?
   nihongoAssessments      NihongoAssessmentSession[]
   nihongoBadges           UserNihongoBadge[]
   nihongoMockAttempts     NihongoMockTestAttempt[]
+  gameProfile             UserGameProfile?
+  gameKingdom             GameKingdom?
+  gameResourceLedgers     GameResourceLedger[]             @relation("GameLedgerUser")
+  gameDailyCounters       GameLearningRewardDailyCounter[]
+  communityRoomsCreated   CommunityRoom[]                  @relation("CommunityRoomCreator")
+  communityMessages       CommunityMessage[]               @relation("CommunityMessageAuthor")
+  communityReactions      CommunityMessageReaction[]       @relation("CommunityReactionUser")
   englishInterviewAnswers EnglishInterviewAnswer[]
-  englishInterviewReviews EnglishInterviewReview[]   @relation("EnglishInterviewReviewer")
+  englishInterviewReviews EnglishInterviewReview[]         @relation("EnglishInterviewReviewer")
+  analyticsEvents         AnalyticsEvent[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model CommunityRoom {
+  id          String  @id @default(cuid())
+  name        String
+  description String?
+  createdById String
+
+  createdBy      User               @relation("CommunityRoomCreator", fields: [createdById], references: [id], onDelete: Cascade)
+  messages       CommunityMessage[] @relation("CommunityRoomMessages")
+  linkedMessages CommunityMessage[] @relation("LinkedCommunityRoom")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([createdById])
+  @@index([createdAt])
+}
+
+model GameKingdom {
+  id                       String    @id @default(cuid())
+  userId                   String    @unique
+  name                     String
+  continent                String
+  level                    Int       @default(1)
+  castleLevel              Int       @default(1)
+  xp                       Int       @default(0)
+  resourcesJson            Json
+  heroKey                  String    @default("ARJUNA")
+  selectedAttackWeaponKey  String    @default("MOONLIGHT_KUNAI_STORM")
+  selectedDefenseWeaponKey String    @default("SILVER_MOON_TOWER")
+  shieldUntil              DateTime?
+  lastDailyLoginRewardAt   DateTime?
+  createdAt                DateTime  @default(now())
+  updatedAt                DateTime  @updatedAt
+
+  user                 User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+  ledgers              GameResourceLedger[]
+  armyUnits            GameArmyUnit[]
+  battleLogsAsAttacker GameBattleLog[]      @relation("GameBattleAttacker")
+  battleLogsAsDefender GameBattleLog[]      @relation("GameBattleDefender")
+  cards                GameUserCard[]
+
+  @@index([continent])
+  @@index([xp])
+  @@index([castleLevel])
+}
+
+model GameResourceLedger {
+  id            String   @id @default(cuid())
+  userId        String
+  kingdomId     String
+  sourceKey     String
+  sourceType    String
+  resourcesJson Json
+  xp            Int      @default(0)
+  metadata      Json?
+  createdAt     DateTime @default(now())
+
+  user    User        @relation("GameLedgerUser", fields: [userId], references: [id], onDelete: Cascade)
+  kingdom GameKingdom @relation(fields: [kingdomId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, sourceKey])
+  @@index([kingdomId])
+  @@index([sourceType])
+  @@index([createdAt])
+}
+
+model GameArmyUnit {
+  id              String   @id @default(cuid())
+  kingdomId       String
+  unitKey         String
+  quantity        Int      @default(0)
+  defenseQuantity Int      @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  kingdom GameKingdom @relation(fields: [kingdomId], references: [id], onDelete: Cascade)
+
+  @@unique([kingdomId, unitKey])
+  @@index([kingdomId])
+}
+
+model GameBattleLog {
+  id                  String   @id @default(cuid())
+  attackerKingdomId   String
+  defenderKingdomId   String
+  continent           String
+  result              String
+  attackerPower       Int
+  defenderPower       Int
+  stolenResourcesJson Json
+  casualtiesJson      Json
+  snapshotJson        Json
+  createdAt           DateTime @default(now())
+
+  attacker GameKingdom @relation("GameBattleAttacker", fields: [attackerKingdomId], references: [id], onDelete: Cascade)
+  defender GameKingdom @relation("GameBattleDefender", fields: [defenderKingdomId], references: [id], onDelete: Cascade)
+
+  @@index([attackerKingdomId])
+  @@index([defenderKingdomId])
+  @@index([continent])
+  @@index([createdAt])
+}
+
+model GameUserCard {
+  id        String   @id @default(cuid())
+  kingdomId String
+  cardKey   String
+  quantity  Int      @default(1)
+  equipped  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  kingdom GameKingdom @relation(fields: [kingdomId], references: [id], onDelete: Cascade)
+
+  @@unique([kingdomId, cardKey])
+  @@index([kingdomId])
+}
+
+model GameLearningRewardDailyCounter {
+  id             String   @id @default(cuid())
+  userId         String
+  counterDate    String
+  flashcardCount Int      @default(0)
+  quizCount      Int      @default(0)
+  mockCount      Int      @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, counterDate])
+  @@index([counterDate])
+}
+
+model CommunityMessage {
+  id           String  @id @default(cuid())
+  roomId       String
+  authorId     String
+  body         String
+  replyToId    String?
+  linkedRoomId String?
+
+  room       CommunityRoom              @relation("CommunityRoomMessages", fields: [roomId], references: [id], onDelete: Cascade)
+  author     User                       @relation("CommunityMessageAuthor", fields: [authorId], references: [id], onDelete: Cascade)
+  replyTo    CommunityMessage?          @relation("MessageReplies", fields: [replyToId], references: [id])
+  replies    CommunityMessage[]         @relation("MessageReplies")
+  linkedRoom CommunityRoom?             @relation("LinkedCommunityRoom", fields: [linkedRoomId], references: [id])
+  reactions  CommunityMessageReaction[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([roomId])
+  @@index([authorId])
+  @@index([replyToId])
+  @@index([linkedRoomId])
+  @@index([createdAt])
+}
+
+model CommunityMessageReaction {
+  id        String @id @default(cuid())
+  messageId String
+  userId    String
+  type      String @default("ONIGIRI")
+
+  message CommunityMessage @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  user    User             @relation("CommunityReactionUser", fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@unique([messageId, userId, type])
+  @@index([messageId])
+  @@index([userId])
+}
+
+model AnalyticsEvent {
+  id            String  @id @default(cuid())
+  userId        String?
+  sessionId     String?
+  eventType     String
+  appSlug       String? @default("nihongo")
+  pagePath      String?
+  lessonId      String?
+  quizId        String?
+  flashcardDeck String?
+  metadata      Json?
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+
+  @@index([eventType])
+  @@index([userId])
+  @@index([appSlug])
+  @@index([pagePath])
+  @@index([lessonId])
+  @@index([quizId])
+  @@index([flashcardDeck])
+  @@index([createdAt])
 }
 
 model PlatformApp {
@@ -59,10 +291,23 @@ model PlatformApp {
   description String?
   status      AppStatus @default(ACTIVE)
 
-  users        AppUserAccess[]
-  plans        SubscriptionPlan[]
-  payments     PaymentTransaction[]
-  accessAudits AccessGrantAudit[]
+  users         AppUserAccess[]
+  plans         SubscriptionPlan[]
+  payments      PaymentTransaction[]
+  subscriptions Subscription[]
+  accessAudits  AccessGrantAudit[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PlatformSetting {
+  id          String  @id @default(cuid())
+  key         String  @unique
+  label       String
+  value       String?
+  valueType   String  @default("TEXT")
+  description String?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -99,13 +344,37 @@ model SubscriptionPlan {
   durationDays Int
   active       Boolean @default(true)
 
-  app      PlatformApp          @relation(fields: [appId], references: [id], onDelete: Cascade)
-  payments PaymentTransaction[]
+  app           PlatformApp          @relation(fields: [appId], references: [id], onDelete: Cascade)
+  payments      PaymentTransaction[]
+  subscriptions Subscription[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@unique([appId, code])
+}
+
+model Subscription {
+  id     String  @id @default(cuid())
+  userId String
+  appId  String
+  planId String?
+
+  status     SubscriptionStatus @default(TRIAL)
+  startedAt  DateTime           @default(now())
+  expiresAt  DateTime?
+  canceledAt DateTime?
+
+  user User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  app  PlatformApp       @relation(fields: [appId], references: [id], onDelete: Cascade)
+  plan SubscriptionPlan? @relation(fields: [planId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([appId])
+  @@index([status])
 }
 
 model PaymentTransaction {
@@ -123,14 +392,38 @@ model PaymentTransaction {
   paidAt       DateTime?
   rawPayload   String?
 
-  user User              @relation(fields: [userId], references: [id], onDelete: Cascade)
-  app  PlatformApp       @relation(fields: [appId], references: [id], onDelete: Cascade)
-  plan SubscriptionPlan? @relation(fields: [planId], references: [id])
+  user  User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  app   PlatformApp       @relation(fields: [appId], references: [id], onDelete: Cascade)
+  plan  SubscriptionPlan? @relation(fields: [planId], references: [id])
+  proof PaymentProof?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@unique([provider, providerRef])
+}
+
+model PaymentProof {
+  id        String @id @default(cuid())
+  paymentId String @unique
+  userId    String
+
+  fileUrl      String
+  fileName     String?
+  fileMimeType String?
+  note         String?
+  status       String    @default("WAITING_VERIFICATION")
+  reviewedBy   String?
+  reviewedAt   DateTime?
+
+  payment PaymentTransaction @relation(fields: [paymentId], references: [id], onDelete: Cascade)
+  user    User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([status])
 }
 
 model LessonAccess {
@@ -205,6 +498,7 @@ model VerificationToken {
 
 model NihongoLesson {
   id          String  @id @default(cuid())
+  slug        String? @unique
   level       String
   title       String
   description String?
@@ -223,6 +517,26 @@ model NihongoLesson {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model NihongoCharacterContent {
+  id         String  @id @default(cuid())
+  type       String
+  level      String
+  lessonSlug String
+  char       String
+  romaji     String?
+  onyomi     String?
+  kunyomi    String?
+  meaning    String?
+  order      Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([type, level, char])
+  @@index([lessonSlug])
+  @@index([type, level])
 }
 
 model NihongoLessonProgress {
@@ -492,6 +806,77 @@ model NihongoLessonTutorMessage {
 
   @@index([lessonId])
   @@index([userId])
+}
+
+model FeatureUsage {
+  id      String @id @default(cuid())
+  userId  String
+  appSlug String @default("nihongo")
+  feature String
+
+  count       Int       @default(0)
+  periodStart DateTime  @default(now())
+  periodEnd   DateTime?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, appSlug, feature, periodStart])
+  @@index([userId])
+  @@index([feature])
+}
+
+model UserGameProfile {
+  id                    String    @id @default(cuid())
+  userId                String    @unique
+  totalXP               Int       @default(0)
+  buildPoints           Int       @default(0)
+  coins                 Int       @default(0)
+  flashcardCorrectCount Int       @default(0)
+  quizCorrectCount      Int       @default(0)
+  mockTestCorrectCount  Int       @default(0)
+  lessonCompletedCount  Int       @default(0)
+  readingCompletedCount Int       @default(0)
+  lastDailyBonusDate    DateTime?
+  xpEarnedToday         Int       @default(0)
+  xpTodayDate           DateTime?
+  achievementsJson      Json?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model ReadingPassage {
+  id String @id @default(cuid())
+
+  title           String
+  level           String
+  topic           String
+  contentJa       String
+  contentId       String            @unique
+  contentType     String            @default("READING")
+  audioUrl        String?
+  audioMimeType   String?
+  durationSec     Int?
+  kanjiJson       Json?
+  romajiJson      Json?
+  translationJson Json?
+  vocabularyJson  Json
+  questionsJson   Json
+  answerKeyJson   Json?
+  note            String?
+  sourceType      ReadingSourceType @default(CACHED)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([level])
+  @@index([topic])
+  @@index([contentType])
+  @@index([sourceType])
 }
 
 model NihongoLessonListeningAsset {

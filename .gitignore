@@ -12,6 +12,7 @@
 
 # testing
 /coverage
+/.test-dist
 
 # next.js
 /.next/
@@ -32,13 +33,25 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+nexus-platform*.env
 
 # vercel
 .vercel
 
+# local dev logs
+dev-server.log
+dev-server.err.log
+
+# local claude code settings
+.claude/
+
+# user uploads (do not commit user-generated content)
+/public/uploads/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+tsconfig.test.tsbuildinfo
 
 /app/generated/prisma
 

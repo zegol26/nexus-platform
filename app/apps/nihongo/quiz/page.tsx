@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { UserBadgeHeader } from "@/components/nihongo/UserBadgeHeader";
+import { clientTrack } from "@/lib/analytics/clientTrack";
 
 type QuizQuestion = {
   id: string;
@@ -22,6 +23,9 @@ export default function QuizPage() {
   const [answered, setAnswered] = useState(false);
   const [level, setLevel] = useState("");
   const [category, setCategory] = useState("");
+  const [wrongAnswers, setWrongAnswers] = useState<
+    Array<{ topic: string; category: string; questionType: string }>
+  >([]);
 
   const current = questions[index];
   const finished = questions.length > 0 && index >= questions.length;
@@ -39,10 +43,21 @@ export default function QuizPage() {
       setScore(0);
       setSelected("");
       setAnswered(false);
+      setWrongAnswers([]);
+      clientTrack({
+        eventType: "QUIZ_STARTED",
+        pagePath: "/apps/nihongo/quiz",
+        metadata: { level: level || null, category: category || null },
+      });
     }
   };
 
   useEffect(() => {
+    clientTrack({
+      eventType: "PAGE_VIEW",
+      pagePath: "/apps/nihongo/quiz",
+    });
+
     async function loadInitialQuiz() {
       const res = await fetch("/api/apps/nihongo/quiz?count=10");
       const data = await res.json();
@@ -52,6 +67,12 @@ export default function QuizPage() {
         setScore(0);
         setSelected("");
         setAnswered(false);
+        setWrongAnswers([]);
+        clientTrack({
+          eventType: "QUIZ_STARTED",
+          pagePath: "/apps/nihongo/quiz",
+          metadata: { level: null, category: null },
+        });
       }
     }
 
@@ -67,10 +88,37 @@ export default function QuizPage() {
     if (!current || answered) return;
     setSelected(option);
     setAnswered(true);
-    if (option === current.answer) setScore((value) => value + 1);
+    if (option === current.answer) {
+      setScore((value) => value + 1);
+      awardClientReward("QUIZ_CORRECT");
+    }
+    if (option !== current.answer) {
+      setWrongAnswers((currentWrongAnswers) => [
+        ...currentWrongAnswers,
+        {
+          topic: current.deck,
+          category: current.category,
+          questionType: "flashcard_multiple_choice",
+        },
+      ]);
+    }
   };
 
   const next = () => {
+    if (index + 1 >= questions.length) {
+      clientTrack({
+        eventType: "QUIZ_COMPLETED",
+        pagePath: "/apps/nihongo/quiz",
+        metadata: {
+          score,
+          total: questions.length,
+          level: level || null,
+          category: category || null,
+          wrongAnswers,
+        },
+      });
+    }
+
     setIndex((value) => value + 1);
     setSelected("");
     setAnswered(false);
@@ -210,4 +258,16 @@ export default function QuizPage() {
       </section>
     </div>
   );
+}
+
+async function awardClientReward(source: "QUIZ_CORRECT") {
+  try {
+    await fetch("/api/apps/nihongo/game/reward", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ source }),
+    });
+  } catch {
+    // Reward failures should never interrupt learning flow.
+  }
 }

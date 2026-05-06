@@ -5,6 +5,8 @@ import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
 import { platformApps } from "@/lib/platform/app-registry";
 
+export const dynamic = "force-dynamic";
+
 type PlatformAppAccessRow = {
   status: string;
   billingPlan: string | null;

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState } from "react";
 
@@ -103,10 +103,14 @@ export function AdminAccessPanel({
             <input
               type="number"
               min={1}
+              max={3650}
               value={durationDays}
-              onChange={(event) => setDurationDays(Number(event.target.value))}
+              onChange={(event) => setDurationDays(Math.min(Math.max(Number(event.target.value), 1), 3650))}
               className="rounded-2xl border border-slate-300 px-4 py-3 font-normal outline-none focus:border-blue-500"
             />
+            <span className="text-xs font-medium text-slate-500">
+              Admin dan super admin otomatis non-expiring. Grant user biasa dibatasi maksimal 3650 hari.
+            </span>
           </label>
 
           <div className="grid grid-cols-2 gap-3">
@@ -180,9 +184,9 @@ export function AdminAccessPanel({
                   <div key={access.appId} className="rounded-2xl bg-white p-4 text-sm">
                     <p className="font-semibold text-slate-950">{access.app.name}</p>
                     <p className="mt-1 text-slate-500">
-                      {access.status} • expires{" "}
+                      {access.status} - expires{" "}
                       {access.accessExpiresAt
-                        ? new Date(access.accessExpiresAt).toLocaleDateString()
+                        ? formatStableDate(access.accessExpiresAt)
                         : "never"}
                     </p>
                   </div>
@@ -203,7 +207,7 @@ export function AdminAccessPanel({
                       {access.lesson.order}. {access.lesson.title}
                     </p>
                     <p className="mt-1 text-slate-500">
-                      {access.status} • {access.lesson.level}
+                      {access.status} - {access.lesson.level}
                     </p>
                   </div>
                 ))
@@ -217,3 +221,15 @@ export function AdminAccessPanel({
     </div>
   );
 }
+
+function formatStableDate(value: string) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "invalid date";
+
+  const year = date.getUTCFullYear();
+  const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+  const day = String(date.getUTCDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+}
+

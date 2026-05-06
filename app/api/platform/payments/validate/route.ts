@@ -75,6 +75,17 @@ export async function POST(req: Request) {
         accessExpiresAt,
       },
     });
+
+    await prisma.subscription.create({
+      data: {
+        userId,
+        appId,
+        planId: plan.id,
+        status: "ACTIVE",
+        startedAt: new Date(),
+        expiresAt: accessExpiresAt,
+      },
+    });
   }
 
   return NextResponse.json({ payment });

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { use, useCallback, useEffect, useMemo, useState } from "react";
 import { UserBadgeHeader } from "@/components/nihongo/UserBadgeHeader";
+import { clientTrack } from "@/lib/analytics/clientTrack";
 
 type LessonContent = {
   lessonTitle: string;
@@ -24,12 +25,26 @@ type LessonContent = {
 
 type Lesson = {
   id: string;
+  slug: string | null;
   title: string;
   description: string | null;
   level: string;
   order: number;
   module: string | null;
   lessonType: string | null;
+};
+
+type CharacterContentItem = {
+  id: string;
+  type: string;
+  level: string;
+  lessonSlug: string;
+  char: string;
+  romaji: string | null;
+  onyomi: string | null;
+  kunyomi: string | null;
+  meaning: string | null;
+  order: number;
 };
 
 type LessonTemplate = {
@@ -62,7 +77,9 @@ export default function LessonDetailPage({
   const { id } = use(params);
   const [lesson, setLesson] = useState<Lesson | null>(null);
   const [content, setContent] = useState<LessonTemplate | null>(null);
+  const [lessonCache, setLessonCache] = useState<{ count: number; max: number; variants: number[] } | null>(null);
   const [listeningAsset, setListeningAsset] = useState<ListeningAsset | null>(null);
+  const [characterContent, setCharacterContent] = useState<CharacterContentItem[]>([]);
   const [aiStep, setAiStep] = useState(1);
   const [loadingLesson, setLoadingLesson] = useState(true);
   const [loadingAi, setLoadingAi] = useState(false);
@@ -71,6 +88,12 @@ export default function LessonDetailPage({
   const [tutorSeedPrompt, setTutorSeedPrompt] = useState("");
 
   useEffect(() => {
+    clientTrack({
+      eventType: "PAGE_VIEW",
+      pagePath: `/apps/nihongo/curriculum/${id}`,
+      lessonId: id,
+    });
+
     async function loadLesson() {
       setLoadingLesson(true);
       const res = await fetch(`/api/apps/nihongo/curriculum/${id}`);
@@ -79,7 +102,9 @@ export default function LessonDetailPage({
       if (res.ok) {
         setLesson(data.lesson);
         setContent(data.defaultTemplate);
+        setLessonCache(data.lessonCache ?? null);
         setListeningAsset(data.listeningAsset);
+        setCharacterContent(data.characterContent ?? []);
       } else {
         setError(data.error ?? "Lesson belum bisa dimuat.");
       }
@@ -90,13 +115,23 @@ export default function LessonDetailPage({
   }, [id]);
 
   const startButtonLabel = useMemo(() => {
-    if (aiStep <= 1) return "Lihat Pembahasan Lebih Dalam";
+    if (aiStep <= 1) return "Start AI Lesson";
     if (aiStep === 2) return "Lihat Contoh Percakapan";
-    return "Generate Pembahasan Baru dengan AI";
+    return "Tampilkan Cached Variant Lain";
   }, [aiStep]);
 
   async function startAiLesson() {
     if (!lesson || loadingAi) return;
+    clientTrack({
+      eventType: "LESSON_STARTED",
+      pagePath: `/apps/nihongo/curriculum/${lesson.id}`,
+      lessonId: lesson.id,
+      metadata: {
+        lessonTitle: lesson.title,
+        order: lesson.order,
+        level: lesson.level,
+      },
+    });
     setLoadingAi(true);
     setError(null);
 
@@ -112,6 +147,15 @@ export default function LessonDetailPage({
       const nextContent = payload.template ?? payload.generatedContent;
       if (nextContent?.id && nextContent.id !== content?.id) {
         setContent(nextContent);
+      }
+      if (typeof payload.cacheCount === "number") {
+        setLessonCache((current) => ({
+          count: payload.cacheCount,
+          max: payload.maxCacheCount ?? current?.max ?? 3,
+          variants: nextContent?.variant
+            ? Array.from(new Set([...(current?.variants ?? []), nextContent.variant])).sort()
+            : current?.variants ?? [],
+        }));
       }
       setAiStep((step) => step + 1);
     } else {
@@ -150,7 +194,7 @@ export default function LessonDetailPage({
   if (!lesson) {
     return (
       <div className="mx-auto max-w-4xl rounded-3xl border border-rose-200 bg-rose-50 p-8 text-rose-700 shadow-sm">
-        Lesson tidak ditemukan.
+        {error ?? "Lesson tidak ditemukan."}
       </div>
     );
   }
@@ -175,6 +219,9 @@ export default function LessonDetailPage({
           <span className="rounded-full bg-slate-950 px-3 py-1 text-white">Lesson {lesson.order}</span>
           <span className="rounded-full bg-cyan-50 px-3 py-1 text-cyan-700">{lesson.level}</span>
           <span className="rounded-full bg-slate-100 px-3 py-1 text-slate-600">{lesson.module ?? "Roadmap"}</span>
+          <span className="rounded-full bg-emerald-50 px-3 py-1 text-emerald-700">
+            Cache {lessonCache?.count ?? 0}/{lessonCache?.max ?? 3}
+          </span>
         </div>
 
         <h1 className="mt-5 text-4xl font-semibold tracking-tight text-slate-950">{lesson.title}</h1>
@@ -202,6 +249,12 @@ export default function LessonDetailPage({
 
       <div className="grid gap-6 lg:grid-cols-[1fr_360px]">
         <main className="space-y-6">
+          {lesson.slug ? (
+            <CharacterContentGrid
+              lessonSlug={lesson.slug}
+              items={characterContent}
+            />
+          ) : null}
           {content ? <LessonContentCard content={content.contentJson} variant={content.variant} /> : <MissingTemplateCard />}
           <ListeningPracticeCard
             asset={listeningAsset}
@@ -221,6 +274,132 @@ export default function LessonDetailPage({
       </div>
     </div>
   );
+}
+
+function CharacterContentGrid({
+  lessonSlug,
+  items,
+}: {
+  lessonSlug: string;
+  items: CharacterContentItem[];
+}) {
+  const shouldShow = [
+    "hiragana-foundation",
+    "katakana-foundation",
+    "kanji-n5-foundation",
+    "kanji-n4-foundation",
+  ].includes(lessonSlug);
+
+  if (!shouldShow) return null;
+
+  const kanaItems = items.filter(
+    (item) => item.type === "hiragana" || item.type === "katakana"
+  );
+  const kanjiItems = items.filter((item) => item.type === "kanji");
+  const vocabularyItems = items.filter((item) => item.type === "vocabulary");
+  const isKana = kanaItems.length > 0;
+
+  return (
+    <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-700">
+            Character Content
+          </p>
+          <h2 className="mt-2 text-2xl font-semibold text-slate-950">
+            {getCharacterContentTitle(lessonSlug)}
+          </h2>
+        </div>
+        {items.length ? (
+          <span className="w-fit rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
+            {items.length} item
+          </span>
+        ) : null}
+      </div>
+
+      {!items.length ? (
+        <div className="mt-5 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-6 text-sm text-slate-500">
+          Character content belum tersedia untuk lesson ini. Jalankan seed character content, lalu refresh halaman.
+        </div>
+      ) : isKana ? (
+        <div className="mt-6 grid grid-cols-3 gap-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8">
+          {kanaItems.map((item) => (
+            <div
+              key={item.id}
+              className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-center"
+            >
+              <p className="text-4xl font-semibold text-slate-950">{item.char}</p>
+              <p className="mt-2 text-sm font-semibold text-cyan-700">{item.romaji}</p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="mt-6 space-y-6">
+          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+            {kanjiItems.map((item) => (
+              <KanjiCard key={item.id} item={item} />
+            ))}
+          </div>
+
+          {vocabularyItems.length ? (
+            <div>
+              <h3 className="text-lg font-semibold text-slate-950">
+                Vocabulary compounds
+              </h3>
+              <div className="mt-3 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                {vocabularyItems.map((item) => (
+                  <KanjiCard key={item.id} item={item} compact />
+                ))}
+              </div>
+            </div>
+          ) : null}
+        </div>
+      )}
+    </section>
+  );
+}
+
+function KanjiCard({
+  item,
+  compact = false,
+}: {
+  item: CharacterContentItem;
+  compact?: boolean;
+}) {
+  return (
+    <article className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+      <div className="flex items-start justify-between gap-3">
+        <p className={compact ? "text-4xl font-semibold" : "text-5xl font-semibold"}>
+          {item.char}
+        </p>
+        <span className="rounded-full bg-cyan-50 px-3 py-1 text-xs font-semibold text-cyan-700">
+          {item.level}
+        </span>
+      </div>
+      <p className="mt-4 text-sm font-semibold text-slate-950">
+        {item.meaning ?? "Arti belum tersedia"}
+      </p>
+      <div className="mt-3 grid gap-2 text-sm text-slate-600">
+        <p>
+          <span className="font-semibold text-slate-800">Onyomi:</span>{" "}
+          {item.onyomi ?? "-"}
+        </p>
+        <p>
+          <span className="font-semibold text-slate-800">Kunyomi:</span>{" "}
+          {item.kunyomi ?? "-"}
+        </p>
+      </div>
+    </article>
+  );
+}
+
+function getCharacterContentTitle(lessonSlug: string) {
+  if (lessonSlug === "hiragana-foundation") return "Hiragana Grid";
+  if (lessonSlug === "katakana-foundation") return "Katakana Grid";
+  if (lessonSlug === "kanji-n5-foundation") return "N5 Kanji Cards";
+  if (lessonSlug === "kanji-n4-foundation") return "N4 Kanji Cards";
+
+  return "Character Content";
 }
 
 function LessonContentCard({ content, variant }: { content: LessonContent; variant: number }) {

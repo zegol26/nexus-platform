@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { UserBadgeHeader } from "@/components/nihongo/UserBadgeHeader";
+import { clientTrack } from "@/lib/analytics/clientTrack";
 
 type Flashcard = {
   id: string;
@@ -33,6 +34,11 @@ export default function FlashcardsPage() {
   const [flipped, setFlipped] = useState(false);
 
   useEffect(() => {
+    clientTrack({
+      eventType: "PAGE_VIEW",
+      pagePath: "/apps/nihongo/flashcards",
+    });
+
     async function loadFlashcards() {
       const params = new URLSearchParams({ limit: "120" });
       if (deck) params.set("deck", deck);
@@ -57,11 +63,41 @@ export default function FlashcardsPage() {
     return Math.round(((activeIndex + 1) / payload.flashcards.length) * 100);
   }, [activeIndex, payload.flashcards.length]);
 
-  const nextCard = () => {
+  const nextCard = (trackReview = true) => {
+    if (trackReview && activeCard) {
+      clientTrack({
+        eventType: "FLASHCARD_REVIEWED",
+        pagePath: "/apps/nihongo/flashcards",
+        flashcardDeck: activeCard.deck,
+        metadata: {
+          flashcardId: activeCard.id,
+          level: activeCard.level,
+          category: activeCard.category,
+        },
+      });
+    }
+
     setActiveIndex((index) =>
       payload.flashcards.length ? (index + 1) % payload.flashcards.length : 0
     );
     setFlipped(false);
+  };
+
+  const markCorrect = () => {
+    if (!activeCard) return;
+    clientTrack({
+      eventType: "FLASHCARD_REVIEWED",
+      pagePath: "/apps/nihongo/flashcards",
+      flashcardDeck: activeCard.deck,
+      metadata: {
+        flashcardId: activeCard.id,
+        level: activeCard.level,
+        category: activeCard.category,
+        result: "correct",
+      },
+    });
+    awardClientReward("FLASHCARD_CORRECT");
+    nextCard(false);
   };
 
   const previousCard = () => {
@@ -188,14 +224,34 @@ export default function FlashcardsPage() {
             </button>
             <button
               type="button"
-              onClick={nextCard}
+              onClick={() => nextCard()}
               className="rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-cyan-700"
             >
               Next
             </button>
           </div>
+          <button
+            type="button"
+            onClick={markCorrect}
+            disabled={!activeCard}
+            className="w-full rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700 disabled:bg-slate-300"
+          >
+            I got it right
+          </button>
         </aside>
       </section>
     </div>
   );
+}
+
+async function awardClientReward(source: "FLASHCARD_CORRECT") {
+  try {
+    await fetch("/api/apps/nihongo/game/reward", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ source }),
+    });
+  } catch {
+    // Reward failures should never interrupt learning flow.
+  }
 }

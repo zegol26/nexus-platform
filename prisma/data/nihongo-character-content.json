@@ -1,0 +1,5735 @@
+{
+  "seedVersion": "nihongo-character-content-v1",
+  "characterSets": [
+    {
+      "type": "hiragana",
+      "level": "N5",
+      "lessonSlug": "hiragana-foundation",
+      "items": [
+        {
+          "char": "あ",
+          "romaji": "a",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 1
+        },
+        {
+          "char": "い",
+          "romaji": "i",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 2
+        },
+        {
+          "char": "う",
+          "romaji": "u",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 3
+        },
+        {
+          "char": "え",
+          "romaji": "e",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 4
+        },
+        {
+          "char": "お",
+          "romaji": "o",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 5
+        },
+        {
+          "char": "か",
+          "romaji": "ka",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 6
+        },
+        {
+          "char": "き",
+          "romaji": "ki",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 7
+        },
+        {
+          "char": "く",
+          "romaji": "ku",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 8
+        },
+        {
+          "char": "け",
+          "romaji": "ke",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 9
+        },
+        {
+          "char": "こ",
+          "romaji": "ko",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 10
+        },
+        {
+          "char": "さ",
+          "romaji": "sa",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 11
+        },
+        {
+          "char": "し",
+          "romaji": "shi",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 12
+        },
+        {
+          "char": "す",
+          "romaji": "su",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 13
+        },
+        {
+          "char": "せ",
+          "romaji": "se",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 14
+        },
+        {
+          "char": "そ",
+          "romaji": "so",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 15
+        },
+        {
+          "char": "た",
+          "romaji": "ta",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 16
+        },
+        {
+          "char": "ち",
+          "romaji": "chi",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 17
+        },
+        {
+          "char": "つ",
+          "romaji": "tsu",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 18
+        },
+        {
+          "char": "て",
+          "romaji": "te",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 19
+        },
+        {
+          "char": "と",
+          "romaji": "to",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 20
+        },
+        {
+          "char": "な",
+          "romaji": "na",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 21
+        },
+        {
+          "char": "に",
+          "romaji": "ni",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 22
+        },
+        {
+          "char": "ぬ",
+          "romaji": "nu",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 23
+        },
+        {
+          "char": "ね",
+          "romaji": "ne",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 24
+        },
+        {
+          "char": "の",
+          "romaji": "no",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 25
+        },
+        {
+          "char": "は",
+          "romaji": "ha",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 26
+        },
+        {
+          "char": "ひ",
+          "romaji": "hi",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 27
+        },
+        {
+          "char": "ふ",
+          "romaji": "fu",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 28
+        },
+        {
+          "char": "へ",
+          "romaji": "he",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 29
+        },
+        {
+          "char": "ほ",
+          "romaji": "ho",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 30
+        },
+        {
+          "char": "ま",
+          "romaji": "ma",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 31
+        },
+        {
+          "char": "み",
+          "romaji": "mi",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 32
+        },
+        {
+          "char": "む",
+          "romaji": "mu",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 33
+        },
+        {
+          "char": "め",
+          "romaji": "me",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 34
+        },
+        {
+          "char": "も",
+          "romaji": "mo",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 35
+        },
+        {
+          "char": "や",
+          "romaji": "ya",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 36
+        },
+        {
+          "char": "ゆ",
+          "romaji": "yu",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 37
+        },
+        {
+          "char": "よ",
+          "romaji": "yo",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 38
+        },
+        {
+          "char": "ら",
+          "romaji": "ra",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 39
+        },
+        {
+          "char": "り",
+          "romaji": "ri",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 40
+        },
+        {
+          "char": "る",
+          "romaji": "ru",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 41
+        },
+        {
+          "char": "れ",
+          "romaji": "re",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 42
+        },
+        {
+          "char": "ろ",
+          "romaji": "ro",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 43
+        },
+        {
+          "char": "わ",
+          "romaji": "wa",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 44
+        },
+        {
+          "char": "を",
+          "romaji": "wo",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 45
+        },
+        {
+          "char": "ん",
+          "romaji": "n",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 46
+        }
+      ]
+    },
+    {
+      "type": "katakana",
+      "level": "N5",
+      "lessonSlug": "katakana-foundation",
+      "items": [
+        {
+          "char": "ア",
+          "romaji": "a",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 1
+        },
+        {
+          "char": "イ",
+          "romaji": "i",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 2
+        },
+        {
+          "char": "ウ",
+          "romaji": "u",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 3
+        },
+        {
+          "char": "エ",
+          "romaji": "e",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 4
+        },
+        {
+          "char": "オ",
+          "romaji": "o",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 5
+        },
+        {
+          "char": "カ",
+          "romaji": "ka",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 6
+        },
+        {
+          "char": "キ",
+          "romaji": "ki",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 7
+        },
+        {
+          "char": "ク",
+          "romaji": "ku",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 8
+        },
+        {
+          "char": "ケ",
+          "romaji": "ke",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 9
+        },
+        {
+          "char": "コ",
+          "romaji": "ko",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 10
+        },
+        {
+          "char": "サ",
+          "romaji": "sa",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 11
+        },
+        {
+          "char": "シ",
+          "romaji": "shi",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 12
+        },
+        {
+          "char": "ス",
+          "romaji": "su",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 13
+        },
+        {
+          "char": "セ",
+          "romaji": "se",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 14
+        },
+        {
+          "char": "ソ",
+          "romaji": "so",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 15
+        },
+        {
+          "char": "タ",
+          "romaji": "ta",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 16
+        },
+        {
+          "char": "チ",
+          "romaji": "chi",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 17
+        },
+        {
+          "char": "ツ",
+          "romaji": "tsu",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 18
+        },
+        {
+          "char": "テ",
+          "romaji": "te",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 19
+        },
+        {
+          "char": "ト",
+          "romaji": "to",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 20
+        },
+        {
+          "char": "ナ",
+          "romaji": "na",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 21
+        },
+        {
+          "char": "ニ",
+          "romaji": "ni",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 22
+        },
+        {
+          "char": "ヌ",
+          "romaji": "nu",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 23
+        },
+        {
+          "char": "ネ",
+          "romaji": "ne",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 24
+        },
+        {
+          "char": "ノ",
+          "romaji": "no",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 25
+        },
+        {
+          "char": "ハ",
+          "romaji": "ha",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 26
+        },
+        {
+          "char": "ヒ",
+          "romaji": "hi",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 27
+        },
+        {
+          "char": "フ",
+          "romaji": "fu",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 28
+        },
+        {
+          "char": "ヘ",
+          "romaji": "he",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 29
+        },
+        {
+          "char": "ホ",
+          "romaji": "ho",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 30
+        },
+        {
+          "char": "マ",
+          "romaji": "ma",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 31
+        },
+        {
+          "char": "ミ",
+          "romaji": "mi",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 32
+        },
+        {
+          "char": "ム",
+          "romaji": "mu",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 33
+        },
+        {
+          "char": "メ",
+          "romaji": "me",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 34
+        },
+        {
+          "char": "モ",
+          "romaji": "mo",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 35
+        },
+        {
+          "char": "ヤ",
+          "romaji": "ya",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 36
+        },
+        {
+          "char": "ユ",
+          "romaji": "yu",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 37
+        },
+        {
+          "char": "ヨ",
+          "romaji": "yo",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 38
+        },
+        {
+          "char": "ラ",
+          "romaji": "ra",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 39
+        },
+        {
+          "char": "リ",
+          "romaji": "ri",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 40
+        },
+        {
+          "char": "ル",
+          "romaji": "ru",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 41
+        },
+        {
+          "char": "レ",
+          "romaji": "re",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 42
+        },
+        {
+          "char": "ロ",
+          "romaji": "ro",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 43
+        },
+        {
+          "char": "ワ",
+          "romaji": "wa",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 44
+        },
+        {
+          "char": "ヲ",
+          "romaji": "wo",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 45
+        },
+        {
+          "char": "ン",
+          "romaji": "n",
+          "onyomi": null,
+          "kunyomi": null,
+          "meaning": null,
+          "order": 46
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "level": "N4",
+      "lessonSlug": "kanji-n4-foundation",
+      "items": [
+        {
+          "char": "安",
+          "romaji": null,
+          "onyomi": "an",
+          "kunyomi": "yasu-i",
+          "meaning": "murah, tenang",
+          "order": 1
+        },
+        {
+          "char": "新",
+          "romaji": null,
+          "onyomi": "shin",
+          "kunyomi": "atara-shii",
+          "meaning": "baru",
+          "order": 2
+        },
+        {
+          "char": "短",
+          "romaji": null,
+          "onyomi": "tan",
+          "kunyomi": "mika-ji",
+          "meaning": "pendek",
+          "order": 3
+        },
+        {
+          "char": "都",
+          "romaji": null,
+          "onyomi": "to, tsu",
+          "kunyomi": "miyako",
+          "meaning": "ibukota",
+          "order": 4
+        },
+        {
+          "char": "家",
+          "romaji": null,
+          "onyomi": "ka",
+          "kunyomi": "ie, ya",
+          "meaning": "rumah",
+          "order": 5
+        },
+        {
+          "char": "教",
+          "romaji": null,
+          "onyomi": "kyou",
+          "kunyomi": "oshi-eru",
+          "meaning": "mengajar",
+          "order": 6
+        },
+        {
+          "char": "自",
+          "romaji": null,
+          "onyomi": "ji, shi",
+          "kunyomi": "mizuka-ra",
+          "meaning": "diri sendiri",
+          "order": 7
+        },
+        {
+          "char": "転",
+          "romaji": null,
+          "onyomi": "ten",
+          "kunyomi": "koro-bu",
+          "meaning": "berputar/jatuh",
+          "order": 8
+        },
+        {
+          "char": "体",
+          "romaji": null,
+          "onyomi": "tai",
+          "kunyomi": "karada",
+          "meaning": "tubuh",
+          "order": 9
+        },
+        {
+          "char": "心",
+          "romaji": null,
+          "onyomi": "shin",
+          "kunyomi": "kokoro",
+          "meaning": "hati",
+          "order": 10
+        },
+        {
+          "char": "思",
+          "romaji": null,
+          "onyomi": "shi",
+          "kunyomi": "omo-u",
+          "meaning": "berpikir",
+          "order": 11
+        },
+        {
+          "char": "考",
+          "romaji": null,
+          "onyomi": "kou",
+          "kunyomi": "kanga-eru",
+          "meaning": "mempertimbangkan",
+          "order": 12
+        },
+        {
+          "char": "知",
+          "romaji": null,
+          "onyomi": "chi",
+          "kunyomi": "shi-ru",
+          "meaning": "tahu",
+          "order": 13
+        },
+        {
+          "char": "病",
+          "romaji": null,
+          "onyomi": "byou",
+          "kunyomi": "yamai",
+          "meaning": "sakit",
+          "order": 14
+        },
+        {
+          "char": "薬",
+          "romaji": null,
+          "onyomi": "yaku",
+          "kunyomi": "kusuri",
+          "meaning": "obat",
+          "order": 15
+        },
+        {
+          "char": "待",
+          "romaji": null,
+          "onyomi": "tai",
+          "kunyomi": "ma-tsu",
+          "meaning": "menunggu",
+          "order": 16
+        },
+        {
+          "char": "持",
+          "romaji": null,
+          "onyomi": "ji",
+          "kunyomi": "mo-tsu",
+          "meaning": "membawa/punya",
+          "order": 17
+        },
+        {
+          "char": "住",
+          "romaji": null,
+          "onyomi": "juu",
+          "kunyomi": "su-mu",
+          "meaning": "tinggal",
+          "order": 18
+        },
+        {
+          "char": "使",
+          "romaji": null,
+          "onyomi": "shi",
+          "kunyomi": "tsuka-u",
+          "meaning": "menggunakan",
+          "order": 19
+        },
+        {
+          "char": "急",
+          "romaji": null,
+          "onyomi": "kyuu",
+          "kunyomi": "iso-gu",
+          "meaning": "cepat/buru-buru",
+          "order": 20
+        },
+        {
+          "char": "度",
+          "romaji": null,
+          "onyomi": "do",
+          "kunyomi": "tabi",
+          "meaning": "derajat/kali",
+          "order": 21
+        },
+        {
+          "char": "回",
+          "romaji": null,
+          "onyomi": "kai",
+          "kunyomi": "mawa-ru",
+          "meaning": "kali/berputar",
+          "order": 22
+        },
+        {
+          "char": "通",
+          "romaji": null,
+          "onyomi": "tsuu",
+          "kunyomi": "too-ru",
+          "meaning": "lewat",
+          "order": 23
+        },
+        {
+          "char": "春",
+          "romaji": null,
+          "onyomi": "shun",
+          "kunyomi": "haru",
+          "meaning": "musim semi",
+          "order": 24
+        },
+        {
+          "char": "夏",
+          "romaji": null,
+          "onyomi": "ka",
+          "kunyomi": "natsu",
+          "meaning": "musim panas",
+          "order": 25
+        },
+        {
+          "char": "秋",
+          "romaji": null,
+          "onyomi": "shuu",
+          "kunyomi": "aki",
+          "meaning": "musim gugur",
+          "order": 26
+        },
+        {
+          "char": "冬",
+          "romaji": null,
+          "onyomi": "tou",
+          "kunyomi": "fuyu",
+          "meaning": "musim dingin",
+          "order": 27
+        },
+        {
+          "char": "朝",
+          "romaji": null,
+          "onyomi": "chou",
+          "kunyomi": "asa",
+          "meaning": "pagi",
+          "order": 28
+        },
+        {
+          "char": "昼",
+          "romaji": null,
+          "onyomi": "chuun",
+          "kunyomi": "hiru",
+          "meaning": "siang",
+          "order": 29
+        },
+        {
+          "char": "夕",
+          "romaji": null,
+          "onyomi": "seki",
+          "kunyomi": "yuu",
+          "meaning": "sore",
+          "order": 30
+        },
+        {
+          "char": "夜",
+          "romaji": null,
+          "onyomi": "ya",
+          "kunyomi": "yoru, yo",
+          "meaning": "malam",
+          "order": 31
+        },
+        {
+          "char": "言",
+          "romaji": null,
+          "onyomi": "gen, gon",
+          "kunyomi": "i-u, koto",
+          "meaning": "berkata",
+          "order": 32
+        },
+        {
+          "char": "字",
+          "romaji": null,
+          "onyomi": "ji",
+          "kunyomi": "aza",
+          "meaning": "karakter/huruf",
+          "order": 33
+        },
+        {
+          "char": "力",
+          "romaji": null,
+          "onyomi": "ryoku, riki",
+          "kunyomi": "chikara",
+          "meaning": "kekuatan",
+          "order": 34
+        },
+        {
+          "char": "姉",
+          "romaji": null,
+          "onyomi": "shi",
+          "kunyomi": "ane",
+          "meaning": "kakak perempuan",
+          "order": 35
+        },
+        {
+          "char": "兄",
+          "romaji": null,
+          "onyomi": "kei, kyou",
+          "kunyomi": "ani",
+          "meaning": "kakak laki-laki",
+          "order": 36
+        },
+        {
+          "char": "妹",
+          "romaji": null,
+          "onyomi": "mai",
+          "kunyomi": "imouto",
+          "meaning": "adik perempuan",
+          "order": 37
+        },
+        {
+          "char": "弟",
+          "romaji": null,
+          "onyomi": "tei, dai",
+          "kunyomi": "otouto",
+          "meaning": "adik laki-laki",
+          "order": 38
+        },
+        {
+          "char": "親",
+          "romaji": null,
+          "onyomi": "shin",
+          "kunyomi": "oya, shita-shii",
+          "meaning": "orang tua/akrab",
+          "order": 39
+        },
+        {
+          "char": "牛",
+          "romaji": null,
+          "onyomi": "gyuu",
+          "kunyomi": "ushi",
+          "meaning": "sapi",
+          "order": 40
+        },
+        {
+          "char": "鳥",
+          "romaji": null,
+          "onyomi": "chou",
+          "kunyomi": "tori",
+          "meaning": "burung",
+          "order": 41
+        },
+        {
+          "char": "虫",
+          "romaji": null,
+          "onyomi": "chuu",
+          "kunyomi": "mushi",
+          "meaning": "serangga",
+          "order": 42
+        },
+        {
+          "char": "草",
+          "romaji": null,
+          "onyomi": "sou",
+          "kunyomi": "kusa",
+          "meaning": "rumput",
+          "order": 43
+        },
+        {
+          "char": "米",
+          "romaji": null,
+          "onyomi": "bei, mai",
+          "kunyomi": "kome",
+          "meaning": "beras",
+          "order": 44
+        },
+        {
+          "char": "雪",
+          "romaji": null,
+          "onyomi": "setsu",
+          "kunyomi": "yuki",
+          "meaning": "salju",
+          "order": 45
+        },
+        {
+          "char": "風",
+          "romaji": null,
+          "onyomi": "fuu",
+          "kunyomi": "kaze",
+          "meaning": "angin",
+          "order": 46
+        },
+        {
+          "char": "早",
+          "romaji": null,
+          "onyomi": "sou",
+          "kunyomi": "haya-i",
+          "meaning": "cepat (pagi)",
+          "order": 47
+        },
+        {
+          "char": "遠",
+          "romaji": null,
+          "onyomi": "en",
+          "kunyomi": "too-i",
+          "meaning": "jauh",
+          "order": 48
+        },
+        {
+          "char": "明",
+          "romaji": null,
+          "onyomi": "mei",
+          "kunyomi": "aka-rui",
+          "meaning": "terang",
+          "order": 49
+        },
+        {
+          "char": "暗",
+          "romaji": null,
+          "onyomi": "an",
+          "kunyomi": "kura-i",
+          "meaning": "gelap",
+          "order": 50
+        },
+        {
+          "char": "広",
+          "romaji": null,
+          "onyomi": "kou",
+          "kunyomi": "hiro-i",
+          "meaning": "luas",
+          "order": 51
+        },
+        {
+          "char": "走",
+          "romaji": null,
+          "onyomi": "sou",
+          "kunyomi": "hashi-ru",
+          "meaning": "berlari",
+          "order": 52
+        },
+        {
+          "char": "歩",
+          "romaji": null,
+          "onyomi": "ho",
+          "kunyomi": "aru-ku",
+          "meaning": "berjalan",
+          "order": 53
+        },
+        {
+          "char": "止",
+          "romaji": null,
+          "onyomi": "shi",
+          "kunyomi": "to-maru",
+          "meaning": "berhenti",
+          "order": 54
+        },
+        {
+          "char": "動",
+          "romaji": null,
+          "onyomi": "dou",
+          "kunyomi": "ugo-ku",
+          "meaning": "bergerak",
+          "order": 55
+        },
+        {
+          "char": "座",
+          "romaji": null,
+          "onyomi": "za",
+          "kunyomi": "suwa-ru",
+          "meaning": "duduk",
+          "order": 56
+        },
+        {
+          "char": "始",
+          "romaji": null,
+          "onyomi": "shi",
+          "kunyomi": "haji-meru",
+          "meaning": "mulai",
+          "order": 57
+        },
+        {
+          "char": "終",
+          "romaji": null,
+          "onyomi": "shuu",
+          "kunyomi": "owa-ru",
+          "meaning": "selesai",
+          "order": 58
+        },
+        {
+          "char": "貸",
+          "romaji": null,
+          "onyomi": "tai",
+          "kunyomi": "ka-su",
+          "meaning": "meminjamkan",
+          "order": 59
+        },
+        {
+          "char": "借",
+          "romaji": null,
+          "onyomi": "shaku",
+          "kunyomi": "ka-riru",
+          "meaning": "meminjam",
+          "order": 60
+        },
+        {
+          "char": "返",
+          "romaji": null,
+          "onyomi": "hen",
+          "kunyomi": "kae-su",
+          "meaning": "mengembalikan",
+          "order": 61
+        },
+        {
+          "char": "送",
+          "romaji": null,
+          "onyomi": "sou",
+          "kunyomi": "oku-ru",
+          "meaning": "mengirim",
+          "order": 62
+        },
+        {
+          "char": "結",
+          "romaji": null,
+          "onyomi": "ketsu",
+          "kunyomi": "musu-bu",
+          "meaning": "mengikat/simpul",
+          "order": 63
+        },
+        {
+          "char": "婚",
+          "romaji": null,
+          "onyomi": "kon",
+          "kunyomi": null,
+          "meaning": "pernikahan",
+          "order": 64
+        },
+        {
+          "char": "離",
+          "romaji": null,
+          "onyomi": "ri",
+          "kunyomi": "hana-reru",
+          "meaning": "perpisahan/lepas",
+          "order": 65
+        },
+        {
+          "char": "席",
+          "romaji": null,
+          "onyomi": "seki",
+          "kunyomi": null,
+          "meaning": "kursi/tempat duduk",
+          "order": 66
+        },
+        {
+          "char": "欠",
+          "romaji": null,
+          "onyomi": "ketsu",
+          "kunyomi": "ka-keru",
+          "meaning": "kurang/absen",
+          "order": 67
+        },
+        {
+          "char": "洋",
+          "romaji": null,
+          "onyomi": "you",
+          "kunyomi": null,
+          "meaning": "samudra/barat",
+          "order": 68
+        },
+        {
+          "char": "服",
+          "romaji": null,
+          "onyomi": "fuku",
+          "kunyomi": null,
+          "meaning": "pakaian",
+          "order": 69
+        },
+        {
+          "char": "堂",
+          "romaji": null,
+          "onyomi": "dou",
+          "kunyomi": null,
+          "meaning": "aula/gedung",
+          "order": 70
+        },
+        {
+          "char": "建",
+          "romaji": null,
+          "onyomi": "ken",
+          "kunyomi": "ta-teru",
+          "meaning": "membangun",
+          "order": 71
+        },
+        {
+          "char": "品",
+          "romaji": null,
+          "onyomi": "hin",
+          "kunyomi": "shina",
+          "meaning": "barang/kualitas",
+          "order": 72
+        },
+        {
+          "char": "旅",
+          "romaji": null,
+          "onyomi": "ryo",
+          "kunyomi": "tabi",
+          "meaning": "perjalanan",
+          "order": 73
+        },
+        {
+          "char": "進",
+          "romaji": null,
+          "onyomi": "shin",
+          "kunyomi": "susu-mu",
+          "meaning": "maju",
+          "order": 74
+        },
+        {
+          "char": "降",
+          "romaji": null,
+          "onyomi": "kou",
+          "kunyomi": "fu-ru, o-riru",
+          "meaning": "turun",
+          "order": 75
+        },
+        {
+          "char": "運",
+          "romaji": null,
+          "onyomi": "un",
+          "kunyomi": "hako-bu",
+          "meaning": "keberuntungan/angkut",
+          "order": 76
+        },
+        {
+          "char": "計",
+          "romaji": null,
+          "onyomi": "kei",
+          "kunyomi": "haka-ru",
+          "meaning": "mengukur/rencana",
+          "order": 77
+        },
+        {
+          "char": "画",
+          "romaji": null,
+          "onyomi": "ga, kaku",
+          "kunyomi": null,
+          "meaning": "gambar/lukisan",
+          "order": 78
+        },
+        {
+          "char": "写",
+          "romaji": null,
+          "onyomi": "sha",
+          "kunyomi": "utsu-su",
+          "meaning": "menyalin/foto",
+          "order": 79
+        },
+        {
+          "char": "真",
+          "romaji": null,
+          "onyomi": "shin",
+          "kunyomi": "ma",
+          "meaning": "kebenaran/murni",
+          "order": 80
+        },
+        {
+          "char": "音",
+          "romaji": null,
+          "onyomi": "on",
+          "kunyomi": "oto",
+          "meaning": "bunyi",
+          "order": 81
+        },
+        {
+          "char": "料",
+          "romaji": null,
+          "onyomi": "ryou",
+          "kunyomi": null,
+          "meaning": "biaya/bahan",
+          "order": 82
+        },
+        {
+          "char": "理",
+          "romaji": null,
+          "onyomi": "ri",
+          "kunyomi": null,
+          "meaning": "alasan/logika",
+          "order": 83
+        },
+        {
+          "char": "野",
+          "romaji": null,
+          "onyomi": "ya",
+          "kunyomi": "no",
+          "meaning": "lapangan",
+          "order": 84
+        },
+        {
+          "char": "菜",
+          "romaji": null,
+          "onyomi": "sai",
+          "kunyomi": "na",
+          "meaning": "sayuran",
+          "order": 85
+        },
+        {
+          "char": "飯",
+          "romaji": null,
+          "onyomi": "han",
+          "kunyomi": "meshi",
+          "meaning": "nasi/makan",
+          "order": 86
+        },
+        {
+          "char": "味",
+          "romaji": null,
+          "onyomi": "mi",
+          "kunyomi": "aji",
+          "meaning": "rasa",
+          "order": 87
+        },
+        {
+          "char": "色",
+          "romaji": null,
+          "onyomi": "shoku",
+          "kunyomi": "iro",
+          "meaning": "warna",
+          "order": 88
+        },
+        {
+          "char": "赤",
+          "romaji": null,
+          "onyomi": "seki",
+          "kunyomi": "aka",
+          "meaning": "merah",
+          "order": 89
+        },
+        {
+          "char": "青",
+          "romaji": null,
+          "onyomi": "sei",
+          "kunyomi": "ao",
+          "meaning": "biru",
+          "order": 90
+        },
+        {
+          "char": "黄",
+          "romaji": null,
+          "onyomi": "kou",
+          "kunyomi": "ki",
+          "meaning": "kuning",
+          "order": 91
+        },
+        {
+          "char": "黒",
+          "romaji": null,
+          "onyomi": "koku",
+          "kunyomi": "kuro",
+          "meaning": "hitam",
+          "order": 92
+        },
+        {
+          "char": "身",
+          "romaji": null,
+          "onyomi": "shin",
+          "kunyomi": "mi",
+          "meaning": "tubuh/diri",
+          "order": 93
+        },
+        {
+          "char": "重",
+          "romaji": null,
+          "onyomi": "juu, chou",
+          "kunyomi": "omo-i",
+          "meaning": "berat/tumpuk",
+          "order": 94
+        },
+        {
+          "char": "軽",
+          "romaji": null,
+          "onyomi": "kei",
+          "kunyomi": "karu-i",
+          "meaning": "ringan",
+          "order": 95
+        },
+        {
+          "char": "低",
+          "romaji": null,
+          "onyomi": "tei",
+          "kunyomi": "hiku-i",
+          "meaning": "rendah",
+          "order": 96
+        },
+        {
+          "char": "弱",
+          "romaji": null,
+          "onyomi": "jaku",
+          "kunyomi": "yowa-i",
+          "meaning": "lemah",
+          "order": 97
+        },
+        {
+          "char": "静",
+          "romaji": null,
+          "onyomi": "sei",
+          "kunyomi": "shizu-ka",
+          "meaning": "tenang",
+          "order": 98
+        },
+        {
+          "char": "不",
+          "romaji": null,
+          "onyomi": "fu",
+          "kunyomi": null,
+          "meaning": "tidak/negatif",
+          "order": 99
+        },
+        {
+          "char": "便",
+          "romaji": null,
+          "onyomi": "ben, bin",
+          "kunyomi": "tayo-ri",
+          "meaning": "nyaman/berita",
+          "order": 100
+        },
+        {
+          "char": "利",
+          "romaji": null,
+          "onyomi": "ri",
+          "kunyomi": "ki-ku",
+          "meaning": "untung/manfaat",
+          "order": 101
+        },
+        {
+          "char": "適",
+          "romaji": null,
+          "onyomi": "teki",
+          "kunyomi": null,
+          "meaning": "cocok/sesuai",
+          "order": 102
+        },
+        {
+          "char": "別",
+          "romaji": null,
+          "onyomi": "betsu",
+          "kunyomi": "wa-kareru",
+          "meaning": "berbeda/pisah",
+          "order": 103
+        },
+        {
+          "char": "同",
+          "romaji": null,
+          "onyomi": "dou",
+          "kunyomi": "ona-ji",
+          "meaning": "sama",
+          "order": 104
+        },
+        {
+          "char": "正",
+          "romaji": null,
+          "onyomi": "sei, shou",
+          "kunyomi": "tada-shii",
+          "meaning": "benar/tepat",
+          "order": 105
+        },
+        {
+          "char": "変",
+          "romaji": null,
+          "onyomi": "hen",
+          "kunyomi": "ka-waru",
+          "meaning": "berubah/aneh",
+          "order": 106
+        },
+        {
+          "char": "由",
+          "romaji": null,
+          "onyomi": "yu, yui",
+          "kunyomi": "yoshi",
+          "meaning": "alasan/bebas",
+          "order": 107
+        },
+        {
+          "char": "直",
+          "romaji": null,
+          "onyomi": "choku",
+          "kunyomi": "nao-su",
+          "meaning": "langsung/betulkan",
+          "order": 108
+        },
+        {
+          "char": "置",
+          "romaji": null,
+          "onyomi": "chi",
+          "kunyomi": "o-ku",
+          "meaning": "meletakkan",
+          "order": 109
+        },
+        {
+          "char": "式",
+          "romaji": null,
+          "onyomi": "shiki",
+          "kunyomi": null,
+          "meaning": "upacara/gaya",
+          "order": 110
+        },
+        {
+          "char": "試",
+          "romaji": null,
+          "onyomi": "shi",
+          "kunyomi": "kokoro-miru",
+          "meaning": "mencoba",
+          "order": 111
+        },
+        {
+          "char": "験",
+          "romaji": null,
+          "onyomi": "ken",
+          "kunyomi": null,
+          "meaning": "tes/pengalaman",
+          "order": 112
+        },
+        {
+          "char": "問",
+          "romaji": null,
+          "onyomi": "mon",
+          "kunyomi": "to-u",
+          "meaning": "pertanyaan",
+          "order": 113
+        },
+        {
+          "char": "題",
+          "romaji": null,
+          "onyomi": "dai",
+          "kunyomi": null,
+          "meaning": "topik/judul",
+          "order": 114
+        },
+        {
+          "char": "答",
+          "romaji": null,
+          "onyomi": "tou",
+          "kunyomi": "kota-eru",
+          "meaning": "jawaban",
+          "order": 115
+        },
+        {
+          "char": "宿",
+          "romaji": null,
+          "onyomi": "shuku",
+          "kunyomi": "yado",
+          "meaning": "penginapan",
+          "order": 116
+        },
+        {
+          "char": "研",
+          "romaji": null,
+          "onyomi": "ken",
+          "kunyomi": "to-gu",
+          "meaning": "asah/riset",
+          "order": 117
+        },
+        {
+          "char": "究",
+          "romaji": null,
+          "onyomi": "kyuu",
+          "kunyomi": "kiwa-meru",
+          "meaning": "selidiki",
+          "order": 118
+        },
+        {
+          "char": "良",
+          "romaji": null,
+          "onyomi": "ryou",
+          "kunyomi": "yo-i",
+          "meaning": "bagus/baik",
+          "order": 119
+        },
+        {
+          "char": "地",
+          "romaji": null,
+          "onyomi": "chi, ji",
+          "kunyomi": null,
+          "meaning": "tanah/bumi",
+          "order": 120
+        },
+        {
+          "char": "鉄",
+          "romaji": null,
+          "onyomi": "tetsu",
+          "kunyomi": null,
+          "meaning": "besi",
+          "order": 121
+        },
+        {
+          "char": "工",
+          "romaji": null,
+          "onyomi": "kou, ku",
+          "kunyomi": null,
+          "meaning": "teknik/kerja",
+          "order": 122
+        },
+        {
+          "char": "場",
+          "romaji": null,
+          "onyomi": "jou",
+          "kunyomi": "ba",
+          "meaning": "tempat",
+          "order": 123
+        },
+        {
+          "char": "所",
+          "romaji": null,
+          "onyomi": "sho",
+          "kunyomi": "tokoro",
+          "meaning": "tempat",
+          "order": 124
+        },
+        {
+          "char": "有",
+          "romaji": null,
+          "onyomi": "yuu, u",
+          "kunyomi": "a-ru",
+          "meaning": "ada/punya",
+          "order": 125
+        },
+        {
+          "char": "村",
+          "romaji": null,
+          "onyomi": "son",
+          "kunyomi": "mura",
+          "meaning": "desa",
+          "order": 126
+        },
+        {
+          "char": "州",
+          "romaji": null,
+          "onyomi": "shuu",
+          "kunyomi": "su",
+          "meaning": "negara bagian/pulau",
+          "order": 127
+        },
+        {
+          "char": "界",
+          "romaji": null,
+          "onyomi": "kai",
+          "kunyomi": null,
+          "meaning": "dunia/batas",
+          "order": 128
+        },
+        {
+          "char": "世",
+          "romaji": null,
+          "onyomi": "sei, se",
+          "kunyomi": "yo",
+          "meaning": "dunia/zaman",
+          "order": 129
+        },
+        {
+          "char": "全",
+          "romaji": null,
+          "onyomi": "zen",
+          "kunyomi": "mubba-te",
+          "meaning": "seluruh",
+          "order": 130
+        },
+        {
+          "char": "部",
+          "romaji": null,
+          "onyomi": "bu",
+          "kunyomi": null,
+          "meaning": "bagian/klub",
+          "order": 131
+        },
+        {
+          "char": "代",
+          "romaji": null,
+          "onyomi": "dai, tai",
+          "kunyomi": "ka-waru",
+          "meaning": "ganti/era",
+          "order": 132
+        },
+        {
+          "char": "合",
+          "romaji": null,
+          "onyomi": "gou",
+          "kunyomi": "a-u",
+          "meaning": "gabung/cocok",
+          "order": 133
+        },
+        {
+          "char": "用",
+          "romaji": null,
+          "onyomi": "you",
+          "kunyomi": "moti-iru",
+          "meaning": "tujuan/pakai",
+          "order": 134
+        },
+        {
+          "char": "事",
+          "romaji": null,
+          "onyomi": "ji",
+          "kunyomi": "koto",
+          "meaning": "hal/kejadian",
+          "order": 135
+        },
+        {
+          "char": "業",
+          "romaji": null,
+          "onyomi": "gyou",
+          "kunyomi": "waza",
+          "meaning": "bisnis/tugas",
+          "order": 136
+        },
+        {
+          "char": "者",
+          "romaji": null,
+          "onyomi": "sha",
+          "kunyomi": "mono",
+          "meaning": "orang (profesi)",
+          "order": 137
+        },
+        {
+          "char": "議",
+          "romaji": null,
+          "onyomi": "gi",
+          "kunyomi": null,
+          "meaning": "diskusi/rapat",
+          "order": 138
+        },
+        {
+          "char": "政",
+          "romaji": null,
+          "onyomi": "sei",
+          "kunyomi": "matsuri",
+          "meaning": "politik",
+          "order": 139
+        },
+        {
+          "char": "治",
+          "romaji": null,
+          "onyomi": "ji, chi",
+          "kunyomi": "nao-ru",
+          "meaning": "pemerintahan/sembuh",
+          "order": 140
+        },
+        {
+          "char": "済",
+          "romaji": null,
+          "onyomi": "sai",
+          "kunyomi": "su-mu",
+          "meaning": "selesai/ekonomi",
+          "order": 141
+        },
+        {
+          "char": "法",
+          "romaji": null,
+          "onyomi": "hou",
+          "kunyomi": null,
+          "meaning": "hukum/metode",
+          "order": 142
+        },
+        {
+          "char": "律",
+          "romaji": null,
+          "onyomi": "ritsu",
+          "kunyomi": null,
+          "meaning": "aturan/hukum",
+          "order": 143
+        },
+        {
+          "char": "号",
+          "romaji": null,
+          "onyomi": "gou",
+          "kunyomi": null,
+          "meaning": "nomor/tanda",
+          "order": 144
+        },
+        {
+          "char": "第",
+          "romaji": null,
+          "onyomi": "dai",
+          "kunyomi": null,
+          "meaning": "urutan",
+          "order": 145
+        },
+        {
+          "char": "昨",
+          "romaji": null,
+          "onyomi": "saku",
+          "kunyomi": null,
+          "meaning": "kemarin",
+          "order": 146
+        },
+        {
+          "char": "船",
+          "romaji": null,
+          "onyomi": "sen",
+          "kunyomi": "fune",
+          "meaning": "kapal",
+          "order": 147
+        },
+        {
+          "char": "機",
+          "romaji": null,
+          "onyomi": "ki",
+          "kunyomi": "hata",
+          "meaning": "mesin/kesempatan",
+          "order": 148
+        },
+        {
+          "char": "飛",
+          "romaji": null,
+          "onyomi": "hi",
+          "kunyomi": "to-bu",
+          "meaning": "terbang",
+          "order": 149
+        },
+        {
+          "char": "呼",
+          "romaji": null,
+          "onyomi": "ko",
+          "kunyomi": "yo-bu",
+          "meaning": "memanggil",
+          "order": 150
+        },
+        {
+          "char": "吸",
+          "romaji": null,
+          "onyomi": "kyuu",
+          "kunyomi": "su-u",
+          "meaning": "menghirup",
+          "order": 151
+        },
+        {
+          "char": "吹",
+          "romaji": null,
+          "onyomi": "sui",
+          "kunyomi": "fu-ku",
+          "meaning": "bertiup",
+          "order": 152
+        },
+        {
+          "char": "洗",
+          "romaji": null,
+          "onyomi": "sen",
+          "kunyomi": "ara-u",
+          "meaning": "mencuci",
+          "order": 153
+        },
+        {
+          "char": "浴",
+          "romaji": null,
+          "onyomi": "yoku",
+          "kunyomi": "abi-ru",
+          "meaning": "mandi",
+          "order": 154
+        },
+        {
+          "char": "探",
+          "romaji": null,
+          "onyomi": "tan",
+          "kunyomi": "saga-su",
+          "meaning": "mencari",
+          "order": 155
+        },
+        {
+          "char": "選",
+          "romaji": null,
+          "onyomi": "sen",
+          "kunyomi": "era-bu",
+          "meaning": "memilih",
+          "order": 156
+        },
+        {
+          "char": "引",
+          "romaji": null,
+          "onyomi": "in",
+          "kunyomi": "hi-ku",
+          "meaning": "menarik",
+          "order": 157
+        },
+        {
+          "char": "押",
+          "romaji": null,
+          "onyomi": "ou",
+          "kunyomi": "o-su",
+          "meaning": "mendorong",
+          "order": 158
+        },
+        {
+          "char": "倒",
+          "romaji": null,
+          "onyomi": "tou",
+          "kunyomi": "ta-oreru",
+          "meaning": "jatuh/tumbang",
+          "order": 159
+        },
+        {
+          "char": "設",
+          "romaji": null,
+          "onyomi": "setsu",
+          "kunyomi": "mou-keru",
+          "meaning": "mendirikan/atur",
+          "order": 160
+        },
+        {
+          "char": "注",
+          "romaji": null,
+          "onyomi": "chuun",
+          "kunyomi": "sotsu-gu",
+          "meaning": "tuang/catatan",
+          "order": 161
+        },
+        {
+          "char": "意",
+          "romaji": null,
+          "onyomi": "i",
+          "kunyomi": null,
+          "meaning": "maksud/arti",
+          "order": 162
+        },
+        {
+          "char": "決",
+          "romaji": null,
+          "onyomi": "ketsu",
+          "kunyomi": "ki-meru",
+          "meaning": "memutuskan",
+          "order": 163
+        },
+        {
+          "char": "願",
+          "romaji": null,
+          "onyomi": "gan",
+          "kunyomi": "nega-u",
+          "meaning": "mohon/harap",
+          "order": 164
+        },
+        {
+          "char": "幸",
+          "romaji": null,
+          "onyomi": "kou",
+          "kunyomi": "shiawa-se",
+          "meaning": "bahagia",
+          "order": 165
+        },
+        {
+          "char": "福",
+          "romaji": null,
+          "onyomi": "fuku",
+          "kunyomi": null,
+          "meaning": "berkah/untung",
+          "order": 166
+        },
+        {
+          "char": "害",
+          "romaji": null,
+          "onyomi": "gai",
+          "kunyomi": null,
+          "meaning": "bahaya/rugi",
+          "order": 167
+        },
+        {
+          "char": "危",
+          "romaji": null,
+          "onyomi": "ki",
+          "kunyomi": "abu-nai",
+          "meaning": "bahaya",
+          "order": 168
+        },
+        {
+          "char": "険",
+          "romaji": null,
+          "onyomi": "ken",
+          "kunyomi": "kewa-shii",
+          "meaning": "terjal/risiko",
+          "order": 169
+        },
+        {
+          "char": "取",
+          "romaji": null,
+          "onyomi": "shu",
+          "kunyomi": "to-ru",
+          "meaning": "mengambil",
+          "order": 170
+        },
+        {
+          "char": "受",
+          "romaji": null,
+          "onyomi": "ju",
+          "kunyomi": "u-keru",
+          "meaning": "menerima",
+          "order": 171
+        },
+        {
+          "char": "付",
+          "romaji": null,
+          "onyomi": "fu",
+          "kunyomi": "tsu-ku",
+          "meaning": "menempel/ikut",
+          "order": 172
+        },
+        {
+          "char": "払",
+          "romaji": null,
+          "onyomi": "futsu",
+          "kunyomi": "hara-u",
+          "meaning": "membayar",
+          "order": 173
+        },
+        {
+          "char": "投",
+          "romaji": null,
+          "onyomi": "tou",
+          "kunyomi": "na-geru",
+          "meaning": "melempar",
+          "order": 174
+        },
+        {
+          "char": "打",
+          "romaji": null,
+          "onyomi": "da",
+          "kunyomi": "u-tsu",
+          "meaning": "memukul",
+          "order": 175
+        },
+        {
+          "char": "抜",
+          "romaji": null,
+          "onyomi": "batsu",
+          "kunyomi": "nu-ku",
+          "meaning": "mencabut/lewat",
+          "order": 176
+        },
+        {
+          "char": "折",
+          "romaji": null,
+          "onyomi": "setsu",
+          "kunyomi": "o-ru",
+          "meaning": "patah/lipat",
+          "order": 177
+        },
+        {
+          "char": "畳",
+          "romaji": null,
+          "onyomi": "jou",
+          "kunyomi": "tatami",
+          "meaning": "tatami/lipat",
+          "order": 178
+        },
+        {
+          "char": "若",
+          "romaji": null,
+          "onyomi": "jaku",
+          "kunyomi": "waka-i",
+          "meaning": "muda",
+          "order": 179
+        },
+        {
+          "char": "美",
+          "romaji": null,
+          "onyomi": "bi",
+          "kunyomi": "utsuku-shii",
+          "meaning": "indah",
+          "order": 180
+        },
+        {
+          "char": "術",
+          "romaji": null,
+          "onyomi": "jutsu",
+          "kunyomi": "sube",
+          "meaning": "teknik/seni",
+          "order": 181
+        },
+        {
+          "char": "祭",
+          "romaji": null,
+          "onyomi": "sai",
+          "kunyomi": "matsu-ri",
+          "meaning": "festival",
+          "order": 182
+        },
+        {
+          "char": "神",
+          "romaji": null,
+          "onyomi": "shin, jin",
+          "kunyomi": "kami",
+          "meaning": "dewa/tuhan",
+          "order": 183
+        },
+        {
+          "char": "仏",
+          "romaji": null,
+          "onyomi": "butsu",
+          "kunyomi": "hotoke",
+          "meaning": "buddha",
+          "order": 184
+        },
+        {
+          "char": "信",
+          "romaji": null,
+          "onyomi": "shin",
+          "kunyomi": "shiji-ru",
+          "meaning": "percaya",
+          "order": 185
+        },
+        {
+          "char": "愛",
+          "romaji": null,
+          "onyomi": "ai",
+          "kunyomi": "ito-shii",
+          "meaning": "cinta",
+          "order": 186
+        },
+        {
+          "char": "成",
+          "romaji": null,
+          "onyomi": "sei",
+          "kunyomi": "na-ru",
+          "meaning": "menjadi/tumbuh",
+          "order": 187
+        },
+        {
+          "char": "関",
+          "romaji": null,
+          "onyomi": "kan",
+          "kunyomi": "seki",
+          "meaning": "kaitannya/gerbang",
+          "order": 188
+        },
+        {
+          "char": "係",
+          "romaji": null,
+          "onyomi": "kei",
+          "kunyomi": "kaka-ri",
+          "meaning": "petugas/hubungan",
+          "order": 189
+        },
+        {
+          "char": "再",
+          "romaji": null,
+          "onyomi": "sai, sa",
+          "kunyomi": "futata-bi",
+          "meaning": "lagi/ulang",
+          "order": 190
+        },
+        {
+          "char": "最",
+          "romaji": null,
+          "onyomi": "sai",
+          "kunyomi": "mo-ttomo",
+          "meaning": "paling",
+          "order": 191
+        },
+        {
+          "char": "初",
+          "romaji": null,
+          "onyomi": "sho",
+          "kunyomi": "haji-me",
+          "meaning": "pertama",
+          "order": 192
+        },
+        {
+          "char": "翌",
+          "romaji": null,
+          "onyomi": "yoku",
+          "kunyomi": null,
+          "meaning": "berikutnya",
+          "order": 193
+        },
+        {
+          "char": "現",
+          "romaji": null,
+          "onyomi": "gen",
+          "kunyomi": "arawa-reru",
+          "meaning": "muncul/saat ini",
+          "order": 194
+        },
+        {
+          "char": "在",
+          "romaji": null,
+          "onyomi": "zai",
+          "kunyomi": "a-ru",
+          "meaning": "ada/berada",
+          "order": 195
+        },
+        {
+          "char": "存",
+          "romaji": null,
+          "onyomi": "son",
+          "kunyomi": null,
+          "meaning": "eksis/tahu",
+          "order": 196
+        },
+        {
+          "char": "承",
+          "romaji": null,
+          "onyomi": "shou",
+          "kunyomi": "uketama-waru",
+          "meaning": "setuju/terima",
+          "order": 197
+        },
+        {
+          "char": "和",
+          "romaji": null,
+          "onyomi": "wa",
+          "kunyomi": "nago-mu",
+          "meaning": "harmoni/jepang",
+          "order": 198
+        },
+        {
+          "char": "太",
+          "romaji": null,
+          "onyomi": "tai, ta",
+          "kunyomi": "futo-i",
+          "meaning": "gemuk/besar",
+          "order": 199
+        },
+        {
+          "char": "丸",
+          "romaji": null,
+          "onyomi": "gan",
+          "kunyomi": "maru",
+          "meaning": "bulat",
+          "order": 200
+        },
+        {
+          "char": "角",
+          "romaji": null,
+          "onyomi": "kaku",
+          "kunyomi": "kado, tsuno",
+          "meaning": "sudut/tanduk",
+          "order": 201
+        },
+        {
+          "char": "線",
+          "romaji": null,
+          "onyomi": "sen",
+          "kunyomi": null,
+          "meaning": "garis",
+          "order": 202
+        },
+        {
+          "char": "点",
+          "romaji": null,
+          "onyomi": "ten",
+          "kunyomi": "tsu-keru",
+          "meaning": "titik/skor",
+          "order": 203
+        },
+        {
+          "char": "数",
+          "romaji": null,
+          "onyomi": "suu",
+          "kunyomi": "kazu",
+          "meaning": "angka/jumlah",
+          "order": 204
+        },
+        {
+          "char": "量",
+          "romaji": null,
+          "onyomi": "ryou",
+          "kunyomi": "haka-ru",
+          "meaning": "jumlah/ukur",
+          "order": 205
+        },
+        {
+          "char": "幾",
+          "romaji": null,
+          "onyomi": "ki",
+          "kunyomi": "iku-tsu",
+          "meaning": "berapa banyak",
+          "order": 206
+        },
+        {
+          "char": "昔",
+          "romaji": null,
+          "onyomi": "seki",
+          "kunyomi": "mukashi",
+          "meaning": "dahulu kala",
+          "order": 207
+        },
+        {
+          "char": "昭",
+          "romaji": null,
+          "onyomi": "shou",
+          "kunyomi": null,
+          "meaning": "terang",
+          "order": 208
+        },
+        {
+          "char": "暑",
+          "romaji": null,
+          "onyomi": "sho",
+          "kunyomi": "atsu-i",
+          "meaning": "panas (cuaca)",
+          "order": 209
+        },
+        {
+          "char": "寒",
+          "romaji": null,
+          "onyomi": "kan",
+          "kunyomi": "samu-i",
+          "meaning": "dingin (cuaca)",
+          "order": 210
+        },
+        {
+          "char": "暖",
+          "romaji": null,
+          "onyomi": "dan",
+          "kunyomi": "atata-kai",
+          "meaning": "hangat",
+          "order": 211
+        },
+        {
+          "char": "涼",
+          "romaji": null,
+          "onyomi": "ryou",
+          "kunyomi": "shizu-shii",
+          "meaning": "sejuk",
+          "order": 212
+        },
+        {
+          "char": "顔",
+          "romaji": null,
+          "onyomi": "gan",
+          "kunyomi": "kao",
+          "meaning": "wajah",
+          "order": 213
+        },
+        {
+          "char": "頭",
+          "romaji": null,
+          "onyomi": "tou",
+          "kunyomi": "atama",
+          "meaning": "kepala",
+          "order": 214
+        },
+        {
+          "char": "指",
+          "romaji": null,
+          "onyomi": "shi",
+          "kunyomi": "yubi",
+          "meaning": "jari",
+          "order": 215
+        },
+        {
+          "char": "鼻",
+          "romaji": null,
+          "onyomi": "bi",
+          "kunyomi": "hana",
+          "meaning": "hidung",
+          "order": 216
+        },
+        {
+          "char": "歯",
+          "romaji": null,
+          "onyomi": "shi",
+          "kunyomi": "ha",
+          "meaning": "gigi",
+          "order": 217
+        },
+        {
+          "char": "喉",
+          "romaji": null,
+          "onyomi": "kou",
+          "kunyomi": "nodo",
+          "meaning": "tenggorokan",
+          "order": 218
+        },
+        {
+          "char": "首",
+          "romaji": null,
+          "onyomi": "shu",
+          "kunyomi": "kubi",
+          "meaning": "leher",
+          "order": 219
+        },
+        {
+          "char": "肩",
+          "romaji": null,
+          "onyomi": "ken",
+          "kunyomi": "kata",
+          "meaning": "bahu",
+          "order": 220
+        },
+        {
+          "char": "背",
+          "romaji": null,
+          "onyomi": "hai",
+          "kunyomi": "se",
+          "meaning": "punggung",
+          "order": 221
+        },
+        {
+          "char": "胸",
+          "romaji": null,
+          "onyomi": "kyou",
+          "kunyomi": "mune",
+          "meaning": "dada",
+          "order": 222
+        },
+        {
+          "char": "腰",
+          "romaji": null,
+          "onyomi": "you",
+          "kunyomi": "koshi",
+          "meaning": "pinggang",
+          "order": 223
+        },
+        {
+          "char": "腕",
+          "romaji": null,
+          "onyomi": "wan",
+          "kunyomi": "ude",
+          "meaning": "lengan",
+          "order": 224
+        },
+        {
+          "char": "脚",
+          "romaji": null,
+          "onyomi": "kyaku",
+          "kunyomi": "ashi",
+          "meaning": "kaki (tungkai)",
+          "order": 225
+        },
+        {
+          "char": "骨",
+          "romaji": null,
+          "onyomi": "kotsu",
+          "kunyomi": "hone",
+          "meaning": "tulang",
+          "order": 226
+        },
+        {
+          "char": "血",
+          "romaji": null,
+          "onyomi": "ketsu",
+          "kunyomi": "chi",
+          "meaning": "darah",
+          "order": 227
+        },
+        {
+          "char": "形",
+          "romaji": null,
+          "onyomi": "kei, gyou",
+          "kunyomi": "katachi",
+          "meaning": "bentuk",
+          "order": 228
+        },
+        {
+          "char": "影",
+          "romaji": null,
+          "onyomi": "ei",
+          "kunyomi": "kage",
+          "meaning": "bayangan",
+          "order": 229
+        },
+        {
+          "char": "光",
+          "romaji": null,
+          "onyomi": "kou",
+          "kunyomi": "hikari",
+          "meaning": "cahaya",
+          "order": 230
+        },
+        {
+          "char": "星",
+          "romaji": null,
+          "onyomi": "sei",
+          "kunyomi": "hoshi",
+          "meaning": "bintang",
+          "order": 231
+        },
+        {
+          "char": "雲",
+          "romaji": null,
+          "onyomi": "un",
+          "kunyomi": "kumo",
+          "meaning": "awan",
+          "order": 232
+        },
+        {
+          "char": "池",
+          "romaji": null,
+          "onyomi": "chi",
+          "kunyomi": "ike",
+          "meaning": "kolam",
+          "order": 233
+        },
+        {
+          "char": "湖",
+          "romaji": null,
+          "onyomi": "ko",
+          "kunyomi": "mizuumi",
+          "meaning": "danau",
+          "order": 234
+        },
+        {
+          "char": "波",
+          "romaji": null,
+          "onyomi": "ha",
+          "kunyomi": "nami",
+          "meaning": "gelombang",
+          "order": 235
+        },
+        {
+          "char": "岩",
+          "romaji": null,
+          "onyomi": "gan",
+          "kunyomi": "iwa",
+          "meaning": "batu karang",
+          "order": 236
+        },
+        {
+          "char": "岸",
+          "romaji": null,
+          "onyomi": "gan",
+          "kunyomi": "kishi",
+          "meaning": "pantai/tepi",
+          "order": 237
+        },
+        {
+          "char": "島",
+          "romaji": null,
+          "onyomi": "tou",
+          "kunyomi": "shima",
+          "meaning": "pulau",
+          "order": 238
+        },
+        {
+          "char": "坂",
+          "romaji": null,
+          "onyomi": "han",
+          "kunyomi": "saka",
+          "meaning": "lereng/bukit",
+          "order": 239
+        },
+        {
+          "char": "森",
+          "romaji": null,
+          "onyomi": "shin",
+          "kunyomi": "mori",
+          "meaning": "hutan",
+          "order": 240
+        },
+        {
+          "char": "林",
+          "romaji": null,
+          "onyomi": "rin",
+          "kunyomi": "hayashi",
+          "meaning": "rimba",
+          "order": 241
+        },
+        {
+          "char": "原",
+          "romaji": null,
+          "onyomi": "gen",
+          "kunyomi": "hara",
+          "meaning": "dataran",
+          "order": 242
+        },
+        {
+          "char": "産",
+          "romaji": null,
+          "onyomi": "san",
+          "kunyomi": "u-mu",
+          "meaning": "produksi/lahir",
+          "order": 243
+        },
+        {
+          "char": "県",
+          "romaji": null,
+          "onyomi": "ken",
+          "kunyomi": null,
+          "meaning": "prefektur",
+          "order": 244
+        },
+        {
+          "char": "区",
+          "romaji": null,
+          "onyomi": "ku",
+          "kunyomi": null,
+          "meaning": "distrik",
+          "order": 245
+        },
+        {
+          "char": "市",
+          "romaji": null,
+          "onyomi": "shi",
+          "kunyomi": "ichi",
+          "meaning": "kota/pasar",
+          "order": 246
+        },
+        {
+          "char": "屋",
+          "romaji": null,
+          "onyomi": "oku",
+          "kunyomi": "ya",
+          "meaning": "atap/toko",
+          "order": 247
+        },
+        {
+          "char": "室",
+          "romaji": null,
+          "onyomi": "shitsu",
+          "kunyomi": "muro",
+          "meaning": "ruangan",
+          "order": 248
+        },
+        {
+          "char": "窓",
+          "romaji": null,
+          "onyomi": "sou",
+          "kunyomi": "mado",
+          "meaning": "jendela",
+          "order": 249
+        },
+        {
+          "char": "階",
+          "romaji": null,
+          "onyomi": "kai",
+          "kunyomi": null,
+          "meaning": "lantai/tangga",
+          "order": 250
+        },
+        {
+          "char": "庭",
+          "romaji": null,
+          "onyomi": "tei",
+          "kunyomi": "niwa",
+          "meaning": "taman",
+          "order": 251
+        },
+        {
+          "char": "戸",
+          "romaji": null,
+          "onyomi": "ko",
+          "kunyomi": "to",
+          "meaning": "pintu",
+          "order": 252
+        },
+        {
+          "char": "濯",
+          "romaji": null,
+          "onyomi": "taku",
+          "kunyomi": null,
+          "meaning": "mencuci baju",
+          "order": 253
+        },
+        {
+          "char": "脱",
+          "romaji": null,
+          "onyomi": "datsu",
+          "kunyomi": "nu-gu",
+          "meaning": "melepas (baju)",
+          "order": 254
+        },
+        {
+          "char": "掛",
+          "romaji": null,
+          "onyomi": "kai",
+          "kunyomi": "ka-keru",
+          "meaning": "menggantung",
+          "order": 255
+        },
+        {
+          "char": "磨",
+          "romaji": null,
+          "onyomi": "ma",
+          "kunyomi": "miga-ku",
+          "meaning": "menggosok/mengasah",
+          "order": 256
+        },
+        {
+          "char": "掃",
+          "romaji": null,
+          "onyomi": "sou",
+          "kunyomi": "ha-ku",
+          "meaning": "menyapu",
+          "order": 257
+        },
+        {
+          "char": "整",
+          "romaji": null,
+          "onyomi": "sei",
+          "kunyomi": "toto-noeru",
+          "meaning": "merapikan",
+          "order": 258
+        },
+        {
+          "char": "備",
+          "romaji": null,
+          "onyomi": "bi",
+          "kunyomi": "sona-eru",
+          "meaning": "menyediakan",
+          "order": 259
+        },
+        {
+          "char": "器",
+          "romaji": null,
+          "onyomi": "ki",
+          "kunyomi": "utsuwa",
+          "meaning": "wadah/alat",
+          "order": 260
+        },
+        {
+          "char": "具",
+          "romaji": null,
+          "onyomi": "gu",
+          "kunyomi": null,
+          "meaning": "alat/perkakas",
+          "order": 261
+        },
+        {
+          "char": "役",
+          "romaji": null,
+          "onyomi": "yaku",
+          "kunyomi": null,
+          "meaning": "peran/tugas",
+          "order": 262
+        },
+        {
+          "char": "務",
+          "romaji": null,
+          "onyomi": "mu",
+          "kunyomi": "tsuto-meru",
+          "meaning": "tugas/dinas",
+          "order": 263
+        },
+        {
+          "char": "勤",
+          "romaji": null,
+          "onyomi": "kin",
+          "kunyomi": "tsuto-meru",
+          "meaning": "bekerja",
+          "order": 264
+        },
+        {
+          "char": "勝",
+          "romaji": null,
+          "onyomi": "shou",
+          "kunyomi": "ka-tsu",
+          "meaning": "menang",
+          "order": 265
+        },
+        {
+          "char": "負",
+          "romaji": null,
+          "onyomi": "fu",
+          "kunyomi": "ma-keru",
+          "meaning": "kalah",
+          "order": 266
+        },
+        {
+          "char": "育",
+          "romaji": null,
+          "onyomi": "iku",
+          "kunyomi": "soda-tsu",
+          "meaning": "membesarkan",
+          "order": 267
+        },
+        {
+          "char": "識",
+          "romaji": null,
+          "onyomi": "shiki",
+          "kunyomi": null,
+          "meaning": "pengetahuan",
+          "order": 268
+        },
+        {
+          "char": "忘",
+          "romaji": null,
+          "onyomi": "bou",
+          "kunyomi": "wasu-reru",
+          "meaning": "lupa",
+          "order": 269
+        },
+        {
+          "char": "念",
+          "romaji": null,
+          "onyomi": "nen",
+          "kunyomi": null,
+          "meaning": "pikiran/keinginan",
+          "order": 270
+        },
+        {
+          "char": "祈",
+          "romaji": null,
+          "onyomi": "ki",
+          "kunyomi": "ino-ru",
+          "meaning": "berdoa",
+          "order": 271
+        },
+        {
+          "char": "祝",
+          "romaji": null,
+          "onyomi": "shuku",
+          "kunyomi": "iwa-u",
+          "meaning": "merayakan",
+          "order": 272
+        },
+        {
+          "char": "礼",
+          "romaji": null,
+          "onyomi": "rei",
+          "kunyomi": null,
+          "meaning": "salam/etiket",
+          "order": 273
+        },
+        {
+          "char": "灯",
+          "romaji": null,
+          "onyomi": "tou",
+          "kunyomi": "hi",
+          "meaning": "lampu",
+          "order": 274
+        },
+        {
+          "char": "煙",
+          "romaji": null,
+          "onyomi": "en",
+          "kunyomi": "kemu-ri",
+          "meaning": "asap",
+          "order": 275
+        },
+        {
+          "char": "炭",
+          "romaji": null,
+          "onyomi": "tan",
+          "kunyomi": "sumi",
+          "meaning": "arang",
+          "order": 276
+        },
+        {
+          "char": "熱",
+          "romaji": null,
+          "onyomi": "netsu",
+          "kunyomi": "atsu-i",
+          "meaning": "panas (benda)",
+          "order": 277
+        },
+        {
+          "char": "冷",
+          "romaji": null,
+          "onyomi": "rei",
+          "kunyomi": "tsume-tai",
+          "meaning": "dingin (benda)",
+          "order": 278
+        },
+        {
+          "char": "温",
+          "romaji": null,
+          "onyomi": "on",
+          "kunyomi": "atata-kai",
+          "meaning": "suhu/hangat",
+          "order": 279
+        },
+        {
+          "char": "速",
+          "romaji": null,
+          "onyomi": "soku",
+          "kunyomi": "haya-i",
+          "meaning": "cepat (kecepatan)",
+          "order": 280
+        },
+        {
+          "char": "遅",
+          "romaji": null,
+          "onyomi": "chi",
+          "kunyomi": "osoi",
+          "meaning": "lambat/terlambat",
+          "order": 281
+        },
+        {
+          "char": "違",
+          "romaji": null,
+          "onyomi": "i",
+          "kunyomi": "chiga-u",
+          "meaning": "berbeda",
+          "order": 282
+        },
+        {
+          "char": "定",
+          "romaji": null,
+          "onyomi": "tei",
+          "kunyomi": "sada-meru",
+          "meaning": "menetapkan",
+          "order": 283
+        },
+        {
+          "char": "比",
+          "romaji": null,
+          "onyomi": "hi",
+          "kunyomi": "kura-beru",
+          "meaning": "membandingkan",
+          "order": 284
+        },
+        {
+          "char": "対",
+          "romaji": null,
+          "onyomi": "tai",
+          "kunyomi": null,
+          "meaning": "berlawanan",
+          "order": 285
+        },
+        {
+          "char": "賛",
+          "romaji": null,
+          "onyomi": "san",
+          "kunyomi": null,
+          "meaning": "setuju/memuji",
+          "order": 286
+        },
+        {
+          "char": "絶",
+          "romaji": null,
+          "onyomi": "zetsu",
+          "kunyomi": "ta-tsu",
+          "meaning": "mutlak/putus",
+          "order": 287
+        },
+        {
+          "char": "約",
+          "romaji": null,
+          "onyomi": "yaku",
+          "kunyomi": null,
+          "meaning": "sekitar/janji",
+          "order": 288
+        },
+        {
+          "char": "束",
+          "romaji": null,
+          "onyomi": "soku",
+          "kunyomi": "taba",
+          "meaning": "ikat/berkas",
+          "order": 289
+        },
+        {
+          "char": "戦",
+          "romaji": null,
+          "onyomi": "sen",
+          "kunyomi": "tataka-u",
+          "meaning": "perang/bertarung",
+          "order": 290
+        },
+        {
+          "char": "争",
+          "romaji": null,
+          "onyomi": "sou",
+          "kunyomi": "araso-u",
+          "meaning": "konflik/debat",
+          "order": 291
+        },
+        {
+          "char": "辞",
+          "romaji": null,
+          "onyomi": "ji",
+          "kunyomi": "ya-meru",
+          "meaning": "berhenti/kata",
+          "order": 292
+        },
+        {
+          "char": "退",
+          "romaji": null,
+          "onyomi": "tai",
+          "kunyomi": "shirizo-ku",
+          "meaning": "mundur",
+          "order": 293
+        },
+        {
+          "char": "復",
+          "romaji": null,
+          "onyomi": "fuku",
+          "kunyomi": null,
+          "meaning": "pulih/ulang",
+          "order": 294
+        },
+        {
+          "char": "往",
+          "romaji": null,
+          "onyomi": "ou",
+          "kunyomi": null,
+          "meaning": "perjalanan/pergi",
+          "order": 295
+        },
+        {
+          "char": "得",
+          "romaji": null,
+          "onyomi": "toku",
+          "kunyomi": "e-ru",
+          "meaning": "memperoleh",
+          "order": 296
+        },
+        {
+          "char": "失",
+          "romaji": null,
+          "onyomi": "shitsu",
+          "kunyomi": "ushina-u",
+          "meaning": "kehilangan",
+          "order": 297
+        },
+        {
+          "char": "敗",
+          "romaji": null,
+          "onyomi": "hai",
+          "kunyomi": "yabu-reru",
+          "meaning": "kegagalan",
+          "order": 298
+        },
+        {
+          "char": "末",
+          "romaji": null,
+          "onyomi": "matsu",
+          "kunyomi": "sue",
+          "meaning": "akhir/ujung",
+          "order": 299
+        },
+        {
+          "char": "段",
+          "romaji": null,
+          "onyomi": "dan",
+          "kunyomi": null,
+          "meaning": "tangga/langkah",
+          "order": 300
+        },
+        {
+          "char": "次",
+          "romaji": null,
+          "onyomi": "ji",
+          "kunyomi": "tsugi",
+          "meaning": "berikutnya",
+          "order": 301
+        },
+        {
+          "char": "以",
+          "romaji": null,
+          "onyomi": "i",
+          "kunyomi": null,
+          "meaning": "mulai dari",
+          "order": 302
+        },
+        {
+          "char": "内",
+          "romaji": null,
+          "onyomi": "nai",
+          "kunyomi": "uchi",
+          "meaning": "dalam",
+          "order": 303
+        },
+        {
+          "char": "際",
+          "romaji": null,
+          "onyomi": "sai",
+          "kunyomi": "kiwa",
+          "meaning": "tepi/saat",
+          "order": 304
+        },
+        {
+          "char": "連",
+          "romaji": null,
+          "onyomi": "ren",
+          "kunyomi": "tsu-reru",
+          "meaning": "hubungkan",
+          "order": 305
+        },
+        {
+          "char": "妻",
+          "romaji": null,
+          "onyomi": "sai",
+          "kunyomi": "tsuma",
+          "meaning": "istri",
+          "order": 306
+        },
+        {
+          "char": "夫",
+          "romaji": null,
+          "onyomi": "fu",
+          "kunyomi": "otto",
+          "meaning": "suami",
+          "order": 307
+        },
+        {
+          "char": "未",
+          "romaji": null,
+          "onyomi": "mi",
+          "kunyomi": "ima-da",
+          "meaning": "belum",
+          "order": 308
+        },
+        {
+          "char": "老",
+          "romaji": null,
+          "onyomi": "rou",
+          "kunyomi": "o-iru",
+          "meaning": "tua",
+          "order": 309
+        },
+        {
+          "char": "死",
+          "romaji": null,
+          "onyomi": "shi",
+          "kunyomi": "shi-nu",
+          "meaning": "mati",
+          "order": 310
+        },
+        {
+          "char": "命",
+          "romaji": null,
+          "onyomi": "mei",
+          "kunyomi": "inochi",
+          "meaning": "kehidupan",
+          "order": 311
+        },
+        {
+          "char": "亡",
+          "romaji": null,
+          "onyomi": "bou",
+          "kunyomi": "na-kunaru",
+          "meaning": "meninggal",
+          "order": 312
+        },
+        {
+          "char": "墓",
+          "romaji": null,
+          "onyomi": "bo",
+          "kunyomi": "haka",
+          "meaning": "kuburan",
+          "order": 313
+        },
+        {
+          "char": "供",
+          "romaji": null,
+          "onyomi": "kyou",
+          "kunyomi": "sona-eru",
+          "meaning": "persembahan/anak",
+          "order": 314
+        },
+        {
+          "char": "君",
+          "romaji": null,
+          "onyomi": "kun",
+          "kunyomi": "kimi",
+          "meaning": "kamu",
+          "order": 315
+        },
+        {
+          "char": "僕",
+          "romaji": null,
+          "onyomi": "boku",
+          "kunyomi": null,
+          "meaning": "aku (pria)",
+          "order": 316
+        },
+        {
+          "char": "彼",
+          "romaji": null,
+          "onyomi": "hi",
+          "kunyomi": "kare",
+          "meaning": "dia (pria)",
+          "order": 317
+        },
+        {
+          "char": "達",
+          "romaji": null,
+          "onyomi": "tatsu",
+          "kunyomi": null,
+          "meaning": "mencapai/jamak",
+          "order": 318
+        },
+        {
+          "char": "遊",
+          "romaji": null,
+          "onyomi": "yuu",
+          "kunyomi": "aso-bu",
+          "meaning": "bermain",
+          "order": 319
+        },
+        {
+          "char": "泳",
+          "romaji": null,
+          "onyomi": "ei",
+          "kunyomi": "oyo-gu",
+          "meaning": "berenang",
+          "order": 320
+        },
+        {
+          "char": "箱",
+          "romaji": null,
+          "onyomi": "sou",
+          "kunyomi": "hako",
+          "meaning": "kotak",
+          "order": 321
+        },
+        {
+          "char": "筆",
+          "romaji": null,
+          "onyomi": "hitsu",
+          "kunyomi": "fude",
+          "meaning": "kuas/pena",
+          "order": 322
+        },
+        {
+          "char": "球",
+          "romaji": null,
+          "onyomi": "kyuu",
+          "kunyomi": "tama",
+          "meaning": "bola",
+          "order": 323
+        },
+        {
+          "char": "棒",
+          "romaji": null,
+          "onyomi": "bou",
+          "kunyomi": null,
+          "meaning": "tongkat",
+          "order": 324
+        },
+        {
+          "char": "針",
+          "romaji": null,
+          "onyomi": "shin",
+          "kunyomi": "hari",
+          "meaning": "jarum",
+          "order": 325
+        },
+        {
+          "char": "糸",
+          "romaji": null,
+          "onyomi": "shi",
+          "kunyomi": "ito",
+          "meaning": "benang",
+          "order": 326
+        },
+        {
+          "char": "布",
+          "romaji": null,
+          "onyomi": "fu",
+          "kunyomi": "nuno",
+          "meaning": "kain",
+          "order": 327
+        },
+        {
+          "char": "毛",
+          "romaji": null,
+          "onyomi": "mou",
+          "kunyomi": "ke",
+          "meaning": "bulu/rambut",
+          "order": 328
+        },
+        {
+          "char": "皮",
+          "romaji": null,
+          "onyomi": "hi",
+          "kunyomi": "kawa",
+          "meaning": "kulit",
+          "order": 329
+        },
+        {
+          "char": "革",
+          "romaji": null,
+          "onyomi": "kaku",
+          "kunyomi": "kawa",
+          "meaning": "kulit samak",
+          "order": 330
+        },
+        {
+          "char": "砂",
+          "romaji": null,
+          "onyomi": "sa",
+          "kunyomi": "suna",
+          "meaning": "pasir",
+          "order": 331
+        },
+        {
+          "char": "塩",
+          "romaji": null,
+          "onyomi": "en",
+          "kunyomi": "shio",
+          "meaning": "garam",
+          "order": 332
+        },
+        {
+          "char": "油",
+          "romaji": null,
+          "onyomi": "yu",
+          "kunyomi": "abura",
+          "meaning": "minyak",
+          "order": 333
+        },
+        {
+          "char": "脂",
+          "romaji": null,
+          "onyomi": "shi",
+          "kunyomi": "abura",
+          "meaning": "lemak",
+          "order": 334
+        },
+        {
+          "char": "汁",
+          "romaji": null,
+          "onyomi": "juu",
+          "kunyomi": "shiru",
+          "meaning": "kuah/jus",
+          "order": 335
+        },
+        {
+          "char": "麦",
+          "romaji": null,
+          "onyomi": "baku",
+          "kunyomi": "mugi",
+          "meaning": "gandum",
+          "order": 336
+        },
+        {
+          "char": "豆",
+          "romaji": null,
+          "onyomi": "tou",
+          "kunyomi": "mame",
+          "meaning": "kacang",
+          "order": 337
+        },
+        {
+          "char": "果",
+          "romaji": null,
+          "onyomi": "ka",
+          "kunyomi": "ha-tasu",
+          "meaning": "buah/hasil",
+          "order": 338
+        },
+        {
+          "char": "酒",
+          "romaji": null,
+          "onyomi": "shu",
+          "kunyomi": "sake",
+          "meaning": "alkohol/sake",
+          "order": 339
+        },
+        {
+          "char": "氷",
+          "romaji": null,
+          "onyomi": "hyou",
+          "kunyomi": "koori",
+          "meaning": "es",
+          "order": 340
+        },
+        {
+          "char": "湯",
+          "romaji": null,
+          "onyomi": "tou",
+          "kunyomi": "oyu",
+          "meaning": "air panas",
+          "order": 341
+        },
+        {
+          "char": "辛",
+          "romaji": null,
+          "onyomi": "shin",
+          "kunyomi": "karai",
+          "meaning": "pedas",
+          "order": 342
+        },
+        {
+          "char": "甘",
+          "romaji": null,
+          "onyomi": "kan",
+          "kunyomi": "amai",
+          "meaning": "manis",
+          "order": 343
+        },
+        {
+          "char": "苦",
+          "romaji": null,
+          "onyomi": "ku",
+          "kunyomi": "nigai",
+          "meaning": "pahit",
+          "order": 344
+        },
+        {
+          "char": "酸",
+          "romaji": null,
+          "onyomi": "san",
+          "kunyomi": "sui",
+          "meaning": "asam",
+          "order": 345
+        },
+        {
+          "char": "濃",
+          "romaji": null,
+          "onyomi": "nou",
+          "kunyomi": "ko-i",
+          "meaning": "pekat/kental",
+          "order": 346
+        },
+        {
+          "char": "薄",
+          "romaji": null,
+          "onyomi": "haku",
+          "kunyomi": "usu-i",
+          "meaning": "tipis/hambar",
+          "order": 347
+        },
+        {
+          "char": "細",
+          "romaji": null,
+          "onyomi": "sai",
+          "kunyomi": "hoso-i",
+          "meaning": "kurus/halus",
+          "order": 348
+        },
+        {
+          "char": "固",
+          "romaji": null,
+          "onyomi": "ko",
+          "kunyomi": "kata-i",
+          "meaning": "keras/padat",
+          "order": 349
+        },
+        {
+          "char": "柔",
+          "romaji": null,
+          "onyomi": "juu",
+          "kunyomi": "yawa-rakai",
+          "meaning": "lembut/empuk",
+          "order": 350
+        },
+        {
+          "char": "快",
+          "romaji": null,
+          "onyomi": "kai",
+          "kunyomi": "kokoro-yoi",
+          "meaning": "menyenangkan",
+          "order": 351
+        },
+        {
+          "char": "痛",
+          "romaji": null,
+          "onyomi": "tsuu",
+          "kunyomi": "ita-i",
+          "meaning": "sakit",
+          "order": 352
+        },
+        {
+          "char": "痒",
+          "romaji": null,
+          "onyomi": "you",
+          "kunyomi": "kayu-i",
+          "meaning": "gatal",
+          "order": 353
+        },
+        {
+          "char": "眠",
+          "romaji": null,
+          "onyomi": "min",
+          "kunyomi": "nemu-i",
+          "meaning": "mengantuk",
+          "order": 354
+        },
+        {
+          "char": "忙",
+          "romaji": null,
+          "onyomi": "bou",
+          "kunyomi": "isoga-shii",
+          "meaning": "sibuk",
+          "order": 355
+        },
+        {
+          "char": "暇",
+          "romaji": null,
+          "onyomi": "ka",
+          "kunyomi": "hima",
+          "meaning": "luang",
+          "order": 356
+        },
+        {
+          "char": "悲",
+          "romaji": null,
+          "onyomi": "hi",
+          "kunyomi": "kana-shii",
+          "meaning": "sedih",
+          "order": 357
+        },
+        {
+          "char": "恐",
+          "romaji": null,
+          "onyomi": "kyou",
+          "kunyomi": "kowa-i",
+          "meaning": "takut",
+          "order": 358
+        },
+        {
+          "char": "驚",
+          "romaji": null,
+          "onyomi": "kyou",
+          "kunyomi": "odoroku",
+          "meaning": "terkejut",
+          "order": 359
+        },
+        {
+          "char": "怒",
+          "romaji": null,
+          "onyomi": "do",
+          "kunyomi": "oko-ru",
+          "meaning": "marah",
+          "order": 360
+        },
+        {
+          "char": "笑",
+          "romaji": null,
+          "onyomi": "shou",
+          "kunyomi": "wara-u",
+          "meaning": "tertawa",
+          "order": 361
+        },
+        {
+          "char": "泣",
+          "romaji": null,
+          "onyomi": "kyuu",
+          "kunyomi": "na-ku",
+          "meaning": "menangis",
+          "order": 362
+        },
+        {
+          "char": "覚",
+          "romaji": null,
+          "onyomi": "kaku",
+          "kunyomi": "obo-eru",
+          "meaning": "ingat/hafal",
+          "order": 363
+        },
+        {
+          "char": "望",
+          "romaji": null,
+          "onyomi": "bou",
+          "kunyomi": "nozo-mu",
+          "meaning": "berharap",
+          "order": 364
+        },
+        {
+          "char": "疑",
+          "romaji": null,
+          "onyomi": "gi",
+          "kunyomi": "utaga-u",
+          "meaning": "ragu/curiga",
+          "order": 365
+        },
+        {
+          "char": "求",
+          "romaji": null,
+          "onyomi": "kyuu",
+          "kunyomi": "moto-meru",
+          "meaning": "mencari/minta",
+          "order": 366
+        },
+        {
+          "char": "謝",
+          "romaji": null,
+          "onyomi": "sha",
+          "kunyomi": "ayama-ru",
+          "meaning": "minta maaf/terima kasih",
+          "order": 367
+        },
+        {
+          "char": "称",
+          "romaji": null,
+          "onyomi": "shou",
+          "kunyomi": "tata-eru",
+          "meaning": "memuji/nama",
+          "order": 368
+        },
+        {
+          "char": "叫",
+          "romaji": null,
+          "onyomi": "kyou",
+          "kunyomi": "sake-bu",
+          "meaning": "berteriak",
+          "order": 369
+        },
+        {
+          "char": "告",
+          "romaji": null,
+          "onyomi": "koku",
+          "kunyomi": "tsu-geru",
+          "meaning": "mengumumkan",
+          "order": 370
+        },
+        {
+          "char": "報",
+          "romaji": null,
+          "onyomi": "hou",
+          "kunyomi": "muku-iru",
+          "meaning": "laporan/balasan",
+          "order": 371
+        },
+        {
+          "char": "伝",
+          "romaji": null,
+          "onyomi": "den",
+          "kunyomi": "tsuta-eru",
+          "meaning": "menyampaikan",
+          "order": 372
+        },
+        {
+          "char": "記",
+          "romaji": null,
+          "onyomi": "ki",
+          "kunyomi": "shiru-su",
+          "meaning": "mencatat",
+          "order": 373
+        },
+        {
+          "char": "論",
+          "romaji": null,
+          "onyomi": "ron",
+          "kunyomi": null,
+          "meaning": "teori/argumen",
+          "order": 374
+        },
+        {
+          "char": "述",
+          "romaji": null,
+          "onyomi": "jutsu",
+          "kunyomi": "no-beru",
+          "meaning": "menyatakan",
+          "order": 375
+        },
+        {
+          "char": "説",
+          "romaji": null,
+          "onyomi": "setsu",
+          "kunyomi": "to-ku",
+          "meaning": "menjelaskan",
+          "order": 376
+        },
+        {
+          "char": "証",
+          "romaji": null,
+          "onyomi": "shou",
+          "kunyomi": "aka-shi",
+          "meaning": "bukti",
+          "order": 377
+        },
+        {
+          "char": "評",
+          "romaji": null,
+          "onyomi": "hyou",
+          "kunyomi": null,
+          "meaning": "evaluasi",
+          "order": 378
+        },
+        {
+          "char": "詩",
+          "romaji": null,
+          "onyomi": "shi",
+          "kunyomi": null,
+          "meaning": "puisi",
+          "order": 379
+        },
+        {
+          "char": "館",
+          "romaji": null,
+          "onyomi": "kan",
+          "kunyomi": "yakata",
+          "meaning": "gedung/aula",
+          "order": 380
+        },
+        {
+          "char": "寺",
+          "romaji": null,
+          "onyomi": "ji",
+          "kunyomi": "tera",
+          "meaning": "kuil buddha",
+          "order": 381
+        },
+        {
+          "char": "塔",
+          "romaji": null,
+          "onyomi": "tou",
+          "kunyomi": null,
+          "meaning": "menara",
+          "order": 382
+        },
+        {
+          "char": "城",
+          "romaji": null,
+          "onyomi": "jou",
+          "kunyomi": "shiro",
+          "meaning": "kastil",
+          "order": 383
+        },
+        {
+          "char": "園",
+          "romaji": null,
+          "onyomi": "en",
+          "kunyomi": "sono",
+          "meaning": "taman",
+          "order": 384
+        },
+        {
+          "char": "府",
+          "romaji": null,
+          "onyomi": "fu",
+          "kunyomi": null,
+          "meaning": "prefektur pusat",
+          "order": 385
+        },
+        {
+          "char": "乗",
+          "romaji": null,
+          "onyomi": "jou",
+          "kunyomi": "no-ru",
+          "meaning": "naik (kendaraan)",
+          "order": 386
+        },
+        {
+          "char": "特",
+          "romaji": null,
+          "onyomi": "toku",
+          "kunyomi": null,
+          "meaning": "khusus",
+          "order": 387
+        },
+        {
+          "char": "切",
+          "romaji": null,
+          "onyomi": "setsu",
+          "kunyomi": "ki-ru",
+          "meaning": "memotong",
+          "order": 388
+        },
+        {
+          "char": "技",
+          "romaji": null,
+          "onyomi": "gi",
+          "kunyomi": "waza",
+          "meaning": "teknik/keahlian",
+          "order": 389
+        },
+        {
+          "char": "才",
+          "romaji": null,
+          "onyomi": "sai",
+          "kunyomi": null,
+          "meaning": "bakat/usia",
+          "order": 390
+        },
+        {
+          "char": "羽",
+          "romaji": null,
+          "onyomi": "u",
+          "kunyomi": "hane",
+          "meaning": "sayap/bulu",
+          "order": 391
+        },
+        {
+          "char": "馬",
+          "romaji": null,
+          "onyomi": "ba",
+          "kunyomi": "uma",
+          "meaning": "kuda",
+          "order": 392
+        },
+        {
+          "char": "去",
+          "romaji": null,
+          "onyomi": "kyo",
+          "kunyomi": "sa-ru",
+          "meaning": "lalu/pergi",
+          "order": 393
+        },
+        {
+          "char": "誰",
+          "romaji": null,
+          "onyomi": "sui",
+          "kunyomi": "dare",
+          "meaning": "siapa",
+          "order": 394
+        },
+        {
+          "char": "貴",
+          "romaji": null,
+          "onyomi": "ki",
+          "kunyomi": "touto-i",
+          "meaning": "berharga/anda",
+          "order": 395
+        },
+        {
+          "char": "化",
+          "romaji": null,
+          "onyomi": "ka",
+          "kunyomi": "ba-keru",
+          "meaning": "berubah",
+          "order": 396
+        },
+        {
+          "char": "竹",
+          "romaji": null,
+          "onyomi": "chiku",
+          "kunyomi": "take",
+          "meaning": "bambu",
+          "order": 397
+        },
+        {
+          "char": "楽",
+          "romaji": null,
+          "onyomi": "raku",
+          "kunyomi": "tano-shii",
+          "meaning": "senang/nyaman",
+          "order": 398
+        },
+        {
+          "char": "喜",
+          "romaji": null,
+          "onyomi": "ki",
+          "kunyomi": "yoroko-bu",
+          "meaning": "gembira",
+          "order": 399
+        },
+        {
+          "char": "院",
+          "romaji": null,
+          "onyomi": "in",
+          "kunyomi": null,
+          "meaning": "institusi",
+          "order": 400
+        },
+        {
+          "char": "医",
+          "romaji": null,
+          "onyomi": "i",
+          "kunyomi": null,
+          "meaning": "medis",
+          "order": 401
+        },
+        {
+          "char": "師",
+          "romaji": null,
+          "onyomi": "shi",
+          "kunyomi": null,
+          "meaning": "ahli/guru",
+          "order": 402
+        },
+        {
+          "char": "士",
+          "romaji": null,
+          "onyomi": "shi",
+          "kunyomi": null,
+          "meaning": "sarjana/ksatria",
+          "order": 403
+        },
+        {
+          "char": "図",
+          "romaji": null,
+          "onyomi": "zu",
+          "kunyomi": "haka-ru",
+          "meaning": "gambar/rencana",
+          "order": 404
+        },
+        {
+          "char": "帰",
+          "romaji": null,
+          "onyomi": "ki",
+          "kunyomi": "kae-ru",
+          "meaning": "pulang",
+          "order": 405
+        },
+        {
+          "char": "売",
+          "romaji": null,
+          "onyomi": "bai",
+          "kunyomi": "u-ru",
+          "meaning": "menjual",
+          "order": 406
+        },
+        {
+          "char": "員",
+          "romaji": null,
+          "onyomi": "in",
+          "kunyomi": null,
+          "meaning": "anggota/staf",
+          "order": 407
+        },
+        {
+          "char": "方",
+          "romaji": null,
+          "onyomi": "hou",
+          "kunyomi": "kata",
+          "meaning": "arah/orang",
+          "order": 408
+        },
+        {
+          "char": "起",
+          "romaji": null,
+          "onyomi": "ki",
+          "kunyomi": "o-kiru",
+          "meaning": "bangun",
+          "order": 409
+        },
+        {
+          "char": "寝",
+          "romaji": null,
+          "onyomi": "shin",
+          "kunyomi": "ne-ru",
+          "meaning": "tidur",
+          "order": 410
+        },
+        {
+          "char": "配",
+          "romaji": null,
+          "onyomi": "hai",
+          "kunyomi": "kuba-ru",
+          "meaning": "mendistribusikan",
+          "order": 411
+        },
+        {
+          "char": "消",
+          "romaji": null,
+          "onyomi": "shou",
+          "kunyomi": "ke-su",
+          "meaning": "menghapus/padam",
+          "order": 412
+        },
+        {
+          "char": "声",
+          "romaji": null,
+          "onyomi": "sei",
+          "kunyomi": "koe",
+          "meaning": "suara",
+          "order": 413
+        },
+        {
+          "char": "開",
+          "romaji": null,
+          "onyomi": "kai",
+          "kunyomi": "a-keru",
+          "meaning": "buka",
+          "order": 414
+        },
+        {
+          "char": "閉",
+          "romaji": null,
+          "onyomi": "hei",
+          "kunyomi": "shi-meru",
+          "meaning": "tutup",
+          "order": 415
+        },
+        {
+          "char": "集",
+          "romaji": null,
+          "onyomi": "shuu",
+          "kunyomi": "atsu-maru",
+          "meaning": "berkumpul",
+          "order": 416
+        },
+        {
+          "char": "経",
+          "romaji": null,
+          "onyomi": "kei",
+          "kunyomi": null,
+          "meaning": "lewat/melalui",
+          "order": 417
+        },
+        {
+          "char": "要",
+          "romaji": null,
+          "onyomi": "you",
+          "kunyomi": "i-ru",
+          "meaning": "perlu",
+          "order": 418
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "level": "N5",
+      "lessonSlug": "kanji-n5-foundation",
+      "items": [
+        {
+          "char": "一",
+          "romaji": null,
+          "onyomi": "ichi",
+          "kunyomi": "hito-tsu",
+          "meaning": "satu",
+          "order": 1
+        },
+        {
+          "char": "二",
+          "romaji": null,
+          "onyomi": "ni",
+          "kunyomi": "futa-tsu",
+          "meaning": "dua",
+          "order": 2
+        },
+        {
+          "char": "三",
+          "romaji": null,
+          "onyomi": "san",
+          "kunyomi": "mit-tsu",
+          "meaning": "tiga",
+          "order": 3
+        },
+        {
+          "char": "四",
+          "romaji": null,
+          "onyomi": "shi",
+          "kunyomi": "yon, yo-tsu",
+          "meaning": "empat",
+          "order": 4
+        },
+        {
+          "char": "五",
+          "romaji": null,
+          "onyomi": "go",
+          "kunyomi": "itsu-tsu",
+          "meaning": "lima",
+          "order": 5
+        },
+        {
+          "char": "六",
+          "romaji": null,
+          "onyomi": "roku",
+          "kunyomi": "mut-tsu",
+          "meaning": "enam",
+          "order": 6
+        },
+        {
+          "char": "七",
+          "romaji": null,
+          "onyomi": "shichi",
+          "kunyomi": "nana-tsu",
+          "meaning": "tujuh",
+          "order": 7
+        },
+        {
+          "char": "八",
+          "romaji": null,
+          "onyomi": "hachi",
+          "kunyomi": "yat-tsu",
+          "meaning": "delapan",
+          "order": 8
+        },
+        {
+          "char": "九",
+          "romaji": null,
+          "onyomi": "kyuu, ku",
+          "kunyomi": "kokono-tsu",
+          "meaning": "sembilan",
+          "order": 9
+        },
+        {
+          "char": "十",
+          "romaji": null,
+          "onyomi": "juu",
+          "kunyomi": "too",
+          "meaning": "sepuluh",
+          "order": 10
+        },
+        {
+          "char": "百",
+          "romaji": null,
+          "onyomi": "hyaku",
+          "kunyomi": null,
+          "meaning": "ratus",
+          "order": 11
+        },
+        {
+          "char": "千",
+          "romaji": null,
+          "onyomi": "sen",
+          "kunyomi": "chi",
+          "meaning": "ribu",
+          "order": 12
+        },
+        {
+          "char": "万",
+          "romaji": null,
+          "onyomi": "man, ban",
+          "kunyomi": null,
+          "meaning": "puluh ribu",
+          "order": 13
+        },
+        {
+          "char": "円",
+          "romaji": null,
+          "onyomi": "en",
+          "kunyomi": "maru",
+          "meaning": "yen, lingkaran",
+          "order": 14
+        },
+        {
+          "char": "日",
+          "romaji": null,
+          "onyomi": "nichi, jitsu",
+          "kunyomi": "hi, bi",
+          "meaning": "hari, matahari",
+          "order": 15
+        },
+        {
+          "char": "月",
+          "romaji": null,
+          "onyomi": "getsu, gatsu",
+          "kunyomi": "tsuki",
+          "meaning": "bulan",
+          "order": 16
+        },
+        {
+          "char": "火",
+          "romaji": null,
+          "onyomi": "ka",
+          "kunyomi": "hi",
+          "meaning": "api",
+          "order": 17
+        },
+        {
+          "char": "水",
+          "romaji": null,
+          "onyomi": "sui",
+          "kunyomi": "mizu",
+          "meaning": "air",
+          "order": 18
+        },
+        {
+          "char": "木",
+          "romaji": null,
+          "onyomi": "moku, boku",
+          "kunyomi": "ki",
+          "meaning": "pohon",
+          "order": 19
+        },
+        {
+          "char": "金",
+          "romaji": null,
+          "onyomi": "kin, kon",
+          "kunyomi": "kane",
+          "meaning": "emas, uang",
+          "order": 20
+        },
+        {
+          "char": "土",
+          "romaji": null,
+          "onyomi": "do, to",
+          "kunyomi": "tsuchi",
+          "meaning": "tanah",
+          "order": 21
+        },
+        {
+          "char": "山",
+          "romaji": null,
+          "onyomi": "san",
+          "kunyomi": "yama",
+          "meaning": "gunung",
+          "order": 22
+        },
+        {
+          "char": "川",
+          "romaji": null,
+          "onyomi": "sen",
+          "kunyomi": "kawa",
+          "meaning": "sungai",
+          "order": 23
+        },
+        {
+          "char": "田",
+          "romaji": null,
+          "onyomi": "den",
+          "kunyomi": "ta",
+          "meaning": "sawah",
+          "order": 24
+        },
+        {
+          "char": "人",
+          "romaji": null,
+          "onyomi": "jin, nin",
+          "kunyomi": "hito",
+          "meaning": "orang",
+          "order": 25
+        },
+        {
+          "char": "子",
+          "romaji": null,
+          "onyomi": "shi",
+          "kunyomi": "ko",
+          "meaning": "anak",
+          "order": 26
+        },
+        {
+          "char": "女",
+          "romaji": null,
+          "onyomi": "jo",
+          "kunyomi": "onna",
+          "meaning": "wanita",
+          "order": 27
+        },
+        {
+          "char": "男",
+          "romaji": null,
+          "onyomi": "dan, nan",
+          "kunyomi": "otoko",
+          "meaning": "pria",
+          "order": 28
+        },
+        {
+          "char": "目",
+          "romaji": null,
+          "onyomi": "moku",
+          "kunyomi": "me",
+          "meaning": "mata",
+          "order": 29
+        },
+        {
+          "char": "耳",
+          "romaji": null,
+          "onyomi": "ji",
+          "kunyomi": "mimi",
+          "meaning": "telinga",
+          "order": 30
+        },
+        {
+          "char": "口",
+          "romaji": null,
+          "onyomi": "kou",
+          "kunyomi": "kuchi",
+          "meaning": "mulut",
+          "order": 31
+        },
+        {
+          "char": "手",
+          "romaji": null,
+          "onyomi": "shu",
+          "kunyomi": "te",
+          "meaning": "tangan",
+          "order": 32
+        },
+        {
+          "char": "足",
+          "romaji": null,
+          "onyomi": "soku",
+          "kunyomi": "ashi",
+          "meaning": "kaki",
+          "order": 33
+        },
+        {
+          "char": "見",
+          "romaji": null,
+          "onyomi": "ken",
+          "kunyomi": "mi-ru",
+          "meaning": "melihat",
+          "order": 34
+        },
+        {
+          "char": "行",
+          "romaji": null,
+          "onyomi": "kou",
+          "kunyomi": "i-ku",
+          "meaning": "pergi",
+          "order": 35
+        },
+        {
+          "char": "来",
+          "romaji": null,
+          "onyomi": "rai",
+          "kunyomi": "ku-ru",
+          "meaning": "datang",
+          "order": 36
+        },
+        {
+          "char": "食",
+          "romaji": null,
+          "onyomi": "shoku",
+          "kunyomi": "ta-beru",
+          "meaning": "makan",
+          "order": 37
+        },
+        {
+          "char": "飲",
+          "romaji": null,
+          "onyomi": "in",
+          "kunyomi": "no-mu",
+          "meaning": "minum",
+          "order": 38
+        },
+        {
+          "char": "大",
+          "romaji": null,
+          "onyomi": "dai, tai",
+          "kunyomi": "oo-kii",
+          "meaning": "besar",
+          "order": 39
+        },
+        {
+          "char": "小",
+          "romaji": null,
+          "onyomi": "shou",
+          "kunyomi": "chiisai, ko",
+          "meaning": "kecil",
+          "order": 40
+        },
+        {
+          "char": "中",
+          "romaji": null,
+          "onyomi": "chuu",
+          "kunyomi": "naka",
+          "meaning": "tengah",
+          "order": 41
+        },
+        {
+          "char": "右",
+          "romaji": null,
+          "onyomi": "u, yuu",
+          "kunyomi": "migi",
+          "meaning": "kanan",
+          "order": 42
+        },
+        {
+          "char": "左",
+          "romaji": null,
+          "onyomi": "sa",
+          "kunyomi": "hidari",
+          "meaning": "kiri",
+          "order": 43
+        },
+        {
+          "char": "前",
+          "romaji": null,
+          "onyomi": "zen",
+          "kunyomi": "mae",
+          "meaning": "depan, sebelum",
+          "order": 44
+        },
+        {
+          "char": "後",
+          "romaji": null,
+          "onyomi": "go, kou",
+          "kunyomi": "ato, ushiro",
+          "meaning": "belakang, sesudah",
+          "order": 45
+        },
+        {
+          "char": "北",
+          "romaji": null,
+          "onyomi": "hoku",
+          "kunyomi": "kita",
+          "meaning": "utara",
+          "order": 46
+        },
+        {
+          "char": "南",
+          "romaji": null,
+          "onyomi": "nan",
+          "kunyomi": "minami",
+          "meaning": "selatan",
+          "order": 47
+        },
+        {
+          "char": "東",
+          "romaji": null,
+          "onyomi": "tou",
+          "kunyomi": "higashi",
+          "meaning": "timur",
+          "order": 48
+        },
+        {
+          "char": "西",
+          "romaji": null,
+          "onyomi": "sei, sai",
+          "kunyomi": "nishi",
+          "meaning": "barat",
+          "order": 49
+        },
+        {
+          "char": "上",
+          "romaji": null,
+          "onyomi": "jou",
+          "kunyomi": "ue, a-garu",
+          "meaning": "atas",
+          "order": 50
+        },
+        {
+          "char": "下",
+          "romaji": null,
+          "onyomi": "ka, ge",
+          "kunyomi": "shita, sa-garu",
+          "meaning": "bawah",
+          "order": 51
+        },
+        {
+          "char": "名",
+          "romaji": null,
+          "onyomi": "mei",
+          "kunyomi": "na",
+          "meaning": "nama",
+          "order": 52
+        },
+        {
+          "char": "白",
+          "romaji": null,
+          "onyomi": "haku",
+          "kunyomi": "shiro",
+          "meaning": "putih",
+          "order": 53
+        },
+        {
+          "char": "高",
+          "romaji": null,
+          "onyomi": "kou",
+          "kunyomi": "taka-i",
+          "meaning": "tinggi, mahal",
+          "order": 54
+        },
+        {
+          "char": "古",
+          "romaji": null,
+          "onyomi": "ko",
+          "kunyomi": "furu-i",
+          "meaning": "lama/tua",
+          "order": 55
+        },
+        {
+          "char": "多",
+          "romaji": null,
+          "onyomi": "ta",
+          "kunyomi": "oo-i",
+          "meaning": "banyak",
+          "order": 56
+        },
+        {
+          "char": "少",
+          "romaji": null,
+          "onyomi": "shou",
+          "kunyomi": "suku-nai, suko-shi",
+          "meaning": "sedikit",
+          "order": 57
+        },
+        {
+          "char": "長",
+          "romaji": null,
+          "onyomi": "chou",
+          "kunyomi": "naga-i",
+          "meaning": "panjang, pemimpin",
+          "order": 58
+        },
+        {
+          "char": "国",
+          "romaji": null,
+          "onyomi": "koku",
+          "kunyomi": "kuni",
+          "meaning": "negara",
+          "order": 59
+        },
+        {
+          "char": "道",
+          "romaji": null,
+          "onyomi": "dou",
+          "kunyomi": "michi",
+          "meaning": "jalan",
+          "order": 60
+        },
+        {
+          "char": "駅",
+          "romaji": null,
+          "onyomi": "eki",
+          "kunyomi": null,
+          "meaning": "stasiun",
+          "order": 61
+        },
+        {
+          "char": "社",
+          "romaji": null,
+          "onyomi": "sha",
+          "kunyomi": "yashiro",
+          "meaning": "perusahaan/kuil",
+          "order": 62
+        },
+        {
+          "char": "院",
+          "romaji": null,
+          "onyomi": "in",
+          "kunyomi": null,
+          "meaning": "institusi",
+          "order": 63
+        },
+        {
+          "char": "校",
+          "romaji": null,
+          "onyomi": "kou",
+          "kunyomi": null,
+          "meaning": "sekolah",
+          "order": 64
+        },
+        {
+          "char": "書",
+          "romaji": null,
+          "onyomi": "sho",
+          "kunyomi": "ka-ku",
+          "meaning": "menulis",
+          "order": 65
+        },
+        {
+          "char": "読",
+          "romaji": null,
+          "onyomi": "doku",
+          "kunyomi": "yo-mu",
+          "meaning": "membaca",
+          "order": 66
+        },
+        {
+          "char": "聞",
+          "romaji": null,
+          "onyomi": "bun, mon",
+          "kunyomi": "ki-ku",
+          "meaning": "mendengar",
+          "order": 67
+        },
+        {
+          "char": "語",
+          "romaji": null,
+          "onyomi": "go",
+          "kunyomi": "kata-ru",
+          "meaning": "bahasa/kata",
+          "order": 68
+        },
+        {
+          "char": "話",
+          "romaji": null,
+          "onyomi": "wa",
+          "kunyomi": "hana-su",
+          "meaning": "berbicara",
+          "order": 69
+        },
+        {
+          "char": "店",
+          "romaji": null,
+          "onyomi": "ten",
+          "kunyomi": "mise",
+          "meaning": "toko",
+          "order": 70
+        },
+        {
+          "char": "買",
+          "romaji": null,
+          "onyomi": "bai",
+          "kunyomi": "ka-u",
+          "meaning": "membeli",
+          "order": 71
+        },
+        {
+          "char": "物",
+          "romaji": null,
+          "onyomi": "butsu, motsu",
+          "kunyomi": "mono",
+          "meaning": "benda",
+          "order": 72
+        },
+        {
+          "char": "電",
+          "romaji": null,
+          "onyomi": "den",
+          "kunyomi": null,
+          "meaning": "listrik",
+          "order": 73
+        },
+        {
+          "char": "車",
+          "romaji": null,
+          "onyomi": "sha",
+          "kunyomi": "kuruma",
+          "meaning": "mobil",
+          "order": 74
+        },
+        {
+          "char": "作",
+          "romaji": null,
+          "onyomi": "saku",
+          "kunyomi": "tsuku-ru",
+          "meaning": "membuat",
+          "order": 75
+        },
+        {
+          "char": "曜",
+          "romaji": null,
+          "onyomi": "you",
+          "kunyomi": null,
+          "meaning": "hari (dalam seminggu)",
+          "order": 76
+        },
+        {
+          "char": "週",
+          "romaji": null,
+          "onyomi": "shuu",
+          "kunyomi": null,
+          "meaning": "minggu",
+          "order": 77
+        },
+        {
+          "char": "年",
+          "romaji": null,
+          "onyomi": "nen",
+          "kunyomi": "toshi",
+          "meaning": "tahun",
+          "order": 78
+        },
+        {
+          "char": "今",
+          "romaji": null,
+          "onyomi": "kon, kin",
+          "kunyomi": "ima",
+          "meaning": "sekarang",
+          "order": 79
+        },
+        {
+          "char": "毎",
+          "romaji": null,
+          "onyomi": "mai",
+          "kunyomi": null,
+          "meaning": "setiap",
+          "order": 80
+        },
+        {
+          "char": "何",
+          "romaji": null,
+          "onyomi": "ka",
+          "kunyomi": "nani, nan",
+          "meaning": "apa",
+          "order": 81
+        },
+        {
+          "char": "半",
+          "romaji": null,
+          "onyomi": "han",
+          "kunyomi": "naka-ba",
+          "meaning": "setengah",
+          "order": 82
+        },
+        {
+          "char": "分",
+          "romaji": null,
+          "onyomi": "bun, fun",
+          "kunyomi": "wa-karu",
+          "meaning": "menit/bagi",
+          "order": 83
+        },
+        {
+          "char": "時",
+          "romaji": null,
+          "onyomi": "ji",
+          "kunyomi": "toki",
+          "meaning": "waktu/jam",
+          "order": 84
+        },
+        {
+          "char": "間",
+          "romaji": null,
+          "onyomi": "kan, ken",
+          "kunyomi": "aida, ma",
+          "meaning": "antara/selama",
+          "order": 85
+        },
+        {
+          "char": "午",
+          "romaji": null,
+          "onyomi": "go",
+          "kunyomi": null,
+          "meaning": "siang/tengah hari",
+          "order": 86
+        },
+        {
+          "char": "出",
+          "romaji": null,
+          "onyomi": "shutsu",
+          "kunyomi": "de-ru, da-su",
+          "meaning": "keluar",
+          "order": 87
+        },
+        {
+          "char": "入",
+          "romaji": null,
+          "onyomi": "nyuu",
+          "kunyomi": "hai-ru, i-reru",
+          "meaning": "masuk",
+          "order": 88
+        },
+        {
+          "char": "休",
+          "romaji": null,
+          "onyomi": "kyuu",
+          "kunyomi": "yasu-mu",
+          "meaning": "istirahat",
+          "order": 89
+        },
+        {
+          "char": "学",
+          "romaji": null,
+          "onyomi": "gaku",
+          "kunyomi": "mana-bu",
+          "meaning": "belajar",
+          "order": 90
+        },
+        {
+          "char": "先",
+          "romaji": null,
+          "onyomi": "sen",
+          "kunyomi": "saki",
+          "meaning": "sebelumnya/ujung",
+          "order": 91
+        },
+        {
+          "char": "生",
+          "romaji": null,
+          "onyomi": "sei, shou",
+          "kunyomi": "i-kiru, u-mareru",
+          "meaning": "hidup/lahir",
+          "order": 92
+        },
+        {
+          "char": "本",
+          "romaji": null,
+          "onyomi": "hon",
+          "kunyomi": "moto",
+          "meaning": "buku/asal",
+          "order": 93
+        },
+        {
+          "char": "父",
+          "romaji": null,
+          "onyomi": "fu",
+          "kunyomi": "chichi",
+          "meaning": "ayah",
+          "order": 94
+        },
+        {
+          "char": "母",
+          "romaji": null,
+          "onyomi": "bo",
+          "kunyomi": "haha",
+          "meaning": "ibu",
+          "order": 95
+        },
+        {
+          "char": "私",
+          "romaji": null,
+          "onyomi": "shi",
+          "kunyomi": "watashi, watakushi",
+          "meaning": "saya",
+          "order": 96
+        },
+        {
+          "char": "魚",
+          "romaji": null,
+          "onyomi": "gyo",
+          "kunyomi": "sakana",
+          "meaning": "ikan",
+          "order": 97
+        },
+        {
+          "char": "犬",
+          "romaji": null,
+          "onyomi": "ken",
+          "kunyomi": "inu",
+          "meaning": "anjing",
+          "order": 98
+        },
+        {
+          "char": "花",
+          "romaji": null,
+          "onyomi": "ka",
+          "kunyomi": "hana",
+          "meaning": "bunga",
+          "order": 99
+        },
+        {
+          "char": "天",
+          "romaji": null,
+          "onyomi": "ten",
+          "kunyomi": "ame, ama",
+          "meaning": "langit",
+          "order": 100
+        },
+        {
+          "char": "気",
+          "romaji": null,
+          "onyomi": "ki, ke",
+          "kunyomi": null,
+          "meaning": "perasaan/udara",
+          "order": 101
+        },
+        {
+          "char": "雨",
+          "romaji": null,
+          "onyomi": "u",
+          "kunyomi": "ame, ama",
+          "meaning": "hujan",
+          "order": 102
+        },
+        {
+          "char": "空",
+          "romaji": null,
+          "onyomi": "kuu",
+          "kunyomi": "sora, a-ku",
+          "meaning": "langit/kosong",
+          "order": 103
+        },
+        {
+          "char": "新",
+          "romaji": null,
+          "onyomi": "shin",
+          "kunyomi": "atara-shii",
+          "meaning": "baru",
+          "order": 104
+        },
+        {
+          "char": "安",
+          "romaji": null,
+          "onyomi": "an",
+          "kunyomi": "yasu-i",
+          "meaning": "murah/tenang",
+          "order": 105
+        },
+        {
+          "char": "近",
+          "romaji": null,
+          "onyomi": "kin",
+          "kunyomi": "chika-i",
+          "meaning": "dekat",
+          "order": 106
+        },
+        {
+          "char": "立",
+          "romaji": null,
+          "onyomi": "ritsu",
+          "kunyomi": "ta-tsu",
+          "meaning": "berdiri",
+          "order": 107
+        },
+        {
+          "char": "楽",
+          "romaji": null,
+          "onyomi": "raku, gaku",
+          "kunyomi": "tano-shii",
+          "meaning": "senang/musik",
+          "order": 108
+        },
+        {
+          "char": "肉",
+          "romaji": null,
+          "onyomi": "niku",
+          "kunyomi": null,
+          "meaning": "daging",
+          "order": 109
+        },
+        {
+          "char": "茶",
+          "romaji": null,
+          "onyomi": "cha, sa",
+          "kunyomi": null,
+          "meaning": "teh",
+          "order": 110
+        },
+        {
+          "char": "強",
+          "romaji": null,
+          "onyomi": "kyou",
+          "kunyomi": "tsuyo-i",
+          "meaning": "kuat",
+          "order": 111
+        },
+        {
+          "char": "好",
+          "romaji": null,
+          "onyomi": "kou",
+          "kunyomi": "su-ki",
+          "meaning": "suka",
+          "order": 112
+        },
+        {
+          "char": "切",
+          "romaji": null,
+          "onyomi": "setsu",
+          "kunyomi": "ki-ru",
+          "meaning": "potong/penting",
+          "order": 113
+        },
+        {
+          "char": "悪",
+          "romaji": null,
+          "onyomi": "aku",
+          "kunyomi": "waru-i",
+          "meaning": "buruk",
+          "order": 114
+        },
+        {
+          "char": "図",
+          "romaji": null,
+          "onyomi": "zu, to",
+          "kunyomi": "haka-ru",
+          "meaning": "gambar/peta",
+          "order": 115
+        },
+        {
+          "char": "館",
+          "romaji": null,
+          "onyomi": "kan",
+          "kunyomi": null,
+          "meaning": "bangunan besar",
+          "order": 116
+        },
+        {
+          "char": "町",
+          "romaji": null,
+          "onyomi": "chou",
+          "kunyomi": "machi",
+          "meaning": "kota/kecamatan",
+          "order": 117
+        },
+        {
+          "char": "医",
+          "romaji": null,
+          "onyomi": "i",
+          "kunyomi": null,
+          "meaning": "medis/dokter",
+          "order": 118
+        },
+        {
+          "char": "会",
+          "romaji": null,
+          "onyomi": "kai",
+          "kunyomi": "a-u",
+          "meaning": "pertemuan",
+          "order": 119
+        },
+        {
+          "char": "番",
+          "romaji": null,
+          "onyomi": "ban",
+          "kunyomi": null,
+          "meaning": "nomor/giliran",
+          "order": 120
+        },
+        {
+          "char": "寺",
+          "romaji": null,
+          "onyomi": "ji",
+          "kunyomi": "tera",
+          "meaning": "kuil buddha",
+          "order": 121
+        },
+        {
+          "char": "海",
+          "romaji": null,
+          "onyomi": "kai",
+          "kunyomi": "umi",
+          "meaning": "laut",
+          "order": 122
+        },
+        {
+          "char": "門",
+          "romaji": null,
+          "onyomi": "mon",
+          "kunyomi": "kado",
+          "meaning": "gerbang",
+          "order": 123
+        },
+        {
+          "char": "勉",
+          "romaji": null,
+          "onyomi": "ben",
+          "kunyomi": "tsuto-meru",
+          "meaning": "usaha",
+          "order": 124
+        },
+        {
+          "char": "習",
+          "romaji": null,
+          "onyomi": "shuu",
+          "kunyomi": "nara-u",
+          "meaning": "belajar",
+          "order": 125
+        },
+        {
+          "char": "去",
+          "romaji": null,
+          "onyomi": "kyo",
+          "kunyomi": "sa-ru",
+          "meaning": "pergi/lalu",
+          "order": 126
+        },
+        {
+          "char": "外",
+          "romaji": null,
+          "onyomi": "gai",
+          "kunyomi": "soto",
+          "meaning": "luar",
+          "order": 127
+        },
+        {
+          "char": "友",
+          "romaji": null,
+          "onyomi": "yuu",
+          "kunyomi": "tomo",
+          "meaning": "teman",
+          "order": 128
+        },
+        {
+          "char": "紙",
+          "romaji": null,
+          "onyomi": "shi",
+          "kunyomi": "kami",
+          "meaning": "kertas",
+          "order": 129
+        },
+        {
+          "char": "石",
+          "romaji": null,
+          "onyomi": "seki",
+          "kunyomi": "ishi",
+          "meaning": "batu",
+          "order": 130
+        },
+        {
+          "char": "卵",
+          "romaji": null,
+          "onyomi": "ran",
+          "kunyomi": "tamago",
+          "meaning": "telur",
+          "order": 131
+        },
+        {
+          "char": "歩",
+          "romaji": null,
+          "onyomi": "ho",
+          "kunyomi": "aru-ku",
+          "meaning": "berjalan kaki",
+          "order": 132
+        },
+        {
+          "char": "体",
+          "romaji": null,
+          "onyomi": "tai",
+          "kunyomi": "karada",
+          "meaning": "badan",
+          "order": 133
+        },
+        {
+          "char": "牛",
+          "romaji": null,
+          "onyomi": "gyuu",
+          "kunyomi": "ushi",
+          "meaning": "sapi",
+          "order": 134
+        },
+        {
+          "char": "赤",
+          "romaji": null,
+          "onyomi": "seki",
+          "kunyomi": "aka",
+          "meaning": "merah",
+          "order": 135
+        },
+        {
+          "char": "青",
+          "romaji": null,
+          "onyomi": "sei",
+          "kunyomi": "ao",
+          "meaning": "biru",
+          "order": 136
+        },
+        {
+          "char": "黒",
+          "romaji": null,
+          "onyomi": "koku",
+          "kunyomi": "kuro",
+          "meaning": "hitam",
+          "order": 137
+        },
+        {
+          "char": "文",
+          "romaji": null,
+          "onyomi": "bun",
+          "kunyomi": "fumi",
+          "meaning": "kalimat/teks",
+          "order": 138
+        },
+        {
+          "char": "字",
+          "romaji": null,
+          "onyomi": "ji",
+          "kunyomi": "aza",
+          "meaning": "karakter/huruf",
+          "order": 139
+        },
+        {
+          "char": "漢",
+          "romaji": null,
+          "onyomi": "kan",
+          "kunyomi": null,
+          "meaning": "Tiongkok/Kanji",
+          "order": 140
+        },
+        {
+          "char": "英",
+          "romaji": null,
+          "onyomi": "ei",
+          "kunyomi": null,
+          "meaning": "Inggris",
+          "order": 141
+        },
+        {
+          "char": "言",
+          "romaji": null,
+          "onyomi": "gen",
+          "kunyomi": "i-u",
+          "meaning": "berkata",
+          "order": 142
+        }
+      ]
+    },
+    {
+      "type": "vocabulary",
+      "level": "N4",
+      "lessonSlug": "kanji-n4-foundation",
+      "items": [
+        {
+          "char": "予定",
+          "romaji": null,
+          "onyomi": "yotei",
+          "kunyomi": null,
+          "meaning": "rencana",
+          "order": 1
+        },
+        {
+          "char": "科学",
+          "romaji": null,
+          "onyomi": "kagaku",
+          "kunyomi": null,
+          "meaning": "sains",
+          "order": 2
+        },
+        {
+          "char": "経済",
+          "romaji": null,
+          "onyomi": "keizai",
+          "kunyomi": null,
+          "meaning": "ekonomi",
+          "order": 3
+        },
+        {
+          "char": "商業",
+          "romaji": null,
+          "onyomi": "shougyou",
+          "kunyomi": null,
+          "meaning": "perdagangan",
+          "order": 4
+        },
+        {
+          "char": "農業",
+          "romaji": null,
+          "onyomi": "nougyou",
+          "kunyomi": null,
+          "meaning": "pertanian",
+          "order": 5
+        },
+        {
+          "char": "放送",
+          "romaji": null,
+          "onyomi": "housou",
+          "kunyomi": null,
+          "meaning": "siaran",
+          "order": 6
+        },
+        {
+          "char": "製作",
+          "romaji": null,
+          "onyomi": "seisaku",
+          "kunyomi": null,
+          "meaning": "manufaktur",
+          "order": 7
+        },
+        {
+          "char": "試写",
+          "romaji": null,
+          "onyomi": "shisha",
+          "kunyomi": null,
+          "meaning": "pratinjau",
+          "order": 8
+        },
+        {
+          "char": "練習",
+          "romaji": null,
+          "onyomi": "renshuu",
+          "kunyomi": null,
+          "meaning": "latihan",
+          "order": 9
+        },
+        {
+          "char": "復習",
+          "romaji": null,
+          "onyomi": "fukushuu",
+          "kunyomi": null,
+          "meaning": "mengulang pelajaran",
+          "order": 10
+        },
+        {
+          "char": "予習",
+          "romaji": null,
+          "onyomi": "yoshuu",
+          "kunyomi": null,
+          "meaning": "persiapan pelajaran",
+          "order": 11
+        },
+        {
+          "char": "対絶",
+          "romaji": null,
+          "onyomi": "taizetsu",
+          "kunyomi": null,
+          "meaning": "pemutusan hubungan",
+          "order": 12
+        },
+        {
+          "char": "反対",
+          "romaji": null,
+          "onyomi": "hantai",
+          "kunyomi": null,
+          "meaning": "oposan/kebalikan",
+          "order": 13
+        },
+        {
+          "char": "約束",
+          "romaji": null,
+          "onyomi": "yakusoku",
+          "kunyomi": null,
+          "meaning": "janji",
+          "order": 14
+        },
+        {
+          "char": "国際",
+          "romaji": null,
+          "onyomi": "kokusai",
+          "kunyomi": null,
+          "meaning": "internasional",
+          "order": 15
+        },
+        {
+          "char": "彼女",
+          "romaji": null,
+          "onyomi": "kanojo",
+          "kunyomi": null,
+          "meaning": "dia (wanita)/pacar",
+          "order": 16
+        },
+        {
+          "char": "読者",
+          "romaji": null,
+          "onyomi": "dokusha",
+          "kunyomi": null,
+          "meaning": "pembaca",
+          "order": 17
+        },
+        {
+          "char": "著者",
+          "romaji": null,
+          "onyomi": "chosha",
+          "kunyomi": null,
+          "meaning": "penulis",
+          "order": 18
+        },
+        {
+          "char": "物語",
+          "romaji": null,
+          "onyomi": "monogatari",
+          "kunyomi": null,
+          "meaning": "kisah/cerita",
+          "order": 19
+        },
+        {
+          "char": "末末",
+          "romaji": null,
+          "onyomi": "suematsu",
+          "kunyomi": null,
+          "meaning": "akhir sekali",
+          "order": 20
+        },
+        {
+          "char": "火事",
+          "romaji": null,
+          "onyomi": "kaji",
+          "kunyomi": null,
+          "meaning": "kebakaran",
+          "order": 21
+        },
+        {
+          "char": "見学",
+          "romaji": null,
+          "onyomi": "kengaku",
+          "kunyomi": null,
+          "meaning": "observasi",
+          "order": 22
+        },
+        {
+          "char": "店員",
+          "romaji": null,
+          "onyomi": "tenin",
+          "kunyomi": null,
+          "meaning": "pelayan toko",
+          "order": 23
+        },
+        {
+          "char": "社会",
+          "romaji": null,
+          "onyomi": "shakai",
+          "kunyomi": null,
+          "meaning": "masyarakat",
+          "order": 24
+        },
+        {
+          "char": "不便",
+          "romaji": null,
+          "onyomi": "fuben",
+          "kunyomi": null,
+          "meaning": "tidak nyaman",
+          "order": 25
+        },
+        {
+          "char": "意味",
+          "romaji": null,
+          "onyomi": "imi",
+          "kunyomi": null,
+          "meaning": "arti",
+          "order": 26
+        },
+        {
+          "char": "注意",
+          "romaji": null,
+          "onyomi": "chuui",
+          "kunyomi": null,
+          "meaning": "perhatian",
+          "order": 27
+        },
+        {
+          "char": "用意",
+          "romaji": null,
+          "onyomi": "youi",
+          "kunyomi": null,
+          "meaning": "persiapan",
+          "order": 28
+        },
+        {
+          "char": "意見",
+          "romaji": null,
+          "onyomi": "iken",
+          "kunyomi": null,
+          "meaning": "pendapat",
+          "order": 29
+        },
+        {
+          "char": "安心",
+          "romaji": null,
+          "onyomi": "anshin",
+          "kunyomi": null,
+          "meaning": "lega",
+          "order": 30
+        },
+        {
+          "char": "心配",
+          "romaji": null,
+          "onyomi": "shinpai",
+          "kunyomi": null,
+          "meaning": "khawatir",
+          "order": 31
+        },
+        {
+          "char": "試合",
+          "romaji": null,
+          "onyomi": "shiai",
+          "kunyomi": null,
+          "meaning": "pertandingan",
+          "order": 32
+        },
+        {
+          "char": "理由",
+          "romaji": null,
+          "onyomi": "riyuu",
+          "kunyomi": null,
+          "meaning": "alasan",
+          "order": 33
+        },
+        {
+          "char": "自由",
+          "romaji": null,
+          "onyomi": "jiyuu",
+          "kunyomi": null,
+          "meaning": "bebas",
+          "order": 34
+        },
+        {
+          "char": "住所",
+          "romaji": null,
+          "onyomi": "juusho",
+          "kunyomi": null,
+          "meaning": "alamat",
+          "order": 35
+        },
+        {
+          "char": "場合",
+          "romaji": null,
+          "onyomi": "baai",
+          "kunyomi": null,
+          "meaning": "situasi",
+          "order": 36
+        },
+        {
+          "char": "工場",
+          "romaji": null,
+          "onyomi": "koujou",
+          "kunyomi": null,
+          "meaning": "pabrik",
+          "order": 37
+        },
+        {
+          "char": "運動",
+          "romaji": null,
+          "onyomi": "undou",
+          "kunyomi": null,
+          "meaning": "olahraga",
+          "order": 38
+        },
+        {
+          "char": "運転",
+          "romaji": null,
+          "onyomi": "unten",
+          "kunyomi": null,
+          "meaning": "menyetir",
+          "order": 39
+        }
+      ]
+    },
+    {
+      "type": "vocabulary",
+      "level": "N5",
+      "lessonSlug": "kanji-n5-foundation",
+      "items": [
+        {
+          "char": "公園",
+          "romaji": null,
+          "onyomi": "kouen",
+          "kunyomi": null,
+          "meaning": "taman umum",
+          "order": 1
+        },
+        {
+          "char": "辞書",
+          "romaji": null,
+          "onyomi": "jisho",
+          "kunyomi": null,
+          "meaning": "kamus",
+          "order": 2
+        },
+        {
+          "char": "雑誌",
+          "romaji": null,
+          "onyomi": "zasshi",
+          "kunyomi": null,
+          "meaning": "majalah",
+          "order": 3
+        },
+        {
+          "char": "新聞",
+          "romaji": null,
+          "onyomi": "shinbun",
+          "kunyomi": null,
+          "meaning": "koran",
+          "order": 4
+        },
+        {
+          "char": "野菜",
+          "romaji": null,
+          "onyomi": "yasai",
+          "kunyomi": null,
+          "meaning": "sayuran",
+          "order": 5
+        },
+        {
+          "char": "果物",
+          "romaji": null,
+          "onyomi": "kudamono",
+          "kunyomi": null,
+          "meaning": "buah-buahan",
+          "order": 6
+        },
+        {
+          "char": "仕事",
+          "romaji": null,
+          "onyomi": "shigoto",
+          "kunyomi": null,
+          "meaning": "pekerjaan",
+          "order": 7
+        },
+        {
+          "char": "勉強",
+          "romaji": null,
+          "onyomi": "benkyou",
+          "kunyomi": null,
+          "meaning": "belajar",
+          "order": 8
+        },
+        {
+          "char": "書館",
+          "romaji": null,
+          "onyomi": "shokan",
+          "kunyomi": null,
+          "meaning": "perpustakaan",
+          "order": 9
+        },
+        {
+          "char": "電話",
+          "romaji": null,
+          "onyomi": "denwa",
+          "kunyomi": null,
+          "meaning": "telepon",
+          "order": 10
+        },
+        {
+          "char": "銀行",
+          "romaji": null,
+          "onyomi": "ginkou",
+          "kunyomi": null,
+          "meaning": "bank",
+          "order": 11
+        },
+        {
+          "char": "会社",
+          "romaji": null,
+          "onyomi": "kaisha",
+          "kunyomi": null,
+          "meaning": "perusahaan",
+          "order": 12
+        },
+        {
+          "char": "親切",
+          "romaji": null,
+          "onyomi": "shinsetsu",
+          "kunyomi": null,
+          "meaning": "baik hati",
+          "order": 13
+        },
+        {
+          "char": "大切",
+          "romaji": null,
+          "onyomi": "taisetsu",
+          "kunyomi": null,
+          "meaning": "penting",
+          "order": 14
+        },
+        {
+          "char": "本当",
+          "romaji": null,
+          "onyomi": "hontou",
+          "kunyomi": null,
+          "meaning": "sungguh/benar",
+          "order": 15
+        },
+        {
+          "char": "借りる",
+          "romaji": null,
+          "onyomi": "kariru",
+          "kunyomi": null,
+          "meaning": "meminjam",
+          "order": 16
+        },
+        {
+          "char": "貸す",
+          "romaji": null,
+          "onyomi": "kasu",
+          "kunyomi": null,
+          "meaning": "meminjamkan",
+          "order": 17
+        },
+        {
+          "char": "自転車",
+          "romaji": null,
+          "onyomi": "jitensha",
+          "kunyomi": null,
+          "meaning": "sepeda",
+          "order": 18
+        },
+        {
+          "char": "自動車",
+          "romaji": null,
+          "onyomi": "jidousha",
+          "kunyomi": null,
+          "meaning": "mobil",
+          "order": 19
+        },
+        {
+          "char": "自分",
+          "romaji": null,
+          "onyomi": "jibun",
+          "kunyomi": null,
+          "meaning": "diri sendiri",
+          "order": 20
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/db/prisma";
+import { ensureNihongoTrial } from "@/lib/nexus/access-guards";
 
 export async function POST(req: Request) {
   try {
@@ -44,6 +45,8 @@ export async function POST(req: Request) {
         password: hashedPassword,
       },
     });
+
+    await ensureNihongoTrial(user.id);
 
     return NextResponse.json({
       message: "User registered successfully",

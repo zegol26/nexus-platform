@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { PronunciationRecorder } from "@/components/apps/nihongo/PronunciationRecorder";
+import { clientTrack } from "@/lib/analytics/clientTrack";
 
 type Question = {
   id: string;
@@ -96,6 +97,15 @@ export default function NihongoPreAssessmentPage() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    clientTrack({
+      eventType: "PAGE_VIEW",
+      pagePath: "/apps/nihongo/pre-assessment",
+    });
+    clientTrack({
+      eventType: "ASSESSMENT_STARTED",
+      pagePath: "/apps/nihongo/pre-assessment",
+    });
+
     async function loadAssessment() {
       try {
         const response = await fetch("/api/apps/nihongo/pre-assessment/generate");
@@ -164,6 +174,14 @@ export default function NihongoPreAssessmentPage() {
       }
 
       setResult(payload.result);
+      clientTrack({
+        eventType: "ASSESSMENT_COMPLETED",
+        pagePath: "/apps/nihongo/pre-assessment",
+        metadata: {
+          overallScore: payload.result?.overallScore,
+          estimatedLevel: payload.result?.estimatedLevel,
+        },
+      });
       setCurrentStep(8);
     } catch (submitError) {
       setError(submitError instanceof Error ? submitError.message : "Hasil belum bisa disimpan.");

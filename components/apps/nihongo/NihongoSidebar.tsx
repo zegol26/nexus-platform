@@ -7,13 +7,20 @@ const nihongoMenu = [
   { label: "Flashcards", href: "/apps/nihongo/flashcards", marker: "04" },
   { label: "AI Tutor", href: "/apps/nihongo/tutor", marker: "05" },
   { label: "Quiz", href: "/apps/nihongo/quiz", marker: "06" },
-  { label: "Reading", href: "/apps/nihongo/reading", marker: "07" },
-  { label: "JLPT N5 Mock", href: "/apps/nihongo/mock-test/n5", marker: "08" },
+  { label: "Rehearsal Lengkap N5", href: "/apps/nihongo/full-rehearsal-n5", marker: "07" },
+  { label: "Game", href: "/apps/nihongo/game", marker: "08" },
+  { label: "Reading", href: "/apps/nihongo/reading", marker: "09" },
+  { label: "Listening", href: "/apps/nihongo/listening", marker: "10" },
+  { label: "JLPT N5 Mock", href: "/apps/nihongo/mock-test/n5", marker: "11" },
 ];
 
-export function NihongoSidebar() {
+export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
   return (
-    <aside className="hidden min-h-screen w-72 shrink-0 border-r border-slate-200 bg-white/90 px-5 py-6 shadow-sm backdrop-blur lg:block">
+    <aside
+      className={`min-h-screen w-72 shrink-0 border-r border-slate-200 bg-white/90 px-5 py-6 shadow-sm backdrop-blur ${
+        mobile ? "block" : "hidden lg:block"
+      }`}
+    >
       <Link
         href="/platform/dashboard"
         className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400"

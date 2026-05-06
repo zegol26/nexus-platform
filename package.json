@@ -7,7 +7,11 @@
     "build": "node scripts/build.mjs",
     "build:strict": "prisma migrate deploy && prisma generate && prisma db seed && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "tsc -p tsconfig.test.json && node .test-dist/tests/policies.test.js",
+    "validate:n5-rehearsal": "tsx scripts/validate-n5-rehearsal-data.ts",
+    "validate:community": "tsx scripts/validate-community-copy.ts",
+    "validate:game": "tsx scripts/validate-game-config.ts"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.2",

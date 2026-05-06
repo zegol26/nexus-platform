@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { clientTrack } from "@/lib/analytics/clientTrack";
 
 type Lesson = {
   id: string;
@@ -71,6 +72,11 @@ export function NihongoDashboardClient() {
   const [badgeImageFailed, setBadgeImageFailed] = useState(false);
 
   useEffect(() => {
+    clientTrack({
+      eventType: "PAGE_VIEW",
+      pagePath: "/apps/nihongo/dashboard",
+    });
+
     async function loadData() {
       const [curriculumRes, progressRes, flashcardRes, profileRes] = await Promise.all([
         fetch("/api/apps/nihongo/curriculum"),

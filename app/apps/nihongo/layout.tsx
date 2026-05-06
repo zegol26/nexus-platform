@@ -1,10 +1,14 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
+import { GlobalFooter } from "@/components/layout/GlobalFooter";
+import { MobileSidebarDrawer } from "@/components/layout/MobileSidebarDrawer";
 import { NihongoSidebar } from "@/components/apps/nihongo/NihongoSidebar";
 import { LogoutButton } from "@/components/platform/LogoutButton";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
+
+export const dynamic = "force-dynamic";
 
 type AppAccessWithApp = {
   status: string;
@@ -63,9 +67,12 @@ export default async function NihongoLayout({
     <div className="min-h-screen bg-[linear-gradient(180deg,#f8fafc_0%,#eef8fb_45%,#f8fafc_100%)] text-slate-950">
       <div className="flex min-h-screen">
         <NihongoSidebar />
+        <MobileSidebarDrawer label="Nihongo">
+          <NihongoSidebar mobile />
+        </MobileSidebarDrawer>
 
         <div className="flex min-w-0 flex-1 flex-col">
-          <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/85 px-4 py-3 backdrop-blur">
+          <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/85 px-4 py-3 pl-20 backdrop-blur lg:pl-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <Link
@@ -99,6 +106,7 @@ export default async function NihongoLayout({
           <main className="w-full flex-1 px-4 py-6 sm:px-6 lg:px-10 lg:py-10">
             {children}
           </main>
+          <GlobalFooter product="Nexus AI Nihongo" />
         </div>
       </div>
     </div>
