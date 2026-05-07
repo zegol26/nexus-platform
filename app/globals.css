@@ -70,17 +70,59 @@ body {
 }
 
 /* ---------------------------------------------------------------- *
- * Squid-theme overrides for the Nexus AI Nihongo route.
- * Translates the original slate/cyan/blue palette to dark + pink/teal
- * without editing every page individually. Scoped to [data-theme="squid"]
- * so the Platform shell and other apps stay untouched.
+ * Nexus-theme overrides — the in-house Nexus AI Nihongo design system.
+ * Source of truth: docs/DESIGN.md. Sumi-cream canvas + persimmon CTA
+ * + soft pastel tinted cards. Scoped to [data-theme="nexus"].
  * ---------------------------------------------------------------- */
 
+[data-theme="nexus"] {
+  color-scheme: light;
+  background-color: #f7f3ec;
+  color: #1c1917;
+}
 [data-theme="squid"] {
-  color-scheme: dark;
+  background-color: #0f0f12;
+  color: #ffffff;
+}
+[data-theme="rockstar"] {
+  background-color: #000000;
+  color: #ffffff;
 }
 
-/* Surfaces that were white/slate-light become dark cards. */
+/* Sidebar surface tweaks per theme so the dark themes feel deeper. */
+[data-theme="squid"] aside {
+  background-color: #0a0a0a;
+  border-color: rgba(237, 26, 127, 0.3);
+}
+[data-theme="rockstar"] aside {
+  background-color: #000000;
+  border-color: rgba(252, 175, 23, 0.3);
+}
+
+/* Active sidebar item glow per theme (target Tailwind shadow-sm class). */
+[data-theme="squid"] nav a[aria-current="page"] {
+  box-shadow: 0 0 18px rgba(237, 26, 127, 0.45);
+}
+[data-theme="rockstar"] nav a[aria-current="page"] {
+  box-shadow: 0 0 18px rgba(252, 175, 23, 0.5);
+}
+
+/* Header surface tweaks for the dark themes. */
+[data-theme="squid"] header {
+  background-color: rgba(10, 10, 10, 0.95);
+  border-color: rgba(237, 26, 127, 0.3);
+}
+[data-theme="rockstar"] header {
+  background-color: rgba(0, 0, 0, 0.95);
+  border-color: rgba(252, 175, 23, 0.4);
+}
+
+/* ---------------------------------------------------------------- *
+ * Squid theme — full color translation block.
+ * Dark surfaces + signature pink (#ED1A7F) + tracksuit teal accents.
+ * Audited for AA contrast on dark surfaces.
+ * ---------------------------------------------------------------- */
+
 [data-theme="squid"] .bg-white,
 [data-theme="squid"] .bg-white\/95,
 [data-theme="squid"] .bg-white\/90,
@@ -93,7 +135,7 @@ body {
 [data-theme="squid"] .bg-white\/60,
 [data-theme="squid"] .bg-white\/50,
 [data-theme="squid"] .bg-white\/40 {
-  background-color: rgba(20, 20, 22, 0.8);
+  background-color: rgba(20, 20, 22, 0.85);
 }
 [data-theme="squid"] .bg-slate-50,
 [data-theme="squid"] .bg-slate-100,
@@ -103,20 +145,29 @@ body {
 [data-theme="squid"] .bg-zinc-100,
 [data-theme="squid"] .bg-neutral-50,
 [data-theme="squid"] .bg-neutral-100 {
-  background-color: #1a1a1d;
+  background-color: #1c1c20;
 }
 [data-theme="squid"] .bg-slate-200,
 [data-theme="squid"] .bg-gray-200,
 [data-theme="squid"] .bg-zinc-200,
 [data-theme="squid"] .bg-neutral-200 {
-  background-color: #232327;
+  background-color: #26262b;
 }
+
+/* Primary CTA convention — bg-slate-950 / 900 = "primary dark button"
+   across nihongo. In squid theme this becomes the brand pink so the
+   primary action is the obvious next step instead of a dark void. */
 [data-theme="squid"] .bg-slate-900,
 [data-theme="squid"] .bg-slate-950,
 [data-theme="squid"] .bg-gray-900,
 [data-theme="squid"] .bg-gray-950,
 [data-theme="squid"] .bg-zinc-900 {
-  background-color: #0a0a0a;
+  background-color: #ED1A7F;
+  color: #ffffff;
+}
+[data-theme="squid"] .hover\:bg-slate-900:hover,
+[data-theme="squid"] .hover\:bg-slate-950:hover {
+  background-color: #FF2D8F;
 }
 
 /* Cyan/blue accents become brand pink. */
@@ -128,7 +179,7 @@ body {
 [data-theme="squid"] .bg-blue-100,
 [data-theme="squid"] .bg-indigo-50,
 [data-theme="squid"] .bg-indigo-100 {
-  background-color: rgba(237, 26, 127, 0.12);
+  background-color: rgba(237, 26, 127, 0.18);
 }
 [data-theme="squid"] .bg-cyan-500,
 [data-theme="squid"] .bg-cyan-600,
@@ -141,9 +192,75 @@ body {
 [data-theme="squid"] .bg-indigo-500,
 [data-theme="squid"] .bg-indigo-600 {
   background-color: #ED1A7F;
+  color: #ffffff;
+}
+[data-theme="squid"] .hover\:bg-cyan-700:hover,
+[data-theme="squid"] .hover\:bg-cyan-600:hover,
+[data-theme="squid"] .hover\:bg-blue-600:hover,
+[data-theme="squid"] .hover\:bg-blue-700:hover {
+  background-color: #FF2D8F;
 }
 
-/* Text — dark-ink classes become white. */
+/* Emerald/green accents map to tracksuit teal #00B894. */
+[data-theme="squid"] .bg-emerald-50,
+[data-theme="squid"] .bg-emerald-100,
+[data-theme="squid"] .bg-green-50,
+[data-theme="squid"] .bg-green-100 {
+  background-color: rgba(0, 184, 148, 0.18);
+}
+[data-theme="squid"] .bg-emerald-500,
+[data-theme="squid"] .bg-emerald-600,
+[data-theme="squid"] .bg-emerald-700,
+[data-theme="squid"] .bg-green-500,
+[data-theme="squid"] .bg-green-600,
+[data-theme="squid"] .bg-green-700 {
+  background-color: #00B894;
+  color: #ffffff;
+}
+[data-theme="squid"] .text-emerald-700,
+[data-theme="squid"] .text-emerald-600,
+[data-theme="squid"] .text-emerald-500,
+[data-theme="squid"] .text-green-700,
+[data-theme="squid"] .text-green-600,
+[data-theme="squid"] .text-green-500 {
+  color: #34d4a8;
+}
+
+/* Yellow/amber/orange accents lift to a soft Squid mask gold so
+   warning callouts stay visible on dark. */
+[data-theme="squid"] .bg-yellow-50,
+[data-theme="squid"] .bg-yellow-100,
+[data-theme="squid"] .bg-amber-50,
+[data-theme="squid"] .bg-amber-100,
+[data-theme="squid"] .bg-orange-50,
+[data-theme="squid"] .bg-orange-100 {
+  background-color: rgba(255, 196, 77, 0.18);
+}
+[data-theme="squid"] .text-yellow-700,
+[data-theme="squid"] .text-yellow-600,
+[data-theme="squid"] .text-amber-700,
+[data-theme="squid"] .text-amber-600,
+[data-theme="squid"] .text-orange-700,
+[data-theme="squid"] .text-orange-600 {
+  color: #ffc44d;
+}
+
+/* Rose/red — error and danger states, soft pink-red on dark. */
+[data-theme="squid"] .bg-rose-50,
+[data-theme="squid"] .bg-rose-100,
+[data-theme="squid"] .bg-red-50,
+[data-theme="squid"] .bg-red-100 {
+  background-color: rgba(255, 90, 110, 0.18);
+}
+[data-theme="squid"] .text-rose-700,
+[data-theme="squid"] .text-rose-600,
+[data-theme="squid"] .text-red-700,
+[data-theme="squid"] .text-red-600 {
+  color: #ff7a8f;
+}
+
+/* Text hierarchy on dark surfaces — every step audited for AA contrast
+   against the #141416 / #1c1c20 / #0a0a0a surface family. */
 [data-theme="squid"] .text-slate-950,
 [data-theme="squid"] .text-slate-900,
 [data-theme="squid"] .text-slate-800,
@@ -153,7 +270,7 @@ body {
 [data-theme="squid"] .text-zinc-900,
 [data-theme="squid"] .text-neutral-900,
 [data-theme="squid"] .text-black {
-  color: #f5f5f5;
+  color: #ffffff;
 }
 [data-theme="squid"] .text-slate-700,
 [data-theme="squid"] .text-slate-600,
@@ -162,7 +279,7 @@ body {
 [data-theme="squid"] .text-zinc-700,
 [data-theme="squid"] .text-zinc-600,
 [data-theme="squid"] .text-neutral-700 {
-  color: rgba(245, 245, 245, 0.78);
+  color: rgba(255, 255, 255, 0.85);
 }
 [data-theme="squid"] .text-slate-500,
 [data-theme="squid"] .text-slate-400,
@@ -170,14 +287,19 @@ body {
 [data-theme="squid"] .text-gray-400,
 [data-theme="squid"] .text-zinc-500,
 [data-theme="squid"] .text-neutral-500 {
-  color: rgba(245, 245, 245, 0.55);
+  color: rgba(255, 255, 255, 0.7);
 }
-[data-theme="squid"] .text-slate-300 {
-  color: rgba(245, 245, 245, 0.4);
+[data-theme="squid"] .text-slate-300,
+[data-theme="squid"] .text-slate-200,
+[data-theme="squid"] .text-gray-300,
+[data-theme="squid"] .text-gray-200 {
+  color: rgba(255, 255, 255, 0.62);
 }
 [data-theme="squid"] .text-cyan-700,
 [data-theme="squid"] .text-cyan-600,
 [data-theme="squid"] .text-cyan-500,
+[data-theme="squid"] .text-cyan-300,
+[data-theme="squid"] .text-cyan-200,
 [data-theme="squid"] .text-sky-700,
 [data-theme="squid"] .text-sky-600,
 [data-theme="squid"] .text-sky-500,
@@ -186,10 +308,10 @@ body {
 [data-theme="squid"] .text-blue-500,
 [data-theme="squid"] .text-indigo-700,
 [data-theme="squid"] .text-indigo-600 {
-  color: #ED1A7F;
+  color: #ff5aa0;
 }
 
-/* Borders — slate hairlines become subtle white, accent borders go pink. */
+/* Borders */
 [data-theme="squid"] .border-slate-200,
 [data-theme="squid"] .border-slate-300,
 [data-theme="squid"] .border-gray-200,
@@ -204,59 +326,67 @@ body {
 [data-theme="squid"] .border-cyan-300,
 [data-theme="squid"] .border-sky-200,
 [data-theme="squid"] .border-blue-200,
-[data-theme="squid"] .border-indigo-200 {
-  border-color: rgba(237, 26, 127, 0.35);
+[data-theme="squid"] .border-indigo-200,
+[data-theme="squid"] .border-emerald-200,
+[data-theme="squid"] .border-green-200 {
+  border-color: rgba(237, 26, 127, 0.4);
 }
 
-/* Hover variants of common color classes. */
+/* Hover states */
 [data-theme="squid"] .hover\:bg-slate-50:hover,
 [data-theme="squid"] .hover\:bg-slate-100:hover,
 [data-theme="squid"] .hover\:bg-gray-50:hover,
 [data-theme="squid"] .hover\:bg-gray-100:hover {
-  background-color: #232327;
+  background-color: #26262b;
 }
 [data-theme="squid"] .hover\:bg-cyan-50:hover,
 [data-theme="squid"] .hover\:bg-cyan-100:hover,
 [data-theme="squid"] .hover\:bg-blue-50:hover,
 [data-theme="squid"] .hover\:bg-indigo-50:hover {
-  background-color: rgba(237, 26, 127, 0.18);
-}
-[data-theme="squid"] .hover\:bg-cyan-600:hover,
-[data-theme="squid"] .hover\:bg-cyan-700:hover,
-[data-theme="squid"] .hover\:bg-blue-600:hover,
-[data-theme="squid"] .hover\:bg-blue-700:hover {
-  background-color: #FF2D8F;
+  background-color: rgba(237, 26, 127, 0.22);
 }
 [data-theme="squid"] .hover\:text-slate-950:hover,
 [data-theme="squid"] .hover\:text-slate-900:hover,
 [data-theme="squid"] .hover\:text-black:hover {
-  color: #f5f5f5;
+  color: #ffffff;
 }
 [data-theme="squid"] .hover\:text-cyan-700:hover,
 [data-theme="squid"] .hover\:text-blue-700:hover {
   color: #FF2D8F;
 }
 
-/* Tone down chunky display text — the user noted text felt too large. */
+/* Disabled states (used by ReadingArticleClient / ListeningPracticeClient
+   which set disabled:bg-emerald-600 to indicate "completed"). */
+[data-theme="squid"] .disabled\:bg-emerald-600:disabled,
+[data-theme="squid"] .disabled\:bg-green-600:disabled {
+  background-color: #00B894;
+  color: #ffffff;
+}
+[data-theme="squid"] .disabled\:bg-slate-400:disabled {
+  background-color: rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Tone down chunky display text — keep proportional to dark cards. */
 [data-theme="squid"] .text-5xl {
   font-size: 2rem;
-  line-height: 1.15;
+  line-height: 1.1;
 }
 [data-theme="squid"] .text-4xl {
   font-size: 1.65rem;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 [data-theme="squid"] .text-3xl {
   font-size: 1.4rem;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 [data-theme="squid"] .text-2xl {
-  font-size: 1.18rem;
-  line-height: 1.3;
+  font-size: 1.2rem;
+  line-height: 1.25;
 }
 [data-theme="squid"] .text-xl {
   font-size: 1.05rem;
-  line-height: 1.35;
+  line-height: 1.3;
 }
 [data-theme="squid"] .text-lg {
   font-size: 0.95rem;
@@ -264,7 +394,7 @@ body {
 }
 [data-theme="squid"] .text-base {
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 /* Drop the gradient page backgrounds that pages set inline. */
@@ -273,23 +403,504 @@ body {
   background-color: #141416;
 }
 
-/* Soft pink ring for focused inputs/buttons inside the theme. */
+/* Form inputs on dark surface */
 [data-theme="squid"] input,
 [data-theme="squid"] textarea,
 [data-theme="squid"] select {
-  background-color: #1a1a1d;
-  color: #f5f5f5;
-  border-color: rgba(255, 255, 255, 0.15);
+  background-color: #1c1c20;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.16);
 }
 [data-theme="squid"] input::placeholder,
 [data-theme="squid"] textarea::placeholder {
-  color: rgba(245, 245, 245, 0.4);
+  color: rgba(255, 255, 255, 0.45);
 }
 [data-theme="squid"] input:focus,
 [data-theme="squid"] textarea:focus,
 [data-theme="squid"] select:focus {
-  outline-color: #ED1A7F;
+  outline: 2px solid rgba(237, 26, 127, 0.5);
+  outline-offset: 1px;
   border-color: #ED1A7F;
+}
+
+/* Ring utilities (used on logos / badges) — translate to pink. */
+[data-theme="squid"] .ring-slate-200,
+[data-theme="squid"] .ring-slate-300,
+[data-theme="squid"] .ring-cyan-100,
+[data-theme="squid"] .ring-cyan-200 {
+  --tw-ring-color: rgba(237, 26, 127, 0.35);
+}
+
+[data-theme="nexus"] .bg-white,
+[data-theme="nexus"] .bg-white\/95,
+[data-theme="nexus"] .bg-white\/90,
+[data-theme="nexus"] .bg-white\/85,
+[data-theme="nexus"] .bg-white\/80,
+[data-theme="nexus"] .bg-white\/75 {
+  background-color: #ffffff;
+}
+[data-theme="nexus"] .bg-slate-50,
+[data-theme="nexus"] .bg-slate-100,
+[data-theme="nexus"] .bg-gray-50,
+[data-theme="nexus"] .bg-gray-100,
+[data-theme="nexus"] .bg-zinc-50,
+[data-theme="nexus"] .bg-zinc-100,
+[data-theme="nexus"] .bg-neutral-50,
+[data-theme="nexus"] .bg-neutral-100 {
+  background-color: #f3eee4;
+}
+[data-theme="nexus"] .bg-slate-200,
+[data-theme="nexus"] .bg-gray-200,
+[data-theme="nexus"] .bg-zinc-200,
+[data-theme="nexus"] .bg-neutral-200 {
+  background-color: #efeae0;
+}
+[data-theme="nexus"] .bg-slate-900,
+[data-theme="nexus"] .bg-slate-950,
+[data-theme="nexus"] .bg-gray-900,
+[data-theme="nexus"] .bg-gray-950,
+[data-theme="nexus"] .bg-zinc-900 {
+  background-color: #1a1714;
+}
+
+[data-theme="nexus"] .bg-cyan-50,
+[data-theme="nexus"] .bg-cyan-100,
+[data-theme="nexus"] .bg-sky-50,
+[data-theme="nexus"] .bg-sky-100,
+[data-theme="nexus"] .bg-blue-50,
+[data-theme="nexus"] .bg-blue-100,
+[data-theme="nexus"] .bg-indigo-50,
+[data-theme="nexus"] .bg-indigo-100 {
+  background-color: #fbe7d9;
+}
+[data-theme="nexus"] .bg-cyan-500,
+[data-theme="nexus"] .bg-cyan-600,
+[data-theme="nexus"] .bg-cyan-700,
+[data-theme="nexus"] .bg-sky-500,
+[data-theme="nexus"] .bg-sky-600,
+[data-theme="nexus"] .bg-blue-500,
+[data-theme="nexus"] .bg-blue-600,
+[data-theme="nexus"] .bg-blue-700,
+[data-theme="nexus"] .bg-indigo-500,
+[data-theme="nexus"] .bg-indigo-600 {
+  background-color: #d97843;
+  color: #ffffff;
+}
+
+[data-theme="nexus"] .text-slate-950,
+[data-theme="nexus"] .text-slate-900,
+[data-theme="nexus"] .text-slate-800,
+[data-theme="nexus"] .text-gray-950,
+[data-theme="nexus"] .text-gray-900,
+[data-theme="nexus"] .text-gray-800,
+[data-theme="nexus"] .text-zinc-900,
+[data-theme="nexus"] .text-neutral-900,
+[data-theme="nexus"] .text-black {
+  color: #1c1917;
+}
+[data-theme="nexus"] .text-slate-700,
+[data-theme="nexus"] .text-slate-600,
+[data-theme="nexus"] .text-gray-700,
+[data-theme="nexus"] .text-gray-600,
+[data-theme="nexus"] .text-zinc-700,
+[data-theme="nexus"] .text-zinc-600,
+[data-theme="nexus"] .text-neutral-700 {
+  color: #4a4338;
+}
+[data-theme="nexus"] .text-slate-500,
+[data-theme="nexus"] .text-slate-400,
+[data-theme="nexus"] .text-gray-500,
+[data-theme="nexus"] .text-gray-400,
+[data-theme="nexus"] .text-zinc-500,
+[data-theme="nexus"] .text-neutral-500 {
+  color: #837b6e;
+}
+[data-theme="nexus"] .text-slate-300 {
+  color: #a39c8e;
+}
+[data-theme="nexus"] .text-cyan-700,
+[data-theme="nexus"] .text-cyan-600,
+[data-theme="nexus"] .text-cyan-500,
+[data-theme="nexus"] .text-sky-700,
+[data-theme="nexus"] .text-sky-600,
+[data-theme="nexus"] .text-sky-500,
+[data-theme="nexus"] .text-blue-700,
+[data-theme="nexus"] .text-blue-600,
+[data-theme="nexus"] .text-blue-500,
+[data-theme="nexus"] .text-indigo-700,
+[data-theme="nexus"] .text-indigo-600 {
+  color: #b85d2c;
+}
+
+[data-theme="nexus"] .border-slate-200,
+[data-theme="nexus"] .border-slate-300,
+[data-theme="nexus"] .border-gray-200,
+[data-theme="nexus"] .border-gray-300,
+[data-theme="nexus"] .border-zinc-200,
+[data-theme="nexus"] .border-neutral-200,
+[data-theme="nexus"] .border-white\/60,
+[data-theme="nexus"] .border-white\/40 {
+  border-color: #d9d2c4;
+}
+[data-theme="nexus"] .border-cyan-200,
+[data-theme="nexus"] .border-cyan-300,
+[data-theme="nexus"] .border-sky-200,
+[data-theme="nexus"] .border-blue-200,
+[data-theme="nexus"] .border-indigo-200 {
+  border-color: rgba(217, 120, 67, 0.4);
+}
+
+[data-theme="nexus"] .hover\:bg-slate-50:hover,
+[data-theme="nexus"] .hover\:bg-slate-100:hover,
+[data-theme="nexus"] .hover\:bg-gray-50:hover,
+[data-theme="nexus"] .hover\:bg-gray-100:hover {
+  background-color: #efeae0;
+}
+[data-theme="nexus"] .hover\:bg-cyan-50:hover,
+[data-theme="nexus"] .hover\:bg-cyan-100:hover,
+[data-theme="nexus"] .hover\:bg-blue-50:hover,
+[data-theme="nexus"] .hover\:bg-indigo-50:hover {
+  background-color: #fbe7d9;
+}
+[data-theme="nexus"] .hover\:bg-cyan-600:hover,
+[data-theme="nexus"] .hover\:bg-cyan-700:hover,
+[data-theme="nexus"] .hover\:bg-blue-600:hover,
+[data-theme="nexus"] .hover\:bg-blue-700:hover {
+  background-color: #b85d2c;
+  color: #ffffff;
+}
+[data-theme="nexus"] .hover\:text-slate-950:hover,
+[data-theme="nexus"] .hover\:text-slate-900:hover,
+[data-theme="nexus"] .hover\:text-black:hover {
+  color: #1c1917;
+}
+[data-theme="nexus"] .hover\:text-cyan-700:hover,
+[data-theme="nexus"] .hover\:text-blue-700:hover {
+  color: #b85d2c;
+}
+
+[data-theme="nexus"] .text-5xl {
+  font-size: 2.4rem;
+  line-height: 1.08;
+}
+[data-theme="nexus"] .text-4xl {
+  font-size: 2rem;
+  line-height: 1.12;
+}
+[data-theme="nexus"] .text-3xl {
+  font-size: 1.65rem;
+  line-height: 1.18;
+}
+[data-theme="nexus"] .text-2xl {
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+[data-theme="nexus"] .text-xl {
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+[data-theme="nexus"] .text-lg {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+[data-theme="nexus"] .text-base {
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+[data-theme="nexus"] [class*="bg-gradient"] {
+  background-image: none;
+  background-color: #ffffff;
+}
+
+[data-theme="nexus"] input,
+[data-theme="nexus"] textarea,
+[data-theme="nexus"] select {
+  background-color: #ffffff;
+  color: #1c1917;
+  border-color: #d9d2c4;
+}
+[data-theme="nexus"] input::placeholder,
+[data-theme="nexus"] textarea::placeholder {
+  color: #a39c8e;
+}
+[data-theme="nexus"] input:focus,
+[data-theme="nexus"] textarea:focus,
+[data-theme="nexus"] select:focus {
+  outline: 2px solid rgba(217, 120, 67, 0.4);
+  outline-offset: 1px;
+  border-color: #d97843;
+}
+
+/* ---------------------------------------------------------------- *
+ * Rockstar-theme overrides for the Nexus AI Nihongo route.
+ * Translates the original slate/cyan/blue palette to pure black + R*
+ * signature yellow (#FCAF17) without editing every page individually.
+ * Scoped to [data-theme="rockstar"] so the Platform shell and other
+ * apps stay untouched.
+ * ---------------------------------------------------------------- */
+
+[data-theme="rockstar"] {
+  color-scheme: dark;
+}
+
+/* Heavy uppercase headings — Rockstar's signature display treatment. */
+[data-theme="rockstar"] h1,
+[data-theme="rockstar"] h2,
+[data-theme="rockstar"] h3 {
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+/* Surfaces that were white/slate-light become deep black cards. */
+[data-theme="rockstar"] .bg-white,
+[data-theme="rockstar"] .bg-white\/95,
+[data-theme="rockstar"] .bg-white\/90,
+[data-theme="rockstar"] .bg-white\/85,
+[data-theme="rockstar"] .bg-white\/80,
+[data-theme="rockstar"] .bg-white\/75 {
+  background-color: #111111;
+}
+[data-theme="rockstar"] .bg-white\/70,
+[data-theme="rockstar"] .bg-white\/60,
+[data-theme="rockstar"] .bg-white\/50,
+[data-theme="rockstar"] .bg-white\/40 {
+  background-color: rgba(17, 17, 17, 0.85);
+}
+[data-theme="rockstar"] .bg-slate-50,
+[data-theme="rockstar"] .bg-slate-100,
+[data-theme="rockstar"] .bg-gray-50,
+[data-theme="rockstar"] .bg-gray-100,
+[data-theme="rockstar"] .bg-zinc-50,
+[data-theme="rockstar"] .bg-zinc-100,
+[data-theme="rockstar"] .bg-neutral-50,
+[data-theme="rockstar"] .bg-neutral-100 {
+  background-color: #161616;
+}
+[data-theme="rockstar"] .bg-slate-200,
+[data-theme="rockstar"] .bg-gray-200,
+[data-theme="rockstar"] .bg-zinc-200,
+[data-theme="rockstar"] .bg-neutral-200 {
+  background-color: #1f1f1f;
+}
+/* Primary CTA convention — bg-slate-950 / 900 = "primary dark button"
+   across nihongo. In rockstar theme this becomes the brand yellow so
+   the primary action POPS with R*-style voltage. */
+[data-theme="rockstar"] .bg-slate-900,
+[data-theme="rockstar"] .bg-slate-950,
+[data-theme="rockstar"] .bg-gray-900,
+[data-theme="rockstar"] .bg-gray-950,
+[data-theme="rockstar"] .bg-zinc-900 {
+  background-color: #FCAF17;
+  color: #000000;
+}
+[data-theme="rockstar"] .hover\:bg-slate-900:hover,
+[data-theme="rockstar"] .hover\:bg-slate-950:hover {
+  background-color: #FFD53C;
+  color: #000000;
+}
+
+/* Cyan/blue accents become signature R* yellow. */
+[data-theme="rockstar"] .bg-cyan-50,
+[data-theme="rockstar"] .bg-cyan-100,
+[data-theme="rockstar"] .bg-sky-50,
+[data-theme="rockstar"] .bg-sky-100,
+[data-theme="rockstar"] .bg-blue-50,
+[data-theme="rockstar"] .bg-blue-100,
+[data-theme="rockstar"] .bg-indigo-50,
+[data-theme="rockstar"] .bg-indigo-100 {
+  background-color: rgba(252, 175, 23, 0.12);
+}
+[data-theme="rockstar"] .bg-cyan-500,
+[data-theme="rockstar"] .bg-cyan-600,
+[data-theme="rockstar"] .bg-cyan-700,
+[data-theme="rockstar"] .bg-sky-500,
+[data-theme="rockstar"] .bg-sky-600,
+[data-theme="rockstar"] .bg-blue-500,
+[data-theme="rockstar"] .bg-blue-600,
+[data-theme="rockstar"] .bg-blue-700,
+[data-theme="rockstar"] .bg-indigo-500,
+[data-theme="rockstar"] .bg-indigo-600 {
+  background-color: #FCAF17;
+  color: #000000;
+}
+
+/* Text — dark-ink classes become white. */
+[data-theme="rockstar"] .text-slate-950,
+[data-theme="rockstar"] .text-slate-900,
+[data-theme="rockstar"] .text-slate-800,
+[data-theme="rockstar"] .text-gray-950,
+[data-theme="rockstar"] .text-gray-900,
+[data-theme="rockstar"] .text-gray-800,
+[data-theme="rockstar"] .text-zinc-900,
+[data-theme="rockstar"] .text-neutral-900,
+[data-theme="rockstar"] .text-black {
+  color: #ffffff;
+}
+[data-theme="rockstar"] .text-slate-700,
+[data-theme="rockstar"] .text-slate-600,
+[data-theme="rockstar"] .text-gray-700,
+[data-theme="rockstar"] .text-gray-600,
+[data-theme="rockstar"] .text-zinc-700,
+[data-theme="rockstar"] .text-zinc-600,
+[data-theme="rockstar"] .text-neutral-700 {
+  color: rgba(255, 255, 255, 0.78);
+}
+[data-theme="rockstar"] .text-slate-500,
+[data-theme="rockstar"] .text-slate-400,
+[data-theme="rockstar"] .text-gray-500,
+[data-theme="rockstar"] .text-gray-400,
+[data-theme="rockstar"] .text-zinc-500,
+[data-theme="rockstar"] .text-neutral-500 {
+  color: rgba(255, 255, 255, 0.55);
+}
+[data-theme="rockstar"] .text-slate-300 {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Inside Rockstar's yellow primary surface (bg-slate-950 → #FCAF17),
+   slate text steps must flip to dark so they pass AA contrast on
+   yellow. Scoped via descendant selector so the global text-slate-*
+   translations stay unchanged elsewhere. */
+[data-theme="rockstar"] .bg-slate-950 .text-slate-300,
+[data-theme="rockstar"] .bg-slate-900 .text-slate-300 {
+  color: rgba(0, 0, 0, 0.72);
+}
+[data-theme="rockstar"] .bg-slate-950 .text-slate-400,
+[data-theme="rockstar"] .bg-slate-900 .text-slate-400 {
+  color: rgba(0, 0, 0, 0.7);
+}
+[data-theme="rockstar"] .bg-slate-950 .text-slate-500,
+[data-theme="rockstar"] .bg-slate-900 .text-slate-500 {
+  color: rgba(0, 0, 0, 0.78);
+}
+/* Progress bar visuals on the yellow surface — keep them legible. */
+[data-theme="rockstar"] .bg-slate-950 .bg-white\/10,
+[data-theme="rockstar"] .bg-slate-900 .bg-white\/10 {
+  background-color: rgba(0, 0, 0, 0.16);
+}
+[data-theme="rockstar"] .bg-slate-950 .bg-cyan-300,
+[data-theme="rockstar"] .bg-slate-900 .bg-cyan-300 {
+  background-color: #000000;
+}
+
+[data-theme="rockstar"] .text-cyan-700,
+[data-theme="rockstar"] .text-cyan-600,
+[data-theme="rockstar"] .text-cyan-500,
+[data-theme="rockstar"] .text-sky-700,
+[data-theme="rockstar"] .text-sky-600,
+[data-theme="rockstar"] .text-sky-500,
+[data-theme="rockstar"] .text-blue-700,
+[data-theme="rockstar"] .text-blue-600,
+[data-theme="rockstar"] .text-blue-500,
+[data-theme="rockstar"] .text-indigo-700,
+[data-theme="rockstar"] .text-indigo-600 {
+  color: #FCAF17;
+}
+
+/* Borders — slate hairlines become subtle white, accent borders go yellow. */
+[data-theme="rockstar"] .border-slate-200,
+[data-theme="rockstar"] .border-slate-300,
+[data-theme="rockstar"] .border-gray-200,
+[data-theme="rockstar"] .border-gray-300,
+[data-theme="rockstar"] .border-zinc-200,
+[data-theme="rockstar"] .border-neutral-200,
+[data-theme="rockstar"] .border-white\/60,
+[data-theme="rockstar"] .border-white\/40 {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+[data-theme="rockstar"] .border-cyan-200,
+[data-theme="rockstar"] .border-cyan-300,
+[data-theme="rockstar"] .border-sky-200,
+[data-theme="rockstar"] .border-blue-200,
+[data-theme="rockstar"] .border-indigo-200 {
+  border-color: rgba(252, 175, 23, 0.4);
+}
+
+/* Hover variants of common color classes. */
+[data-theme="rockstar"] .hover\:bg-slate-50:hover,
+[data-theme="rockstar"] .hover\:bg-slate-100:hover,
+[data-theme="rockstar"] .hover\:bg-gray-50:hover,
+[data-theme="rockstar"] .hover\:bg-gray-100:hover {
+  background-color: #1f1f1f;
+}
+[data-theme="rockstar"] .hover\:bg-cyan-50:hover,
+[data-theme="rockstar"] .hover\:bg-cyan-100:hover,
+[data-theme="rockstar"] .hover\:bg-blue-50:hover,
+[data-theme="rockstar"] .hover\:bg-indigo-50:hover {
+  background-color: rgba(252, 175, 23, 0.18);
+}
+[data-theme="rockstar"] .hover\:bg-cyan-600:hover,
+[data-theme="rockstar"] .hover\:bg-cyan-700:hover,
+[data-theme="rockstar"] .hover\:bg-blue-600:hover,
+[data-theme="rockstar"] .hover\:bg-blue-700:hover {
+  background-color: #FFD53C;
+  color: #000000;
+}
+[data-theme="rockstar"] .hover\:text-slate-950:hover,
+[data-theme="rockstar"] .hover\:text-slate-900:hover,
+[data-theme="rockstar"] .hover\:text-black:hover {
+  color: #ffffff;
+}
+[data-theme="rockstar"] .hover\:text-cyan-700:hover,
+[data-theme="rockstar"] .hover\:text-blue-700:hover {
+  color: #FFD53C;
+}
+
+/* Tone down chunky display text. */
+[data-theme="rockstar"] .text-5xl {
+  font-size: 2rem;
+  line-height: 1.05;
+}
+[data-theme="rockstar"] .text-4xl {
+  font-size: 1.65rem;
+  line-height: 1.1;
+}
+[data-theme="rockstar"] .text-3xl {
+  font-size: 1.4rem;
+  line-height: 1.15;
+}
+[data-theme="rockstar"] .text-2xl {
+  font-size: 1.18rem;
+  line-height: 1.2;
+}
+[data-theme="rockstar"] .text-xl {
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+[data-theme="rockstar"] .text-lg {
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+[data-theme="rockstar"] .text-base {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Drop the gradient page backgrounds that pages set inline. */
+[data-theme="rockstar"] [class*="bg-gradient"] {
+  background-image: none;
+  background-color: #111111;
+}
+
+/* Yellow focus ring — inputs go pure black with white text. */
+[data-theme="rockstar"] input,
+[data-theme="rockstar"] textarea,
+[data-theme="rockstar"] select {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+[data-theme="rockstar"] input::placeholder,
+[data-theme="rockstar"] textarea::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+[data-theme="rockstar"] input:focus,
+[data-theme="rockstar"] textarea:focus,
+[data-theme="rockstar"] select:focus {
+  outline-color: #FCAF17;
+  border-color: #FCAF17;
 }
 
 @keyframes ai-chan-enter {

@@ -72,17 +72,45 @@ export function ManualBillingClient({
     }
 
     setLoading(true);
-    const formData = new FormData();
-    formData.append("proof", proof);
+    try {
+      const formData = new FormData();
+      formData.append("proof", proof);
 
-    const response = await fetch(`/api/platform/billing/payments/${paymentId}/proof`, {
-      method: "POST",
-      body: formData,
-    });
-    const payload = await response.json();
-    setLoading(false);
+      const response = await fetch(
+        `/api/platform/billing/payments/${paymentId}/proof`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
-    setStatus(response.ok ? "Bukti pembayaran terkirim. Status menunggu verifikasi admin." : payload.error ?? "Upload gagal.");
+      // Server may return non-JSON (HTML 500 page from a runtime error).
+      // Read the body as text first so a parse failure doesn't leave the
+      // spinner stuck.
+      const raw = await response.text();
+      let payload: { error?: string } = {};
+      try {
+        payload = raw ? (JSON.parse(raw) as { error?: string }) : {};
+      } catch {
+        payload = { error: raw.slice(0, 200) || "Upload gagal." };
+      }
+
+      if (response.ok) {
+        setStatus(
+          "Bukti pembayaran terkirim. Status menunggu verifikasi admin."
+        );
+      } else {
+        setStatus(payload.error ?? `Upload gagal (HTTP ${response.status}).`);
+      }
+    } catch (error) {
+      setStatus(
+        error instanceof Error
+          ? `Upload gagal: ${error.message}`
+          : "Upload gagal: jaringan bermasalah."
+      );
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (

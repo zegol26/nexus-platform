@@ -131,30 +131,24 @@ export function NihongoDashboardClient() {
       <section className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
         <div className="grid gap-0 lg:grid-cols-[1.35fr_0.65fr]">
           <div className="p-6 sm:p-8 lg:p-10">
-            <div className="relative mb-7 inline-flex items-center gap-5">
-              <span
-                aria-hidden
-                className="absolute -inset-5 left-0 rounded-full bg-[#ED1A7F]/25 blur-3xl"
-              />
+            <div className="mb-7 inline-flex items-center gap-5">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/Nexustalenta.svg"
                 alt="Nexus Talenta"
                 width={120}
                 height={120}
-                className="relative h-[120px] w-[120px] object-contain drop-shadow-[0_10px_28px_rgba(237,26,127,0.5)]"
+                className="h-[120px] w-[120px] rounded-2xl object-contain shadow-sm ring-1 ring-slate-200"
               />
-              <span className="relative flex flex-col">
-                <span className="text-[11px] font-bold uppercase tracking-[0.32em] text-[#ED1A7F]">
+              <span className="flex flex-col">
+                <span className="text-[11px] font-bold uppercase tracking-[0.32em] text-cyan-700">
                   Nexus AI
                 </span>
                 <span className="text-2xl font-bold tracking-tight text-slate-950">
                   Nihongo
                 </span>
-                <span className="mt-1 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.32em] text-slate-400">
-                  <span className="text-[#ED1A7F]">○</span>
-                  <span className="text-[#00B894]">△</span>
-                  <span>□</span>
+                <span className="mt-1 text-[11px] font-medium text-slate-400">
+                  AI-led Japanese learning
                 </span>
               </span>
             </div>

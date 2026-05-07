@@ -4,6 +4,7 @@
 
 | Release Note | Date/Time (JST) | Author | Status | Summary |
 | --- | --- | --- | --- | --- |
+| RN-2026.05.07-001 | 2026-05-07 12:00 +09:00 | Nexus Platform Team | Completed | Added user-selectable theme toggle (Nexus / Squid / Rockstar) on the Nihongo header, scoped to the `/apps/nihongo` route only. Synthesized `docs/DESIGN.md` as the source of truth for the in-house Nexus design system. Fixed billing proof upload hang (Vercel filesystem write) by switching to base64 data URL storage with proper error handling. Fixed Listening Indonesian translation not rendering by making the parser tolerant of `indonesia` keys nested in either object or per-line array shapes. |
 | RN-2026.05.06-003 | 2026-05-06 23:30 +09:00 | Nexus Platform Team | Completed | Repainted Nexus AI Nihongo with a dark + pink/teal Squid-Game-inspired theme using `[data-theme="squid"]` CSS overrides, swapped the Nihongo logo to `Nexustalenta.svg` with a glow treatment, and shrank the heading scale ~12-15% for tighter typography. |
 | RN-2026.05.06-002 | 2026-05-06 22:00 +09:00 | Nexus Platform Team | Completed | Improved Nihongo and Platform sidebar UX (smaller width, active route highlighting, mobile drawer auto-closes on navigation), added engaging route loaders, normalized AI Tutor opening copy to formal "saya". |
 | RN-2026.05.06-001 | 2026-05-06 18:15 +09:00 | Nexus Platform Team | Completed | Hotfixed production data loss caused by stale seed scripts on auto-deploy and synced local working tree to git as `prod-checkpoint-20260506`. |
@@ -15,6 +16,122 @@
 | RN-2026.05.04-001 | 2026-05-04 01:10 +09:00 | Nexus Platform Team | Completed | Fixed character foundation lesson access and verified kana/kanji grids in localhost. |
 | RN-2026.05.03-002 | 2026-05-03 23:45 +09:00 | Nexus Platform Team | Completed | Added seedable Nihongo character content for kana, kanji, and vocabulary compounds, linked to lesson pages. |
 | RN-2026.05.03-001 | 2026-05-03 23:09 +09:00 | Nexus Platform Team | Release Candidate | Admin Operations Console, billing/trial foundation, recording visibility, architecture docs, and Ai-chan assistant foundation. |
+
+## RN-2026.05.07-001
+
+Completed Nexus AI Nihongo Theme Toggle, DESIGN.md, and Production Hotfixes.
+
+### Background
+
+Two production bugs landed alongside the multi-theme rollout:
+
+1. Manual billing proof upload hung indefinitely on the loading
+   spinner. Root cause: `/api/platform/billing/payments/[paymentId]/proof`
+   wrote uploaded files to `public/uploads/payment-proofs/` via
+   `fs/promises`. Vercel Functions cannot persist to the project
+   filesystem outside `/tmp`, so the write threw silently. The route
+   had no try/catch, so the response was a runtime 500 (HTML body),
+   and the client called `await response.json()` without error
+   handling — the parse rejection was unhandled and the
+   `setLoading(false)` never fired.
+
+2. Nexus AI Nihongo Listening pages showed romaji correctly but the
+   Indonesian translation toggle stayed blank. Root cause: the
+   parser at `lib/nihongo/listening.ts` only checked
+   `passage.translationJson` for a parallel string array. Several
+   admin uploads in production were stored either as
+   `{ indonesia: [...] }` objects or as per-line arrays
+   (`[{ japanese, romaji, indonesia }]`), so the direct array read
+   came back empty and the UI rendered nothing.
+
+### Included Changes
+
+- Replaced `next-themes` with a minimal in-house React Context
+  (`NihongoThemeProvider`) that persists the chosen theme in
+  `localStorage` under `nihongo-theme`. `next-themes` injects an
+  inline `<script>` for first-paint hydration which Next.js 16
+  flags with a console warning when the provider is nested below
+  the root layout — the in-house provider has no script and lives
+  inside the Nihongo layout so the theme attribute never leaks to
+  `/platform` or `/admin`.
+- Added `NihongoThemeShell` to apply the chosen theme as a
+  `data-theme` attribute on a wrapper div, and `NihongoThemeToggle`
+  as a 3-state segmented control (`✦ NX` / `○ SQ` / `★ RS`) sitting
+  in the Nihongo header next to the logout button.
+- Synthesized `docs/DESIGN.md` (~600 lines) as the in-house Nexus
+  design system. Drew warm AI-tutor language from Claude,
+  conversational chat patterns from Intercom, structured
+  curriculum surfaces from Notion, dark cinematic Voice/Listening
+  surfaces from ElevenLabs, and the cream + yellow analytics
+  surface for `/admin/analytics` from PostHog. No brand identity
+  is copied verbatim — the result is a unique sumi-cream + persimmon
+  CTA + Japanese accent family palette.
+- Implemented the `[data-theme="nexus"]` (default) override block
+  alongside the existing `[data-theme="squid"]` and
+  `[data-theme="rockstar"]` blocks in `app/globals.css`. Each block
+  translates the same Tailwind utility classes (slate / cyan / blue)
+  into theme-appropriate colours, so the runtime palette switches
+  without editing any component.
+- Added scoped fixes for known contrast issues:
+  - Squid: `bg-slate-950` (the project's primary-dark-CTA convention)
+    flips to brand pink `#ED1A7F` so primary actions pop instead of
+    disappearing into the dark canvas. Text steps audited for AA on
+    the dark surface family.
+  - Rockstar: `bg-slate-950` flips to brand yellow `#FCAF17` with
+    black text. Inside that yellow surface, `text-slate-300` /
+    `bg-cyan-300` / `bg-white/10` are flipped to dark variants via
+    descendant selectors so the Progress panel stays legible.
+- Made `NihongoSidebar` decorations theme-aware: number markers in
+  Nexus, ○ △ □ rotation in Squid, ★ stars in Rockstar; faint corner
+  watermark shapes only in the dark themes. Logo + active-item glow
+  per theme via CSS rules on `aside` and `nav a[aria-current]`.
+- Hot-fixed `/api/platform/billing/payments/[paymentId]/proof` to
+  encode the uploaded proof as a base64 data URL and store it
+  directly in `PaymentProof.fileUrl`. Wrapped the handler in
+  try/catch with a JSON 500 fallback so the client always receives
+  a parseable body.
+- Hot-fixed `ManualBillingClient.uploadProof` to read the response
+  body as text first, attempt `JSON.parse` defensively, and clear
+  the loading spinner inside a `finally` block so any error path
+  releases the UI.
+- Made `parseListeningPassage` defensive: it now also pulls
+  Indonesian from `{ indonesia | indonesian | id | translation |
+  terjemahan } [...]` objects, from per-line arrays of objects
+  under `lines` / `transcript` / `items` / `entries` / `content`
+  wrappers, and from `questionsJson` as a last resort. The fix is
+  read-only — no migration needed for existing rows.
+- Tightened `toStringArray` in `lib/nihongo/listening.ts` to return
+  `null` (not an empty array) when nothing string-shaped is found,
+  so the `??` fallback chain in `parseListeningPassage` reaches the
+  defensive extractors instead of short-circuiting on `[]`.
+
+### Verification
+
+- `npx tsc --noEmit`: passed.
+- `npm test`: 6 policy tests passed.
+- Manual UAT: theme toggle switches between Nexus / Squid /
+  Rockstar without page reload, persists across refresh, never
+  affects `/platform/*` or `/admin/*` surfaces.
+- Manual UAT: billing manual-payment flow on Vercel Preview —
+  proof upload completes, status transitions to
+  `WAITING_VERIFICATION`, error path shows a useful message
+  instead of an infinite spinner.
+- Manual UAT: Listening pages — Indonesian toggle now reveals
+  translations on rows that previously rendered blank.
+
+### Known Notes
+
+- Production data stored under the old upload-proof flow with a
+  `public/uploads/...` URL is no longer reachable from a Vercel
+  serverless container (those bytes never persisted). Future
+  uploads land in the database as data URLs and survive cold
+  starts.
+- The base64 column inflates `PaymentProof.fileUrl` rows up to
+  ~6 MB. If proof volume grows, migrate to Vercel Blob in a
+  follow-up.
+- `next-themes` was uninstalled. The in-house provider is the
+  intended long-term implementation because it can stay scoped to
+  the Nihongo route without touching the root `<html>` element.
 
 ## RN-2026.05.06-003
 

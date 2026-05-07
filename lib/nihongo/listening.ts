@@ -29,10 +29,53 @@ export type ListeningImportItem = {
 };
 
 export function parseListeningPassage(passage: ReadingPassage): ListeningContent {
-  const kanji = toStringArray(passage.kanjiJson) ?? splitLines(passage.contentJa);
-  const romaji = toStringArray(passage.romajiJson) ?? toStringArray(passage.vocabularyJson) ?? [];
+  const kanji =
+    toStringArray(passage.kanjiJson) ??
+    extractTransliterationField(passage.translationJson, [
+      "kanji",
+      "japanese",
+      "ja",
+    ]) ??
+    extractFromLines(passage.translationJson, ["japanese", "kanji", "ja"]) ??
+    splitLines(passage.contentJa);
+  const romaji =
+    toStringArray(passage.romajiJson) ??
+    toStringArray(passage.vocabularyJson) ??
+    extractTransliterationField(passage.translationJson, [
+      "romaji",
+      "latin",
+      "kana",
+    ]) ??
+    extractFromLines(passage.translationJson, ["romaji", "latin", "kana"]) ??
+    [];
   const translation =
-    toStringArray(passage.translationJson) ?? toStringArray(passage.questionsJson) ?? [];
+    toStringArray(passage.translationJson) ??
+    extractTransliterationField(passage.translationJson, [
+      "indonesia",
+      "indonesian",
+      "id",
+      "translation",
+      "terjemahan",
+    ]) ??
+    extractFromLines(passage.translationJson, [
+      "indonesia",
+      "indonesian",
+      "id",
+      "translation",
+      "terjemahan",
+    ]) ??
+    extractTransliterationField(passage.questionsJson, [
+      "indonesia",
+      "indonesian",
+      "translation",
+    ]) ??
+    extractFromLines(passage.questionsJson, [
+      "indonesia",
+      "indonesian",
+      "translation",
+    ]) ??
+    toStringArray(passage.questionsJson) ??
+    [];
   const maxLength = Math.max(kanji.length, romaji.length, translation.length);
 
   return {
@@ -108,7 +151,87 @@ export function listeningSlug(title: string) {
 
 function toStringArray(value: unknown): string[] | null {
   if (!Array.isArray(value)) return null;
-  return value.map((item) => (typeof item === "string" ? item.trim() : "")).filter(Boolean);
+  const filtered = value
+    .map((item) => (typeof item === "string" ? item.trim() : ""))
+    .filter(Boolean);
+  return filtered.length ? filtered : null;
+}
+
+/**
+ * Read `{ <field>: string[] }` (or under nested `content`) from a JSON
+ * column. Lets us recover `indonesia`, `romaji`, etc. when an admin
+ * uploaded a payload that wasn't fully normalized into the dedicated
+ * Prisma columns.
+ */
+function extractTransliterationField(
+  json: unknown,
+  keys: readonly string[]
+): string[] | null {
+  if (!json || typeof json !== "object" || Array.isArray(json)) return null;
+  const obj = json as Record<string, unknown>;
+  for (const key of keys) {
+    const direct = toStringArray(obj[key]);
+    if (direct?.length) return direct;
+  }
+  const nested = obj.content;
+  if (nested && typeof nested === "object" && !Array.isArray(nested)) {
+    const c = nested as Record<string, unknown>;
+    for (const key of keys) {
+      const direct = toStringArray(c[key]);
+      if (direct?.length) return direct;
+    }
+  }
+  return null;
+}
+
+/**
+ * Read a per-line array of objects — `[ { japanese, romaji, indonesia } ]`
+ * — and pull a single field across every line. Used to recover the
+ * Indonesian translation when listening JSON was uploaded as a list of
+ * line objects rather than parallel arrays.
+ */
+function extractFromLines(
+  json: unknown,
+  keys: readonly string[]
+): string[] | null {
+  const list = collectLineList(json);
+  if (!list) return null;
+  const result: string[] = [];
+  for (const line of list) {
+    if (!line || typeof line !== "object") continue;
+    const obj = line as Record<string, unknown>;
+    let value: string | null = null;
+    for (const key of keys) {
+      if (typeof obj[key] === "string") {
+        value = (obj[key] as string).trim();
+        break;
+      }
+    }
+    if (value) result.push(value);
+  }
+  return result.length ? result : null;
+}
+
+function collectLineList(json: unknown): unknown[] | null {
+  if (!json) return null;
+  if (Array.isArray(json) && json.every((item) => item && typeof item === "object")) {
+    return json;
+  }
+  if (typeof json !== "object") return null;
+  const obj = json as Record<string, unknown>;
+  for (const wrapper of [
+    "lines",
+    "transcript",
+    "items",
+    "entries",
+    "content",
+  ] as const) {
+    const value = obj[wrapper];
+    if (Array.isArray(value) && value.every((item) => item && typeof item === "object")) {
+      return value;
+    }
+  }
+  return null;
 }
 
 function splitLines(value: string) {

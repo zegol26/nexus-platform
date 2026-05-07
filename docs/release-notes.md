@@ -1,5 +1,70 @@
 # Release Notes
 
+## [vNext] - Nihongo Theme Toggle, DESIGN.md, Billing + Listening Hotfixes
+
+### Added
+
+- 3-state theme toggle in the Nexus AI Nihongo header: Nexus (default,
+  warm cream + persimmon), Squid (dark + pink), Rockstar (black +
+  yellow). Persisted in `localStorage` under `nihongo-theme`. Scoped
+  to the `/apps/nihongo` route — Platform and Admin shells stay on
+  the existing palette.
+- `docs/DESIGN.md` — in-house Nexus design system (~600 lines)
+  synthesized from references for Claude (warm AI tutor), Intercom
+  (chat / Aichan), Notion (curriculum), ElevenLabs (Voice + Listening
+  surfaces), and PostHog (Admin Analytics surface only).
+- `[data-theme="nexus"]` override block in `app/globals.css` that
+  translates the project's slate/cyan/blue Tailwind utilities into
+  the sumi-cream + persimmon palette without editing any component.
+
+### Changed
+
+- Replaced `next-themes` with a minimal in-house React Context provider
+  so the theme attribute can stay on a wrapper div inside the Nihongo
+  layout instead of `<html>` — the previous setup tripped a Next.js 16
+  console warning about inline `<script>` tags inside React components.
+- Squid override now flips `bg-slate-950` (the project's primary-CTA
+  convention) to brand pink `#ED1A7F` and Rockstar flips it to brand
+  yellow `#FCAF17`. Primary actions now match the active theme accent
+  on every page instead of staying dark and disappearing.
+- Inside Rockstar's yellow primary surface, slate text steps and the
+  Progress bar visuals are flipped to dark variants via descendant
+  selectors so the Progress panel passes AA contrast.
+- Sidebar decorations are now theme-aware: number markers in Nexus,
+  ○ △ □ rotation in Squid, ★ stars in Rockstar; faint corner
+  watermark shapes appear only in the dark themes.
+
+### Fixed
+
+- Manual billing proof upload no longer hangs on the loading spinner.
+  The handler at `/api/platform/billing/payments/[paymentId]/proof`
+  now stores the uploaded image as a base64 data URL on the
+  `PaymentProof.fileUrl` row instead of writing to
+  `public/uploads/...` which is read-only on Vercel Functions. The
+  client wraps the upload in try/catch/finally and reads the response
+  body as text first so non-JSON error pages don't leave the UI stuck.
+- Nexus AI Nihongo Listening pages now display the Indonesian
+  translation when the toggle is on. The parser at
+  `lib/nihongo/listening.ts` is now tolerant of `indonesia` /
+  `indonesian` / `id` / `translation` / `terjemahan` keys nested in
+  either `{ indonesia: [...] }` objects or per-line array shapes
+  (`[{ japanese, romaji, indonesia }]`).
+
+### Tested
+
+- `npx tsc --noEmit`
+- `npm test` (6 tests passed)
+- Manual UAT: theme toggle, billing upload, listening Indonesian
+  toggle.
+
+### Known Limitations
+
+- Existing `PaymentProof` rows whose `fileUrl` was a `public/uploads/...`
+  path are unrecoverable on Vercel — those bytes never persisted past
+  the original cold start.
+- Storing proof images as base64 data URLs inflates row size up to
+  ~6 MB. If proof volume grows, migrate to Vercel Blob in a follow-up.
+
 ## [vNext] - Nexus AI Nihongo Squid-Inspired Theme Refresh
 
 ### Changed
