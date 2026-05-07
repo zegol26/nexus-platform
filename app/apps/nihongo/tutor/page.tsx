@@ -1,13 +1,29 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { UserBadgeHeader } from "@/components/nihongo/UserBadgeHeader";
+import { TutorVoicePanel } from "@/components/apps/nihongo/TutorVoicePanel";
 import { clientTrack } from "@/lib/analytics/clientTrack";
 
 type ChatMessage = {
   role: "user" | "assistant";
   content: string;
+  voice?: boolean;
 };
+
+async function callTutor(message: string, mode: "text" | "voice") {
+  const res = await fetch("/api/apps/nihongo/tutor", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message, mode }),
+  });
+  const data = await res.json();
+  return {
+    ok: res.ok,
+    reply: typeof data?.reply === "string" ? (data.reply as string) : null,
+    error: typeof data?.error === "string" ? (data.error as string) : null,
+  };
+}
 
 const quickPrompts = [
   "Ajarkan pola は dan が dengan contoh sederhana.",
@@ -21,7 +37,7 @@ export default function TutorPage() {
     {
       role: "assistant",
       content:
-        "Halo, saya Nexus AI Nihongo Tutor. Tulis pertanyaan Jepang Anda, nanti saya jawab pakai penjelasan Indonesia, romaji, dan contoh kalimat.",
+        "Halo, saya Ai-chan, sensei Bahasa Jepang kamu di Nexus AI Nihongo. Tulis atau ngobrol langsung pakai mic — saya bantu jawab dengan penjelasan Indonesia, romaji, dan contoh kalimat.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -42,22 +58,36 @@ export default function TutorPage() {
     setInput("");
     setLoading(true);
 
-    const res = await fetch("/api/apps/nihongo/tutor", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: trimmed }),
-    });
-
-    const data = await res.json();
+    const { ok, reply, error } = await callTutor(trimmed, "text");
     setMessages((current) => [
       ...current,
       {
         role: "assistant",
-        content: res.ok ? data.reply : data.error || "Tutor failed.",
+        content: ok ? (reply ?? "Tutor failed.") : (error ?? "Tutor failed."),
       },
     ]);
     setLoading(false);
   };
+
+  const handleVoiceTranscript = useCallback(
+    async (transcript: string): Promise<string | null> => {
+      // Append the user transcript bubble immediately so the chat
+      // shows what the learner just said while Ai-chan thinks.
+      setMessages((current) => [
+        ...current,
+        { role: "user", content: transcript, voice: true },
+      ]);
+
+      const { ok, reply, error } = await callTutor(transcript, "voice");
+      const replyText = ok && reply ? reply : (error ?? "Tutor failed.");
+      setMessages((current) => [
+        ...current,
+        { role: "assistant", content: replyText, voice: true },
+      ]);
+      return ok && reply ? reply : null;
+    },
+    []
+  );
 
   return (
     <div className="mx-auto max-w-7xl space-y-6">
@@ -128,6 +158,8 @@ export default function TutorPage() {
       </section>
 
       <aside className="space-y-4">
+        <TutorVoicePanel onUserTranscript={handleVoiceTranscript} />
+
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 className="text-lg font-semibold text-slate-950">Quick prompts</h2>
           <div className="mt-4 space-y-2">

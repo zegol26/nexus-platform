@@ -4,6 +4,7 @@
 
 | Release Note | Date/Time (JST) | Author | Status | Summary |
 | --- | --- | --- | --- | --- |
+| RN-2026.05.07-002 | 2026-05-07 18:30 +09:00 | Nexus Platform Team | Completed | Added Fast MVP AI Conversation Voice on the AI Tutor page — push-to-talk with Whisper transcription, voice-mode tutor reply, and ElevenLabs (or OpenAI) TTS playback for Ai-chan. Trial learners get 5 voice conversations/day, tracked via `FeatureUsage.VOICE_CONVERSATION`. |
 | RN-2026.05.07-001 | 2026-05-07 12:00 +09:00 | Nexus Platform Team | Completed | Added user-selectable theme toggle (Nexus / Squid / Rockstar) on the Nihongo header, scoped to the `/apps/nihongo` route only. Synthesized `docs/DESIGN.md` as the source of truth for the in-house Nexus design system. Fixed billing proof upload hang (Vercel filesystem write) by switching to base64 data URL storage with proper error handling. Fixed Listening Indonesian translation not rendering by making the parser tolerant of `indonesia` keys nested in either object or per-line array shapes. |
 | RN-2026.05.06-003 | 2026-05-06 23:30 +09:00 | Nexus Platform Team | Completed | Repainted Nexus AI Nihongo with a dark + pink/teal Squid-Game-inspired theme using `[data-theme="squid"]` CSS overrides, swapped the Nihongo logo to `Nexustalenta.svg` with a glow treatment, and shrank the heading scale ~12-15% for tighter typography. |
 | RN-2026.05.06-002 | 2026-05-06 22:00 +09:00 | Nexus Platform Team | Completed | Improved Nihongo and Platform sidebar UX (smaller width, active route highlighting, mobile drawer auto-closes on navigation), added engaging route loaders, normalized AI Tutor opening copy to formal "saya". |
@@ -16,6 +17,118 @@
 | RN-2026.05.04-001 | 2026-05-04 01:10 +09:00 | Nexus Platform Team | Completed | Fixed character foundation lesson access and verified kana/kanji grids in localhost. |
 | RN-2026.05.03-002 | 2026-05-03 23:45 +09:00 | Nexus Platform Team | Completed | Added seedable Nihongo character content for kana, kanji, and vocabulary compounds, linked to lesson pages. |
 | RN-2026.05.03-001 | 2026-05-03 23:09 +09:00 | Nexus Platform Team | Release Candidate | Admin Operations Console, billing/trial foundation, recording visibility, architecture docs, and Ai-chan assistant foundation. |
+
+## RN-2026.05.07-002
+
+Completed Fast MVP AI Conversation Voice for Nexus AI Nihongo.
+
+### Background
+
+The existing AI Tutor only supports text chat. To unlock spoken
+practice for JLPT/JFT learners, we add a push-to-talk voice flow on
+top of the same tutor pipeline so the existing chat semantics, copy,
+and history mechanics stay intact. Voice round-trips call OpenAI
+Whisper + GPT-4.1-mini + ElevenLabs/OpenAI TTS, which is roughly 6×
+the cost of a text turn, so we cap trial learners at 5 voice
+conversations per day.
+
+### Included Changes
+
+- Added `POST /api/voice/transcribe` (`app/api/voice/transcribe/route.ts`).
+  Accepts `multipart/form-data` with field `audio`, validates session,
+  enforces the 5/day quota via `FeatureUsage.VOICE_CONVERSATION`,
+  rejects payloads above 5 MB or unsupported MIME, and returns
+  `{ text }` from OpenAI Whisper (`whisper-1`, configurable via
+  `OPENAI_TRANSCRIBE_MODEL`). Increments usage only on a successful
+  non-empty transcript so failed attempts don't burn quota. Admins
+  bypass the quota.
+- Added `POST /api/voice/speak` (`app/api/voice/speak/route.ts`).
+  Accepts `{ text }` (capped at 1200 chars), tries ElevenLabs first
+  when both `ELEVENLABS_API_KEY` and `ELEVENLABS_VOICE_ID` are
+  present, and falls back to OpenAI `gpt-4o-mini-tts` (configurable
+  via `OPENAI_TTS_MODEL`) otherwise. Returns `audio/mpeg` directly
+  with `X-Voice-Provider` set to `elevenlabs` or `openai`.
+- Extended `POST /api/apps/nihongo/tutor` to accept an optional
+  `mode: "text" | "voice"` body field. When `voice`, the system
+  prompt gains a spoken-style suffix that asks for short flowing
+  replies, no markdown, gentle mid-reply corrections, and a
+  one-sentence follow-up question to keep the conversation going.
+  Existing text callers without `mode` keep their current behavior.
+- Added `decideVoiceConversationAccess` and the `VOICE_CONVERSATION`
+  feature key to `lib/nexus/access-policy.ts` and
+  `lib/nexus/access-guards.ts`. New helper `canUseVoiceConversation`
+  reuses the existing `getOrCreateFeatureUsage` daily-window pattern
+  (period start = today midnight) so the quota auto-resets every
+  day with no cron required.
+- Added `components/apps/nihongo/TutorVoicePanel.tsx`. Push-to-talk
+  client component with a six-state machine
+  (`idle` / `recording` / `transcribing` / `thinking` / `speaking` /
+  `error`), animated mic-pulse while recording, animated dots while
+  transcribing or thinking, an inline error pill with a Tutup
+  button, and a Repeat button driven by the latest object URL.
+  Object URLs are revoked on replace and on unmount. If the browser
+  blocks autoplay, the panel surfaces a Tap to play Ai-chan voice
+  CTA.
+- Wired the panel into the AI Tutor page next to the Quick Prompts
+  card on desktop / above the chat input on mobile. The page
+  exposes a small `handleVoiceTranscript` callback so the panel
+  drives transcription and TTS while the page stays responsible
+  for chat history, exactly mirroring the text-chat append/error
+  shape.
+- Updated `.env.example` with the env keys needed for voice:
+  `OPENAI_API_KEY`, `OPENAI_TRANSCRIBE_MODEL`, `OPENAI_TTS_MODEL`,
+  `OPENAI_NIHONGO_TTS_VOICE`, `ELEVENLABS_API_KEY`,
+  `ELEVENLABS_VOICE_ID`, `ELEVENLABS_MODEL_ID`. Whitelisted the file
+  in `.gitignore` so it can be committed.
+- Persisted every AI Tutor turn (free chat + lesson chat, text + voice)
+  into `AnalyticsEvent.metadata` with `userMessage`, `assistantReply`,
+  `mode`, `scope`, `messageLength`, `replyLength`. No schema migration —
+  reuses the existing `metadata Json?` column.
+- Added `lib/analytics/keywordExtraction.ts` — multilingual tokenizer
+  (Indonesian + Japanese + English) with character-class transition
+  splitting for kanji/hiragana/katakana boundaries (no kuromoji
+  dependency), Indonesian + Japanese particle stop-word filtering,
+  and a top-N keyword counter.
+- Extended Admin Analytics (`/platform/admin/analytics`) with two
+  new panels:
+  - **AI Tutor Keywords — Pertanyaan Pelajar** — top topics
+    learners ask the tutor about. Shows mode breakdown
+    (text vs voice).
+  - **AI Tutor Keywords — Topik Jawaban Ai-chan** — top topics
+    Ai-chan most often teaches in her replies.
+  Both render as a tag cloud where size + color intensity scale
+  with frequency, with Japanese tokens rendered in Noto Sans JP.
+
+### Verification
+
+- `npx tsc --noEmit`: passed.
+- `npm test`: 6 policy tests passed (no Prisma touch needed).
+- Manual QA checklist (run on Preview before promoting to prod):
+  1. Text chat still answers via the existing flow (no regression).
+  2. Mic permission prompt fires the first time.
+  3. `🎙 Talk with Ai-chan` toggles to `⏹ Stop & Send` while
+     recording, with the rose-pulse ring active.
+  4. After Stop, transcript appears as a user bubble in the chat.
+  5. AI response appears as an assistant bubble.
+  6. Ai-chan voice auto-plays once the audio blob arrives.
+  7. `🔁 Repeat` replays the latest audio without making a new call.
+  8. Denying mic permission shows a friendly retry message.
+  9. Five round-trips succeed; the sixth returns HTTP 429 with the
+     `Kuota harian voice conversation Anda sudah habis` reason.
+  10. Mobile breakpoint: voice panel stacks above the chat,
+      Stop/Repeat buttons remain reachable with one thumb.
+
+### Known Notes
+
+- Voice quota counter resets at local midnight (server date
+  boundary) — same window logic the AI Tutor text quota uses.
+- ElevenLabs is preferred only when both env keys are present; if
+  ElevenLabs returns a non-2xx the route silently retries with
+  OpenAI TTS so users always hear a response.
+- No DB migration is required for this MVP — voice messages stream
+  through the existing chat history append. If we later want to
+  filter voice from text in transcripts, store a `metadata.voice`
+  flag on a future chat-message column.
 
 ## RN-2026.05.07-001
 

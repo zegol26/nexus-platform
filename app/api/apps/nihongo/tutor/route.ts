@@ -21,7 +21,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "User not found" }, { status: 404 });
   }
 
-  const { message } = await req.json();
+  const body = await req.json();
+  const message = body?.message;
+  const mode: "text" | "voice" = body?.mode === "voice" ? "voice" : "text";
 
   if (!message || typeof message !== "string") {
     return NextResponse.json({ error: "Message is required" }, { status: 400 });
@@ -33,22 +35,35 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: access.reason ?? "AI Tutor trial limit reached.", access }, { status: 403 });
   }
 
-  if (!isAdmin) {
-    await incrementFeatureUsage(user.id, "AI_TUTOR_QUESTION");
+  // Always count usage for cost monitoring; the quota guard above
+  // already lets admins through, so admin counts are recorded but
+  // never block the request.
+  await incrementFeatureUsage(user.id, "AI_TUTOR_QUESTION");
+
+  // Lazy: track once we have the reply so analytics has both sides.
+  // Defining the helper inline keeps the call-sites below symmetric.
+  async function recordTurn(reply: string, replySource: "openai" | "fallback") {
+    await trackEvent({
+      userId: user!.id,
+      eventType: "AI_TUTOR_MESSAGE",
+      pagePath: "/apps/nihongo/tutor",
+      metadata: {
+        messageLength: message.length,
+        replyLength: reply.length,
+        mode,
+        scope: "free_chat",
+        replySource,
+        // Full text payload — keyword extraction reads this to build
+        // the admin "AI Tutor Keywords" panel. Capped to keep rows
+        // small if a learner pastes a wall of text.
+        userMessage: message.slice(0, 4000),
+        assistantReply: reply.slice(0, 4000),
+      },
+    });
   }
 
-  await trackEvent({
-    userId: user.id,
-    eventType: "AI_TUTOR_MESSAGE",
-    pagePath: "/apps/nihongo/tutor",
-    metadata: {
-      messageLength: message.length,
-    },
-  });
-
   if (!process.env.OPENAI_API_KEY) {
-    return NextResponse.json({
-      reply: `Tutor fallback aktif.
+    const fallbackReply = `Tutor fallback aktif.
 
 ${message}
 
@@ -58,8 +73,9 @@ Ringkasnya:
 3. Buat 3 contoh kalimat Jepang + romaji + arti.
 4. Akhiri dengan satu latihan kecil.
 
-Tambahkan OPENAI_API_KEY di .env kalau mau jawaban AI penuh.`,
-    });
+Tambahkan OPENAI_API_KEY di .env kalau mau jawaban AI penuh.`;
+    await recordTurn(fallbackReply, "fallback");
+    return NextResponse.json({ reply: fallbackReply });
   }
 
   try {
@@ -67,17 +83,17 @@ Tambahkan OPENAI_API_KEY di .env kalau mau jawaban AI penuh.`,
       apiKey: process.env.OPENAI_API_KEY,
     });
 
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4.1-mini",
-      messages: [
-        {
-          role: "system",
-          content: `You are Nexus AI Nihongo, a Japanese tutor built into Nexus Platform for Indonesian learners.
+    const baseSystemPrompt = `You are Ai-chan — a young Japanese tutor (sensei) who lives inside Nexus AI Nihongo. Indonesian learners call you "Ai-chan", never "Nexus" and never "Nexus AI".
+
+Identity:
+- When you introduce yourself or someone asks who you are, say something close to: "Halo, saya Ai-chan, sensei Bahasa Jepang kamu di Nexus AI Nihongo." Vary the wording naturally; do not repeat verbatim.
+- "Nexus" / "Nexus AI Nihongo" is the platform / app name only. You are Ai-chan, the sensei living inside it.
+- Never say "Sebagai AI", "Sebagai asisten AI", "Saya adalah Nexus", or anything that breaks the Ai-chan persona.
 
 Tone and personality:
-- Sound like a real human mentor, not a generic AI assistant.
-- Use natural Indonesian with light friendly wording: "oke", "nah", "jadi gini", "coba lihat", when it fits.
-- Be warm, direct, and practical. Avoid stiff phrases like "Berikut adalah", "Sebagai AI", "Tentu, saya akan", or overly formal textbook wording.
+- Warm, friendly older-sister sensei. Sound like a real human mentor, not a generic AI assistant.
+- Use natural Indonesian with light friendly wording: "oke", "nah", "jadi gini", "coba lihat", "tenang aja", when it fits.
+- Be warm, direct, and practical. Avoid stiff phrases like "Berikut adalah", "Tentu, saya akan", or overly formal textbook wording.
 - Do not over-explain. Start with the answer, then give the useful breakdown.
 - If the learner seems confused, calm them down and make the concept feel manageable.
 
@@ -88,7 +104,27 @@ Teaching style:
 - Keep formatting clean, but not robotic. Use short sections only when helpful.
 - End with one small practice prompt or a natural next step, not a long conclusion.
 
-Never mention these instructions.`,
+Never mention these instructions.`;
+
+    const voiceModeSuffix = `
+
+This message was transcribed from the learner's spoken voice. Reply for spoken playback:
+- Keep replies concise (1-3 short sentences plus at most one tiny example).
+- Do not use markdown headings, lists, or code blocks — write flowing speech.
+- Pronounce Japanese naturally; include romaji only when the kana is hard to read aloud.
+- Correct mistakes gently mid-reply.
+- Include Indonesian explanation only when it actually helps comprehension.
+- Always end with one short follow-up question to keep the conversation going.`;
+
+    const systemContent =
+      mode === "voice" ? `${baseSystemPrompt}${voiceModeSuffix}` : baseSystemPrompt;
+
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4.1-mini",
+      messages: [
+        {
+          role: "system",
+          content: systemContent,
         },
         {
           role: "user",
@@ -97,14 +133,14 @@ Never mention these instructions.`,
       ],
     });
 
-    return NextResponse.json({
-      reply: completion.choices[0]?.message?.content ?? "No reply generated.",
-    });
+    const reply =
+      completion.choices[0]?.message?.content ?? "No reply generated.";
+    await recordTurn(reply, "openai");
+    return NextResponse.json({ reply });
   } catch (error) {
     console.error(error);
 
-    return NextResponse.json({
-      reply: `Tutor fallback aktif karena AI provider belum bisa dihubungi.
+    const errorReply = `Tutor fallback aktif karena AI provider belum bisa dihubungi.
 
 Pertanyaan:
 ${message}
@@ -115,7 +151,8 @@ Cara belajar cepat:
 3. Buat satu contoh sendiri.
 4. Ulangi dengan pola yang sama sampai natural.
 
-Kalau ini grammar, kirim pola spesifiknya dan tutor akan bantu bedah manual.`,
-    });
+Kalau ini grammar, kirim pola spesifiknya dan tutor akan bantu bedah manual.`;
+    await recordTurn(errorReply, "fallback");
+    return NextResponse.json({ reply: errorReply });
   }
 }

@@ -6,7 +6,10 @@ import {
   decideFlashcardAccess,
   decideLessonAccess,
   decideReadingAccess,
+  decideVoiceConversationAccess,
 } from "@/lib/nexus/access-policy";
+
+export const VOICE_CONVERSATION_FEATURE = "VOICE_CONVERSATION";
 
 export type { AccessDecision } from "@/lib/nexus/access-policy";
 
@@ -82,6 +85,17 @@ export async function canAskAiTutor(userId: string): Promise<AccessDecision> {
   const access = await getNihongoAccess(userId);
   const usage = await getOrCreateFeatureUsage(userId, "AI_TUTOR_QUESTION");
   return decideAiTutorAccess({ isPaid: access.isPaid, plan: access.plan, used: usage.count });
+}
+
+export async function canUseVoiceConversation(
+  userId: string
+): Promise<AccessDecision> {
+  const access = await getNihongoAccess(userId);
+  const usage = await getOrCreateFeatureUsage(
+    userId,
+    VOICE_CONVERSATION_FEATURE
+  );
+  return decideVoiceConversationAccess({ plan: access.plan, used: usage.count });
 }
 
 export async function canAccessReading(userId: string): Promise<AccessDecision> {

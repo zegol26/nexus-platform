@@ -8,6 +8,10 @@ import {
   AnalyticsKpiGrid,
   AnalyticsPanel,
 } from "@/components/platform/analytics/AnalyticsPrimitives";
+import {
+  extractKeywords,
+  type KeywordCount,
+} from "@/lib/analytics/keywordExtraction";
 
 export const dynamic = "force-dynamic";
 
@@ -39,6 +43,21 @@ type QuizMetadata = {
     lessonId?: string;
     questionType?: string;
   }>;
+};
+
+type TutorMetadata = {
+  userMessage?: string;
+  assistantReply?: string;
+  mode?: "text" | "voice";
+  scope?: "free_chat" | "lesson";
+};
+
+type TutorKeywordPanel = {
+  fromUser: KeywordCount[];
+  fromAssistant: KeywordCount[];
+  totalTurns: number;
+  voiceTurns: number;
+  textTurns: number;
 };
 
 export default async function PlatformAdminAnalyticsPage() {
@@ -141,6 +160,30 @@ export default async function PlatformAdminAnalyticsPage() {
             </div>
           ) : (
             <AnalyticsEmptyState label="No curriculum analytics yet." />
+          )}
+        </AnalyticsPanel>
+      </div>
+
+      <div className="grid gap-6 xl:grid-cols-2">
+        <AnalyticsPanel
+          title="AI Tutor Keywords — Pertanyaan Pelajar"
+          description={`Top keyword dari ${analytics.tutorKeywords.totalTurns} percakapan tutor (${analytics.tutorKeywords.textTurns} chat · ${analytics.tutorKeywords.voiceTurns} voice).`}
+        >
+          {analytics.tutorKeywords.fromUser.length ? (
+            <KeywordCloud rows={analytics.tutorKeywords.fromUser} />
+          ) : (
+            <AnalyticsEmptyState label="Belum ada pertanyaan tutor untuk dianalisis." />
+          )}
+        </AnalyticsPanel>
+
+        <AnalyticsPanel
+          title="AI Tutor Keywords — Topik Jawaban Ai-chan"
+          description="Top keyword dari jawaban Ai-chan — gambaran materi yang paling sering diajarkan."
+        >
+          {analytics.tutorKeywords.fromAssistant.length ? (
+            <KeywordCloud rows={analytics.tutorKeywords.fromAssistant} />
+          ) : (
+            <AnalyticsEmptyState label="Belum ada jawaban tutor untuk dianalisis." />
           )}
         </AnalyticsPanel>
       </div>
@@ -287,6 +330,8 @@ async function getCoreAnalytics() {
     };
   });
 
+  const tutorKeywords = await getTutorKeywordPanel();
+
   return {
     kpis: [
       { label: "Total users", value: totalUsers },
@@ -307,6 +352,76 @@ async function getCoreAnalytics() {
     ]),
     curriculum,
     weaknesses: buildWeaknessRows(quizEvents.map((event) => event.metadata)),
+    tutorKeywords,
+  };
+}
+
+function KeywordCloud({ rows }: { rows: KeywordCount[] }) {
+  const max = Math.max(...rows.map((row) => row.count), 1);
+  return (
+    <div className="flex flex-wrap gap-2">
+      {rows.map((row) => {
+        const intensity = 0.4 + (row.count / max) * 0.6; // 40% – 100%
+        return (
+          <span
+            key={row.keyword}
+            className="rounded-full px-3 py-1.5 text-sm font-semibold"
+            style={{
+              backgroundColor: `rgba(59, 130, 246, ${intensity * 0.18})`,
+              color: row.isJapanese ? "#0e7490" : "#1e3a8a",
+              fontFamily: row.isJapanese
+                ? "'Noto Sans JP', 'Inter', sans-serif"
+                : undefined,
+              fontSize: `${0.85 + (row.count / max) * 0.5}rem`,
+            }}
+            title={`${row.keyword} — disebut ${row.count}x`}
+          >
+            {row.keyword}
+            <span className="ml-1.5 text-[10px] font-normal opacity-70">
+              {row.count}
+            </span>
+          </span>
+        );
+      })}
+    </div>
+  );
+}
+
+async function getTutorKeywordPanel(): Promise<TutorKeywordPanel> {
+  // Pull recent tutor turns. 1500 events ≈ 4-6 weeks of activity for
+  // a small cohort; cap to stay under the typical Vercel function
+  // memory budget when extracting tokens in-process.
+  const events = await prisma.analyticsEvent.findMany({
+    where: { eventType: "AI_TUTOR_MESSAGE" },
+    select: { metadata: true },
+    orderBy: { createdAt: "desc" },
+    take: 1500,
+  });
+
+  const userTexts: string[] = [];
+  const assistantTexts: string[] = [];
+  let voiceTurns = 0;
+  let textTurns = 0;
+
+  for (const event of events) {
+    const meta = event.metadata as TutorMetadata | null;
+    if (!meta) continue;
+    if (typeof meta.userMessage === "string" && meta.userMessage.trim()) {
+      userTexts.push(meta.userMessage);
+    }
+    if (typeof meta.assistantReply === "string" && meta.assistantReply.trim()) {
+      assistantTexts.push(meta.assistantReply);
+    }
+    if (meta.mode === "voice") voiceTurns += 1;
+    else textTurns += 1;
+  }
+
+  return {
+    fromUser: extractKeywords(userTexts, { topN: 30, minLength: 2 }),
+    fromAssistant: extractKeywords(assistantTexts, { topN: 30, minLength: 2 }),
+    totalTurns: events.length,
+    voiceTurns,
+    textTurns,
   };
 }
 

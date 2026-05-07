@@ -1,5 +1,71 @@
 # Release Notes
 
+## [vNext] - Fast MVP AI Conversation Voice
+
+### Added
+
+- **Push-to-talk voice on the AI Tutor page**. New `TutorVoicePanel`
+  client component with a six-state machine (idle / recording /
+  transcribing / thinking / speaking / error), animated mic pulse,
+  animated dots, friendly retry messaging, and a Repeat button.
+- **`POST /api/voice/transcribe`** — multipart audio in, `{ text }`
+  out via OpenAI Whisper. Validates session, caps payload at 5 MB,
+  rejects unsupported MIMEs.
+- **`POST /api/voice/speak`** — `{ text }` in, `audio/mpeg` out.
+  Tries ElevenLabs first when `ELEVENLABS_API_KEY` and
+  `ELEVENLABS_VOICE_ID` are set, falls back to OpenAI
+  `gpt-4o-mini-tts`. Caps text at 1200 characters.
+- **`mode: "voice"` for the AI Tutor endpoint** — when set, the
+  system prompt gains a spoken-style suffix asking for short
+  flowing replies, gentle mid-reply corrections, and a
+  one-sentence follow-up question. Text mode is unchanged.
+- **5 voice conversations/day quota** for trial learners, tracked
+  via `FeatureUsage.VOICE_CONVERSATION` (counted per successful
+  transcribe). Admins bypass the quota.
+- **AI Tutor chat persistence + keyword analytics**. Every tutor
+  turn (free chat + lesson chat, text + voice) now writes its user
+  message and assistant reply into `AnalyticsEvent.metadata`. No
+  schema migration. Two new admin panels at
+  `/platform/admin/analytics` extract and display the top keywords
+  from learner questions and from Ai-chan's replies via a
+  multilingual tokenizer (Indonesian + Japanese particle stop-words,
+  kanji/hiragana/katakana boundary splitting; no kuromoji
+  dependency).
+- `.env.example` documenting `OPENAI_API_KEY`,
+  `OPENAI_TRANSCRIBE_MODEL`, `OPENAI_TTS_MODEL`,
+  `OPENAI_NIHONGO_TTS_VOICE`, `ELEVENLABS_API_KEY`,
+  `ELEVENLABS_VOICE_ID`, `ELEVENLABS_MODEL_ID`.
+
+### Changed
+
+- `app/apps/nihongo/tutor/page.tsx` now renders `TutorVoicePanel`
+  in the right rail. Voice transcripts are appended to the same
+  chat history as text messages so existing scroll, copy, and
+  styling apply unchanged.
+- `lib/nexus/access-policy.ts` exports
+  `decideVoiceConversationAccess` and a
+  `VOICE_CONVERSATION_DAILY_LIMIT` constant.
+- `lib/nexus/access-guards.ts` exports `canUseVoiceConversation`
+  and the `VOICE_CONVERSATION_FEATURE` key.
+
+### Tested
+
+- `npx tsc --noEmit`
+- `npm test` (6 tests)
+- Manual QA checklist documented in
+  `app/admin/architecture/RELEASE_NOTES.md` under
+  RN-2026.05.07-002.
+
+### Known Limitations
+
+- No DB schema change. Voice messages flow through the existing
+  chat append path; if we later want to filter voice from text in
+  transcripts, store a `metadata.voice` flag on a future
+  chat-message column.
+- The Whisper hint defaults to `language: "ja"` which improves
+  Japanese accuracy but may slightly degrade pure-Indonesian
+  utterances. Tune via `OPENAI_TRANSCRIBE_MODEL` env if needed.
+
 ## [vNext] - Nihongo Theme Toggle, DESIGN.md, Billing + Listening Hotfixes
 
 ### Added

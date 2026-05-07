@@ -65,20 +65,9 @@ export async function POST(
     },
   });
 
-  if (!isAdmin) {
-    await incrementFeatureUsage(user.id, "AI_TUTOR_QUESTION");
-  }
-
-  await trackEvent({
-    userId: user.id,
-    eventType: "AI_TUTOR_MESSAGE",
-    lessonId,
-    pagePath: `/apps/nihongo/curriculum/${lessonId}`,
-    metadata: {
-      messageLength: body.message.length,
-      scope: "lesson",
-    },
-  });
+  // Count usage for everyone (admin included) so the cost dashboard
+  // sees admin chats too. Quota gating above already exempts admins.
+  await incrementFeatureUsage(user.id, "AI_TUTOR_QUESTION");
 
   const reply = await buildTutorReply({
     message: body.message,
@@ -96,6 +85,25 @@ export async function POST(
       userId: user.id,
       role: "assistant",
       content: reply,
+    },
+  });
+
+  // Persist the full turn into AnalyticsEvent so the admin keyword
+  // panel can mine both the learner question and the AI reply
+  // alongside free-chat tutor turns. Capped per side to keep rows
+  // small if a learner pastes a long block.
+  await trackEvent({
+    userId: user.id,
+    eventType: "AI_TUTOR_MESSAGE",
+    lessonId,
+    pagePath: `/apps/nihongo/curriculum/${lessonId}`,
+    metadata: {
+      messageLength: body.message.length,
+      replyLength: reply.length,
+      mode: "text",
+      scope: "lesson",
+      userMessage: body.message.slice(0, 4000),
+      assistantReply: reply.slice(0, 4000),
     },
   });
 

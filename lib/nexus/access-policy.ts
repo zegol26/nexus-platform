@@ -1,6 +1,14 @@
 export const TRIAL_LESSON_LIMIT = 5;
 export const TRIAL_FLASHCARD_LIMIT = 20;
 export const TRIAL_AI_TUTOR_LIMIT = 2;
+/**
+ * Cap on AI voice conversations per learner per day. Voice
+ * conversations call OpenAI Whisper + tutor + ElevenLabs/OpenAI TTS
+ * back-to-back, which is roughly 6× the cost of a text turn, so
+ * trial learners get 5 round-trips/day before the UI nudges them
+ * to upgrade.
+ */
+export const VOICE_CONVERSATION_DAILY_LIMIT = 5;
 
 export type AccessDecision = {
   allowed: boolean;
@@ -67,6 +75,25 @@ export function decideAiTutorAccess({
     limit: TRIAL_AI_TUTOR_LIMIT,
     used,
     reason: allowed ? undefined : "Trial AI Tutor limit reached.",
+  };
+}
+
+export function decideVoiceConversationAccess({
+  plan,
+  used,
+}: {
+  plan: string;
+  used: number;
+}): AccessDecision {
+  const allowed = used < VOICE_CONVERSATION_DAILY_LIMIT;
+  return {
+    allowed,
+    plan,
+    limit: VOICE_CONVERSATION_DAILY_LIMIT,
+    used,
+    reason: allowed
+      ? undefined
+      : `Kuota harian voice conversation Anda sudah habis (${VOICE_CONVERSATION_DAILY_LIMIT} percakapan/hari). Coba lagi besok ya.`,
   };
 }
 
