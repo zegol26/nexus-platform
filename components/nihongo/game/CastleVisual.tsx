@@ -1,132 +1,137 @@
+import Image from "next/image";
+import { getCastleStage } from "@/lib/game/castle-stages";
+import type { HeroAura } from "@/lib/game/config";
+
 type CastleVisualProps = {
   castleLevel: number;
-  stage: string;
+  stage?: string;
   compact?: boolean;
+  hero?: {
+    name: string;
+    image?: string;
+    aura?: HeroAura | string;
+    title?: string;
+  };
 };
 
-const stageComplexity = [
-  { min: 1, houses: 0, towers: 0, keep: false, crown: false },
-  { min: 5, houses: 1, towers: 0, keep: false, crown: false },
-  { min: 10, houses: 1, towers: 0, keep: false, crown: false },
-  { min: 20, houses: 3, towers: 0, keep: false, crown: false },
-  { min: 35, houses: 2, towers: 1, keep: false, crown: false },
-  { min: 50, houses: 2, towers: 2, keep: true, crown: false },
-  { min: 65, houses: 4, towers: 2, keep: true, crown: false },
-  { min: 80, houses: 4, towers: 3, keep: true, crown: false },
-  { min: 95, houses: 5, towers: 4, keep: true, crown: true },
-];
+const auraColors: Record<string, { primary: string; secondary: string; ring: string }> = {
+  cyan: { primary: "rgba(34,211,238,0.7)", secondary: "rgba(14,165,233,0.4)", ring: "rgba(125,211,252,0.7)" },
+  rose: { primary: "rgba(244,63,94,0.7)", secondary: "rgba(239,68,68,0.4)", ring: "rgba(253,164,175,0.7)" },
+  emerald: { primary: "rgba(16,185,129,0.7)", secondary: "rgba(5,150,105,0.4)", ring: "rgba(110,231,183,0.7)" },
+  violet: { primary: "rgba(168,85,247,0.7)", secondary: "rgba(139,92,246,0.4)", ring: "rgba(216,180,254,0.7)" },
+  amber: { primary: "rgba(251,191,36,0.75)", secondary: "rgba(245,158,11,0.45)", ring: "rgba(253,224,71,0.75)" },
+};
 
-export function CastleVisual({ castleLevel, stage, compact = false }: CastleVisualProps) {
-  const visual = stageComplexity.reduce(
-    (current, item) => (castleLevel >= item.min ? item : current),
-    stageComplexity[0]
-  );
+export function CastleVisual({ castleLevel, stage, compact = false, hero }: CastleVisualProps) {
+  const level = Math.min(Math.max(Math.round(castleLevel), 1), 10);
+  const stageMeta = getCastleStage(level);
+  const label = stage ?? stageMeta.name;
+  const aura = auraColors[(hero?.aura as string) ?? "cyan"] ?? auraColors.cyan;
+  const castleSrc = `/Castle/${stageMeta.name}.png`;
 
   return (
     <div
-      className={`castle-animate relative overflow-hidden rounded-3xl border border-cyan-100 bg-gradient-to-b from-sky-100 via-cyan-50 to-emerald-50 shadow-inner ${
-        compact ? "h-52" : "h-72 sm:h-80"
+      className={`castle-animate relative overflow-hidden rounded-3xl border border-amber-300/30 shadow-inner ${
+        compact ? "h-64" : "h-[22rem] sm:h-[26rem] lg:h-[30rem]"
       }`}
-      aria-label={`Nexus Kingdom castle visual: ${stage}, level ${castleLevel}`}
+      aria-label={`Nexus Kingdom castle: ${label}, level ${level}`}
+      style={{
+        background:
+          "radial-gradient(120% 80% at 50% 0%, rgba(56,189,248,0.18) 0%, transparent 55%), linear-gradient(180deg, #0b1228 0%, #1e1b4b 60%, #0c2a3a 100%)",
+      }}
     >
-      <div className="castle-cloud absolute left-6 top-8 h-5 w-16 rounded-full bg-white/80 shadow-sm" />
-      <div className="castle-cloud castle-cloud-slow absolute right-12 top-14 h-4 w-20 rounded-full bg-white/70 shadow-sm" />
-      <div className="absolute inset-x-0 bottom-0 h-24 rounded-t-[50%] bg-gradient-to-b from-emerald-200 to-emerald-400" />
-      <div className="absolute bottom-10 left-1/2 h-16 w-[88%] -translate-x-1/2 rounded-t-full bg-emerald-300/70" />
+      <span className="castle-cloud absolute left-6 top-6 h-4 w-14 rounded-full bg-white/30 blur-sm" />
+      <span className="castle-cloud castle-cloud-slow absolute right-10 top-12 h-3 w-20 rounded-full bg-white/20 blur-sm" />
+      <span className="absolute left-1/2 top-10 h-32 w-32 -translate-x-1/2 rounded-full bg-amber-300/10 blur-3xl" />
+      <span className="absolute inset-x-6 bottom-10 h-12 rounded-[50%] bg-emerald-900/40 blur-xl" />
 
-      {visual.crown ? (
-        <div className="castle-sparkle absolute left-1/2 top-8 h-16 w-16 -translate-x-1/2 rounded-full bg-amber-200/30 blur-xl" />
+      <div
+        className={`pointer-events-none absolute ${
+          compact ? "inset-x-1 top-[7%] bottom-1" : "inset-x-2 top-[7%] bottom-2"
+        }`}
+      >
+        <Image
+          src={castleSrc}
+          alt={`Castle ${stageMeta.name}`}
+          fill
+          sizes="(max-width: 640px) 100vw, 900px"
+          quality={95}
+          className="object-contain object-bottom drop-shadow-[0_24px_34px_rgba(15,23,42,0.75)]"
+          priority
+        />
+      </div>
+
+      {hero?.image ? (
+        <div
+          className={`pointer-events-none absolute hero-float-bounce ${
+            compact ? "bottom-2 left-2 h-56 w-36" : "bottom-3 left-2 h-[18rem] w-52 sm:bottom-4 sm:left-3 sm:h-[22rem] sm:w-64 lg:h-[26rem] lg:w-72"
+          }`}
+          aria-hidden="true"
+        >
+          <span
+            className="absolute inset-x-3 bottom-1 h-4 rounded-[50%] hero-shadow"
+            style={{ background: `radial-gradient(ellipse at center, ${aura.secondary}, transparent 70%)` }}
+          />
+          <span
+            className="absolute inset-0 hero-aura-soft"
+            style={{
+              background: `radial-gradient(58% 50% at 50% 55%, ${aura.primary} 0%, transparent 70%)`,
+              filter: "blur(22px)",
+            }}
+          />
+          <span
+            className="absolute inset-x-4 bottom-4 top-6 rounded-full hero-aura-pulse"
+            style={{ boxShadow: `0 0 80px 30px ${aura.primary}, inset 0 0 70px ${aura.secondary}` }}
+          />
+          <svg
+            className="absolute inset-x-2 bottom-1 h-20 w-[calc(100%-1rem)] hero-runes"
+            viewBox="0 0 200 80"
+            fill="none"
+            aria-hidden="true"
+          >
+            <ellipse cx="100" cy="60" rx="80" ry="14" stroke={aura.ring} strokeWidth="0.8" strokeDasharray="3 5" />
+            <ellipse cx="100" cy="60" rx="60" ry="10" stroke={aura.ring} strokeWidth="0.6" strokeDasharray="1 3" opacity="0.7" />
+          </svg>
+          <span
+            className="hero-spark absolute left-[18%] top-[28%] h-1.5 w-1.5 rounded-full"
+            style={{ background: aura.ring, boxShadow: `0 0 12px ${aura.primary}` }}
+          />
+          <span
+            className="hero-spark hero-spark-delay absolute right-[14%] top-[42%] h-1 w-1 rounded-full"
+            style={{ background: aura.ring, boxShadow: `0 0 10px ${aura.primary}` }}
+          />
+          <span
+            className="hero-spark hero-spark-delay-2 absolute left-[60%] top-[18%] h-1 w-1 rounded-full"
+            style={{ background: aura.ring, boxShadow: `0 0 10px ${aura.primary}` }}
+          />
+          <Image
+            src={hero.image}
+            alt={hero.name}
+            fill
+            sizes="(max-width: 640px) 176px, 320px"
+            quality={95}
+            className="object-contain object-bottom"
+            style={{
+              filter: `drop-shadow(0 22px 28px rgba(0,0,0,0.65)) drop-shadow(0 0 22px ${aura.primary})`,
+            }}
+            priority
+          />
+        </div>
       ) : null}
 
-      <svg
-        viewBox="0 0 420 260"
-        className="absolute inset-x-0 bottom-8 mx-auto h-[78%] max-w-[420px] drop-shadow-xl"
-        role="img"
-        aria-hidden="true"
-      >
-        <defs>
-          <linearGradient id="castleWall" x1="0" x2="1">
-            <stop offset="0%" stopColor="#f8fafc" />
-            <stop offset="100%" stopColor="#cbd5e1" />
-          </linearGradient>
-          <linearGradient id="castleRoof" x1="0" x2="1">
-            <stop offset="0%" stopColor="#0f172a" />
-            <stop offset="100%" stopColor="#155e75" />
-          </linearGradient>
-        </defs>
-
-        {visual.houses === 0 ? (
-          <>
-            <rect x="160" y="190" width="100" height="12" rx="4" fill="#94a3b8" />
-            <rect x="176" y="172" width="68" height="18" rx="3" fill="#d97706" />
-            <path d="M170 172h80l-12-18h-56z" fill="#92400e" />
-            <text x="210" y="185" textAnchor="middle" fontSize="10" fill="#fff7ed">
-              START
-            </text>
-          </>
-        ) : null}
-
-        {Array.from({ length: visual.houses }).map((_, index) => {
-          const x = 74 + index * 58;
-          const y = index % 2 === 0 ? 186 : 198;
-          return (
-            <g key={`house-${index}`}>
-              <rect x={x} y={y} width="44" height="30" rx="4" fill="#f8fafc" />
-              <path d={`M${x - 5} ${y}h54l-27-24z`} fill={index % 2 ? "#0f766e" : "#334155"} />
-              <rect className="castle-window" x={x + 16} y={y + 11} width="10" height="10" rx="2" fill="#fde68a" />
-            </g>
-          );
-        })}
-
-        {visual.towers > 0 ? (
-          <rect x="102" y="142" width="216" height="76" rx="8" fill="url(#castleWall)" stroke="#94a3b8" />
-        ) : null}
-
-        {Array.from({ length: visual.towers }).map((_, index) => {
-          const positions = [112, 270, 72, 320];
-          const x = positions[index] ?? 112 + index * 54;
-          const height = index > 1 ? 88 : 72;
-          const y = 218 - height;
-          return (
-            <g key={`tower-${index}`}>
-              <rect x={x} y={y} width="38" height={height} rx="5" fill="url(#castleWall)" stroke="#94a3b8" />
-              <path d={`M${x - 10} ${y}h58l-29-30z`} fill="url(#castleRoof)" />
-              <rect className="castle-window" x={x + 13} y={y + 28} width="12" height="16" rx="2" fill="#fde68a" />
-              <path className="castle-flag" d={`M${x + 19} ${y - 30}v-22l27 8-27 8`} fill="#ef4444" />
-            </g>
-          );
-        })}
-
-        {visual.keep ? (
-          <g>
-            <rect x="170" y="102" width="80" height="116" rx="7" fill="#f8fafc" stroke="#94a3b8" />
-            <rect x="182" y="72" width="56" height="38" rx="5" fill="#e2e8f0" stroke="#94a3b8" />
-            <path d="M154 104h112l-56-36z" fill="url(#castleRoof)" />
-            <path d="M172 72h76l-38-28z" fill="url(#castleRoof)" />
-            <rect className="castle-window" x="192" y="128" width="12" height="18" rx="2" fill="#fde68a" />
-            <rect className="castle-window" x="218" y="128" width="12" height="18" rx="2" fill="#fde68a" />
-            <rect x="198" y="178" width="24" height="40" rx="10" fill="#475569" />
-            <path d="M146 224h128" stroke="#0f172a" strokeWidth="7" strokeLinecap="round" />
-            <path d="M210 44v-26" stroke="#334155" strokeWidth="4" strokeLinecap="round" />
-            <path className="castle-flag" d="M212 18l36 10-36 12z" fill="#f59e0b" />
-          </g>
-        ) : null}
-
-        {visual.crown ? (
-          <g className="castle-sparkle">
-            <path d="M188 34l14 14 8-22 10 22 14-14-4 34h-38z" fill="#facc15" stroke="#b45309" />
-            <circle cx="210" cy="24" r="5" fill="#fef3c7" />
-          </g>
-        ) : null}
-
-        <path d="M56 220h308" stroke="#047857" strokeWidth="10" strokeLinecap="round" />
-        <path d="M330 209h32v-36h28v36" fill="none" stroke="#dc2626" strokeWidth="6" strokeLinecap="round" />
-        <path d="M338 174h44" stroke="#dc2626" strokeWidth="6" strokeLinecap="round" />
-      </svg>
-
-      <div className="absolute bottom-4 left-4 rounded-full border border-white/70 bg-white/80 px-3 py-1 text-xs font-semibold text-slate-700 shadow-sm">
-        {stage}
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-full border border-amber-300/40 bg-slate-950/80 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-amber-200 shadow-lg shadow-slate-950/40 backdrop-blur sm:left-auto sm:right-3 sm:translate-x-0">
+        <span className="inline-block h-1.5 w-1.5 rounded-full bg-amber-300" />
+        Lv {level} · {label}
       </div>
+      <div className="absolute right-3 top-3 rounded-full border border-cyan-300/30 bg-slate-950/60 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-200">
+        {stageMeta.era}
+      </div>
+      {hero?.name ? (
+        <div className="absolute left-3 top-3 max-w-[55%] rounded-full border border-amber-300/40 bg-slate-950/70 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-amber-100 shadow-lg shadow-slate-950/40 backdrop-blur">
+          <span className="block truncate">{hero.name}</span>
+          {hero.title ? <span className="block truncate text-[9px] font-semibold tracking-[0.18em] text-amber-200/70">{hero.title}</span> : null}
+        </div>
+      ) : null}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getGameUser } from "@/lib/game/auth";
-import { attackKingdom } from "@/lib/game/service";
+import { attackKingdom, BattleActionError } from "@/lib/game/service";
 
 export const runtime = "nodejs";
 
@@ -12,6 +12,15 @@ export async function POST(request: Request) {
   try {
     return NextResponse.json({ battle: await attackKingdom(user.id, targetKingdomId) });
   } catch (error) {
-    return NextResponse.json({ error: error instanceof Error ? error.message : "Battle gagal." }, { status: 400 });
+    if (error instanceof BattleActionError) {
+      return NextResponse.json(
+        { error: error.message, code: error.code, meta: error.meta ?? null },
+        { status: 400 }
+      );
+    }
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : "Battle gagal." },
+      { status: 400 }
+    );
   }
 }

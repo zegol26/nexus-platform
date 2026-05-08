@@ -18,6 +18,22 @@ import {
 type RewardType = keyof typeof learningRewards;
 type ConversionKey = keyof typeof conversions;
 
+export type BattleActionErrorCode =
+  | "INVALID_TARGET"
+  | "SHIELD_ACTIVE"
+  | "COOLDOWN_ACTIVE";
+
+export class BattleActionError extends Error {
+  code: BattleActionErrorCode;
+  meta?: Record<string, unknown>;
+  constructor(code: BattleActionErrorCode, message: string, meta?: Record<string, unknown>) {
+    super(message);
+    this.name = "BattleActionError";
+    this.code = code;
+    this.meta = meta;
+  }
+}
+
 export async function getOrCreateGameKingdom(userId: string) {
   const existing = await prisma.gameKingdom.findUnique({
     where: { userId },
@@ -33,6 +49,7 @@ export async function getOrCreateGameKingdom(userId: string) {
 
   const continent = await assignContinent();
   const name = user.name?.trim() || `${user.email.split("@")[0]} Kingdom`;
+  const initialHero = heroes[Math.floor(Math.random() * heroes.length)].key;
 
   try {
     const kingdom = await prisma.gameKingdom.create({
@@ -40,6 +57,7 @@ export async function getOrCreateGameKingdom(userId: string) {
         userId,
         name,
         continent,
+        heroKey: initialHero,
         resourcesJson: initialResources as Prisma.InputJsonValue,
         armyUnits: {
           create: [
@@ -70,6 +88,8 @@ export async function getOrCreateGameKingdom(userId: string) {
   }
 }
 
+export const CONTINENT_CAPACITY = 5;
+
 export async function assignContinent() {
   const grouped = await prisma.gameKingdom.groupBy({
     by: ["continent"],
@@ -77,11 +97,69 @@ export async function assignContinent() {
   });
   const counts = new Map(grouped.map((item) => [item.continent, item._count.continent]));
 
+  // First open seat in any base continent.
   for (const continent of continents) {
-    if ((counts.get(continent) ?? 0) < 10) return continent;
+    if ((counts.get(continent) ?? 0) < CONTINENT_CAPACITY) return continent;
   }
 
-  return [...continents].sort((a, b) => (counts.get(a) ?? 0) - (counts.get(b) ?? 0))[0];
+  // All bases full — open a new variant ("II", "III", ...) per base.
+  for (let variant = 2; variant < 1000; variant += 1) {
+    for (const base of continents) {
+      const variantName = `${base} ${toRoman(variant)}`;
+      if ((counts.get(variantName) ?? 0) < CONTINENT_CAPACITY) return variantName;
+    }
+  }
+
+  // Safety fallback (should not reach).
+  return continents[0];
+}
+
+function toRoman(num: number) {
+  const map: Array<[number, string]> = [
+    [1000, "M"],
+    [900, "CM"],
+    [500, "D"],
+    [400, "CD"],
+    [100, "C"],
+    [90, "XC"],
+    [50, "L"],
+    [40, "XL"],
+    [10, "X"],
+    [9, "IX"],
+    [5, "V"],
+    [4, "IV"],
+    [1, "I"],
+  ];
+  let result = "";
+  let remaining = num;
+  for (const [value, symbol] of map) {
+    while (remaining >= value) {
+      result += symbol;
+      remaining -= value;
+    }
+  }
+  return result;
+}
+
+export async function selectHero(userId: string, heroKey: string) {
+  const hero = heroes.find((item) => item.key === heroKey);
+  if (!hero) throw new Error("Hero tidak valid.");
+  await getOrCreateGameKingdom(userId);
+  return prisma.$transaction(async (tx) => {
+    const kingdom = await ensureKingdomInTransaction(tx, userId);
+    if (kingdom.heroSelectedAt) {
+      throw new Error("Hero sudah pernah dipilih dan tidak bisa diubah.");
+    }
+    const updated = await tx.gameKingdom.update({
+      where: { id: kingdom.id },
+      data: {
+        heroKey,
+        heroSelectedAt: new Date(),
+      },
+      include: { armyUnits: true, cards: true },
+    });
+    return decorateKingdom(updated);
+  });
 }
 
 export async function claimLearningReward({
@@ -218,15 +296,11 @@ export async function upgradeCastle(userId: string) {
 }
 
 export async function getTargets(userId: string) {
-  const kingdom = await getOrCreateGameKingdom(userId);
-  const crossContinent = kingdom.castleLevel >= 5;
+  await getOrCreateGameKingdom(userId);
   const targets = await prisma.gameKingdom.findMany({
-    where: {
-      userId: { not: userId },
-      ...(crossContinent ? {} : { continent: kingdom.continent }),
-    },
+    where: { userId: { not: userId } },
     orderBy: [{ castleLevel: "asc" }, { xp: "desc" }],
-    take: 30,
+    take: 60,
     include: { armyUnits: true },
   });
   return targets.map(decorateKingdom);
@@ -240,18 +314,26 @@ export async function attackKingdom(userId: string, targetKingdomId: string) {
       where: { id: targetKingdomId },
       include: { armyUnits: true, cards: true },
     });
-    if (!defender || defender.userId === userId) throw new Error("Target tidak valid.");
-    if (attacker.castleLevel < 5 && defender.continent !== attacker.continent) {
-      throw new Error("Cross-continent attack terbuka mulai castle level 5.");
+    if (!defender || defender.userId === userId) {
+      throw new BattleActionError("INVALID_TARGET", "Target tidak valid.");
     }
     if (defender.shieldUntil && defender.shieldUntil.getTime() > Date.now()) {
-      throw new Error("Target sedang memiliki shield.");
+      throw new BattleActionError("SHIELD_ACTIVE", "Target sedang dalam pertahanan shield.", {
+        shieldUntil: defender.shieldUntil.toISOString(),
+        defenderName: defender.name,
+      });
     }
     const recent = await tx.gameBattleLog.findFirst({
       where: { attackerKingdomId: attacker.id, defenderKingdomId: defender.id, createdAt: { gt: new Date(Date.now() - 6 * 60 * 60 * 1000) } },
-      select: { id: true },
+      select: { id: true, createdAt: true },
     });
-    if (recent) throw new Error("Cooldown 6 jam untuk target ini masih aktif.");
+    if (recent) {
+      const cooldownEnds = new Date(recent.createdAt.getTime() + 6 * 60 * 60 * 1000);
+      throw new BattleActionError("COOLDOWN_ACTIVE", "Cooldown 6 jam terhadap target ini masih aktif.", {
+        cooldownEnds: cooldownEnds.toISOString(),
+        defenderName: defender.name,
+      });
+    }
 
     const attackerPower = Math.round(powerFor(attacker, "attack"));
     const defenderPower = Math.max(1, Math.round(powerFor(defender, "defense")));
@@ -264,6 +346,10 @@ export async function attackKingdom(userId: string, targetKingdomId: string) {
     const result = ratio < 0.75 ? "ATTACKER_LOSS" : ratio < 1 ? "MINOR_WIN" : ratio < 1.5 ? "NORMAL_WIN" : ratio < 2.2 ? "MAJOR_WIN" : "FULL_DAMAGE";
     const shieldHours = result === "MAJOR_WIN" || result === "FULL_DAMAGE" ? 8 : 2;
 
+    const { attackerLossPercent, defenderLossPercent } = casualtyPercentsForRatio(ratio);
+    const attackerCasualties = computeCasualties(attacker.armyUnits, attackerLossPercent);
+    const defenderCasualties = computeCasualties(defender.armyUnits, defenderLossPercent);
+
     await tx.gameKingdom.update({ where: { id: attacker.id }, data: { resourcesJson: updatedAttackerResources as Prisma.InputJsonValue } });
     await tx.gameKingdom.update({
       where: { id: defender.id },
@@ -272,6 +358,24 @@ export async function attackKingdom(userId: string, targetKingdomId: string) {
         shieldUntil: new Date(Date.now() + shieldHours * 60 * 60 * 1000),
       },
     });
+
+    for (const casualty of attackerCasualties) {
+      if (casualty.lost <= 0) continue;
+      await tx.gameArmyUnit.update({
+        where: { kingdomId_unitKey: { kingdomId: attacker.id, unitKey: casualty.unitKey } },
+        data: { quantity: { decrement: casualty.lost } },
+      });
+    }
+    for (const casualty of defenderCasualties) {
+      if (casualty.lost <= 0) continue;
+      await tx.gameArmyUnit.update({
+        where: { kingdomId_unitKey: { kingdomId: defender.id, unitKey: casualty.unitKey } },
+        data: {
+          quantity: { decrement: casualty.lost },
+          defenseQuantity: { decrement: Math.min(casualty.lost, casualty.defenseLost) },
+        },
+      });
+    }
 
     const log = await tx.gameBattleLog.create({
       data: {
@@ -282,12 +386,72 @@ export async function attackKingdom(userId: string, targetKingdomId: string) {
         attackerPower,
         defenderPower,
         stolenResourcesJson: stolen as Prisma.InputJsonValue,
-        casualtiesJson: { attacker: "proportional-low", defender: "proportional-low" },
-        snapshotJson: { ratio, stealPercent, attackWeapon: attacker.selectedAttackWeaponKey, defenseWeapon: defender.selectedDefenseWeaponKey },
+        casualtiesJson: {
+          attackerLossPercent,
+          defenderLossPercent,
+          attackerTotalLost: sumLost(attackerCasualties),
+          defenderTotalLost: sumLost(defenderCasualties),
+        } as Prisma.InputJsonValue,
+        attackerCasualtiesJson: attackerCasualties as Prisma.InputJsonValue,
+        defenderCasualtiesJson: defenderCasualties as Prisma.InputJsonValue,
+        snapshotJson: {
+          ratio,
+          stealPercent,
+          attackWeapon: attacker.selectedAttackWeaponKey,
+          defenseWeapon: defender.selectedDefenseWeaponKey,
+          attackerName: attacker.name,
+          defenderName: defender.name,
+        },
       },
     });
-    return log;
+    return {
+      ...log,
+      stolen,
+      attackerCasualties,
+      defenderCasualties,
+    };
   });
+}
+
+function casualtyPercentsForRatio(ratio: number) {
+  if (ratio < 0.5) return { attackerLossPercent: 0.45, defenderLossPercent: 0.05 };
+  if (ratio < 0.75) return { attackerLossPercent: 0.32, defenderLossPercent: 0.08 };
+  if (ratio < 1) return { attackerLossPercent: 0.22, defenderLossPercent: 0.14 };
+  if (ratio < 1.5) return { attackerLossPercent: 0.14, defenderLossPercent: 0.24 };
+  if (ratio < 2.2) return { attackerLossPercent: 0.09, defenderLossPercent: 0.36 };
+  return { attackerLossPercent: 0.05, defenderLossPercent: 0.5 };
+}
+
+type CasualtyEntry = {
+  unitKey: string;
+  unitName: string;
+  before: number;
+  lost: number;
+  after: number;
+  defenseLost: number;
+};
+
+function computeCasualties(
+  units: Array<{ unitKey: string; quantity: number; defenseQuantity: number }>,
+  percent: number
+): CasualtyEntry[] {
+  return units.map((unit) => {
+    const lost = Math.min(unit.quantity, Math.floor(unit.quantity * percent));
+    const defenseLost = Math.min(unit.defenseQuantity, Math.floor(unit.defenseQuantity * percent));
+    const catalog = unitCatalog.find((item) => item.key === unit.unitKey);
+    return {
+      unitKey: unit.unitKey,
+      unitName: catalog?.name ?? unit.unitKey,
+      before: unit.quantity,
+      lost,
+      after: unit.quantity - lost,
+      defenseLost,
+    };
+  });
+}
+
+function sumLost(entries: CasualtyEntry[]) {
+  return entries.reduce((total, entry) => total + entry.lost, 0);
 }
 
 export async function getLeaderboard() {
@@ -297,6 +461,35 @@ export async function getLeaderboard() {
     include: { user: { select: { name: true, email: true } }, armyUnits: true, cards: true },
   });
   return kingdoms.map(decorateKingdom);
+}
+
+export async function getIncomingAttacks(userId: string) {
+  const kingdom = await getOrCreateGameKingdom(userId);
+  const logs = await prisma.gameBattleLog.findMany({
+    where: { defenderKingdomId: kingdom.id, defenderSeenAt: null },
+    orderBy: { createdAt: "desc" },
+    take: 10,
+    include: {
+      attacker: { select: { name: true, continent: true, castleLevel: true } },
+    },
+  });
+  return logs;
+}
+
+export async function acknowledgeIncomingAttacks(userId: string, battleIds?: string[]) {
+  const kingdom = await getOrCreateGameKingdom(userId);
+  const where: Prisma.GameBattleLogWhereInput = {
+    defenderKingdomId: kingdom.id,
+    defenderSeenAt: null,
+  };
+  if (battleIds && battleIds.length > 0) {
+    where.id = { in: battleIds };
+  }
+  const result = await prisma.gameBattleLog.updateMany({
+    where,
+    data: { defenderSeenAt: new Date() },
+  });
+  return { acknowledged: result.count };
 }
 
 export async function getBattleLogs(userId: string) {

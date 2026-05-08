@@ -4,6 +4,7 @@
 
 | Release Note | Date/Time (JST) | Author | Status | Summary |
 | --- | --- | --- | --- | --- |
+| RN-2026.05.08-001 | 2026-05-08 21:00 +09:00 | Nexus Platform Team | Completed | Nexus Kingdoms Mobile Legends revamp — per-level castle PNG art (10 stages), hero PNG with mystic float aura on the left of the castle, hero rename + one-time selection ritual with random initial assignment, real attack mechanics (proportional troop casualties on both sides + resource looting), defender attack-notification popup on game entry, sophisticated battle report modal post-attack with result-tier theming, interactive shield/cooldown/error toasts replacing the banner, continent overflow capacity 5 with Roman-numeral variants, cross-continent attacks always open, full mobile responsiveness pass on all game modals and the castle frame. |
 | RN-2026.05.07-002 | 2026-05-07 18:30 +09:00 | Nexus Platform Team | Completed | Added Fast MVP AI Conversation Voice on the AI Tutor page — push-to-talk with Whisper transcription, voice-mode tutor reply, and ElevenLabs (or OpenAI) TTS playback for Ai-chan. Trial learners get 5 voice conversations/day, tracked via `FeatureUsage.VOICE_CONVERSATION`. |
 | RN-2026.05.07-001 | 2026-05-07 12:00 +09:00 | Nexus Platform Team | Completed | Added user-selectable theme toggle (Nexus / Squid / Rockstar) on the Nihongo header, scoped to the `/apps/nihongo` route only. Synthesized `docs/DESIGN.md` as the source of truth for the in-house Nexus design system. Fixed billing proof upload hang (Vercel filesystem write) by switching to base64 data URL storage with proper error handling. Fixed Listening Indonesian translation not rendering by making the parser tolerant of `indonesia` keys nested in either object or per-line array shapes. |
 | RN-2026.05.06-003 | 2026-05-06 23:30 +09:00 | Nexus Platform Team | Completed | Repainted Nexus AI Nihongo with a dark + pink/teal Squid-Game-inspired theme using `[data-theme="squid"]` CSS overrides, swapped the Nihongo logo to `Nexustalenta.svg` with a glow treatment, and shrank the heading scale ~12-15% for tighter typography. |
@@ -17,6 +18,165 @@
 | RN-2026.05.04-001 | 2026-05-04 01:10 +09:00 | Nexus Platform Team | Completed | Fixed character foundation lesson access and verified kana/kanji grids in localhost. |
 | RN-2026.05.03-002 | 2026-05-03 23:45 +09:00 | Nexus Platform Team | Completed | Added seedable Nihongo character content for kana, kanji, and vocabulary compounds, linked to lesson pages. |
 | RN-2026.05.03-001 | 2026-05-03 23:09 +09:00 | Nexus Platform Team | Release Candidate | Admin Operations Console, billing/trial foundation, recording visibility, architecture docs, and Ai-chan assistant foundation. |
+
+## RN-2026.05.08-001
+
+Nexus Kingdoms Mobile Legends revamp — castle PNG art per level, hero
+selection + mystic float, real attack mechanics with troop loss and
+resource looting, defender notification popup, sophisticated battle
+report, interactive toasts, continent overflow + cross-continent
+attacks, mobile-responsive throughout.
+
+### Background
+
+Nexus Kingdoms previously rendered a single generic SVG silhouette
+for every castle level, the hero stat was static text only, and the
+attack mechanic only stole resources without any troop casualties.
+There was no defender feedback after being attacked and no
+sophisticated post-attack report; attack failures (shield, cooldown,
+continent lock) showed up as a plain string in a top banner. We
+revamp the surface to feel closer to a Mobile-Legends-quality battle
+arena while keeping the JLPT learning loop unchanged.
+
+### Included Changes
+
+- Per-level castle PNG art catalog at `lib/game/castle-stages.ts`
+  with 10 named tiers wired to `public/Castle/*.png`.
+  `components/nihongo/game/CastleVisual.tsx` swaps the SVG for a
+  bottom-aligned `next/image` (`quality={95}`, `sizes="100vw,900px"`,
+  `priority`) and adds a hero overlay on the left bottom with
+  per-aura color (cyan / rose / emerald / violet / amber).
+  Hero overlay uses new keyframes in `app/globals.css`:
+  `hero-float-bounce` (4s ease-in-out, Ai-chan-style), `hero-runes`
+  (rotating dashed ellipses), `hero-aura-pulse`, `hero-aura-soft`,
+  `hero-shadow`, `hero-spark` (with delayed variants). All animations
+  respect `prefers-reduced-motion`.
+- Hero rename + lore in `lib/game/config.ts` and
+  `lib/game/public-config.ts`. `heroKey` is unchanged so historical
+  rows are unaffected. New fields: `title`, `image`, `aura`.
+- One-time hero selection: schema migration
+  `prisma/migrations/20260508140000_hero_selected_at` adds
+  `GameKingdom.heroSelectedAt`; `getOrCreateGameKingdom` randomizes
+  the initial `heroKey` from the 5-strong roster; new
+  `selectHero(userId, heroKey)` service function (idempotent —
+  rejects if `heroSelectedAt` is already set); new
+  `POST /api/game/hero/select`; new `components/game/HeroSelectionModal.tsx`
+  shown blocking when `heroSelectedAt` is null.
+- Real attack mechanics: `attackKingdom` in `lib/game/service.ts` now
+  computes `casualtyPercentsForRatio` (5–50% scaling) and
+  `computeCasualties` to decrement `quantity` and `defenseQuantity`
+  on both sides' `GameArmyUnit` rows in the same transaction. Schema
+  migration `prisma/migrations/20260508120000_battle_casualties_seen`
+  adds `attackerCasualtiesJson`, `defenderCasualtiesJson`, and
+  `defenderSeenAt` plus a composite index.
+- Defender notifications: new
+  `GET /api/game/battle/incoming` returns unseen attacks for the
+  current user; `POST /api/game/battle/ack` sets `defenderSeenAt`.
+  `components/game/AttackNotificationModal.tsx` shows the popup on
+  game entry with attacker meta, ATK vs DEF, total troops lost, loot
+  per resource, and per-unit before→after breakdown.
+- Sophisticated post-attack report:
+  `components/game/BattleReportModal.tsx` themed by result tier
+  (`MAJOR_WIN`/`FULL_DAMAGE` → gold, `NORMAL_WIN` → emerald,
+  `MINOR_WIN` → cyan-violet, `ATTACKER_LOSS` → rose-slate). Includes
+  narrative copy per tier, paired Power Cards, loot grid with
+  steal-percent badge, casualty blocks both sides, and a sparkle
+  field on victory.
+- Interactive battle toast stack:
+  `components/game/BattleToast.tsx` replaces the previous string-in-
+  banner error display. New `toast-slide-in` keyframe in
+  `app/globals.css`. Tone-themed icons (🛡️ ⏳ 🗺️ ⚠️ ✕),
+  hover-pause progress bar, manual dismiss button, and contextual
+  detail (e.g. "Shield {nama} aktif sampai dalam X menit (HH:MM)").
+- Structured server errors: `BattleActionError` class with
+  `code` + `meta` thrown from the service and rehydrated by the
+  attack route at `app/api/game/battle/attack/route.ts`. Codes:
+  `INVALID_TARGET`, `SHIELD_ACTIVE`, `COOLDOWN_ACTIVE`. The legacy
+  `CONTINENT_LOCKED` was removed as cross-continent attack is now
+  always available.
+- Continent overflow + cross-continent: `assignContinent()` caps each
+  base continent at 5 inhabitants; once full, new arrivals overflow
+  into Roman-numeral variants (`Akatsuki Plains II`,
+  `Garuda Highlands II`, ...). `lib/game/continents.ts` exports
+  `getContinentBaseName` so variant names resolve back to the same
+  banner image. `getTargets` and `attackKingdom` no longer filter by
+  continent.
+- Mobile responsiveness pass: `CastleVisual` heights are
+  `compact ? "h-64" : "h-[22rem] sm:h-[26rem] lg:h-[30rem]"` and the
+  hero scales `h-56 → h-[18rem] → sm:h-[22rem] → lg:h-[26rem]`.
+  All four modals (`BattleReportModal`, `AttackNotificationModal`,
+  `HeroSelectionModal`, plus the legacy alert banner replacement)
+  use `items-start sm:items-center overflow-y-auto` with `my-auto`
+  so tall reports scroll cleanly on small phones; action rows stack
+  vertically below `sm`. `ContinentBanner` h1 ramps
+  `text-2xl → sm:text-4xl → lg:text-5xl` to avoid crushed phones.
+
+### Files Touched
+
+- `lib/game/service.ts` (BattleActionError, casualty math, selectHero,
+  CONTINENT_CAPACITY, assignContinent overflow, cross-continent
+  unlock).
+- `lib/game/config.ts` (hero rename, hero `image`/`title`/`aura`,
+  `HeroAura` type export).
+- `lib/game/public-config.ts` (`publicHeroCatalog`).
+- `lib/game/castle-stages.ts` (new — 10 stages).
+- `lib/game/continents.ts` (new — 5-image registry,
+  `getContinentBaseName`, variant-aware `getContinentMeta`).
+- `components/nihongo/game/CastleVisual.tsx` (PNG castle + hero
+  overlay).
+- `components/game/PlatformGameDashboard.tsx` (banner with
+  continent image, ML-style panels, hero modal trigger, attack flow,
+  toast stack, battle report wiring).
+- `components/game/HeroSelectionModal.tsx` (new).
+- `components/game/AttackNotificationModal.tsx` (new).
+- `components/game/BattleReportModal.tsx` (new).
+- `components/game/BattleToast.tsx` (new).
+- `app/api/game/hero/select/route.ts` (new).
+- `app/api/game/battle/incoming/route.ts` (new).
+- `app/api/game/battle/ack/route.ts` (new).
+- `app/api/game/battle/attack/route.ts` (forward
+  BattleActionError code + meta).
+- `app/globals.css` (hero / aura / rune / spark / toast keyframes).
+- `prisma/schema.prisma` + migrations
+  `20260508120000_battle_casualties_seen` and
+  `20260508140000_hero_selected_at`.
+
+### How to Verify
+
+1. Run `npm run dev`, hard reload, open `/platform/game` as a fresh
+   user — `HeroSelectionModal` should block until a hero is picked.
+2. Confirm a hero — modal closes, the chosen hero floats on the left
+   of the castle with its colored aura. Reopen game — modal stays
+   gone.
+3. Attack a target — `BattleReportModal` opens with tier-themed copy,
+   the attacker and defender unit counts are decremented in the DB,
+   resource counts on the dashboard refresh.
+4. Open the game as the defender — `AttackNotificationModal` pops on
+   first entry. Acknowledge — `defenderSeenAt` is set, the modal
+   stays gone next entry.
+5. Attack a target with an active shield → `BattleToast` (cyan)
+   slides in top-right with shield expiry detail. Repeat target
+   within 6 hours → amber cooldown toast with cooldown-end timestamp.
+6. Create a 6th-account in a base continent that already has 5
+   inhabitants → assigned to the next available base. Fill all 5
+   bases → 26th lands on `Akatsuki Plains II`.
+7. Resize the viewport to 360px wide on the game page — castle
+   frame, hero overlay, and all modals fit and scroll properly with
+   no horizontal overflow.
+
+### Risks and Rollbacks
+
+- The DB migrations are additive (nullable columns + index). To roll
+  back, drop the new columns, then revert the application code. No
+  destructive transformation.
+- The `BattleActionError` code path may unintentionally narrow the
+  set of recognized error codes for clients that previously matched
+  on free-form strings. Mitigated by keeping the human-readable
+  `error` string identical to the legacy copy.
+- The Prisma client is regenerated at build time, but local dev
+  servers using Turbopack can keep a stale chunk and report
+  `Unknown argument 'heroSelectedAt'` until `.next/` is removed and
+  `npm run dev` is restarted.
 
 ## RN-2026.05.07-002
 

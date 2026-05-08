@@ -1049,13 +1049,93 @@ body {
   animation: castle-build-shimmer 2.2s linear infinite;
 }
 
+@keyframes toast-slide-in {
+  0% { opacity: 0; transform: translateX(24px) scale(0.96); }
+  100% { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+.toast-slide-in {
+  animation: toast-slide-in 280ms ease-out both;
+}
+
+@keyframes hero-float-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes hero-aura-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.06); }
+}
+
+@keyframes hero-aura-soft {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.95; }
+}
+
+@keyframes hero-shadow {
+  0%, 100% { transform: scaleX(1); opacity: 0.5; }
+  50% { transform: scaleX(0.85); opacity: 0.35; }
+}
+
+@keyframes hero-spark {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.9; }
+  50% { transform: translate(2px, -6px) scale(1.4); opacity: 1; }
+}
+
+@keyframes hero-runes {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hero-float-bounce {
+  animation: hero-float-bounce 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+.hero-aura-pulse {
+  animation: hero-aura-pulse 3.6s ease-in-out infinite;
+}
+
+.hero-aura-soft {
+  animation: hero-aura-soft 4.4s ease-in-out infinite;
+}
+
+.hero-shadow {
+  animation: hero-shadow 5.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.hero-runes {
+  animation: hero-runes 32s linear infinite;
+  transform-origin: 50% 75%;
+}
+
+.hero-spark {
+  animation: hero-spark 2.4s ease-in-out infinite;
+}
+
+.hero-spark-delay {
+  animation-delay: 0.8s;
+}
+
+.hero-spark-delay-2 {
+  animation-delay: 1.6s;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .castle-animate,
   .castle-cloud,
   .castle-flag,
   .castle-window,
   .castle-sparkle,
-  .castle-build-shimmer {
+  .castle-build-shimmer,
+  .hero-float-bounce,
+  .hero-aura-pulse,
+  .hero-aura-soft,
+  .hero-shadow,
+  .hero-runes,
+  .hero-spark {
     animation: none !important;
   }
 }

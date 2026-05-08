@@ -39,12 +39,14 @@ export const unitCatalog = [
 ] as const;
 
 export const heroes = [
-  { key: "ARJUNA", name: "Arjuna", style: "Balanced offense", attackBonus: 1.12, defenseBonus: 1.06, bestFor: "Archer, Samurai, precision attack" },
-  { key: "BIMA", name: "Bima", style: "Heavy offense", attackBonus: 1.18, defenseBonus: 1.04, bestFor: "Golem, Cannon, direct raid" },
-  { key: "GATOTKACA", name: "Gatotkaca", style: "Aerial hybrid", attackBonus: 1.1, defenseBonus: 1.14, bestFor: "Garuda Rider, anti-raid defense" },
-  { key: "SRIKANDI", name: "Srikandi", style: "Tactical precision", attackBonus: 1.15, defenseBonus: 1.08, bestFor: "Archer, Shinobi, ambush strategy" },
-  { key: "SEMAR", name: "Semar", style: "Defensive wisdom", attackBonus: 1.05, defenseBonus: 1.2, bestFor: "Long-term kingdom protection" },
+  { key: "ARJUNA", name: "Arujin Veyra", title: "Celestial Archer", image: "/Hero/Arujin Veyra.png", aura: "cyan", style: "Balanced offense", attackBonus: 1.12, defenseBonus: 1.06, bestFor: "Archer, Samurai, precision attack" },
+  { key: "BIMA", name: "Bymarax Khor", title: "Brutal Warlord", image: "/Hero/Bymarax Khor.png", aura: "rose", style: "Heavy offense", attackBonus: 1.18, defenseBonus: 1.04, bestFor: "Golem, Cannon, direct raid" },
+  { key: "GATOTKACA", name: "Gatara Veyon", title: "Sky Guardian", image: "/Hero/Gatara Veyon.png", aura: "emerald", style: "Aerial hybrid", attackBonus: 1.1, defenseBonus: 1.14, bestFor: "Garuda Rider, anti-raid defense" },
+  { key: "SRIKANDI", name: "Syrakane Noxa", title: "Shadow Tactician", image: "/Hero/Syrakane Noxa.png", aura: "violet", style: "Tactical precision", attackBonus: 1.15, defenseBonus: 1.08, bestFor: "Archer, Shinobi, ambush strategy" },
+  { key: "SEMAR", name: "Semarion Eldra", title: "Ancient Sage", image: "/Hero/Semarion Eldra.png", aura: "amber", style: "Defensive wisdom", attackBonus: 1.05, defenseBonus: 1.2, bestFor: "Long-term kingdom protection" },
 ] as const;
+
+export type HeroAura = "cyan" | "rose" | "emerald" | "violet" | "amber";
 
 export const attackWeapons = [
   { key: "KERIS_METEOR_STRIKE", name: "Keris Meteor Strike", powerHint: "High", modifier: 1.45 },

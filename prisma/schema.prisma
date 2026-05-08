@@ -110,6 +110,7 @@ model GameKingdom {
   xp                       Int       @default(0)
   resourcesJson            Json
   heroKey                  String    @default("ARJUNA")
+  heroSelectedAt           DateTime?
   selectedAttackWeaponKey  String    @default("MOONLIGHT_KUNAI_STORM")
   selectedDefenseWeaponKey String    @default("SILVER_MOON_TOWER")
   shieldUntil              DateTime?
@@ -165,17 +166,20 @@ model GameArmyUnit {
 }
 
 model GameBattleLog {
-  id                  String   @id @default(cuid())
-  attackerKingdomId   String
-  defenderKingdomId   String
-  continent           String
-  result              String
-  attackerPower       Int
-  defenderPower       Int
-  stolenResourcesJson Json
-  casualtiesJson      Json
-  snapshotJson        Json
-  createdAt           DateTime @default(now())
+  id                       String    @id @default(cuid())
+  attackerKingdomId        String
+  defenderKingdomId        String
+  continent                String
+  result                   String
+  attackerPower            Int
+  defenderPower            Int
+  stolenResourcesJson      Json
+  casualtiesJson           Json
+  attackerCasualtiesJson   Json?
+  defenderCasualtiesJson   Json?
+  snapshotJson             Json
+  defenderSeenAt           DateTime?
+  createdAt                DateTime  @default(now())
 
   attacker GameKingdom @relation("GameBattleAttacker", fields: [attackerKingdomId], references: [id], onDelete: Cascade)
   defender GameKingdom @relation("GameBattleDefender", fields: [defenderKingdomId], references: [id], onDelete: Cascade)
@@ -184,6 +188,7 @@ model GameBattleLog {
   @@index([defenderKingdomId])
   @@index([continent])
   @@index([createdAt])
+  @@index([defenderKingdomId, defenderSeenAt])
 }
 
 model GameUserCard {

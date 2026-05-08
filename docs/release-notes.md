@@ -1,5 +1,124 @@
 # Release Notes
 
+## [vNext] - Nexus Kingdoms Mobile Legends Revamp
+
+### Added
+
+- **Per-level castle PNG art (10 tiers)**. `lib/game/castle-stages.ts`
+  catalog (Reclaimed Frontier → Bamboo Outpost → Wooden Hold → Stone
+  Hamlet → Walled Village → Stone Bastion → Samurai Keep → Castle Town
+  → Great Fortress → Imperial Citadel) wired to PNGs in
+  `public/Castle/`. `CastleVisual.tsx` swaps the old SVG silhouettes
+  for proportional, full-bleed castle artwork with `quality={95}` and
+  bottom-aligned `object-contain`.
+- **Hero PNG with mystic float**. `public/Hero/*.png` rendered
+  bottom-left of the castle frame, animated with `hero-float-bounce`
+  (Ai-chan style 4s cycle), surrounded by colored radial aura, dashed
+  rune ellipses, three pulsing sparks, and aura-tinted drop-shadow.
+  Aura color follows hero (cyan / rose / emerald / violet / amber).
+- **Hero rename + lore**. ARJUNA → Arujin Veyra (Celestial Archer),
+  BIMA → Bymarax Khor (Brutal Warlord), GATOTKACA → Gatara Veyon (Sky
+  Guardian), SRIKANDI → Syrakane Noxa (Shadow Tactician), SEMAR →
+  Semarion Eldra (Ancient Sage). Stored `heroKey` is unchanged so DB
+  data is portable.
+- **One-time hero selection ritual**. New `HeroSelectionModal` (block
+  on first game entry) shows a 5-card picker with image preview,
+  attack / defense bonuses, and the current random assignment
+  highlighted. Once confirmed via `POST /api/game/hero/select`, the
+  pick is locked permanently (`GameKingdom.heroSelectedAt`).
+- **Random hero on kingdom creation**. `getOrCreateGameKingdom` now
+  picks a random hero from the 5-strong roster instead of defaulting
+  every newcomer to ARJUNA.
+- **Continent overflow at capacity 5**. `assignContinent()` caps each
+  base continent at 5 inhabitants. When all five are full, new
+  arrivals overflow into Roman-numeral variants (`Akatsuki Plains II`,
+  `Garuda Highlands II`, ...) that reuse the same banner image via
+  `getContinentBaseName`.
+- **Cross-continent battle always open**. `attackKingdom` no longer
+  gates cross-continent attacks behind castle level 5; `getTargets`
+  shows up to 60 kingdoms from any continent. The Target Battle panel
+  now reads "Semua benua terbuka — pilih lawanmu".
+- **Real attack mechanics with troop casualties**. New
+  `casualtyPercentsForRatio` (5–50% scaling with power ratio) plus
+  `computeCasualties` decrements `quantity` and `defenseQuantity` on
+  both attacker and defender `GameArmyUnit` rows inside the attack
+  transaction. Per-unit losses are persisted to
+  `attackerCasualtiesJson` / `defenderCasualtiesJson` on
+  `GameBattleLog`.
+- **`AttackNotificationModal`** — defender-side popup shown when the
+  user opens the game with unseen `GameBattleLog`s. Lists attacker
+  name / continent / castle level / time, ATK vs DEF, total troops
+  lost, looted resources per type, and per-unit before→after
+  breakdown. Acknowledged via `POST /api/game/battle/ack` which sets
+  `defenderSeenAt`. Backed by new `GET /api/game/battle/incoming`.
+- **`BattleReportModal`** — sophisticated post-attack report with
+  result-tier theming (gold for `MAJOR_WIN` / `FULL_DAMAGE`, emerald
+  for `NORMAL_WIN`, cyan-violet for `MINOR_WIN`, rose-slate for
+  `ATTACKER_LOSS`), narrative copy per tier, paired Power Cards, loot
+  grid with steal-percent badge, attacker + defender casualty blocks,
+  and a sparkle field on victory.
+- **`BattleToast` interactive notifications**. Slide-in toast stack
+  (`toast-slide-in` 280ms) for shield, cooldown, invalid-target, and
+  generic errors. Tone-themed (cyan / amber / violet / rose), icon
+  badge, hover-pause progress bar, manual dismiss, contextual detail
+  ("Shield {nama} aktif sampai dalam X menit (HH:MM)") replacing the
+  old top banner error string.
+- **Continent banner backgrounds**. `lib/game/continents.ts` maps each
+  continent name to one of `public/Akatsuki plains.png`,
+  `public/Garuda Highlands.png`, `public/Tsukikage Isles.png`,
+  `public/Mahendra Desert.png`, `public/Arjuna Frostlands.png` plus an
+  accent gradient and tagline. The hero card banner uses `next/image`
+  fill + dark gradient overlay; each Target Battle row also flashes a
+  masked sliver of its continent image.
+- **Mobile Legends-flavoured dashboard repaint**. Dark navy / indigo
+  gradient panels, gold-amber upgrade button, hex unit avatars
+  (`UnitAvatar` with locked state), glowing accent rings on `Panel`,
+  rank badges with castle tier number, resource tiles with emoji
+  icons.
+
+### Changed
+
+- `BattleActionError` class added to `lib/game/service.ts` so the
+  attack route returns `{ error, code, meta }` instead of an unstyled
+  string. Codes: `INVALID_TARGET`, `SHIELD_ACTIVE`,
+  `COOLDOWN_ACTIVE`. (The old `CONTINENT_LOCKED` was removed because
+  cross-continent attack is now always open.)
+- Schema: `GameBattleLog.attackerCasualtiesJson`,
+  `defenderCasualtiesJson`, `defenderSeenAt` (migration
+  `20260508120000_battle_casualties_seen`); `GameKingdom.heroSelectedAt`
+  (migration `20260508140000_hero_selected_at`).
+- `lib/game/public-config.ts` exports `publicHeroCatalog` (5 hero
+  cards with image, aura, attack / defense bonus, best-for copy) so
+  the selection modal can render without leaking server config.
+- Mobile responsiveness pass on every game surface: `CastleVisual`
+  frame steps from `h-64` (compact) to `h-[22rem] sm:h-[26rem]
+  lg:h-[30rem]`, hero scales `h-56 → h-[18rem] → sm:h-[22rem] →
+  lg:h-[26rem]`. `BattleReportModal`, `AttackNotificationModal`, and
+  `HeroSelectionModal` outer overlays use `items-start sm:items-center
+  overflow-y-auto` with `my-auto` on the inner card so tall reports
+  scroll cleanly on small phones. Action rows stack vertically below
+  `sm`. Continent banner h1 ramps `text-2xl → sm:text-4xl →
+  lg:text-5xl`.
+
+### Tested
+
+- `npx tsc --noEmit` (clean once `.next/` cache is dropped — the dev
+  server caches a stale Prisma client which can throw "Unknown
+  argument `heroSelectedAt`" until the chunk is rebuilt).
+- Manual QA: hero selection lock, attack causes proportional troop
+  loss + resource loot, defender sees popup on next entry, shield /
+  cooldown errors render as toasts, cross-continent target visibility,
+  6th continent inhabitant lands on overflow variant.
+
+### Known Limitations
+
+- Continent variants (`Akatsuki Plains II`, ...) reuse the base
+  banner image — there are no unique illustrations per variant yet.
+- Hero selection cannot be reset by users; only DB intervention can
+  clear `heroSelectedAt`. By design.
+- Power computation still uses deterministic 0.95 variance; no random
+  battle dice yet.
+
 ## [vNext] - Fast MVP AI Conversation Voice
 
 ### Added
