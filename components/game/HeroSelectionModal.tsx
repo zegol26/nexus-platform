@@ -32,7 +32,9 @@ export function HeroSelectionModal({
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (defaultHeroKey) setSelected(defaultHeroKey);
+    if (!defaultHeroKey) return;
+    const timer = window.setTimeout(() => setSelected(defaultHeroKey), 0);
+    return () => window.clearTimeout(timer);
   }, [defaultHeroKey]);
 
   async function handleConfirm() {

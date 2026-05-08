@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -77,9 +77,11 @@ export function PlatformGameDashboard({ mode }: { mode: GameDashboardMode }) {
   const [showIncoming, setShowIncoming] = useState(false);
   const [battleReport, setBattleReport] = useState<BattleReport | null>(null);
   const [toasts, setToasts] = useState<BattleToastData[]>([]);
+  const toastIdRef = useRef(0);
 
   function pushToast(toast: Omit<BattleToastData, "id">) {
-    const id = `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+    toastIdRef.current += 1;
+    const id = `battle-toast-${toastIdRef.current}`;
     setToasts((current) => [...current, { ...toast, id }]);
   }
 
@@ -120,7 +122,10 @@ export function PlatformGameDashboard({ mode }: { mode: GameDashboardMode }) {
   }, [loadTargets, loadIncoming]);
 
   useEffect(() => {
-    loadGame();
+    const timer = window.setTimeout(() => {
+      void loadGame();
+    }, 0);
+    return () => window.clearTimeout(timer);
   }, [loadGame]);
 
   async function postAction(endpoint: string, body?: Record<string, unknown>, nextMessage = "Sedang memproses data...") {

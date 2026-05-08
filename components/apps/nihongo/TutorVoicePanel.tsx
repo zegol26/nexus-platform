@@ -52,6 +52,7 @@ export function TutorVoicePanel({ onUserTranscript, onStateChange }: Props) {
   const [state, setState] = useState<VoiceState>("idle");
   const [error, setError] = useState<string | null>(null);
   const [autoplayBlocked, setAutoplayBlocked] = useState(false);
+  const [hasAudioUrl, setHasAudioUrl] = useState(false);
 
   const recorderRef = useRef<MediaRecorder | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
@@ -80,6 +81,7 @@ export function TutorVoicePanel({ onUserTranscript, onStateChange }: Props) {
       URL.revokeObjectURL(audioUrlRef.current);
     }
     audioUrlRef.current = url;
+    setHasAudioUrl(true);
 
     if (!audioRef.current) {
       audioRef.current = new Audio();
@@ -327,7 +329,7 @@ export function TutorVoicePanel({ onUserTranscript, onStateChange }: Props) {
         </div>
       )}
 
-      {autoplayBlocked && audioUrlRef.current && (
+      {autoplayBlocked && hasAudioUrl && (
         <button
           type="button"
           onClick={handleRepeat}
@@ -360,7 +362,7 @@ export function TutorVoicePanel({ onUserTranscript, onStateChange }: Props) {
         <button
           type="button"
           onClick={handleRepeat}
-          disabled={!audioUrlRef.current || isBusy}
+          disabled={!hasAudioUrl || isBusy}
           className="rounded-full border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-cyan-300 hover:bg-cyan-50 disabled:opacity-40"
         >
           🔁 Repeat

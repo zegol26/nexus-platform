@@ -11,11 +11,13 @@ const nihongoMenu = [
   { label: "Flashcards", href: "/apps/nihongo/flashcards", marker: "04" },
   { label: "AI Tutor", href: "/apps/nihongo/tutor", marker: "05" },
   { label: "Quiz", href: "/apps/nihongo/quiz", marker: "06" },
-  { label: "Rehearsal Lengkap N5", href: "/apps/nihongo/full-rehearsal-n5", marker: "07" },
-  { label: "Game", href: "/apps/nihongo/game", marker: "08" },
-  { label: "Reading", href: "/apps/nihongo/reading", marker: "09" },
-  { label: "Listening", href: "/apps/nihongo/listening", marker: "10" },
-  { label: "JLPT N5 Mock", href: "/apps/nihongo/mock-test/n5", marker: "11" },
+  { label: "Rehearsal N5", href: "/apps/nihongo/full-rehearsal-n5", marker: "07" },
+  { label: "Rehearsal N4", href: "/apps/nihongo/full-rehearsal-n4", marker: "08" },
+  { label: "Game", href: "/apps/nihongo/game", marker: "09" },
+  { label: "Reading", href: "/apps/nihongo/reading", marker: "10" },
+  { label: "Listening", href: "/apps/nihongo/listening", marker: "11" },
+  { label: "JLPT N5 Mock", href: "/apps/nihongo/mock-test/n5", marker: "12" },
+  { label: "JLPT N4 Mock", href: "/apps/nihongo/mock-test/n4", marker: "13" },
 ];
 
 export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
@@ -24,6 +26,9 @@ export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
 
   const isSquid = theme === "squid";
   const isRockstar = theme === "rockstar";
+  const brandGlyph = isSquid ? "○" : isRockstar ? "★" : "";
+  const topWatermark = isSquid ? "○" : isRockstar ? "★" : "";
+  const bottomWatermark = isSquid ? "△" : isRockstar ? "★" : "";
 
   return (
     <aside
@@ -31,47 +36,35 @@ export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
         mobile ? "block" : "hidden lg:block"
       }`}
     >
-      {/* Theme-specific decorative watermarks */}
-      {isSquid && (
-        <>
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -right-6 -top-6 select-none text-[140px] font-bold leading-none text-cyan-700/[0.06]"
-          >
-            ○
-          </div>
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -bottom-10 -left-4 select-none text-[160px] font-bold leading-none text-slate-300/[0.05]"
-          >
-            △
-          </div>
-        </>
-      )}
-      {isRockstar && (
-        <>
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -right-8 -top-10 select-none text-[200px] font-black leading-none text-cyan-700/[0.05]"
-          >
-            ★
-          </div>
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -bottom-12 -left-6 select-none text-[180px] font-black leading-none text-slate-300/[0.03]"
-          >
-            ★
-          </div>
-        </>
-      )}
+      <div
+        aria-hidden
+        className={`pointer-events-none absolute select-none leading-none ${
+          isRockstar
+            ? "-right-8 -top-10 text-[200px] font-black text-cyan-700/[0.05]"
+            : "-right-6 -top-6 text-[140px] font-bold text-cyan-700/[0.06]"
+        }`}
+      >
+        {topWatermark}
+      </div>
+      <div
+        aria-hidden
+        className={`pointer-events-none absolute select-none leading-none ${
+          isRockstar
+            ? "-bottom-12 -left-6 text-[180px] font-black text-slate-300/[0.03]"
+            : "-bottom-10 -left-4 text-[160px] font-bold text-slate-300/[0.05]"
+        }`}
+      >
+        {bottomWatermark}
+      </div>
 
       <Link
         href="/platform/dashboard"
-        className="relative text-[10px] font-semibold uppercase tracking-[0.28em] text-cyan-700"
+        className="relative inline-flex items-center text-[10px] font-semibold uppercase tracking-[0.28em] text-cyan-700"
       >
-        {isSquid && <span className="mr-1">○</span>}
-        {isRockstar && <span className="mr-1">★</span>}
-        Nexus Platform
+        <span aria-hidden className="mr-1 inline-block w-3">
+          {brandGlyph}
+        </span>
+        <span>Nexus Platform</span>
       </Link>
 
       <div className="relative mt-3 flex items-center gap-2.5 rounded-lg border border-slate-200 bg-slate-50 p-2.5">

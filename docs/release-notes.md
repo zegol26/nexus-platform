@@ -1,5 +1,37 @@
 # Release Notes
 
+## [vNext] - Nihongo N4 Rehearsal and Quiz Quality Upgrade
+
+### Added
+
+- Added JLPT N4 full rehearsal at `/apps/nihongo/full-rehearsal-n4` with the same section flow and scoring pattern as the existing N5 rehearsal.
+- Added JLPT N4 mock test page and API at `/apps/nihongo/mock-test/n4`, backed by a 1000-question N4 question bank.
+- Added N4 mock readiness support and seeded N4 mock sections across Moji-Goi, Bunpo, Dokkai, and Chokai.
+- Expanded beginner quiz coverage beyond kana into vocabulary, kanji, grammar, and conversation.
+
+### Improved
+
+- Reworked quiz concept questions toward higher-signal grammar, kanji, comprehension, and sociolinguistic traps in Indonesian explanations.
+- Added harder N3 kanji concept questions with visually similar distractors and context-based answer selection.
+- Shortened sidebar labels to `Rehearsal N5` and `Rehearsal N4` so the navigation stays readable.
+- Stabilized Nihongo sidebar/theme rendering and Nexus Kingdom modal effects for the current Next.js/React compiler rules.
+
+### Fixed
+
+- Removed the UTF-8 BOM from the N4 module JSON so Next.js can import the file during build.
+- Avoided answer-leaking beginner prompts where the correct option was already named in the question text.
+- Fixed React lint blockers caused by synchronous effect state updates and render-time ref reads.
+
+### Tested
+
+- `npm run lint`
+- `npx tsc --noEmit --pretty false`
+- `npm test`
+- `npm run validate:game`
+- `npm run validate:n5-rehearsal`
+- `npm run validate:community`
+- `npm run build`
+
 ## [vNext] - Nexus Kingdoms Mobile Legends Revamp
 
 ### Added

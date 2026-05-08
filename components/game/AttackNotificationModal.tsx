@@ -36,7 +36,8 @@ export function AttackNotificationModal({
   const current = incoming[index];
 
   useEffect(() => {
-    setIndex(0);
+    const timer = window.setTimeout(() => setIndex(0), 0);
+    return () => window.clearTimeout(timer);
   }, [incoming]);
 
   const stolen = useMemo(() => {

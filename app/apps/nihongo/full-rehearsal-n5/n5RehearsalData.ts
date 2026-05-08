@@ -3,7 +3,7 @@ export type RehearsalSection = {
   order: number;
   title: string;
   subtitle?: string;
-  level: "N5";
+  level: "N5" | "N4";
   category:
     | "grammar"
     | "vocabulary"

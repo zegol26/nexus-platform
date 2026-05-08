@@ -1,0 +1,1202 @@
+[
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 1: 今日は雨が＿＿、出かけません。",
+        "choices":  [
+                        "降ったら",
+                        "降ると",
+                        "降れば",
+                        "降って"
+                    ],
+        "answer":  "降れば",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 2: 田中さんは映画を＿＿がっています。",
+        "choices":  [
+                        "見る",
+                        "見たい",
+                        "見た",
+                        "見たがり"
+                    ],
+        "answer":  "見たい",
+        "explanation":  "Kunci jawaban: B. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 3: この本は読まなくても＿＿です。",
+        "choices":  [
+                        "よく",
+                        "いい",
+                        "しか",
+                        "まだ"
+                    ],
+        "answer":  "よく",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 4: ドアを＿＿いただけませんか？",
+        "choices":  [
+                        "開けて",
+                        "開ける",
+                        "開け",
+                        "開けた"
+                    ],
+        "answer":  "開けた",
+        "explanation":  "Kunci jawaban: D. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 5: ケーキを＿＿くれてありがとう。",
+        "choices":  [
+                        "作って",
+                        "作り",
+                        "作る",
+                        "作った"
+                    ],
+        "answer":  "作り",
+        "explanation":  "Kunci jawaban: B. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 6: お金が千円＿＿ありません。",
+        "choices":  [
+                        "しか",
+                        "より",
+                        "も",
+                        "だけ"
+                    ],
+        "answer":  "も",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 7: 田中さんに日本語を＿＿もらいました。",
+        "choices":  [
+                        "教えて",
+                        "教えてくれて",
+                        "教えてもらって",
+                        "教えてあげて"
+                    ],
+        "answer":  "教えて",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 8: 休みの日は音楽を＿＿ながら、料理します。",
+        "choices":  [
+                        "聞き",
+                        "聞く",
+                        "聞いて",
+                        "聞きながら"
+                    ],
+        "answer":  "聞きながら",
+        "explanation":  "Kunci jawaban: D. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 9: たくさん食べて＿＿しまいました。",
+        "choices":  [
+                        "いる",
+                        "いた",
+                        "て",
+                        "しまい"
+                    ],
+        "answer":  "いる",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 10: この店は安い＿＿、おいしいです。",
+        "choices":  [
+                        "し",
+                        "から",
+                        "のに",
+                        "ので"
+                    ],
+        "answer":  "から",
+        "explanation":  "Kunci jawaban: B. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 11: 漢字を＿＿読むことができますか？",
+        "choices":  [
+                        "たくさん",
+                        "よく",
+                        "はやく",
+                        "じょうずに"
+                    ],
+        "answer":  "はやく",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 12: これは山田さん＿＿ペンです。",
+        "choices":  [
+                        "の",
+                        "が",
+                        "を",
+                        "に"
+                    ],
+        "answer":  "が",
+        "explanation":  "Kunci jawaban: B. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 13: 昨日、友達に本を＿＿。",
+        "choices":  [
+                        "貸して",
+                        "借りて",
+                        "あげて",
+                        "もらって"
+                    ],
+        "answer":  "貸して",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 14: これは日本＿＿有名な寺です。",
+        "choices":  [
+                        "で",
+                        "に",
+                        "の",
+                        "を"
+                    ],
+        "answer":  "を",
+        "explanation":  "Kunci jawaban: D. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 15: 田中さんは毎朝六時に＿＿。",
+        "choices":  [
+                        "起きます",
+                        "寝ます",
+                        "行きます",
+                        "帰ります"
+                    ],
+        "answer":  "行きます",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 16: この漢字の＿＿は何ですか？",
+        "choices":  [
+                        "語",
+                        "言",
+                        "意味",
+                        "名前"
+                    ],
+        "answer":  "語",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 17: 「勉強します」の過去形はどれですか？",
+        "choices":  [
+                        "勉強する",
+                        "勉強して",
+                        "勉強した",
+                        "勉強です"
+                    ],
+        "answer":  "勉強して",
+        "explanation":  "Kunci jawaban: B. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 18: 一番正しい文はどれですか？",
+        "choices":  [
+                        "私はご飯を食べました。",
+                        "ご飯は私を食べました。",
+                        "食べました私はご飯を。",
+                        "私ご飯をは食べました。"
+                    ],
+        "answer":  "私はご飯を食べました。",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 19: 図書館では静かにしなければ＿＿。",
+        "choices":  [
+                        "なります",
+                        "いいです",
+                        "いけません",
+                        "できます"
+                    ],
+        "answer":  "できます",
+        "explanation":  "Kunci jawaban: D. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 20: 教室に先生が＿＿います。",
+        "choices":  [
+                        "行って",
+                        "帰って",
+                        "来て",
+                        "見て"
+                    ],
+        "answer":  "帰って",
+        "explanation":  "Kunci jawaban: B. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 21: 「見る」と同じ意味の言葉は？",
+        "choices":  [
+                        "書く",
+                        "読む",
+                        "観る",
+                        "言う"
+                    ],
+        "answer":  "観る",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 22: 「先生」の正しい読み方は？",
+        "choices":  [
+                        "せんせい",
+                        "さんせい",
+                        "せいせい",
+                        "せんせ"
+                    ],
+        "answer":  "せんせい",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 23: 次の中で、反対の意味を持つ言葉はどれ？「高い」",
+        "choices":  [
+                        "広い",
+                        "安い",
+                        "強い",
+                        "遠い"
+                    ],
+        "answer":  "遠い",
+        "explanation":  "Kunci jawaban: D. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 24: 「午前」の意味は？",
+        "choices":  [
+                        "朝の時間",
+                        "夜の時間",
+                        "昼ご飯",
+                        "夕方"
+                    ],
+        "answer":  "夜の時間",
+        "explanation":  "Kunci jawaban: B. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 25: 正しい漢字の組み合わせはどれ？",
+        "choices":  [
+                        "て+書 = 手書き",
+                        "くち+水 = 水口",
+                        "め+木 = 木目",
+                        "あし+人 = 人足"
+                    ],
+        "answer":  "め+木 = 木目",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 26: 「行く」の丁寧な言い方はどれ？",
+        "choices":  [
+                        "いきましょう",
+                        "いかれます",
+                        "いきます",
+                        "いけます"
+                    ],
+        "answer":  "いきます",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 27: 「日本語を習う」の正しい過去形は？",
+        "choices":  [
+                        "習います",
+                        "習いました",
+                        "習っていました",
+                        "習いましょう"
+                    ],
+        "answer":  "習いました",
+        "explanation":  "Kunci jawaban: B. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 28: 「毎日」どう読みますか？",
+        "choices":  [
+                        "まいにち",
+                        "まいつき",
+                        "まいねん",
+                        "まいしゅう"
+                    ],
+        "answer":  "まいにち",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 29: この文の中で正しいのはどれ？",
+        "choices":  [
+                        "本を読んで寝ました。",
+                        "寝てから本を読んで。",
+                        "読んで寝た本。",
+                        "寝る本読んで。"
+                    ],
+        "answer":  "本を読んで寝ました。",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 30: 「図書館で勉強している学生」を表す最も自然な文は？",
+        "choices":  [
+                        "学生が図書館で勉強しています。",
+                        "図書館が学生で勉強しています。",
+                        "図書館の学生が勉強します。",
+                        "勉強している図書館が学生です。"
+                    ],
+        "answer":  "学生が図書館で勉強しています。",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 31: 来週は忙しい＿＿、来られません。",
+        "choices":  [
+                        "し",
+                        "ので",
+                        "から",
+                        "のに"
+                    ],
+        "answer":  "ので",
+        "explanation":  "Kunci jawaban: B. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 32: 明日になったら、天気が＿＿でしょう。",
+        "choices":  [
+                        "よくなる",
+                        "よくなった",
+                        "よくなって",
+                        "よくなります"
+                    ],
+        "answer":  "よくなる",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 33: 日本語を話せるように、毎日＿＿います。",
+        "choices":  [
+                        "勉強して",
+                        "勉強している",
+                        "勉強しようと",
+                        "勉強した"
+                    ],
+        "answer":  "勉強している",
+        "explanation":  "Kunci jawaban: B. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 34: この本は難し＿＿、読みにくいです。",
+        "choices":  [
+                        "くて",
+                        "くなって",
+                        "そうで",
+                        "くする"
+                    ],
+        "answer":  "くて",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 35: 昼ご飯を食べ＿＿、散歩に行きました。",
+        "choices":  [
+                        "てから",
+                        "ながら",
+                        "たまま",
+                        "たり"
+                    ],
+        "answer":  "てから",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 36: この薬を飲めば、＿＿なりますよ。",
+        "choices":  [
+                        "元気に",
+                        "元気で",
+                        "元気な",
+                        "元気を"
+                    ],
+        "answer":  "元気に",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 37: 大きい声で話して＿＿ください。",
+        "choices":  [
+                        "もらって",
+                        "くれて",
+                        "あげて",
+                        "ください"
+                    ],
+        "answer":  "ください",
+        "explanation":  "Kunci jawaban: D. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 38: あの人は医者＿＿、先生でもあります。",
+        "choices":  [
+                        "だけでなく",
+                        "しか",
+                        "ばかり",
+                        "くらい"
+                    ],
+        "answer":  "だけでなく",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 39: ドアが＿＿あります。",
+        "choices":  [
+                        "開けて",
+                        "開けられて",
+                        "開いて",
+                        "開けておき"
+                    ],
+        "answer":  "開いて",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 40: もうお酒を＿＿しまいました。",
+        "choices":  [
+                        "飲んで",
+                        "飲み",
+                        "飲んでから",
+                        "飲んでしまって"
+                    ],
+        "answer":  "飲んで",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 41: 毎日ジョギングをしている＿＿、とても元気です。",
+        "choices":  [
+                        "ので",
+                        "から",
+                        "のに",
+                        "し"
+                    ],
+        "answer":  "し",
+        "explanation":  "Kunci jawaban: D. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 42: 田中さんはギターを＿＿ことができます。",
+        "choices":  [
+                        "弾く",
+                        "弾ける",
+                        "弾いて",
+                        "弾き"
+                    ],
+        "answer":  "弾く",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 43: 日本に行く前に、ビザを＿＿おきます。",
+        "choices":  [
+                        "取って",
+                        "取っておき",
+                        "取る",
+                        "取っておく"
+                    ],
+        "answer":  "取っておく",
+        "explanation":  "Kunci jawaban: D. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 44: 靴を脱いで＿＿。",
+        "choices":  [
+                        "入ってください",
+                        "脱いでください",
+                        "脱いでもいいです",
+                        "入らせてください"
+                    ],
+        "answer":  "入ってください",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 45: 試験が終わって、先生に答案を＿＿。",
+        "choices":  [
+                        "出して",
+                        "出しました",
+                        "出させて",
+                        "出してしまった"
+                    ],
+        "answer":  "出して",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 46: 彼は料理が＿＿らしいです。",
+        "choices":  [
+                        "上手",
+                        "上手で",
+                        "上手な",
+                        "上手だ"
+                    ],
+        "answer":  "上手だ",
+        "explanation":  "Kunci jawaban: D. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 47: 雨が降っている＿＿、出かけたくありません。",
+        "choices":  [
+                        "あいだに",
+                        "ときに",
+                        "間",
+                        "ので"
+                    ],
+        "answer":  "ので",
+        "explanation":  "Kunci jawaban: D. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 48: 窓が＿＿あるので、寒いです。",
+        "choices":  [
+                        "開けて",
+                        "開いて",
+                        "開けられて",
+                        "開けてあり"
+                    ],
+        "answer":  "開いて",
+        "explanation":  "Kunci jawaban: B. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 49: あのスーパーは安いし、＿＿し、人気があります。",
+        "choices":  [
+                        "近い",
+                        "遠い",
+                        "大きい",
+                        "静か"
+                    ],
+        "answer":  "近い",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 50: 日本に来てから、たくさん友達が＿＿。",
+        "choices":  [
+                        "できました",
+                        "つくりました",
+                        "います",
+                        "会いました"
+                    ],
+        "answer":  "できました",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 51: 「見る」と同じ意味の言葉は？",
+        "choices":  [
+                        "書く",
+                        "読む",
+                        "観る",
+                        "言う"
+                    ],
+        "answer":  "観る",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 52: 「先生」の正しい読み方は？",
+        "choices":  [
+                        "せんせい",
+                        "さんせい",
+                        "せいせい",
+                        "せんせ"
+                    ],
+        "answer":  "せんせい",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 53: 次の中で、反対の意味を持つ言葉はどれ？「高い」",
+        "choices":  [
+                        "広い",
+                        "安い",
+                        "強い",
+                        "遠い"
+                    ],
+        "answer":  "安い",
+        "explanation":  "Kunci jawaban: B. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 54: 「午前」の意味は？",
+        "choices":  [
+                        "朝の時間",
+                        "夜の時間",
+                        "昼ご飯",
+                        "夕方"
+                    ],
+        "answer":  "朝の時間",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 55: 正しい漢字の組み合わせはどれ？",
+        "choices":  [
+                        "て+書 = 手書き",
+                        "くち+水 = 水口",
+                        "め+木 = 木目",
+                        "あし+人 = 人足"
+                    ],
+        "answer":  "て+書 = 手書き",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 56: 「～たことがある」の使い方が正しいのは？",
+        "choices":  [
+                        "日本に行ったことがある。",
+                        "日本に行くことがある。",
+                        "日本に行ったことです。",
+                        "日本に行ったところがある。"
+                    ],
+        "answer":  "日本に行ったことがある。",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 57: 「かもしれません」の使い方が正しいのは？",
+        "choices":  [
+                        "明日は雨かもしれません。",
+                        "明日は雨でしょう。",
+                        "明日は雨です。",
+                        "明日は雨でした。"
+                    ],
+        "answer":  "明日は雨かもしれません。",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 58: この漢字「道」の意味はどれ？",
+        "choices":  [
+                        "山",
+                        "かわ",
+                        "みち",
+                        "てら"
+                    ],
+        "answer":  "みち",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 59: 「静か」の反対は？",
+        "choices":  [
+                        "にぎやか",
+                        "きれい",
+                        "ひろい",
+                        "たかい"
+                    ],
+        "answer":  "にぎやか",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 60: 「ながら」の使い方として正しいのは？",
+        "choices":  [
+                        "音楽を聞きながら勉強します。",
+                        "音楽を聞きて勉強します。",
+                        "音楽を聞いてながら勉強します。",
+                        "音楽を聞くながら勉強します。"
+                    ],
+        "answer":  "音楽を聞きながら勉強します。",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 61: 「〜てみる」の意味に最も近い文はどれ？",
+        "choices":  [
+                        "新しいラーメンを食べてみました。",
+                        "新しいラーメンを食べました。",
+                        "新しいラーメンを食べよう。",
+                        "新しいラーメンを食べたことがあります。"
+                    ],
+        "answer":  "新しいラーメンを食べてみました。",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 62: 正しい尊敬語の使い方はどれ？",
+        "choices":  [
+                        "社長が話します。",
+                        "社長が話していました。",
+                        "社長がお話しになります。",
+                        "社長が話されたです。"
+                    ],
+        "answer":  "社長がお話しになります。",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 63: この言葉の使い方が正しいのはどれ？「まだ」",
+        "choices":  [
+                        "彼はまだ来ていません。",
+                        "彼はまだ来ました。",
+                        "彼はまだ来るでしょう。",
+                        "彼はまだ来ましたか？"
+                    ],
+        "answer":  "彼はまだ来ていません。",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 64: 「〜たらどうですか」の使い方として最も自然なのは？",
+        "choices":  [
+                        "医者へ行ったらどうですか？",
+                        "医者へ行ったらいいでしょう？",
+                        "医者へ行ったらがいいですね。",
+                        "医者へ行ったらですか？"
+                    ],
+        "answer":  "医者へ行ったらどうですか？",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 65: 「〜てはいけません」の意味は？",
+        "choices":  [
+                        "～してもよい",
+                        "～してもかまわない",
+                        "～してはいけない",
+                        "～しなければならない"
+                    ],
+        "answer":  "～してはいけない",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 66: 「〜そうです（様態）」の正しい使い方は？",
+        "choices":  [
+                        "雨が降りそうです。",
+                        "雨が降るそうです。",
+                        "雨が降りましたそうです。",
+                        "雨が降ったそうです。"
+                    ],
+        "answer":  "雨が降りそうです。",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 67: 「〜ないといけません」の意味はどれ？",
+        "choices":  [
+                        "～してもいいです",
+                        "～しなくてもいいです",
+                        "～しなければなりません",
+                        "～してしまいました"
+                    ],
+        "answer":  "～しなければなりません",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 68: 「試験に合格するために、毎日勉強します。」この文の意味に近いのは？",
+        "choices":  [
+                        "合格したいので、勉強する",
+                        "試験が終わったから勉強する",
+                        "勉強したくない",
+                        "合格した後で勉強する"
+                    ],
+        "answer":  "合格したいので、勉強する",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 69: 「〜てしまいました」の使い方が自然なのは？",
+        "choices":  [
+                        "お弁当を食べてしまいました。",
+                        "お弁当を食べていました。",
+                        "お弁当を食べましょう。",
+                        "お弁当を食べてもいいです。"
+                    ],
+        "answer":  "お弁当を食べてしまいました。",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 70: 「このケーキはおいしそうですね。」の意味は？",
+        "choices":  [
+                        "実際に食べておいしい",
+                        "見た目でおいしいと感じる",
+                        "おいしくないようだ",
+                        "食べたことがある"
+                    ],
+        "answer":  "見た目でおいしいと感じる",
+        "explanation":  "Kunci jawaban: B. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 71: この店はサービスが＿＿し、料理もおいしいです。",
+        "choices":  [
+                        "よくない",
+                        "よくて",
+                        "よく",
+                        "よい"
+                    ],
+        "answer":  "よくて",
+        "explanation":  "Kunci jawaban: B. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 72: この店はサービスが＿＿し、料理もおいしいです。",
+        "choices":  [
+                        "よくない",
+                        "よくて",
+                        "よく",
+                        "よい"
+                    ],
+        "answer":  "よく",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 73: 明日テストがある＿＿、早く寝ます。",
+        "choices":  [
+                        "のに",
+                        "けど",
+                        "から",
+                        "でも"
+                    ],
+        "answer":  "けど",
+        "explanation":  "Kunci jawaban: B. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 74: 静かにしないと、先生に＿＿ますよ。",
+        "choices":  [
+                        "しかられ",
+                        "しかられる",
+                        "しかられて",
+                        "しからせ"
+                    ],
+        "answer":  "しかられ",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 75: あの映画は見たことが＿＿。",
+        "choices":  [
+                        "あります",
+                        "います",
+                        "でした",
+                        "なります"
+                    ],
+        "answer":  "でした",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 76: これは昨日買った＿＿です。",
+        "choices":  [
+                        "の",
+                        "こと",
+                        "もの",
+                        "ところ"
+                    ],
+        "answer":  "の",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 77: 母は料理がとても＿＿です。",
+        "choices":  [
+                        "上手",
+                        "きらい",
+                        "へた",
+                        "下手"
+                    ],
+        "answer":  "へた",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 78: この道を＿＿と、駅に着きます。",
+        "choices":  [
+                        "行く",
+                        "行った",
+                        "行けば",
+                        "行き"
+                    ],
+        "answer":  "行けば",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 79: 日本語の勉強を＿＿たいです。",
+        "choices":  [
+                        "始めて",
+                        "始まり",
+                        "始め",
+                        "始まって"
+                    ],
+        "answer":  "始めて",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 80: コーヒーにミルクを＿＿飲みます。",
+        "choices":  [
+                        "入れて",
+                        "入れる",
+                        "入れた",
+                        "入れ"
+                    ],
+        "answer":  "入れ",
+        "explanation":  "Kunci jawaban: D. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 81: たくさん食べたので、おなかが＿＿。",
+        "choices":  [
+                        "痛い",
+                        "空いた",
+                        "苦しい",
+                        "いっぱい"
+                    ],
+        "answer":  "痛い",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 82: 雨が＿＿ので、傘を持って行きましょう。",
+        "choices":  [
+                        "降っている",
+                        "降った",
+                        "降る",
+                        "降ります"
+                    ],
+        "answer":  "降っている",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 83: 新しいアパートは駅に＿＿です。",
+        "choices":  [
+                        "近い",
+                        "遠い",
+                        "ひろい",
+                        "狭い"
+                    ],
+        "answer":  "近い",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 84: 来月から新しい仕事を＿＿ことになりました。",
+        "choices":  [
+                        "始める",
+                        "始まる",
+                        "始まり",
+                        "始めた"
+                    ],
+        "answer":  "始める",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 85: 子供のとき、よく川で泳いだ＿＿。",
+        "choices":  [
+                        "ものだ",
+                        "こと",
+                        "とき",
+                        "ほう"
+                    ],
+        "answer":  "ものだ",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 86: 先生は学生に作文を＿＿ました。",
+        "choices":  [
+                        "書かせ",
+                        "書いて",
+                        "書かれて",
+                        "書かせられ"
+                    ],
+        "answer":  "書いて",
+        "explanation":  "Kunci jawaban: B. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 87: 昨日は疲れていた＿＿、早く寝ました。",
+        "choices":  [
+                        "から",
+                        "ので",
+                        "のに",
+                        "し"
+                    ],
+        "answer":  "から",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 88: パーティーには行けない＿＿、用事があるからです。",
+        "choices":  [
+                        "の",
+                        "で",
+                        "に",
+                        "を"
+                    ],
+        "answer":  "の",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 89: 友達に本を貸して＿＿ました。",
+        "choices":  [
+                        "あげ",
+                        "もらい",
+                        "くれ",
+                        "さしあげ"
+                    ],
+        "answer":  "あげ",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 90: 毎日日本語を勉強しているのに、＿＿上手になりません。",
+        "choices":  [
+                        "なかなか",
+                        "ちっとも",
+                        "ぜんぜん",
+                        "あまり"
+                    ],
+        "answer":  "ぜんぜん",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 91: 今日は先生が学校を＿＿。",
+        "choices":  [
+                        "休みます",
+                        "休ませます",
+                        "休まれます",
+                        "おやすみます"
+                    ],
+        "answer":  "休みます",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 92: 「忙しい」と反対の意味の形容詞はどれ？",
+        "choices":  [
+                        "ひま",
+                        "うるさい",
+                        "たのしい",
+                        "おおい"
+                    ],
+        "answer":  "うるさい",
+        "explanation":  "Kunci jawaban: B. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 93: 「すみません」の使い方として正しいのは？",
+        "choices":  [
+                        "あいさつ",
+                        "謝る",
+                        "呼ぶ",
+                        "別れる"
+                    ],
+        "answer":  "呼ぶ",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 94: この文章の意味は？「明日、雨が降るかもしれません。」",
+        "choices":  [
+                        "雨は絶対に降る",
+                        "雨がふらない",
+                        "雨が降る可能性がある",
+                        "晴れるかもしれない"
+                    ],
+        "answer":  "雨がふらない",
+        "explanation":  "Kunci jawaban: B. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 95: 「先生に褒められました。」の意味は？",
+        "choices":  [
+                        "先生に叱られた",
+                        "先生にほめられた",
+                        "先生をほめた",
+                        "先生が怒った"
+                    ],
+        "answer":  "先生にほめられた",
+        "explanation":  "Kunci jawaban: B. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 96: 「〜し、〜し」の使い方が正しいのはどれ？",
+        "choices":  [
+                        "きれいし、高いです。",
+                        "安いし、便利です。",
+                        "やすいの、よくです。",
+                        "かわいいで、たかいです。"
+                    ],
+        "answer":  "やすいの、よくです。",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 97: 「昨日、友達が遊びに来た間、宿題をしました。」文の間違いはどこ？",
+        "choices":  [
+                        "昨日",
+                        "遊びに来た",
+                        "間",
+                        "宿題をしました"
+                    ],
+        "answer":  "宿題をしました",
+        "explanation":  "Kunci jawaban: D. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 98: 「〜ておく」の使い方として正しいのはどれ？",
+        "choices":  [
+                        "食べておく",
+                        "寝ておく",
+                        "読んでおく",
+                        "全て正しい"
+                    ],
+        "answer":  "読んでおく",
+        "explanation":  "Kunci jawaban: C. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 99: 「この漢字は小学校で習いました。」の正しい意味は？",
+        "choices":  [
+                        "小学校に行く",
+                        "小学校で教えた",
+                        "小学校で勉強した",
+                        "小学校の漢字を忘れた"
+                    ],
+        "answer":  "小学校の漢字を忘れた",
+        "explanation":  "Kunci jawaban: D. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    },
+    {
+        "type":  "multiple_choice",
+        "prompt":  "Soal 100: 「〜てもいいです」の使い方が正しいのはどれ？",
+        "choices":  [
+                        "トイレに行ってもいいですか？",
+                        "テレビを見てもいいですか？",
+                        "写真を撮ってもいいですか？",
+                        "全て正しい"
+                    ],
+        "answer":  "トイレに行ってもいいですか？",
+        "explanation":  "Kunci jawaban: A. Cocokkan pola dan konteks kalimat N4 sebelum memilih jawaban."
+    }
+]

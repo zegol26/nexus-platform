@@ -1,5 +1,12 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Nexus AI Nihongo
+
+- JLPT N5 and N4 rehearsal pages are available under `/apps/nihongo/full-rehearsal-n5` and `/apps/nihongo/full-rehearsal-n4`.
+- JLPT N5 and N4 mock tests are available under `/apps/nihongo/mock-test/n5` and `/apps/nihongo/mock-test/n4`.
+- Quiz generation includes curriculum-aligned concept questions for beginner, N5, N4, A2, and N3 practice, with Indonesian explanations.
+- Run regression locally with `npm run lint`, `npx tsc --noEmit --pretty false`, `npm test`, `npm run validate:game`, and `npm run build`.
+
 ## Getting Started
 
 First, run the development server:

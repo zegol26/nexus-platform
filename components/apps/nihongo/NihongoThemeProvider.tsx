@@ -50,15 +50,19 @@ export function NihongoThemeProvider({
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    try {
-      const stored = window.localStorage.getItem(STORAGE_KEY);
-      if (isNihongoTheme(stored)) {
-        setThemeState(stored);
+    const timer = window.setTimeout(() => {
+      try {
+        const stored = window.localStorage.getItem(STORAGE_KEY);
+        if (isNihongoTheme(stored)) {
+          setThemeState(stored);
+        }
+      } catch {
+        // ignore
       }
-    } catch {
-      // ignore — localStorage may be unavailable in private mode
-    }
-    setMounted(true);
+      setMounted(true);
+    }, 0);
+
+    return () => window.clearTimeout(timer);
   }, []);
 
   const setTheme = useCallback((next: NihongoTheme) => {
