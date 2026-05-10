@@ -1,7 +1,6 @@
-import { mkdir, writeFile } from "fs/promises";
-import path from "path";
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
+import OpenAI from "openai";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
 import { buildPronunciationMetadata, evaluatePronunciationUpload } from "@/lib/nihongo/assessment/pronunciationEvaluator";
@@ -52,47 +51,15 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Audio file is too large. Maximum size is 8MB." }, { status: 400 });
   }
 
-  const extension = file.name.split(".").pop() || "webm";
-  const safeName = `${user.id}-${Date.now()}.${extension.replace(/[^a-z0-9]/gi, "")}`;
-  const uploadDir = path.join(process.cwd(), "public", "uploads", "nihongo", "pronunciation");
-  const uploadPath = path.join(uploadDir, safeName);
-  const publicUrl = `/uploads/nihongo/pronunciation/${safeName}`;
-
-  try {
-    await mkdir(uploadDir, { recursive: true });
-    await writeFile(uploadPath, Buffer.from(await file.arrayBuffer()));
-  } catch (error) {
-    console.error(error);
-    const evaluation = await evaluatePronunciationUpload({
-      expectedText,
-      fileName: file.name,
-      mimeType: file.type,
-      size: file.size,
-    });
-
-    return NextResponse.json({
-      audioUrl: null,
-      metadata: {
-        expectedText,
-        fileName: file.name,
-        mimeType: file.type,
-        size: file.size,
-        storageStatus: "unavailable",
-      },
-      evaluation: {
-        ...evaluation,
-        status: "pending",
-        feedbackIndonesian:
-          "Audio diterima, tetapi penyimpanan lokal belum tersedia. Assessment tetap bisa lanjut dan pronunciation ditandai pending/manual.",
-      },
-    });
-  }
-
   const metadata = buildPronunciationMetadata({
     expectedText,
     fileName: file.name,
     mimeType: file.type,
     size: file.size,
+  });
+  const transcript = await transcribeJapaneseAudio(file).catch((error) => {
+    console.error("[pre-assessment/pronunciation] transcription failed", error);
+    return null;
   });
 
   const evaluation = await evaluatePronunciationUpload({
@@ -100,15 +67,34 @@ export async function POST(request: Request) {
     fileName: file.name,
     mimeType: file.type,
     size: file.size,
+    transcript,
   });
 
   return NextResponse.json({
-    audioUrl: publicUrl,
-    metadata,
+    audioUrl: null,
+    metadata: {
+      ...metadata,
+      storageStatus: "temporary",
+      transcript,
+      analyzer: transcript ? "openai_transcription_similarity" : "unavailable",
+    },
     evaluation,
   });
 }
 
 function isSupportedAudioMimeType(mimeType: string) {
   return supportedMimeTypes.has(mimeType) || mimeType.startsWith("audio/webm");
+}
+
+async function transcribeJapaneseAudio(file: File) {
+  if (!process.env.OPENAI_API_KEY) return null;
+
+  const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+  const transcription = await openai.audio.transcriptions.create({
+    file,
+    model: process.env.OPENAI_TRANSCRIPTION_MODEL ?? "whisper-1",
+    language: "ja",
+  });
+
+  return transcription.text?.trim() || null;
 }

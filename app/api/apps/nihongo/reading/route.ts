@@ -145,7 +145,7 @@ async function generateReadingWithOpenAI(level: string, topic: string) {
         {
           role: "system",
           content:
-            "Create JSON reading practice for Indonesian Japanese learners. Return title, passage, vocabulary string array, questions string array, answerKey string array, note.",
+            "Create JSON reading practice for Indonesian Japanese learners. Return title, passage, vocabulary string array, questions string array, answerKey string array, note. Reading questions must never be only a generic instruction such as 'Baca teks, lalu pilih jawaban paling tepat.' Always ask one clear target: who, what, where, when, why, how, or statement matching. Prefer Japanese question forms like '本文の内容と合っているものはどれですか。' or '本文によると、___ は何/どこ/いつ/だれ/どうしますか。'. Each answerKey item must cite or paraphrase the relevant Japanese phrase from the passage. Keep N5 simple; N4 may use slightly longer passages and light inference.",
         },
         {
           role: "user",

@@ -31,7 +31,10 @@ export async function GET(request: Request) {
           ? {
               japanese: question.passage,
               kanaSupport: undefined,
-              indonesianHint: question.skill === "reading" ? "Baca teks, lalu pilih jawaban paling tepat." : undefined,
+              indonesianHint:
+                question.skill === "reading"
+                  ? "Pilih jawaban yang sesuai dengan isi teks."
+                  : undefined,
             }
           : undefined,
       })),
@@ -102,7 +105,7 @@ function mapSkillToCategory(skill: string) {
 
 function getInstruction(skill: string) {
   if (skill === "particle") return "Pilih partikel yang tepat.";
-  if (skill === "reading") return "Baca teks pendek, lalu jawab pertanyaan.";
+  if (skill === "reading") return "Baca teks pendek, lalu jawab pertanyaan yang spesifik.";
   if (skill === "kanji") return "Pilih arti atau bacaan yang tepat.";
   if (skill === "grammar") return "Pilih bentuk grammar yang tepat.";
   return "Pilih jawaban yang paling tepat.";

@@ -11,17 +11,22 @@ type PronunciationInput = {
 export async function evaluatePronunciationUpload(input: PronunciationInput): Promise<PronunciationEvaluation> {
   if (input.transcript?.trim()) {
     const accuracyScore = calculateTextSimilarity(input.expectedText, input.transcript);
+    const fluencyScore = estimateFluencyScore(input);
+    const pronunciationScore = Math.round(accuracyScore * 0.85 + fluencyScore * 0.15);
+    const missingWords = findMissingTokens(input.expectedText, input.transcript);
 
     return {
-      pronunciationScore: accuracyScore,
-      fluencyScore: null,
+      pronunciationScore,
+      fluencyScore,
       accuracyScore,
-      missingWords: findMissingTokens(input.expectedText, input.transcript),
-      misreadWords: [],
+      missingWords,
+      misreadWords: findLikelyMisreadTokens(input.expectedText, input.transcript),
       feedbackIndonesian:
-        "Skor dihitung dari kemiripan transcript dengan teks target. Ini mode MVP berbasis teks, bukan evaluasi fonetik penuh.",
+        buildEvaluatedFeedback(pronunciationScore, accuracyScore, fluencyScore),
       recommendedPractice: [
-        "Ulangi bagian yang hilang dari transcript.",
+        missingWords.length
+          ? `Ulangi bagian yang belum terbaca jelas: ${missingWords.slice(0, 3).join("、")}.`
+          : "Pertahankan artikulasi karena transcript sudah dekat dengan teks target.",
         "Baca perlahan sambil menjaga panjang bunyi vokal.",
         "Gunakan audio native sebagai pembanding saat tersedia.",
       ],
@@ -38,11 +43,11 @@ export async function evaluatePronunciationUpload(input: PronunciationInput): Pr
     missingWords: [],
     misreadWords: [],
     feedbackIndonesian:
-      `Audio ${input.fileName} tersimpan, tetapi pronunciation scoring provider belum dikonfigurasi. Skor tidak dihitung agar hasil assessment tidak palsu.`,
+      `Audio ${input.fileName} diterima hanya untuk sesi ini, tetapi analyzer speech-to-text belum tersedia. Skor tidak dihitung agar hasil assessment tidak palsu.`,
     recommendedPractice: [
       "Lanjutkan assessment; bagian pronunciation ditandai belum dinilai.",
       "Latih shadowing dengan membaca teks yang sama 2-3 kali.",
-      "Aktifkan speech-to-text provider untuk scoring otomatis di tahap berikutnya.",
+      "Aktifkan OPENAI_API_KEY untuk scoring otomatis berbasis transcript.",
     ],
     status: "provider_not_configured",
   };
@@ -54,8 +59,30 @@ export function buildPronunciationMetadata(input: PronunciationInput) {
     fileName: input.fileName,
     mimeType: input.mimeType,
     size: input.size,
-    uploadedAt: new Date().toISOString(),
+    analyzedAt: new Date().toISOString(),
+    retention: "temporary_audio_not_stored",
   };
+}
+
+function buildEvaluatedFeedback(pronunciationScore: number, accuracyScore: number, fluencyScore: number) {
+  if (pronunciationScore >= 85) {
+    return `Bagus. Transcript sangat dekat dengan teks target. Accuracy ${accuracyScore}/100 dan estimasi kelancaran ${fluencyScore}/100.`;
+  }
+
+  if (pronunciationScore >= 70) {
+    return `Cukup jelas, tetapi masih ada bagian yang perlu dirapikan. Accuracy ${accuracyScore}/100 dan estimasi kelancaran ${fluencyScore}/100.`;
+  }
+
+  return `Beberapa bagian belum terbaca jelas oleh analyzer. Accuracy ${accuracyScore}/100 dan estimasi kelancaran ${fluencyScore}/100. Coba baca lebih pelan dan stabil.`;
+}
+
+function estimateFluencyScore(input: PronunciationInput) {
+  const expectedLength = normalizeJapaneseText(input.expectedText).length;
+  const bytesPerCharacter = input.size / Math.max(expectedLength, 1);
+
+  if (bytesPerCharacter < 3500) return 65;
+  if (bytesPerCharacter > 120000) return 72;
+  return 85;
 }
 
 function calculateTextSimilarity(expected: string, actual: string) {
@@ -85,6 +112,19 @@ function findMissingTokens(expected: string, actual: string) {
     .map((token) => token.trim())
     .filter(Boolean)
     .filter((token) => !actualNormalized.includes(normalizeJapaneseText(token)));
+}
+
+function findLikelyMisreadTokens(expected: string, actual: string) {
+  const actualNormalized = normalizeJapaneseText(actual);
+  return expected
+    .split(/[、。\s]+/)
+    .map((token) => token.trim())
+    .filter(Boolean)
+    .filter((token) => {
+      const normalized = normalizeJapaneseText(token);
+      return normalized.length >= 4 && !actualNormalized.includes(normalized);
+    })
+    .slice(0, 5);
 }
 
 function levenshteinDistance(a: string, b: string) {

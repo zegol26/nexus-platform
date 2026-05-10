@@ -147,11 +147,43 @@ export function validateGeneratedAssessment(questions: BankAssessmentQuestion[])
     if (question.options.length !== 4) errors.push(`${question.id}: options length must be 4`);
     if (new Set(question.options).size !== question.options.length) errors.push(`${question.id}: duplicate options`);
     if (!question.options.includes(question.correctAnswer)) errors.push(`${question.id}: correct answer missing`);
+    if (question.skill === "reading") {
+      if (!question.passage?.trim()) errors.push(`${question.id}: reading question must include passage`);
+      if (isGenericReadingPrompt(question.prompt)) {
+        errors.push(`${question.id}: reading question must not use only a generic instruction`);
+      }
+      if (!asksClearReadingTarget(question.prompt)) {
+        errors.push(`${question.id}: reading question must ask a clear target`);
+      }
+    }
+    if (
+      question.skill === "particle" &&
+      /^(です|ます|でした|ません|ありません|あります|います|ない)$/.test(question.correctAnswer)
+    ) {
+      errors.push(`${question.id}: particle question answer is not a particle`);
+    }
   }
 
   if (errors.length > 0) {
     throw new Error(`Generated assessment is invalid: ${errors.join("; ")}`);
   }
+}
+
+function isGenericReadingPrompt(prompt: string) {
+  const normalized = prompt.trim().toLowerCase();
+  return [
+    "baca teks, lalu pilih jawaban paling tepat",
+    "baca teks pendek",
+    "pilih jawaban paling tepat",
+    "pilih jawaban yang benar",
+    "jawaban paling tepat",
+  ].some((generic) => normalized.includes(generic));
+}
+
+function asksClearReadingTarget(prompt: string) {
+  return /本文の内容と合っているもの|本文によると|だれ|誰|何|どこ|いつ|なぜ|どうして|どうすれば|どれ|apa|siapa|di mana|dimana|kapan|mengapa|kenapa|bagaimana/i.test(
+    prompt
+  );
 }
 
 function shuffle<T>(items: T[]) {

@@ -1,5 +1,33 @@
 # Release Notes
 
+## [vNext] - Assessment Clarity and Pronunciation Scoring
+
+### Added
+
+- Added unanswered-question navigation for pre-assessment, JLPT N5 mock test, and JLPT N4 mock test. If learners try to continue or submit with missing answers, the UI now names the first incomplete question and scrolls to it.
+- Added temporary pronunciation analysis for pre-assessment recordings. Audio is transcribed in-memory with OpenAI speech-to-text when `OPENAI_API_KEY` is configured, then scored against the target Japanese text.
+- Added pronunciation scoring output for accuracy, estimated fluency, overall pronunciation score, missing tokens, likely misread tokens, Indonesian feedback, and recommended practice.
+
+### Improved
+
+- Reading assessment questions now render the actual target question below the passage, so learners are not left with only a generic instruction.
+- N5/N4 reading seed questions now use clearer question targets and statement-matching distractors.
+- AI-generated reading guardrails now reject vague reading prompts and require target-specific questions with Japanese evidence in the explanation.
+
+### Fixed
+
+- Removed persistent pronunciation audio storage from the assessment flow. Recorded/uploaded audio is no longer written to `public/uploads` or saved in the database.
+- Sanitized pronunciation submission payloads so `audioUrl`, public URLs, data URLs, blobs, and base64 audio cannot be persisted with assessment results.
+- Added validation against generic reading instructions and invalid particle-answer generation.
+
+### Tested
+
+- `npx tsx prisma/seed-assessment-questions.ts`
+- `npm run lint`
+- `npx tsc --noEmit --pretty false`
+- `npm test`
+- `npm run build`
+
 ## [vNext] - Nihongo N4 Rehearsal and Quiz Quality Upgrade
 
 ### Added

@@ -34,6 +34,7 @@ export async function POST(request: Request) {
 
   const body = (await request.json()) as SubmitBody;
   const answers = body.answers ?? [];
+  const pronunciation = sanitizePronunciation(body.pronunciation);
 
   if (answers.length === 0) {
     return NextResponse.json({ error: "At least one answer is required." }, { status: 400 });
@@ -51,7 +52,7 @@ export async function POST(request: Request) {
     return submitBankAssessment({
       userId: user.id,
       answers,
-      pronunciation: body.pronunciation,
+      pronunciation,
       bankRows,
     });
   }
@@ -69,7 +70,7 @@ export async function POST(request: Request) {
   const evaluation = evaluateAssessment({
     questions,
     answers,
-    pronunciation: body.pronunciation,
+    pronunciation,
   });
 
   const recommendedLessons = await recommendNihongoLessons({
@@ -79,7 +80,7 @@ export async function POST(request: Request) {
   });
   const recommendedLessonIds = recommendedLessons.map((lesson) => lesson.id);
   const nextLesson = recommendedLessons[0] ?? null;
-  const pronunciationJson = toJsonValue(body.pronunciation ?? null);
+  const pronunciationJson = toJsonValue(pronunciation ?? null);
 
   const assessmentSession = await prisma.nihongoAssessmentSession.create({
     data: {
@@ -105,7 +106,7 @@ export async function POST(request: Request) {
         recommendedDailyPlan: evaluation.recommendedDailyPlan,
         pronunciation: pronunciationJson,
       } satisfies Prisma.InputJsonObject,
-      pronunciationScore: body.pronunciation?.pronunciationScore,
+      pronunciationScore: pronunciation?.pronunciationScore,
       pronunciationFeedback: pronunciationJson,
       answers: {
         create: evaluation.answers.map((answer) => ({
@@ -192,7 +193,7 @@ export async function POST(request: Request) {
       recommendedDailyPlan: evaluation.recommendedDailyPlan,
       aiFeedbackIndonesian: evaluation.aiFeedbackIndonesian,
       encouragementJapanese: evaluation.encouragementJapanese,
-      pronunciation: body.pronunciation ?? null,
+      pronunciation: pronunciation ?? null,
       badge,
       recommendedLessons,
       nextLesson,
@@ -379,4 +380,25 @@ function buildPlacementDailyPlan(label: string, weaknessTags: string[]) {
 
 function toJsonValue(value: unknown): Prisma.InputJsonValue {
   return JSON.parse(JSON.stringify(value ?? null)) as Prisma.InputJsonValue;
+}
+
+function sanitizePronunciation(value: SubmitBody["pronunciation"]) {
+  if (!value) return undefined;
+  const { metadata, ...evaluation } = value;
+  delete (evaluation as { audioUrl?: string }).audioUrl;
+  return {
+    ...evaluation,
+    metadata: sanitizePronunciationMetadata(metadata),
+  };
+}
+
+function sanitizePronunciationMetadata(metadata: Record<string, unknown> | undefined) {
+  if (!metadata) return undefined;
+  const safeMetadata = { ...metadata };
+  delete safeMetadata.audioUrl;
+  delete safeMetadata.publicUrl;
+  delete safeMetadata.dataUrl;
+  delete safeMetadata.blob;
+  delete safeMetadata.base64;
+  return safeMetadata;
 }

@@ -44,6 +44,7 @@ export default function JLPTN4MockTestPage() {
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const [missingQuestionId, setMissingQuestionId] = useState<string | null>(null);
 
   useEffect(() => {
     async function loadMockTest() {
@@ -72,7 +73,15 @@ export default function JLPTN4MockTestPage() {
 
   async function submitTest() {
     if (answeredCount < questions.length) {
-      setError("Jawab semua pertanyaan dulu sebelum submit.");
+      const firstMissingIndex = questions.findIndex((question) => !answers[question.id]);
+      const firstMissing = questions[firstMissingIndex];
+      if (firstMissing) {
+        setMissingQuestionId(firstMissing.id);
+        setError(`Soal ${firstMissingIndex + 1} belum dijawab. Lengkapi dulu sebelum submit.`);
+        scrollToQuestion(`mock-question-${firstMissing.id}`);
+      } else {
+        setError("Jawab semua pertanyaan dulu sebelum submit.");
+      }
       return;
     }
 
@@ -171,7 +180,13 @@ export default function JLPTN4MockTestPage() {
 
       <section className="space-y-4">
         {questions.map((question, index) => (
-          <article key={question.id} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          <article
+            key={question.id}
+            id={`mock-question-${question.id}`}
+            className={`scroll-mt-28 rounded-2xl border bg-white p-5 shadow-sm transition ${
+              missingQuestionId === question.id ? "border-rose-400 ring-2 ring-rose-100" : "border-slate-200"
+            }`}
+          >
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
                 {question.section} / {question.subCategory}
@@ -186,7 +201,13 @@ export default function JLPTN4MockTestPage() {
                 <button
                   key={option}
                   type="button"
-                  onClick={() => setAnswers((current) => ({ ...current, [question.id]: option }))}
+                  onClick={() => {
+                    setAnswers((current) => ({ ...current, [question.id]: option }));
+                    if (missingQuestionId === question.id) {
+                      setMissingQuestionId(null);
+                      setError("");
+                    }
+                  }}
                   className={`rounded-2xl border px-4 py-3 text-left text-sm font-semibold transition ${
                     answers[question.id] === option
                       ? "border-cyan-500 bg-cyan-50 text-cyan-900"
@@ -230,4 +251,13 @@ function ResultCard({ result }: { result: Result }) {
 
 function stripMarkdownBold(value: string) {
   return value.replace(/\*\*/g, "");
+}
+
+function scrollToQuestion(id: string) {
+  window.setTimeout(() => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  }, 0);
 }

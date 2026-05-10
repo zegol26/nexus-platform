@@ -95,6 +95,7 @@ export default function NihongoPreAssessmentPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [missingQuestionId, setMissingQuestionId] = useState<string | null>(null);
 
   useEffect(() => {
     clientTrack({
@@ -141,16 +142,10 @@ export default function NihongoPreAssessmentPage() {
 
   function answerQuestion(questionId: string, answer: string) {
     setAnswers((current) => ({ ...current, [questionId]: answer }));
-  }
-
-  function canContinue() {
-    const key = steps[currentStep]?.key;
-    if (key === "welcome" || key === "result") return true;
-    if (key === "pronunciation") return Boolean(pronunciation);
-    if (key === "loading") return false;
-
-    const currentQuestions = groupedQuestions[key as keyof typeof groupedQuestions] ?? [];
-    return currentQuestions.every((question) => answers[question.id]);
+    if (missingQuestionId === questionId) {
+      setMissingQuestionId(null);
+      setError(null);
+    }
   }
 
   async function submitAssessment() {
@@ -192,6 +187,26 @@ export default function NihongoPreAssessmentPage() {
   }
 
   function goNext() {
+    const key = steps[currentStep]?.key;
+
+    if (key === "pronunciation" && !pronunciation) {
+      setError("Recording pronunciation belum selesai. Rekam atau unggah audio dulu sebelum melihat hasil.");
+      return;
+    }
+
+    if (key !== "welcome" && key !== "result" && key !== "loading" && key !== "pronunciation") {
+      const currentQuestions = groupedQuestions[key as keyof typeof groupedQuestions] ?? [];
+      const firstMissingIndex = currentQuestions.findIndex((question) => !answers[question.id]);
+      const firstMissing = currentQuestions[firstMissingIndex];
+
+      if (firstMissing) {
+        setMissingQuestionId(firstMissing.id);
+        setError(`Soal ${firstMissingIndex + 1} di bagian ${steps[currentStep]?.label} belum dijawab.`);
+        scrollToQuestion(`assessment-question-${firstMissing.id}`);
+        return;
+      }
+    }
+
     if (currentStep === 6) {
       void submitAssessment();
       return;
@@ -251,15 +266,15 @@ export default function NihongoPreAssessmentPage() {
         {currentStep === 0 ? (
           <WelcomeStep />
         ) : currentStep === 1 ? (
-          <QuestionStep title="Kana Recognition" copy="Kita cek hiragana, katakana, dan romaji dasar." questions={groupedQuestions.kana} answers={answers} onAnswer={answerQuestion} />
+          <QuestionStep title="Kana Recognition" copy="Kita cek hiragana, katakana, dan romaji dasar." questions={groupedQuestions.kana} answers={answers} missingQuestionId={missingQuestionId} onAnswer={answerQuestion} />
         ) : currentStep === 2 ? (
-          <QuestionStep title="Basic Kanji" copy="Kanji yang dipakai masih sekitar N5/N4 umum." questions={groupedQuestions.kanji} answers={answers} onAnswer={answerQuestion} />
+          <QuestionStep title="Basic Kanji" copy="Kanji yang dipakai masih sekitar N5/N4 umum." questions={groupedQuestions.kanji} answers={answers} missingQuestionId={missingQuestionId} onAnswer={answerQuestion} />
         ) : currentStep === 3 ? (
-          <QuestionStep title="Particles and Forms" copy="Bagian ini menguji partikel valid serta bentuk kata kerja dan kata sifat dasar." questions={groupedQuestions.grammar} answers={answers} onAnswer={answerQuestion} />
+          <QuestionStep title="Particles and Forms" copy="Bagian ini menguji partikel valid serta bentuk kata kerja dan kata sifat dasar." questions={groupedQuestions.grammar} answers={answers} missingQuestionId={missingQuestionId} onAnswer={answerQuestion} />
         ) : currentStep === 4 ? (
-          <QuestionStep title="Reading Comprehension" copy="Baca teks pendek, lalu pilih jawaban yang paling tepat." questions={groupedQuestions.reading} answers={answers} onAnswer={answerQuestion} />
+          <QuestionStep title="Reading Comprehension" copy="Baca teks pendek, lalu jawab target yang ditanyakan pada setiap soal." questions={groupedQuestions.reading} answers={answers} missingQuestionId={missingQuestionId} onAnswer={answerQuestion} />
         ) : currentStep === 5 ? (
-          <QuestionStep title="Listening Comprehension" copy="Audio disiapkan lewat audioUrl. Jika file belum tersedia, gunakan teks placeholder untuk MVP." questions={groupedQuestions.listening} answers={answers} onAnswer={answerQuestion} />
+          <QuestionStep title="Listening Comprehension" copy="Audio disiapkan lewat audioUrl. Jika file belum tersedia, gunakan teks placeholder untuk MVP." questions={groupedQuestions.listening} answers={answers} missingQuestionId={missingQuestionId} onAnswer={answerQuestion} />
         ) : currentStep === 6 ? (
           <PronunciationStep prompt={pronunciationPrompt} evaluation={pronunciation} onEvaluation={setPronunciation} />
         ) : currentStep === 7 ? (
@@ -283,7 +298,7 @@ export default function NihongoPreAssessmentPage() {
           <button
             type="button"
             onClick={goNext}
-            disabled={!canContinue() || isSubmitting}
+            disabled={isSubmitting}
             className="rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-cyan-700 disabled:cursor-not-allowed disabled:bg-slate-300"
           >
             {currentStep === 6 ? "Lihat Hasil Saya" : "Lanjut"}
@@ -329,12 +344,14 @@ function QuestionStep({
   copy,
   questions,
   answers,
+  missingQuestionId,
   onAnswer,
 }: {
   title: string;
   copy: string;
   questions: Question[];
   answers: Record<string, string>;
+  missingQuestionId: string | null;
   onAnswer: (questionId: string, answer: string) => void;
 }) {
   return (
@@ -343,7 +360,13 @@ function QuestionStep({
       <p className="mt-2 text-sm leading-6 text-slate-600">{copy}</p>
       <div className="mt-6 space-y-5">
         {questions.map((question, index) => (
-          <div key={question.id} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+          <div
+            key={question.id}
+            id={`assessment-question-${question.id}`}
+            className={`scroll-mt-28 rounded-2xl border bg-slate-50 p-4 transition ${
+              missingQuestionId === question.id ? "border-rose-400 ring-2 ring-rose-100" : "border-slate-200"
+            }`}
+          >
             <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Soal {index + 1}</p>
@@ -359,6 +382,9 @@ function QuestionStep({
                 <p className="text-lg leading-8 text-slate-950">{question.passage.japanese}</p>
                 {question.passage.kanaSupport ? <p className="mt-2 text-sm leading-6 text-slate-500">{question.passage.kanaSupport}</p> : null}
                 {question.passage.indonesianHint ? <p className="mt-2 text-xs font-medium text-cyan-700">{question.passage.indonesianHint}</p> : null}
+                <p className="mt-4 rounded-lg border border-cyan-100 bg-cyan-50 px-3 py-2 text-sm font-semibold leading-6 text-slate-900">
+                  {question.prompt}
+                </p>
               </div>
             ) : question.type === "audio_multiple_choice" ? (
               <div className="mt-4 rounded-xl bg-white p-4 ring-1 ring-slate-200">
@@ -562,4 +588,13 @@ function ResultTagCard({ label, tags }: { label: string; tags: string[] }) {
       </div>
     </div>
   );
+}
+
+function scrollToQuestion(id: string) {
+  window.setTimeout(() => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  }, 0);
 }

@@ -132,7 +132,6 @@ export function PronunciationRecorder({ expectedText, onEvaluation }: Pronunciat
       setRecordingState("saved");
       onEvaluation({
         ...payload.evaluation,
-        audioUrl: payload.audioUrl,
         metadata: payload.metadata,
       });
     } catch {
@@ -191,7 +190,7 @@ export function PronunciationRecorder({ expectedText, onEvaluation }: Pronunciat
         </audio>
       ) : (
         <p className="text-sm leading-6 text-slate-500">
-          Rekam suara langsung atau unggah file webm, mp3, wav, atau m4a.
+          Rekam suara langsung atau unggah file webm, mp3, wav, atau m4a. Audio hanya dipakai sementara untuk analisis dan tidak disimpan.
         </p>
       )}
 

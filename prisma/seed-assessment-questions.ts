@@ -110,21 +110,21 @@ const n4Kanji = [
 ] as const;
 
 const n5Reading = [
-  ["n5-reading-01", "ミラさんは毎朝七時に起きます。朝ごはんを食べて、学校へ行きます。", "ミラさんはいつ起きますか。", "七時", ["七時", "八時", "毎晩", "学校"], "Teks menyebut 七時に起きます."],
-  ["n5-reading-02", "これは田中さんの本です。日本語の本です。とてもおもしろいです。", "本は誰のものですか。", "田中さん", ["田中さん", "先生", "私", "友だち"], "田中さんの本 berarti buku milik Tanaka."],
-  ["n5-reading-03", "昨日、友だちと映画を見ました。映画は長かったですが、おもしろかったです。", "映画はどうでしたか。", "おもしろかったです", ["おもしろかったです", "短かったです", "安かったです", "静かでした"], "おもしろかったです berarti menarik."],
-  ["n5-reading-04", "駅の前にコンビニがあります。コンビニのとなりに小さいレストランがあります。", "レストランはどこですか。", "コンビニのとなり", ["コンビニのとなり", "駅の中", "学校の前", "家の後ろ"], "となり berarti sebelah."],
-  ["n5-reading-05", "今日は雨です。公園へ行きません。家で本を読みます。", "今日は何をしますか。", "家で本を読みます", ["家で本を読みます", "公園へ行きます", "映画を見ます", "学校で勉強します"], "Karena hujan, ia membaca buku di rumah."],
-  ["n5-reading-06", "私はコーヒーが好きです。でも、母はお茶が好きです。", "母は何が好きですか。", "お茶", ["お茶", "コーヒー", "水", "ジュース"], "母はお茶が好きです."],
+  ["n5-reading-01", "ミラさんは毎朝七時に起きます。朝ごはんを食べて、学校へ行きます。", "本文の内容と合っているものはどれですか。", "ミラさんは朝七時に起きます。", ["ミラさんは朝七時に起きます。", "ミラさんは毎晩七時に起きます。", "ミラさんは朝ごはんを食べません。", "ミラさんは会社へ行きます。"], "Teks menyebut 「毎朝七時に起きます」, artinya Mira bangun jam tujuh pagi."],
+  ["n5-reading-02", "これは田中さんの本です。日本語の本です。とてもおもしろいです。", "本文の内容と合っているものはどれですか。", "これは田中さんの日本語の本です。", ["これは田中さんの日本語の本です。", "これは先生の英語の本です。", "この本はあまりおもしろくないです。", "田中さんは本をなくしました。"], "Teks menyebut 「田中さんの本」 dan 「日本語の本」, jadi buku itu milik Tanaka dan berbahasa Jepang."],
+  ["n5-reading-03", "昨日、友だちと映画を見ました。映画は長かったですが、おもしろかったです。", "本文の内容と合っているものはどれですか。", "映画は長かったですが、おもしろかったです。", ["映画は長かったですが、おもしろかったです。", "映画は短くて、つまらなかったです。", "一人で映画を見ました。", "明日、友だちと映画を見ます。"], "Teks menyebut 「長かったですが、おもしろかったです」 dan 「友だちと」."],
+  ["n5-reading-04", "駅の前にコンビニがあります。コンビニのとなりに小さいレストランがあります。", "本文によると、レストランはどこにありますか。", "コンビニのとなりにあります。", ["コンビニのとなりにあります。", "駅の中にあります。", "学校の前にあります。", "家の後ろにあります。"], "Teks menyebut 「コンビニのとなりに小さいレストランがあります」."],
+  ["n5-reading-05", "今日は雨です。公園へ行きません。家で本を読みます。", "本文の内容と合っているものはどれですか。", "今日は家で本を読みます。", ["今日は家で本を読みます。", "今日は公園へ行きます。", "今日は映画を見ます。", "今日は学校で勉強します。"], "Karena 「今日は雨です」, teks menyebut tidak pergi ke taman dan 「家で本を読みます」."],
+  ["n5-reading-06", "私はコーヒーが好きです。でも、母はお茶が好きです。", "本文によると、母は何が好きですか。", "お茶が好きです。", ["お茶が好きです。", "コーヒーが好きです。", "水が好きです。", "ジュースが好きです。"], "Teks menyebut 「母はお茶が好きです」."],
 ] as const;
 
 const n4Reading = [
-  ["n4-reading-01", "来週、日本語の試験があります。毎日一時間ぐらい漢字を勉強しています。", "何を勉強していますか。", "漢字", ["漢字", "料理", "英語", "運転"], "漢字を勉強しています."],
-  ["n4-reading-02", "昨日は雨だったので、出かけないで家で映画を見ました。", "なぜ家にいましたか。", "雨だったから", ["雨だったから", "忙しかったから", "病気だったから", "映画館が遠いから"], "雨だったので menunjukkan alasan."],
-  ["n4-reading-03", "この店は駅から近いし、値段も安いので、よく昼ごはんを食べに行きます。", "この店に行く理由は何ですか。", "近くて安いから", ["近くて安いから", "新しいから", "静かだから", "広いから"], "近い dan 安い adalah alasan."],
-  ["n4-reading-04", "山田さんは日本に行ったことがあります。でも、北海道へはまだ行ったことがありません。", "山田さんについて正しいものはどれですか。", "北海道へはまだ行っていません", ["北海道へはまだ行っていません", "日本へ行ったことがありません", "北海道に住んでいます", "毎年北海道へ行きます"], "まだ行ったことがありません berarti belum pernah."],
-  ["n4-reading-05", "仕事が終わってから、スーパーで買い物して帰ります。", "いつ買い物しますか。", "仕事が終わってから", ["仕事が終わってから", "朝ごはんの前", "会社へ行く前", "寝てから"], "終わってから berarti setelah selesai."],
-  ["n4-reading-06", "この漢字は難しそうですが、何回も書けば覚えられます。", "どうすれば覚えられますか。", "何回も書く", ["何回も書く", "一回だけ読む", "聞くだけ", "使わない"], "何回も書けば berarti jika menulis berkali-kali."],
+  ["n4-reading-01", "来週、日本語の試験があります。毎日一時間ぐらい漢字を勉強しています。", "本文の内容と合っているものはどれですか。", "試験のために、毎日漢字を勉強しています。", ["試験のために、毎日漢字を勉強しています。", "来週、料理の試験があります。", "毎日三時間ぐらい英語を勉強しています。", "試験が終わったので、勉強していません。"], "Teks menyebut 「来週、日本語の試験」 dan 「毎日一時間ぐらい漢字を勉強」."],
+  ["n4-reading-02", "昨日は雨だったので、出かけないで家で映画を見ました。", "本文によると、どうして家で映画を見ましたか。", "雨だったので、出かけませんでした。", ["雨だったので、出かけませんでした。", "忙しかったので、映画館へ行きました。", "病気だったので、寝ていました。", "映画館が遠かったので、学校へ行きました。"], "「雨だったので」 menunjukkan alasan; 「出かけないで家で映画を見ました」 berarti menonton di rumah tanpa keluar."],
+  ["n4-reading-03", "この店は駅から近いし、値段も安いので、よく昼ごはんを食べに行きます。", "本文の内容と合っているものはどれですか。", "この店は駅から近くて、値段も安いです。", ["この店は駅から近くて、値段も安いです。", "この店は駅から遠いですが、有名です。", "この店は高いので、あまり行きません。", "この店では朝ごはんだけ食べます。"], "Teks menyebut 「駅から近いし、値段も安い」 sebagai alasan sering makan siang di sana."],
+  ["n4-reading-04", "山田さんは日本に行ったことがあります。でも、北海道へはまだ行ったことがありません。", "本文の内容と合っているものはどれですか。", "山田さんは北海道へはまだ行ったことがありません。", ["山田さんは北海道へはまだ行ったことがありません。", "山田さんは日本へ行ったことがありません。", "山田さんは北海道に住んでいます。", "山田さんは毎年北海道へ行きます。"], "「でも、北海道へはまだ行ったことがありません」 berarti belum pernah ke Hokkaido."],
+  ["n4-reading-05", "仕事が終わってから、スーパーで買い物して帰ります。", "本文によると、いつ買い物しますか。", "仕事が終わってから買い物します。", ["仕事が終わってから買い物します。", "朝ごはんの前に買い物します。", "会社へ行く前に買い物します。", "寝てから買い物します。"], "「仕事が終わってから」 berarti setelah pekerjaan selesai."],
+  ["n4-reading-06", "この漢字は難しそうですが、何回も書けば覚えられます。", "本文によると、どうすれば漢字を覚えられますか。", "何回も書けば覚えられます。", ["何回も書けば覚えられます。", "一回だけ読めば覚えられます。", "聞くだけで覚えられます。", "使わなければ覚えられます。"], "「何回も書けば覚えられます」 berarti jika menulis berkali-kali, bisa mengingatnya."],
 ] as const;
 
 function buildQuestions(): SeedQuestion[] {
@@ -194,10 +194,38 @@ function validateQuestion(question: SeedQuestion) {
   if (question.skill === "particle" && !validParticles.has(question.correctAnswer)) {
     errors.push(`invalid particle answer: ${question.correctAnswer}`);
   }
+  if (question.skill === "reading") {
+    if (!question.passage?.trim()) errors.push("reading question must include passage");
+    if (isGenericReadingPrompt(question.prompt)) {
+      errors.push("reading question must ask a specific target");
+    }
+    if (!asksClearReadingTarget(question.prompt)) {
+      errors.push("reading question must ask who/what/where/when/why/how or statement matching");
+    }
+  }
 
   if (errors.length > 0) {
     throw new Error(`${question.sourceKey}: ${errors.join("; ")}`);
   }
+}
+
+function isGenericReadingPrompt(prompt: string) {
+  const normalized = prompt.trim().toLowerCase();
+  return [
+    "baca teks, lalu pilih jawaban paling tepat.",
+    "baca teks pendek",
+    "pilih jawaban paling tepat",
+    "pilih jawaban yang benar",
+    "jawaban paling tepat",
+  ].some((generic) => normalized.includes(generic));
+}
+
+function asksClearReadingTarget(prompt: string) {
+  return (
+    /本文の内容と合っているもの|本文によると|だれ|誰|何|どこ|いつ|なぜ|どうして|どうすれば|どれ|apa|siapa|di mana|dimana|kapan|mengapa|kenapa|bagaimana/i.test(
+      prompt
+    )
+  );
 }
 
 export async function seedAssessmentQuestions() {

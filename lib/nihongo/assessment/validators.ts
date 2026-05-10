@@ -19,6 +19,14 @@ const tenseForms = new Set([
   "しずかではありません",
   "しずかくないです",
 ]);
+const genericReadingInstructions = [
+  "baca teks, lalu pilih jawaban paling tepat",
+  "baca teks pendek",
+  "pilih jawaban paling tepat",
+  "pilih jawaban yang benar",
+  "jawaban paling tepat",
+];
+const nonParticleAnswers = new Set(["です", "ます", "でした", "ません", "ありません", "あります", "います", "ない"]);
 
 export type ValidationResult = {
   valid: boolean;
@@ -44,6 +52,10 @@ export function validateAssessmentQuestion(question: AssessmentQuestion): Valida
     errors.push(`${question.id}: particle question must have a particle answer.`);
   }
 
+  if (question.category === "particles" && nonParticleAnswers.has(question.correctAnswer)) {
+    errors.push(`${question.id}: particle answer cannot be a copula, verb ending, noun, adjective, or verb.`);
+  }
+
   if (question.category === "tense_forms" && !tenseForms.has(question.correctAnswer)) {
     errors.push(`${question.id}: tense question must have a conjugated form answer.`);
   }
@@ -52,14 +64,37 @@ export function validateAssessmentQuestion(question: AssessmentQuestion): Valida
     errors.push(`${question.id}: listening questions must use audio_multiple_choice.`);
   }
 
-  if (question.category === "reading" && !question.passage) {
-    errors.push(`${question.id}: reading questions must include passage metadata.`);
+  if (question.category === "reading") {
+    if (!question.passage) {
+      errors.push(`${question.id}: reading questions must include passage metadata.`);
+    }
+
+    if (isGenericReadingInstruction(question.instructionIndonesian)) {
+      errors.push(`${question.id}: reading instruction must ask a specific target.`);
+    }
+
+    if (!asksClearReadingTarget(question.instructionIndonesian)) {
+      errors.push(`${question.id}: reading instruction must ask who/what/where/when/why/how or statement matching.`);
+    }
   }
 
   return {
     valid: errors.length === 0,
     errors,
   };
+}
+
+export function isGenericReadingInstruction(value: string) {
+  const normalized = value.trim().toLowerCase();
+  return genericReadingInstructions.some((instruction) =>
+    normalized.includes(instruction)
+  );
+}
+
+export function asksClearReadingTarget(value: string) {
+  return /本文の内容と合っているもの|本文によると|だれ|誰|何|どこ|いつ|なぜ|どうして|どうすれば|どれ|apa|siapa|di mana|dimana|kapan|mengapa|kenapa|bagaimana/i.test(
+    value
+  );
 }
 
 export function validateAssessmentQuestionBank(questions: AssessmentQuestion[]): ValidationResult {
