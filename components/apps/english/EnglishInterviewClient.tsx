@@ -238,8 +238,8 @@ export function EnglishInterviewClient() {
                 Recording disimpan di database dan bisa dinilai manual oleh admin atau sensei.
               </p>
             </div>
-            <Link href="/platform/dashboard" className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700">
-              Back to Platform
+            <Link href="/apps/english/dashboard" className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700">
+              Back to English Hub
             </Link>
           </div>
         </section>

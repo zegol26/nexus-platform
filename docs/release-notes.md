@@ -1,5 +1,32 @@
 # Release Notes
 
+## [vNext] - Dynamic Conversational English (DCE) and John AI Coach
+
+### Added
+
+- Added Dynamic Conversational English (DCE) module under Nexus AI English. Full CEFR curriculum across A1-A2 (Foundation), B1-B2 (Intermediate), and C1 (Advanced) with 6 topic modules, ~200+ practice questions across reading passages, listening scripts, vocabulary gap-fills, grammar drills, model dialogues, and AI roleplay.
+- Added DCE routing under `/apps/english/dce`: overview, level pages, and per-module lesson client with 7 tabs (Overview, Reading, Listening, Vocabulary, Grammar, Dialogue, Roleplay).
+- Added John, an AI English conversation coach (male, 40s persona), at `/apps/english/john`. Supports text chat and push-to-talk voice with CEFR level picker.
+- Added John roleplay deep-link from DCE lesson pages — opens John pre-loaded with persona, scenario, and goal pulled from the curriculum.
+- Added `/api/apps/english/john` chat endpoint mirroring the Nihongo tutor pattern (OpenAI gpt-4.1-mini, fallback reply, analytics, quota guard).
+- Added `/api/apps/english/dce/roleplay` endpoint that generates the opening line for a scripted scenario in the chosen persona's voice.
+- Added 6 AI personas (barista, tourist, project manager, support agent, CEO, diplomat) mapped to CEFR levels for roleplay practice.
+- Added `JohnAvatar` component with `/john.png` rendering and a CSS gradient fallback so John never appears as a broken image.
+- Added John voice profile to `/api/voice/speak`. Endpoint now accepts `voiceProfile: "aichan" | "john"`. John uses ElevenLabs `ELEVENLABS_JOHN_VOICE_ID` (falls back to shared voice) or OpenAI `onyx` with mid-40s mentor instructions.
+- Added new `/apps/english/interview` route hosting the existing Interview Practice client. The English dashboard at `/apps/english/dashboard` is now a hub with three feature cards (Interview, DCE, John).
+
+### Improved
+
+- Updated the Nexus AI English dashboard to a full hub experience: feature cards for Interview Practice, DCE Curriculum, and John Conversation, plus a quick-jump grid of all CEFR levels.
+- Updated the Interview Practice "Back" link from "Back to Platform" to "Back to English Hub" for consistency with DCE and John pages.
+- Hardened John system prompt with strict English-only language policy. John refuses to mirror non-English input (Japanese, Chinese, Korean, etc.) and instead politely redirects the learner to try the same idea in English with a starter phrase.
+- Added strict scope boundaries to John, free-chat Ai-chan, and lesson-context Ai-chan tutors. All three now refuse out-of-scope requests (coding, math homework, general essays, business/medical/legal/financial advice, news, recipes, itineraries, general knowledge) and pivot back to language practice. Off-topic content is allowed only as raw material for language drills.
+
+### Tested
+
+- `npx tsc --noEmit`
+- `npx eslint app/apps/english app/api/apps/english components/apps/english lib/english/dce app/api/apps/nihongo/tutor/route.ts app/api/apps/nihongo/lessons/[lessonId]/tutor/route.ts`
+
 ## [vNext] - Assessment Clarity and Pronunciation Scoring
 
 ### Added

@@ -14,16 +14,66 @@ type SpeakResult = {
   provider: "elevenlabs" | "openai";
 };
 
-async function speakWithElevenLabs(text: string): Promise<SpeakResult | null> {
+type VoiceProfileId = "aichan" | "john";
+
+type VoiceProfile = {
+  elevenlabsVoiceIdEnv: string;
+  elevenlabsSettings: {
+    stability: number;
+    similarity_boost: number;
+    style: number;
+  };
+  openaiVoiceEnv: string;
+  openaiVoiceDefault: string;
+  openaiInstructions: string;
+};
+
+const VOICE_PROFILES: Record<VoiceProfileId, VoiceProfile> = {
+  // Ai-chan: bright, young anime-sensei delivery for the Nihongo tutor.
+  aichan: {
+    elevenlabsVoiceIdEnv: "ELEVENLABS_VOICE_ID",
+    elevenlabsSettings: {
+      stability: 0.22,
+      similarity_boost: 0.92,
+      style: 0.6,
+    },
+    openaiVoiceEnv: "OPENAI_NIHONGO_TTS_VOICE",
+    openaiVoiceDefault: "coral",
+    openaiInstructions:
+      "You are Ai-chan, a Japanese sensei character voiced as a cheerful young anime-style schoolgirl, around 17 years old. Speak with a bright, light, slightly higher pitch and youthful energy — like a friendly senpai in a Japanese school anime. Keep it warm, expressive, and a touch playful, never monotone, never deep, never adult-narrator. Use a moderate-but-lively pace; lift your tone slightly at the start of sentences and soften the end. Pronounce Japanese (kana, kanji readings, names) with clean, native, gentle anime-character intonation — no English accent. Pronounce Indonesian segments with native Indonesian fluency, still in the same youthful character voice. Smile through your voice. Never sound robotic or corporate.",
+  },
+  // John: calm, mid-40s male English coach for the Nexus AI English app.
+  john: {
+    elevenlabsVoiceIdEnv: "ELEVENLABS_JOHN_VOICE_ID",
+    elevenlabsSettings: {
+      stability: 0.55,
+      similarity_boost: 0.85,
+      style: 0.35,
+    },
+    openaiVoiceEnv: "OPENAI_ENGLISH_TTS_VOICE",
+    openaiVoiceDefault: "onyx",
+    openaiInstructions:
+      "You are John, a 40-something male English coach. Speak in clear, modern, mid-Atlantic English with a calm, warm, mentor-like tone — think senior teacher or seasoned podcast host. Lower-mid pitch, unhurried pace, gentle pauses for emphasis. Never theatrical, never robotic, never overly formal. Pronounce Indonesian names and learner-facing words with respect and care. Smile through your voice without becoming bubbly.",
+  },
+};
+
+function resolveProfile(value: unknown): VoiceProfileId {
+  return value === "john" ? "john" : "aichan";
+}
+
+async function speakWithElevenLabs(
+  text: string,
+  profile: VoiceProfile
+): Promise<SpeakResult | null> {
   const apiKey = process.env.ELEVENLABS_API_KEY;
-  const voiceId = process.env.ELEVENLABS_VOICE_ID;
+  const voiceId =
+    process.env[profile.elevenlabsVoiceIdEnv] ??
+    // Fall back to the shared voice id if a profile-specific one isn't
+    // configured — saves the user from having to set two env vars to
+    // get John working.
+    process.env.ELEVENLABS_VOICE_ID;
   if (!apiKey || !voiceId) return null;
 
-  // Voice settings tuned for Ai-chan — a friendly young woman around 17
-  // years old. Lower `stability` keeps natural pitch variation so the
-  // delivery sounds youthful and expressive instead of monotone-mature;
-  // higher `similarity_boost` keeps the chosen voice anchored;
-  // moderate `style` adds gentle warmth without theatrical drift.
   const response = await fetch(
     `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`,
     {
@@ -37,13 +87,7 @@ async function speakWithElevenLabs(text: string): Promise<SpeakResult | null> {
         text,
         model_id: process.env.ELEVENLABS_MODEL_ID ?? "eleven_multilingual_v2",
         voice_settings: {
-          // Wibu/anime-schoolgirl Ai-chan profile: low stability gives
-          // strong pitch variation (youthful, expressive), high
-          // similarity_boost anchors the chosen voice id, high style
-          // pushes character/personality through.
-          stability: 0.22,
-          similarity_boost: 0.92,
-          style: 0.6,
+          ...profile.elevenlabsSettings,
           use_speaker_boost: true,
         },
       }),
@@ -63,21 +107,19 @@ async function speakWithElevenLabs(text: string): Promise<SpeakResult | null> {
   };
 }
 
-async function speakWithOpenAI(text: string): Promise<SpeakResult | null> {
+async function speakWithOpenAI(
+  text: string,
+  profile: VoiceProfile
+): Promise<SpeakResult | null> {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) return null;
 
   const openai = new OpenAI({ apiKey });
   const response = await openai.audio.speech.create({
     model: process.env.OPENAI_TTS_MODEL ?? "gpt-4o-mini-tts",
-    // Default to "coral" — the lightest, brightest young-female voice
-    // OpenAI ships, which lands closest to a Japanese anime-school /
-    // wibu sensei character. "shimmer" or "nova" are acceptable
-    // alternates; "alloy"/"echo"/"onyx"/"sage" skew older or male.
-    voice: process.env.OPENAI_NIHONGO_TTS_VOICE ?? "coral",
+    voice: process.env[profile.openaiVoiceEnv] ?? profile.openaiVoiceDefault,
     input: text,
-    instructions:
-      "You are Ai-chan, a Japanese sensei character voiced as a cheerful young anime-style schoolgirl, around 17 years old. Speak with a bright, light, slightly higher pitch and youthful energy — like a friendly senpai in a Japanese school anime. Keep it warm, expressive, and a touch playful, never monotone, never deep, never adult-narrator. Use a moderate-but-lively pace; lift your tone slightly at the start of sentences and soften the end. Pronounce Japanese (kana, kanji readings, names) with clean, native, gentle anime-character intonation — no English accent. Pronounce Indonesian segments with native Indonesian fluency, still in the same youthful character voice. Smile through your voice. Never sound robotic or corporate.",
+    instructions: profile.openaiInstructions,
   });
 
   return {
@@ -104,6 +146,7 @@ export async function POST(request: Request) {
 
     const body = (await request.json().catch(() => null)) as {
       text?: unknown;
+      voiceProfile?: unknown;
     } | null;
 
     const text =
@@ -124,9 +167,12 @@ export async function POST(request: Request) {
       );
     }
 
-    let result = await speakWithElevenLabs(text);
+    const profileId = resolveProfile(body?.voiceProfile);
+    const profile = VOICE_PROFILES[profileId];
+
+    let result = await speakWithElevenLabs(text, profile);
     if (!result) {
-      result = await speakWithOpenAI(text);
+      result = await speakWithOpenAI(text, profile);
     }
 
     if (!result) {
