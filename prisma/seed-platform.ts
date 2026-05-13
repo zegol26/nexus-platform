@@ -58,9 +58,10 @@ export async function seedPlatform() {
     });
   }
 
-  const [nihongoApp, englishApp] = await Promise.all([
+  const [nihongoApp, englishApp, arabicApp] = await Promise.all([
     prisma.platformApp.findUnique({ where: { slug: "nihongo" } }),
     prisma.platformApp.findUnique({ where: { slug: "english" } }),
+    prisma.platformApp.findUnique({ where: { slug: "arabic" } }),
   ]);
 
   if (nihongoApp) {
@@ -121,6 +122,35 @@ export async function seedPlatform() {
     });
   }
 
+  if (arabicApp) {
+    await prisma.subscriptionPlan.upsert({
+      where: {
+        appId_code: {
+          appId: arabicApp.id,
+          code: "ARABIC_MONTHLY",
+        },
+      },
+      update: {
+        name: "Arabic Monthly",
+        description: "Monthly access to Nexus AI Arabic — Saudi daily Arabic for work, umrah, and travel",
+        priceCents: 9900000,
+        currency: "IDR",
+        durationDays: 30,
+        active: true,
+      },
+      create: {
+        appId: arabicApp.id,
+        code: "ARABIC_MONTHLY",
+        name: "Arabic Monthly",
+        description: "Monthly access to Nexus AI Arabic — Saudi daily Arabic for work, umrah, and travel",
+        priceCents: 9900000,
+        currency: "IDR",
+        durationDays: 30,
+        active: true,
+      },
+    });
+  }
+
   const adminEmail = process.env.ADMIN_EMAIL ?? "admin@nexus.local";
   const adminPassword = process.env.ADMIN_PASSWORD ?? "NexusAdmin123!";
   const existingAdmin = await prisma.user.findUnique({
@@ -146,7 +176,7 @@ export async function seedPlatform() {
     },
   });
 
-  const adminApps = [nihongoApp, englishApp].filter(
+  const adminApps = [nihongoApp, englishApp, arabicApp].filter(
     (app): app is NonNullable<typeof app> => Boolean(app)
   );
 

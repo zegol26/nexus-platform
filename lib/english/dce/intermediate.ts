@@ -1,4 +1,5 @@
 import type { DceLevel } from "./types";
+import { intermediateExtraModules } from "./additional-modules";
 
 export const intermediateLevel: DceLevel = {
   level: "B1_B2",
@@ -119,13 +120,13 @@ export const intermediateLevel: DceLevel = {
           id: "int-opinion-listen-01",
           title: "Office debate: open plan vs private desks",
           script:
-            "Tom: Honestly, I think open-plan offices are a productivity disaster. \nRia: I see your point, but they help teams collaborate, don't they? \nTom: Maybe in theory. In practice, it's just constant noise. \nRia: Sorry to jump in — what about hybrid setups, with quiet pods? \nTom: That's a fair compromise. I might actually support that. \nRia: Great, let's bring it up in tomorrow's meeting.",
-          speakers: ["Tom", "Ria"],
+            "John: Honestly, I think open-plan offices are a productivity disaster. \nRia: I see your point, but they help teams collaborate, don't they? \nJohn: Maybe in theory. In practice, it's just constant noise. \nRia: Sorry to jump in -- what about hybrid setups, with quiet pods? \nJohn: That's a fair compromise. I might actually support that. \nRia: Great, let's bring it up in tomorrow's meeting.",
+          speakers: ["John", "Ria"],
           durationSec: 35,
           questions: [
             {
               id: "q1",
-              question: "What does Tom dislike about open offices?",
+              question: "What does John dislike about open offices?",
               options: ["The temperature", "The noise", "The chairs", "The lighting"],
               answerIndex: 1,
             },
@@ -144,10 +145,10 @@ export const intermediateLevel: DceLevel = {
               id: "q3",
               question: "What does 'I might actually support that' suggest?",
               options: [
-                "Tom is fully convinced",
-                "Tom is uncertain but leaning yes",
-                "Tom is rejecting it",
-                "Tom hasn't heard the idea",
+                "John is fully convinced",
+                "John is uncertain but leaning yes",
+                "John is rejecting it",
+                "John hasn't heard the idea",
               ],
               answerIndex: 1,
             },
@@ -282,13 +283,13 @@ export const intermediateLevel: DceLevel = {
           id: "int-problem-listen-01",
           title: "Refund call",
           script:
-            "Agent: Customer support, this is Priya. How can I help? \nCaller: Hi Priya, I returned a jacket two weeks ago and the refund hasn't been processed. \nAgent: I'm sorry to hear that. Could I have your order number? \nCaller: Sure, it's NX-48217. \nAgent: Thanks. I can see the return was received but it's been stuck in our system. I'll escalate it now and you should see the refund within 48 hours. \nCaller: Thank you. Could I get a confirmation email as well? \nAgent: Absolutely, I'll send it before we hang up.",
-          speakers: ["Agent (Priya)", "Caller"],
+            "John: Hi Priya, I returned a jacket two weeks ago and the refund hasn't been processed. \nPriya: I'm sorry to hear that. Could I have your order number? \nJohn: Sure, it's NX-48217. \nPriya: Thanks. I can see the return was received but it's been stuck in our system. I'll escalate it now and you should see the refund within 48 hours. \nJohn: Thank you. Could I get a confirmation email as well? \nPriya: Absolutely, I'll send it before we hang up.",
+          speakers: ["John", "Priya"],
           durationSec: 40,
           questions: [
             {
               id: "q1",
-              question: "Why is the caller phoning?",
+              question: "Why is John phoning?",
               options: [
                 "To order a jacket",
                 "To complain about delivery",
@@ -376,5 +377,6 @@ export const intermediateLevel: DceLevel = {
         },
       ],
     },
+    ...intermediateExtraModules,
   ],
 };

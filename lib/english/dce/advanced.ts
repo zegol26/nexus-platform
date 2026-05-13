@@ -1,4 +1,5 @@
 import type { DceLevel } from "./types";
+import { advancedExtraModules } from "./additional-modules";
 
 export const advancedLevel: DceLevel = {
   level: "C1",
@@ -84,8 +85,8 @@ export const advancedLevel: DceLevel = {
           id: "adv-nuance-listen-01",
           title: "A diplomatic 'no'",
           script:
-            "Hannah: I've reviewed your proposal. It's certainly… ambitious. \nApplicant: Thank you. Does that mean we're moving forward? \nHannah: Let's say there are several aspects we'd want to revisit. The timeline, in particular, is rather optimistic. \nApplicant: I can adjust it. By how much? \nHannah: Perhaps if you assumed the funding would arrive twelve months later than planned, the rest of the plan might align with reality. \nApplicant: Understood. So it's a no in its current form. \nHannah: I wouldn't put it quite that strongly, but yes, you've grasped the spirit of it.",
-          speakers: ["Hannah", "Applicant"],
+            "John: I've reviewed your proposal. It's certainly ambitious. \nHannah: Thank you. Does that mean we're moving forward? \nJohn: Let's say there are several aspects we'd want to revisit. The timeline, in particular, is rather optimistic. \nHannah: I can adjust it. By how much? \nJohn: Perhaps if you assumed the funding would arrive twelve months later than planned, the rest of the plan might align with reality. \nHannah: Understood. So it's a no in its current form. \nJohn: I wouldn't put it quite that strongly, but yes, you've grasped the spirit of it.",
+          speakers: ["John", "Hannah"],
           durationSec: 50,
           questions: [
             {
@@ -257,13 +258,13 @@ export const advancedLevel: DceLevel = {
           id: "adv-pro-listen-01",
           title: "Boardroom debate",
           script:
-            "Daniel: Colleagues, I would propose that we sunset the legacy product within twelve months. \nMargaret: Were we to do so, we would alienate roughly a third of our current revenue base. \nDaniel: Granted. However, having reviewed the cohort data, I'd argue that revenue is structurally declining anyway. \nMargaret: Even so, the optics of an abrupt exit could shake confidence in the broader portfolio. \nDaniel: Which is precisely why I'd advocate a phased migration, paired with a generous customer-credit program. \nMargaret: Now that's a position I could support. Shall we draft something for the next session?",
-          speakers: ["Daniel", "Margaret"],
+            "John: Colleagues, I would propose that we sunset the legacy product within twelve months. \nMargaret: Were we to do so, we would alienate roughly a third of our current revenue base. \nJohn: Granted. However, having reviewed the cohort data, I'd argue that revenue is structurally declining anyway. \nMargaret: Even so, the optics of an abrupt exit could shake confidence in the broader portfolio. \nJohn: Which is precisely why I'd advocate a phased migration, paired with a generous customer-credit program. \nMargaret: Now that's a position I could support. Shall we draft something for the next session?",
+          speakers: ["John", "Margaret"],
           durationSec: 55,
           questions: [
             {
               id: "q1",
-              question: "What is Daniel proposing?",
+              question: "What is John proposing?",
               options: [
                 "Acquiring a competitor",
                 "Sunsetting the legacy product",
@@ -290,7 +291,7 @@ export const advancedLevel: DceLevel = {
                 "With a hard disagreement",
                 "With Margaret rejecting the plan",
                 "With a willingness to draft a phased proposal",
-                "With Daniel withdrawing",
+                "With John withdrawing",
               ],
               answerIndex: 2,
             },
@@ -361,5 +362,6 @@ export const advancedLevel: DceLevel = {
         },
       ],
     },
+    ...advancedExtraModules,
   ],
 };

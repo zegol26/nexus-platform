@@ -16,6 +16,14 @@ export const platformApps = [
     status: "active",
   },
   {
+    id: "arabic",
+    slug: "arabic",
+    name: "Nexus AI Arabic",
+    description: "Daily Saudi Arabic for work, umrah, and travel — built for Indonesian speakers",
+    href: "/apps/arabic/dashboard",
+    status: "active",
+  },
+  {
     id: "lessons",
     slug: "lessons",
     name: "Nexus Lessons",

@@ -10,9 +10,11 @@ import type {
   DceLevel,
   DceListeningItem,
   DceModule,
+  DceNextCourseItem,
   DceReadingPassage,
   DceRoleplay,
 } from "@/lib/english/dce";
+import { buildEnglishAnswerFeedback, type EnglishSkillType } from "@/lib/english/dce/feedback";
 import { clientTrack } from "@/lib/analytics/clientTrack";
 
 type Tab =
@@ -37,9 +39,10 @@ const TABS: { id: Tab; label: string; emoji: string }[] = [
 type Props = {
   level: DceLevel;
   module: DceModule;
+  nextItem?: DceNextCourseItem;
 };
 
-export function DceLessonClient({ level, module }: Props) {
+export function DceLessonClient({ level, module, nextItem }: Props) {
   const [tab, setTab] = useState<Tab>("overview");
 
   useEffect(() => {
@@ -95,6 +98,7 @@ export function DceLessonClient({ level, module }: Props) {
         {tab === "roleplay" && (
           <RoleplayTab items={module.roleplay} level={level} module={module} />
         )}
+        <CompletionCard level={level} module={module} nextItem={nextItem} />
       </div>
     </main>
   );
@@ -154,7 +158,13 @@ function ReadingTab({ items }: { items: DceReadingPassage[] }) {
           </p>
           <div className="mt-5 space-y-3">
             {passage.questions.map((question, index) => (
-              <ComprehensionQuestion key={question.id} index={index} question={question} />
+              <ComprehensionQuestion
+                key={question.id}
+                index={index}
+                question={question}
+                level={levelLabelFromItemId(passage.id)}
+                skillType="reading"
+              />
             ))}
           </div>
         </article>
@@ -176,7 +186,7 @@ function ListeningTab({ items }: { items: DceListeningItem[] }) {
           </p>
           <h2 className="mt-2 text-xl font-semibold text-slate-950">{item.title}</h2>
 
-          <ListeningPlayer text={item.script} id={item.id} />
+          <ListeningPlayer text={item.script} id={item.id} speakers={item.speakers} />
 
           <details className="mt-3 text-sm text-slate-700">
             <summary className="cursor-pointer font-semibold text-blue-700">
@@ -187,7 +197,13 @@ function ListeningTab({ items }: { items: DceListeningItem[] }) {
 
           <div className="mt-5 space-y-3">
             {item.questions.map((question, index) => (
-              <ComprehensionQuestion key={question.id} index={index} question={question} />
+              <ComprehensionQuestion
+                key={question.id}
+                index={index}
+                question={question}
+                level={item.level ?? "A1-A2"}
+                skillType="listening"
+              />
             ))}
           </div>
         </article>
@@ -196,10 +212,23 @@ function ListeningTab({ items }: { items: DceListeningItem[] }) {
   );
 }
 
-function ListeningPlayer({ text, id }: { text: string; id: string }) {
+function ListeningPlayer({ text, id, speakers }: { text: string; id: string; speakers: string[] }) {
   const [loading, setLoading] = useState(false);
+  const [playingDialogue, setPlayingDialogue] = useState(false);
   const [audioUrl, setAudioUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const dialogueLines = useMemo(
+    () =>
+      text
+        .split(/\r?\n/)
+        .map((line) => {
+          const match = line.match(/^([^:]+):\s*(.+)$/);
+          if (!match) return null;
+          return { speaker: match[1].trim(), text: match[2].trim() };
+        })
+        .filter((line): line is { speaker: string; text: string } => Boolean(line)),
+    [text]
+  );
 
   async function generate() {
     setLoading(true);
@@ -228,6 +257,41 @@ function ListeningPlayer({ text, id }: { text: string; id: string }) {
     }
   }
 
+  async function speakLine(lineText: string, voiceProfile: "john" | "englishFemale") {
+    const res = await fetch("/api/voice/speak", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: lineText, voiceProfile }),
+    });
+    if (!res.ok) {
+      const payload = await res.json().catch(() => null);
+      throw new Error(payload?.error ?? `Voice failed (HTTP ${res.status}).`);
+    }
+    const blob = await res.blob();
+    const url = URL.createObjectURL(blob);
+    await new Promise<void>((resolve, reject) => {
+      const audio = new Audio(url);
+      audio.onended = () => resolve();
+      audio.onerror = () => reject(new Error("Audio playback failed."));
+      void audio.play().catch(reject);
+    });
+    URL.revokeObjectURL(url);
+  }
+
+  async function playDialogueVoices() {
+    setPlayingDialogue(true);
+    setError(null);
+    try {
+      for (const line of dialogueLines) {
+        await speakLine(line.text, line.speaker === speakers[0] ? "john" : "englishFemale");
+      }
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : "Voice failed.");
+    } finally {
+      setPlayingDialogue(false);
+    }
+  }
+
   return (
     <div className="mt-4 rounded-2xl bg-slate-50 p-4">
       {audioUrl ? (
@@ -235,15 +299,26 @@ function ListeningPlayer({ text, id }: { text: string; id: string }) {
           <track kind="captions" />
         </audio>
       ) : (
+        <div className="flex flex-wrap gap-2">
+        <button
+          type="button"
+          onClick={playDialogueVoices}
+          disabled={playingDialogue || loading || dialogueLines.length === 0}
+          className="rounded-full bg-blue-700 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-800 disabled:bg-slate-400"
+          aria-label={`Play dialogue voices for ${id}`}
+        >
+          {playingDialogue ? "Playing..." : "Play John + partner voices"}
+        </button>
         <button
           type="button"
           onClick={generate}
-          disabled={loading}
-          className="rounded-full bg-blue-700 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-800 disabled:bg-slate-400"
-          aria-label={`Generate audio for ${id}`}
+          disabled={loading || playingDialogue}
+          className="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:border-blue-300 disabled:text-slate-400"
+          aria-label={`Generate single voice audio for ${id}`}
         >
-          {loading ? "Generating..." : "▶ Play with John's voice"}
+          {loading ? "Generating..." : "Single John voice"}
         </button>
+        </div>
       )}
       {error && <p className="mt-2 text-xs text-rose-700">{error}</p>}
     </div>
@@ -253,12 +328,29 @@ function ListeningPlayer({ text, id }: { text: string; id: string }) {
 function ComprehensionQuestion({
   index,
   question,
+  level,
+  skillType,
 }: {
   index: number;
   question: DceComprehensionQuestion;
+  level: string;
+  skillType: EnglishSkillType;
 }) {
   const [picked, setPicked] = useState<number | null>(null);
   const correct = picked === question.answerIndex;
+  const userAnswer = picked === null ? "" : question.options[picked];
+  const correctAnswer = question.options[question.answerIndex] ?? "";
+  const feedback =
+    picked === null
+      ? null
+      : buildEnglishAnswerFeedback({
+          question: question.question,
+          userAnswer,
+          correctAnswer,
+          explanation: question.rationale,
+          level,
+          skillType,
+        });
 
   return (
     <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
@@ -300,8 +392,15 @@ function ComprehensionQuestion({
           {question.rationale ? ` ${question.rationale}` : ""}
         </p>
       )}
+      {feedback && <AnswerFeedbackCard feedback={feedback} userAnswer={userAnswer} />}
     </div>
   );
+}
+
+function levelLabelFromItemId(id: string) {
+  if (id.startsWith("fnd")) return "A1-A2";
+  if (id.startsWith("int")) return "B1-B2";
+  return "C1";
 }
 
 function DrillTab({
@@ -326,6 +425,10 @@ function DrillTab({
     }
     return { total, correct };
   }, [picked, items]);
+  const answeredAll = items.length > 0 && score.total === items.length;
+  const weakItems = items
+    .filter((item) => picked[item.id] !== undefined && picked[item.id] !== item.answerIndex)
+    .slice(0, 3);
 
   return (
     <div className="space-y-5">
@@ -403,10 +506,42 @@ function DrillTab({
                   {item.rationale ? ` — ${item.rationale}` : ""}
                 </p>
               )}
+              {showState && (
+                <AnswerFeedbackCard
+                  userAnswer={item.options[userPicked]}
+                  feedback={buildEnglishAnswerFeedback({
+                    question: item.prompt,
+                    userAnswer: item.options[userPicked],
+                    correctAnswer: item.options[item.answerIndex] ?? "",
+                    explanation: item.rationale,
+                    skillType: showStructure ? "grammar" : "sentence_completion",
+                  })}
+                />
+              )}
             </article>
           );
         })}
       </div>
+      {answeredAll && (
+        <SectionSummary
+          score={`${score.correct} / ${items.length}`}
+          strengths={[
+            score.correct >= Math.ceil(items.length * 0.7)
+              ? "You answered most items correctly."
+              : "You completed the full practice set.",
+            showStructure
+              ? "You are building grammar pattern awareness."
+              : "You are noticing useful sentence clues.",
+          ]}
+          needsPractice={
+            weakItems.length
+              ? weakItems.map((item) =>
+                  "targetStructure" in item ? item.targetStructure : item.prompt
+                )
+              : ["Keep reviewing the same pattern in short daily sentences."]
+          }
+        />
+      )}
     </div>
   );
 }
@@ -440,12 +575,133 @@ function DialogueTab({ items }: { items: DceDialogue[] }) {
 
           <div className="mt-5 space-y-3">
             {dialogue.questions.map((question, index) => (
-              <ComprehensionQuestion key={question.id} index={index} question={question} />
+              <ComprehensionQuestion
+                key={question.id}
+                index={index}
+                question={question}
+                level="conversation"
+                skillType="conversation"
+              />
             ))}
           </div>
         </article>
       ))}
     </div>
+  );
+}
+
+function AnswerFeedbackCard({
+  feedback,
+  userAnswer,
+}: {
+  feedback: ReturnType<typeof buildEnglishAnswerFeedback>;
+  userAnswer: string;
+}) {
+  return (
+    <div
+      className={`mt-4 rounded-2xl border p-4 text-sm leading-6 ${
+        feedback.isCorrect
+          ? "border-emerald-200 bg-emerald-50 text-emerald-950"
+          : "border-amber-200 bg-amber-50 text-amber-950"
+      }`}
+    >
+      <p className="font-semibold">{feedback.isCorrect ? "Nice work." : "Almost there."}</p>
+      {!feedback.isCorrect && <p className="mt-1">Your answer: &ldquo;{userAnswer}&rdquo;</p>}
+      <p className="mt-1">Correct answer: &ldquo;{feedback.correctAnswer}&rdquo;</p>
+      <p className="mt-3 font-semibold">Explanation</p>
+      <p>{feedback.explanation}</p>
+      <p className="mt-3 font-semibold">Your learning summary</p>
+      <p>{feedback.learnerSummary}</p>
+      <p className="mt-3 font-semibold">Study tip</p>
+      <p>{feedback.studyTip}</p>
+    </div>
+  );
+}
+
+function SectionSummary({
+  score,
+  strengths,
+  needsPractice,
+}: {
+  score: string;
+  strengths: string[];
+  needsPractice: string[];
+}) {
+  return (
+    <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+        Section Summary
+      </p>
+      <h2 className="mt-2 text-xl font-semibold text-slate-950">Score: {score}</h2>
+      <div className="mt-4 grid gap-4 md:grid-cols-2">
+        <div>
+          <p className="text-sm font-semibold text-emerald-800">Strengths</p>
+          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-700">
+            {strengths.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p className="text-sm font-semibold text-amber-800">Needs Practice</p>
+          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-700">
+            {needsPractice.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <p className="mt-4 text-sm text-slate-600">
+        Recommended Next Step: Review the mini lesson, then continue to the next section.
+      </p>
+    </section>
+  );
+}
+
+function CompletionCard({
+  level,
+  module,
+  nextItem,
+}: {
+  level: DceLevel;
+  module: DceModule;
+  nextItem?: DceNextCourseItem;
+}) {
+  return (
+    <section className="rounded-3xl border border-blue-200 bg-blue-50 p-6 shadow-sm">
+      <h2 className="text-xl font-semibold text-slate-950">Great work!</h2>
+      <p className="mt-2 text-sm leading-6 text-slate-700">
+        You completed this section. Continue to the next step when you are ready.
+      </p>
+      <div className="mt-4 flex flex-wrap gap-3">
+        {nextItem ? (
+          <Link
+            href={nextItem.href}
+            className="rounded-full bg-blue-700 px-5 py-2 text-sm font-semibold text-white hover:bg-blue-800"
+          >
+            Continue to {nextItem.label}
+          </Link>
+        ) : (
+          <Link
+            href="/apps/english/dce"
+            className="rounded-full bg-slate-950 px-5 py-2 text-sm font-semibold text-white hover:bg-blue-700"
+          >
+            Back to Course Roadmap
+          </Link>
+        )}
+        <Link
+          href={`/apps/english/dce/${level.level}`}
+          className="rounded-full border border-slate-300 bg-white px-5 py-2 text-sm font-semibold text-slate-700 hover:border-blue-300"
+        >
+          {module.topic} roadmap
+        </Link>
+      </div>
+      {!nextItem && (
+        <p className="mt-3 text-sm font-semibold text-blue-900">
+          You have reached the end of the English course roadmap.
+        </p>
+      )}
+    </section>
   );
 }
 

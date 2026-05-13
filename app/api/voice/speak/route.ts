@@ -14,7 +14,7 @@ type SpeakResult = {
   provider: "elevenlabs" | "openai";
 };
 
-type VoiceProfileId = "aichan" | "john";
+type VoiceProfileId = "aichan" | "john" | "englishFemale";
 
 type VoiceProfile = {
   elevenlabsVoiceIdEnv: string;
@@ -55,9 +55,22 @@ const VOICE_PROFILES: Record<VoiceProfileId, VoiceProfile> = {
     openaiInstructions:
       "You are John, a 40-something male English coach. Speak in clear, modern, mid-Atlantic English with a calm, warm, mentor-like tone — think senior teacher or seasoned podcast host. Lower-mid pitch, unhurried pace, gentle pauses for emphasis. Never theatrical, never robotic, never overly formal. Pronounce Indonesian names and learner-facing words with respect and care. Smile through your voice without becoming bubbly.",
   },
+  englishFemale: {
+    elevenlabsVoiceIdEnv: "ELEVENLABS_ENGLISH_FEMALE_VOICE_ID",
+    elevenlabsSettings: {
+      stability: 0.5,
+      similarity_boost: 0.85,
+      style: 0.35,
+    },
+    openaiVoiceEnv: "OPENAI_ENGLISH_FEMALE_TTS_VOICE",
+    openaiVoiceDefault: "nova",
+    openaiInstructions:
+      "You are a warm, clear female English conversation partner. Speak naturally with friendly everyday intonation, moderate pace, and crisp pronunciation for English learners. Keep the tone supportive and realistic, never robotic or theatrical.",
+  },
 };
 
 function resolveProfile(value: unknown): VoiceProfileId {
+  if (value === "englishFemale") return "englishFemale";
   return value === "john" ? "john" : "aichan";
 }
 
@@ -71,7 +84,9 @@ async function speakWithElevenLabs(
     // Fall back to the shared voice id if a profile-specific one isn't
     // configured — saves the user from having to set two env vars to
     // get John working.
-    process.env.ELEVENLABS_VOICE_ID;
+    (profile.elevenlabsVoiceIdEnv === "ELEVENLABS_ENGLISH_FEMALE_VOICE_ID"
+      ? undefined
+      : process.env.ELEVENLABS_VOICE_ID);
   if (!apiKey || !voiceId) return null;
 
   const response = await fetch(

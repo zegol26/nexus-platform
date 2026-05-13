@@ -23,6 +23,12 @@ export type DceReadingPassage = {
 export type DceListeningItem = {
   id: string;
   title: string;
+  level?: "A1" | "A2" | "B1" | "B2" | "C1";
+  section?: string;
+  audioUrl?: string;
+  audioFile?: string;
+  transcript?: string;
+  requiresManualAudioReview?: boolean;
   // Script that the TTS endpoint can synthesize on the fly. Keep it
   // dialogue-heavy so learners can shadow real speech.
   script: string;

@@ -8,7 +8,9 @@
     "build:strict": "prisma migrate deploy && prisma generate && prisma db seed && next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "tsc -p tsconfig.test.json && node .test-dist/tests/policies.test.js",
+    "test": "tsc -p tsconfig.test.json && node .test-dist/tests/policies.test.js && node .test-dist/tests/english-dce.test.js",
+    "sanity:english-listening": "tsx scripts/sanity-check-english-listening.ts",
+    "sanity:english-questions": "tsx scripts/sanity-check-english-questions.ts",
     "validate:n5-rehearsal": "tsx scripts/validate-n5-rehearsal-data.ts",
     "validate:community": "tsx scripts/validate-community-copy.ts",
     "validate:game": "tsx scripts/validate-game-config.ts"

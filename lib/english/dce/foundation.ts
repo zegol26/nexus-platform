@@ -1,4 +1,5 @@
 import type { DceLevel } from "./types";
+import { foundationExtraModules } from "./additional-modules";
 
 export const foundationLevel: DceLevel = {
   level: "A1_A2",
@@ -90,20 +91,23 @@ export const foundationLevel: DceLevel = {
         {
           id: "fnd-intro-listen-01",
           title: "Meeting a New Classmate",
+          level: "A1",
+          section: "Introductions and Daily Routines",
           script:
-            "Anna: Hi! I'm Anna. What's your name? \nLuis: Hello Anna. I'm Luis. Nice to meet you. \nAnna: Nice to meet you too, Luis. Where are you from? \nLuis: I'm from Spain. And you? \nAnna: I'm from Indonesia. Are you a student here? \nLuis: Yes, I study engineering. What about you? \nAnna: I study English literature.",
-          speakers: ["Anna", "Luis"],
+            "John: Hi! I'm John. What's your name?\nAna: Hello John. I'm Ana. Nice to meet you.\nJohn: Nice to meet you too, Ana. Where are you from?\nAna: I'm from Spain. And you?\nJohn: I'm from Indonesia. Are you a student here?\nAna: Yes, I study engineering. What about you?\nJohn: I teach English literature.",
+          speakers: ["John", "Ana"],
           durationSec: 35,
+          requiresManualAudioReview: true,
           questions: [
             {
               id: "q1",
-              question: "Where is Luis from?",
+              question: "Where is Ana from?",
               options: ["Italy", "Spain", "Mexico", "Portugal"],
               answerIndex: 1,
             },
             {
               id: "q2",
-              question: "What does Anna study?",
+              question: "What does John teach?",
               options: [
                 "Engineering",
                 "Medicine",
@@ -128,10 +132,13 @@ export const foundationLevel: DceLevel = {
         {
           id: "fnd-intro-listen-02",
           title: "Ordering Coffee",
+          level: "A1",
+          section: "Introductions and Daily Routines",
           script:
-            "Barista: Good morning! What can I get for you? \nCustomer: Good morning. Can I have a flat white, please? \nBarista: Sure. Small, medium, or large? \nCustomer: Medium, please. \nBarista: Anything else? \nCustomer: A blueberry muffin, please. \nBarista: That'll be eight dollars fifty.",
-          speakers: ["Barista", "Customer"],
+            "John: Good morning! What can I get for you?\nMaya: Good morning. Can I have a flat white, please?\nJohn: Sure. Small, medium, or large?\nMaya: Medium, please.\nJohn: Anything else?\nMaya: A blueberry muffin, please.\nJohn: That'll be eight dollars fifty.",
+          speakers: ["John", "Maya"],
           durationSec: 28,
+          requiresManualAudioReview: true,
           questions: [
             {
               id: "q1",
@@ -376,10 +383,13 @@ export const foundationLevel: DceLevel = {
         {
           id: "fnd-city-listen-01",
           title: "Asking for Directions",
+          level: "A2",
+          section: "Navigating the City",
           script:
-            "Tourist: Excuse me, how do I get to the museum? \nLocal: Walk straight for two blocks, then turn left at the bank. \nTourist: Sorry, did you say left? \nLocal: Yes, left. The museum is next to the post office. \nTourist: Is it far? \nLocal: About ten minutes on foot. \nTourist: Thanks a lot! \nLocal: You're welcome.",
-          speakers: ["Tourist", "Local"],
+            "John: Excuse me, how do I get to the museum?\nSofia: Walk straight for two blocks, then turn left at the bank.\nJohn: Sorry, did you say left?\nSofia: Yes, left. The museum is next to the post office.\nJohn: Is it far?\nSofia: About ten minutes on foot.\nJohn: Thanks a lot!\nSofia: You're welcome.",
+          speakers: ["John", "Sofia"],
           durationSec: 30,
+          requiresManualAudioReview: true,
           questions: [
             {
               id: "q1",
@@ -467,5 +477,6 @@ export const foundationLevel: DceLevel = {
         },
       ],
     },
+    ...foundationExtraModules,
   ],
 };
