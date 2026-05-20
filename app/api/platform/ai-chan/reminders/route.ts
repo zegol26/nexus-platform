@@ -2,7 +2,12 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
-import { generateAiChanReminders } from "@/lib/ai-chan/reminder-engine";
+import {
+  generateAiChanReminders,
+  type AiChanReminder,
+} from "@/lib/ai-chan/reminder-engine";
+import { PMP_NEXUS_COURSE } from "@/lib/pmp/course";
+import { computeProgressSnapshot, READINESS_CHECKLIST } from "@/lib/pmp/progress";
 
 export const dynamic = "force-dynamic";
 
@@ -43,32 +48,48 @@ export async function GET() {
     return NextResponse.json({ error: "User not found" }, { status: 404 });
   }
 
-  const [unpaidPayment, completedProgress, latestProgress, trialUsage] =
-    await Promise.all([
-      prisma.paymentTransaction.findFirst({
-        where: {
-          userId: user.id,
-          status: { in: ["PENDING", "WAITING_VERIFICATION", "EXPIRED"] },
-        },
-        orderBy: { updatedAt: "desc" },
-      }),
-      prisma.nihongoLessonProgress.findMany({
-        where: { userId: user.id, completed: true },
-        select: { lessonId: true },
-      }),
-      prisma.nihongoLessonProgress.findFirst({
-        where: { userId: user.id },
-        orderBy: { updatedAt: "desc" },
-        select: { updatedAt: true },
-      }),
-      prisma.featureUsage.findMany({
-        where: {
-          userId: user.id,
-          appSlug: "nihongo",
-        },
-        select: { count: true },
-      }),
-    ]);
+  const [
+    unpaidPayment,
+    completedProgress,
+    latestProgress,
+    trialUsage,
+    pmpLessons,
+    pmpReadiness,
+    pmpLatestActivity,
+  ] = await Promise.all([
+    prisma.paymentTransaction.findFirst({
+      where: {
+        userId: user.id,
+        status: { in: ["PENDING", "WAITING_VERIFICATION", "EXPIRED"] },
+      },
+      orderBy: { updatedAt: "desc" },
+    }),
+    prisma.nihongoLessonProgress.findMany({
+      where: { userId: user.id, completed: true },
+      select: { lessonId: true },
+    }),
+    prisma.nihongoLessonProgress.findFirst({
+      where: { userId: user.id },
+      orderBy: { updatedAt: "desc" },
+      select: { updatedAt: true },
+    }),
+    prisma.featureUsage.findMany({
+      where: {
+        userId: user.id,
+        appSlug: "nihongo",
+      },
+      select: { count: true },
+    }),
+    prisma.pmpLessonProgress.findMany({ where: { userId: user.id } }),
+    prisma.pmpReadinessItem.findMany({
+      where: { userId: user.id, isComplete: true },
+    }),
+    prisma.pmpLessonProgress.findFirst({
+      where: { userId: user.id },
+      orderBy: { updatedAt: "desc" },
+      select: { updatedAt: true },
+    }),
+  ]);
 
   const completedLessonIds = completedProgress.map((progress) => progress.lessonId);
   const profileNextLesson = user.nihongoProfile?.nextLesson;
@@ -101,8 +122,67 @@ export async function GET() {
   const lastActiveAt = getMostRecentDate([
     lastOpenedAt,
     latestProgress?.updatedAt,
+    pmpLatestActivity?.updatedAt,
     user.updatedAt,
   ]);
+
+  const hasPmpAccess = user.appAccess.some((access) => access.app.slug === "pmp");
+  const pmpCustomReminders: AiChanReminder[] = [];
+  if (hasPmpAccess) {
+    const pmpSnapshot = computeProgressSnapshot({
+      completedLessonIds: pmpLessons
+        .filter((l) => l.status === "completed")
+        .map((l) => l.lessonId),
+      inProgressLessonIds: pmpLessons
+        .filter((l) => l.status === "in_progress")
+        .map((l) => l.lessonId),
+      readinessCompletedKeys: pmpReadiness.map((r) => r.itemKey),
+    });
+
+    pmpCustomReminders.push({
+      id: "pmp-progress",
+      type: "study",
+      priority: pmpSnapshot.overallPercent < 30 ? "high" : "medium",
+      title: `PMP readiness ${pmpSnapshot.overallPercent}%`,
+      message: `Andromeda update: ${pmpSnapshot.completedLessons}/${pmpSnapshot.totalLessons} lesson selesai, ${pmpSnapshot.readinessCompleted}/${pmpSnapshot.readinessTotal} readiness item kelar. ${
+        pmpSnapshot.overallPercent < 100
+          ? "Lanjut ke lesson berikutnya yuk!"
+          : "Lo udah ready — coba 180Q full simulation."
+      }`,
+      cta: { label: "Buka PMP", href: "/apps/pmp/dashboard" },
+    });
+
+    if (pmpSnapshot.completedLessons < pmpSnapshot.totalLessons) {
+      // Find next not-completed lesson in course order.
+      const completedSet = new Set(
+        pmpLessons.filter((l) => l.status === "completed").map((l) => l.lessonId)
+      );
+      const nextLesson = PMP_NEXUS_COURSE.find((lesson) => !completedSet.has(lesson.id));
+      if (nextLesson) {
+        pmpCustomReminders.push({
+          id: `pmp-next-${nextLesson.id}`,
+          type: "study",
+          priority: "medium",
+          title: "Lesson PMP berikutnya",
+          message: `${nextLesson.week} — ${nextLesson.title}. Estimasi ~${nextLesson.estimateHours} jam.`,
+          cta: { label: "Lanjut PMP", href: "/apps/pmp/dashboard" },
+        });
+      }
+    }
+
+    if (pmpSnapshot.readinessCompleted < READINESS_CHECKLIST.length) {
+      pmpCustomReminders.push({
+        id: "pmp-readiness",
+        type: "study",
+        priority: "low",
+        title: "Readiness checklist",
+        message: `${
+          READINESS_CHECKLIST.length - pmpSnapshot.readinessCompleted
+        } item readiness PMP masih kosong. Centang yang udah kamu kerjain biar overall % naik.`,
+        cta: { label: "Buka checklist", href: "/apps/pmp/dashboard" },
+      });
+    }
+  }
 
   const reminders = generateAiChanReminders({
     user: {
@@ -127,6 +207,7 @@ export async function GET() {
         }
       : null,
     lastActiveAt,
+    customReminders: pmpCustomReminders,
   });
 
   return NextResponse.json({ reminders });

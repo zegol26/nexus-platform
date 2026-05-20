@@ -14,6 +14,10 @@ const adminLinks = [
   ["Flashcards", "/admin/flashcards"],
   ["Quizzes", "/admin/quizzes"],
   ["Recordings", "/admin/recordings"],
+  ["PMP Analytics", "/admin/apps/pmp/analytics"],
+  ["PMP ITTO", "/admin/apps/pmp/itto"],
+  ["PMP Glossary", "/admin/apps/pmp/glossary"],
+  ["PMP Knowledge", "/admin/apps/pmp/knowledge-base"],
   ["Settings", "/admin/settings"],
   ["Architecture", "/admin/architecture"],
 ];

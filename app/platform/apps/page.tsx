@@ -117,7 +117,7 @@ export default async function PlatformAppsPage() {
 
               <Link
                 href={
-                  isActive || app.status === "coming_soon"
+                  isActive || app.status === "coming_soon" || app.slug === "pmp"
                     ? app.href
                     : "/platform/dashboard"
                 }

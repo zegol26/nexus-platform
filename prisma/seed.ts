@@ -9,6 +9,7 @@ import { seedEnglishInterview } from "./seed-english-interview";
 import { seedReadingPassages } from "./seed-reading-passages";
 import { seedReadingArticles } from "./seed-reading-articles";
 import { seedCharacterContent } from "./seed-character-content";
+import { seedPmpLearning } from "./seed-pmp-learning";
 import { prisma } from "./seed-client";
 
 async function main() {
@@ -23,6 +24,7 @@ async function main() {
   await seedNihongoMockTests();
   await seedReadingArticles();
   await seedEnglishInterview();
+  await seedPmpLearning();
 }
 
 main()

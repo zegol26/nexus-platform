@@ -31,4 +31,12 @@ export const platformApps = [
     href: "/apps/lessons/dashboard",
     status: "coming_soon",
   },
+  {
+    id: "pmp",
+    slug: "pmp",
+    name: "PMP Exam Prep",
+    description: "IPR-safe PMP study modules, situational exam items, and PMI mindset drills",
+    href: "/apps/pmp/dashboard",
+    status: "active",
+  },
 ];

@@ -967,3 +967,172 @@ model EnglishInterviewReview {
   @@index([reviewerId])
   @@index([englishLevel])
 }
+
+model PmpIttoProcess {
+  id              String   @id @default(cuid())
+  processName     String
+  processGroup    String
+  knowledgeArea   String
+  domain          String?
+  approach        String   @default("predictive")
+  examVersion     String   @default("current")
+  purpose         String
+  whenToUse       String?
+  simpleExample   String?
+  agileHybridNote String?
+  commonPitfall   String?
+  studyTip        String?
+  sortOrder       Int      @default(0)
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  inputs  PmpIttoItem[] @relation("ProcessInputs")
+  tools   PmpIttoItem[] @relation("ProcessTools")
+  outputs PmpIttoItem[] @relation("ProcessOutputs")
+
+  @@unique([processName, examVersion])
+  @@index([processGroup])
+  @@index([knowledgeArea])
+  @@index([examVersion])
+  @@index([isActive])
+}
+
+model PmpIttoItem {
+  id            String   @id @default(cuid())
+  name          String
+  type          String
+  description   String
+  simpleExample String?
+  examTip       String?
+  relatedTerms  String[]
+  examVersion   String   @default("both")
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  inputForId  String?
+  toolForId   String?
+  outputForId String?
+
+  inputFor  PmpIttoProcess? @relation("ProcessInputs", fields: [inputForId], references: [id], onDelete: Cascade)
+  toolFor   PmpIttoProcess? @relation("ProcessTools", fields: [toolForId], references: [id], onDelete: Cascade)
+  outputFor PmpIttoProcess? @relation("ProcessOutputs", fields: [outputForId], references: [id], onDelete: Cascade)
+
+  @@index([name])
+  @@index([type])
+  @@index([inputForId])
+  @@index([toolForId])
+  @@index([outputForId])
+}
+
+model PmpGlossaryTerm {
+  id            String   @id @default(cuid())
+  term          String
+  acronym       String?
+  category      String?
+  definition    String
+  simpleMeaning String?
+  example       String?
+  pmpMindset    String?
+  relatedTerms  String[]
+  approach      String   @default("general")
+  examVersion   String   @default("both")
+  difficulty    String   @default("medium")
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@unique([term, examVersion])
+  @@index([category])
+  @@index([approach])
+  @@index([examVersion])
+  @@index([difficulty])
+  @@index([isActive])
+}
+
+model PmpKnowledgeArticle {
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  title        String
+  category     String
+  domain       String?
+  approach     String   @default("general")
+  examVersion  String   @default("both")
+  summary      String
+  content      String
+  keyTakeaways String[]
+  examples     Json?
+  relatedTerms String[]
+  studyTip     String?
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([category])
+  @@index([domain])
+  @@index([approach])
+  @@index([examVersion])
+  @@index([isActive])
+}
+
+model PmpAiFeedback {
+  id              String   @id @default(cuid())
+  userId          String
+  sourceType      String   @default("andromeda_chat")
+  sourceRef       String?
+  contentHash     String
+  contentExcerpt  String
+  rating          String
+  comment         String?
+  userQuestion    String?
+  createdAt       DateTime @default(now())
+
+  @@unique([userId, contentHash])
+  @@index([userId])
+  @@index([sourceType])
+  @@index([rating])
+  @@index([createdAt])
+}
+
+model PmpBrainDump {
+  id        String   @id @default(cuid())
+  userId    String
+  title     String
+  content   String
+  tags      String[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model PmpLessonProgress {
+  id             String    @id @default(cuid())
+  userId         String
+  lessonId       String
+  status         String    @default("not_started")
+  completedAt    DateTime?
+  lastAccessedAt DateTime  @default(now())
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@unique([userId, lessonId])
+  @@index([userId])
+  @@index([status])
+}
+
+model PmpReadinessItem {
+  id          String    @id @default(cuid())
+  userId      String
+  itemKey     String
+  isComplete  Boolean   @default(false)
+  completedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@unique([userId, itemKey])
+  @@index([userId])
+  @@index([isComplete])
+}

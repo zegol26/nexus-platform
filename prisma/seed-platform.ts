@@ -58,10 +58,11 @@ export async function seedPlatform() {
     });
   }
 
-  const [nihongoApp, englishApp, arabicApp] = await Promise.all([
+  const [nihongoApp, englishApp, arabicApp, pmpApp] = await Promise.all([
     prisma.platformApp.findUnique({ where: { slug: "nihongo" } }),
     prisma.platformApp.findUnique({ where: { slug: "english" } }),
     prisma.platformApp.findUnique({ where: { slug: "arabic" } }),
+    prisma.platformApp.findUnique({ where: { slug: "pmp" } }),
   ]);
 
   if (nihongoApp) {
@@ -151,6 +152,35 @@ export async function seedPlatform() {
     });
   }
 
+  if (pmpApp) {
+    await prisma.subscriptionPlan.upsert({
+      where: {
+        appId_code: {
+          appId: pmpApp.id,
+          code: "PMP_MONTHLY",
+        },
+      },
+      update: {
+        name: "PMP Exam Prep Monthly",
+        description: "Monthly access to PMP Exam Prep generators and mindset drills",
+        priceCents: 9900000,
+        currency: "IDR",
+        durationDays: 30,
+        active: true,
+      },
+      create: {
+        appId: pmpApp.id,
+        code: "PMP_MONTHLY",
+        name: "PMP Exam Prep Monthly",
+        description: "Monthly access to PMP Exam Prep generators and mindset drills",
+        priceCents: 9900000,
+        currency: "IDR",
+        durationDays: 30,
+        active: true,
+      },
+    });
+  }
+
   const adminEmail = process.env.ADMIN_EMAIL ?? "admin@nexus.local";
   const adminPassword = process.env.ADMIN_PASSWORD ?? "NexusAdmin123!";
   const existingAdmin = await prisma.user.findUnique({
@@ -176,7 +206,7 @@ export async function seedPlatform() {
     },
   });
 
-  const adminApps = [nihongoApp, englishApp, arabicApp].filter(
+  const adminApps = [nihongoApp, englishApp, arabicApp, pmpApp].filter(
     (app): app is NonNullable<typeof app> => Boolean(app)
   );
 

@@ -42,6 +42,7 @@ nexus-platform*.env
 # local dev logs
 dev-server.log
 dev-server.err.log
+.codex-next-dev.log
 
 # local claude code settings
 .claude/
