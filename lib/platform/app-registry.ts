@@ -1,9 +1,9 @@
-export const platformApps = [
+﻿export const platformApps = [
   {
     id: "nihongo",
     slug: "nihongo",
-    name: "Nexus Talenta Indonesia Academy",
-    description: "Japanese, language, and career-preparation academy for Indonesian learners",
+    name: "Nexus AI Nihongo",
+    description: "AI Japanese learning app for JLPT and JFT learners",
     href: "/apps/nihongo/dashboard",
     status: "active",
   },
@@ -19,7 +19,7 @@ export const platformApps = [
     id: "arabic",
     slug: "arabic",
     name: "Nexus AI Arabic",
-    description: "Daily Saudi Arabic for work, umrah, and travel — built for Indonesian speakers",
+    description: "Daily Saudi Arabic for work, umrah, and travel â€” built for Indonesian speakers",
     href: "/apps/arabic/dashboard",
     status: "active",
   },
@@ -35,8 +35,9 @@ export const platformApps = [
     id: "pmp",
     slug: "pmp",
     name: "PMP Exam Prep",
-    description: "PMP exam prep — lessons, drills, and full-length simulations.",
+    description: "PMP exam prep â€” lessons, drills, and full-length simulations.",
     href: "/apps/pmp/dashboard",
     status: "active",
   },
 ];
+

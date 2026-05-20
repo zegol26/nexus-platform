@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useCallback, useEffect, useState } from "react";
 import { UserBadgeHeader } from "@/components/nihongo/UserBadgeHeader";
@@ -26,9 +26,9 @@ async function callTutor(message: string, mode: "text" | "voice") {
 }
 
 const quickPrompts = [
-  "Ajarkan pola は dan が dengan contoh sederhana.",
-  "Buat latihan N5 tentang kata kerja ます.",
-  "Jelaskan perbedaan あります dan います.",
+  "Ajarkan pola ã¯ dan ãŒ dengan contoh sederhana.",
+  "Buat latihan N5 tentang kata kerja ã¾ã™.",
+  "Jelaskan perbedaan ã‚ã‚Šã¾ã™ dan ã„ã¾ã™.",
   "Bantu saya latihan percakapan kerja di Jepang.",
 ];
 
@@ -37,7 +37,7 @@ export default function TutorPage() {
     {
       role: "assistant",
       content:
-        "Halo, saya Ai-chan, sensei Bahasa Jepang kamu di Nexus Talenta Indonesia Academy. Tulis atau ngobrol langsung pakai mic — saya bantu jawab dengan penjelasan Indonesia, romaji, dan contoh kalimat.",
+        "Halo, saya Ai-chan, sensei Bahasa Jepang kamu di Nexus AI Nihongo. Tulis atau ngobrol langsung pakai mic â€” saya bantu jawab dengan penjelasan Indonesia, romaji, dan contoh kalimat.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -180,3 +180,4 @@ export default function TutorPage() {
     </div>
   );
 }
+

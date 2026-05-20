@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { GlobalFooter } from "@/components/layout/GlobalFooter";
@@ -83,14 +83,14 @@ export default async function NihongoLayout({
                     href="/platform/dashboard"
                     className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
                   >
-                    ← Back to Platform
+                    â† Back to Platform
                   </Link>
 
                   <Link
                     href="/apps/nihongo/dashboard"
                     className="hidden text-base font-bold tracking-tight text-slate-950 sm:inline"
                   >
-                    Nexus Talenta <span className="text-cyan-700">Indonesia Academy</span>
+                    Nexus AI <span className="text-cyan-700">Nihongo</span>
                   </Link>
                 </div>
 
@@ -112,10 +112,11 @@ export default async function NihongoLayout({
             <main className="w-full flex-1 px-4 py-6 sm:px-6 lg:px-10 lg:py-10">
               {children}
             </main>
-            <GlobalFooter product="Nexus Talenta Indonesia Academy" />
+            <GlobalFooter product="Nexus AI Nihongo" />
           </div>
         </div>
       </NihongoThemeShell>
     </NihongoThemeProvider>
   );
 }
+

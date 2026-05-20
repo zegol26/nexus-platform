@@ -76,7 +76,7 @@ export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/Nexustalenta.svg"
-            alt="Nexus Talenta"
+            alt="Nexus AI"
             width={56}
             height={56}
             className="relative h-14 w-14 object-contain"
@@ -84,10 +84,10 @@ export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
         </div>
         <div className="min-w-0">
           <p className="text-[9px] font-semibold uppercase tracking-[0.24em] text-cyan-700">
-            Indonesia Academy
+            Nihongo
           </p>
           <h2 className="mt-0.5 text-sm font-bold leading-tight tracking-tight text-slate-950">
-            Nexus Talenta <span className="text-cyan-700">Academy</span>
+            Nexus AI <span className="text-cyan-700">Nihongo</span>
           </h2>
         </div>
       </div>
@@ -140,10 +140,11 @@ export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
       <div className="relative mt-5 mb-2 h-px bg-slate-200" />
 
       <p className="relative px-2 text-[9px] font-medium uppercase tracking-[0.28em] text-slate-400">
-        © Nexus Talenta Indonesia Academy
+        © Nexus AI Nihongo
       </p>
     </aside>
   );
 }
+
 
 

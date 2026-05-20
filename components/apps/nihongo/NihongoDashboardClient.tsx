@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
@@ -135,25 +135,25 @@ export function NihongoDashboardClient() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/Nexustalenta.svg"
-                alt="Nexus Talenta"
+                alt="Nexus AI"
                 width={120}
                 height={120}
                 className="h-[120px] w-[120px] rounded-2xl object-contain shadow-sm ring-1 ring-slate-200"
               />
               <span className="flex flex-col">
                 <span className="text-[11px] font-bold uppercase tracking-[0.32em] text-cyan-700">
-                  Nexus Talenta
+                  Nexus AI
                 </span>
                 <span className="text-2xl font-bold tracking-tight text-slate-950">
-                  Indonesia Academy
+                  Nihongo
                 </span>
                 <span className="mt-1 text-[11px] font-medium text-slate-400">
-                  Japanese learning and career preparation
+                  AI-led Japanese learning
                 </span>
               </span>
             </div>
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-700">
-              Nexus Talenta Indonesia Academy
+              Nexus AI Nihongo
             </p>
             <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
               Your Japanese learning cockpit is ready.
@@ -369,3 +369,4 @@ export function NihongoDashboardClient() {
     </div>
   );
 }
+

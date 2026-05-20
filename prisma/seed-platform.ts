@@ -1,4 +1,4 @@
-import { prisma } from "./seed-client";
+﻿import { prisma } from "./seed-client";
 import { platformApps } from "../lib/platform/app-registry";
 import bcrypt from "bcryptjs";
 
@@ -89,7 +89,7 @@ export async function seedPlatform() {
       },
       update: {
         name: "Nihongo Monthly",
-        description: "Monthly access to Nexus Talenta Indonesia Academy",
+        description: "Monthly access to Nexus AI Nihongo",
         priceCents: 9900000,
         currency: "IDR",
         durationDays: 30,
@@ -100,7 +100,7 @@ export async function seedPlatform() {
         appId: nihongoApp.id,
         code: "NIHONGO_MONTHLY",
         name: "Nihongo Monthly",
-        description: "Monthly access to Nexus Talenta Indonesia Academy",
+        description: "Monthly access to Nexus AI Nihongo",
         priceCents: 9900000,
         currency: "IDR",
         durationDays: 30,
@@ -151,7 +151,7 @@ export async function seedPlatform() {
       },
       update: {
         name: "Arabic Monthly",
-        description: "Monthly access to Nexus AI Arabic — Saudi daily Arabic for work, umrah, and travel",
+        description: "Monthly access to Nexus AI Arabic â€” Saudi daily Arabic for work, umrah, and travel",
         priceCents: 9900000,
         currency: "IDR",
         durationDays: 30,
@@ -162,7 +162,7 @@ export async function seedPlatform() {
         appId: arabicApp.id,
         code: "ARABIC_MONTHLY",
         name: "Arabic Monthly",
-        description: "Monthly access to Nexus AI Arabic — Saudi daily Arabic for work, umrah, and travel",
+        description: "Monthly access to Nexus AI Arabic â€” Saudi daily Arabic for work, umrah, and travel",
         priceCents: 9900000,
         currency: "IDR",
         durationDays: 30,
@@ -421,3 +421,4 @@ async function ensureProductionSafeSchema() {
   await prisma.$executeRawUnsafe(`CREATE INDEX IF NOT EXISTS "ReadingPassage_topic_idx" ON "ReadingPassage"("topic");`);
   await prisma.$executeRawUnsafe(`CREATE INDEX IF NOT EXISTS "ReadingPassage_sourceType_idx" ON "ReadingPassage"("sourceType");`);
 }
+

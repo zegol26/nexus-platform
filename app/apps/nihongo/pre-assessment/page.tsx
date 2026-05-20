@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
@@ -219,7 +219,7 @@ export default function NihongoPreAssessmentPage() {
     return (
       <div className="mx-auto flex min-h-[60vh] max-w-3xl items-center justify-center">
         <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Nexus Talenta Indonesia Academy</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Nexus AI Nihongo</p>
           <h1 className="mt-3 text-2xl font-semibold text-slate-950">Menyiapkan assessment...</h1>
           <p className="mt-2 text-sm text-slate-500">Sebentar, kami sedang menata soal terbaik untuk memetakan level awalmu.</p>
         </div>
@@ -598,3 +598,4 @@ function scrollToQuestion(id: string) {
     });
   }, 0);
 }
+
