@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/db/prisma";
+import { buildGlossaryExample, buildGlossaryPmpMindset } from "@/lib/pmp/glossary-explanations";
 
 export const dynamic = "force-dynamic";
 
@@ -85,8 +86,8 @@ export default async function PmpGlossaryPage({
             <h2 className="mt-3 text-xl font-semibold text-white">{term.term}{term.acronym ? ` (${term.acronym})` : ""}</h2>
             <p className="mt-2 text-sm leading-6 text-slate-300">{term.simpleMeaning}</p>
             <p className="mt-3 text-sm leading-6 text-slate-400">{term.definition}</p>
-            {term.example ? <p className="mt-3 text-sm leading-6 text-cyan-100">{term.example}</p> : null}
-            {term.pmpMindset ? <p className="mt-3 text-xs font-semibold leading-5 text-amber-100">{term.pmpMindset}</p> : null}
+            <p className="mt-3 text-sm leading-6 text-cyan-100">{buildGlossaryExample(term.term, term.category)}</p>
+            <p className="mt-3 text-xs font-semibold leading-5 text-amber-100">{buildGlossaryPmpMindset(term.term, term.category)}</p>
           </article>
         ))}
       </div>

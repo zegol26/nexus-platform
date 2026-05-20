@@ -5,6 +5,7 @@ import {
   buildIttoExamTip,
   buildIttoExample,
 } from "../lib/pmp/itto-explanations";
+import { buildGlossaryExample, buildGlossaryPmpMindset } from "../lib/pmp/glossary-explanations";
 
 const processMap = [
   ["Develop Project Charter", "Initiating", "Integration"],
@@ -224,21 +225,7 @@ function itemExamTip(itemName: string, type: "input" | "toolTechnique" | "output
 }
 
 function glossaryMindset(term: string, category: string) {
-  const lower = term.toLowerCase();
-  if (lower.includes("charter")) return "PMPism: sebelum project resmi jalan, jangan lompat ke detailed schedule; pastikan authorization, sponsor, dan business need jelas.";
-  if (lower.includes("baseline")) return "PMPism: baseline adalah pembanding kinerja. Jika ada deviasi, analisis variance dan change path sebelum mengubah rencana.";
-  if (lower.includes("risk")) return "PMPism: risk dikelola sebelum jadi issue. Cari owner, trigger, response, dan update register/report sesuai dampaknya.";
-  if (["Avoid", "Mitigate", "Transfer", "Accept", "Exploit", "Enhance", "Share", "Escalate"].includes(term)) return `PMPism: ${term} adalah strategi response; pilih berdasarkan jenis risiko/opportunity, authority, dan apakah tindakan masih dalam kendali project team.`;
-  if (lower.includes("stakeholder")) return "PMPism: stakeholder resistance jarang diselesaikan dengan memaksa. Cari interest, expectation gap, influence, dan engagement strategy.";
-  if (lower.includes("change")) return "PMPism: change bukan otomatis diterima atau ditolak. First move biasanya impact analysis dan mengikuti change control yang disepakati.";
-  if (lower.includes("quality") || lower.includes("audit") || lower.includes("inspection") || lower.includes("root cause")) return "PMPism: soal quality sering menjebak antara memperbaiki defect cepat dan memperbaiki penyebab sistemik. Recurring issue perlu root cause.";
-  if (lower.includes("critical path") || lower.includes("float") || lower.includes("lead") || lower.includes("lag")) return "PMPism: schedule decision harus membaca dependency dan critical path; jangan langsung tambah resource tanpa tahu bottleneck.";
-  if (lower.includes("contract") || lower.includes("procurement") || lower.includes("seller") || lower.includes("bidder")) return "PMPism: vendor issue harus dibaca lewat agreement, procurement documents, dan relationship health sebelum penalty/escalation.";
-  if (lower.includes("scrum") || lower.includes("sprint") || lower.includes("backlog") || lower.includes("kanban") || category === "Agile") return "PMPism: dalam agile, project lead melindungi transparency, team ownership, dan product decision flow; jangan command-and-control tim.";
-  if (lower.includes("cost") || lower.includes("earned value") || ["CPI", "SPI", "EAC", "ETC", "BAC"].some((abbr) => term.includes(abbr))) return "PMPism: angka EVM adalah sinyal diagnosis. Pilih jawaban yang membaca trend/forecast sebelum aksi korektif.";
-  if (lower.includes("ai") || lower.includes("sustainability")) return "PMPism 2026 readiness: perlakukan AI/sustainability sebagai governance, ethics, value, risk, dan stakeholder impact, bukan sekadar teknologi tambahan.";
-  if (category === "Leadership") return "PMPism: people problem biasanya diselesaikan dengan listening, facilitation, coaching, role clarity, dan psychological safety sebelum eskalasi.";
-  return `PMPism: saat ${term} muncul, tanyakan fungsi praktisnya: apakah ini konteks keputusan, metode analisis, artifact, atau sinyal untuk melibatkan stakeholder tertentu?`;
+  return buildGlossaryPmpMindset(term, category);
 }
 
 function processSpecificItto(
@@ -438,7 +425,7 @@ export async function seedPmpLearning() {
         category,
         definition: `${term} adalah konsep project management yang membantu project manager membuat keputusan lebih terstruktur, transparan, dan value-driven.`,
         simpleMeaning: `${term} berarti cara praktis untuk membuat pekerjaan, keputusan, atau informasi project lebih jelas bagi tim dan stakeholder.`,
-        example: `Contoh: pada proyek digital Nexus, ${term} dipakai agar sponsor, tim, dan user memahami kondisi project sebelum memilih tindakan berikutnya.`,
+        example: buildGlossaryExample(term, category),
         pmpMindset: glossaryMindset(term, category),
         relatedTerms: [category, "PMP Mindset", "Value Delivery"],
         approach: category === "Agile" ? "agile" : "general",
@@ -449,7 +436,7 @@ export async function seedPmpLearning() {
         category,
         definition: `${term} adalah konsep project management yang membantu project manager membuat keputusan lebih terstruktur, transparan, dan value-driven.`,
         simpleMeaning: `${term} berarti cara praktis untuk membuat pekerjaan, keputusan, atau informasi project lebih jelas bagi tim dan stakeholder.`,
-        example: `Contoh: pada proyek digital Nexus, ${term} dipakai agar sponsor, tim, dan user memahami kondisi project sebelum memilih tindakan berikutnya.`,
+        example: buildGlossaryExample(term, category),
         pmpMindset: glossaryMindset(term, category),
         relatedTerms: [category, "PMP Mindset", "Value Delivery"],
         approach: category === "Agile" ? "agile" : "general",
