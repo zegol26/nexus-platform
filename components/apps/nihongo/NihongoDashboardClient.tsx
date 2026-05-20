@@ -142,18 +142,18 @@ export function NihongoDashboardClient() {
               />
               <span className="flex flex-col">
                 <span className="text-[11px] font-bold uppercase tracking-[0.32em] text-cyan-700">
-                  Nexus AI
+                  Nexus Talenta
                 </span>
                 <span className="text-2xl font-bold tracking-tight text-slate-950">
-                  Nihongo
+                  Indonesia Academy
                 </span>
                 <span className="mt-1 text-[11px] font-medium text-slate-400">
-                  AI-led Japanese learning
+                  Japanese learning and career preparation
                 </span>
               </span>
             </div>
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-700">
-              Nexus AI Nihongo
+              Nexus Talenta Indonesia Academy
             </p>
             <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
               Your Japanese learning cockpit is ready.

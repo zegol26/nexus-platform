@@ -1,8 +1,8 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Nexus AI Nihongo",
-  description: "AI Japanese Learning Platform",
+  title: "Nexus Talenta Indonesia Academy",
+  description: "Language learning and overseas career preparation platform by Nexus Talenta Indonesia.",
   icons: {
     icon: "/nexus-icon.png",
   },

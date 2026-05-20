@@ -2,8 +2,8 @@ export const platformApps = [
   {
     id: "nihongo",
     slug: "nihongo",
-    name: "Nexus AI Nihongo",
-    description: "AI Japanese learning app for JLPT and JFT learners",
+    name: "Nexus Talenta Indonesia Academy",
+    description: "Japanese, language, and career-preparation academy for Indonesian learners",
     href: "/apps/nihongo/dashboard",
     status: "active",
   },

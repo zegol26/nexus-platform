@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -26,9 +26,9 @@ export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
 
   const isSquid = theme === "squid";
   const isRockstar = theme === "rockstar";
-  const brandGlyph = isSquid ? "○" : isRockstar ? "★" : "";
-  const topWatermark = isSquid ? "○" : isRockstar ? "★" : "";
-  const bottomWatermark = isSquid ? "△" : isRockstar ? "★" : "";
+  const brandGlyph = isSquid ? "â—‹" : isRockstar ? "â˜…" : "";
+  const topWatermark = isSquid ? "â—‹" : isRockstar ? "â˜…" : "";
+  const bottomWatermark = isSquid ? "â–³" : isRockstar ? "â˜…" : "";
 
   return (
     <aside
@@ -84,10 +84,10 @@ export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
         </div>
         <div className="min-w-0">
           <p className="text-[9px] font-semibold uppercase tracking-[0.24em] text-cyan-700">
-            AI Language Lab
+            Indonesia Academy
           </p>
           <h2 className="mt-0.5 text-sm font-bold leading-tight tracking-tight text-slate-950">
-            Nexus AI <span className="text-cyan-700">Nihongo</span>
+            Nexus Talenta <span className="text-cyan-700">Academy</span>
           </h2>
         </div>
       </div>
@@ -106,9 +106,9 @@ export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
 
           // Theme-specific marker glyph
           const marker = isSquid
-            ? ["○", "△", "□"][idx % 3]
+            ? ["â—‹", "â–³", "â–¡"][idx % 3]
             : isRockstar
-              ? "★"
+              ? "â˜…"
               : item.marker;
 
           return (
@@ -140,8 +140,10 @@ export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
       <div className="relative mt-5 mb-2 h-px bg-slate-200" />
 
       <p className="relative px-2 text-[9px] font-medium uppercase tracking-[0.28em] text-slate-400">
-        © Nexus AI Nihongo
+        © Nexus Talenta Indonesia Academy
       </p>
     </aside>
   );
 }
+
+

@@ -89,7 +89,7 @@ export async function seedPlatform() {
       },
       update: {
         name: "Nihongo Monthly",
-        description: "Monthly access to Nexus AI Nihongo",
+        description: "Monthly access to Nexus Talenta Indonesia Academy",
         priceCents: 9900000,
         currency: "IDR",
         durationDays: 30,
@@ -100,7 +100,7 @@ export async function seedPlatform() {
         appId: nihongoApp.id,
         code: "NIHONGO_MONTHLY",
         name: "Nihongo Monthly",
-        description: "Monthly access to Nexus AI Nihongo",
+        description: "Monthly access to Nexus Talenta Indonesia Academy",
         priceCents: 9900000,
         currency: "IDR",
         durationDays: 30,

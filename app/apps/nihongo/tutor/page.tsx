@@ -37,7 +37,7 @@ export default function TutorPage() {
     {
       role: "assistant",
       content:
-        "Halo, saya Ai-chan, sensei Bahasa Jepang kamu di Nexus AI Nihongo. Tulis atau ngobrol langsung pakai mic — saya bantu jawab dengan penjelasan Indonesia, romaji, dan contoh kalimat.",
+        "Halo, saya Ai-chan, sensei Bahasa Jepang kamu di Nexus Talenta Indonesia Academy. Tulis atau ngobrol langsung pakai mic — saya bantu jawab dengan penjelasan Indonesia, romaji, dan contoh kalimat.",
     },
   ]);
   const [input, setInput] = useState("");

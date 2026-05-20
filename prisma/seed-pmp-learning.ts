@@ -1,5 +1,10 @@
 import { prisma } from "./seed-client";
 import { CURATED_ARTICLES, CURATED_GLOSSARY } from "./seed-pmp-knowledge";
+import {
+  buildIttoDescription,
+  buildIttoExamTip,
+  buildIttoExample,
+} from "../lib/pmp/itto-explanations";
 
 const processMap = [
   ["Develop Project Charter", "Initiating", "Integration"],
@@ -210,13 +215,12 @@ function processPitfall(knowledgeArea: string) {
 }
 
 function itemExamTip(itemName: string, type: "input" | "toolTechnique" | "output", knowledgeArea: string) {
-  if (type === "input") {
-    return `Exam tip: kalau ${itemName} muncul sebagai input, gunakan untuk memahami batasan dan konteks sebelum memilih tindakan ${knowledgeArea}.`;
-  }
-  if (type === "toolTechnique") {
-    return `Exam tip: ${itemName} biasanya menunjuk cara berpikir/analisis. Pilih ini saat soal meminta FIRST dan data belum cukup untuk aksi final.`;
-  }
-  return `Exam tip: ${itemName} adalah hasil yang mengubah baseline, dokumen, keputusan, atau komunikasi. Jangan pilih output sebelum proses berpikirnya masuk akal.`;
+  return buildIttoExamTip({
+    itemName,
+    type,
+    processName: "the process",
+    knowledgeArea,
+  });
 }
 
 function glossaryMindset(term: string, category: string) {
@@ -396,8 +400,18 @@ export async function seedPmpLearning() {
         data: {
           name,
           type,
-          description: `${name} adalah elemen pembelajaran ${type} untuk ${processName}. Gunakan sebagai petunjuk alur, bukan hafalan mati.`,
-          simpleExample: `Dalam proyek HR system, ${name} membantu tim memahami keputusan ${knowledgeArea.toLowerCase()} secara praktis.`,
+          description: buildIttoDescription({
+            itemName: name,
+            type,
+            processName,
+            knowledgeArea,
+          }),
+          simpleExample: buildIttoExample({
+            itemName: name,
+            type,
+            processName,
+            knowledgeArea,
+          }),
           examTip: itemExamTip(name, type, knowledgeArea),
           relatedTerms: profile.terms,
           examVersion: "both",

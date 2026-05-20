@@ -54,7 +54,7 @@ export function buildFallbackTemplate(
 
 function buildLessonBlueprint(lesson: LessonInput, variant: NihongoLessonTemplateVariant): LessonBlueprint {
   const title = lesson.title.toLowerCase();
-  const description = lesson.description ?? "Materi inti Nexus AI Nihongo.";
+  const description = lesson.description ?? "Materi inti Nexus Talenta Indonesia Academy.";
 
   if (title.includes("hiragana")) {
     return makeKanaBlueprint({

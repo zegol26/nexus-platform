@@ -2,7 +2,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/db/prisma";
 import { getKnowledgeAreaPracticeQuestions } from "@/lib/pmp/knowledge-area-questions";
+import {
+  buildIttoDescription,
+  buildIttoExamTip,
+  buildIttoExample,
+} from "@/lib/pmp/itto-explanations";
 import { IttoFlowGraphic } from "@/components/apps/pmp/PmpProcessMap";
+
+type IttoType = "input" | "toolTechnique" | "output";
 
 export const dynamic = "force-dynamic";
 
@@ -31,9 +38,9 @@ export default async function PmpIttoDetailPage({ params }: { params: Promise<{ 
       <IttoFlowGraphic />
 
       <div className="grid gap-4 md:grid-cols-3">
-        <IttoList title="Inputs" items={process.inputs} />
-        <IttoList title="Tools & Techniques" items={process.tools} />
-        <IttoList title="Outputs" items={process.outputs} />
+        <IttoList title="Inputs" processName={process.processName} knowledgeArea={process.knowledgeArea} items={process.inputs} />
+        <IttoList title="Tools & Techniques" processName={process.processName} knowledgeArea={process.knowledgeArea} items={process.tools} />
+        <IttoList title="Outputs" processName={process.processName} knowledgeArea={process.knowledgeArea} items={process.outputs} />
       </div>
 
       <section className="grid gap-4 md:grid-cols-2">
@@ -65,18 +72,33 @@ export default async function PmpIttoDetailPage({ params }: { params: Promise<{ 
   );
 }
 
-function IttoList({ title, items }: { title: string; items: Array<{ id: string; name: string; description: string; simpleExample: string | null; examTip: string | null }> }) {
+function IttoList({
+  title,
+  items,
+  processName,
+  knowledgeArea,
+}: {
+  title: string;
+  processName: string;
+  knowledgeArea: string;
+  items: Array<{ id: string; name: string; type: string; description: string; simpleExample: string | null; examTip: string | null }>;
+}) {
   return (
     <section className="rounded-2xl border border-white/10 bg-slate-900 p-5">
       <h2 className="font-semibold text-white">{title}</h2>
       <div className="mt-4 space-y-3">
-        {items.map((item) => (
-          <div key={item.id} className="rounded-xl bg-white/[0.04] p-3">
-            <p className="font-semibold text-cyan-100">{item.name}</p>
-            <p className="mt-1 text-xs leading-5 text-slate-300">{item.description}</p>
-            {item.examTip ? <p className="mt-2 text-xs font-semibold text-amber-100">{item.examTip}</p> : null}
-          </div>
-        ))}
+        {items.map((item) => {
+          const type: IttoType = item.type === "toolTechnique" || item.type === "output" ? item.type : "input";
+          const context = { itemName: item.name, type, processName, knowledgeArea };
+          return (
+            <div key={item.id} className="rounded-xl bg-white/[0.04] p-3">
+              <p className="font-semibold text-cyan-100">{item.name}</p>
+              <p className="mt-2 text-xs leading-6 text-slate-300">{buildIttoDescription(context)}</p>
+              <p className="mt-2 text-xs leading-6 text-slate-400">{buildIttoExample(context)}</p>
+              <p className="mt-2 text-xs font-semibold leading-6 text-amber-100">{buildIttoExamTip(context)}</p>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

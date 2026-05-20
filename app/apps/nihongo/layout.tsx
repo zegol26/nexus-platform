@@ -90,7 +90,7 @@ export default async function NihongoLayout({
                     href="/apps/nihongo/dashboard"
                     className="hidden text-base font-bold tracking-tight text-slate-950 sm:inline"
                   >
-                    Nexus AI <span className="text-cyan-700">Nihongo</span>
+                    Nexus Talenta <span className="text-cyan-700">Indonesia Academy</span>
                   </Link>
                 </div>
 
@@ -112,7 +112,7 @@ export default async function NihongoLayout({
             <main className="w-full flex-1 px-4 py-6 sm:px-6 lg:px-10 lg:py-10">
               {children}
             </main>
-            <GlobalFooter product="Nexus AI Nihongo" />
+            <GlobalFooter product="Nexus Talenta Indonesia Academy" />
           </div>
         </div>
       </NihongoThemeShell>
