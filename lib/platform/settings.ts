@@ -24,7 +24,13 @@ export async function getBillingSettings() {
   const settings = await prisma.platformSetting.findMany({
     where: {
       key: {
-        in: [platformSettingKeys.lessonPriceCents, platformSettingKeys.qrisInfo, platformSettingKeys.bankInfo],
+        in: [
+          platformSettingKeys.lessonPriceCents,
+          platformSettingKeys.qrisInfo,
+          platformSettingKeys.bankInfo,
+          platformSettingKeys.midtransMode,
+          platformSettingKeys.midtransEnabled,
+        ],
       },
     },
   });

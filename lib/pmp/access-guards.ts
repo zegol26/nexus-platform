@@ -7,13 +7,13 @@ export async function ensurePmpTrial(userId: string) {
     where: { slug: PMP_APP_SLUG },
     update: {
       name: "PMP Exam Prep",
-      description: "IPR-safe PMP study modules, situational exam items, and PMI mindset drills",
+      description: "PMP exam prep — lessons, drills, and full-length simulations.",
       status: "ACTIVE",
     },
     create: {
       slug: PMP_APP_SLUG,
       name: "PMP Exam Prep",
-      description: "IPR-safe PMP study modules, situational exam items, and PMI mindset drills",
+      description: "PMP exam prep — lessons, drills, and full-length simulations.",
       status: "ACTIVE",
     },
   });

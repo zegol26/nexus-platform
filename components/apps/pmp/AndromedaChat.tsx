@@ -11,12 +11,12 @@ type ChatMessage = {
 type Rating = "like" | "dislike" | null;
 
 const SUGGESTIONS = [
-  "Jelasin beda RFI, RFQ, RFP, dan IFB lengkap dengan kapan dipakainya.",
-  "Bandingin semua contract types (FFP, FPIF, FPEPA, T&M, CPFF, CPIF, CPAF) dalam tabel.",
-  "Risk response strategies untuk threat vs opportunity, plus contoh tiap strategy.",
-  "Apa itu fishbone diagram, Pareto chart, dan kapan harus pakai yang mana?",
-  "Hitung EVM: jelasin CV, SV, CPI, SPI, EAC, ETC, VAC dengan contoh angka.",
-  "Conflict resolution Thomas-Kilmann — kapan pakai collaborate vs compromise?",
+  "RFI vs RFQ vs RFP vs IFB — kapan masing-masing dipakai?",
+  "Bandingkan contract types dalam satu tabel.",
+  "Risk response strategies untuk threat vs opportunity.",
+  "Pareto vs fishbone — kapan pilih yang mana?",
+  "EVM: CV, SV, CPI, SPI, EAC dengan contoh angka.",
+  "Conflict resolution: collaborate vs compromise.",
 ];
 
 function renderMarkdown(text: string) {
@@ -127,7 +127,7 @@ export function AndromedaChat() {
     {
       role: "assistant",
       content:
-        "Halo, gw **Andromeda** ✦ — instructor PMP prep di Nexus Academy.\n\nGw ngerti semua layer kurikulum lo: Process Groups, 10 Knowledge Areas, ITTO, glossary, sampai diagnostic report. Tanya apa aja yang nyangkut PMP — gw bakal jawab comprehensive, integrating ITTO, KA, mindset PMI, dan teori pendukung kayak Pareto, fishbone, Maslow, Herzberg, Tuckman, Thomas-Kilmann, EVM, dan lain-lain.\n\nKalau lo bingung mulai dari mana, klik salah satu pertanyaan di bawah, atau ketik sendiri.",
+        "Hi. I'm **Andromeda** ✦ — your PMP study companion.\n\nPick a prompt on the left, or ask anything about the exam.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -157,17 +157,17 @@ export function AndromedaChat() {
         body: JSON.stringify({ messages: next.slice(-10) }),
       });
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error ?? "Andromeda gagal merespons.");
+      if (!res.ok) throw new Error(data.error ?? "Request failed.");
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content: data.reply ?? "(tidak ada balasan)",
+          content: data.reply ?? "(no reply)",
           userQuestion: trimmed,
         },
       ]);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Andromeda gagal merespons.");
+      setError(err instanceof Error ? err.message : "Request failed.");
     } finally {
       setLoading(false);
     }
@@ -189,24 +189,22 @@ export function AndromedaChat() {
                 AI Instructor
               </p>
               <h2 className="text-xl font-semibold text-white">Andromeda ✦</h2>
-              <p className="text-[11px] text-slate-300">PhD Management · PhD Project Management</p>
+              <p className="text-[11px] text-slate-300">PMP study companion</p>
             </div>
           </div>
           <p className="mt-4 text-sm leading-6 text-slate-300">
-            Brain of the Academy. Andromeda terhubung ke kurikulum, Knowledge Areas, glossary, ITTO,
-            lesson, dan simulation test. Dia jawab comprehensive — integrating ITTO, process groups,
-            PMI mindset, plus teori pendukung (Pareto, fishbone, Maslow, Tuckman, Thomas-Kilmann, EVM, dst).
+            Ask anything across the syllabus — concept, scenario, or quick recall.
           </p>
           <button
             onClick={resetChat}
             className="mt-4 w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-xs font-bold text-slate-200 hover:bg-white/10"
           >
-            Reset percakapan
+            Reset conversation
           </button>
         </div>
 
         <div className="rounded-2xl border border-white/10 bg-slate-900 p-5">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-300">Tanya cepat</p>
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-300">Quick prompts</p>
           <div className="mt-3 grid gap-2">
             {SUGGESTIONS.map((suggestion) => (
               <button
@@ -222,10 +220,9 @@ export function AndromedaChat() {
         </div>
 
         <div className="rounded-2xl border border-amber-300/20 bg-amber-300/[0.04] p-4 text-xs leading-5 text-amber-100">
-          <p className="font-semibold">Scope guardrail</p>
+          <p className="font-semibold">PMP only</p>
           <p className="mt-1 text-amber-100/80">
-            Andromeda hanya menjawab pertanyaan seputar PMP prep, project management, dan teori
-            pendukungnya. Pertanyaan di luar topik bakal di-redirect halus ke study path.
+            Off-topic questions will be redirected back to study.
           </p>
         </div>
       </aside>
@@ -234,7 +231,7 @@ export function AndromedaChat() {
         <header className="flex items-center justify-between border-b border-white/10 px-5 py-3">
           <div className="flex items-center gap-2">
             <AndromedaIcon size={22} />
-            <p className="text-sm font-semibold text-white">Andromeda Instructor Chat</p>
+            <p className="text-sm font-semibold text-white">Andromeda</p>
           </div>
           <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-fuchsia-200/70">
             PMP only
@@ -252,7 +249,7 @@ export function AndromedaChat() {
           {loading && (
             <div className="flex items-center gap-2 text-xs text-fuchsia-200/80">
               <AndromedaIcon size={18} />
-              <span>Andromeda lagi mikir…</span>
+              <span>Thinking…</span>
             </div>
           )}
         </div>
@@ -276,7 +273,7 @@ export function AndromedaChat() {
                 }
               }}
               rows={2}
-              placeholder="Tanya Andromeda apa aja seputar PMP… (Enter untuk kirim, Shift+Enter untuk baris baru)"
+              placeholder="Ask Andromeda…  (Enter to send · Shift+Enter for newline)"
               className="flex-1 resize-none rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-sm text-white outline-none ring-fuchsia-300/40 focus:ring-2"
               disabled={loading}
             />
@@ -285,7 +282,7 @@ export function AndromedaChat() {
               disabled={loading || !input.trim()}
               className="rounded-xl bg-gradient-to-r from-fuchsia-400 via-violet-400 to-cyan-300 px-5 py-3 text-sm font-bold text-slate-950 shadow-lg shadow-violet-500/30 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              {loading ? "..." : "Kirim"}
+              {loading ? "..." : "Send"}
             </button>
           </div>
         </form>
@@ -422,7 +419,7 @@ function FeedbackBar({
   if (submitted) {
     return (
       <p className="mt-1.5 text-[11px] text-emerald-300/80">
-        ✓ Feedback terkirim — terima kasih, Andromeda akan ingat.
+        ✓ Thanks — feedback logged.
       </p>
     );
   }
@@ -466,7 +463,7 @@ function FeedbackBar({
             onClick={() => setShowComment(true)}
             className="ml-1 text-[11px] text-slate-400 hover:text-fuchsia-200"
           >
-            + tambah catatan
+            + add a note
           </button>
         )}
       </div>
@@ -476,7 +473,7 @@ function FeedbackBar({
             value={comment}
             onChange={(e) => setComment(e.target.value)}
             rows={2}
-            placeholder="Apa yang bisa diperbaiki dari jawaban ini?"
+            placeholder="What could be better?"
             className="flex-1 rounded-lg border border-white/10 bg-slate-900 px-3 py-2 text-xs text-white outline-none ring-fuchsia-300/40 focus:ring-2"
             maxLength={2000}
           />
@@ -486,7 +483,7 @@ function FeedbackBar({
             onClick={() => send(rating ?? "dislike", comment.trim())}
             className="rounded-lg bg-fuchsia-400 px-3 py-2 text-xs font-bold text-slate-950 disabled:opacity-50"
           >
-            Kirim
+            Send
           </button>
         </div>
       )}

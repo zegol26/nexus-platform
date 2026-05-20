@@ -106,7 +106,7 @@ export function PmpBrainDumps() {
 
   async function save() {
     if (!content.trim()) {
-      setError("Content tidak boleh kosong");
+      setError("Content cannot be empty.");
       return;
     }
     setSaving(true);
@@ -128,18 +128,18 @@ export function PmpBrainDumps() {
         body: JSON.stringify(payload),
       });
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error ?? "Gagal menyimpan");
+      if (!res.ok) throw new Error(data.error ?? "Save failed");
       reset();
       load();
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Gagal menyimpan");
+      setError(e instanceof Error ? e.message : "Save failed");
     } finally {
       setSaving(false);
     }
   }
 
   async function remove(id: string) {
-    if (!confirm("Hapus brain dump ini?")) return;
+    if (!confirm("Delete this dump?")) return;
     const res = await fetch(`/api/apps/pmp/brain-dump?id=${id}`, { method: "DELETE" });
     if (res.ok) {
       if (editingId === id) reset();
@@ -155,18 +155,17 @@ export function PmpBrainDumps() {
             Brain Dump ✦
           </p>
           <h2 className="mt-2 text-xl font-semibold text-white">
-            Tuangkan semua yang kamu hafal di sini.
+            Write it down, from memory.
           </h2>
           <p className="mt-2 text-sm leading-6 text-slate-300">
-            Brain dump = tulis ulang formula, process group, KA grid, strategy, dan terms penting
-            tanpa lihat referensi. Latihan paling efektif untuk &ldquo;5 menit pertama&rdquo; di
-            exam — saat kamu dump everything to scratch paper sebelum mulai soal.
+            A quiet space to rehearse formulas, process maps, and key terms — the way you would on
+            scratch paper in the first five minutes of the exam.
           </p>
         </div>
 
         <div className="rounded-2xl border border-white/10 bg-slate-900 p-5">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-300">
-            Template cepat
+            Templates
           </p>
           <div className="mt-3 grid gap-2">
             {BRAIN_DUMP_TEMPLATES.map((tpl) => (
@@ -187,28 +186,29 @@ export function PmpBrainDumps() {
         <div className="rounded-2xl border border-white/10 bg-slate-900 p-5">
           <div className="flex items-center justify-between">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-300">
-              {editingId ? "Edit brain dump" : "Brain dump baru"}
+              {editingId ? "Edit dump" : "New dump"}
             </p>
-            {editingId && (
+            {(editingId || title || content || tags) && (
               <button
                 onClick={reset}
-                className="text-[11px] font-bold text-slate-400 hover:text-white"
+                className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-bold text-slate-300 hover:bg-white/10 hover:text-white"
+                title={editingId ? "Cancel edit" : "Clear the form"}
               >
-                Batal
+                {editingId ? "Cancel" : "Clear"}
               </button>
             )}
           </div>
           <input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="Judul (mis. EVM formulas)"
+            placeholder="Title — e.g. EVM formulas"
             className="mt-3 w-full rounded-lg border border-white/10 bg-slate-950/60 px-3 py-2 text-sm text-white outline-none ring-fuchsia-300/40 focus:ring-2"
             maxLength={200}
           />
           <textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            placeholder="Tulis semua yang kamu ingat — formula, akronim, strategy, urutan process..."
+            placeholder="Write everything you remember…"
             rows={10}
             className="mt-2 w-full rounded-lg border border-white/10 bg-slate-950/60 px-3 py-2 font-mono text-xs leading-6 text-white outline-none ring-fuchsia-300/40 focus:ring-2"
             maxLength={20000}
@@ -216,7 +216,7 @@ export function PmpBrainDumps() {
           <input
             value={tags}
             onChange={(e) => setTags(e.target.value)}
-            placeholder="Tags (comma-separated): evm, risk, procurement..."
+            placeholder="Tags — comma separated"
             className="mt-2 w-full rounded-lg border border-white/10 bg-slate-950/60 px-3 py-2 text-xs text-white outline-none ring-fuchsia-300/40 focus:ring-2"
           />
           {error && <p className="mt-2 text-xs font-semibold text-rose-300">{error}</p>}
@@ -225,16 +225,16 @@ export function PmpBrainDumps() {
             disabled={saving || !content.trim()}
             className="mt-3 w-full rounded-lg bg-gradient-to-r from-fuchsia-400 via-violet-400 to-cyan-300 px-4 py-2 text-sm font-bold text-slate-950 disabled:opacity-50"
           >
-            {saving ? "Menyimpan..." : editingId ? "Update" : "Simpan brain dump"}
+            {saving ? "Saving…" : editingId ? "Update" : "Save"}
           </button>
         </div>
 
         <div className="space-y-3">
           {loading ? (
-            <p className="text-sm text-slate-400">Memuat brain dumps...</p>
+            <p className="text-sm text-slate-400">Loading…</p>
           ) : dumps.length === 0 ? (
             <p className="text-sm text-slate-400">
-              Belum ada brain dump. Mulai dari template di sebelah kiri atau tulis dari nol.
+              No dumps yet — start from a template, or write your own.
             </p>
           ) : (
             dumps.map((dump) => (
@@ -260,7 +260,7 @@ export function PmpBrainDumps() {
                       onClick={() => remove(dump.id)}
                       className="rounded-md border border-rose-300/30 bg-rose-300/10 px-2 py-1 text-[11px] font-bold text-rose-200 hover:bg-rose-300/20"
                     >
-                      Hapus
+                      Delete
                     </button>
                   </div>
                 </header>

@@ -13,7 +13,7 @@ export const maxDuration = 60;
 type ChatMessage = { role: "user" | "assistant"; content: string };
 
 const OFF_TOPIC_REPLY =
-  "Maaf, gw Andromeda — instructor khusus PMP prep. Pertanyaan barusan kelihatannya di luar scope PMP / project management.\n\nKalau lo lagi prep PMP, gw bisa langsung breakdown salah satu dari ini: **(a)** Process Groups vs Knowledge Areas, **(b)** Procurement & contract types (FFP/FPIF/T&M/CPFF/CPIF/CPAF), **(c)** Risk response strategies & EMV decision tree, atau **(d)** Conflict resolution (Thomas-Kilmann) di People domain.\n\nMau mulai dari mana? ✦";
+  "That looks outside my study scope. Try one of these instead — **(a)** Process Groups vs Knowledge Areas, **(b)** contract types, **(c)** risk strategies, or **(d)** conflict resolution. ✦";
 
 function sanitizeMessages(input: unknown): ChatMessage[] {
   if (!Array.isArray(input)) return [];
@@ -77,7 +77,7 @@ export async function POST(req: Request) {
   if (!process.env.OPENAI_API_KEY) {
     return NextResponse.json({
       reply:
-        "Andromeda lagi belum tersambung ke compute layer (OPENAI_API_KEY belum di-set di environment). Sementara ini, lo bisa pakai **Course**, **Knowledge Base**, **ITTO Explorer**, atau **Simulator** di sidebar — semuanya udah aku susun dan ter-anchor ke kurikulum yang aku rancang. ✦",
+        "I'm offline right now. While you wait, the Course, Knowledge Base, ITTO Explorer, and Simulator are ready in the sidebar. ✦",
       source: "fallback",
     });
   }
@@ -97,7 +97,7 @@ export async function POST(req: Request) {
 
     const reply =
       completion.choices[0]?.message?.content?.trim() ??
-      "Hmm, gw lagi kehilangan sinyal. Coba ulangi pertanyaannya, lebih spesifik kalau bisa.";
+      "Empty reply — try rephrasing the question.";
 
     await trackEvent({
       userId: user.id,
@@ -117,7 +117,7 @@ export async function POST(req: Request) {
     return NextResponse.json(
       {
         reply:
-          "Andromeda lagi static — koneksi ke LLM gagal sebentar. Coba kirim ulang, atau buka **Knowledge Base** dulu untuk topik yang sama.",
+          "Connection hiccup. Please try again, or open the Knowledge Base in the meantime.",
         source: "fallback",
       },
       { status: 200 }

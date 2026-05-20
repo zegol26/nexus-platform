@@ -3,6 +3,7 @@ import { getServerSession } from "next-auth";
 import OpenAI from "openai";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
+import { withRouteMetrics } from "@/lib/observability/route-metrics";
 
 export const runtime = "nodejs";
 
@@ -145,6 +146,20 @@ async function speakWithOpenAI(
 }
 
 export async function POST(request: Request) {
+  return withRouteMetrics(
+    {
+      route: "/api/voice/speak",
+      method: "POST",
+      routeType: "voice",
+      riskLevel: "high",
+      slowMs: 1200,
+      sampleRate: 1,
+    },
+    () => speakVoice(request)
+  );
+}
+
+async function speakVoice(request: Request) {
   try {
     const session = await getServerSession(authOptions);
     if (!session?.user?.email) {

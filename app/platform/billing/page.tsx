@@ -40,6 +40,7 @@ type BillingPlanRow = {
   priceCents: number;
   currency: string;
   durationDays: number;
+  billingPeriod: string;
   app: {
     name: string;
   };
@@ -87,7 +88,7 @@ export default async function PlatformBillingPage() {
     prisma.subscriptionPlan.findMany({
       where: { active: true },
       include: { app: true },
-      orderBy: [{ appId: "asc" }, { priceCents: "asc" }],
+      orderBy: [{ appId: "asc" }, { durationDays: "asc" }],
     }),
     getBillingSettings(),
   ]);
@@ -165,6 +166,7 @@ export default async function PlatformBillingPage() {
           priceCents: plan.priceCents,
           currency: plan.currency,
           durationDays: plan.durationDays,
+          billingPeriod: plan.billingPeriod,
           app: { name: plan.app.name },
         }))}
         latestPayment={payments[0] ? { id: payments[0].id, status: payments[0].status } : null}

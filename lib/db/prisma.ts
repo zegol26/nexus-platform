@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { attachDatabasePool } from "@vercel/functions";
 import { Pool } from "pg";
 
 /**
@@ -37,6 +38,7 @@ function createClient(): PrismaClient {
     new Pool({
       connectionString,
     });
+  attachDatabasePool(pool);
 
   const adapter = new PrismaPg(pool);
 

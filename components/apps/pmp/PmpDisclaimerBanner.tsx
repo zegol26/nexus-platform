@@ -24,14 +24,11 @@ export function PmpDisclaimerBanner() {
         <span className="text-base leading-none">⚠️</span>
         <div className="flex-1">
           <p className="font-semibold uppercase tracking-[0.18em] text-amber-200">
-            Disclaimer — independent prep tool
+            Independent study tool
           </p>
           <p className="mt-1 text-amber-100/85">
-            Nexus PMP Academy <strong>tidak terasosiasi, di-endorse, atau di-afiliasi</strong> oleh
-            Project Management Institute® (PMI®). PMP®, PMBOK®, dan ECO® adalah trademark milik PMI.
-            Aplikasi ini adalah tools independen untuk persiapan PMP exam — semua content (course,
-            knowledge base, simulasi, Andromeda AI) ditulis original oleh tim Nexus dan tidak menjamin
-            kelulusan exam.
+            Not affiliated with or endorsed by PMI. PMP®, PMBOK®, and ECO® are PMI trademarks.
+            All content is original and does not guarantee exam results.
           </p>
         </div>
         <button
@@ -42,7 +39,7 @@ export function PmpDisclaimerBanner() {
           }}
           className="rounded-md border border-amber-300/30 px-2.5 py-1 text-[11px] font-bold text-amber-100/90 transition hover:bg-amber-300/10"
         >
-          Mengerti
+          Got it
         </button>
       </div>
     </div>

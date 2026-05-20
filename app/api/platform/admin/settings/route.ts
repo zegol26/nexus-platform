@@ -22,6 +22,7 @@ export async function PATCH(req: Request) {
     const id = String(item.id ?? "");
     const priceCents = Number(item.priceCents);
     const durationDays = Number(item.durationDays);
+    const billingPeriod = String(item.billingPeriod ?? "MONTHLY");
     const active = Boolean(item.active);
 
     if (!id || !Number.isFinite(priceCents) || priceCents < 0 || !Number.isFinite(durationDays) || durationDays < 1) {
@@ -33,6 +34,7 @@ export async function PATCH(req: Request) {
       data: {
         priceCents: Math.round(priceCents),
         durationDays: Math.round(durationDays),
+        billingPeriod,
         active,
       },
     });
@@ -42,6 +44,8 @@ export async function PATCH(req: Request) {
     platformSettingKeys.lessonPriceCents,
     platformSettingKeys.qrisInfo,
     platformSettingKeys.bankInfo,
+    platformSettingKeys.midtransMode,
+    platformSettingKeys.midtransEnabled,
   ];
 
   for (const key of allowedSettingKeys) {

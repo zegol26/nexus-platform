@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
+import { activatePaidAccess } from "@/lib/platform/activate-subscription";
 import { normalizePaymentVerificationAction } from "@/lib/platform/payment-policy";
 
 export async function POST(
@@ -52,38 +53,7 @@ export async function POST(
   }
 
   if (status === "PAID") {
-    const expiresAt = new Date();
-    expiresAt.setDate(expiresAt.getDate() + payment.durationDays);
-
-    await prisma.appUserAccess.upsert({
-      where: { userId_appId: { userId: payment.userId, appId: payment.appId } },
-      update: {
-        status: "ACTIVE",
-        billingPlan: payment.plan?.code ?? "MANUAL",
-        billingPeriod: `${payment.durationDays}_DAYS`,
-        accessStartsAt: new Date(),
-        accessExpiresAt: expiresAt,
-      },
-      create: {
-        userId: payment.userId,
-        appId: payment.appId,
-        status: "ACTIVE",
-        billingPlan: payment.plan?.code ?? "MANUAL",
-        billingPeriod: `${payment.durationDays}_DAYS`,
-        accessExpiresAt: expiresAt,
-      },
-    });
-
-    await prisma.subscription.create({
-      data: {
-        userId: payment.userId,
-        appId: payment.appId,
-        planId: payment.planId,
-        status: "ACTIVE",
-        startedAt: new Date(),
-        expiresAt,
-      },
-    });
+    await activatePaidAccess(payment.id);
   }
 
   return NextResponse.json({ payment: updatedPayment });

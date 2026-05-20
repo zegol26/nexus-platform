@@ -11,7 +11,7 @@ export default async function AdminPaymentsPage() {
   });
 
   return (
-    <AdminSection title="Payments" description="Verify manual QRIS/bank-transfer proofs and activate access.">
+    <AdminSection title="Payments" description="Verify manual payments and monitor Midtrans transactions.">
       {!payments.length ? <EmptyState label="No payments yet." /> : (
         <div className="grid gap-3">
           {payments.map((payment) => (
@@ -20,6 +20,9 @@ export default async function AdminPaymentsPage() {
                 <div>
                   <p className="font-semibold">{payment.user.email} - {payment.app.name}</p>
                   <p className="text-sm text-slate-500">{payment.plan?.name ?? "Manual"} - {payment.currency} {payment.amountCents / 100} - {payment.status}</p>
+                  <p className="mt-1 text-xs text-slate-400">
+                    {payment.provider} {payment.providerRef ? `- ${payment.providerRef}` : ""}
+                  </p>
                   {payment.proof ? (
                     <Link href={payment.proof.fileUrl} className="mt-2 inline-flex text-sm font-semibold text-blue-700" target="_blank">
                       Open payment proof

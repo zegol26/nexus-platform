@@ -1,5 +1,5 @@
 import { prisma } from "./seed-client";
-import { CURATED_ARTICLES } from "./seed-pmp-knowledge";
+import { CURATED_ARTICLES, CURATED_GLOSSARY } from "./seed-pmp-knowledge";
 
 const processMap = [
   ["Develop Project Charter", "Initiating", "Integration"],
@@ -512,8 +512,40 @@ export async function seedPmpLearning() {
     });
   }
 
+  // Curated glossary terms override the thin auto-generated entries for high-priority concepts.
+  for (const entry of CURATED_GLOSSARY) {
+    await prisma.pmpGlossaryTerm.upsert({
+      where: { term_examVersion: { term: entry.term, examVersion: entry.examVersion } },
+      create: {
+        term: entry.term,
+        acronym: entry.acronym,
+        category: entry.category,
+        definition: entry.definition,
+        simpleMeaning: entry.simpleMeaning,
+        example: entry.example,
+        pmpMindset: entry.pmpMindset,
+        relatedTerms: entry.relatedTerms,
+        approach: entry.approach,
+        examVersion: entry.examVersion,
+        difficulty: entry.difficulty,
+      },
+      update: {
+        acronym: entry.acronym,
+        category: entry.category,
+        definition: entry.definition,
+        simpleMeaning: entry.simpleMeaning,
+        example: entry.example,
+        pmpMindset: entry.pmpMindset,
+        relatedTerms: entry.relatedTerms,
+        approach: entry.approach,
+        difficulty: entry.difficulty,
+        isActive: true,
+      },
+    });
+  }
+
   console.log(
-    `PMP learning seeded: ${processMap.length} ITTO processes, ${glossaryTerms.length} glossary terms, ${articles.length} auto + ${CURATED_ARTICLES.length} curated articles`
+    `PMP learning seeded: ${processMap.length} ITTO processes, ${glossaryTerms.length} glossary terms, ${articles.length} auto + ${CURATED_ARTICLES.length} curated articles, ${CURATED_GLOSSARY.length} curated glossary entries`
   );
 }
 

@@ -154,7 +154,7 @@ export default async function AdminPmpAnalyticsPage() {
     <div className="space-y-6">
       <AdminSection
         title="PMP Exam Prep Analytics"
-        description="Aggregate usage and learner-progress metrics across the Andromeda-powered PMP app."
+        description="Usage and learner-progress metrics."
       >
         <div className="grid gap-3 md:grid-cols-4">
           <StatCard label="Active users" value={pmpAccessCount} />
@@ -190,7 +190,7 @@ export default async function AdminPmpAnalyticsPage() {
           </h3>
           {recentDislikes.length === 0 ? (
             <div className="mt-3">
-              <EmptyState label="Belum ada feedback negatif dengan komentar dalam 30 hari." />
+              <EmptyState label="No dislikes with comments in the last 30 days." />
             </div>
           ) : (
             <ul className="mt-3 space-y-3">
@@ -219,10 +219,10 @@ export default async function AdminPmpAnalyticsPage() {
 
       <AdminSection
         title="Per-user learning progress"
-        description={`Composite readiness across ${PMP_NEXUS_COURSE.length} lessons + ${READINESS_CHECKLIST.length} readiness items. Sorted by overall readiness %.`}
+        description={`Composite of ${PMP_NEXUS_COURSE.length} lessons and ${READINESS_CHECKLIST.length} checklist items, sorted by overall %.`}
       >
         {userRows.length === 0 ? (
-          <EmptyState label="Belum ada user PMP aktif." />
+          <EmptyState label="No active PMP users yet." />
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -342,7 +342,7 @@ function FeedbackList({
       <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">{title}</h3>
       {rows.length === 0 ? (
         <div className="mt-3">
-          <EmptyState label="Belum ada feedback." />
+          <EmptyState label="No feedback yet." />
         </div>
       ) : (
         <ul className="mt-3 space-y-2">

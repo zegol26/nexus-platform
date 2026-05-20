@@ -9,6 +9,7 @@ type Plan = {
   priceCents: number;
   currency: string;
   durationDays: number;
+  billingPeriod: string;
   app: {
     name: string;
   };
@@ -23,6 +24,8 @@ type BillingSettings = {
   qrisInfo: string;
   bankInfo: string;
   lessonPriceCents: string;
+  midtransMode: string;
+  midtransEnabled: string;
 };
 
 export function ManualBillingClient({
@@ -60,10 +63,16 @@ export function ManualBillingClient({
     }
 
     setPaymentId(payload.payment.id);
+    if (payload.midtrans?.redirectUrl) {
+      setStatus("Midtrans checkout dibuat. Buka halaman pembayaran sandbox untuk UAT.");
+      window.open(payload.midtrans.redirectUrl, "_blank", "noopener,noreferrer");
+      return;
+    }
     setStatus("Invoice dibuat. Upload bukti pembayaran untuk verifikasi admin.");
   }
 
   const paymentInfo = method === "QRIS" ? billingSettings.qrisInfo : billingSettings.bankInfo;
+  const midtransActive = billingSettings.midtransEnabled === "true";
 
   async function uploadProof() {
     if (!paymentId || !proof) {
@@ -115,8 +124,8 @@ export function ManualBillingClient({
 
   return (
     <section className="rounded-[2rem] border border-cyan-200 bg-cyan-50 p-6 shadow-xl shadow-cyan-950/[0.04]">
-      <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Manual Payment MVP</p>
-      <h2 className="mt-2 text-xl font-semibold text-slate-950">QRIS / bank transfer</h2>
+      <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Payment UAT</p>
+      <h2 className="mt-2 text-xl font-semibold text-slate-950">Midtrans sandbox / QRIS / bank transfer</h2>
       <div className="mt-5 grid gap-3 lg:grid-cols-[1fr_180px_auto]">
         <select
           value={planId}
@@ -136,6 +145,10 @@ export function ManualBillingClient({
         >
           <option value="BANK_TRANSFER">Bank Transfer</option>
           <option value="QRIS">QRIS</option>
+          <option value="MIDTRANS" disabled={!midtransActive}>
+            Midtrans {billingSettings.midtransMode === "production" ? "Production" : "Sandbox"}
+            {midtransActive ? "" : " (disabled)"}
+          </option>
         </select>
         <button
           type="button"
@@ -149,10 +162,16 @@ export function ManualBillingClient({
 
       <div className="mt-4 rounded-2xl border border-cyan-200 bg-white p-4">
         <p className="text-sm font-semibold text-slate-950">
-          {method === "QRIS" ? "QRIS info" : "Bank account information"}
+          {method === "MIDTRANS"
+            ? "Midtrans checkout"
+            : method === "QRIS"
+              ? "QRIS info"
+              : "Bank account information"}
         </p>
         <p className="mt-2 whitespace-pre-wrap text-sm leading-6 text-slate-600">
-          {paymentInfo.trim() || "Belum diset oleh admin."}
+          {method === "MIDTRANS"
+            ? `Mode: ${billingSettings.midtransMode}. Checkout akan membuka Snap redirect URL setelah invoice dibuat.`
+            : paymentInfo.trim() || "Belum diset oleh admin."}
         </p>
         {billingSettings.lessonPriceCents ? (
           <p className="mt-3 text-xs font-semibold text-slate-500">
@@ -161,6 +180,7 @@ export function ManualBillingClient({
         ) : null}
       </div>
 
+      {method !== "MIDTRANS" ? (
       <div className="mt-4 grid gap-3 lg:grid-cols-[1fr_auto]">
         <input
           type="file"
@@ -177,6 +197,7 @@ export function ManualBillingClient({
           Upload Proof
         </button>
       </div>
+      ) : null}
 
       {paymentId ? <p className="mt-3 text-xs text-slate-600">Active invoice: {paymentId}</p> : null}
       {status ? <p className="mt-3 rounded-2xl bg-white px-4 py-3 text-sm text-slate-700">{status}</p> : null}

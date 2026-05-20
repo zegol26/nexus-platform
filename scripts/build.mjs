@@ -16,8 +16,16 @@ if (databaseReachable) {
 
 run("npx", ["prisma", "generate"]);
 
-if (databaseReachable) {
+const shouldSeedOnBuild =
+  process.env.RUN_SEED_ON_BUILD === "true" ||
+  (process.env.VERCEL !== "1" && process.env.NODE_ENV !== "production");
+
+if (databaseReachable && shouldSeedOnBuild) {
   run("npx", ["prisma", "db", "seed"]);
+} else if (databaseReachable) {
+  console.warn(
+    "Skipping prisma db seed during production build. Set RUN_SEED_ON_BUILD=true to run seed intentionally."
+  );
 } else {
   console.warn("Skipping prisma db seed because the database is not reachable.");
 }

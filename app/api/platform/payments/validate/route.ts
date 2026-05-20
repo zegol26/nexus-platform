@@ -1,7 +1,21 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db/prisma";
+import { withRouteMetrics } from "@/lib/observability/route-metrics";
+import { activatePaidAccess } from "@/lib/platform/activate-subscription";
 
 export async function POST(req: Request) {
+  return withRouteMetrics(
+    {
+      route: "/api/platform/payments/validate",
+      method: "POST",
+      routeType: "payment",
+      riskLevel: "medium",
+    },
+    () => validatePayment(req)
+  );
+}
+
+async function validatePayment(req: Request) {
   const body = await req.json();
   const provider = String(body.provider ?? "MANUAL");
   const providerRef = String(body.providerRef ?? "");
@@ -52,40 +66,7 @@ export async function POST(req: Request) {
   });
 
   if (status === "PAID") {
-    const accessExpiresAt = new Date();
-    accessExpiresAt.setDate(accessExpiresAt.getDate() + plan.durationDays);
-
-    await prisma.appUserAccess.upsert({
-      where: {
-        userId_appId: { userId, appId },
-      },
-      update: {
-        status: "ACTIVE",
-        billingPlan: plan.code,
-        billingPeriod: `${plan.durationDays}_DAYS`,
-        accessStartsAt: new Date(),
-        accessExpiresAt,
-      },
-      create: {
-        userId,
-        appId,
-        status: "ACTIVE",
-        billingPlan: plan.code,
-        billingPeriod: `${plan.durationDays}_DAYS`,
-        accessExpiresAt,
-      },
-    });
-
-    await prisma.subscription.create({
-      data: {
-        userId,
-        appId,
-        planId: plan.id,
-        status: "ACTIVE",
-        startedAt: new Date(),
-        expiresAt: accessExpiresAt,
-      },
-    });
+    await activatePaidAccess(payment.id);
   }
 
   return NextResponse.json({ payment });

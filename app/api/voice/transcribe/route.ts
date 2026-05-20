@@ -3,6 +3,7 @@ import { getServerSession } from "next-auth";
 import OpenAI from "openai";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
+import { withRouteMetrics } from "@/lib/observability/route-metrics";
 import {
   VOICE_CONVERSATION_FEATURE,
   canUseVoiceConversation,
@@ -25,6 +26,20 @@ const SUPPORTED_MIME = new Set([
 const MAX_AUDIO_BYTES = 5 * 1024 * 1024;
 
 export async function POST(request: Request) {
+  return withRouteMetrics(
+    {
+      route: "/api/voice/transcribe",
+      method: "POST",
+      routeType: "voice",
+      riskLevel: "high",
+      slowMs: 1200,
+      sampleRate: 1,
+    },
+    () => transcribeVoice(request)
+  );
+}
+
+async function transcribeVoice(request: Request) {
   try {
     const session = await getServerSession(authOptions);
     if (!session?.user?.email) {

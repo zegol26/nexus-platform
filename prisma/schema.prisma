@@ -347,6 +347,7 @@ model SubscriptionPlan {
   priceCents   Int
   currency     String  @default("IDR")
   durationDays Int
+  billingPeriod String  @default("MONTHLY")
   active       Boolean @default(true)
 
   app           PlatformApp          @relation(fields: [appId], references: [id], onDelete: Cascade)
@@ -357,6 +358,7 @@ model SubscriptionPlan {
   updatedAt DateTime @updatedAt
 
   @@unique([appId, code])
+  @@index([billingPeriod])
 }
 
 model Subscription {
@@ -1135,4 +1137,27 @@ model PmpReadinessItem {
   @@unique([userId, itemKey])
   @@index([userId])
   @@index([isComplete])
+}
+
+model ServerRouteMetric {
+  id              String   @id @default(cuid())
+  route           String
+  method          String
+  routeType       String   @default("api")
+  riskLevel       String   @default("unknown")
+  windowStart     DateTime
+  count           Int      @default(0)
+  totalDurationMs Int      @default(0)
+  maxDurationMs   Int      @default(0)
+  slowCount       Int      @default(0)
+  errorCount      Int      @default(0)
+  lastStatus      Int?
+  lastSeenAt      DateTime @default(now())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@unique([route, method, windowStart])
+  @@index([windowStart])
+  @@index([riskLevel])
+  @@index([routeType])
 }

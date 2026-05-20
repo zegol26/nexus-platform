@@ -244,22 +244,15 @@ export function PmpDashboardClient() {
               .
             </h1>
             <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">
-              Andromeda — instructor AI ber-PhD Management & Project Management — jadi otak dari
-              kurikulum, Knowledge Areas, glossary, ITTO, lesson, dan simulation test. Belajar fokus,
-              scenario-based, integrating teori (Pareto, fishbone, Maslow, Tuckman, Thomas-Kilmann,
-              EVM) langsung ke decision pattern PMP.
+              Lessons to read, drills to run, full-length simulations to face — gathered under one
+              quiet sky, walked at your pace alongside Andromeda.
             </p>
           </div>
           <div className="border-t border-white/10 bg-slate-900/70 p-6 lg:border-l lg:border-t-0 lg:p-8">
             <div className="grid grid-cols-3 gap-3">
-              <Metric label="Course lessons" value={PMP_NEXUS_COURSE.length} />
+              <Metric label="Lessons" value={PMP_NEXUS_COURSE.length} />
               <Metric label="Est. hours" value={`~${totalCourseHours()}h`} />
-              <Metric label="Sim bank" value={`${GENERATED_SIMULATION_BANK.length}+`} />
-            </div>
-            <div className="mt-5 grid gap-2 text-sm text-slate-300">
-              <p>✦ Original Nexus content — bukan kopian PMI/PMBOK.</p>
-              <p>✦ Andromeda jawab comprehensive: ITTO + KA + mindset + teori.</p>
-              <p>✦ Simulator: {GENERATED_SIMULATION_BANK.length}+ Q, rotasi 1:5 antar attempt.</p>
+              <Metric label="Question bank" value={`${GENERATED_SIMULATION_BANK.length}+`} />
             </div>
           </div>
         </div>
@@ -304,17 +297,17 @@ export function PmpDashboardClient() {
           [
             "ITTO Explorer",
             "/apps/pmp/itto",
-            "5 Process Groups × 10 Knowledge Areas, with Andromeda's notes on every process.",
+            "Process Groups and Knowledge Areas, mapped.",
           ],
           [
-            "PMP Glossary",
+            "Glossary",
             "/apps/pmp/glossary",
-            "200+ terms with PMIism notes, contract types, procurement docs, and Andromeda's mindset hooks.",
+            "Terms, acronyms, and mindset hooks.",
           ],
           [
             "Knowledge Base",
             "/apps/pmp/knowledge-base",
-            "Procurement (RFI/RFQ/RFP, all contract types), risk strategies, quality tools, EVM, agile, hybrid, AI & sustainability — comprehensive.",
+            "Procurement, risk, quality, EVM, agile, hybrid.",
           ],
         ].map(([title, href, description]) => (
           <Link
@@ -382,12 +375,12 @@ export function PmpDashboardClient() {
               </div>
               <div className="mt-6 grid gap-5">
                 {selectedLesson.fastTrack && (
-                  <ContentBlock title="Fast-track Anchor" items={[selectedLesson.fastTrack]} tone="accent" />
+                  <ContentBlock title="Fast-track anchor" items={[selectedLesson.fastTrack]} tone="accent" />
                 )}
-                <ContentBlock title="Plain-English Concept" items={[selectedLesson.plainEnglish]} />
-                <ContentBlock title="Andromeda's Coach Notes" items={selectedLesson.nexusCoachNotes} />
-                <ContentBlock title="Practice Drills" items={selectedLesson.drills} />
-                <ContentBlock title="Exam Traps" items={selectedLesson.examTraps} tone="warning" />
+                <ContentBlock title="In plain English" items={[selectedLesson.plainEnglish]} />
+                <ContentBlock title="Coach notes" items={selectedLesson.nexusCoachNotes} />
+                <ContentBlock title="Drills" items={selectedLesson.drills} />
+                <ContentBlock title="Watch out for" items={selectedLesson.examTraps} tone="warning" />
               </div>
             </article>
           </div>
@@ -404,7 +397,7 @@ export function PmpDashboardClient() {
               ← Back to Course
             </button>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-fuchsia-200/80">
-              Attempt #{attemptNumber} · Bank rotation 1:5
+              Attempt #{attemptNumber}
             </p>
           </div>
           <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
@@ -476,10 +469,7 @@ export function PmpDashboardClient() {
                   }`}
                 >
                   {!isAnswered ? (
-                    <>
-                      Soal ini tidak dijawab — jawaban benar disembunyikan supaya kamu bisa retry
-                      jujur di attempt berikutnya. Reset untuk mulai attempt baru dari rotasi bank.
-                    </>
+                    <>Unanswered — the correct option is hidden so you can retry it cleanly next attempt.</>
                   ) : (
                     currentQuestion.explanation
                   )}
@@ -621,13 +611,11 @@ export function PmpDashboardClient() {
           <div className="grid gap-6 lg:grid-cols-[0.4fr_1fr]">
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-fuchsia-200">
-                How this works
+                How it works
               </p>
               <p className="mt-3 text-sm leading-6 text-slate-300">
-                Diagnostic dijalankan otomatis dari hasil <strong>Submit</strong> di Simulator —
-                tidak perlu paste JSON. Andromeda akan men-cluster wrong-answer kamu, mengidentifikasi
-                trap pattern (escalation / firefighter / agile-command / scope-rigidity), dan
-                memberi 7-hari remediation plan.
+                Runs automatically after you Submit in the Simulator. Andromeda clusters your wrong
+                answers, identifies trap patterns, and drafts a 7-day remediation plan.
               </p>
               <button
                 onClick={analyzeFromSimulator}
@@ -635,10 +623,10 @@ export function PmpDashboardClient() {
                 className="mt-4 w-full rounded-lg bg-gradient-to-r from-fuchsia-400 via-violet-400 to-cyan-300 px-4 py-2.5 text-sm font-bold text-slate-950 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {diagnosticLoading
-                  ? "Analyzing..."
+                  ? "Analyzing…"
                   : answeredCount === 0
-                    ? "Jawab simulator dulu"
-                    : "Re-analyze hasil simulator"}
+                    ? "Answer some questions first"
+                    : "Re-analyze results"}
               </button>
               {diagnosticError && (
                 <p className="mt-3 text-sm font-semibold text-rose-300">{diagnosticError}</p>
@@ -650,7 +638,7 @@ export function PmpDashboardClient() {
               </p>
               <pre className="mt-5 max-h-[680px] overflow-auto whitespace-pre-wrap rounded-xl bg-black/35 p-5 text-sm leading-6 text-slate-100">
                 {diagnosticReport ||
-                  "Selesaikan simulator + Submit untuk men-generate remediation report otomatis."}
+                  "Submit a simulator attempt to generate your remediation report."}
               </pre>
             </div>
           </div>
@@ -675,21 +663,21 @@ function ProgressStrip({
     <section className="rounded-2xl border border-white/10 bg-slate-900 p-4">
       <div className="grid gap-3 md:grid-cols-3">
         <ProgressBar
-          label="Lesson progress"
+          label="Lessons"
           percent={snapshot.percentComplete}
-          detail={`${snapshot.completedLessons}/${snapshot.totalLessons} lesson selesai`}
+          detail={`${snapshot.completedLessons} of ${snapshot.totalLessons} complete`}
           tone="fuchsia"
         />
         <ProgressBar
-          label="Readiness checklist"
+          label="Readiness"
           percent={snapshot.readinessPercent}
-          detail="Item siap exam"
+          detail="Checklist completed"
           tone="cyan"
         />
         <ProgressBar
-          label="Overall readiness"
+          label="Overall"
           percent={snapshot.overallPercent}
-          detail="Composite score Andromeda"
+          detail="Composite score"
           tone="violet"
         />
       </div>
@@ -758,7 +746,7 @@ function LessonCompletionButtons({
 }) {
   return (
     <div className="flex flex-col items-end gap-2">
-      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">Tandai</p>
+      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">Mark as</p>
       <div className="flex gap-1.5">
         <button
           onClick={() => onChange("in_progress")}
@@ -778,7 +766,7 @@ function LessonCompletionButtons({
               : "border border-white/10 bg-white/5 text-slate-300 hover:bg-white/10"
           }`}
         >
-          ✓ Selesai
+          ✓ Done
         </button>
       </div>
     </div>
@@ -835,24 +823,21 @@ function FastTrackPanel() {
     <section className="grid gap-3 rounded-2xl border border-fuchsia-300/20 bg-gradient-to-r from-fuchsia-950/30 via-violet-950/30 to-cyan-950/20 p-5 md:grid-cols-[1.2fr_1fr]">
       <div>
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-fuchsia-200">
-          Andromeda Fast-Track ✦
+          Fast-Track ✦
         </p>
         <h2 className="mt-2 text-lg font-semibold text-white">
-          ~{total} jam total focused study, dipecah jadi 6 sprint.
+          ~{total} hours, six focused sprints.
         </h2>
         <p className="mt-2 text-sm leading-6 text-slate-300">
-          Pace pilihan: <span className="font-semibold text-fuchsia-200">~14 hari hyper-sprint</span> (sambil cuti / full-time prep) ·{" "}
-          <span className="font-semibold text-cyan-200">~30 hari standard</span> (2 jam/hari) ·{" "}
-          <span className="font-semibold text-slate-200">~45 hari sustainable</span> (1.5 jam/hari + weekend drill).
+          <span className="font-semibold text-fuchsia-200">14 days</span> hyper ·{" "}
+          <span className="font-semibold text-cyan-200">30 days</span> standard ·{" "}
+          <span className="font-semibold text-slate-200">45 days</span> sustainable.
         </p>
       </div>
       <div className="rounded-xl border border-amber-300/30 bg-amber-300/[0.05] p-4 text-xs leading-5 text-amber-100">
-        <p className="font-semibold uppercase tracking-[0.18em]">Disclaimer estimasi</p>
+        <p className="font-semibold uppercase tracking-[0.18em]">Estimates are indicative</p>
         <p className="mt-1 text-amber-100/85">
-          Angka jam dan timeline di atas adalah <em>indikatif</em>, bukan janji. Hasil aktual sangat
-          dipengaruhi pengalaman PM sebelumnya, kecepatan baca, dan disiplin latihan. Andromeda tidak
-          menjamin kelulusan PMP — tugas Andromeda adalah membuat belajar lo lebih fokus dan
-          scenario-based.
+          Actual pace depends on your background. No outcome is guaranteed.
         </p>
       </div>
     </section>

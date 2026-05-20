@@ -57,10 +57,10 @@ export function PmpReadinessChecklist({ onProgressChange }: Props) {
       <div className="flex flex-wrap items-end justify-between gap-3 border-b border-white/10 pb-4">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-fuchsia-200">
-            Readiness Checklist ✦
+            Readiness ✦
           </p>
           <h3 className="mt-1 text-lg font-semibold text-white">
-            Persiapan exam — {completedCount}/{total} done
+            {completedCount} of {total} ready
           </h3>
         </div>
         <div className="flex items-center gap-3">
@@ -75,7 +75,7 @@ export function PmpReadinessChecklist({ onProgressChange }: Props) {
       </div>
 
       {loading ? (
-        <p className="mt-4 text-sm text-slate-400">Memuat checklist...</p>
+        <p className="mt-4 text-sm text-slate-400">Loading…</p>
       ) : (
         <div className="mt-4 grid gap-5 md:grid-cols-2">
           {groups.map((group) => {
@@ -115,6 +115,26 @@ export function PmpReadinessChecklist({ onProgressChange }: Props) {
                             <span className="mt-0.5 block text-[11px] leading-4 text-slate-400">
                               {item.description}
                             </span>
+                            {item.links && item.links.length > 0 && (
+                              <span
+                                className="mt-1.5 flex flex-wrap gap-2"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                {item.links.map((link) => (
+                                  <a
+                                    key={link.href}
+                                    href={link.href}
+                                    {...(link.external
+                                      ? { target: "_blank", rel: "noopener noreferrer" }
+                                      : {})}
+                                    className="inline-flex items-center gap-1 rounded-md border border-fuchsia-300/30 bg-fuchsia-300/[0.06] px-2 py-0.5 text-[10px] font-bold text-fuchsia-200 transition hover:bg-fuchsia-300/15"
+                                  >
+                                    {link.label}
+                                    {link.external && <span aria-hidden="true">↗</span>}
+                                  </a>
+                                ))}
+                              </span>
+                            )}
                           </span>
                         </label>
                       </li>

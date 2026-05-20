@@ -20,17 +20,33 @@ export type ProgressSnapshot = {
   overallPercent: number;
 };
 
+export type ReadinessLink = {
+  label: string;
+  href: string;
+  external?: boolean;
+};
+
 export const READINESS_CHECKLIST: ReadonlyArray<{
   key: string;
   title: string;
   description: string;
   group: "Prep" | "Knowledge" | "Practice" | "Exam Day";
+  links?: ReadinessLink[];
 }> = [
   {
     key: "review-eco",
-    title: "Baca ECO outline (mindset, domain weighting)",
-    description: "Pahami People 42 / Process 50 / Business 8 (current) atau 33/41/26 (2026 readiness).",
+    title: "Read the PMP Examination Content Outline (ECO)",
+    description:
+      "ECO is PMI's official blueprint — three domains (People, Process, Business Environment) with the tasks and enablers under each. Every exam question maps back to a task on this list. Skim the domain weighting first (42/50/8 current; 33/41/26 for 2026), then read each task and ask yourself: \"do I have a clear answer pattern for this?\"",
     group: "Prep",
+    links: [
+      { label: "What is ECO? (glossary)", href: "/apps/pmp/glossary?q=ECO" },
+      {
+        label: "PMI 2026 ECO PDF",
+        href: "https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/new-pmp-examination-content-outline-2026.pdf?rev=af7ae1c6006f43009fee4f613a350f9b",
+        external: true,
+      },
+    ],
   },
   {
     key: "course-complete-all",

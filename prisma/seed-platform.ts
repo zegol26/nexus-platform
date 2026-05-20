@@ -24,6 +24,20 @@ const platformSettings = [
     valueType: "TEXTAREA",
     description: "Shown to users on Billing when they select Bank Transfer.",
   },
+  {
+    key: "MIDTRANS_MODE",
+    label: "Midtrans mode",
+    value: "sandbox",
+    valueType: "TEXT",
+    description: "Use sandbox for UAT. Switch to production only after live keys and payment UAT pass.",
+  },
+  {
+    key: "MIDTRANS_ENABLED",
+    label: "Midtrans checkout enabled",
+    value: "false",
+    valueType: "BOOLEAN",
+    description: "Keeps Midtrans hidden from users until keys and webhook are ready.",
+  },
 ];
 
 export async function seedPlatform() {
@@ -79,6 +93,7 @@ export async function seedPlatform() {
         priceCents: 9900000,
         currency: "IDR",
         durationDays: 30,
+        billingPeriod: "MONTHLY",
         active: true,
       },
       create: {
@@ -89,6 +104,7 @@ export async function seedPlatform() {
         priceCents: 9900000,
         currency: "IDR",
         durationDays: 30,
+        billingPeriod: "MONTHLY",
         active: true,
       },
     });
@@ -108,6 +124,7 @@ export async function seedPlatform() {
         priceCents: 9900000,
         currency: "IDR",
         durationDays: 30,
+        billingPeriod: "MONTHLY",
         active: true,
       },
       create: {
@@ -118,6 +135,7 @@ export async function seedPlatform() {
         priceCents: 9900000,
         currency: "IDR",
         durationDays: 30,
+        billingPeriod: "MONTHLY",
         active: true,
       },
     });
@@ -137,6 +155,7 @@ export async function seedPlatform() {
         priceCents: 9900000,
         currency: "IDR",
         durationDays: 30,
+        billingPeriod: "MONTHLY",
         active: true,
       },
       create: {
@@ -147,6 +166,7 @@ export async function seedPlatform() {
         priceCents: 9900000,
         currency: "IDR",
         durationDays: 30,
+        billingPeriod: "MONTHLY",
         active: true,
       },
     });
@@ -162,24 +182,31 @@ export async function seedPlatform() {
       },
       update: {
         name: "PMP Exam Prep Monthly",
-        description: "Monthly access to PMP Exam Prep generators and mindset drills",
+        description: "Monthly access to the full PMP exam prep app.",
         priceCents: 9900000,
         currency: "IDR",
         durationDays: 30,
+        billingPeriod: "MONTHLY",
         active: true,
       },
       create: {
         appId: pmpApp.id,
         code: "PMP_MONTHLY",
         name: "PMP Exam Prep Monthly",
-        description: "Monthly access to PMP Exam Prep generators and mindset drills",
+        description: "Monthly access to the full PMP exam prep app.",
         priceCents: 9900000,
         currency: "IDR",
         durationDays: 30,
+        billingPeriod: "MONTHLY",
         active: true,
       },
     });
   }
+
+  await seedAdditionalBillingPeriods(nihongoApp, "NIHONGO", "Nihongo");
+  await seedAdditionalBillingPeriods(englishApp, "ENGLISH_INTERVIEW", "English Interview");
+  await seedAdditionalBillingPeriods(arabicApp, "ARABIC", "Arabic");
+  await seedAdditionalBillingPeriods(pmpApp, "PMP", "PMP Exam Prep");
 
   const adminEmail = process.env.ADMIN_EMAIL ?? "admin@nexus.local";
   const adminPassword = process.env.ADMIN_PASSWORD ?? "NexusAdmin123!";
@@ -237,6 +264,47 @@ export async function seedPlatform() {
 
   console.log(`Platform apps seeded: ${platformApps.length}`);
   console.log(`Admin login seeded: ${adminEmail}`);
+}
+
+async function seedAdditionalBillingPeriods(
+  app: { id: string } | null,
+  prefix: string,
+  label: string
+) {
+  if (!app) return;
+
+  const plans = [
+    { period: "QUARTERLY", name: `${label} Quarterly`, days: 90, multiplier: 3 },
+    { period: "YEARLY", name: `${label} Yearly`, days: 365, multiplier: 10 },
+  ];
+
+  for (const plan of plans) {
+    await prisma.subscriptionPlan.upsert({
+      where: {
+        appId_code: {
+          appId: app.id,
+          code: `${prefix}_${plan.period}`,
+        },
+      },
+      update: {
+        name: plan.name,
+        currency: "IDR",
+        durationDays: plan.days,
+        billingPeriod: plan.period,
+      },
+      create: {
+        appId: app.id,
+        code: `${prefix}_${plan.period}`,
+        name: plan.name,
+        description: `${plan.name} access`,
+        priceCents: 9900000 * plan.multiplier,
+        currency: "IDR",
+        durationDays: plan.days,
+        billingPeriod: plan.period,
+        active: true,
+      },
+    });
+  }
 }
 
 async function ensureProductionSafeSchema() {

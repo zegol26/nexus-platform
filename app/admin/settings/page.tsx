@@ -21,7 +21,7 @@ export default async function AdminSettingsPage() {
         </div>
         <div>
           <h3 className="font-semibold">Plans</h3>
-          <div className="mt-2 grid gap-2">{plans.map((plan) => <p key={plan.id} className="rounded-xl bg-slate-50 px-3 py-2 text-sm">{plan.app.slug} - {plan.code} - {plan.currency} {plan.priceCents / 100}</p>)}</div>
+          <div className="mt-2 grid gap-2">{plans.map((plan) => <p key={plan.id} className="rounded-xl bg-slate-50 px-3 py-2 text-sm">{plan.app.slug} - {plan.code} - {plan.billingPeriod} - {plan.currency} {plan.priceCents / 100}</p>)}</div>
         </div>
         <AdminSettingsClient
           plans={plans.map((plan) => ({
@@ -31,6 +31,7 @@ export default async function AdminSettingsPage() {
             code: plan.code,
             priceCents: plan.priceCents,
             durationDays: plan.durationDays,
+            billingPeriod: plan.billingPeriod,
             active: plan.active,
           }))}
           billingSettings={billingSettings}

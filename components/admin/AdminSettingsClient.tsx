@@ -9,6 +9,7 @@ type Plan = {
   code: string;
   priceCents: number;
   durationDays: number;
+  billingPeriod: string;
   active: boolean;
 };
 
@@ -16,6 +17,8 @@ type BillingSettings = {
   lessonPriceCents: string;
   qrisInfo: string;
   bankInfo: string;
+  midtransMode: string;
+  midtransEnabled: string;
 };
 
 export function AdminSettingsClient({
@@ -42,6 +45,7 @@ export function AdminSettingsClient({
           id: plan.id,
           priceCents: plan.priceCents,
           durationDays: plan.durationDays,
+          billingPeriod: plan.billingPeriod,
           active: plan.active,
         })),
         settings,
@@ -59,7 +63,7 @@ export function AdminSettingsClient({
         <p className="mt-1 text-sm text-slate-500">Harga plan ini dipakai user billing dan invoice manual.</p>
         <div className="mt-4 grid gap-3">
           {draftPlans.map((plan, index) => (
-            <div key={plan.id} className="grid gap-3 rounded-2xl bg-slate-50 p-4 lg:grid-cols-[1fr_150px_120px_90px] lg:items-center">
+            <div key={plan.id} className="grid gap-3 rounded-2xl bg-slate-50 p-4 lg:grid-cols-[1fr_150px_120px_140px_90px] lg:items-center">
               <div>
                 <p className="font-semibold">{plan.appName} - {plan.name}</p>
                 <p className="text-xs text-slate-500">{plan.code}</p>
@@ -84,6 +88,19 @@ export function AdminSettingsClient({
                   className="mt-1 h-10 w-full rounded-xl border border-slate-300 bg-white px-3 text-sm"
                 />
               </label>
+              <label className="text-xs font-semibold text-slate-500">
+                Billing period
+                <select
+                  value={plan.billingPeriod}
+                  onChange={(event) => updatePlan(index, { billingPeriod: event.target.value })}
+                  className="mt-1 h-10 w-full rounded-xl border border-slate-300 bg-white px-3 text-sm"
+                >
+                  <option value="MONTHLY">Monthly</option>
+                  <option value="QUARTERLY">Quarterly</option>
+                  <option value="YEARLY">Yearly</option>
+                  <option value="CUSTOM">Custom</option>
+                </select>
+              </label>
               <label className="flex items-center gap-2 text-sm font-semibold text-slate-700">
                 <input
                   type="checkbox"
@@ -94,6 +111,36 @@ export function AdminSettingsClient({
               </label>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="rounded-2xl border border-slate-200 bg-white p-5">
+        <h3 className="font-semibold text-slate-950">Midtrans gateway UAT</h3>
+        <p className="mt-1 text-sm text-slate-500">
+          Siapkan sandbox dulu. User checkout baru aktif setelah env key diisi dan toggle enabled.
+        </p>
+        <div className="mt-4 grid gap-4 lg:grid-cols-2">
+          <label className="text-xs font-semibold text-slate-500">
+            Mode
+            <select
+              value={settings.midtransMode}
+              onChange={(event) => setSettings({ ...settings, midtransMode: event.target.value })}
+              className="mt-1 h-10 w-full rounded-xl border border-slate-300 bg-white px-3 text-sm"
+            >
+              <option value="sandbox">Sandbox / UAT</option>
+              <option value="production">Production</option>
+            </select>
+          </label>
+          <label className="flex items-center gap-2 pt-6 text-sm font-semibold text-slate-700">
+            <input
+              type="checkbox"
+              checked={settings.midtransEnabled === "true"}
+              onChange={(event) =>
+                setSettings({ ...settings, midtransEnabled: event.target.checked ? "true" : "false" })
+              }
+            />
+            Enable Midtrans checkout
+          </label>
         </div>
       </section>
 

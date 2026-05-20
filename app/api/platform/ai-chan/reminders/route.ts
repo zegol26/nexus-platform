@@ -144,12 +144,11 @@ export async function GET() {
       type: "study",
       priority: pmpSnapshot.overallPercent < 30 ? "high" : "medium",
       title: `PMP readiness ${pmpSnapshot.overallPercent}%`,
-      message: `Andromeda update: ${pmpSnapshot.completedLessons}/${pmpSnapshot.totalLessons} lesson selesai, ${pmpSnapshot.readinessCompleted}/${pmpSnapshot.readinessTotal} readiness item kelar. ${
+      message:
         pmpSnapshot.overallPercent < 100
-          ? "Lanjut ke lesson berikutnya yuk!"
-          : "Lo udah ready — coba 180Q full simulation."
-      }`,
-      cta: { label: "Buka PMP", href: "/apps/pmp/dashboard" },
+          ? `${pmpSnapshot.completedLessons}/${pmpSnapshot.totalLessons} lessons · ${pmpSnapshot.readinessCompleted}/${pmpSnapshot.readinessTotal} checklist. Keep going.`
+          : "All ready — try a 180Q full simulation.",
+      cta: { label: "Open PMP", href: "/apps/pmp/dashboard" },
     });
 
     if (pmpSnapshot.completedLessons < pmpSnapshot.totalLessons) {
@@ -163,9 +162,9 @@ export async function GET() {
           id: `pmp-next-${nextLesson.id}`,
           type: "study",
           priority: "medium",
-          title: "Lesson PMP berikutnya",
-          message: `${nextLesson.week} — ${nextLesson.title}. Estimasi ~${nextLesson.estimateHours} jam.`,
-          cta: { label: "Lanjut PMP", href: "/apps/pmp/dashboard" },
+          title: "Next lesson",
+          message: `${nextLesson.week} — ${nextLesson.title} · ~${nextLesson.estimateHours}h`,
+          cta: { label: "Continue", href: "/apps/pmp/dashboard" },
         });
       }
     }
@@ -178,8 +177,8 @@ export async function GET() {
         title: "Readiness checklist",
         message: `${
           READINESS_CHECKLIST.length - pmpSnapshot.readinessCompleted
-        } item readiness PMP masih kosong. Centang yang udah kamu kerjain biar overall % naik.`,
-        cta: { label: "Buka checklist", href: "/apps/pmp/dashboard" },
+        } items still open.`,
+        cta: { label: "Open checklist", href: "/apps/pmp/dashboard" },
       });
     }
   }

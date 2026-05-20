@@ -46,10 +46,9 @@ export default async function PmpIttoPage({
     <div className="mx-auto max-w-7xl space-y-6">
       <section className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">ITTO Explorer</p>
-        <h1 className="mt-3 text-3xl font-semibold text-white">Process Group x Knowledge Area Map</h1>
+        <h1 className="mt-3 text-3xl font-semibold text-white">Process Groups × Knowledge Areas</h1>
         <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-300">
-          ITTO berguna untuk memahami project flow, tapi sukses PMP lebih bergantung pada scenario judgment,
-          value delivery, stakeholder thinking, dan memilih best next action.
+          Use this as a map, not a list to memorize. Scenario judgment matters more.
         </p>
       </section>
 

@@ -902,3 +902,37 @@ export const CURATED_ARTICLES: CuratedArticle[] = [
     relatedTerms: ["PMP Mindset", "FIRST NEXT PREVENT", "Servant Leadership", "Value Delivery"],
   },
 ];
+
+export type CuratedGlossaryTerm = {
+  term: string;
+  acronym?: string;
+  category: string;
+  approach: "general" | "agile" | "hybrid" | "predictive";
+  examVersion: "current" | "2026" | "both";
+  difficulty: "easy" | "medium" | "hard";
+  simpleMeaning: string;
+  definition: string;
+  example: string;
+  pmpMindset: string;
+  relatedTerms: string[];
+};
+
+export const CURATED_GLOSSARY: CuratedGlossaryTerm[] = [
+  {
+    term: "Examination Content Outline",
+    acronym: "ECO",
+    category: "Exam Reference",
+    approach: "general",
+    examVersion: "both",
+    difficulty: "easy",
+    simpleMeaning:
+      "PMI's official blueprint of what the PMP exam covers — three domains, with tasks and enablers under each.",
+    definition:
+      "The PMP Examination Content Outline (ECO) is the publicly available specification published by PMI that defines every domain, task, and enabler tested on the PMP exam. Every question on the live exam maps back to a task in the ECO. The current ECO uses three domains — People (≈42%), Process (≈50%), Business Environment (≈8%) — while the 2026 readiness update rebalances toward People 33% / Process 41% / Business 26%. The document is free to download from pmi.org and is the single most authoritative source for scope.",
+    example:
+      "Direct PDF: https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/new-pmp-examination-content-outline-2026.pdf — use it as a checklist: skim every task and ask 'do I have a concrete answer pattern for this?' If not, that's your next study target.",
+    pmpMindset:
+      "PMIism: ECO is the contract between you and the exam. Don't study from blogs or summaries first — read the source, then layer prep on top.",
+    relatedTerms: ["PMI", "PMBOK", "Domain Weighting", "Process Group", "Knowledge Area"],
+  },
+];
