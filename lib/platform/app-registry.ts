@@ -35,9 +35,10 @@
     id: "pmp",
     slug: "pmp",
     name: "PMP Exam Prep",
-    description: "PMP exam prep â€” lessons, drills, and full-length simulations.",
+    description: "PMP Exam Prep - lessons, drills, and full-length simulations.",
     href: "/apps/pmp/dashboard",
     status: "active",
   },
 ];
+
 

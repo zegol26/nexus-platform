@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/db/prisma";
+﻿import { prisma } from "@/lib/db/prisma";
 import { decideAiTutorAccess, type AccessDecision } from "@/lib/nexus/access-policy";
 import { PMP_APP_SLUG, PMP_GENERATOR_FEATURE } from "@/lib/pmp/prompt";
 
@@ -7,13 +7,13 @@ export async function ensurePmpTrial(userId: string) {
     where: { slug: PMP_APP_SLUG },
     update: {
       name: "PMP Exam Prep",
-      description: "PMP exam prep — lessons, drills, and full-length simulations.",
+      description: "PMP Exam Prep - lessons, drills, and full-length simulations.",
       status: "ACTIVE",
     },
     create: {
       slug: PMP_APP_SLUG,
       name: "PMP Exam Prep",
-      description: "PMP exam prep — lessons, drills, and full-length simulations.",
+      description: "PMP Exam Prep - lessons, drills, and full-length simulations.",
       status: "ACTIVE",
     },
   });
@@ -108,3 +108,4 @@ export async function incrementPmpUsage(userId: string, amount = 1) {
     data: { count: { increment: amount } },
   });
 }
+
