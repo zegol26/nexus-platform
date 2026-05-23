@@ -2,6 +2,8 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/auth-options";
+import { prisma } from "@/lib/db/prisma";
+import { isAdminRole } from "@/lib/platform/access";
 
 export const dynamic = "force-dynamic";
 
@@ -10,6 +12,15 @@ export default async function LessonsDashboardPage() {
 
   if (!session?.user?.email) {
     redirect("/login");
+  }
+
+  const user = await prisma.user.findUnique({
+    where: { email: session.user.email },
+    select: { role: true },
+  });
+
+  if (!user || !isAdminRole(user.role)) {
+    redirect("/platform/dashboard");
   }
 
   return (
@@ -22,7 +33,7 @@ export default async function LessonsDashboardPage() {
           <div className="mt-6 grid gap-8 lg:grid-cols-[1fr_340px] lg:items-end">
             <div>
               <h1 className="text-4xl font-semibold tracking-tight text-slate-950">
-                Nexus Lessons
+                Internal Lesson Engine
               </h1>
               <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-600">
                 Reusable lesson workspace for future Nexus apps. This will power

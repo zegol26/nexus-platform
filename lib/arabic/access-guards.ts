@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/db/prisma";
 import { decideAiTutorAccess, type AccessDecision } from "@/lib/nexus/access-policy";
+import { isValidAppAccess } from "@/lib/platform/access";
 
 export const ARABIC_APP_SLUG = "arabic";
 export const ARABIC_TUTOR_FEATURE = "AI_TUTOR_QUESTION";
@@ -22,12 +23,14 @@ export async function getArabicAccess(userId: string) {
   const isPaid =
     plan !== "TRIAL" &&
     Boolean(access) &&
-    (!access?.accessExpiresAt || access.accessExpiresAt > new Date());
+    isValidAppAccess(access);
+  const hasValidAccess = isValidAppAccess(access);
 
   return {
     access,
     plan,
-    isTrial: !isPaid,
+    hasValidAccess,
+    isTrial: hasValidAccess && !isPaid,
     isPaid,
   };
 }
@@ -105,6 +108,13 @@ export async function incrementArabicFeatureUsage(
 
 export async function canAskArabicTutor(userId: string): Promise<AccessDecision> {
   const access = await getArabicAccess(userId);
+  if (!access.hasValidAccess) {
+    return {
+      allowed: false,
+      plan: access.plan,
+      reason: "Akses app sudah expired atau belum aktif.",
+    };
+  }
   const usage = await getOrCreateArabicFeatureUsage(userId, ARABIC_TUTOR_FEATURE);
   return decideAiTutorAccess({
     isPaid: access.isPaid,

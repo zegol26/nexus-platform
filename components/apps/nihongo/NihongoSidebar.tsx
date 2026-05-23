@@ -26,9 +26,9 @@ export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
 
   const isSquid = theme === "squid";
   const isRockstar = theme === "rockstar";
-  const brandGlyph = isSquid ? "â—‹" : isRockstar ? "â˜…" : "";
-  const topWatermark = isSquid ? "â—‹" : isRockstar ? "â˜…" : "";
-  const bottomWatermark = isSquid ? "â–³" : isRockstar ? "â˜…" : "";
+  const brandGlyph = isSquid ? "O" : isRockstar ? "*" : "";
+  const topWatermark = isSquid ? "O" : isRockstar ? "*" : "";
+  const bottomWatermark = isSquid ? "^" : isRockstar ? "*" : "";
 
   return (
     <aside
@@ -106,9 +106,9 @@ export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
 
           // Theme-specific marker glyph
           const marker = isSquid
-            ? ["â—‹", "â–³", "â–¡"][idx % 3]
+            ? ["O", "^", "[]"][idx % 3]
             : isRockstar
-              ? "â˜…"
+              ? "*"
               : item.marker;
 
           return (

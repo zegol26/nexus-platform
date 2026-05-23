@@ -1,5 +1,6 @@
-﻿import { prisma } from "@/lib/db/prisma";
+import { prisma } from "@/lib/db/prisma";
 import { decideAiTutorAccess, type AccessDecision } from "@/lib/nexus/access-policy";
+import { isValidAppAccess } from "@/lib/platform/access";
 import { PMP_APP_SLUG, PMP_GENERATOR_FEATURE } from "@/lib/pmp/prompt";
 
 export async function ensurePmpTrial(userId: string) {
@@ -59,12 +60,10 @@ export async function getPmpAccess(userId: string) {
   });
 
   const plan = access?.billingPlan ?? "TRIAL";
-  const isPaid =
-    plan !== "TRIAL" &&
-    Boolean(access) &&
-    (!access?.accessExpiresAt || access.accessExpiresAt > new Date());
+  const hasValidAccess = isValidAppAccess(access);
+  const isPaid = plan !== "TRIAL" && hasValidAccess;
 
-  return { access, plan, isTrial: !isPaid, isPaid };
+  return { access, plan, hasValidAccess, isTrial: hasValidAccess && !isPaid, isPaid };
 }
 
 async function getOrCreatePmpFeatureUsage(userId: string) {
@@ -93,6 +92,13 @@ async function getOrCreatePmpFeatureUsage(userId: string) {
 
 export async function canGeneratePmp(userId: string): Promise<AccessDecision> {
   const access = await getPmpAccess(userId);
+  if (!access.hasValidAccess) {
+    return {
+      allowed: false,
+      plan: access.plan,
+      reason: "Akses app sudah expired atau belum aktif.",
+    };
+  }
   const usage = await getOrCreatePmpFeatureUsage(userId);
   return decideAiTutorAccess({
     isPaid: access.isPaid,
@@ -108,4 +114,3 @@ export async function incrementPmpUsage(userId: string, amount = 1) {
     data: { count: { increment: amount } },
   });
 }
-

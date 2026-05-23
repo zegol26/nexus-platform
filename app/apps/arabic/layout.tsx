@@ -7,7 +7,7 @@ import { ArabicSidebar } from "@/components/apps/arabic/ArabicSidebar";
 import { LogoutButton } from "@/components/platform/LogoutButton";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
-import { ensureArabicTrial } from "@/lib/arabic/access-guards";
+import { isAdminRole, isValidAppAccess } from "@/lib/platform/access";
 
 export const dynamic = "force-dynamic";
 
@@ -37,29 +37,14 @@ export default async function ArabicLayout({
     redirect("/login");
   }
 
-  const isAdmin = user.role === "ADMIN" || user.role === "SUPER_ADMIN";
+  const isAdmin = isAdminRole(user.role);
   const appAccess = user.appAccess as AppAccessWithApp[];
 
-  let arabicAccess = appAccess.find(
+  const arabicAccess = appAccess.find(
     (access) => access.app.slug === "arabic" && access.status === "ACTIVE"
   );
 
-  if (!isAdmin && !arabicAccess) {
-    await ensureArabicTrial(user.id);
-    arabicAccess = {
-      status: "ACTIVE",
-      accessExpiresAt: null,
-      app: { slug: "arabic" },
-    };
-  }
-
-  const hasValidAccess =
-    isAdmin ||
-    Boolean(
-      arabicAccess &&
-        (!arabicAccess.accessExpiresAt ||
-          arabicAccess.accessExpiresAt > new Date())
-    );
+  const hasValidAccess = isAdmin || isValidAppAccess(arabicAccess);
 
   if (!hasValidAccess) {
     redirect("/platform/dashboard");
@@ -81,7 +66,7 @@ export default async function ArabicLayout({
                   href="/platform/dashboard"
                   className="rounded-md border border-emerald-200 bg-white px-3 py-1.5 text-sm font-semibold text-slate-700 transition hover:bg-emerald-50"
                 >
-                  ← Back to Platform
+                  {"<-"} Back to Platform
                 </Link>
 
                 <Link

@@ -1,13 +1,9 @@
 import Link from "next/link";
-import { redirect } from "next/navigation";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth/auth-options";
 import { curriculumStats, dceCurriculum } from "@/lib/english/dce";
 import { JohnAvatar } from "@/components/apps/english/john/JohnAvatar";
 
 export const dynamic = "force-dynamic";
 
-// Static class lookup so Tailwind JIT can see the literal class names.
 const BADGE_TEXT: Record<string, string> = {
   emerald: "text-emerald-700",
   blue: "text-blue-700",
@@ -15,11 +11,6 @@ const BADGE_TEXT: Record<string, string> = {
 };
 
 export default async function EnglishHubPage() {
-  const session = await getServerSession(authOptions);
-  if (!session?.user?.email) {
-    redirect("/login");
-  }
-
   const stats = curriculumStats();
 
   return (
@@ -33,7 +24,7 @@ export default async function EnglishHubPage() {
             Your English learning hub
           </h1>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600">
-            Three pillars of your English journey — interview practice, the
+            Three pillars of your English journey: interview practice, the
             structured CEFR curriculum, and live conversation with John, your
             AI coach.
           </p>
@@ -70,7 +61,7 @@ export default async function EnglishHubPage() {
             accent="from-slate-900 via-blue-900 to-slate-700"
           />
           <FeatureCard
-            tag="DCE · CEFR A1 → C1"
+            tag="DCE - CEFR A1 to C1"
             title="Dynamic Conversational English"
             description={`A structured CEFR curriculum across ${stats.totalLevels} levels and ${stats.totalModules} modules. ${stats.totalQuestions}+ questions across reading, listening, vocabulary, grammar, dialogue, and roleplay.`}
             href="/apps/english/dce"
@@ -78,9 +69,9 @@ export default async function EnglishHubPage() {
             accent="from-emerald-700 via-blue-700 to-violet-700"
           />
           <FeatureCard
-            tag="John · AI Coach"
+            tag="John - AI Coach"
             title="Conversation with John"
-            description="40-something male English coach. Free chat or scenario-based roleplays — text or push-to-talk voice."
+            description="40-something male English coach. Free chat or scenario-based roleplays - text or push-to-talk voice."
             href="/apps/english/john"
             cta="Open Conversation"
             accent="from-blue-800 via-slate-700 to-blue-900"
@@ -112,7 +103,7 @@ export default async function EnglishHubPage() {
                   {level.focus}
                 </p>
                 <p className="mt-3 text-xs font-medium text-blue-700 group-hover:underline">
-                  {level.modules.length} modules →
+                  {level.modules.length} modules -&gt;
                 </p>
               </Link>
             ))}

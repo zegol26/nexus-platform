@@ -4,6 +4,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
 import { platformApps } from "@/lib/platform/app-registry";
+import { filterValidAppAccess, isAdminRole, isValidAppAccess } from "@/lib/platform/access";
 
 export const dynamic = "force-dynamic";
 
@@ -47,14 +48,19 @@ export default async function PlatformAppsPage() {
     redirect("/login");
   }
 
+  const isAdmin = isAdminRole(user.role);
   const userAppAccess = user.appAccess as PlatformAppAccessRow[];
+  const visibleAccess = isAdmin ? userAppAccess : filterValidAppAccess(userAppAccess);
 
   const accessBySlug = new Map<string, PlatformAppAccessRow>(
-    userAppAccess.map((access: PlatformAppAccessRow) => [
+    visibleAccess.map((access: PlatformAppAccessRow) => [
       access.app.slug,
       access,
     ])
   );
+  const visibleApps = isAdmin
+    ? platformApps
+    : platformApps.filter((app) => accessBySlug.has(app.slug));
 
   return (
     <div className="mx-auto max-w-7xl space-y-6">
@@ -73,9 +79,19 @@ export default async function PlatformAppsPage() {
       </section>
 
       <section className="grid gap-4 lg:grid-cols-3">
-        {platformApps.map((app) => {
+        {visibleApps.length === 0 ? (
+          <div className="rounded-[2rem] border border-dashed border-blue-200 bg-blue-50/70 p-6 lg:col-span-3">
+            <h2 className="text-xl font-black text-slate-950">Belum ada akses aktif</h2>
+            <p className="mt-2 text-sm leading-6 text-slate-600">
+              Akses app akan muncul di sini setelah pembayaran tervalidasi atau admin membuka akses.
+            </p>
+            <Link href="/platform/programs" className="mt-4 inline-flex rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white">
+              Lihat program
+            </Link>
+          </div>
+        ) : visibleApps.map((app) => {
           const access = accessBySlug.get(app.slug);
-          const isActive = access?.status === "ACTIVE";
+          const isActive = isAdmin || isValidAppAccess(access);
 
           return (
             <article
@@ -117,9 +133,7 @@ export default async function PlatformAppsPage() {
 
               <Link
                 href={
-                  isActive || app.status === "coming_soon" || app.slug === "pmp"
-                    ? app.href
-                    : "/platform/dashboard"
+                  isActive ? app.href : "/platform/dashboard"
                 }
                 className="mt-5 rounded-full bg-slate-950 px-5 py-3 text-center text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-blue-700"
               >

@@ -5,7 +5,7 @@ import { GlobalFooter } from "@/components/layout/GlobalFooter";
 import { LogoutButton } from "@/components/platform/LogoutButton";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
-import { ensurePmpTrial } from "@/lib/pmp/access-guards";
+import { isAdminRole, isValidAppAccess } from "@/lib/platform/access";
 
 export const dynamic = "force-dynamic";
 
@@ -24,13 +24,13 @@ export default async function PmpLayout({ children }: { children: React.ReactNod
     redirect("/login");
   }
 
-  const isAdmin = user.role === "ADMIN" || user.role === "SUPER_ADMIN";
+  const isAdmin = isAdminRole(user.role);
   const pmpAccess = user.appAccess.find(
     (access) => access.app.slug === "pmp" && access.status === "ACTIVE"
   );
 
-  if (!isAdmin && !pmpAccess) {
-    await ensurePmpTrial(user.id);
+  if (!isAdmin && !isValidAppAccess(pmpAccess)) {
+    redirect("/platform/dashboard");
   }
 
   return (

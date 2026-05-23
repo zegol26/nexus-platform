@@ -5,6 +5,7 @@ import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
 import { getOrCreateGameProfile } from "@/lib/gamification/kingdom";
 import { platformApps } from "@/lib/platform/app-registry";
+import { filterValidAppAccess, isAdminRole } from "@/lib/platform/access";
 import { KingdomCard } from "@/components/nihongo/game/KingdomCard";
 
 export const dynamic = "force-dynamic";
@@ -108,7 +109,9 @@ export default async function PlatformDashboardPage() {
       }),
     ]);
 
-  const appAccess = user.appAccess as DashboardAppAccessRow[];
+  const isAdmin = isAdminRole(user.role);
+  const rawAppAccess = user.appAccess as DashboardAppAccessRow[];
+  const appAccess = isAdmin ? rawAppAccess : filterValidAppAccess(rawAppAccess);
 
   const nihongoPercentage =
     totalNihongoLessons === 0
@@ -119,12 +122,12 @@ export default async function PlatformDashboardPage() {
     appAccess.map((access: DashboardAppAccessRow) => access.app.slug)
   );
 
-  const comingSoonApps = platformApps.filter(
-    (app) => !authorizedSlugs.has(app.slug)
-  );
+  const comingSoonApps = isAdmin
+    ? platformApps.filter((app) => !authorizedSlugs.has(app.slug))
+    : [];
 
   const primaryAccess = appAccess[0];
-  const isAdmin = user.role === "ADMIN" || user.role === "SUPER_ADMIN";
+  const hasNihongoAccess = authorizedSlugs.has("nihongo") || isAdmin;
   const initial = (user.name ?? user.email).charAt(0).toUpperCase();
   const typedMonthlyPlans = monthlyPlans as DashboardPlanRow[];
 
@@ -166,25 +169,29 @@ export default async function PlatformDashboardPage() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/apps/nihongo/dashboard"
+                href={hasNihongoAccess ? "/apps/nihongo/dashboard" : "/platform/programs"}
                 className="rounded-full bg-blue-600 px-5 py-3 text-sm font-black text-white shadow-lg shadow-blue-600/25 transition hover:-translate-y-0.5 hover:bg-blue-700"
               >
-                Buka Nihongo
+                {hasNihongoAccess ? "Buka Nihongo" : "Lihat Program"}
               </Link>
 
-              <Link
-                href="/apps/nihongo/quiz"
-                className="rounded-full border border-blue-100 bg-white px-5 py-3 text-sm font-black text-slate-800 shadow-sm shadow-slate-950/[0.03] transition hover:-translate-y-0.5 hover:bg-blue-50"
-              >
-                Mulai Quiz
-              </Link>
+              {hasNihongoAccess && (
+                <Link
+                  href="/apps/nihongo/quiz"
+                  className="rounded-full border border-blue-100 bg-white px-5 py-3 text-sm font-black text-slate-800 shadow-sm shadow-slate-950/[0.03] transition hover:-translate-y-0.5 hover:bg-blue-50"
+                >
+                  Mulai Quiz
+                </Link>
+              )}
 
-              <Link
-                href="/apps/nihongo/flashcards"
-                className="rounded-full border border-blue-100 bg-white px-5 py-3 text-sm font-black text-slate-800 shadow-sm shadow-slate-950/[0.03] transition hover:-translate-y-0.5 hover:bg-blue-50"
-              >
-                Review Flashcards
-              </Link>
+              {hasNihongoAccess && (
+                <Link
+                  href="/apps/nihongo/flashcards"
+                  className="rounded-full border border-blue-100 bg-white px-5 py-3 text-sm font-black text-slate-800 shadow-sm shadow-slate-950/[0.03] transition hover:-translate-y-0.5 hover:bg-blue-50"
+                >
+                  Review Flashcards
+                </Link>
+              )}
             </div>
           </div>
 
@@ -456,23 +463,25 @@ export default async function PlatformDashboardPage() {
             </Link>
           </div>
 
-          <div className="rounded-[2rem] border border-white/70 bg-white/80 p-6 shadow-xl shadow-slate-950/[0.04] backdrop-blur-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-400">
-              Coming next
-            </p>
+          {comingSoonApps.length > 0 && (
+            <div className="rounded-[2rem] border border-white/70 bg-white/80 p-6 shadow-xl shadow-slate-950/[0.04] backdrop-blur-2xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-400">
+                Coming next
+              </p>
 
-            <div className="mt-4 space-y-3">
-              {comingSoonApps.map((app) => (
-                <div key={app.slug} className="rounded-2xl bg-slate-50 p-4">
-                  <p className="font-semibold text-slate-950">{app.name}</p>
+              <div className="mt-4 space-y-3">
+                {comingSoonApps.map((app) => (
+                  <div key={app.slug} className="rounded-2xl bg-slate-50 p-4">
+                    <p className="font-semibold text-slate-950">{app.name}</p>
 
-                  <p className="mt-1 text-sm leading-6 text-slate-600">
-                    {app.description}
-                  </p>
-                </div>
-              ))}
+                    <p className="mt-1 text-sm leading-6 text-slate-600">
+                      {app.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           {isAdmin && (
             <Link

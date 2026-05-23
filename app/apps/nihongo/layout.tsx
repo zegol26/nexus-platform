@@ -10,6 +10,7 @@ import { NihongoThemeToggle } from "@/components/apps/nihongo/NihongoThemeToggle
 import { LogoutButton } from "@/components/platform/LogoutButton";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
+import { isAdminRole, isValidAppAccess } from "@/lib/platform/access";
 
 export const dynamic = "force-dynamic";
 
@@ -45,7 +46,7 @@ export default async function NihongoLayout({
     redirect("/login");
   }
 
-  const isAdmin = user.role === "ADMIN" || user.role === "SUPER_ADMIN";
+  const isAdmin = isAdminRole(user.role);
 
   const appAccess = user.appAccess as AppAccessWithApp[];
 
@@ -55,12 +56,7 @@ export default async function NihongoLayout({
   );
 
   const hasValidAccess =
-    isAdmin ||
-    Boolean(
-      nihongoAccess &&
-        (!nihongoAccess.accessExpiresAt ||
-          nihongoAccess.accessExpiresAt > new Date())
-    );
+    isAdmin || isValidAppAccess(nihongoAccess);
 
   if (!hasValidAccess) {
     redirect("/platform/dashboard");
@@ -83,7 +79,7 @@ export default async function NihongoLayout({
                     href="/platform/dashboard"
                     className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
                   >
-                    â† Back to Platform
+                    {"<-"} Back to Platform
                   </Link>
 
                   <Link

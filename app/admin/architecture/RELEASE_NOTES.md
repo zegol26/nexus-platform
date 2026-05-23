@@ -4,6 +4,7 @@
 
 | Release Note | Date/Time (JST) | Author | Status | Summary |
 | --- | --- | --- | --- | --- |
+| RN-2026.05.24-002 | 2026-05-24 01:30 +09:00 | Nexus Platform Team | Completed | Reinforced app access enforcement so expired access no longer opens app routes/features, normal users only see valid owned apps, internal lesson engine is admin-only, and mojibake characters were cleaned from Nihongo/English/Arabic app UI and tutor copy. |
 | RN-2026.05.24-001 | 2026-05-24 00:30 +09:00 | Nexus Platform Team | Completed | Public Nexus Talenta Indonesia Academy commerce readiness release: redesigned landing/login/register/platform surfaces, public legal/contact/checkout pages, reusable promo campaign admin, Midtrans sandbox checkout/control/log UI, registration email validation and confirmation email support, and public restricted overview-trial mimics for Nihongo, English, Arabic, and PMP apps. |
 | RN-2026.05.08-001 | 2026-05-08 21:00 +09:00 | Nexus Platform Team | Completed | Nexus Kingdoms Mobile Legends revamp — per-level castle PNG art (10 stages), hero PNG with mystic float aura on the left of the castle, hero rename + one-time selection ritual with random initial assignment, real attack mechanics (proportional troop casualties on both sides + resource looting), defender attack-notification popup on game entry, sophisticated battle report modal post-attack with result-tier theming, interactive shield/cooldown/error toasts replacing the banner, continent overflow capacity 5 with Roman-numeral variants, cross-continent attacks always open, full mobile responsiveness pass on all game modals and the castle frame. |
 | RN-2026.05.07-002 | 2026-05-07 18:30 +09:00 | Nexus Platform Team | Completed | Added Fast MVP AI Conversation Voice on the AI Tutor page — push-to-talk with Whisper transcription, voice-mode tutor reply, and ElevenLabs (or OpenAI) TTS playback for Ai-chan. Trial learners get 5 voice conversations/day, tracked via `FeatureUsage.VOICE_CONVERSATION`. |
@@ -19,6 +20,42 @@
 | RN-2026.05.04-001 | 2026-05-04 01:10 +09:00 | Nexus Platform Team | Completed | Fixed character foundation lesson access and verified kana/kanji grids in localhost. |
 | RN-2026.05.03-002 | 2026-05-03 23:45 +09:00 | Nexus Platform Team | Completed | Added seedable Nihongo character content for kana, kanji, and vocabulary compounds, linked to lesson pages. |
 | RN-2026.05.03-001 | 2026-05-03 23:09 +09:00 | Nexus Platform Team | Release Candidate | Admin Operations Console, billing/trial foundation, recording visibility, architecture docs, and Ai-chan assistant foundation. |
+
+## RN-2026.05.24-002
+
+Completed access enforcement and encoding cleanup hotfix.
+
+### Included Changes
+
+- Added shared platform access helpers for admin-role checks and valid
+  app-access checks (`ACTIVE` and not expired).
+- Reinforced Nihongo, English, Arabic, PMP, and internal lesson-engine
+  route entry so normal users are redirected back to the platform when
+  they do not have valid app access.
+- Removed auto-grant behavior from Arabic and PMP layouts. Trial/access
+  must now come from registration, admin grant, or validated billing.
+- Updated dashboard and `/platform/apps` so normal users only see apps
+  with valid active access. Expired access no longer counts as owned app
+  access in those user-facing lists.
+- Removed the internal lesson-engine app from the user app registry and
+  made `/apps/lessons/dashboard` admin-only.
+- Hardened feature guards so expired access is rejected for Nihongo
+  lesson, flashcard, tutor, voice, reading, Arabic tutor, and PMP AI
+  generator paths.
+- Cleaned mojibake characters from Nihongo shell/sidebar/tutor copy,
+  Arabic shell, English dashboard copy, and app registry descriptions.
+
+### Verification
+
+- `npm run build`: passed.
+- Browser verified `/apps/nihongo/dashboard` loads for the current valid
+  user without broken `â/Ã/ð` characters and without `Nexus Lessons` or
+  `nexus_lesson` appearing in the app UI.
+
+### Known Notes
+
+- Admin and super admin still bypass app-expiry checks for operations
+  and support workflows.
 
 ## RN-2026.05.24-001
 

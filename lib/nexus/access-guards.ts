@@ -8,6 +8,7 @@ import {
   decideReadingAccess,
   decideVoiceConversationAccess,
 } from "@/lib/nexus/access-policy";
+import { isValidAppAccess } from "@/lib/platform/access";
 
 export const VOICE_CONVERSATION_FEATURE = "VOICE_CONVERSATION";
 
@@ -28,12 +29,14 @@ export async function getNihongoAccess(userId: string) {
   const isPaid =
     plan !== "TRIAL" &&
     Boolean(access) &&
-    (!access?.accessExpiresAt || access.accessExpiresAt > new Date());
+    isValidAppAccess(access);
+  const hasValidAccess = isValidAppAccess(access);
 
   return {
     access,
     plan,
-    isTrial: !isPaid,
+    hasValidAccess,
+    isTrial: hasValidAccess && !isPaid,
     isPaid,
   };
 }
@@ -73,16 +76,19 @@ export async function ensureNihongoTrial(userId: string) {
 
 export async function canAccessLesson(userId: string, lessonOrder: number): Promise<AccessDecision> {
   const access = await getNihongoAccess(userId);
+  if (!access.hasValidAccess) return expiredAccessDecision(access.plan);
   return decideLessonAccess({ isPaid: access.isPaid, plan: access.plan, lessonOrder });
 }
 
 export async function canUseFlashcard(userId: string, requestedLimit = TRIAL_FLASHCARD_LIMIT): Promise<AccessDecision> {
   const access = await getNihongoAccess(userId);
+  if (!access.hasValidAccess) return expiredAccessDecision(access.plan);
   return decideFlashcardAccess({ isPaid: access.isPaid, plan: access.plan, requestedLimit });
 }
 
 export async function canAskAiTutor(userId: string): Promise<AccessDecision> {
   const access = await getNihongoAccess(userId);
+  if (!access.hasValidAccess) return expiredAccessDecision(access.plan);
   const usage = await getOrCreateFeatureUsage(userId, "AI_TUTOR_QUESTION");
   return decideAiTutorAccess({ isPaid: access.isPaid, plan: access.plan, used: usage.count });
 }
@@ -91,6 +97,7 @@ export async function canUseVoiceConversation(
   userId: string
 ): Promise<AccessDecision> {
   const access = await getNihongoAccess(userId);
+  if (!access.hasValidAccess) return expiredAccessDecision(access.plan);
   const usage = await getOrCreateFeatureUsage(
     userId,
     VOICE_CONVERSATION_FEATURE
@@ -100,6 +107,7 @@ export async function canUseVoiceConversation(
 
 export async function canAccessReading(userId: string): Promise<AccessDecision> {
   const access = await getNihongoAccess(userId);
+  if (!access.hasValidAccess) return expiredAccessDecision(access.plan);
   return decideReadingAccess({ isTrial: access.isTrial, plan: access.plan });
 }
 
@@ -133,4 +141,12 @@ async function getOrCreateFeatureUsage(userId: string, feature: string) {
       count: 0,
     },
   });
+}
+
+function expiredAccessDecision(plan: string): AccessDecision {
+  return {
+    allowed: false,
+    plan,
+    reason: "Akses app sudah expired atau belum aktif.",
+  };
 }

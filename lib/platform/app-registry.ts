@@ -19,17 +19,9 @@
     id: "arabic",
     slug: "arabic",
     name: "Nexus AI Arabic",
-    description: "Daily Saudi Arabic for work, umrah, and travel â€” built for Indonesian speakers",
+    description: "Daily Saudi Arabic for work, umrah, and travel - built for Indonesian speakers",
     href: "/apps/arabic/dashboard",
     status: "active",
-  },
-  {
-    id: "lessons",
-    slug: "lessons",
-    name: "Nexus Lessons",
-    description: "Reusable lesson engine for future Nexus learning apps",
-    href: "/apps/lessons/dashboard",
-    status: "coming_soon",
   },
   {
     id: "pmp",
