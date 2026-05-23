@@ -41,14 +41,30 @@ export function getMidtransClientKey(mode: string) {
     : process.env.NEXT_PUBLIC_MIDTRANS_SANDBOX_CLIENT_KEY;
 }
 
+export function validateMidtransEnvironmentKeys(mode: string) {
+  const serverKey = getMidtransServerKey(mode);
+  const clientKey = getMidtransClientKey(mode);
+
+  if (!serverKey) {
+    return {
+      ok: false,
+      message: `MIDTRANS_${mode.toUpperCase()}_SERVER_KEY is not configured`,
+    };
+  }
+
+  return { ok: true, message: null };
+}
+
 export async function createMidtransSnapTransaction(
   mode: string,
   request: MidtransSnapRequest
 ) {
-  const serverKey = getMidtransServerKey(mode);
-  if (!serverKey) {
-    throw new Error(`MIDTRANS_${mode.toUpperCase()}_SERVER_KEY is not configured`);
+  const validation = validateMidtransEnvironmentKeys(mode);
+  if (!validation.ok) {
+    throw new Error(validation.message ?? "Midtrans key is not configured");
   }
+
+  const serverKey = getMidtransServerKey(mode);
 
   const response = await fetch(`${getMidtransBaseUrl(mode)}/snap/v1/transactions`, {
     method: "POST",

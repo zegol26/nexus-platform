@@ -1,6 +1,6 @@
 # Nexus Platform / Nexus AI Nihongo Architecture
 
-Last updated: 2026-05-06
+Last updated: 2026-05-24
 
 ## Release Gate Status
 
@@ -19,12 +19,17 @@ Nexus Platform is the parent application for authentication, access, billing, ad
 ## High Level Structure
 
 - `app/platform/*`: parent platform dashboard, billing, legacy admin access-control surface, and account-level navigation.
+- `app/overview/*`: public restricted overview-trial surfaces that mimic each learning app before login/subscription.
+- `app/checkout`, `app/terms`, `app/refund-policy`, `app/contact`: public commerce, legal, refund, and contact surfaces for payment-provider review and buyer clarity.
 - `app/apps/nihongo/*`: Nexus AI Nihongo user experience, including curriculum, AI lesson, flashcards, tutor, reading, listening, and assessments.
 - `app/apps/english/*`: Nexus AI English interview flow and user recording submission experience.
+- `app/apps/arabic/*`: Nexus AI Arabic daily/work/umrah/travel learning surfaces and tutor flows.
+- `app/apps/pmp/*`: Nexus PMP Exam Prep dashboard, simulator, diagnostic, knowledge base, ITTO, glossary, readiness, and AI instructor flows.
 - `app/admin/*`: Operations Console for ADMIN users only. This area is intentionally hidden from non-admin navigation and protected by server-side admin checks.
 - `app/api/platform/*`: platform APIs for billing, payment proof upload, and admin payment verification.
 - `app/api/apps/*`: app-specific APIs for Nihongo and English features.
 - `components/layout/*`: shared shell pieces such as sidebar drawer and global footer.
+- `components/marketing/*`: public landing and overview components used before authentication.
 - `components/platform/*`: platform navigation, billing UI, and platform-specific client components.
 - `components/apps/*`: app-specific interactive client components.
 - `components/admin/*`: reusable admin UI blocks and admin actions.
@@ -52,6 +57,31 @@ Trial and subscription behavior is centralized in `lib/nexus/access-guards.ts`:
 - `canAccessReading(userId)`: trial users can consume cached reading only.
 
 Feature usage is recorded with `FeatureUsage` so limits can be enforced without scattering counters across UI code.
+
+## Public Commerce And Overview Trial
+
+The public web surface exists for both buyer clarity and payment-provider
+review. The landing page presents Nexus Talenta Indonesia Academy as the
+parent academy, lists the available learning apps, links to product
+ordering, and exposes legal/refund/contact pages. Public checkout is only
+an order-start surface: the user selects or reviews a program, then logs
+in or registers before completing billing inside the platform.
+
+Overview trials under `/overview/[app]` are intentionally static,
+restricted mimics. They show the learner what each app workspace feels
+like with sidebar navigation, coach/chat teaser, module cards, and locked
+actions. They do not call AI APIs, record audio, submit answers, open
+reading/listening content, score simulator questions, or persist progress.
+The current overview routes are:
+
+- `/overview/nihongo`: Ai-chan/Japanese learning teaser.
+- `/overview/english`: John/interview and CEFR teaser.
+- `/overview/arabic`: Saudi daily Arabic roleplay teaser.
+- `/overview/pmp`: Andromeda/PMP readiness and simulator teaser.
+
+The overview cards on the landing page link directly to these routes so
+prospective users can try the shape of the app before subscribing without
+receiving full product access.
 
 ## Lesson Cache Backend
 
@@ -83,12 +113,16 @@ Admin recording review is available at `/admin/recordings`, grouped by user and 
 
 ## Billing Backend
 
-Billing is MVP manual-payment first:
+Billing has moved from manual-payment-first UAT flow toward a
+Midtrans-centered checkout flow while retaining historical manual payment
+records for audit compatibility:
 
 - user selects a plan;
 - invoice/payment record is created;
-- user uploads proof;
-- admin verifies payment;
+- the user continues payment through the configured official payment
+  gateway flow when checkout is open;
+- gateway transaction identifiers, status, and response snapshots are
+  stored for admin review;
 - subscription is activated or extended.
 
 Payment states:
@@ -106,9 +140,34 @@ Subscription states:
 - `EXPIRED`
 - `CANCELED`
 
-Pricing, QRIS information, and bank account information are not hardcoded in the UI. They are stored as `PlatformSetting` records and managed from `/admin/settings`. The user billing page reads the same settings through shared helpers.
+Pricing, promo controls, payment-gateway visibility, and checkout copy
+are not hardcoded in the UI. They are stored as `PlatformSetting` records
+and managed from admin surfaces. The user billing page reads the same
+settings through shared helpers.
 
-Rejected payments are final from the admin action UI perspective: verify and reject actions are disabled for rejected records.
+Payment-provider secrets are environment variables only. They must not be
+printed in release notes, architecture docs, screenshots, or client-side
+code. Public user-facing payment copy should stay channel-focused
+(`QRIS`, `Virtual Account`, `E-Wallet`, retail payment) while
+provider-specific implementation detail belongs in Admin Console.
+
+## Transactional Email
+
+Registration validates email format on both client and server, normalizes
+addresses before user creation, and can send a confirmation email after a
+successful registration. The mailer is SMTP-based and configured with
+environment variables:
+
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `SMTP_SECURE`
+- `SMTP_USER`
+- `SMTP_PASSWORD`
+- `EMAIL_FROM`
+- `EMAIL_REPLY_TO`
+
+When SMTP is not configured, registration still succeeds and the app logs
+that confirmation email was skipped. Credentials are never committed.
 
 ## Admin UI Architecture
 
@@ -119,6 +178,8 @@ Current admin pages:
 - `/admin/users`: users, role, access, and subscription overview.
 - `/admin/subscriptions`: active/trial/expired subscription visibility.
 - `/admin/payments`: manual payment verification workflow.
+- `/platform/admin/promos`: reusable promo campaign management for
+  editable campaign copy and status.
 - `/admin/usage`: feature usage and AI usage visibility.
 - `/admin/lessons`: curriculum lesson visibility.
 - `/admin/lesson-cache`: AI lesson template cache counts.
@@ -130,6 +191,12 @@ Current admin pages:
 - `/admin/architecture`: this architecture document.
 
 Reusable admin UI pieces live in `components/admin`. Admin pages should keep data loading server-side when possible and use client components only for forms/actions that need browser interactivity.
+
+The payment admin surface groups transaction history by month for easier
+review and surfaces payment-gateway status in a compact transaction-log
+style. Admin payment controls should favor configuration and audit
+visibility over manual state buttons when the gateway is the source of
+truth.
 
 ## UI Architecture
 

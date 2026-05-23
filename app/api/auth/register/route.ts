@@ -1,19 +1,28 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/db/prisma";
+import { sendRegistrationConfirmationEmail } from "@/lib/email/transactional";
+import { isValidEmail, normalizeEmail } from "@/lib/email/validation";
 import { ensureNihongoTrial } from "@/lib/nexus/access-guards";
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    const name = body.name?.trim();
-    const email = body.email?.toLowerCase().trim();
+    const name = String(body.name ?? "").trim();
+    const email = normalizeEmail(body.email);
     const password = body.password;
 
     if (!email || !password) {
       return NextResponse.json(
         { error: "Email and password are required" },
+        { status: 400 }
+      );
+    }
+
+    if (!isValidEmail(email)) {
+      return NextResponse.json(
+        { error: "Masukkan email yang valid" },
         { status: 400 }
       );
     }
@@ -48,8 +57,18 @@ export async function POST(req: Request) {
 
     await ensureNihongoTrial(user.id);
 
+    const emailResult = await sendRegistrationConfirmationEmail({
+      email: user.email,
+      name: user.name,
+    }).catch((error) => {
+      console.error("REGISTRATION_EMAIL_ERROR", error);
+      return { sent: false, skipped: false };
+    });
+
     return NextResponse.json({
-      message: "User registered successfully",
+      message: emailResult.sent
+        ? "Registrasi berhasil. Email konfirmasi sudah dikirim."
+        : "Registrasi berhasil. Email konfirmasi belum terkirim karena konfigurasi email belum siap.",
       user: {
         id: user.id,
         name: user.name,

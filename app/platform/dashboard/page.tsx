@@ -22,6 +22,20 @@ type DashboardAppAccessRow = {
   };
 };
 
+type DashboardPlanRow = {
+  id: string;
+  name: string;
+  priceCents: number;
+  currency: string;
+  durationDays: number;
+  billingPeriod: string;
+  app: {
+    slug: string;
+    name: string;
+    description: string | null;
+  };
+};
+
 function formatDate(date?: Date | null) {
   if (!date) return "No expiry set";
 
@@ -36,6 +50,22 @@ function daysLeft(date?: Date | null) {
   if (!date) return null;
 
   return Math.ceil((date.getTime() - Date.now()) / (1000 * 60 * 60 * 24));
+}
+
+function formatMoney(amountCents: number, currency: string) {
+  return new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency,
+    maximumFractionDigits: 0,
+  }).format(amountCents / 100);
+}
+
+function promoMoney(amountCents: number, currency: string) {
+  return formatMoney(amountCents, currency);
+}
+
+function originalMoney(amountCents: number, currency: string) {
+  return formatMoney(amountCents * 2, currency);
 }
 
 export default async function PlatformDashboardPage() {
@@ -59,7 +89,7 @@ export default async function PlatformDashboardPage() {
     redirect("/login");
   }
 
-  const [totalNihongoLessons, completedNihongoLessons, totalFlashcards, gameProfile] =
+  const [totalNihongoLessons, completedNihongoLessons, totalFlashcards, gameProfile, monthlyPlans] =
     await Promise.all([
       prisma.nihongoLesson.count(),
       prisma.nihongoLessonProgress.count({
@@ -67,6 +97,15 @@ export default async function PlatformDashboardPage() {
       }),
       prisma.nihongoFlashcard.count(),
       getOrCreateGameProfile(user.id),
+      prisma.subscriptionPlan.findMany({
+        where: {
+          active: true,
+          billingPeriod: "MONTHLY",
+          app: { status: "ACTIVE" },
+        },
+        include: { app: true },
+        orderBy: [{ appId: "asc" }],
+      }),
     ]);
 
   const appAccess = user.appAccess as DashboardAppAccessRow[];
@@ -87,14 +126,15 @@ export default async function PlatformDashboardPage() {
   const primaryAccess = appAccess[0];
   const isAdmin = user.role === "ADMIN" || user.role === "SUPER_ADMIN";
   const initial = (user.name ?? user.email).charAt(0).toUpperCase();
+  const typedMonthlyPlans = monthlyPlans as DashboardPlanRow[];
 
   return (
     <div className="mx-auto max-w-7xl space-y-8">
-      <section className="overflow-hidden rounded-[2rem] border border-white/70 bg-white/80 shadow-xl shadow-slate-950/[0.04] backdrop-blur-2xl">
-        <div className="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
+      <section className="overflow-hidden rounded-[2rem] border border-white/70 bg-white/90 shadow-2xl shadow-blue-950/[0.08] backdrop-blur-2xl">
+        <div className="grid gap-0 lg:grid-cols-[1.06fr_0.94fr]">
           <div className="p-6 sm:p-8 lg:p-10">
-            <div className="mb-8 inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-blue-700">
-              Nexus Platform
+            <div className="mb-8 inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-xs font-black uppercase tracking-[0.24em] text-blue-700">
+              Nexus Talenta Indonesia Academy
             </div>
 
             <div className="mt-5 flex items-center gap-4">
@@ -111,7 +151,7 @@ export default async function PlatformDashboardPage() {
               )}
 
               <div>
-                <h1 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+                <h1 className="text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
                   {user.name ?? "Nexus learner"}
                 </h1>
                 <p className="mt-1 text-sm text-slate-500">{user.email}</p>
@@ -119,28 +159,29 @@ export default async function PlatformDashboardPage() {
             </div>
 
             <p className="mt-6 max-w-2xl text-sm leading-6 text-slate-600">
-              Your cockpit for app access, learning progress, billing duration,
-              and study commitment.
+              Ruang kendali belajar kamu: akses aplikasi, progres Nihongo, billing,
+              promo aktif, dan rekomendasi layanan Nexus ditampilkan langsung tanpa
+              harus menebak menu berikutnya.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/apps/nihongo/dashboard"
-                className="rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white shadow-sm shadow-slate-950/10 transition hover:-translate-y-0.5 hover:bg-blue-700"
+                className="rounded-full bg-blue-600 px-5 py-3 text-sm font-black text-white shadow-lg shadow-blue-600/25 transition hover:-translate-y-0.5 hover:bg-blue-700"
               >
-                Open Nihongo
+                Buka Nihongo
               </Link>
 
               <Link
                 href="/apps/nihongo/quiz"
-                className="rounded-full border border-white/70 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm shadow-slate-950/[0.03] transition hover:-translate-y-0.5 hover:bg-white"
+                className="rounded-full border border-blue-100 bg-white px-5 py-3 text-sm font-black text-slate-800 shadow-sm shadow-slate-950/[0.03] transition hover:-translate-y-0.5 hover:bg-blue-50"
               >
-                Start Quiz
+                Mulai Quiz
               </Link>
 
               <Link
                 href="/apps/nihongo/flashcards"
-                className="rounded-full border border-white/70 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm shadow-slate-950/[0.03] transition hover:-translate-y-0.5 hover:bg-white"
+                className="rounded-full border border-blue-100 bg-white px-5 py-3 text-sm font-black text-slate-800 shadow-sm shadow-slate-950/[0.03] transition hover:-translate-y-0.5 hover:bg-blue-50"
               >
                 Review Flashcards
               </Link>
@@ -149,7 +190,7 @@ export default async function PlatformDashboardPage() {
 
           <div className="border-t border-white/10 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 p-6 text-white lg:border-l lg:border-t-0 lg:p-8">
             <p className="text-sm font-medium text-slate-300">
-              Primary access
+              Akses utama
             </p>
 
             <h2 className="mt-3 text-2xl font-semibold">
@@ -159,7 +200,7 @@ export default async function PlatformDashboardPage() {
             <div className="mt-6 grid gap-3">
               <div className="rounded-2xl bg-white/10 p-4">
                 <p className="text-xs uppercase tracking-[0.18em] text-slate-400">
-                  Plan
+                Paket
                 </p>
                 <p className="mt-2 text-lg font-semibold">
                   {primaryAccess?.billingPlan ?? "No plan"}
@@ -168,7 +209,7 @@ export default async function PlatformDashboardPage() {
 
               <div className="rounded-2xl bg-white/10 p-4">
                 <p className="text-xs uppercase tracking-[0.18em] text-slate-400">
-                  Access expires
+                Masa akses
                 </p>
 
                 <p className="mt-2 text-lg font-semibold">
@@ -181,6 +222,22 @@ export default async function PlatformDashboardPage() {
                   </p>
                 )}
               </div>
+            </div>
+
+            <div className="mt-5 rounded-2xl bg-white p-4 text-slate-950">
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-700">
+                Promo launch
+              </p>
+              <h3 className="mt-2 text-2xl font-black">NEXUSJEPANG 50%</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                Harga paket yang tampil sudah termasuk diskon 50%.
+              </p>
+              <Link
+                href="/platform/programs"
+                className="mt-4 inline-flex rounded-full bg-blue-600 px-4 py-2 text-sm font-black text-white transition hover:bg-blue-700"
+              >
+                Lihat program
+              </Link>
             </div>
           </div>
         </div>
@@ -222,6 +279,32 @@ export default async function PlatformDashboardPage() {
         </div>
       </section>
 
+      <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        {typedMonthlyPlans.map((plan) => (
+          <Link
+            key={plan.id}
+            href={`/platform/billing?plan=${plan.id}`}
+            className="rounded-3xl border border-white/70 bg-white/90 p-6 shadow-xl shadow-slate-950/[0.04] backdrop-blur-2xl transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50/60"
+          >
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">
+              Monthly plan
+            </p>
+            <h2 className="mt-3 text-xl font-black text-slate-950">{plan.app.name}</h2>
+            <p className="mt-2 min-h-18 text-sm leading-6 text-slate-600">
+              {plan.app.description}
+            </p>
+            <div className="mt-5">
+              <p className="text-2xl font-black text-blue-700">
+                {promoMoney(plan.priceCents, plan.currency)}
+              </p>
+              <p className="text-xs text-slate-400 line-through">
+                {originalMoney(plan.priceCents, plan.currency)}
+              </p>
+            </div>
+          </Link>
+        ))}
+      </section>
+
       <section className="grid gap-6 lg:grid-cols-[1fr_380px]">
         <div className="rounded-[2rem] border border-white/70 bg-white/80 p-6 shadow-xl shadow-slate-950/[0.04] backdrop-blur-2xl">
           <div className="flex items-center justify-between gap-4">
@@ -230,14 +313,27 @@ export default async function PlatformDashboardPage() {
                 Your apps
               </p>
 
-              <h2 className="mt-2 text-2xl font-semibold text-slate-950">
-                Authorized access
+              <h2 className="mt-2 text-2xl font-black text-slate-950">
+                Layanan aktif kamu
               </h2>
             </div>
           </div>
 
           <div className="mt-6 grid gap-4">
-            {appAccess.map((access: DashboardAppAccessRow) => {
+            {appAccess.length === 0 ? (
+              <div className="rounded-3xl border border-dashed border-blue-200 bg-blue-50/70 p-6">
+                <h3 className="text-xl font-black text-slate-950">
+                  Belum ada akses aktif
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  Pilih program di checkout atau hubungi admin untuk membuka akses
+                  Nexus AI Nihongo, English, Arabic, atau PMP.
+                </p>
+                <Link href="/checkout" className="mt-4 inline-flex rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white">
+                  Order program
+                </Link>
+              </div>
+            ) : appAccess.map((access: DashboardAppAccessRow) => {
               const appMeta = platformApps.find(
                 (app) => app.slug === access.app.slug
               );
@@ -282,6 +378,44 @@ export default async function PlatformDashboardPage() {
         </div>
 
         <aside className="space-y-6">
+          <div className="rounded-[2rem] border border-white/70 bg-white/90 p-6 shadow-xl shadow-slate-950/[0.04] backdrop-blur-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">
+              Program order
+            </p>
+
+            <h2 className="mt-2 text-xl font-black text-slate-950">Order langsung dari platform</h2>
+
+            <p className="mt-2 text-sm leading-6 text-slate-600">
+              Pilih paket resmi dari data platform, lalu lanjut ke billing
+              dengan paket yang kamu pilih.
+            </p>
+
+            <Link
+              href="/platform/programs"
+              className="mt-5 inline-flex rounded-full bg-blue-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-blue-700"
+            >
+              Buka program
+            </Link>
+          </div>
+
+          {isAdmin && (
+            <div className="rounded-[2rem] border border-blue-200 bg-blue-50 p-6 shadow-sm">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">
+                Promo admin
+              </p>
+              <h2 className="mt-2 text-xl font-black text-slate-950">Campaign gimmick</h2>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                Setup NEXUSJEPANG, diskon launch, audience, dan status promo dari admin UI.
+              </p>
+              <Link
+                href="/platform/admin/promos"
+                className="mt-5 inline-flex rounded-full bg-slate-950 px-4 py-2 text-sm font-bold text-white transition hover:bg-blue-700"
+              >
+                Kelola promo
+              </Link>
+            </div>
+          )}
+
           <div className="rounded-[2rem] border border-white/70 bg-white/80 p-6 shadow-xl shadow-slate-950/[0.04] backdrop-blur-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-400">
               Study commitment

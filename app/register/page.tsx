@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { isValidEmail, normalizeEmail } from "@/lib/email/validation";
 
 type RegisterResponse = {
   error?: string;
@@ -16,6 +17,7 @@ export default function RegisterPage() {
   const [password, setPassword] = useState<string>("");
 
   const [error, setError] = useState<string>("");
+  const [success, setSuccess] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
   async function handleRegister(
@@ -24,6 +26,20 @@ export default function RegisterPage() {
     e.preventDefault();
 
     setError("");
+    setSuccess("");
+
+    const normalizedEmail = normalizeEmail(email);
+
+    if (!isValidEmail(normalizedEmail)) {
+      setError("Masukkan email yang valid.");
+      return;
+    }
+
+    if (password.length < 6) {
+      setError("Password minimal 6 karakter.");
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -34,7 +50,7 @@ export default function RegisterPage() {
         },
         body: JSON.stringify({
           name,
-          email,
+          email: normalizedEmail,
           password,
         }),
       });
@@ -46,9 +62,12 @@ export default function RegisterPage() {
         return;
       }
 
-      router.push("/login");
+      setSuccess(data.message ?? "Registrasi berhasil. Silakan cek email kamu.");
+      window.setTimeout(() => {
+        router.push("/login");
+      }, 1400);
     } catch {
-      setError("Something went wrong");
+      setError("Registrasi belum bisa diproses. Coba lagi sebentar.");
     } finally {
       setLoading(false);
     }
@@ -67,12 +86,18 @@ export default function RegisterPage() {
         </h1>
 
         <p className="mt-2 text-sm text-gray-600">
-          Register to access Nexus Platform apps.
+          Register untuk akses Nexus Talenta Indonesia Academy.
         </p>
 
         {error && (
           <div className="mt-4 rounded-xl bg-red-50 p-3 text-sm text-red-600">
             {error}
+          </div>
+        )}
+
+        {success && (
+          <div className="mt-4 rounded-xl bg-emerald-50 p-3 text-sm text-emerald-700">
+            {success}
           </div>
         )}
 
@@ -99,6 +124,8 @@ export default function RegisterPage() {
               }
               placeholder="you@example.com"
               type="email"
+              inputMode="email"
+              autoComplete="email"
               required
             />
           </div>

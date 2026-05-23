@@ -4,6 +4,7 @@
 
 | Release Note | Date/Time (JST) | Author | Status | Summary |
 | --- | --- | --- | --- | --- |
+| RN-2026.05.24-001 | 2026-05-24 00:30 +09:00 | Nexus Platform Team | Completed | Public Nexus Talenta Indonesia Academy commerce readiness release: redesigned landing/login/register/platform surfaces, public legal/contact/checkout pages, reusable promo campaign admin, Midtrans sandbox checkout/control/log UI, registration email validation and confirmation email support, and public restricted overview-trial mimics for Nihongo, English, Arabic, and PMP apps. |
 | RN-2026.05.08-001 | 2026-05-08 21:00 +09:00 | Nexus Platform Team | Completed | Nexus Kingdoms Mobile Legends revamp — per-level castle PNG art (10 stages), hero PNG with mystic float aura on the left of the castle, hero rename + one-time selection ritual with random initial assignment, real attack mechanics (proportional troop casualties on both sides + resource looting), defender attack-notification popup on game entry, sophisticated battle report modal post-attack with result-tier theming, interactive shield/cooldown/error toasts replacing the banner, continent overflow capacity 5 with Roman-numeral variants, cross-continent attacks always open, full mobile responsiveness pass on all game modals and the castle frame. |
 | RN-2026.05.07-002 | 2026-05-07 18:30 +09:00 | Nexus Platform Team | Completed | Added Fast MVP AI Conversation Voice on the AI Tutor page — push-to-talk with Whisper transcription, voice-mode tutor reply, and ElevenLabs (or OpenAI) TTS playback for Ai-chan. Trial learners get 5 voice conversations/day, tracked via `FeatureUsage.VOICE_CONVERSATION`. |
 | RN-2026.05.07-001 | 2026-05-07 12:00 +09:00 | Nexus Platform Team | Completed | Added user-selectable theme toggle (Nexus / Squid / Rockstar) on the Nihongo header, scoped to the `/apps/nihongo` route only. Synthesized `docs/DESIGN.md` as the source of truth for the in-house Nexus design system. Fixed billing proof upload hang (Vercel filesystem write) by switching to base64 data URL storage with proper error handling. Fixed Listening Indonesian translation not rendering by making the parser tolerant of `indonesia` keys nested in either object or per-line array shapes. |
@@ -18,6 +19,111 @@
 | RN-2026.05.04-001 | 2026-05-04 01:10 +09:00 | Nexus Platform Team | Completed | Fixed character foundation lesson access and verified kana/kanji grids in localhost. |
 | RN-2026.05.03-002 | 2026-05-03 23:45 +09:00 | Nexus Platform Team | Completed | Added seedable Nihongo character content for kana, kanji, and vocabulary compounds, linked to lesson pages. |
 | RN-2026.05.03-001 | 2026-05-03 23:09 +09:00 | Nexus Platform Team | Release Candidate | Admin Operations Console, billing/trial foundation, recording visibility, architecture docs, and Ai-chan assistant foundation. |
+
+## RN-2026.05.24-001
+
+Completed the Nexus Talenta Indonesia Academy public commerce and UAT
+readiness release.
+
+### Background
+
+The platform needed to satisfy payment-provider review requirements
+while keeping the actual product surface credible for UAT: public pages
+must be accessible, products/services must be clearly described and
+orderable, legal/refund/contact information must exist, and authenticated
+users need a clearer post-login program/billing experience. The public
+marketing surface also needed to show prospective learners what the
+apps feel like before buying, without exposing full AI chat, recording,
+reading, listening, simulator, or progress-saving functionality.
+
+### Included Changes
+
+- Rebuilt the public landing experience around Nexus Talenta Indonesia
+  Academy branding, including the provided Nexus logo, program cards,
+  product/service descriptions, order CTAs, and a custom AI learning
+  apps commercial banner for schools, companies, training centers, and
+  UMKM.
+- Added public legal and support pages: `/terms`, `/refund-policy`,
+  `/contact`, and `/checkout`.
+- Added restricted overview-trial routes for `/overview/nihongo`,
+  `/overview/english`, `/overview/arabic`, and `/overview/pmp`. Each
+  route mimics the app workspace with sidebar navigation, coach/chat
+  teaser, module map, locked controls, and login/order CTAs. Trial
+  pages intentionally disable chat input, recording, reading, listening,
+  simulator scoring, and progress persistence.
+- Reworked landing program cards so `Overview trial` opens the
+  appropriate public mimic route instead of expanding static marketing
+  copy inline.
+- Refreshed login/register and post-login platform surfaces with a more
+  polished ed-tech visual direction and copy aligned to Nexus Talenta
+  Indonesia Academy rather than a single Nihongo-only product.
+- Added client and server email validation to registration, normalized
+  email addresses, and added transactional registration-confirmation
+  email support via SMTP env vars. Registration succeeds gracefully when
+  SMTP is not configured.
+- Added Midtrans sandbox pre-integration for billing checkout:
+  transaction creation, Snap/token handling, sandbox status awareness,
+  webhook/status validation helpers, and user billing copy that keeps
+  public payment language simple while leaving Midtrans-specific detail
+  in admin UI.
+- Updated Admin Console payment tools with sandbox open/close visibility
+  control, Midtrans-style transaction log summaries, monthly accordion
+  grouping, and simplified payment action surfaces.
+- Added reusable promo campaign admin UI so promo campaigns can be
+  edited and reused.
+- Improved Nexus AI Nihongo bright theme contrast so the light skin is
+  easier to read in UAT.
+
+### Files Touched
+
+- `app/page.tsx`
+- `app/checkout/*`
+- `app/contact/*`
+- `app/terms/*`
+- `app/refund-policy/*`
+- `app/overview/[app]/page.tsx`
+- `app/login/page.tsx`
+- `app/register/page.tsx`
+- `app/platform/dashboard/page.tsx`
+- `app/platform/programs/page.tsx`
+- `app/platform/billing/page.tsx`
+- `app/platform/admin/promos/*`
+- `app/admin/payments/page.tsx`
+- `components/layout/MarketingChrome.tsx`
+- `components/marketing/AppOverviewSection.tsx`
+- `components/admin/MidtransPaymentControl.tsx`
+- `components/admin/PromoCampaignClient.tsx`
+- `components/platform/ManualBillingClient.tsx`
+- `lib/platform/midtrans.ts`
+- `lib/platform/settings.ts`
+- `lib/platform/settings-policy.ts`
+- `lib/email/*`
+- `.env.example`
+
+### Verification
+
+- `npm run build`: passed.
+- Browser verified public landing `/#program` shows four `Overview trial`
+  links and no longer uses the old inline overview toggle.
+- Browser verified `/overview/nihongo`, `/overview/english`,
+  `/overview/arabic`, and `/overview/pmp` load with restricted trial
+  messaging, disabled inputs, locked sidebar/modules, and login/order
+  CTAs.
+- Browser verified the Nexus AI Nihongo bright theme contrast update on
+  the app route.
+- Registration API was tested with a UAT user and the temporary test
+  user was removed from the database after verification.
+
+### Known Notes
+
+- SMTP credentials are intentionally not committed. Registration emails
+  require SMTP env vars in the deployment environment; without them the
+  account still registers and logs a skipped-email state server-side.
+- Midtrans keys are stored only in environment variables and must not be
+  printed in logs, docs, or screenshots.
+- Lint still has unrelated historical warnings/errors in older app/test
+  areas; this release gate used the successful production build and
+  targeted browser verification.
 
 ## RN-2026.05.08-001
 

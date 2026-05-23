@@ -67,6 +67,79 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+@layer components {
+  .nexus-market-shell {
+    background:
+      radial-gradient(circle at 12% 8%, rgba(14, 165, 233, 0.12), transparent 26rem),
+      linear-gradient(180deg, #f7fbff 0%, #eef7ff 44%, #ffffff 100%);
+  }
+
+  .nexus-glass {
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    background: rgba(255, 255, 255, 0.84);
+    box-shadow: 0 24px 80px rgba(16, 24, 40, 0.08);
+    backdrop-filter: blur(18px);
+  }
+
+  .nexus-card {
+    border: 1px solid #e6edf7;
+    background: #ffffff;
+    box-shadow: 0 18px 50px rgba(16, 24, 40, 0.07);
+  }
+
+  .nexus-primary {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    background: #155eef;
+    padding: 0.75rem 1.15rem;
+    color: white;
+    font-weight: 800;
+    box-shadow: 0 16px 32px rgba(21, 94, 239, 0.28);
+    transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  }
+
+  .nexus-primary:hover {
+    background: #0f4ed8;
+    box-shadow: 0 20px 42px rgba(21, 94, 239, 0.34);
+    transform: translateY(-1px);
+  }
+
+  .nexus-secondary {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px solid #c9d8f0;
+    border-radius: 999px;
+    background: white;
+    padding: 0.75rem 1.15rem;
+    color: #14213d;
+    font-weight: 800;
+  }
+
+  .nexus-field {
+    min-height: 46px;
+    width: 100%;
+    border: 1px solid #d7e2f1;
+    border-radius: 14px;
+    background: white;
+    padding: 0.78rem 0.9rem;
+    color: #14213d;
+    outline: none;
+  }
+
+  .nexus-field:focus {
+    border-color: #155eef;
+    box-shadow: 0 0 0 4px rgba(21, 94, 239, 0.2);
+  }
 }
 
 /* ---------------------------------------------------------------- *
@@ -437,7 +510,7 @@ body {
 [data-theme="nexus"] .bg-white\/85,
 [data-theme="nexus"] .bg-white\/80,
 [data-theme="nexus"] .bg-white\/75 {
-  background-color: #ffffff;
+  background-color: #fffdf8;
 }
 [data-theme="nexus"] .bg-slate-50,
 [data-theme="nexus"] .bg-slate-100,
@@ -447,13 +520,13 @@ body {
 [data-theme="nexus"] .bg-zinc-100,
 [data-theme="nexus"] .bg-neutral-50,
 [data-theme="nexus"] .bg-neutral-100 {
-  background-color: #f3eee4;
+  background-color: #eee5d6;
 }
 [data-theme="nexus"] .bg-slate-200,
 [data-theme="nexus"] .bg-gray-200,
 [data-theme="nexus"] .bg-zinc-200,
 [data-theme="nexus"] .bg-neutral-200 {
-  background-color: #efeae0;
+  background-color: #e3d7c6;
 }
 [data-theme="nexus"] .bg-slate-900,
 [data-theme="nexus"] .bg-slate-950,
@@ -471,7 +544,7 @@ body {
 [data-theme="nexus"] .bg-blue-100,
 [data-theme="nexus"] .bg-indigo-50,
 [data-theme="nexus"] .bg-indigo-100 {
-  background-color: #fbe7d9;
+  background-color: #f6dcc8;
 }
 [data-theme="nexus"] .bg-cyan-500,
 [data-theme="nexus"] .bg-cyan-600,
@@ -483,7 +556,7 @@ body {
 [data-theme="nexus"] .bg-blue-700,
 [data-theme="nexus"] .bg-indigo-500,
 [data-theme="nexus"] .bg-indigo-600 {
-  background-color: #d97843;
+  background-color: #b85d2c;
   color: #ffffff;
 }
 
@@ -496,7 +569,7 @@ body {
 [data-theme="nexus"] .text-zinc-900,
 [data-theme="nexus"] .text-neutral-900,
 [data-theme="nexus"] .text-black {
-  color: #1c1917;
+  color: #16120f;
 }
 [data-theme="nexus"] .text-slate-700,
 [data-theme="nexus"] .text-slate-600,
@@ -505,7 +578,7 @@ body {
 [data-theme="nexus"] .text-zinc-700,
 [data-theme="nexus"] .text-zinc-600,
 [data-theme="nexus"] .text-neutral-700 {
-  color: #4a4338;
+  color: #332c24;
 }
 [data-theme="nexus"] .text-slate-500,
 [data-theme="nexus"] .text-slate-400,
@@ -513,10 +586,10 @@ body {
 [data-theme="nexus"] .text-gray-400,
 [data-theme="nexus"] .text-zinc-500,
 [data-theme="nexus"] .text-neutral-500 {
-  color: #837b6e;
+  color: #5f5548;
 }
 [data-theme="nexus"] .text-slate-300 {
-  color: #a39c8e;
+  color: #6f6456;
 }
 [data-theme="nexus"] .text-cyan-700,
 [data-theme="nexus"] .text-cyan-600,
@@ -529,7 +602,7 @@ body {
 [data-theme="nexus"] .text-blue-500,
 [data-theme="nexus"] .text-indigo-700,
 [data-theme="nexus"] .text-indigo-600 {
-  color: #b85d2c;
+  color: #984719;
 }
 
 [data-theme="nexus"] .border-slate-200,
@@ -540,33 +613,33 @@ body {
 [data-theme="nexus"] .border-neutral-200,
 [data-theme="nexus"] .border-white\/60,
 [data-theme="nexus"] .border-white\/40 {
-  border-color: #d9d2c4;
+  border-color: #c8baa7;
 }
 [data-theme="nexus"] .border-cyan-200,
 [data-theme="nexus"] .border-cyan-300,
 [data-theme="nexus"] .border-sky-200,
 [data-theme="nexus"] .border-blue-200,
 [data-theme="nexus"] .border-indigo-200 {
-  border-color: rgba(217, 120, 67, 0.4);
+  border-color: rgba(152, 71, 25, 0.5);
 }
 
 [data-theme="nexus"] .hover\:bg-slate-50:hover,
 [data-theme="nexus"] .hover\:bg-slate-100:hover,
 [data-theme="nexus"] .hover\:bg-gray-50:hover,
 [data-theme="nexus"] .hover\:bg-gray-100:hover {
-  background-color: #efeae0;
+  background-color: #e3d7c6;
 }
 [data-theme="nexus"] .hover\:bg-cyan-50:hover,
 [data-theme="nexus"] .hover\:bg-cyan-100:hover,
 [data-theme="nexus"] .hover\:bg-blue-50:hover,
 [data-theme="nexus"] .hover\:bg-indigo-50:hover {
-  background-color: #fbe7d9;
+  background-color: #f6dcc8;
 }
 [data-theme="nexus"] .hover\:bg-cyan-600:hover,
 [data-theme="nexus"] .hover\:bg-cyan-700:hover,
 [data-theme="nexus"] .hover\:bg-blue-600:hover,
 [data-theme="nexus"] .hover\:bg-blue-700:hover {
-  background-color: #b85d2c;
+  background-color: #984719;
   color: #ffffff;
 }
 [data-theme="nexus"] .hover\:text-slate-950:hover,
@@ -576,7 +649,7 @@ body {
 }
 [data-theme="nexus"] .hover\:text-cyan-700:hover,
 [data-theme="nexus"] .hover\:text-blue-700:hover {
-  color: #b85d2c;
+  color: #984719;
 }
 
 [data-theme="nexus"] .text-5xl {
@@ -616,20 +689,20 @@ body {
 [data-theme="nexus"] input,
 [data-theme="nexus"] textarea,
 [data-theme="nexus"] select {
-  background-color: #ffffff;
-  color: #1c1917;
-  border-color: #d9d2c4;
+  background-color: #fffdf8;
+  color: #16120f;
+  border-color: #c8baa7;
 }
 [data-theme="nexus"] input::placeholder,
 [data-theme="nexus"] textarea::placeholder {
-  color: #a39c8e;
+  color: #6f6456;
 }
 [data-theme="nexus"] input:focus,
 [data-theme="nexus"] textarea:focus,
 [data-theme="nexus"] select:focus {
-  outline: 2px solid rgba(217, 120, 67, 0.4);
+  outline: 2px solid rgba(152, 71, 25, 0.35);
   outline-offset: 1px;
-  border-color: #d97843;
+  border-color: #984719;
 }
 
 /* ---------------------------------------------------------------- *

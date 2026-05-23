@@ -46,14 +46,34 @@ export async function PATCH(req: Request) {
     platformSettingKeys.bankInfo,
     platformSettingKeys.midtransMode,
     platformSettingKeys.midtransEnabled,
+    platformSettingKeys.promoCampaigns,
   ];
 
   for (const key of allowedSettingKeys) {
     if (!(key in settings)) continue;
     const rawValue = String(settings[key] ?? "");
-    const value = key === platformSettingKeys.lessonPriceCents && rawValue
-      ? String(Math.max(0, Math.round(Number(rawValue) || 0)))
-      : rawValue;
+    let value =
+      key === platformSettingKeys.lessonPriceCents && rawValue
+        ? String(Math.max(0, Math.round(Number(rawValue) || 0)))
+        : rawValue;
+
+    if (key === platformSettingKeys.midtransMode) {
+      value = rawValue === "production" ? "production" : "sandbox";
+    }
+
+    if (key === platformSettingKeys.midtransEnabled) {
+      value = rawValue === "true" ? "true" : "false";
+    }
+
+    if (key === platformSettingKeys.promoCampaigns) {
+      try {
+        const parsed = JSON.parse(rawValue);
+        if (!Array.isArray(parsed)) continue;
+        value = JSON.stringify(parsed.slice(0, 20));
+      } catch {
+        continue;
+      }
+    }
 
     await prisma.platformSetting.update({
       where: { key },

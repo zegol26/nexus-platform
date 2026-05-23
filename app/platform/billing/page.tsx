@@ -64,7 +64,12 @@ function formatDate(date?: Date | null) {
   }).format(date);
 }
 
-export default async function PlatformBillingPage() {
+export default async function PlatformBillingPage({
+  searchParams,
+}: {
+  searchParams?: Promise<{ plan?: string }>;
+}) {
+  const resolvedSearchParams = await searchParams;
   const session = await getServerSession(authOptions);
 
   if (!session?.user?.email) {
@@ -109,12 +114,12 @@ export default async function PlatformBillingPage() {
         </p>
 
         <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950">
-          Access duration and payments
+          Access duration and checkout
         </h1>
 
         <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600">
-          Payment validation is ready for gateway integration. Paid transactions
-          extend app access according to the selected plan duration.
+          Selesaikan pembayaran program melalui checkout resmi. Setelah transaksi
+          tervalidasi, akses aplikasi diperpanjang sesuai durasi paket.
         </p>
       </section>
 
@@ -171,11 +176,12 @@ export default async function PlatformBillingPage() {
         }))}
         latestPayment={payments[0] ? { id: payments[0].id, status: payments[0].status } : null}
         billingSettings={billingSettings}
+        initialPlanId={resolvedSearchParams?.plan}
       />
 
       <section className="rounded-[2rem] border border-white/70 bg-white/82 p-6 shadow-xl shadow-slate-950/[0.04] backdrop-blur-2xl">
         <h2 className="text-xl font-semibold text-slate-950">
-          Payment history
+          Transaction history
         </h2>
 
         <div className="mt-5 overflow-hidden rounded-3xl border border-slate-200/80">

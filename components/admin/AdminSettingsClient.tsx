@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { MidtransPaymentControl } from "@/components/admin/MidtransPaymentControl";
 
 type Plan = {
   id: string;
@@ -19,6 +20,7 @@ type BillingSettings = {
   bankInfo: string;
   midtransMode: string;
   midtransEnabled: string;
+  promoCampaigns?: string;
 };
 
 export function AdminSettingsClient({
@@ -115,9 +117,9 @@ export function AdminSettingsClient({
       </section>
 
       <section className="rounded-2xl border border-slate-200 bg-white p-5">
-        <h3 className="font-semibold text-slate-950">Midtrans gateway UAT</h3>
+        <h3 className="font-semibold text-slate-950">Midtrans gateway</h3>
         <p className="mt-1 text-sm text-slate-500">
-          Siapkan sandbox dulu. User checkout baru aktif setelah env key diisi dan toggle enabled.
+          Siapkan sandbox untuk validasi, lalu switch ke production saat akun live siap.
         </p>
         <div className="mt-4 grid gap-4 lg:grid-cols-2">
           <label className="text-xs font-semibold text-slate-500">
@@ -127,7 +129,7 @@ export function AdminSettingsClient({
               onChange={(event) => setSettings({ ...settings, midtransMode: event.target.value })}
               className="mt-1 h-10 w-full rounded-xl border border-slate-300 bg-white px-3 text-sm"
             >
-              <option value="sandbox">Sandbox / UAT</option>
+              <option value="sandbox">Sandbox</option>
               <option value="production">Production</option>
             </select>
           </label>
@@ -144,6 +146,8 @@ export function AdminSettingsClient({
         </div>
       </section>
 
+      <MidtransPaymentControl billingSettings={settings} />
+
       <section className="rounded-2xl border border-slate-200 bg-white p-5">
         <h3 className="font-semibold text-slate-950">Per-lesson pricing</h3>
         <p className="mt-1 text-sm text-slate-500">Disimpan sebagai setting, bukan hardcoded. Bisa dipakai untuk flow lesson purchase berikutnya.</p>
@@ -158,31 +162,6 @@ export function AdminSettingsClient({
             placeholder="Belum diset"
           />
         </label>
-      </section>
-
-      <section className="rounded-2xl border border-slate-200 bg-white p-5">
-        <h3 className="font-semibold text-slate-950">Manual payment information</h3>
-        <p className="mt-1 text-sm text-slate-500">Informasi ini muncul di menu Billing user saat memilih QRIS atau Bank Transfer.</p>
-        <div className="mt-4 grid gap-4 lg:grid-cols-2">
-          <label className="text-xs font-semibold text-slate-500">
-            QRIS info
-            <textarea
-              value={settings.qrisInfo}
-              onChange={(event) => setSettings({ ...settings, qrisInfo: event.target.value })}
-              className="mt-1 min-h-32 w-full rounded-2xl border border-slate-300 px-3 py-2 text-sm"
-              placeholder="Belum diset"
-            />
-          </label>
-          <label className="text-xs font-semibold text-slate-500">
-            Bank account info
-            <textarea
-              value={settings.bankInfo}
-              onChange={(event) => setSettings({ ...settings, bankInfo: event.target.value })}
-              className="mt-1 min-h-32 w-full rounded-2xl border border-slate-300 px-3 py-2 text-sm"
-              placeholder="Belum diset"
-            />
-          </label>
-        </div>
       </section>
 
       <div className="flex flex-wrap items-center gap-3">

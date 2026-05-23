@@ -9,6 +9,7 @@ import {
   getMidtransClientKey,
   getMidtransMode,
   isMidtransEnabled,
+  validateMidtransEnvironmentKeys,
 } from "@/lib/platform/midtrans";
 
 export async function POST(req: Request) {
@@ -40,7 +41,7 @@ async function createInvoice(req: Request) {
 
   const body = await req.json();
   const planId = String(body.planId ?? "");
-  const method = String(body.method ?? "BANK_TRANSFER");
+  const method = "MIDTRANS";
 
   const plan = await prisma.subscriptionPlan.findUnique({
     where: { id: planId },
@@ -51,24 +52,27 @@ async function createInvoice(req: Request) {
     return NextResponse.json({ error: "Plan not found" }, { status: 404 });
   }
 
-  const provider = method === "MIDTRANS" ? "MIDTRANS" : "MANUAL";
-  const billingSettings =
-    provider === "MIDTRANS" ? await getBillingSettings() : null;
-  const mode = getMidtransMode(billingSettings?.midtransMode);
-  if (provider === "MIDTRANS" && !isMidtransEnabled(billingSettings?.midtransEnabled)) {
+  const provider = "MIDTRANS";
+  const billingSettings = await getBillingSettings();
+  const mode = getMidtransMode(billingSettings.midtransMode);
+  if (!isMidtransEnabled(billingSettings.midtransEnabled)) {
     return NextResponse.json(
       {
         error:
-          "Midtrans masih nonaktif untuk UAT. Aktifkan di Admin Settings setelah sandbox key diisi.",
+          "Pembayaran online sedang ditutup sementara. Silakan hubungi admin Nexus Talenta Indonesia.",
       },
       { status: 409 }
     );
   }
+  const keyValidation = validateMidtransEnvironmentKeys(mode);
+  if (!keyValidation.ok) {
+    return NextResponse.json(
+      { error: "Konfigurasi pembayaran belum siap. Silakan hubungi admin Nexus Talenta Indonesia." },
+      { status: 409 }
+    );
+  }
 
-  const providerRef =
-    provider === "MIDTRANS"
-      ? `nexus-${Date.now()}-${Math.random().toString(16).slice(2)}`
-      : `manual-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+  const providerRef = `nexus-${Date.now()}-${Math.random().toString(16).slice(2)}`;
 
   const payment = await prisma.paymentTransaction.create({
     data: {
@@ -84,10 +88,6 @@ async function createInvoice(req: Request) {
       rawPayload: JSON.stringify({ method }),
     },
   });
-
-  if (provider !== "MIDTRANS") {
-    return NextResponse.json({ payment });
-  }
 
   try {
     const snap = await createMidtransSnapTransaction(mode, {
@@ -141,10 +141,7 @@ async function createInvoice(req: Request) {
 
     return NextResponse.json(
       {
-        error:
-          error instanceof Error
-            ? error.message
-            : "Midtrans checkout belum bisa dibuat.",
+        error: "Checkout pembayaran belum bisa dibuat. Silakan coba lagi atau hubungi admin.",
       },
       { status: 502 }
     );

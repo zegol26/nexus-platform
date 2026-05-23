@@ -6,10 +6,11 @@ import { usePathname } from "next/navigation";
 const menuItems = [
   { label: "Dashboard", href: "/platform/dashboard", marker: "01" },
   { label: "Apps", href: "/platform/apps", marker: "02" },
-  { label: "Komunitas", href: "/platform/community", marker: "03" },
-  { label: "Game", href: "/platform/game", marker: "04" },
-  { label: "Billing", href: "/platform/billing", marker: "05" },
-  { label: "Settings", href: "/platform/settings", marker: "06" },
+  { label: "Program", href: "/platform/programs", marker: "03" },
+  { label: "Komunitas", href: "/platform/community", marker: "04" },
+  { label: "Game", href: "/platform/game", marker: "05" },
+  { label: "Billing", href: "/platform/billing", marker: "06" },
+  { label: "Settings", href: "/platform/settings", marker: "07" },
 ];
 
 export function PlatformSidebarNav({ isAdmin }: { isAdmin: boolean }) {
@@ -82,6 +83,26 @@ export function PlatformSidebarNav({ isAdmin }: { isAdmin: boolean }) {
               AC
             </span>
             Access Control
+          </Link>
+          <Link
+            href="/platform/admin/promos"
+            aria-current={isActive("/platform/admin/promos") ? "page" : undefined}
+            className={`flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm font-semibold transition ${
+              isActive("/platform/admin/promos")
+                ? "bg-blue-600 text-white shadow-sm"
+                : "text-slate-600 hover:bg-white hover:text-slate-950 hover:shadow-sm"
+            }`}
+          >
+            <span
+              className={`flex h-6 w-7 items-center justify-center rounded-md text-[10px] font-bold transition ${
+                isActive("/platform/admin/promos")
+                  ? "bg-white/15 text-white"
+                  : "bg-slate-100 text-slate-500"
+              }`}
+            >
+              PR
+            </span>
+            Promo Campaign
           </Link>
         </div>
       )}

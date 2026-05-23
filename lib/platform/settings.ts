@@ -30,6 +30,7 @@ export async function getBillingSettings() {
           platformSettingKeys.bankInfo,
           platformSettingKeys.midtransMode,
           platformSettingKeys.midtransEnabled,
+          platformSettingKeys.promoCampaigns,
         ],
       },
     },

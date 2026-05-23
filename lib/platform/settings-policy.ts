@@ -4,6 +4,7 @@ export const platformSettingKeys = {
   bankInfo: "PAYMENT_BANK_INFO",
   midtransMode: "MIDTRANS_MODE",
   midtransEnabled: "MIDTRANS_ENABLED",
+  promoCampaigns: "PROMO_CAMPAIGNS_JSON",
 } as const;
 
 export const defaultPlatformSettings = [
@@ -19,28 +20,35 @@ export const defaultPlatformSettings = [
     label: "QRIS payment information",
     value: "",
     valueType: "TEXTAREA",
-    description: "Shown to users on Billing when they select QRIS.",
+    description: "Legacy field retained for existing records. User checkout is handled by Midtrans.",
   },
   {
     key: platformSettingKeys.bankInfo,
     label: "Bank transfer information",
     value: "",
     valueType: "TEXTAREA",
-    description: "Shown to users on Billing when they select Bank Transfer.",
+    description: "Legacy field retained for existing records. User checkout is handled by Midtrans.",
   },
   {
     key: platformSettingKeys.midtransMode,
     label: "Midtrans mode",
     value: "sandbox",
     valueType: "TEXT",
-    description: "Use sandbox for UAT. Switch to production only after live keys and payment UAT pass.",
+    description: "Use sandbox before production. Switch to production only after live keys are ready.",
   },
   {
     key: platformSettingKeys.midtransEnabled,
     label: "Midtrans checkout enabled",
     value: "false",
     valueType: "BOOLEAN",
-    description: "When false, users can still use manual billing while Midtrans config is prepared.",
+    description: "When false, users cannot create checkout invoices.",
+  },
+  {
+    key: platformSettingKeys.promoCampaigns,
+    label: "Promo campaigns",
+    value: "",
+    valueType: "JSON",
+    description: "Reusable promo campaigns shown and managed from the promo admin UI.",
   },
 ] as const;
 
@@ -53,5 +61,6 @@ export function mapBillingSettings(settings: Array<{ key: string; value: string 
     bankInfo: map.get(platformSettingKeys.bankInfo) ?? "",
     midtransMode: map.get(platformSettingKeys.midtransMode) ?? "sandbox",
     midtransEnabled: map.get(platformSettingKeys.midtransEnabled) ?? "false",
+    promoCampaigns: map.get(platformSettingKeys.promoCampaigns) ?? "",
   };
 }
