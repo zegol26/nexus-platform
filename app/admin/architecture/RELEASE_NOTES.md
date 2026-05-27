@@ -4,6 +4,7 @@
 
 | Release Note | Date/Time (JST) | Author | Status | Summary |
 | --- | --- | --- | --- | --- |
+| RN-2026.05.28-001 | 2026-05-28 00:25 +09:00 | Nexus Platform Team | Completed | Fixed Nexus Kingdom target visibility and retaliation: target scouting now prioritizes recent attackers, lists kingdoms across all continents instead of only the first six, and incoming attack notifications include `Serang balik`. |
 | RN-2026.05.27-004 | 2026-05-27 23:58 +09:00 | Nexus Platform Team | Completed | Fixed the remaining plan catalog regression: billing/admin now self-heal separate Monthly, Quarterly, and Yearly rows per app, Settings locks period/duration instead of editing one monthly row into another period, and favicon uses `/nexus-ai-logo.png`. |
 | RN-2026.05.27-003 | 2026-05-27 23:45 +09:00 | Nexus Platform Team | Completed | Fixed admin plan pricing/period settings and checkout visibility regression: admin now edits rupiah, fixed periods update duration, `/checkout` lists all active order items, and billing exposes sandbox checkout only when sandbox UAT is enabled. |
 | RN-2026.05.27-002 | 2026-05-27 23:10 +09:00 | Nexus Platform Team | Completed | Added Midtrans Finish Redirect URL `/payment/finish`, restored Academy Home navigation from login/platform without logging users out, and enforced 4-hour idle logout on protected shells. |
@@ -24,6 +25,37 @@
 | RN-2026.05.04-001 | 2026-05-04 01:10 +09:00 | Nexus Platform Team | Completed | Fixed character foundation lesson access and verified kana/kanji grids in localhost. |
 | RN-2026.05.03-002 | 2026-05-03 23:45 +09:00 | Nexus Platform Team | Completed | Added seedable Nihongo character content for kana, kanji, and vocabulary compounds, linked to lesson pages. |
 | RN-2026.05.03-001 | 2026-05-03 23:09 +09:00 | Nexus Platform Team | Release Candidate | Admin Operations Console, billing/trial foundation, recording visibility, architecture docs, and Ai-chan assistant foundation. |
+
+## RN-2026.05.28-001
+
+Fixed Nexus Kingdom target discovery and retaliation visibility.
+
+### Root Cause
+
+- Cross-continent attacks were already enabled server-side, but the Target
+  Battle UI rendered only the first six targets.
+- Target ordering did not prioritize kingdoms that had recently attacked the
+  current user, so a defender could receive an attack notification but fail to
+  find that attacker in the visible target list.
+- Incoming attack notifications only allowed acknowledge/next, not direct
+  retaliation.
+
+### Included Changes
+
+- `getTargets` now merges recent attackers first, then all visible kingdoms
+  across continents, de-duplicated.
+- Target scouting now returns up to 200 kingdoms instead of a tiny preview.
+- Target Battle UI renders the full returned list in a scrollable panel and
+  displays the visible target count.
+- Incoming attack notification modal now includes `Serang balik`.
+
+### Verification
+
+- Run `npm run validate:game`.
+- Run `npm test`, `npx tsc --noEmit`, and `npm run build`.
+- Browser verify `/platform/game` or `/apps/nihongo/game` as a logged-in user:
+  target list shows multiple continents, and incoming attack modal can start a
+  counterattack.
 
 ## RN-2026.05.27-004
 

@@ -21,15 +21,17 @@ type IncomingAttack = {
   continent: string;
   stolenResourcesJson: Partial<GameResources>;
   defenderCasualtiesJson: CasualtyEntry[] | null;
-  attacker: { name: string; continent: string; castleLevel: number };
+  attacker: { id: string; name: string; continent: string; castleLevel: number };
 };
 
 export function AttackNotificationModal({
   incoming,
   onAcknowledge,
+  onRetaliate,
 }: {
   incoming: IncomingAttack[];
   onAcknowledge: () => void;
+  onRetaliate: (targetKingdomId: string, targetName: string) => void;
 }) {
   const [index, setIndex] = useState(0);
   const total = incoming.length;
@@ -165,6 +167,13 @@ export function AttackNotificationModal({
               className="rounded-full border border-slate-600 bg-slate-900/60 px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-slate-300 transition hover:bg-slate-800"
             >
               Tandai semua dibaca
+            </button>
+            <button
+              type="button"
+              onClick={() => onRetaliate(current.attacker.id, current.attacker.name)}
+              className="rounded-full border border-amber-400/50 bg-amber-400/10 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-amber-100 transition hover:bg-amber-400/20"
+            >
+              Serang balik
             </button>
             <button
               type="button"

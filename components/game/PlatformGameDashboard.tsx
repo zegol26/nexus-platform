@@ -54,7 +54,7 @@ type IncomingAttack = {
   continent: string;
   stolenResourcesJson: Partial<GameResources>;
   defenderCasualtiesJson: Array<{ unitKey: string; unitName: string; before: number; lost: number; after: number }> | null;
-  attacker: { name: string; continent: string; castleLevel: number };
+  attacker: { id: string; name: string; continent: string; castleLevel: number };
 };
 
 const RESOURCE_ICONS: Record<keyof GameResources, string> = {
@@ -234,7 +234,14 @@ export function PlatformGameDashboard({ mode }: { mode: GameDashboardMode }) {
   return (
     <div className="mx-auto max-w-7xl space-y-6">
       {showIncoming && incoming.length > 0 ? (
-        <AttackNotificationModal incoming={incoming} onAcknowledge={acknowledgeIncoming} />
+        <AttackNotificationModal
+          incoming={incoming}
+          onAcknowledge={acknowledgeIncoming}
+          onRetaliate={(targetKingdomId, targetName) => {
+            setShowIncoming(false);
+            void attackTarget(targetKingdomId, targetName);
+          }}
+        />
       ) : null}
 
       {battleReport ? (
@@ -435,8 +442,13 @@ export function PlatformGameDashboard({ mode }: { mode: GameDashboardMode }) {
               Belum ada target online di seluruh benua. Coba refresh sebentar.
             </p>
           ) : (
-            <div className="grid gap-2">
-              {targets.slice(0, 6).map((target) => {
+            <>
+            <div className="mb-3 rounded-2xl border border-rose-400/20 bg-rose-950/20 px-4 py-3 text-xs font-semibold text-rose-100">
+              {targets.length} kingdom terlihat dari semua continent. Penyerang terbaru diprioritaskan di atas supaya bisa langsung serang balik.
+            </div>
+            <div className="max-h-[32rem] overflow-y-auto pr-1">
+              <div className="grid gap-2">
+              {targets.map((target) => {
                 const targetMeta = getContinentMeta(target.continent);
                 return (
                   <div
@@ -469,7 +481,9 @@ export function PlatformGameDashboard({ mode }: { mode: GameDashboardMode }) {
                   </div>
                 );
               })}
+              </div>
             </div>
+            </>
           )}
         </Panel>
 

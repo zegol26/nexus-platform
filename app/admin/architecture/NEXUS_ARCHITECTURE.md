@@ -254,6 +254,15 @@ Brand metadata:
 
 - Root metadata uses `/nexus-ai-logo.png` for favicon and Apple touch icon.
 
+## Nexus Kingdoms Game
+
+Nexus Kingdoms supports cross-continent discovery and attacks. Target scouting
+must not be limited to the current continent or to a tiny preview slice. The
+game target API prioritizes kingdoms that recently attacked the current user,
+then lists kingdoms from all continents so retaliation stays visible and the
+battle loop remains fun. Incoming attack notifications include a direct
+`Serang balik` action.
+
 ## Deployment And Operations
 
 The project deploys to Vercel as a Next.js app. Production database compatibility is supported by production-safe seed checks that create missing platform tables before seed upserts when older deployments do not yet have the newest schema. Prisma remains the schema source of truth; migration discipline should be tightened before scale.

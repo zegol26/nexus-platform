@@ -296,14 +296,30 @@ export async function upgradeCastle(userId: string) {
 }
 
 export async function getTargets(userId: string) {
-  await getOrCreateGameKingdom(userId);
-  const targets = await prisma.gameKingdom.findMany({
-    where: { userId: { not: userId } },
-    orderBy: [{ castleLevel: "asc" }, { xp: "desc" }],
-    take: 60,
-    include: { armyUnits: true },
-  });
-  return targets.map(decorateKingdom);
+  const kingdom = await getOrCreateGameKingdom(userId);
+  const [recentAttackers, kingdoms] = await Promise.all([
+    prisma.gameBattleLog.findMany({
+      where: { defenderKingdomId: kingdom.id },
+      orderBy: { createdAt: "desc" },
+      take: 50,
+      include: { attacker: { include: { armyUnits: true } } },
+    }),
+    prisma.gameKingdom.findMany({
+      where: { userId: { not: userId } },
+      orderBy: [{ continent: "asc" }, { castleLevel: "desc" }, { xp: "desc" }],
+      take: 200,
+      include: { armyUnits: true },
+    }),
+  ]);
+
+  const seen = new Set<string>();
+  return [...recentAttackers.map((log) => log.attacker), ...kingdoms]
+    .filter((target) => {
+      if (seen.has(target.id)) return false;
+      seen.add(target.id);
+      return true;
+    })
+    .map(decorateKingdom);
 }
 
 export async function attackKingdom(userId: string, targetKingdomId: string) {
@@ -470,7 +486,7 @@ export async function getIncomingAttacks(userId: string) {
     orderBy: { createdAt: "desc" },
     take: 10,
     include: {
-      attacker: { select: { name: true, continent: true, castleLevel: true } },
+      attacker: { select: { id: true, name: true, continent: true, castleLevel: true } },
     },
   });
   return logs;

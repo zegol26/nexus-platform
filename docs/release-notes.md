@@ -1,5 +1,22 @@
 # Release Notes
 
+## [vNext] - Nexus Kingdom Retaliation Visibility
+
+### Fixed
+
+- Target Battle no longer hides most kingdoms behind a six-item preview. The
+  scrollable target list now shows every returned target across continents.
+- Target scouting prioritizes kingdoms that recently attacked the current user,
+  so revenge targets stay visible even when many kingdoms exist.
+- Incoming attack notification now has a direct `Serang balik` action.
+
+### Tested
+
+- `npm run validate:game`
+- `npm test`
+- `npx tsc --noEmit`
+- `npm run build`
+
 ## [vNext] - Dynamic Conversational English (DCE) and John AI Coach
 
 ### Added
