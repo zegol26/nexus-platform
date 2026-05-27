@@ -20,23 +20,22 @@ type Payment = {
   status: string;
 };
 
-type BillingSettings = {
-  qrisInfo: string;
-  bankInfo: string;
-  lessonPriceCents: string;
-  midtransMode: string;
-  midtransEnabled: string;
+type PaymentOption = {
+  mode: string;
+  label: string;
+  description: string;
+  enabled: boolean;
 };
 
 export function ManualBillingClient({
   plans,
   latestPayment,
-  billingSettings,
+  paymentOptions,
   initialPlanId,
 }: {
   plans: Plan[];
   latestPayment?: Payment | null;
-  billingSettings: BillingSettings;
+  paymentOptions: PaymentOption[];
   initialPlanId?: string;
 }) {
   const [planId, setPlanId] = useState(
@@ -48,9 +47,9 @@ export function ManualBillingClient({
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
   const selectedPlan = plans.find((plan) => plan.id === planId);
-  const midtransActive = billingSettings.midtransEnabled === "true";
+  const availablePaymentOptions = paymentOptions.filter((option) => option.enabled);
 
-  async function createInvoice() {
+  async function createInvoice(mode: string) {
     if (!planId) return;
     setLoading(true);
     setStatus("");
@@ -58,7 +57,7 @@ export function ManualBillingClient({
     const response = await fetch("/api/platform/billing/invoices", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ planId, method: "MIDTRANS" }),
+      body: JSON.stringify({ planId, method: "MIDTRANS", mode }),
     });
     const payload = await response.json();
     setLoading(false);
@@ -106,14 +105,20 @@ export function ManualBillingClient({
             </option>
           ))}
         </select>
-        <button
-          type="button"
-          onClick={createInvoice}
-          disabled={loading || !planId || !midtransActive}
-          className="rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white disabled:bg-slate-400"
-        >
-          {loading ? "Menyiapkan..." : "Lanjut bayar"}
-        </button>
+        <div className="flex flex-wrap gap-2">
+          {availablePaymentOptions.map((option) => (
+            <button
+              key={option.mode}
+              type="button"
+              onClick={() => createInvoice(option.mode)}
+              disabled={loading || !planId}
+              className="rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white disabled:bg-slate-400"
+              title={option.description}
+            >
+              {loading ? "Menyiapkan..." : option.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="mt-4 rounded-2xl border border-cyan-200 bg-white p-4">
@@ -127,7 +132,7 @@ export function ManualBillingClient({
               }).format(selectedPlan.priceCents / 100)}`
             : "Pilih program terlebih dahulu."}
         </p>
-        {!midtransActive ? (
+        {availablePaymentOptions.length === 0 ? (
           <p className="mt-3 rounded-2xl bg-amber-50 px-4 py-3 text-sm font-semibold text-amber-800">
             Pembayaran online sedang ditutup sementara oleh admin.
           </p>

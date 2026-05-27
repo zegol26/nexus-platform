@@ -16,8 +16,14 @@ import {
   getMidtransRuntimeMode,
   isMidtransCheckoutOpen,
   mapMidtransStatus,
+  resolveMidtransCheckoutMode,
 } from "../lib/platform/midtrans";
 import { canActOnPayment, normalizePaymentVerificationAction } from "../lib/platform/payment-policy";
+import {
+  durationDaysForBillingPeriod,
+  priceCentsToRupiah,
+  rupiahToPriceCents,
+} from "../lib/platform/pricing-policy";
 import {
   mapBillingSettings,
   normalizePlatformSettingsPatch,
@@ -150,18 +156,32 @@ test("production payment runtime is always open while sandbox remains toggleable
   process.env.VERCEL_ENV = "production";
   assert.equal(getMidtransRuntimeMode("sandbox"), "production");
   assert.equal(isMidtransCheckoutOpen("production", "false"), true);
+  assert.equal(resolveMidtransCheckoutMode("production", "false"), "production");
+  assert.equal(resolveMidtransCheckoutMode("sandbox", "true"), "sandbox");
+  assert.equal(resolveMidtransCheckoutMode("sandbox", "false"), null);
 
   process.env.VERCEL_ENV = "preview";
   assert.equal(getMidtransRuntimeMode("production"), "sandbox");
   assert.equal(getMidtransRuntimeMode("sandbox"), "sandbox");
   assert.equal(isMidtransCheckoutOpen("sandbox", "false"), false);
   assert.equal(isMidtransCheckoutOpen("sandbox", "true"), true);
+  assert.equal(resolveMidtransCheckoutMode("production", "true"), "sandbox");
+  assert.equal(resolveMidtransCheckoutMode("sandbox", "true"), "sandbox");
 
   if (originalVercelEnv === undefined) {
     delete process.env.VERCEL_ENV;
   } else {
     process.env.VERCEL_ENV = originalVercelEnv;
   }
+});
+
+test("pricing policy stores rupiah as cents and locks fixed billing periods to the right duration", () => {
+  assert.equal(rupiahToPriceCents("120000"), 12000000);
+  assert.equal(priceCentsToRupiah(25000000), 250000);
+  assert.equal(durationDaysForBillingPeriod("MONTHLY", 1), 30);
+  assert.equal(durationDaysForBillingPeriod("QUARTERLY", 30), 90);
+  assert.equal(durationDaysForBillingPeriod("YEARLY", 30), 365);
+  assert.equal(durationDaysForBillingPeriod("CUSTOM", 45), 45);
 });
 
 test("manual payment policy disables actions for rejected payments", () => {

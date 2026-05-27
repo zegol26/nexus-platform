@@ -4,6 +4,7 @@
 
 | Release Note | Date/Time (JST) | Author | Status | Summary |
 | --- | --- | --- | --- | --- |
+| RN-2026.05.27-003 | 2026-05-27 23:45 +09:00 | Nexus Platform Team | Completed | Fixed admin plan pricing/period settings and checkout visibility regression: admin now edits rupiah, fixed periods update duration, `/checkout` lists all active order items, and billing exposes sandbox checkout only when sandbox UAT is enabled. |
 | RN-2026.05.27-002 | 2026-05-27 23:10 +09:00 | Nexus Platform Team | Completed | Added Midtrans Finish Redirect URL `/payment/finish`, restored Academy Home navigation from login/platform without logging users out, and enforced 4-hour idle logout on protected shells. |
 | RN-2026.05.27-001 | 2026-05-27 22:30 +09:00 | Nexus Platform Team | Completed | Payment gateway RCA and hardening: restored Academy checkout after a Vercel project/domain alias regression, made production Midtrans an environment-driven always-on runtime path, limited Admin Console controls to sandbox open/close only, and documented deployment countermeasures. |
 | RN-2026.05.24-002 | 2026-05-24 01:30 +09:00 | Nexus Platform Team | Completed | Reinforced app access enforcement so expired access no longer opens app routes/features, normal users only see valid owned apps, internal lesson engine is admin-only, and mojibake characters were cleaned from Nihongo/English/Arabic app UI and tutor copy. |
@@ -22,6 +23,43 @@
 | RN-2026.05.04-001 | 2026-05-04 01:10 +09:00 | Nexus Platform Team | Completed | Fixed character foundation lesson access and verified kana/kanji grids in localhost. |
 | RN-2026.05.03-002 | 2026-05-03 23:45 +09:00 | Nexus Platform Team | Completed | Added seedable Nihongo character content for kana, kanji, and vocabulary compounds, linked to lesson pages. |
 | RN-2026.05.03-001 | 2026-05-03 23:09 +09:00 | Nexus Platform Team | Release Candidate | Admin Operations Console, billing/trial foundation, recording visibility, architecture docs, and Ai-chan assistant foundation. |
+
+## RN-2026.05.27-003
+
+Fixed Settings and checkout regressions around plan periods, price entry, and
+sandbox UAT visibility.
+
+### Root Cause
+
+- Admin Settings exposed the internal `priceCents` field directly, which made
+  operators enter storage units instead of rupiah.
+- Changing `billingPeriod` did not update `durationDays`, so Quarterly/Yearly
+  looked selected while invoices could still use a 30-day duration.
+- Public `/checkout` hard-filtered `MONTHLY`, so active quarterly/yearly plans
+  could disappear from the order page and make the page look empty.
+- User billing had one Midtrans button tied to the effective runtime state,
+  instead of showing production and optional sandbox UAT actions separately.
+
+### Included Changes
+
+- Added pricing policy helpers for rupiah-to-cents storage conversion and fixed
+  period durations.
+- Changed Admin Settings labels and payloads from cents to rupiah.
+- Normalized admin settings API writes so `MONTHLY`, `QUARTERLY`, and `YEARLY`
+  always store 30, 90, and 365 days respectively.
+- Updated `/checkout` to show every active plan, including monthly, quarterly,
+  yearly, and custom plans.
+- Updated user billing so production `Lanjut bayar` stays available in
+  production, while `Lanjut bayar (sandbox)` appears only when sandbox checkout
+  is enabled.
+
+### Verification
+
+- `npm test`: includes pricing period and Midtrans mode selection regression
+  coverage.
+- `npx tsc --noEmit`: must pass before deployment.
+- Before aliasing production, verify `/checkout`, `/api/auth/csrf`,
+  `/admin/settings`, and `/platform/billing` on the candidate deployment.
 
 ## RN-2026.05.27-002
 

@@ -2,6 +2,11 @@
 
 import { useState } from "react";
 import { MidtransPaymentControl } from "@/components/admin/MidtransPaymentControl";
+import {
+  durationDaysForBillingPeriod,
+  priceCentsToRupiah,
+  rupiahToPriceCents,
+} from "@/lib/platform/pricing-policy";
 
 type Plan = {
   id: string;
@@ -30,8 +35,16 @@ export function AdminSettingsClient({
   plans: Plan[];
   billingSettings: BillingSettings;
 }) {
-  const [draftPlans, setDraftPlans] = useState(plans);
+  const [draftPlans, setDraftPlans] = useState(
+    plans.map((plan) => ({
+      ...plan,
+      durationDays: durationDaysForBillingPeriod(plan.billingPeriod, plan.durationDays),
+    }))
+  );
   const [settings, setSettings] = useState(billingSettings);
+  const [lessonPriceRupiah, setLessonPriceRupiah] = useState(
+    String(priceCentsToRupiah(Number(billingSettings.lessonPriceCents)))
+  );
   const [status, setStatus] = useState("");
   const [saving, setSaving] = useState(false);
 
@@ -45,12 +58,15 @@ export function AdminSettingsClient({
       body: JSON.stringify({
         plans: draftPlans.map((plan) => ({
           id: plan.id,
-          priceCents: plan.priceCents,
+          priceRupiah: priceCentsToRupiah(plan.priceCents),
           durationDays: plan.durationDays,
           billingPeriod: plan.billingPeriod,
           active: plan.active,
         })),
-        settings,
+        settings: {
+          ...settings,
+          lessonPriceCents: String(rupiahToPriceCents(lessonPriceRupiah)),
+        },
       }),
     });
     const payload = await response.json();
@@ -71,12 +87,12 @@ export function AdminSettingsClient({
                 <p className="text-xs text-slate-500">{plan.code}</p>
               </div>
               <label className="text-xs font-semibold text-slate-500">
-                Price cents
+                Harga rupiah
                 <input
                   type="number"
                   min={0}
-                  value={plan.priceCents}
-                  onChange={(event) => updatePlan(index, { priceCents: Number(event.target.value) })}
+                  value={priceCentsToRupiah(plan.priceCents)}
+                  onChange={(event) => updatePlan(index, { priceCents: rupiahToPriceCents(event.target.value) })}
                   className="mt-1 h-10 w-full rounded-xl border border-slate-300 bg-white px-3 text-sm"
                 />
               </label>
@@ -94,7 +110,13 @@ export function AdminSettingsClient({
                 Billing period
                 <select
                   value={plan.billingPeriod}
-                  onChange={(event) => updatePlan(index, { billingPeriod: event.target.value })}
+                  onChange={(event) => {
+                    const billingPeriod = event.target.value;
+                    updatePlan(index, {
+                      billingPeriod,
+                      durationDays: durationDaysForBillingPeriod(billingPeriod, plan.durationDays),
+                    });
+                  }}
                   className="mt-1 h-10 w-full rounded-xl border border-slate-300 bg-white px-3 text-sm"
                 >
                   <option value="MONTHLY">Monthly</option>
@@ -146,12 +168,12 @@ export function AdminSettingsClient({
         <h3 className="font-semibold text-slate-950">Per-lesson pricing</h3>
         <p className="mt-1 text-sm text-slate-500">Disimpan sebagai setting, bukan hardcoded. Bisa dipakai untuk flow lesson purchase berikutnya.</p>
         <label className="mt-4 block max-w-xs text-xs font-semibold text-slate-500">
-          Nihongo lesson price cents
+          Nihongo lesson price rupiah
           <input
             type="number"
             min={0}
-            value={settings.lessonPriceCents}
-            onChange={(event) => setSettings({ ...settings, lessonPriceCents: event.target.value })}
+            value={lessonPriceRupiah}
+            onChange={(event) => setLessonPriceRupiah(event.target.value)}
             className="mt-1 h-10 w-full rounded-xl border border-slate-300 px-3 text-sm"
             placeholder="Belum diset"
           />

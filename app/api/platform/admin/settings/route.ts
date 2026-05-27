@@ -4,6 +4,11 @@ import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
 import { ensurePlatformSettings, platformSettingKeys } from "@/lib/platform/settings";
 import { normalizePlatformSettingsPatch } from "@/lib/platform/settings-policy";
+import {
+  durationDaysForBillingPeriod,
+  normalizeBillingPeriod,
+  rupiahToPriceCents,
+} from "@/lib/platform/pricing-policy";
 
 export async function PATCH(req: Request) {
   const session = await getServerSession(authOptions);
@@ -24,9 +29,12 @@ export async function PATCH(req: Request) {
 
   for (const item of planUpdates) {
     const id = String(item.id ?? "");
-    const priceCents = Number(item.priceCents);
-    const durationDays = Number(item.durationDays);
-    const billingPeriod = String(item.billingPeriod ?? "MONTHLY");
+    const priceCents =
+      "priceRupiah" in item
+        ? rupiahToPriceCents(item.priceRupiah)
+        : Math.max(0, Math.round(Number(item.priceCents) || 0));
+    const billingPeriod = normalizeBillingPeriod(String(item.billingPeriod ?? "MONTHLY"));
+    const durationDays = durationDaysForBillingPeriod(billingPeriod, Number(item.durationDays));
     const active = Boolean(item.active);
 
     if (!id || !Number.isFinite(priceCents) || priceCents < 0 || !Number.isFinite(durationDays) || durationDays < 1) {

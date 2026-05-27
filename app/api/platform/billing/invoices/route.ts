@@ -7,8 +7,7 @@ import { getBillingSettings } from "@/lib/platform/settings";
 import {
   createMidtransSnapTransaction,
   getMidtransClientKey,
-  getMidtransRuntimeMode,
-  isMidtransCheckoutOpen,
+  resolveMidtransCheckoutMode,
   validateMidtransEnvironmentKeys,
 } from "@/lib/platform/midtrans";
 
@@ -41,6 +40,7 @@ async function createInvoice(req: Request) {
 
   const body = await req.json();
   const planId = String(body.planId ?? "");
+  const requestedMode = String(body.mode ?? "");
   const method = "MIDTRANS";
 
   const plan = await prisma.subscriptionPlan.findUnique({
@@ -54,12 +54,11 @@ async function createInvoice(req: Request) {
 
   const provider = "MIDTRANS";
   const billingSettings = await getBillingSettings();
-  const mode = getMidtransRuntimeMode(billingSettings.midtransMode);
-  if (!isMidtransCheckoutOpen(mode, billingSettings.midtransEnabled)) {
+  const mode = resolveMidtransCheckoutMode(requestedMode, billingSettings.midtransEnabled);
+  if (!mode) {
     return NextResponse.json(
       {
-        error:
-          "Sandbox checkout sedang ditutup sementara. Silakan hubungi admin Nexus Talenta Indonesia.",
+        error: "Checkout ini sedang ditutup sementara. Silakan pilih opsi pembayaran yang tersedia.",
       },
       { status: 409 }
     );

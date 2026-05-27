@@ -4,7 +4,7 @@ import { ManualBillingClient } from "@/components/platform/ManualBillingClient";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
 import { getBillingSettings } from "@/lib/platform/settings";
-import { getMidtransRuntimeMode, isMidtransCheckoutOpen } from "@/lib/platform/midtrans";
+import { isMidtransModeAvailable } from "@/lib/platform/midtrans";
 
 export const dynamic = "force-dynamic";
 
@@ -106,14 +106,20 @@ export default async function PlatformBillingPage({
   const appAccess = user.appAccess as BillingAppAccessRow[];
   const payments = user.payments as BillingPaymentRow[];
   const typedPlans = plans as BillingPlanRow[];
-  const midtransRuntimeMode = getMidtransRuntimeMode(billingSettings.midtransMode);
-  const effectiveBillingSettings = {
-    ...billingSettings,
-    midtransMode: midtransRuntimeMode,
-    midtransEnabled: isMidtransCheckoutOpen(midtransRuntimeMode, billingSettings.midtransEnabled)
-      ? "true"
-      : "false",
-  };
+  const paymentOptions = [
+    {
+      mode: "production",
+      label: "Lanjut bayar",
+      description: "Pembayaran resmi production.",
+      enabled: isMidtransModeAvailable("production", billingSettings.midtransEnabled),
+    },
+    {
+      mode: "sandbox",
+      label: "Lanjut bayar (sandbox)",
+      description: "UAT sandbox untuk simulasi pembayaran.",
+      enabled: isMidtransModeAvailable("sandbox", billingSettings.midtransEnabled),
+    },
+  ];
 
   return (
     <div className="mx-auto max-w-7xl space-y-6">
@@ -184,7 +190,7 @@ export default async function PlatformBillingPage({
           app: { name: plan.app.name },
         }))}
         latestPayment={payments[0] ? { id: payments[0].id, status: payments[0].status } : null}
-        billingSettings={effectiveBillingSettings}
+        paymentOptions={paymentOptions}
         initialPlanId={resolvedSearchParams?.plan}
       />
 

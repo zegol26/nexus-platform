@@ -34,6 +34,19 @@ export function isMidtransCheckoutOpen(mode: MidtransMode, settingValue?: string
   return mode === "production" || isMidtransEnabled(settingValue);
 }
 
+export function isMidtransModeAvailable(mode: MidtransMode, settingValue?: string | null) {
+  if (mode === "production") return getMidtransRuntimeMode() === "production";
+  return isMidtransEnabled(settingValue);
+}
+
+export function resolveMidtransCheckoutMode(
+  requestedMode: string | null | undefined,
+  settingValue?: string | null
+): MidtransMode | null {
+  const mode = requestedMode === "sandbox" ? "sandbox" : getMidtransRuntimeMode();
+  return isMidtransModeAvailable(mode, settingValue) ? mode : null;
+}
+
 export function getMidtransBaseUrl(mode: string) {
   return mode === "production"
     ? "https://app.midtrans.com"

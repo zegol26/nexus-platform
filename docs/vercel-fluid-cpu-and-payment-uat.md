@@ -59,16 +59,22 @@ Runtime policy:
 Sandbox UAT flow:
 
 1. Go to `/admin/settings`.
-2. Confirm subscription plans for each app: monthly, quarterly, yearly.
-3. Open sandbox checkout from Admin Settings or `/admin/payments`.
-4. User opens `/platform/billing`, selects Midtrans, and creates invoice.
-5. Midtrans notification URL should point to:
+2. Confirm subscription plans for each app: monthly, quarterly, yearly. Admin
+   pricing inputs are rupiah amounts; the application stores cents internally.
+   Fixed periods must keep the matching durations: monthly 30 days, quarterly
+   90 days, yearly 365 days.
+3. Confirm `/checkout` shows all active order items, not only monthly plans.
+4. Open sandbox checkout from Admin Settings or `/admin/payments`.
+5. User opens `/platform/billing`, selects the sandbox checkout button, and
+   creates a sandbox invoice. When sandbox checkout is disabled, billing must
+   only show the production `Lanjut bayar` button.
+6. Midtrans notification URL should point to:
 
 ```txt
 https://YOUR_DOMAIN/api/platform/billing/midtrans/webhook
 ```
 
-6. Midtrans Finish Redirect URL should point to:
+7. Midtrans Finish Redirect URL should point to:
 
 ```txt
 https://YOUR_DOMAIN/payment/finish
@@ -116,6 +122,12 @@ payment, webhook, access activation, admin payment history, `/checkout`, and
 - Authenticated platform sessions use a 4-hour idle timeout. Navigation from
   login/dashboard back to Academy Home must not sign the user out; explicit
   logout and 4 hours of inactivity are the logout boundaries.
+- Checkout order listing must not hard-filter `MONTHLY`. It must display all
+  active plans so admin changes to quarterly/yearly do not make the public
+  order page look empty.
+- Admin Settings must accept business-facing rupiah input while preserving the
+  existing internal cents storage. Period changes must update duration together
+  with the period so invoices and subscriptions use the intended access length.
 - Before aliasing `nexustalenta-academy.com`, verify:
   - `vercel inspect <candidate-deployment>` shows the intended project;
   - `vercel alias ls` shows which deployment currently owns the domain;

@@ -9,6 +9,7 @@ export const dynamic = "force-dynamic";
 type CheckoutPlan = {
   id: string;
   name: string;
+  billingPeriod: string;
   priceCents: number;
   currency: string;
   durationDays: number;
@@ -38,15 +39,21 @@ function loginHref(planId: string) {
   return `/login?callbackUrl=${encodeURIComponent(`/platform/billing?plan=${planId}`)}`;
 }
 
+function periodLabel(period: string, durationDays: number) {
+  if (period === "MONTHLY") return "Monthly";
+  if (period === "QUARTERLY") return "Quarterly";
+  if (period === "YEARLY") return "Yearly";
+  return `${durationDays} hari`;
+}
+
 export default async function CheckoutPage() {
   const plans = (await prisma.subscriptionPlan.findMany({
     where: {
       active: true,
-      billingPeriod: "MONTHLY",
       app: { status: "ACTIVE" },
     },
     include: { app: true },
-    orderBy: [{ appId: "asc" }],
+    orderBy: [{ appId: "asc" }, { durationDays: "asc" }],
   })) as CheckoutPlan[];
 
   return (
@@ -63,6 +70,15 @@ export default async function CheckoutPage() {
             harga, dan jalur order resmi untuk masuk ke platform pembelajaran.
           </p>
           <div className="mt-8 grid gap-5">
+            {plans.length === 0 ? (
+              <div className="nexus-card rounded-2xl p-5">
+                <p className="font-black text-slate-950">Program belum tersedia.</p>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  Admin perlu mengaktifkan minimal satu plan di Operations Console
+                  sebelum order online bisa dipilih.
+                </p>
+              </div>
+            ) : null}
             {plans.map((plan) => (
               <Link
                 key={plan.id}
@@ -78,7 +94,9 @@ export default async function CheckoutPage() {
                       </span>
                     </div>
                     <p className="mt-2 text-sm leading-6 text-slate-600">{plan.app.description}</p>
-                    <p className="mt-3 text-sm font-extrabold text-slate-500">Durasi akses: {plan.durationDays} hari</p>
+                    <p className="mt-3 text-sm font-extrabold text-slate-500">
+                      {periodLabel(plan.billingPeriod, plan.durationDays)} - Durasi akses: {plan.durationDays} hari
+                    </p>
                   </div>
                   <div className="text-left sm:text-right">
                     <p className="text-2xl font-black text-blue-700">{promoMoney(plan.priceCents, plan.currency)}</p>

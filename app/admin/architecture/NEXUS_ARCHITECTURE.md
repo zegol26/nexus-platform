@@ -147,6 +147,13 @@ are not hardcoded in the UI. They are stored as `PlatformSetting` records
 and managed from admin surfaces. The user billing page reads the same
 settings through shared helpers.
 
+Admin pricing input is business-facing rupiah. The database still stores
+`priceCents` for existing payment compatibility, but admin forms and docs must
+not ask operators to enter cents. Fixed billing periods are coupled to their
+durations: `MONTHLY` is 30 days, `QUARTERLY` is 90 days, and `YEARLY` is 365
+days. Public `/checkout` must list all active plans, not only monthly plans, so
+quarterly/yearly configuration cannot hide order items.
+
 Payment-provider secrets are environment variables only. They must not be
 printed in release notes, architecture docs, screenshots, or client-side
 code. Public user-facing payment copy should stay channel-focused
@@ -158,6 +165,9 @@ Midtrans production mode is controlled by deployment runtime, not by admin UI:
 - Vercel production deployments use production Midtrans mode automatically.
 - Production checkout is always open when the production server key exists.
 - Admin Console controls only sandbox checkout open/closed state for UAT.
+- When sandbox checkout is enabled, user billing shows an additional
+  `Lanjut bayar (sandbox)` action. When sandbox checkout is disabled, user
+  billing shows only the production `Lanjut bayar` action in production.
 - Webhooks verify against the transaction's stored `midtransMode` whenever it
   exists, so historical sandbox transactions continue to validate after a live
   gateway is configured.
