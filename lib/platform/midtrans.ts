@@ -1,5 +1,7 @@
 import crypto from "node:crypto";
 
+export type MidtransMode = "sandbox" | "production";
+
 type MidtransSnapRequest = {
   orderId: string;
   grossAmount: number;
@@ -19,8 +21,17 @@ export function isMidtransEnabled(settingValue?: string | null) {
   return settingValue === "true";
 }
 
-export function getMidtransMode(settingValue?: string | null) {
+export function getMidtransMode(settingValue?: string | null): MidtransMode {
   return settingValue === "production" ? "production" : "sandbox";
+}
+
+export function getMidtransRuntimeMode(_settingValue?: string | null): MidtransMode {
+  if (process.env.VERCEL_ENV === "production") return "production";
+  return "sandbox";
+}
+
+export function isMidtransCheckoutOpen(mode: MidtransMode, settingValue?: string | null) {
+  return mode === "production" || isMidtransEnabled(settingValue);
 }
 
 export function getMidtransBaseUrl(mode: string) {

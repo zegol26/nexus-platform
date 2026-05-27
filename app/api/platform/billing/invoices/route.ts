@@ -7,8 +7,8 @@ import { getBillingSettings } from "@/lib/platform/settings";
 import {
   createMidtransSnapTransaction,
   getMidtransClientKey,
-  getMidtransMode,
-  isMidtransEnabled,
+  getMidtransRuntimeMode,
+  isMidtransCheckoutOpen,
   validateMidtransEnvironmentKeys,
 } from "@/lib/platform/midtrans";
 
@@ -54,12 +54,12 @@ async function createInvoice(req: Request) {
 
   const provider = "MIDTRANS";
   const billingSettings = await getBillingSettings();
-  const mode = getMidtransMode(billingSettings.midtransMode);
-  if (!isMidtransEnabled(billingSettings.midtransEnabled)) {
+  const mode = getMidtransRuntimeMode(billingSettings.midtransMode);
+  if (!isMidtransCheckoutOpen(mode, billingSettings.midtransEnabled)) {
     return NextResponse.json(
       {
         error:
-          "Pembayaran online sedang ditutup sementara. Silakan hubungi admin Nexus Talenta Indonesia.",
+          "Sandbox checkout sedang ditutup sementara. Silakan hubungi admin Nexus Talenta Indonesia.",
       },
       { status: 409 }
     );

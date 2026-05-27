@@ -10,7 +10,13 @@ import {
   decideReadingAccess,
 } from "../lib/nexus/access-policy";
 import { normalizeRequestedVariant, selectLessonTemplateVariant } from "../lib/nihongo/lesson-cache-policy";
-import { getMidtransBaseUrl, getMidtransMode, mapMidtransStatus } from "../lib/platform/midtrans";
+import {
+  getMidtransBaseUrl,
+  getMidtransMode,
+  getMidtransRuntimeMode,
+  isMidtransCheckoutOpen,
+  mapMidtransStatus,
+} from "../lib/platform/midtrans";
 import { canActOnPayment, normalizePaymentVerificationAction } from "../lib/platform/payment-policy";
 import {
   mapBillingSettings,
@@ -136,6 +142,26 @@ test("midtrans mode policy separates sandbox and production payment flows", () =
   assert.equal(mapMidtransStatus("settlement"), "PAID");
   assert.equal(mapMidtransStatus("capture", "challenge"), "WAITING_VERIFICATION");
   assert.equal(mapMidtransStatus("pending"), "PENDING");
+});
+
+test("production payment runtime is always open while sandbox remains toggleable", () => {
+  const originalVercelEnv = process.env.VERCEL_ENV;
+
+  process.env.VERCEL_ENV = "production";
+  assert.equal(getMidtransRuntimeMode("sandbox"), "production");
+  assert.equal(isMidtransCheckoutOpen("production", "false"), true);
+
+  process.env.VERCEL_ENV = "preview";
+  assert.equal(getMidtransRuntimeMode("production"), "sandbox");
+  assert.equal(getMidtransRuntimeMode("sandbox"), "sandbox");
+  assert.equal(isMidtransCheckoutOpen("sandbox", "false"), false);
+  assert.equal(isMidtransCheckoutOpen("sandbox", "true"), true);
+
+  if (originalVercelEnv === undefined) {
+    delete process.env.VERCEL_ENV;
+  } else {
+    process.env.VERCEL_ENV = originalVercelEnv;
+  }
 });
 
 test("manual payment policy disables actions for rejected payments", () => {

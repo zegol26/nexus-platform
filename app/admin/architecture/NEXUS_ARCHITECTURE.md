@@ -1,6 +1,6 @@
 # Nexus Platform / Nexus AI Nihongo Architecture
 
-Last updated: 2026-05-24
+Last updated: 2026-05-27
 
 ## Release Gate Status
 
@@ -140,7 +140,7 @@ Subscription states:
 - `EXPIRED`
 - `CANCELED`
 
-Pricing, promo controls, payment-gateway visibility, and checkout copy
+Pricing, promo controls, sandbox payment-gateway visibility, and checkout copy
 are not hardcoded in the UI. They are stored as `PlatformSetting` records
 and managed from admin surfaces. The user billing page reads the same
 settings through shared helpers.
@@ -150,6 +150,17 @@ printed in release notes, architecture docs, screenshots, or client-side
 code. Public user-facing payment copy should stay channel-focused
 (`QRIS`, `Virtual Account`, `E-Wallet`, retail payment) while
 provider-specific implementation detail belongs in Admin Console.
+
+Midtrans production mode is controlled by deployment runtime, not by admin UI:
+
+- Vercel production deployments use production Midtrans mode automatically.
+- Production checkout is always open when the production server key exists.
+- Admin Console controls only sandbox checkout open/closed state for UAT.
+- Webhooks verify against the transaction's stored `midtransMode` whenever it
+  exists, so historical sandbox transactions continue to validate after a live
+  gateway is configured.
+- Server keys and merchant credentials must be added manually to Vercel
+  Environment Variables; never store them in `PlatformSetting`.
 
 ## Transactional Email
 
@@ -222,6 +233,13 @@ The project deploys to Vercel as a Next.js app. Production database compatibilit
 Local build behavior is intentionally resilient for UAT. The `npm run build` script now checks whether `DATABASE_URL` is reachable. If the database is reachable, it runs Prisma migration and seed before building. If the database is not reachable, it skips migration/seed and still runs Prisma generate plus Next production build. Use `npm run build:strict` when a database-backed build must fail on migration or seed errors.
 
 Production seed safety: every Vercel production build runs `npx prisma db seed` after Prisma migration. To keep this safe, every seed file that touches data also visible to end users must be idempotent and non-destructive — use `upsert` keyed by stable identifiers (slug, key) and avoid `deleteMany` followed by `createMany`, because the IDs change on every deploy and any user-modified row gets overwritten. Curriculum lessons use `upsert` keyed by `slug` or `order`, admin app access is reconciled to `NON_EXPIRING` with `accessExpiresAt = null`, and platform settings/subscription plans use `upsert` keyed by `key`/`code`. Direct `vercel --prod` uploads bypass git history and have caused source-of-truth drift; production deploys should always go through `git push` to `main`.
+
+Payment deployment safety: before aliasing `nexustalenta-academy.com`, inspect
+the candidate deployment and current alias owner. Verify the candidate URL
+directly for `/checkout`, `/api/auth/csrf`, and Midtrans sandbox Snap creation.
+Local `.env` files are excluded through `.vercelignore`; this must stay in
+place so local-only database URLs cannot be uploaded during an emergency direct
+deploy.
 
 Operational expectations:
 

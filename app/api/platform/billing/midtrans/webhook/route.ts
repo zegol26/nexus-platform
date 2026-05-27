@@ -4,6 +4,7 @@ import { withRouteMetrics } from "@/lib/observability/route-metrics";
 import { activatePaidAccess } from "@/lib/platform/activate-subscription";
 import {
   getMidtransMode,
+  getMidtransRuntimeMode,
   getMidtransServerKey,
   mapMidtransStatus,
   verifyMidtransSignature,
@@ -60,7 +61,9 @@ async function handleMidtransWebhook(req: Request) {
       ? rawPaymentPayload.midtransMode
       : null;
   const billingSettings = paymentMode ? null : await getBillingSettings();
-  const mode = getMidtransMode(paymentMode ?? billingSettings?.midtransMode);
+  const mode = paymentMode
+    ? getMidtransMode(paymentMode)
+    : getMidtransRuntimeMode(billingSettings?.midtransMode);
   const serverKey = getMidtransServerKey(mode);
   if (!serverKey) {
     return NextResponse.json({ error: "Midtrans server key is not configured" }, { status: 503 });

@@ -4,6 +4,7 @@
 
 | Release Note | Date/Time (JST) | Author | Status | Summary |
 | --- | --- | --- | --- | --- |
+| RN-2026.05.27-001 | 2026-05-27 22:30 +09:00 | Nexus Platform Team | Completed | Payment gateway RCA and hardening: restored Academy checkout after a Vercel project/domain alias regression, made production Midtrans an environment-driven always-on runtime path, limited Admin Console controls to sandbox open/close only, and documented deployment countermeasures. |
 | RN-2026.05.24-002 | 2026-05-24 01:30 +09:00 | Nexus Platform Team | Completed | Reinforced app access enforcement so expired access no longer opens app routes/features, normal users only see valid owned apps, internal lesson engine is admin-only, and mojibake characters were cleaned from Nihongo/English/Arabic app UI and tutor copy. |
 | RN-2026.05.24-001 | 2026-05-24 00:30 +09:00 | Nexus Platform Team | Completed | Public Nexus Talenta Indonesia Academy commerce readiness release: redesigned landing/login/register/platform surfaces, public legal/contact/checkout pages, reusable promo campaign admin, Midtrans sandbox checkout/control/log UI, registration email validation and confirmation email support, and public restricted overview-trial mimics for Nihongo, English, Arabic, and PMP apps. |
 | RN-2026.05.08-001 | 2026-05-08 21:00 +09:00 | Nexus Platform Team | Completed | Nexus Kingdoms Mobile Legends revamp — per-level castle PNG art (10 stages), hero PNG with mystic float aura on the left of the castle, hero rename + one-time selection ritual with random initial assignment, real attack mechanics (proportional troop casualties on both sides + resource looting), defender attack-notification popup on game entry, sophisticated battle report modal post-attack with result-tier theming, interactive shield/cooldown/error toasts replacing the banner, continent overflow capacity 5 with Roman-numeral variants, cross-continent attacks always open, full mobile responsiveness pass on all game modals and the castle frame. |
@@ -20,6 +21,68 @@
 | RN-2026.05.04-001 | 2026-05-04 01:10 +09:00 | Nexus Platform Team | Completed | Fixed character foundation lesson access and verified kana/kanji grids in localhost. |
 | RN-2026.05.03-002 | 2026-05-03 23:45 +09:00 | Nexus Platform Team | Completed | Added seedable Nihongo character content for kana, kanji, and vocabulary compounds, linked to lesson pages. |
 | RN-2026.05.03-001 | 2026-05-03 23:09 +09:00 | Nexus Platform Team | Release Candidate | Admin Operations Console, billing/trial foundation, recording visibility, architecture docs, and Ai-chan assistant foundation. |
+
+## RN-2026.05.27-001
+
+Payment gateway RCA and hardening after the Academy checkout regression.
+
+### Impact
+
+- `nexustalenta-academy.com/checkout` temporarily returned HTTP 500 after the
+  custom domain was pointed at a deployment with the wrong database/auth env.
+- Login submission was affected because the selected deployment did not have
+  the same NextAuth/database runtime configuration as the stable Academy
+  deployment.
+- Production Midtrans credentials were added safely as Vercel Environment
+  Variables, but the gateway could not be validated through the web flow until
+  the deployment/domain/env mismatch was corrected.
+
+### Root Cause
+
+- The live Academy custom domain was changed before the candidate deployment
+  was verified against the correct Vercel project and environment.
+- Direct production deploys allowed local `.env` files to influence the Vercel
+  deployment package, including a local-only database URL.
+- The Admin Console exposed production/sandbox switching as a mutable UI
+  control. That made production payment activation look like an admin setting,
+  when it should be an environment-backed deployment concern.
+
+### Included Changes
+
+- Restored the custom domain to the known stable deployment before continuing
+  payment work.
+- Added `.vercelignore` to exclude `.env` and `.env.*` from Vercel uploads.
+- Added production Midtrans runtime policy:
+  - production deployments use production mode automatically;
+  - production checkout is always open when production keys are configured;
+  - admin UI can only open/close sandbox checkout for UAT.
+- Removed production/sandbox switching from Admin Settings and the compact
+  payment control.
+- Kept per-transaction `midtransMode` in payment payloads so webhooks verify
+  signatures against the mode used when the payment was created.
+- Added focused policy tests for production-always-on behavior and sandbox
+  toggle behavior.
+
+### Verification
+
+- `nexustalenta-academy.com/checkout`: restored to HTTP 200 after rollback to
+  the stable deployment.
+- `nexustalenta-academy.com/api/auth/csrf`: HTTP 200 after rollback.
+- Local Midtrans sandbox Snap regression: sandbox key created a Snap token and
+  redirect URL on `app.sandbox.midtrans.com`.
+- `npm test`: passed after payment policy changes.
+
+### Countermeasures
+
+- Before any future production alias change, verify the candidate deployment
+  URL directly for `/checkout` and `/api/auth/csrf`.
+- Before any Vercel deploy, run `vercel inspect` and `vercel alias ls` to
+  confirm the intended project and current domain owner.
+- Do not direct-upload local env files. Keep `.vercelignore` in place.
+- Do not store server keys or live payment credentials in Admin Console or
+  database settings. Use Vercel Environment Variables only.
+- Treat production Midtrans activation as an environment/deployment concern,
+  not an admin toggle.
 
 ## RN-2026.05.24-002
 

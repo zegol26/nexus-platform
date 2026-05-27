@@ -119,29 +119,23 @@ export function AdminSettingsClient({
       <section className="rounded-2xl border border-slate-200 bg-white p-5">
         <h3 className="font-semibold text-slate-950">Midtrans gateway</h3>
         <p className="mt-1 text-sm text-slate-500">
-          Siapkan sandbox untuk validasi, lalu switch ke production saat akun live siap.
+          Production gateway selalu aktif di deployment production ketika env key
+          production tersedia. Form ini hanya membuka/menutup sandbox UAT.
         </p>
-        <div className="mt-4 grid gap-4 lg:grid-cols-2">
-          <label className="text-xs font-semibold text-slate-500">
-            Mode
-            <select
-              value={settings.midtransMode}
-              onChange={(event) => setSettings({ ...settings, midtransMode: event.target.value })}
-              className="mt-1 h-10 w-full rounded-xl border border-slate-300 bg-white px-3 text-sm"
-            >
-              <option value="sandbox">Sandbox</option>
-              <option value="production">Production</option>
-            </select>
-          </label>
-          <label className="flex items-center gap-2 pt-6 text-sm font-semibold text-slate-700">
+        <div className="mt-4 grid gap-4">
+          <label className="flex items-center gap-2 text-sm font-semibold text-slate-700">
             <input
               type="checkbox"
               checked={settings.midtransEnabled === "true"}
               onChange={(event) =>
-                setSettings({ ...settings, midtransEnabled: event.target.checked ? "true" : "false" })
+                setSettings({
+                  ...settings,
+                  midtransMode: "sandbox",
+                  midtransEnabled: event.target.checked ? "true" : "false",
+                })
               }
             />
-            Enable Midtrans checkout
+            Enable sandbox checkout
           </label>
         </div>
       </section>

@@ -23,7 +23,6 @@ export function MidtransPaymentControl({
   const [saving, setSaving] = useState(false);
   const [clickedAction, setClickedAction] = useState("");
   const enabled = settings.midtransEnabled === "true";
-  const sandboxMode = settings.midtransMode !== "production";
 
   async function save(patch: Partial<BillingSettings>, action: string) {
     const next = { ...settings, ...patch };
@@ -52,32 +51,18 @@ export function MidtransPaymentControl({
         <div>
           <p className="text-xs font-black uppercase tracking-[0.2em] text-blue-700">Midtrans control</p>
           <h3 className="mt-1 font-semibold text-slate-950">
-            {sandboxMode ? "Sandbox checkout" : "Production checkout"} is {enabled ? "open" : "closed"}
+            Sandbox checkout is {enabled ? "open" : "closed"}
           </h3>
           <p className="mt-1 text-sm text-slate-500">
-            Payment gate untuk maintenance, audit, atau freeze checkout. Saat closed,
-            user tetap bisa lihat paket tapi tidak bisa lanjut bayar.
+            Toggle ini hanya untuk UAT sandbox. Production gateway selalu aktif
+            di deployment production ketika environment key production tersedia.
           </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
           <button
             type="button"
-            onClick={() => save({ midtransMode: sandboxMode ? "production" : "sandbox" }, "mode")}
-            disabled={saving}
-            className={`${buttonBase} border border-slate-300 bg-white text-slate-700 shadow-sm hover:border-blue-300 hover:bg-blue-50 ${
-              clickedAction === "mode" ? "scale-95 ring-4 ring-blue-100" : ""
-            }`}
-          >
-            {saving && clickedAction === "mode"
-              ? "Switching..."
-              : sandboxMode
-                ? "Switch to production"
-                : "Switch to sandbox"}
-          </button>
-          <button
-            type="button"
-            onClick={() => save({ midtransEnabled: enabled ? "false" : "true" }, "gate")}
+            onClick={() => save({ midtransMode: "sandbox", midtransEnabled: enabled ? "false" : "true" }, "gate")}
             disabled={saving}
             className={`${buttonBase} text-white shadow-lg ${
               enabled
@@ -85,7 +70,7 @@ export function MidtransPaymentControl({
                 : "bg-emerald-600 shadow-emerald-600/20 hover:bg-emerald-700"
             } ${clickedAction === "gate" ? "scale-95 ring-4 ring-slate-200" : ""}`}
           >
-            {saving && clickedAction === "gate" ? "Updating..." : enabled ? "Pause checkout" : "Open checkout"}
+            {saving && clickedAction === "gate" ? "Updating..." : enabled ? "Close sandbox" : "Open sandbox"}
           </button>
         </div>
       </div>
