@@ -10,8 +10,13 @@ import {
   decideReadingAccess,
 } from "../lib/nexus/access-policy";
 import { normalizeRequestedVariant, selectLessonTemplateVariant } from "../lib/nihongo/lesson-cache-policy";
+import { getMidtransBaseUrl, getMidtransMode, mapMidtransStatus } from "../lib/platform/midtrans";
 import { canActOnPayment, normalizePaymentVerificationAction } from "../lib/platform/payment-policy";
-import { mapBillingSettings, platformSettingKeys } from "../lib/platform/settings-policy";
+import {
+  mapBillingSettings,
+  normalizePlatformSettingsPatch,
+  platformSettingKeys,
+} from "../lib/platform/settings-policy";
 
 const tests: Array<{ name: string; run: () => void }> = [];
 
@@ -90,8 +95,47 @@ test("billing settings are mapped from database records with empty fallbacks", (
       lessonPriceCents: "150000",
       qrisInfo: "QRIS account",
       bankInfo: "",
+      midtransMode: "sandbox",
+      midtransEnabled: "false",
+      promoCampaigns: "",
     },
   );
+});
+
+test("admin billing settings patch accepts UI aliases and database keys", () => {
+  assert.deepEqual(
+    normalizePlatformSettingsPatch({
+      midtransMode: "production",
+      midtransEnabled: "true",
+      ignored: "nope",
+    }),
+    {
+      [platformSettingKeys.midtransMode]: "production",
+      [platformSettingKeys.midtransEnabled]: "true",
+    },
+  );
+
+  assert.deepEqual(
+    normalizePlatformSettingsPatch({
+      [platformSettingKeys.midtransMode]: "sandbox",
+      [platformSettingKeys.midtransEnabled]: "false",
+    }),
+    {
+      [platformSettingKeys.midtransMode]: "sandbox",
+      [platformSettingKeys.midtransEnabled]: "false",
+    },
+  );
+});
+
+test("midtrans mode policy separates sandbox and production payment flows", () => {
+  assert.equal(getMidtransMode("production"), "production");
+  assert.equal(getMidtransMode("sandbox"), "sandbox");
+  assert.equal(getMidtransMode("anything"), "sandbox");
+  assert.equal(getMidtransBaseUrl("production"), "https://app.midtrans.com");
+  assert.equal(getMidtransBaseUrl("sandbox"), "https://app.sandbox.midtrans.com");
+  assert.equal(mapMidtransStatus("settlement"), "PAID");
+  assert.equal(mapMidtransStatus("capture", "challenge"), "WAITING_VERIFICATION");
+  assert.equal(mapMidtransStatus("pending"), "PENDING");
 });
 
 test("manual payment policy disables actions for rejected payments", () => {

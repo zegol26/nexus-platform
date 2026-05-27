@@ -3,6 +3,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
 import { ensurePlatformSettings, platformSettingKeys } from "@/lib/platform/settings";
+import { normalizePlatformSettingsPatch } from "@/lib/platform/settings-policy";
 
 export async function PATCH(req: Request) {
   const session = await getServerSession(authOptions);
@@ -16,7 +17,10 @@ export async function PATCH(req: Request) {
   const body = await req.json();
 
   const planUpdates = Array.isArray(body.plans) ? body.plans : [];
-  const settings = body.settings && typeof body.settings === "object" ? body.settings : {};
+  const settings =
+    body.settings && typeof body.settings === "object"
+      ? normalizePlatformSettingsPatch(body.settings as Record<string, unknown>)
+      : {};
 
   for (const item of planUpdates) {
     const id = String(item.id ?? "");

@@ -4,7 +4,8 @@ export const metadata = {
   title: "Nexus Talenta Indonesia Academy",
   description: "Language learning and overseas career preparation platform by Nexus Talenta Indonesia.",
   icons: {
-    icon: "/nexus-icon.png",
+    icon: "/icon.png",
+    apple: "/icon.png",
   },
 };
 

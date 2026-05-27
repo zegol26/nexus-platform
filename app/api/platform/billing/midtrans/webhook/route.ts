@@ -10,6 +10,15 @@ import {
 } from "@/lib/platform/midtrans";
 import { getBillingSettings } from "@/lib/platform/settings";
 
+function parseRawPayload(rawPayload: string | null) {
+  if (!rawPayload) return {};
+  try {
+    return JSON.parse(rawPayload) as Record<string, unknown>;
+  } catch {
+    return {};
+  }
+}
+
 export async function POST(req: Request) {
   return withRouteMetrics(
     {
@@ -36,8 +45,22 @@ async function handleMidtransWebhook(req: Request) {
     return NextResponse.json({ error: "Invalid Midtrans payload" }, { status: 400 });
   }
 
-  const billingSettings = await getBillingSettings();
-  const mode = getMidtransMode(billingSettings.midtransMode);
+  const paymentForMode = await prisma.paymentTransaction.findUnique({
+    where: {
+      provider_providerRef: {
+        provider: "MIDTRANS",
+        providerRef: body.order_id,
+      },
+    },
+    select: { rawPayload: true },
+  });
+  const rawPaymentPayload = parseRawPayload(paymentForMode?.rawPayload ?? null);
+  const paymentMode =
+    typeof rawPaymentPayload.midtransMode === "string"
+      ? rawPaymentPayload.midtransMode
+      : null;
+  const billingSettings = paymentMode ? null : await getBillingSettings();
+  const mode = getMidtransMode(paymentMode ?? billingSettings?.midtransMode);
   const serverKey = getMidtransServerKey(mode);
   if (!serverKey) {
     return NextResponse.json({ error: "Midtrans server key is not configured" }, { status: 503 });

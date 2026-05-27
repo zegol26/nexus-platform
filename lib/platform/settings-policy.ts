@@ -64,3 +64,28 @@ export function mapBillingSettings(settings: Array<{ key: string; value: string 
     promoCampaigns: map.get(platformSettingKeys.promoCampaigns) ?? "",
   };
 }
+
+const billingSettingAliases: Record<string, string> = {
+  lessonPriceCents: platformSettingKeys.lessonPriceCents,
+  qrisInfo: platformSettingKeys.qrisInfo,
+  bankInfo: platformSettingKeys.bankInfo,
+  midtransMode: platformSettingKeys.midtransMode,
+  midtransEnabled: platformSettingKeys.midtransEnabled,
+  promoCampaigns: platformSettingKeys.promoCampaigns,
+};
+
+export function normalizePlatformSettingsPatch(settings: Record<string, unknown>) {
+  const normalized: Record<string, string> = {};
+
+  for (const [rawKey, rawValue] of Object.entries(settings)) {
+    const key = billingSettingAliases[rawKey] ?? rawKey;
+
+    if (!Object.values(platformSettingKeys).includes(key as (typeof platformSettingKeys)[keyof typeof platformSettingKeys])) {
+      continue;
+    }
+
+    normalized[key] = String(rawValue ?? "");
+  }
+
+  return normalized;
+}
