@@ -1,8 +1,8 @@
 import { randomUUID } from "crypto";
 import { prisma } from "@/lib/db/prisma";
 
-const SESSION_MAX_AGE_DAYS = 30;
-const SESSION_MAX_AGE_MS = SESSION_MAX_AGE_DAYS * 24 * 60 * 60 * 1000;
+export const SESSION_IDLE_TIMEOUT_SECONDS = 4 * 60 * 60;
+export const SESSION_IDLE_TIMEOUT_MS = SESSION_IDLE_TIMEOUT_SECONDS * 1000;
 
 export type SingleSessionUser = {
   id: string;
@@ -10,7 +10,7 @@ export type SingleSessionUser = {
 };
 
 export async function createSingleActiveSession(user: SingleSessionUser) {
-  const expires = new Date(Date.now() + SESSION_MAX_AGE_MS);
+  const expires = new Date(Date.now() + SESSION_IDLE_TIMEOUT_MS);
   const sessionToken = randomUUID();
   const isAdmin = user.role === "ADMIN" || user.role === "SUPER_ADMIN";
 
@@ -59,6 +59,6 @@ export async function touchSingleSession(sessionToken?: string | null) {
 
   await prisma.session.updateMany({
     where: { sessionToken },
-    data: { expires: new Date(Date.now() + SESSION_MAX_AGE_MS) },
+    data: { expires: new Date(Date.now() + SESSION_IDLE_TIMEOUT_MS) },
   });
 }

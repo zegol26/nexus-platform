@@ -4,6 +4,7 @@ import { getServerSession } from "next-auth";
 import { GlobalFooter } from "@/components/layout/GlobalFooter";
 import { MobileSidebarDrawer } from "@/components/layout/MobileSidebarDrawer";
 import { ArabicSidebar } from "@/components/apps/arabic/ArabicSidebar";
+import { IdleLogout } from "@/components/platform/IdleLogout";
 import { LogoutButton } from "@/components/platform/LogoutButton";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
@@ -96,6 +97,7 @@ export default async function ArabicLayout({
           <GlobalFooter product="Nexus AI Arabic" />
         </div>
       </div>
+      <IdleLogout />
     </div>
   );
 }

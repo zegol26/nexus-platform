@@ -102,7 +102,7 @@ export async function createMidtransSnapTransaction(
         },
       ],
       callbacks: {
-        finish: `${process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"}/platform/billing`,
+        finish: `${process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"}/payment/finish`,
       },
     }),
   });

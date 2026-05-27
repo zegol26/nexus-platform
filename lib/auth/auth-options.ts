@@ -6,6 +6,7 @@ import { NextAuthOptions } from "next-auth";
 import {
   createSingleActiveSession,
   isSingleSessionValid,
+  SESSION_IDLE_TIMEOUT_SECONDS,
   touchSingleSession,
 } from "@/lib/auth/single-session";
 
@@ -34,6 +35,8 @@ export const authOptions: NextAuthOptions = {
 
   session: {
     strategy: "jwt",
+    maxAge: SESSION_IDLE_TIMEOUT_SECONDS,
+    updateAge: 5 * 60,
   },
 
   providers: [

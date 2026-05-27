@@ -28,6 +28,16 @@ NEXT_PUBLIC_MIDTRANS_SANDBOX_CLIENT_KEY=
 NEXT_PUBLIC_APP_URL=
 ```
 
+Midtrans Finish Redirect URL:
+
+```txt
+https://nexustalenta-academy.com/payment/finish
+```
+
+This page is public and safe for Midtrans to redirect customers to after
+payment. Authenticated users can continue to billing/dashboard from the finish
+page without losing their login state.
+
 Production vars for the live gateway:
 
 ```txt
@@ -56,6 +66,12 @@ Sandbox UAT flow:
 
 ```txt
 https://YOUR_DOMAIN/api/platform/billing/midtrans/webhook
+```
+
+6. Midtrans Finish Redirect URL should point to:
+
+```txt
+https://YOUR_DOMAIN/payment/finish
 ```
 
 Do not perform production alias or production deploy changes until sandbox
@@ -94,6 +110,12 @@ payment, webhook, access activation, admin payment history, `/checkout`, and
   open when the production server key is configured.
 - Admin payment controls now operate only on sandbox UAT checkout open/closed
   state.
+- Finish Redirect URL is `/payment/finish`, not `/platform/billing`, so the
+  customer receives a stable post-payment page before returning to dashboard or
+  billing.
+- Authenticated platform sessions use a 4-hour idle timeout. Navigation from
+  login/dashboard back to Academy Home must not sign the user out; explicit
+  logout and 4 hours of inactivity are the logout boundaries.
 - Before aliasing `nexustalenta-academy.com`, verify:
   - `vercel inspect <candidate-deployment>` shows the intended project;
   - `vercel alias ls` shows which deployment currently owns the domain;

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { IdleLogout } from "@/components/platform/IdleLogout";
 import { requireAdmin } from "@/lib/auth/require-admin";
 
 const adminLinks = [
@@ -56,6 +57,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         </aside>
         <main>{children}</main>
       </div>
+      <IdleLogout />
     </div>
   );
 }

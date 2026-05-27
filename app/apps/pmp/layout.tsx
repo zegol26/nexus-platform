@@ -2,6 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { GlobalFooter } from "@/components/layout/GlobalFooter";
+import { IdleLogout } from "@/components/platform/IdleLogout";
 import { LogoutButton } from "@/components/platform/LogoutButton";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
@@ -54,6 +55,7 @@ export default async function PmpLayout({ children }: { children: React.ReactNod
 
       <main className="px-4 py-6 sm:px-6 lg:px-10 lg:py-10">{children}</main>
       <GlobalFooter product="PMP Exam Prep" />
+      <IdleLogout />
     </div>
   );
 }

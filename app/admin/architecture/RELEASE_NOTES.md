@@ -4,6 +4,7 @@
 
 | Release Note | Date/Time (JST) | Author | Status | Summary |
 | --- | --- | --- | --- | --- |
+| RN-2026.05.27-002 | 2026-05-27 23:10 +09:00 | Nexus Platform Team | Completed | Added Midtrans Finish Redirect URL `/payment/finish`, restored Academy Home navigation from login/platform without logging users out, and enforced 4-hour idle logout on protected shells. |
 | RN-2026.05.27-001 | 2026-05-27 22:30 +09:00 | Nexus Platform Team | Completed | Payment gateway RCA and hardening: restored Academy checkout after a Vercel project/domain alias regression, made production Midtrans an environment-driven always-on runtime path, limited Admin Console controls to sandbox open/close only, and documented deployment countermeasures. |
 | RN-2026.05.24-002 | 2026-05-24 01:30 +09:00 | Nexus Platform Team | Completed | Reinforced app access enforcement so expired access no longer opens app routes/features, normal users only see valid owned apps, internal lesson engine is admin-only, and mojibake characters were cleaned from Nihongo/English/Arabic app UI and tutor copy. |
 | RN-2026.05.24-001 | 2026-05-24 00:30 +09:00 | Nexus Platform Team | Completed | Public Nexus Talenta Indonesia Academy commerce readiness release: redesigned landing/login/register/platform surfaces, public legal/contact/checkout pages, reusable promo campaign admin, Midtrans sandbox checkout/control/log UI, registration email validation and confirmation email support, and public restricted overview-trial mimics for Nihongo, English, Arabic, and PMP apps. |
@@ -21,6 +22,31 @@
 | RN-2026.05.04-001 | 2026-05-04 01:10 +09:00 | Nexus Platform Team | Completed | Fixed character foundation lesson access and verified kana/kanji grids in localhost. |
 | RN-2026.05.03-002 | 2026-05-03 23:45 +09:00 | Nexus Platform Team | Completed | Added seedable Nihongo character content for kana, kanji, and vocabulary compounds, linked to lesson pages. |
 | RN-2026.05.03-001 | 2026-05-03 23:09 +09:00 | Nexus Platform Team | Release Candidate | Admin Operations Console, billing/trial foundation, recording visibility, architecture docs, and Ai-chan assistant foundation. |
+
+## RN-2026.05.27-002
+
+Added the customer-facing Midtrans finish page and tightened authenticated
+navigation/session behavior.
+
+### Included Changes
+
+- Added public Finish Redirect URL:
+  `https://nexustalenta-academy.com/payment/finish`.
+- Updated Midtrans Snap callback payloads so `callbacks.finish` points to
+  `/payment/finish` instead of sending customers straight back into
+  `/platform/billing`.
+- Added Academy Home navigation from `/login` and the platform shell. These are
+  normal navigation links and do not clear the NextAuth session.
+- Added 4-hour idle logout:
+  - server-side single-session records expire after 4 idle hours;
+  - NextAuth JWT/session max age is 4 hours;
+  - protected shells sign out after 4 hours without browser activity.
+
+### Verification
+
+- Run `npm test`, `npx tsc --noEmit`, and `npm run build` before promotion.
+- Verify `/payment/finish`, `/login`, `/platform/dashboard`, `/checkout`, and
+  `/api/auth/csrf` on the candidate deployment before aliasing production.
 
 ## RN-2026.05.27-001
 

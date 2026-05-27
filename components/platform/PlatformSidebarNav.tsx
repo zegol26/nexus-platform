@@ -11,6 +11,7 @@ const menuItems = [
   { label: "Game", href: "/platform/game", marker: "05" },
   { label: "Billing", href: "/platform/billing", marker: "06" },
   { label: "Settings", href: "/platform/settings", marker: "07" },
+  { label: "Academy Home", href: "/", marker: "NT" },
 ];
 
 export function PlatformSidebarNav({ isAdmin }: { isAdmin: boolean }) {

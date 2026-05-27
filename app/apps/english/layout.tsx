@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
+import { IdleLogout } from "@/components/platform/IdleLogout";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
 import { isAdminRole, isValidAppAccess } from "@/lib/platform/access";
@@ -30,5 +31,10 @@ export default async function EnglishLayout({ children }: { children: React.Reac
     redirect("/platform/dashboard");
   }
 
-  return children;
+  return (
+    <>
+      {children}
+      <IdleLogout />
+    </>
+  );
 }

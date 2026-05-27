@@ -21,6 +21,8 @@ Nexus Platform is the parent application for authentication, access, billing, ad
 - `app/platform/*`: parent platform dashboard, billing, legacy admin access-control surface, and account-level navigation.
 - `app/overview/*`: public restricted overview-trial surfaces that mimic each learning app before login/subscription.
 - `app/checkout`, `app/terms`, `app/refund-policy`, `app/contact`: public commerce, legal, refund, and contact surfaces for payment-provider review and buyer clarity.
+- `app/payment/finish`: public Midtrans Finish Redirect URL shown after a
+  customer completes or returns from payment.
 - `app/apps/nihongo/*`: Nexus AI Nihongo user experience, including curriculum, AI lesson, flashcards, tutor, reading, listening, and assessments.
 - `app/apps/english/*`: Nexus AI English interview flow and user recording submission experience.
 - `app/apps/arabic/*`: Nexus AI Arabic daily/work/umrah/travel learning surfaces and tutor flows.
@@ -161,6 +163,14 @@ Midtrans production mode is controlled by deployment runtime, not by admin UI:
   gateway is configured.
 - Server keys and merchant credentials must be added manually to Vercel
   Environment Variables; never store them in `PlatformSetting`.
+- Midtrans Finish Redirect URL is `/payment/finish`. The page is public,
+  preserves authenticated browser state, and links back to billing, dashboard,
+  and Academy Home.
+
+Authenticated navigation should preserve login state. Public Academy links from
+`/login`, `/platform/dashboard`, and platform navigation are ordinary links, not
+logout actions. Sessions use a 4-hour idle timeout enforced by the server-side
+single-session record and by a client idle timer on protected shells.
 
 ## Transactional Email
 

@@ -7,6 +7,7 @@ import { NihongoSidebar } from "@/components/apps/nihongo/NihongoSidebar";
 import { NihongoThemeProvider } from "@/components/apps/nihongo/NihongoThemeProvider";
 import { NihongoThemeShell } from "@/components/apps/nihongo/NihongoThemeShell";
 import { NihongoThemeToggle } from "@/components/apps/nihongo/NihongoThemeToggle";
+import { IdleLogout } from "@/components/platform/IdleLogout";
 import { LogoutButton } from "@/components/platform/LogoutButton";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
@@ -111,6 +112,7 @@ export default async function NihongoLayout({
             <GlobalFooter product="Nexus AI Nihongo" />
           </div>
         </div>
+        <IdleLogout />
       </NihongoThemeShell>
     </NihongoThemeProvider>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -68,6 +69,12 @@ export default function LoginPage() {
               </div>
             ))}
           </div>
+          <Link
+            href="/"
+            className="mt-6 inline-flex min-h-11 items-center justify-center rounded-full border border-blue-100 bg-white px-5 text-sm font-extrabold text-blue-700 shadow-sm transition hover:bg-blue-50"
+          >
+            Kembali ke Academy Home
+          </Link>
         </section>
 
         <section className="nexus-glass rounded-[28px] p-6">

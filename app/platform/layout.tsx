@@ -1,6 +1,7 @@
 import { GlobalFooter } from "@/components/layout/GlobalFooter";
 import { MobileSidebarDrawer } from "@/components/layout/MobileSidebarDrawer";
 import { AiChanWidget } from "@/components/platform/AiChanWidget";
+import { IdleLogout } from "@/components/platform/IdleLogout";
 import { PlatformHeader } from "@/components/platform/PlatformHeader";
 import { PlatformSidebar } from "@/components/platform/PlatformSidebar";
 
@@ -24,6 +25,7 @@ export default function PlatformLayout({
         </div>
       </div>
       <AiChanWidget />
+      <IdleLogout />
     </div>
   );
 }
