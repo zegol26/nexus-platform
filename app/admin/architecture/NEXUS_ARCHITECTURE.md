@@ -152,7 +152,11 @@ Admin pricing input is business-facing rupiah. The database still stores
 not ask operators to enter cents. Fixed billing periods are coupled to their
 durations: `MONTHLY` is 30 days, `QUARTERLY` is 90 days, and `YEARLY` is 365
 days. Public `/checkout` must list all active plans, not only monthly plans, so
-quarterly/yearly configuration cannot hide order items.
+quarterly/yearly configuration cannot hide order items. The plan catalog
+self-heals canonical rows for every learning app: Monthly, Quarterly, and
+Yearly are separate plan records. Admin Settings locks each row's period and
+duration so operators cannot accidentally turn the monthly row into a quarterly
+row and then have catalog repair set it back.
 
 Payment-provider secrets are environment variables only. They must not be
 printed in release notes, architecture docs, screenshots, or client-side
@@ -245,6 +249,10 @@ Interactive browser APIs live in client components:
 - `EnglishInterviewClient` handles English interview recording, upload, recorded state, and retry flow.
 - `ManualBillingClient` handles plan selection, proof upload, and payment status UI.
 - `AdminSettingsClient` handles pricing and payment information settings.
+
+Brand metadata:
+
+- Root metadata uses `/nexus-ai-logo.png` for favicon and Apple touch icon.
 
 ## Deployment And Operations
 

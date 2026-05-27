@@ -3,6 +3,7 @@ import { LogIn, ShieldCheck, UserPlus } from "lucide-react";
 import { MarketingFooter, MarketingNav } from "@/components/layout/MarketingChrome";
 import { prisma } from "@/lib/db/prisma";
 import { nexusContact } from "@/lib/nexus/marketing";
+import { ensureSubscriptionPlanCatalog } from "@/lib/platform/plan-catalog";
 
 export const dynamic = "force-dynamic";
 
@@ -47,6 +48,8 @@ function periodLabel(period: string, durationDays: number) {
 }
 
 export default async function CheckoutPage() {
+  await ensureSubscriptionPlanCatalog();
+
   const plans = (await prisma.subscriptionPlan.findMany({
     where: {
       active: true,

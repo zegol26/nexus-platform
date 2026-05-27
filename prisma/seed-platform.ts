@@ -90,11 +90,9 @@ export async function seedPlatform() {
       update: {
         name: "Nihongo Monthly",
         description: "Monthly access to Nexus AI Nihongo",
-        priceCents: 9900000,
         currency: "IDR",
         durationDays: 30,
         billingPeriod: "MONTHLY",
-        active: true,
       },
       create: {
         appId: nihongoApp.id,
@@ -121,11 +119,9 @@ export async function seedPlatform() {
       update: {
         name: "English Interview Monthly",
         description: "Monthly access to Nexus AI English interview practice",
-        priceCents: 9900000,
         currency: "IDR",
         durationDays: 30,
         billingPeriod: "MONTHLY",
-        active: true,
       },
       create: {
         appId: englishApp.id,
@@ -152,11 +148,9 @@ export async function seedPlatform() {
       update: {
         name: "Arabic Monthly",
         description: "Monthly access to Nexus AI Arabic â€” Saudi daily Arabic for work, umrah, and travel",
-        priceCents: 9900000,
         currency: "IDR",
         durationDays: 30,
         billingPeriod: "MONTHLY",
-        active: true,
       },
       create: {
         appId: arabicApp.id,
@@ -183,11 +177,9 @@ export async function seedPlatform() {
       update: {
         name: "PMP Exam Prep Monthly",
         description: "Monthly access to the full PMP exam prep app.",
-        priceCents: 9900000,
         currency: "IDR",
         durationDays: 30,
         billingPeriod: "MONTHLY",
-        active: true,
       },
       create: {
         appId: pmpApp.id,

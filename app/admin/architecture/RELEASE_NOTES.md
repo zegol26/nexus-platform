@@ -4,6 +4,7 @@
 
 | Release Note | Date/Time (JST) | Author | Status | Summary |
 | --- | --- | --- | --- | --- |
+| RN-2026.05.27-004 | 2026-05-27 23:58 +09:00 | Nexus Platform Team | Completed | Fixed the remaining plan catalog regression: billing/admin now self-heal separate Monthly, Quarterly, and Yearly rows per app, Settings locks period/duration instead of editing one monthly row into another period, and favicon uses `/nexus-ai-logo.png`. |
 | RN-2026.05.27-003 | 2026-05-27 23:45 +09:00 | Nexus Platform Team | Completed | Fixed admin plan pricing/period settings and checkout visibility regression: admin now edits rupiah, fixed periods update duration, `/checkout` lists all active order items, and billing exposes sandbox checkout only when sandbox UAT is enabled. |
 | RN-2026.05.27-002 | 2026-05-27 23:10 +09:00 | Nexus Platform Team | Completed | Added Midtrans Finish Redirect URL `/payment/finish`, restored Academy Home navigation from login/platform without logging users out, and enforced 4-hour idle logout on protected shells. |
 | RN-2026.05.27-001 | 2026-05-27 22:30 +09:00 | Nexus Platform Team | Completed | Payment gateway RCA and hardening: restored Academy checkout after a Vercel project/domain alias regression, made production Midtrans an environment-driven always-on runtime path, limited Admin Console controls to sandbox open/close only, and documented deployment countermeasures. |
@@ -23,6 +24,42 @@
 | RN-2026.05.04-001 | 2026-05-04 01:10 +09:00 | Nexus Platform Team | Completed | Fixed character foundation lesson access and verified kana/kanji grids in localhost. |
 | RN-2026.05.03-002 | 2026-05-03 23:45 +09:00 | Nexus Platform Team | Completed | Added seedable Nihongo character content for kana, kanji, and vocabulary compounds, linked to lesson pages. |
 | RN-2026.05.03-001 | 2026-05-03 23:09 +09:00 | Nexus Platform Team | Release Candidate | Admin Operations Console, billing/trial foundation, recording visibility, architecture docs, and Ai-chan assistant foundation. |
+
+## RN-2026.05.27-004
+
+Fixed the remaining plan catalog regression where billing still showed only a
+monthly option and Admin Settings could make a monthly row look quarterly until
+catalog repair reset it.
+
+### Root Cause
+
+- Production data could still contain only one `*_MONTHLY` plan per app.
+- Admin Settings allowed operators to edit `billingPeriod` on that same monthly
+  row instead of presenting separate canonical rows for Monthly, Quarterly, and
+  Yearly.
+- Seed/catalog repair still treated the monthly row as the canonical monthly
+  record, so a changed `*_MONTHLY` row could be repaired back to `MONTHLY`.
+
+### Included Changes
+
+- Added runtime plan catalog repair that ensures every learning app has three
+  separate active plan records: Monthly, Quarterly, and Yearly.
+- Updated `/checkout`, `/platform/billing`, and `/admin/settings` to call the
+  catalog guard before reading plans.
+- Changed Admin Settings so billing period and duration are displayed as fixed
+  row properties; admin edits price and active state only.
+- Updated seed behavior so existing admin-edited prices/active flags are not
+  overwritten during monthly plan repair.
+- Switched root favicon and Apple touch icon to `/nexus-ai-logo.png`.
+
+### Verification
+
+- Regression must confirm user billing has Monthly, Quarterly, and Yearly
+  options after `/platform/billing` loads.
+- Regression must confirm Admin Settings shows separate period rows and saving
+  does not convert Quarterly/Yearly back to Monthly.
+- Verify `/checkout`, `/platform/billing`, `/admin/settings`, and favicon
+  metadata on the candidate deployment before aliasing production.
 
 ## RN-2026.05.27-003
 

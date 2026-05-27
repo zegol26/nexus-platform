@@ -5,6 +5,7 @@ import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
 import { getBillingSettings } from "@/lib/platform/settings";
 import { isMidtransModeAvailable } from "@/lib/platform/midtrans";
+import { ensureSubscriptionPlanCatalog } from "@/lib/platform/plan-catalog";
 
 export const dynamic = "force-dynamic";
 
@@ -76,6 +77,8 @@ export default async function PlatformBillingPage({
   if (!session?.user?.email) {
     redirect("/login");
   }
+
+  await ensureSubscriptionPlanCatalog();
 
   const [user, plans, billingSettings] = await Promise.all([
     prisma.user.findUnique({

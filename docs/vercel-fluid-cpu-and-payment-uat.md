@@ -62,7 +62,8 @@ Sandbox UAT flow:
 2. Confirm subscription plans for each app: monthly, quarterly, yearly. Admin
    pricing inputs are rupiah amounts; the application stores cents internally.
    Fixed periods must keep the matching durations: monthly 30 days, quarterly
-   90 days, yearly 365 days.
+   90 days, yearly 365 days. These must be separate plan rows per app; do not
+   rely on editing one monthly row into another period.
 3. Confirm `/checkout` shows all active order items, not only monthly plans.
 4. Open sandbox checkout from Admin Settings or `/admin/payments`.
 5. User opens `/platform/billing`, selects the sandbox checkout button, and
@@ -128,6 +129,10 @@ payment, webhook, access activation, admin payment history, `/checkout`, and
 - Admin Settings must accept business-facing rupiah input while preserving the
   existing internal cents storage. Period changes must update duration together
   with the period so invoices and subscriptions use the intended access length.
+- Subscription plan catalog must self-heal to three canonical rows per active
+  learning app: Monthly, Quarterly, and Yearly. Admin Settings should lock the
+  period/duration per row and let operators edit price/active state only.
+- The Academy favicon must use `/nexus-ai-logo.png`.
 - Before aliasing `nexustalenta-academy.com`, verify:
   - `vercel inspect <candidate-deployment>` shows the intended project;
   - `vercel alias ls` shows which deployment currently owns the domain;

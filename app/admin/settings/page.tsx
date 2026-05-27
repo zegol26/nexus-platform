@@ -1,14 +1,19 @@
 import { AdminSection } from "@/components/admin/AdminTable";
 import { AdminSettingsClient } from "@/components/admin/AdminSettingsClient";
 import { prisma } from "@/lib/db/prisma";
+import { ensureSubscriptionPlanCatalog } from "@/lib/platform/plan-catalog";
 import { ensurePlatformSettings, getBillingSettings } from "@/lib/platform/settings";
 
 export default async function AdminSettingsPage() {
   await ensurePlatformSettings();
+  await ensureSubscriptionPlanCatalog();
 
   const [apps, plans, billingSettings] = await Promise.all([
     prisma.platformApp.findMany({ orderBy: { slug: "asc" } }),
-    prisma.subscriptionPlan.findMany({ include: { app: true }, orderBy: { createdAt: "asc" } }),
+    prisma.subscriptionPlan.findMany({
+      include: { app: true },
+      orderBy: [{ appId: "asc" }, { durationDays: "asc" }],
+    }),
     getBillingSettings(),
   ]);
 

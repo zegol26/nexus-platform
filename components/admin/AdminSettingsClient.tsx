@@ -4,6 +4,7 @@ import { useState } from "react";
 import { MidtransPaymentControl } from "@/components/admin/MidtransPaymentControl";
 import {
   durationDaysForBillingPeriod,
+  fixedBillingPeriodDays,
   priceCentsToRupiah,
   rupiahToPriceCents,
 } from "@/lib/platform/pricing-policy";
@@ -59,7 +60,6 @@ export function AdminSettingsClient({
         plans: draftPlans.map((plan) => ({
           id: plan.id,
           priceRupiah: priceCentsToRupiah(plan.priceCents),
-          durationDays: plan.durationDays,
           billingPeriod: plan.billingPeriod,
           active: plan.active,
         })),
@@ -96,35 +96,18 @@ export function AdminSettingsClient({
                   className="mt-1 h-10 w-full rounded-xl border border-slate-300 bg-white px-3 text-sm"
                 />
               </label>
-              <label className="text-xs font-semibold text-slate-500">
+              <div className="text-xs font-semibold text-slate-500">
                 Days
-                <input
-                  type="number"
-                  min={1}
-                  value={plan.durationDays}
-                  onChange={(event) => updatePlan(index, { durationDays: Number(event.target.value) })}
-                  className="mt-1 h-10 w-full rounded-xl border border-slate-300 bg-white px-3 text-sm"
-                />
-              </label>
-              <label className="text-xs font-semibold text-slate-500">
+                <p className="mt-1 flex h-10 items-center rounded-xl border border-slate-200 bg-white px-3 text-sm text-slate-700">
+                  {plan.durationDays}
+                </p>
+              </div>
+              <div className="text-xs font-semibold text-slate-500">
                 Billing period
-                <select
-                  value={plan.billingPeriod}
-                  onChange={(event) => {
-                    const billingPeriod = event.target.value;
-                    updatePlan(index, {
-                      billingPeriod,
-                      durationDays: durationDaysForBillingPeriod(billingPeriod, plan.durationDays),
-                    });
-                  }}
-                  className="mt-1 h-10 w-full rounded-xl border border-slate-300 bg-white px-3 text-sm"
-                >
-                  <option value="MONTHLY">Monthly</option>
-                  <option value="QUARTERLY">Quarterly</option>
-                  <option value="YEARLY">Yearly</option>
-                  <option value="CUSTOM">Custom</option>
-                </select>
-              </label>
+                <p className="mt-1 flex h-10 items-center rounded-xl border border-slate-200 bg-white px-3 text-sm text-slate-700">
+                  {periodLabel(plan.billingPeriod)}
+                </p>
+              </div>
               <label className="flex items-center gap-2 text-sm font-semibold text-slate-700">
                 <input
                   type="checkbox"
@@ -196,7 +179,21 @@ export function AdminSettingsClient({
 
   function updatePlan(index: number, patch: Partial<Plan>) {
     setDraftPlans((current) =>
-      current.map((plan, planIndex) => (planIndex === index ? { ...plan, ...patch } : plan))
+      current.map((plan, planIndex) => {
+        if (planIndex !== index) return plan;
+        const next = { ...plan, ...patch };
+        return {
+          ...next,
+          durationDays: durationDaysForBillingPeriod(next.billingPeriod, next.durationDays),
+        };
+      })
     );
+  }
+
+  function periodLabel(period: string) {
+    if (period === "MONTHLY") return "Monthly";
+    if (period === "QUARTERLY") return "Quarterly";
+    if (period === "YEARLY") return "Yearly";
+    return period in fixedBillingPeriodDays ? period : "Custom";
   }
 }
