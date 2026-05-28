@@ -2,27 +2,33 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { getUiText, type UiTextKey } from "@/components/i18n/dictionary";
+import { useLanguage } from "@/components/i18n/LanguageProvider";
+import { SquidIcon } from "@/components/ui/SquidIcon";
 import { useNihongoTheme } from "./NihongoThemeProvider";
 
 const nihongoMenu = [
-  { label: "Dashboard", href: "/apps/nihongo/dashboard", marker: "01" },
-  { label: "Pre-assessment", href: "/apps/nihongo/pre-assessment", marker: "02" },
-  { label: "Curriculum", href: "/apps/nihongo/curriculum", marker: "03" },
-  { label: "Flashcards", href: "/apps/nihongo/flashcards", marker: "04" },
-  { label: "AI Tutor", href: "/apps/nihongo/tutor", marker: "05" },
-  { label: "Quiz", href: "/apps/nihongo/quiz", marker: "06" },
-  { label: "Rehearsal N5", href: "/apps/nihongo/full-rehearsal-n5", marker: "07" },
-  { label: "Rehearsal N4", href: "/apps/nihongo/full-rehearsal-n4", marker: "08" },
-  { label: "Game", href: "/apps/nihongo/game", marker: "09" },
-  { label: "Reading", href: "/apps/nihongo/reading", marker: "10" },
-  { label: "Listening", href: "/apps/nihongo/listening", marker: "11" },
-  { label: "JLPT N5 Mock", href: "/apps/nihongo/mock-test/n5", marker: "12" },
-  { label: "JLPT N4 Mock", href: "/apps/nihongo/mock-test/n4", marker: "13" },
-];
+  { labelKey: "nav.dashboard", href: "/apps/nihongo/dashboard", marker: "01" },
+  { labelKey: "nihongo.preAssessment", href: "/apps/nihongo/pre-assessment", marker: "02" },
+  { labelKey: "nihongo.curriculum", href: "/apps/nihongo/curriculum", marker: "03" },
+  { labelKey: "nihongo.flashcards", href: "/apps/nihongo/flashcards", marker: "04" },
+  { labelKey: "nihongo.aiTutor", href: "/apps/nihongo/tutor", marker: "05" },
+  { labelKey: "nihongo.quiz", href: "/apps/nihongo/quiz", marker: "06" },
+  { labelKey: "nihongo.rehearsalN5", href: "/apps/nihongo/full-rehearsal-n5", marker: "07" },
+  { labelKey: "nihongo.rehearsalN4", href: "/apps/nihongo/full-rehearsal-n4", marker: "08" },
+  { labelKey: "nav.game", href: "/apps/nihongo/game", marker: "09" },
+  { labelKey: "nihongo.reading", href: "/apps/nihongo/reading", marker: "10" },
+  { labelKey: "nihongo.listening", href: "/apps/nihongo/listening", marker: "11" },
+  { labelKey: "nihongo.mockN5", href: "/apps/nihongo/mock-test/n5", marker: "12" },
+  { labelKey: "nihongo.mockN4", href: "/apps/nihongo/mock-test/n4", marker: "13" },
+] satisfies Array<{ labelKey: UiTextKey; href: string; marker: string }>;
+
+const squidShapes = ["circle", "triangle", "square"] as const;
 
 export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
   const pathname = usePathname();
   const { theme } = useNihongoTheme();
+  const { language } = useLanguage();
 
   const isSquid = theme === "squid";
   const isRockstar = theme === "rockstar";
@@ -104,12 +110,8 @@ export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
           const isActive =
             pathname === item.href || pathname?.startsWith(item.href + "/");
 
-          // Theme-specific marker glyph
-          const marker = isSquid
-            ? ["O", "^", "[]"][idx % 3]
-            : isRockstar
-              ? "*"
-              : item.marker;
+          const squidShape = squidShapes[idx % squidShapes.length];
+          const marker = isRockstar ? "*" : item.marker;
 
           return (
             <Link
@@ -123,15 +125,21 @@ export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
               }`}
             >
               <span
-                className={`flex h-6 w-7 shrink-0 items-center justify-center rounded-sm text-[10px] font-bold transition ${
+                className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-[10px] font-bold transition ${
                   isActive
-                    ? "bg-white/20 text-white"
+                    ? "bg-white/20 text-white ring-1 ring-white/25"
                     : "bg-slate-100 text-slate-500 group-hover:bg-cyan-100 group-hover:text-cyan-700"
                 }`}
               >
-                {marker}
+                {isSquid ? (
+                  <SquidIcon shape={squidShape} active={isActive} />
+                ) : (
+                  marker
+                )}
               </span>
-              <span className="flex-1 truncate">{item.label}</span>
+              <span className="flex-1 truncate">
+                {getUiText(item.labelKey, language)}
+              </span>
             </Link>
           );
         })}

@@ -2,20 +2,23 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { getUiText, type UiTextKey } from "@/components/i18n/dictionary";
+import { useLanguage } from "@/components/i18n/LanguageProvider";
 
 const menuItems = [
-  { label: "Dashboard", href: "/platform/dashboard", marker: "01" },
-  { label: "Apps", href: "/platform/apps", marker: "02" },
-  { label: "Program", href: "/platform/programs", marker: "03" },
-  { label: "Komunitas", href: "/platform/community", marker: "04" },
-  { label: "Game", href: "/platform/game", marker: "05" },
-  { label: "Billing", href: "/platform/billing", marker: "06" },
-  { label: "Settings", href: "/platform/settings", marker: "07" },
-  { label: "Academy Home", href: "/", marker: "NT" },
-];
+  { labelKey: "nav.dashboard", href: "/platform/dashboard", marker: "01" },
+  { labelKey: "nav.apps", href: "/platform/apps", marker: "02" },
+  { labelKey: "nav.program", href: "/platform/programs", marker: "03" },
+  { labelKey: "nav.community", href: "/platform/community", marker: "04" },
+  { labelKey: "nav.game", href: "/platform/game", marker: "05" },
+  { labelKey: "nav.billing", href: "/platform/billing", marker: "06" },
+  { labelKey: "nav.settings", href: "/platform/settings", marker: "07" },
+  { labelKey: "nav.academyHome", href: "/", marker: "NT" },
+] satisfies Array<{ labelKey: UiTextKey; href: string; marker: string }>;
 
 export function PlatformSidebarNav({ isAdmin }: { isAdmin: boolean }) {
   const pathname = usePathname();
+  const { language } = useLanguage();
 
   const isActive = (href: string) =>
     pathname === href || pathname?.startsWith(href + "/");
@@ -44,7 +47,7 @@ export function PlatformSidebarNav({ isAdmin }: { isAdmin: boolean }) {
             >
               {item.marker}
             </span>
-            {item.label}
+            {getUiText(item.labelKey, language)}
           </Link>
         );
       })}
@@ -63,7 +66,7 @@ export function PlatformSidebarNav({ isAdmin }: { isAdmin: boolean }) {
             <span className="flex h-6 w-7 items-center justify-center rounded-md bg-white/15 text-[10px] font-bold">
               AD
             </span>
-            Admin Console
+            {getUiText("nav.adminConsole", language)}
           </Link>
           <Link
             href="/platform/admin"
@@ -83,7 +86,7 @@ export function PlatformSidebarNav({ isAdmin }: { isAdmin: boolean }) {
             >
               AC
             </span>
-            Access Control
+            {getUiText("nav.accessControl", language)}
           </Link>
           <Link
             href="/platform/admin/promos"
@@ -103,7 +106,7 @@ export function PlatformSidebarNav({ isAdmin }: { isAdmin: boolean }) {
             >
               PR
             </span>
-            Promo Campaign
+            {getUiText("nav.promoCampaign", language)}
           </Link>
         </div>
       )}

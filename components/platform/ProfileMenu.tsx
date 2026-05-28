@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { getUiText } from "@/components/i18n/dictionary";
+import { useLanguage } from "@/components/i18n/LanguageProvider";
 
 type ProfilePayload = {
   name: string;
@@ -14,6 +16,7 @@ type ProfilePayload = {
 };
 
 export function ProfileMenu() {
+  const { language } = useLanguage();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [open, setOpen] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -86,7 +89,7 @@ export function ProfileMenu() {
         type="button"
         onClick={() => setOpen(true)}
         className="flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 py-1 pl-1 pr-4 text-sm font-semibold text-slate-700 shadow-sm shadow-slate-950/[0.03] transition hover:-translate-y-0.5 hover:bg-white"
-        aria-label="Open profile"
+        aria-label={getUiText("profile.open", language)}
       >
         {avatar ? (
           <img
@@ -99,7 +102,9 @@ export function ProfileMenu() {
             {initial}
           </span>
         )}
-        <span className="hidden sm:inline">Profile</span>
+        <span className="hidden sm:inline">
+          {getUiText("profile.label", language)}
+        </span>
       </button>
 
       {open && profile && (
@@ -119,7 +124,7 @@ export function ProfileMenu() {
               className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-xl font-semibold text-slate-600 shadow-sm hover:bg-slate-50"
               aria-label="Close profile"
             >
-              ×
+              x
             </button>
             <div className="flex items-start justify-between gap-4">
               <div>
@@ -130,7 +135,7 @@ export function ProfileMenu() {
                   Learning status
                 </h2>
                 <p className="mt-1 text-sm text-slate-500">
-                  {profile.email} • {profile.role}
+                  {profile.email} - {profile.role}
                 </p>
               </div>
             </div>
@@ -161,7 +166,7 @@ export function ProfileMenu() {
                   onClick={() => fileInputRef.current?.click()}
                   className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700"
                 >
-                  <span aria-hidden>↑</span>
+                  <span aria-hidden>Upload</span>
                   Upload avatar
                 </button>
                 <p className="mt-2 text-xs leading-5 text-slate-500">

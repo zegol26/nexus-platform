@@ -6,10 +6,14 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { ArrowRight, LockKeyhole, Mail } from "lucide-react";
+import { getUiText } from "@/components/i18n/dictionary";
+import { LanguageToggle } from "@/components/i18n/LanguageToggle";
+import { useLanguage } from "@/components/i18n/LanguageProvider";
 import { nexusLogoUrl } from "@/lib/nexus/marketing";
 
 export default function LoginPage() {
   const router = useRouter();
+  const { language } = useLanguage();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -45,6 +49,9 @@ export default function LoginPage() {
 
   return (
     <main className="nexus-market-shell grid min-h-screen items-center px-4 py-10 sm:px-6 lg:px-8">
+      <div className="absolute right-4 top-4 sm:right-6">
+        <LanguageToggle />
+      </div>
       <div className="mx-auto grid w-full max-w-7xl items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
         <section className="min-w-0">
           <Image
@@ -56,11 +63,10 @@ export default function LoginPage() {
             priority
           />
           <h1 className="mt-8 max-w-2xl text-5xl font-black leading-tight text-slate-950">
-            Login ke ruang belajar Nexus Talenta Indonesia Academy.
+            {getUiText("auth.loginHero", language)}
           </h1>
           <p className="mt-4 max-w-xl text-lg leading-8 text-slate-600">
-            Lanjutkan modul, lihat progress, gunakan promo aktif, dan akses fitur
-            belajar adaptif dari satu dashboard.
+            {getUiText("auth.loginHeroCopy", language)}
           </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
             {["AI Chat", "AI Talk", "Adaptive Learning", "Massive Mock Test"].map((item) => (
@@ -73,16 +79,20 @@ export default function LoginPage() {
             href="/"
             className="mt-6 inline-flex min-h-11 items-center justify-center rounded-full border border-blue-100 bg-white px-5 text-sm font-extrabold text-blue-700 shadow-sm transition hover:bg-blue-50"
           >
-            Kembali ke Academy Home
+            {getUiText("auth.backHome", language)}
           </Link>
         </section>
 
         <section className="nexus-glass rounded-[28px] p-6">
           <form onSubmit={handleLogin} className="rounded-3xl bg-white p-6 shadow-sm">
-            <p className="text-sm font-extrabold text-blue-700">Member area</p>
-            <h2 className="mt-2 text-3xl font-black text-slate-950">Masuk platform</h2>
+            <p className="text-sm font-extrabold text-blue-700">
+              {getUiText("auth.memberArea", language)}
+            </p>
+            <h2 className="mt-2 text-3xl font-black text-slate-950">
+              {getUiText("auth.loginTitle", language)}
+            </h2>
             <p className="mt-2 text-sm leading-6 text-slate-600">
-              Gunakan akun Nexus Platform yang sudah terdaftar.
+              {getUiText("auth.loginCopy", language)}
             </p>
 
             {error && (
@@ -115,7 +125,7 @@ export default function LoginPage() {
                     className="nexus-field pl-10"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Masukkan password"
+                    placeholder={getUiText("auth.passwordPlaceholder", language)}
                     type="password"
                     required
                   />
@@ -124,13 +134,13 @@ export default function LoginPage() {
             </div>
 
             <button type="submit" disabled={loading} className="nexus-primary mt-6 w-full disabled:opacity-50">
-              {loading ? "Signing in..." : "Login"} <ArrowRight size={18} />
+              {loading ? getUiText("auth.signingIn", language) : "Login"} <ArrowRight size={18} />
             </button>
 
             <p className="mt-4 text-center text-sm text-slate-600">
-              Belum punya akun?{" "}
+              {getUiText("auth.noAccount", language)}{" "}
               <a className="font-extrabold text-blue-700" href="/register">
-                Register
+                {getUiText("auth.register", language)}
               </a>
             </p>
           </form>

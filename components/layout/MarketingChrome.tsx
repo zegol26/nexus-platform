@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { LanguageToggle } from "@/components/i18n/LanguageToggle";
+import { LocalizedText } from "@/components/i18n/LocalizedText";
 import { nexusContact, nexusLogoUrl } from "@/lib/nexus/marketing";
 
 export function MarketingNav() {
@@ -22,24 +24,25 @@ export function MarketingNav() {
         </Link>
 
         <div className="hidden items-center gap-6 text-sm font-bold text-slate-600 md:flex">
-          <Link href="/#program">Program</Link>
-          <Link href="/terms">Syarat</Link>
+          <Link href="/#program"><LocalizedText id="nav.program" /></Link>
+          <Link href="/terms"><LocalizedText id="marketing.nav.terms" /></Link>
           <Link href="/refund-policy">Refund</Link>
-          <Link href="/contact">Contact</Link>
+          <Link href="/contact"><LocalizedText id="marketing.nav.contact" /></Link>
         </div>
 
         <div className="flex items-center gap-2">
+          <LanguageToggle compact />
           <Link
             href="/login"
             className="hidden min-h-11 items-center justify-center rounded-full border border-blue-100 bg-white px-5 text-sm font-extrabold text-slate-950 shadow-sm sm:inline-flex"
           >
-            Login
+            <LocalizedText id="marketing.nav.login" />
           </Link>
           <Link
             href="/checkout"
             className="inline-flex min-h-11 items-center justify-center rounded-full bg-blue-600 px-5 text-sm font-extrabold text-white shadow-lg shadow-blue-600/25 transition hover:bg-blue-700"
           >
-            Order
+            <LocalizedText id="marketing.nav.order" />
           </Link>
         </div>
       </nav>
@@ -62,27 +65,26 @@ export function MarketingFooter() {
             />
             <div>
               <p className="font-extrabold text-slate-950">{nexusContact.academy}</p>
-              <p className="text-sm text-slate-500">Learning, talent, and Japan readiness.</p>
+              <p className="text-sm text-slate-500"><LocalizedText id="marketing.footerTagline" /></p>
             </div>
           </div>
           <p className="mt-4 max-w-md text-sm leading-6 text-slate-600">
-            Platform pembelajaran digital dari {nexusContact.company} untuk membantu
-            talenta Indonesia membangun kemampuan bahasa Jepang, kesiapan kerja global,
-            dan kebiasaan belajar yang terukur.
+            <LocalizedText id="marketing.footerCopy" />
           </p>
         </div>
 
         <div>
-          <p className="font-extrabold text-slate-950">Legal</p>
+          <p className="font-extrabold text-slate-950"><LocalizedText id="marketing.footerLegal" /></p>
           <div className="mt-3 grid gap-2 text-sm text-slate-600">
-            <Link href="/terms">Syarat dan Ketentuan</Link>
-            <Link href="/refund-policy">Kebijakan Pengembalian Dana</Link>
-            <Link href="/checkout">Order Program</Link>
+            <Link href="/terms"><LocalizedText id="marketing.footerTerms" /></Link>
+            <Link href="/refund-policy"><LocalizedText id="marketing.footerRefund" /></Link>
+            <Link href="/checkout"><LocalizedText id="marketing.orderProgram" /></Link>
+            <Link href="https://nexustalenta-karir.com/"><LocalizedText id="marketing.footerCareer" /></Link>
           </div>
         </div>
 
         <div>
-          <p className="font-extrabold text-slate-950">Kontak</p>
+          <p className="font-extrabold text-slate-950"><LocalizedText id="marketing.footerContact" /></p>
           <div className="mt-3 grid gap-2 text-sm text-slate-600">
             <span className="flex gap-2">
               <Mail size={16} /> {nexusContact.email}

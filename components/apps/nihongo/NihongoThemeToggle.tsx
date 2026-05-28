@@ -1,5 +1,6 @@
 "use client";
 
+import { SquidIcon } from "@/components/ui/SquidIcon";
 import {
   useNihongoTheme,
   type NihongoTheme,
@@ -8,12 +9,12 @@ import {
 const THEME_OPTIONS: Array<{
   value: NihongoTheme;
   short: string;
-  glyph: string;
+  glyph: "nexus" | "squid" | "rockstar";
   title: string;
 }> = [
-  { value: "nexus", short: "NX", glyph: "✦", title: "Nexus (default)" },
-  { value: "squid", short: "SQ", glyph: "○", title: "Squid Game" },
-  { value: "rockstar", short: "RS", glyph: "★", title: "Rockstar" },
+  { value: "nexus", short: "NX", glyph: "nexus", title: "Nexus (default)" },
+  { value: "squid", short: "SQ", glyph: "squid", title: "Squid Game" },
+  { value: "rockstar", short: "RS", glyph: "rockstar", title: "Rockstar" },
 ];
 
 export function NihongoThemeToggle() {
@@ -41,8 +42,17 @@ export function NihongoThemeToggle() {
                 : "text-current/60 hover:text-current"
             }`}
           >
-            <span aria-hidden className="text-[12px]">
-              {option.glyph}
+            <span
+              aria-hidden
+              className="grid h-4 w-4 place-items-center text-[12px]"
+            >
+              {option.glyph === "squid" ? (
+                <SquidIcon shape="circle" active={isActive} />
+              ) : option.glyph === "rockstar" ? (
+                "*"
+              ) : (
+                "N"
+              )}
             </span>
             <span className="hidden sm:inline">{option.short}</span>
           </button>

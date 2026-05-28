@@ -2,6 +2,8 @@
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { GlobalFooter } from "@/components/layout/GlobalFooter";
+import { LanguageToggle } from "@/components/i18n/LanguageToggle";
+import { LocalizedText } from "@/components/i18n/LocalizedText";
 import { MobileSidebarDrawer } from "@/components/layout/MobileSidebarDrawer";
 import { NihongoSidebar } from "@/components/apps/nihongo/NihongoSidebar";
 import { NihongoThemeProvider } from "@/components/apps/nihongo/NihongoThemeProvider";
@@ -80,7 +82,7 @@ export default async function NihongoLayout({
                     href="/platform/dashboard"
                     className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
                   >
-                    {"<-"} Back to Platform
+                    {"<-"} <LocalizedText id="nav.backToPlatform" />
                   </Link>
 
                   <Link
@@ -96,8 +98,10 @@ export default async function NihongoLayout({
                     href="/apps/nihongo/curriculum"
                     className="hidden items-center gap-2 rounded-md bg-cyan-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-cyan-700 sm:inline-flex"
                   >
-                    Mulai Belajar
+                    <LocalizedText id="nav.startLearning" />
                   </Link>
+
+                  <LanguageToggle compact />
 
                   <NihongoThemeToggle />
 

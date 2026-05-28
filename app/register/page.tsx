@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { getUiText } from "@/components/i18n/dictionary";
+import { LanguageToggle } from "@/components/i18n/LanguageToggle";
+import { useLanguage } from "@/components/i18n/LanguageProvider";
 import { isValidEmail, normalizeEmail } from "@/lib/email/validation";
 
 type RegisterResponse = {
@@ -11,6 +14,7 @@ type RegisterResponse = {
 
 export default function RegisterPage() {
   const router = useRouter();
+  const { language } = useLanguage();
 
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -74,7 +78,10 @@ export default function RegisterPage() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-gray-50 p-6">
+    <main className="relative flex min-h-screen items-center justify-center bg-gray-50 p-6">
+      <div className="absolute right-4 top-4 sm:right-6">
+        <LanguageToggle />
+      </div>
       <form
         onSubmit={handleRegister}
         className="w-full max-w-md rounded-2xl border bg-white p-8 shadow-sm"
@@ -82,11 +89,11 @@ export default function RegisterPage() {
         <p className="text-sm font-medium text-blue-600">Nexus Platform</p>
 
         <h1 className="mt-2 text-2xl font-bold text-gray-900">
-          Create account
+          {getUiText("auth.createAccount", language)}
         </h1>
 
         <p className="mt-2 text-sm text-gray-600">
-          Register untuk akses Nexus Talenta Indonesia Academy.
+          {getUiText("auth.registerCopy", language)}
         </p>
 
         {error && (

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getServerSession } from "next-auth";
+import { LocalizedText } from "@/components/i18n/LocalizedText";
 import { authOptions } from "@/lib/auth/auth-options";
 import { PlatformSidebarNav } from "./PlatformSidebarNav";
 
@@ -26,7 +27,7 @@ export async function PlatformSidebar({ mobile = false }: { mobile?: boolean }) 
           />
         </div>
         <h2 className="mt-3 text-lg font-semibold tracking-tight text-slate-950">
-          Platform
+          <LocalizedText id="platform.sidebarTitle" />
         </h2>
       </Link>
 

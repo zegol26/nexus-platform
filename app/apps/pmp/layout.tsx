@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
+import { LanguageToggle } from "@/components/i18n/LanguageToggle";
+import { LocalizedText } from "@/components/i18n/LocalizedText";
 import { GlobalFooter } from "@/components/layout/GlobalFooter";
 import { IdleLogout } from "@/components/platform/IdleLogout";
 import { LogoutButton } from "@/components/platform/LogoutButton";
@@ -43,13 +45,16 @@ export default async function PmpLayout({ children }: { children: React.ReactNod
               href="/platform/dashboard"
               className="rounded-md border border-white/15 bg-white/5 px-3 py-1.5 text-sm font-semibold text-slate-200 transition hover:bg-white/10"
             >
-              Back to Platform
+              <LocalizedText id="nav.backToPlatform" />
             </Link>
             <Link href="/apps/pmp/dashboard" className="font-bold tracking-tight">
               PMP <span className="text-cyan-300">Exam Prep</span>
             </Link>
           </div>
-          <LogoutButton />
+          <div className="flex items-center gap-3">
+            <LanguageToggle compact />
+            <LogoutButton />
+          </div>
         </div>
       </header>
 

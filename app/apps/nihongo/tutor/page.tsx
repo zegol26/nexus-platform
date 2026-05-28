@@ -1,6 +1,8 @@
-﻿"use client";
+"use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { getUiText } from "@/components/i18n/dictionary";
+import { useLanguage } from "@/components/i18n/LanguageProvider";
 import { UserBadgeHeader } from "@/components/nihongo/UserBadgeHeader";
 import { TutorVoicePanel } from "@/components/apps/nihongo/TutorVoicePanel";
 import { clientTrack } from "@/lib/analytics/clientTrack";
@@ -26,18 +28,19 @@ async function callTutor(message: string, mode: "text" | "voice") {
 }
 
 const quickPrompts = [
-  "Ajarkan pola ã¯ dan ãŒ dengan contoh sederhana.",
-  "Buat latihan N5 tentang kata kerja ã¾ã™.",
-  "Jelaskan perbedaan ã‚ã‚Šã¾ã™ dan ã„ã¾ã™.",
+  "Ajarkan pola は dan が dengan contoh sederhana.",
+  "Buat latihan N5 tentang kata kerja ます.",
+  "Jelaskan perbedaan あります dan います.",
   "Bantu saya latihan percakapan kerja di Jepang.",
 ];
 
 export default function TutorPage() {
+  const { language } = useLanguage();
+  const openingMessage = getUiText("tutor.opening", language);
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: "assistant",
-      content:
-        "Halo, saya Ai-chan, sensei Bahasa Jepang kamu di Nexus AI Nihongo. Tulis atau ngobrol langsung pakai mic - saya bantu jawab dengan penjelasan Indonesia, romaji, dan contoh kalimat.",
+      content: openingMessage,
     },
   ]);
   const [input, setInput] = useState("");
@@ -49,6 +52,19 @@ export default function TutorPage() {
       pagePath: "/apps/nihongo/tutor",
     });
   }, []);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setMessages((current) => {
+        if (current.length !== 1 || current[0]?.role !== "assistant") {
+          return current;
+        }
+        return [{ role: "assistant", content: openingMessage }];
+      });
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, [openingMessage]);
 
   const sendMessage = async (message = input) => {
     const trimmed = message.trim();
@@ -100,10 +116,10 @@ export default function TutorPage() {
             AI Tutor
           </p>
           <h1 className="mt-3 text-4xl font-semibold tracking-tight text-slate-950">
-            Ask, drill, and practice Japanese
+            {getUiText("tutor.heroTitle", language)}
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600">
-            Tutor ini fokus ke pelajar Indonesia: JLPT, JFT, grammar, kana, kanji, dan conversation kerja.
+            {getUiText("tutor.heroCopy", language)}
           </p>
         </div>
 
@@ -126,7 +142,7 @@ export default function TutorPage() {
           ))}
           {loading && (
             <div className="rounded-2xl border border-cyan-100 bg-cyan-50 px-5 py-4 text-sm font-medium text-cyan-800">
-              Tutor lagi nyusun jawaban...
+              {getUiText("tutor.loading", language)}
             </div>
           )}
         </div>
@@ -143,7 +159,7 @@ export default function TutorPage() {
                 }
               }}
               className="min-h-14 flex-1 resize-none rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-cyan-500"
-              placeholder="Tanya grammar, minta latihan, atau simulasi percakapan..."
+              placeholder={getUiText("tutor.placeholder", language)}
             />
             <button
               type="button"
@@ -151,7 +167,7 @@ export default function TutorPage() {
               disabled={loading}
               className="self-end rounded-2xl bg-slate-950 px-6 py-4 text-sm font-semibold text-white transition hover:bg-cyan-700 disabled:bg-slate-400"
             >
-              Send
+              {getUiText("tutor.send", language)}
             </button>
           </div>
         </div>
@@ -161,7 +177,9 @@ export default function TutorPage() {
         <TutorVoicePanel onUserTranscript={handleVoiceTranscript} />
 
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-lg font-semibold text-slate-950">Quick prompts</h2>
+          <h2 className="text-lg font-semibold text-slate-950">
+            {getUiText("tutor.quickPrompts", language)}
+          </h2>
           <div className="mt-4 space-y-2">
             {quickPrompts.map((prompt) => (
               <button

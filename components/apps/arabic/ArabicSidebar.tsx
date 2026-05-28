@@ -2,18 +2,21 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { getUiText, type UiTextKey } from "@/components/i18n/dictionary";
+import { useLanguage } from "@/components/i18n/LanguageProvider";
 
 const arabicMenu = [
-  { label: "Dashboard", href: "/apps/arabic/dashboard", marker: "01" },
-  { label: "Curriculum", href: "/apps/arabic/curriculum", marker: "02" },
-  { label: "AI Tutor", href: "/apps/arabic/tutor", marker: "03" },
-  { label: "AI Conversation", href: "/apps/arabic/conversation", marker: "04" },
-  { label: "Quiz", href: "/apps/arabic/quiz", marker: "05" },
-  { label: "Progress", href: "/apps/arabic/progress", marker: "06" },
-];
+  { labelKey: "nav.dashboard", href: "/apps/arabic/dashboard", marker: "01" },
+  { labelKey: "arabic.curriculum", href: "/apps/arabic/curriculum", marker: "02" },
+  { labelKey: "arabic.aiTutor", href: "/apps/arabic/tutor", marker: "03" },
+  { labelKey: "arabic.conversation", href: "/apps/arabic/conversation", marker: "04" },
+  { labelKey: "arabic.quiz", href: "/apps/arabic/quiz", marker: "05" },
+  { labelKey: "arabic.progress", href: "/apps/arabic/progress", marker: "06" },
+] satisfies Array<{ labelKey: UiTextKey; href: string; marker: string }>;
 
 export function ArabicSidebar({ mobile = false }: { mobile?: boolean }) {
   const pathname = usePathname();
+  const { language } = useLanguage();
 
   return (
     <aside
@@ -25,13 +28,13 @@ export function ArabicSidebar({ mobile = false }: { mobile?: boolean }) {
         aria-hidden
         className="pointer-events-none absolute -right-6 -top-6 select-none text-[140px] font-bold leading-none text-emerald-700/[0.06]"
       >
-        ✦
+        *
       </div>
       <div
         aria-hidden
         className="pointer-events-none absolute -bottom-10 -left-4 select-none text-[160px] font-bold leading-none text-emerald-200/[0.5]"
       >
-        ❖
+        *
       </div>
 
       <Link
@@ -39,7 +42,7 @@ export function ArabicSidebar({ mobile = false }: { mobile?: boolean }) {
         className="relative inline-flex items-center text-[10px] font-semibold uppercase tracking-[0.28em] text-emerald-700"
       >
         <span aria-hidden className="mr-1 inline-block w-3">
-          ✦
+          *
         </span>
         <span>Nexus Platform</span>
       </Link>
@@ -71,7 +74,7 @@ export function ArabicSidebar({ mobile = false }: { mobile?: boolean }) {
 
       <div className="relative mt-4 mb-2 flex items-center gap-2 px-1">
         <span className="text-[9px] font-semibold uppercase tracking-[0.28em] text-slate-400">
-          Modul
+          {getUiText("nav.module", language)}
         </span>
         <span className="h-px flex-1 bg-emerald-100" />
       </div>
@@ -101,7 +104,9 @@ export function ArabicSidebar({ mobile = false }: { mobile?: boolean }) {
               >
                 {item.marker}
               </span>
-              <span className="flex-1 truncate">{item.label}</span>
+              <span className="flex-1 truncate">
+                {getUiText(item.labelKey, language)}
+              </span>
             </Link>
           );
         })}
@@ -110,7 +115,7 @@ export function ArabicSidebar({ mobile = false }: { mobile?: boolean }) {
       <div className="relative mt-5 mb-2 h-px bg-emerald-100" />
 
       <p className="relative px-2 text-[9px] font-medium uppercase tracking-[0.28em] text-slate-400">
-        © Nexus AI Arabic
+        Nexus AI Arabic
       </p>
     </aside>
   );

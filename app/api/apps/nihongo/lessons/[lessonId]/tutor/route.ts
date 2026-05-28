@@ -1,4 +1,4 @@
-﻿import { NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import OpenAI from "openai";
 import { authOptions } from "@/lib/auth/auth-options";
@@ -129,7 +129,7 @@ Jawaban singkat:
 Fokus dulu pada pola utama lesson ini. Kalau ada partikel, cari kata sebelum partikelnya. Kalau ada bentuk kata kerja, cek waktunya: sekarang, negatif, lampau, atau lampau negatif.
 
 Contoh:
-æ—¥æœ¬èªžã‚’å‹‰å¼·ã—ã¾ã™ã€‚
+日本語を勉強します。
 Romaji: Nihongo o benkyou shimasu.
 Arti: Saya belajar bahasa Jepang.
 

@@ -62,7 +62,7 @@ export function MobileSidebarDrawer({
                 onClick={() => setOpen(false)}
                 className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-lg font-semibold text-slate-700"
               >
-                ×
+                x
               </button>
             </div>
             {children}

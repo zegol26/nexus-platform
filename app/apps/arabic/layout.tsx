@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
+import { LanguageToggle } from "@/components/i18n/LanguageToggle";
+import { LocalizedText } from "@/components/i18n/LocalizedText";
 import { GlobalFooter } from "@/components/layout/GlobalFooter";
 import { MobileSidebarDrawer } from "@/components/layout/MobileSidebarDrawer";
 import { ArabicSidebar } from "@/components/apps/arabic/ArabicSidebar";
@@ -67,7 +69,7 @@ export default async function ArabicLayout({
                   href="/platform/dashboard"
                   className="rounded-md border border-emerald-200 bg-white px-3 py-1.5 text-sm font-semibold text-slate-700 transition hover:bg-emerald-50"
                 >
-                  {"<-"} Back to Platform
+                  {"<-"} <LocalizedText id="nav.backToPlatform" />
                 </Link>
 
                 <Link
@@ -83,8 +85,10 @@ export default async function ArabicLayout({
                   href="/apps/arabic/curriculum"
                   className="hidden items-center gap-2 rounded-md bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700 sm:inline-flex"
                 >
-                  Mulai Belajar
+                  <LocalizedText id="nav.startLearning" />
                 </Link>
+
+                <LanguageToggle compact />
 
                 <LogoutButton />
               </div>

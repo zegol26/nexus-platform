@@ -147,7 +147,7 @@ export async function seedPlatform() {
       },
       update: {
         name: "Arabic Monthly",
-        description: "Monthly access to Nexus AI Arabic â€” Saudi daily Arabic for work, umrah, and travel",
+        description: "Monthly access to Nexus AI Arabic - Saudi daily Arabic for work, umrah, and travel",
         currency: "IDR",
         durationDays: 30,
         billingPeriod: "MONTHLY",
@@ -156,7 +156,7 @@ export async function seedPlatform() {
         appId: arabicApp.id,
         code: "ARABIC_MONTHLY",
         name: "Arabic Monthly",
-        description: "Monthly access to Nexus AI Arabic â€” Saudi daily Arabic for work, umrah, and travel",
+        description: "Monthly access to Nexus AI Arabic - Saudi daily Arabic for work, umrah, and travel",
         priceCents: 9900000,
         currency: "IDR",
         durationDays: 30,

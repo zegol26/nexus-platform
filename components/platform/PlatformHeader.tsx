@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { LanguageToggle } from "@/components/i18n/LanguageToggle";
+import { LocalizedText } from "@/components/i18n/LocalizedText";
 import { LogoutButton } from "@/components/platform/LogoutButton";
 import { ProfileMenu } from "@/components/platform/ProfileMenu";
 
@@ -8,10 +10,10 @@ export function PlatformHeader() {
       <div className="flex items-center justify-between gap-4">
         <div>
           <p className="text-sm font-semibold text-slate-950">
-            Platform Console
+            <LocalizedText id="platform.title" />
           </p>
           <p className="text-xs text-slate-500">
-            Access, billing, progress, and learning operations
+            <LocalizedText id="platform.subtitle" />
           </p>
         </div>
 
@@ -20,8 +22,9 @@ export function PlatformHeader() {
             href="/"
             className="hidden rounded-full border border-blue-100 bg-white px-4 py-2 text-sm font-semibold text-blue-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-blue-50 sm:inline-flex"
           >
-            Academy Home
+            <LocalizedText id="nav.academyHome" />
           </Link>
+          <LanguageToggle />
           <ProfileMenu />
           <LogoutButton />
         </div>
