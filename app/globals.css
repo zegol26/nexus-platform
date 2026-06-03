@@ -1212,3 +1212,40 @@ body {
     animation: none !important;
   }
 }
+
+/* Production form readability: typed form text must stay dark on every page. */
+:where(
+  input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="image"]),
+  textarea,
+  select
+) {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+  caret-color: #111827;
+}
+
+:where(
+  input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="image"]),
+  textarea
+)::placeholder {
+  color: #64748b !important;
+  opacity: 1;
+}
+
+:where(
+  input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="image"]),
+  textarea,
+  select
+):disabled {
+  background-color: #f8fafc !important;
+  color: #475569 !important;
+}
+
+:where(
+  input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="image"]),
+  textarea
+):-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #111827 !important;
+  caret-color: #111827;
+}

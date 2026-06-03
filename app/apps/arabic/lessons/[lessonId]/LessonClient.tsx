@@ -58,7 +58,7 @@ export function LessonClient({ lessonId, lessonTitle, quizCount }: LessonClientP
         Lanjut Praktek
       </h2>
       <p className="mt-2 text-sm text-slate-600">
-        Setelah baca dialog dan vocab "{lessonTitle}", lanjut praktek dengan tutor, roleplay, atau kuis.
+        Setelah baca dialog dan vocab &quot;{lessonTitle}&quot;, lanjut praktek dengan tutor, roleplay, atau kuis.
       </p>
 
       <div className="mt-6 grid gap-3 sm:grid-cols-3">

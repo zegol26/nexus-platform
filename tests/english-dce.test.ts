@@ -19,22 +19,22 @@ assert.equal(listeningResult.errors.length, 0, listeningResult.errors.map((issue
 
 for (const level of dceCurriculum) {
   assert.equal(level.modules.length, 5, `${level.level} should have exactly 5 DCE modules`);
-  for (const module of level.modules) {
+  for (const courseModule of level.modules) {
     const totalQuestions =
-      module.reading.reduce((sum, item) => sum + item.questions.length, 0) +
-      module.listening.reduce((sum, item) => sum + item.questions.length, 0) +
-      module.dialogue.reduce((sum, item) => sum + item.questions.length, 0) +
-      module.vocabulary.length +
-      module.grammar.length;
-    const counts = countModuleQuestions(module);
-    assert.equal(counts.reading, 25, `${module.slug} should have 25 reading questions`);
-    assert.equal(counts.listening, 25, `${module.slug} should have 25 listening questions`);
-    assert.equal(counts.vocabulary, 25, `${module.slug} should have 25 vocabulary questions`);
-    assert.equal(counts.grammar, 25, `${module.slug} should have 25 grammar questions`);
-    assert.equal(counts.dialogue, 25, `${module.slug} should have 25 dialogue questions`);
-    assert.equal(totalQuestions, 125, `${module.slug} should have 125 total study questions`);
+      courseModule.reading.reduce((sum, item) => sum + item.questions.length, 0) +
+      courseModule.listening.reduce((sum, item) => sum + item.questions.length, 0) +
+      courseModule.dialogue.reduce((sum, item) => sum + item.questions.length, 0) +
+      courseModule.vocabulary.length +
+      courseModule.grammar.length;
+    const counts = countModuleQuestions(courseModule);
+    assert.equal(counts.reading, 25, `${courseModule.slug} should have 25 reading questions`);
+    assert.equal(counts.listening, 25, `${courseModule.slug} should have 25 listening questions`);
+    assert.equal(counts.vocabulary, 25, `${courseModule.slug} should have 25 vocabulary questions`);
+    assert.equal(counts.grammar, 25, `${courseModule.slug} should have 25 grammar questions`);
+    assert.equal(counts.dialogue, 25, `${courseModule.slug} should have 25 dialogue questions`);
+    assert.equal(totalQuestions, 125, `${courseModule.slug} should have 125 total study questions`);
 
-    for (const item of module.listening) {
+    for (const item of courseModule.listening) {
       assert.ok(getListeningTranscript(item), `${item.id} should have a transcript`);
       assert.equal(item.speakers[0], "John", `${item.id} should use John as speaker A`);
       assert.ok(item.speakers[1], `${item.id} should include another person as speaker B`);

@@ -19,6 +19,7 @@ import {
   resolveMidtransCheckoutMode,
 } from "../lib/platform/midtrans";
 import { canActOnPayment, normalizePaymentVerificationAction } from "../lib/platform/payment-policy";
+import { isCertificateEligibleForProgress } from "../lib/certificates/policy";
 import {
   durationDaysForBillingPeriod,
   priceCentsToRupiah,
@@ -190,6 +191,13 @@ test("manual payment policy disables actions for rejected payments", () => {
   assert.equal(normalizePaymentVerificationAction("anything-else"), "PAID");
   assert.equal(canActOnPayment("WAITING_VERIFICATION"), true);
   assert.equal(canActOnPayment("REJECTED"), false);
+});
+
+test("certificate policy lets admins obtain certificates without 100 percent progress", () => {
+  assert.equal(isCertificateEligibleForProgress({ role: "ADMIN", percentage: 0 }), true);
+  assert.equal(isCertificateEligibleForProgress({ role: "SUPER_ADMIN", percentage: 25 }), true);
+  assert.equal(isCertificateEligibleForProgress({ role: "USER", percentage: 99 }), false);
+  assert.equal(isCertificateEligibleForProgress({ role: "USER", percentage: 100 }), true);
 });
 
 test("admin recordings are grouped by user and question with newest recording first", () => {

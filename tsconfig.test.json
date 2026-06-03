@@ -19,6 +19,8 @@
     "lib/nexus/access-policy.ts",
     "lib/nihongo/lesson-cache-policy.ts",
     "lib/platform/payment-policy.ts",
+    "lib/platform/access.ts",
+    "lib/certificates/policy.ts",
     "lib/platform/settings-policy.ts"
   ],
   "exclude": ["node_modules", ".next", ".test-dist"]

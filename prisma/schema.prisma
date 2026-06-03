@@ -78,6 +78,7 @@ model User {
   englishInterviewAnswers EnglishInterviewAnswer[]
   englishInterviewReviews EnglishInterviewReview[]         @relation("EnglishInterviewReviewer")
   analyticsEvents         AnalyticsEvent[]
+  courseCertificates      CourseCertificate[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -431,6 +432,23 @@ model PaymentProof {
 
   @@index([userId])
   @@index([status])
+}
+
+model CourseCertificate {
+  id            String   @id @default(cuid())
+  userId        String
+  appSlug       String
+  courseName    String
+  displayName   String
+  certificateId String   @unique
+  issuedAt      DateTime @default(now())
+  createdAt     DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, appSlug, courseName])
+  @@index([userId])
+  @@index([appSlug])
 }
 
 model LessonAccess {

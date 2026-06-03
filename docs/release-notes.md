@@ -1,5 +1,34 @@
 # Release Notes
 
+## [vNext] - Certificate UAT
+
+### Added
+
+- Added course certificate generation for eligible users.
+- Admin and super admin users are eligible to generate certificates without requiring 100% course progress.
+- Added certificate eligibility and generation APIs plus printable certificate detail page.
+
+### Fixed
+
+- Forced typed text, placeholders, disabled states, and browser autofill text in form inputs, textareas, and selects to use dark readable text across login, sign up, and app forms.
+
+### Local UAT
+
+- Local UAT database is `nexus_platform`.
+- Applied migration `20260603123000_add_course_certificates` with `npx prisma migrate deploy`.
+- Verified local UAT database has 6 users and `CourseCertificate` table is ready.
+- Verified seeded admin credentials still match the local environment.
+- User acceptance testing passed locally before production push preparation.
+
+### Tested
+
+- `npx prisma migrate status`
+- `npx prisma migrate deploy`
+- `npx prisma generate`
+- `npm test`
+- `npx tsc --noEmit`
+- `npm run build`
+
 ## [vNext] - Nexus Kingdom Retaliation Visibility
 
 ### Fixed

@@ -70,7 +70,7 @@ export function ManualBillingClient({
     setPaymentId(payload.payment.id);
     if (payload.midtrans?.redirectUrl) {
       setStatus("Checkout siap. Kamu akan diarahkan ke halaman pembayaran aman.");
-      window.location.href = payload.midtrans.redirectUrl;
+      window.location.assign(payload.midtrans.redirectUrl);
       return;
     }
     setStatus("Invoice dibuat. Lanjutkan pembayaran dari halaman checkout.");

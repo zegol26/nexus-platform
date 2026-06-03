@@ -231,8 +231,8 @@ export function validateEnglishListeningData(rootDir = process.cwd()): EnglishSa
   const listeningIds = new Set<string>();
 
   for (const level of dceCurriculum) {
-    for (const module of level.modules) {
-      for (const item of module.listening) {
+    for (const courseModule of level.modules) {
+      for (const item of courseModule.listening) {
         checked += 1;
         listeningIds.add(item.id);
         const transcript = getListeningTranscript(item);
@@ -242,7 +242,7 @@ export function validateEnglishListeningData(rootDir = process.cwd()): EnglishSa
           addIssue(issues, {
             severity: "error",
             itemId: item.id,
-            section: module.topic,
+            section: courseModule.topic,
             level: level.level,
             audio,
             issue: "Listening item has no transcript/script.",
@@ -255,7 +255,7 @@ export function validateEnglishListeningData(rootDir = process.cwd()): EnglishSa
           addIssue(issues, {
             severity: "error",
             itemId: item.id,
-            section: module.topic,
+            section: courseModule.topic,
             level: level.level,
             audio,
             issue: "Foundation A1-A2 listening transcript is not in clear dialogue format.",
@@ -270,7 +270,7 @@ export function validateEnglishListeningData(rootDir = process.cwd()): EnglishSa
             addIssue(issues, {
               severity: "error",
               itemId: item.id,
-              section: module.topic,
+              section: courseModule.topic,
               level: level.level,
               audio,
               issue: "Listening item references a missing audio file.",
@@ -284,7 +284,7 @@ export function validateEnglishListeningData(rootDir = process.cwd()): EnglishSa
           addIssue(issues, {
             severity: "warning",
             itemId: item.id,
-            section: module.topic,
+            section: courseModule.topic,
             level: level.level,
             audio,
             issue: "Listening item uses generated TTS and has no permanent audio metadata.",
@@ -296,7 +296,7 @@ export function validateEnglishListeningData(rootDir = process.cwd()): EnglishSa
         validateComprehensionQuestions({
           issues,
           level: level.level,
-          section: module.topic,
+          section: courseModule.topic,
           itemId: item.id,
           questions: item.questions,
           transcript,
@@ -333,15 +333,15 @@ export function validateEnglishQuestionData(): EnglishSanityResult {
   let checked = 0;
 
   for (const level of dceCurriculum) {
-    for (const module of level.modules) {
-      checked += countModuleQuestions(module).total;
-      validateModuleQuestionCount(issues, level.level, module);
+    for (const courseModule of level.modules) {
+      checked += countModuleQuestions(courseModule).total;
+      validateModuleQuestionCount(issues, level.level, courseModule);
 
-      for (const passage of module.reading) {
+      for (const passage of courseModule.reading) {
         validateComprehensionQuestions({
           issues,
           level: level.level,
-          section: module.topic,
+          section: courseModule.topic,
           itemId: passage.id,
           questions: passage.questions,
           transcript: passage.text,
@@ -349,11 +349,11 @@ export function validateEnglishQuestionData(): EnglishSanityResult {
         });
       }
 
-      for (const item of module.listening) {
+      for (const item of courseModule.listening) {
         validateComprehensionQuestions({
           issues,
           level: level.level,
-          section: module.topic,
+          section: courseModule.topic,
           itemId: item.id,
           questions: item.questions,
           transcript: getListeningTranscript(item),
@@ -361,11 +361,11 @@ export function validateEnglishQuestionData(): EnglishSanityResult {
         });
       }
 
-      for (const dialogue of module.dialogue) {
+      for (const dialogue of courseModule.dialogue) {
         validateComprehensionQuestions({
           issues,
           level: level.level,
-          section: module.topic,
+          section: courseModule.topic,
           itemId: dialogue.id,
           questions: dialogue.questions,
           transcript: dialogue.lines.map((line) => `${line.speaker}: ${line.text}`).join("\n"),
@@ -376,17 +376,17 @@ export function validateEnglishQuestionData(): EnglishSanityResult {
       validateDrills({
         issues,
         level: level.level,
-        section: module.topic,
-        itemId: `${module.slug}/vocabulary`,
-        items: module.vocabulary,
+        section: courseModule.topic,
+        itemId: `${courseModule.slug}/vocabulary`,
+        items: courseModule.vocabulary,
         skillType: "vocabulary",
       });
       validateDrills({
         issues,
         level: level.level,
-        section: module.topic,
-        itemId: `${module.slug}/grammar`,
-        items: module.grammar,
+        section: courseModule.topic,
+        itemId: `${courseModule.slug}/grammar`,
+        items: courseModule.grammar,
         skillType: "grammar",
       });
     }

@@ -7,6 +7,7 @@ import { getOrCreateGameProfile } from "@/lib/gamification/kingdom";
 import { platformApps } from "@/lib/platform/app-registry";
 import { filterValidAppAccess, isAdminRole } from "@/lib/platform/access";
 import { KingdomCard } from "@/components/nihongo/game/KingdomCard";
+import { CertificateAction } from "@/components/certificates/CertificateAction";
 
 export const dynamic = "force-dynamic";
 
@@ -192,6 +193,8 @@ export default async function PlatformDashboardPage() {
                   Review Flashcards
                 </Link>
               )}
+
+              {hasNihongoAccess && <CertificateAction appSlug="nihongo" compact />}
             </div>
           </div>
 

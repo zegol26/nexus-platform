@@ -228,7 +228,7 @@ export default function ArabicConversationPage() {
             </button>
           </div>
           <p className="mt-3 text-xs text-slate-500">
-            Tip: kirim 5–7 turn lalu klik "Selesai & Ringkasan" untuk dapat koreksi lengkap.
+            Tip: kirim 5–7 turn lalu klik &quot;Selesai & Ringkasan&quot; untuk dapat koreksi lengkap.
           </p>
         </div>
       </section>

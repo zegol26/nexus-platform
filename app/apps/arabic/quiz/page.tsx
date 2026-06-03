@@ -68,7 +68,10 @@ export default function ArabicQuizPage() {
       appSlug: "arabic",
       pagePath: "/apps/arabic/quiz",
     });
-    loadQuiz();
+    const timer = window.setTimeout(() => {
+      void loadQuiz();
+    }, 0);
+    return () => window.clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
