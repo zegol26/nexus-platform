@@ -18,9 +18,9 @@ export default function PlatformLayout({
           <PlatformSidebar mobile />
         </MobileSidebarDrawer>
 
-        <div className="flex min-w-0 flex-1 flex-col">
+        <div className="flex min-w-0 max-w-full flex-1 flex-col">
           <PlatformHeader />
-          <main className="flex-1 px-6 py-8 lg:px-10">{children}</main>
+          <main className="min-w-0 flex-1 px-4 py-6 sm:px-6 lg:px-10 lg:py-8">{children}</main>
           <GlobalFooter product="Nexus Platform" />
         </div>
       </div>

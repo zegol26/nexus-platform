@@ -162,6 +162,8 @@ export const uiText = {
   },
   "auth.backHome": { id: "Kembali ke Academy Home", en: "Back to Academy Home" },
   "auth.memberArea": { id: "Member area", en: "Member area" },
+  "auth.emailLabel": { id: "Email", en: "Email" },
+  "auth.passwordLabel": { id: "Password", en: "Password" },
   "auth.loginTitle": { id: "Masuk platform", en: "Sign in to platform" },
   "auth.loginCopy": {
     id: "Gunakan akun Nexus Platform yang sudah terdaftar.",
@@ -172,8 +174,19 @@ export const uiText = {
     en: "Enter password",
   },
   "auth.signingIn": { id: "Signing in...", en: "Signing in..." },
+  "auth.loginAction": { id: "Login", en: "Log in" },
   "auth.noAccount": { id: "Belum punya akun?", en: "Do not have an account?" },
   "auth.register": { id: "Register", en: "Register" },
+  "auth.featureAiChat": { id: "AI Chat", en: "AI Chat" },
+  "auth.featureAiTalk": { id: "AI Talk", en: "AI Talk" },
+  "auth.featureAdaptiveLearning": {
+    id: "Belajar Adaptif",
+    en: "Adaptive Learning",
+  },
+  "auth.featureMassiveMockTest": {
+    id: "Mock Test Besar",
+    en: "Massive Mock Test",
+  },
   "auth.createAccount": { id: "Buat akun", en: "Create account" },
   "auth.registerCopy": {
     id: "Register untuk akses Nexus Talenta Indonesia Academy.",

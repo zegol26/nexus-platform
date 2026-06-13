@@ -6,6 +6,7 @@ import { prisma } from "@/lib/db/prisma";
 import { canAskAiTutor, incrementFeatureUsage } from "@/lib/nexus/access-guards";
 import { trackEvent } from "@/lib/analytics/trackEvent";
 import { findModule, findPersona } from "@/lib/english/dce";
+import { enforceJohnEnglishOnly } from "@/lib/english/john-language-policy";
 
 // Generates an opening roleplay turn the John conversation page can use
 // to seed a scripted scenario. The runtime conversation continues
@@ -102,7 +103,7 @@ export async function POST(req: Request) {
       messages: [
         {
           role: "system",
-          content: `You generate a single opening line for a roleplay scenario. Stay fully in character as ${persona.name} (${persona.role}). Personality: ${persona.personality}. CEFR level: ${lookup.level.cefrRange}. Output ONLY the line, no narration, no quotes.`,
+          content: `You generate a single opening line for a roleplay scenario. Stay fully in character as ${persona.name} (${persona.role}). Personality: ${persona.personality}. CEFR level: ${lookup.level.cefrRange}. Output ONLY the line, no narration, no quotes. English only: do not use Japanese, Chinese, Korean, Arabic, Cyrillic, or any non-Latin script.`,
         },
         {
           role: "user",
@@ -111,9 +112,10 @@ export async function POST(req: Request) {
       ],
     });
 
-    const generated =
+    const generated = enforceJohnEnglishOnly(
       completion.choices[0]?.message?.content?.trim().replace(/^"|"$/g, "") ||
-      roleplay.openingLine;
+        roleplay.openingLine
+    );
 
     return NextResponse.json({
       opening: generated,

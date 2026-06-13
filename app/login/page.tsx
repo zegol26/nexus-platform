@@ -6,10 +6,17 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { ArrowRight, LockKeyhole, Mail } from "lucide-react";
-import { getUiText } from "@/components/i18n/dictionary";
+import { getUiText, type UiTextKey } from "@/components/i18n/dictionary";
 import { LanguageToggle } from "@/components/i18n/LanguageToggle";
 import { useLanguage } from "@/components/i18n/LanguageProvider";
 import { nexusLogoUrl } from "@/lib/nexus/marketing";
+
+const loginFeatureKeys = [
+  "auth.featureAiChat",
+  "auth.featureAiTalk",
+  "auth.featureAdaptiveLearning",
+  "auth.featureMassiveMockTest",
+] satisfies UiTextKey[];
 
 export default function LoginPage() {
   const router = useRouter();
@@ -52,7 +59,7 @@ export default function LoginPage() {
       <div className="absolute right-4 top-4 sm:right-6">
         <LanguageToggle />
       </div>
-      <div className="mx-auto grid w-full max-w-7xl items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+      <div className="mx-auto grid w-full max-w-7xl min-w-0 items-center gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10">
         <section className="min-w-0">
           <Image
             src={nexusLogoUrl}
@@ -62,16 +69,16 @@ export default function LoginPage() {
             className="h-16 w-auto"
             priority
           />
-          <h1 className="mt-8 max-w-2xl text-5xl font-black leading-tight text-slate-950">
+          <h1 className="mt-8 max-w-2xl text-4xl font-black leading-tight text-slate-950 sm:text-5xl">
             {getUiText("auth.loginHero", language)}
           </h1>
           <p className="mt-4 max-w-xl text-lg leading-8 text-slate-600">
             {getUiText("auth.loginHeroCopy", language)}
           </p>
-          <div className="mt-8 grid gap-3 sm:grid-cols-3">
-            {["AI Chat", "AI Talk", "Adaptive Learning", "Massive Mock Test"].map((item) => (
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+            {loginFeatureKeys.map((item) => (
               <div key={item} className="rounded-2xl bg-white p-4 text-sm font-black text-blue-800 shadow-sm">
-                {item}
+                {getUiText(item, language)}
               </div>
             ))}
           </div>
@@ -83,8 +90,8 @@ export default function LoginPage() {
           </Link>
         </section>
 
-        <section className="nexus-glass rounded-[28px] p-6">
-          <form onSubmit={handleLogin} className="rounded-3xl bg-white p-6 shadow-sm">
+        <section className="nexus-glass min-w-0 rounded-[24px] p-3 sm:rounded-[28px] sm:p-6">
+          <form onSubmit={handleLogin} className="rounded-3xl bg-white p-5 shadow-sm sm:p-6">
             <p className="text-sm font-extrabold text-blue-700">
               {getUiText("auth.memberArea", language)}
             </p>
@@ -103,7 +110,7 @@ export default function LoginPage() {
 
             <div className="mt-6 grid gap-4">
               <label className="grid gap-2 text-sm font-extrabold text-slate-700">
-                Email
+                {getUiText("auth.emailLabel", language)}
                 <span className="relative">
                   <Mail className="absolute left-3 top-3.5 text-slate-400" size={18} />
                   <input
@@ -118,7 +125,7 @@ export default function LoginPage() {
               </label>
 
               <label className="grid gap-2 text-sm font-extrabold text-slate-700">
-                Password
+                {getUiText("auth.passwordLabel", language)}
                 <span className="relative">
                   <LockKeyhole className="absolute left-3 top-3.5 text-slate-400" size={18} />
                   <input
@@ -134,7 +141,7 @@ export default function LoginPage() {
             </div>
 
             <button type="submit" disabled={loading} className="nexus-primary mt-6 w-full disabled:opacity-50">
-              {loading ? getUiText("auth.signingIn", language) : "Login"} <ArrowRight size={18} />
+              {loading ? getUiText("auth.signingIn", language) : getUiText("auth.loginAction", language)} <ArrowRight size={18} />
             </button>
 
             <p className="mt-4 text-center text-sm text-slate-600">

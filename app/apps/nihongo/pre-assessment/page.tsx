@@ -94,6 +94,7 @@ export default function NihongoPreAssessmentPage() {
   const [result, setResult] = useState<AssessmentResult | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isTrial, setIsTrial] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [missingQuestionId, setMissingQuestionId] = useState<string | null>(null);
 
@@ -109,8 +110,16 @@ export default function NihongoPreAssessmentPage() {
 
     async function loadAssessment() {
       try {
-        const response = await fetch("/api/apps/nihongo/pre-assessment/generate");
+        const [profileResponse, response] = await Promise.all([
+          fetch("/api/apps/nihongo/pre-assessment/profile"),
+          fetch("/api/apps/nihongo/pre-assessment/generate"),
+        ]);
         const payload = await response.json();
+
+        if (profileResponse.ok) {
+          const profilePayload = await profileResponse.json();
+          setIsTrial(Boolean(profilePayload.trial));
+        }
 
         if (!response.ok) {
           throw new Error(payload.error ?? "Assessment belum bisa dimuat.");
@@ -189,7 +198,7 @@ export default function NihongoPreAssessmentPage() {
   function goNext() {
     const key = steps[currentStep]?.key;
 
-    if (key === "pronunciation" && !pronunciation) {
+    if (key === "pronunciation" && !pronunciation && !isTrial) {
       setError("Recording pronunciation belum selesai. Rekam atau unggah audio dulu sebelum melihat hasil.");
       return;
     }
@@ -276,11 +285,15 @@ export default function NihongoPreAssessmentPage() {
         ) : currentStep === 5 ? (
           <QuestionStep title="Listening Comprehension" copy="Audio disiapkan lewat audioUrl. Jika file belum tersedia, gunakan teks placeholder untuk MVP." questions={groupedQuestions.listening} answers={answers} missingQuestionId={missingQuestionId} onAnswer={answerQuestion} />
         ) : currentStep === 6 ? (
-          <PronunciationStep prompt={pronunciationPrompt} evaluation={pronunciation} onEvaluation={setPronunciation} />
+          isTrial ? (
+            <TrialPronunciationStep prompt={pronunciationPrompt} />
+          ) : (
+            <PronunciationStep prompt={pronunciationPrompt} evaluation={pronunciation} onEvaluation={setPronunciation} />
+          )
         ) : currentStep === 7 ? (
           <LoadingStep />
         ) : (
-          <ResultStep result={result} />
+          <ResultStep result={result} isTrial={isTrial} />
         )}
       </section>
 
@@ -301,16 +314,38 @@ export default function NihongoPreAssessmentPage() {
             disabled={isSubmitting}
             className="rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-cyan-700 disabled:cursor-not-allowed disabled:bg-slate-300"
           >
-            {currentStep === 6 ? "Lihat Hasil Saya" : "Lanjut"}
+            {currentStep === 6 ? (isTrial ? "Lihat Hasil Trial" : "Lihat Hasil Saya") : "Lanjut"}
           </button>
         ) : (
           <Link
-            href="/apps/nihongo/dashboard"
+            href={isTrial ? "/checkout" : "/apps/nihongo/dashboard"}
             className="rounded-full bg-slate-950 px-6 py-3 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-cyan-700"
           >
-            Masuk Dashboard
+            {isTrial ? "Upgrade untuk Simpan Progress" : "Masuk Dashboard"}
           </Link>
         )}
+      </div>
+    </div>
+  );
+}
+
+function TrialPronunciationStep({ prompt }: { prompt: PronunciationPrompt | null }) {
+  return (
+    <div className="grid gap-6 lg:grid-cols-[1fr_0.85fr]">
+      <div>
+        <h2 className="text-2xl font-semibold text-slate-950">Speaking Preview</h2>
+        <p className="mt-2 text-sm leading-6 text-slate-600">
+          Bagian speaking tersedia untuk akun berbayar karena membutuhkan evaluasi audio. Pada trial tanpa login, Anda tetap bisa melihat hasil placement dari jawaban assessment.
+        </p>
+        {prompt ? (
+          <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <p className="text-xl leading-9 text-slate-950">{prompt.prompt}</p>
+            <p className="mt-3 text-sm leading-7 text-slate-500">{prompt.kanaSupport}</p>
+          </div>
+        ) : null}
+      </div>
+      <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-900">
+        Trial tidak menyimpan audio, badge, roadmap, atau progress. Setelah upgrade, hasil assessment Anda akan tersimpan di dashboard.
       </div>
     </div>
   );
@@ -472,7 +507,7 @@ function LoadingStep() {
   );
 }
 
-function ResultStep({ result }: { result: AssessmentResult | null }) {
+function ResultStep({ result, isTrial }: { result: AssessmentResult | null; isTrial: boolean }) {
   if (!result) {
     return <p className="text-sm text-slate-600">Hasil belum tersedia.</p>;
   }
@@ -491,6 +526,31 @@ function ResultStep({ result }: { result: AssessmentResult | null }) {
           <p className="mt-3 text-base font-semibold text-slate-950">{result.encouragementJapanese}</p>
         </div>
       </div>
+
+      {isTrial ? (
+        <div className="rounded-2xl border border-cyan-200 bg-cyan-50 p-6">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-800">Trial tanpa login</p>
+          <h2 className="mt-2 text-2xl font-semibold text-slate-950">Simpan hasil ini dan buka roadmap lengkap.</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-7 text-slate-700">
+            Hasil trial ini tidak disimpan. Dengan upgrade, Anda bisa menyimpan placement, membuka dashboard, progress,
+            flashcard lanjutan, quiz, AI tutor, listening, reading, dan mock test.
+          </p>
+          <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="/checkout"
+              className="rounded-full bg-slate-950 px-5 py-3 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-cyan-700"
+            >
+              Upgrade dan simpan roadmap
+            </Link>
+            <Link
+              href="/register"
+              className="rounded-full border border-cyan-200 bg-white px-5 py-3 text-center text-sm font-semibold text-cyan-800 transition hover:bg-cyan-50"
+            >
+              Buat akun dulu
+            </Link>
+          </div>
+        </div>
+      ) : null}
 
       {result.badge ? (
         <div className="rounded-2xl border border-cyan-200 bg-cyan-50 p-6">

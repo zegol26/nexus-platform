@@ -8,7 +8,18 @@ export async function GET() {
   const session = await getServerSession(authOptions);
 
   if (!session?.user?.email) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    return NextResponse.json({
+      profile: null,
+      completed: false,
+      trial: true,
+      jlptN5MockReadiness: {
+        isAdmin: false,
+        isReady: false,
+        readinessScore: 0,
+        threshold: 70,
+        message: "Trial tanpa login tidak menyimpan readiness mock test.",
+      },
+    });
   }
 
   const user = await prisma.user.findUnique({

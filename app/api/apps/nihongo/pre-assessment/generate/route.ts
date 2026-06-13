@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth/auth-options";
 import {
   generatePreAssessmentQuestionBank,
   getFallbackAssessmentQuestions,
@@ -8,8 +10,27 @@ import {
 import { validateAssessmentQuestionBank } from "@/lib/nihongo/assessment/validators";
 import { prisma } from "@/lib/db/prisma";
 import { generateAssessmentForLevel, type AssessmentTargetLevel } from "@/lib/nihongo/assessment/generateAssessmentForLevel";
+import {
+  anonymousRateLimitResponse,
+  checkAnonymousRateLimit,
+  getAnonymousClientKey,
+} from "@/lib/nexus/anonymous-rate-limit";
 
 export async function GET(request: Request) {
+  const session = await getServerSession(authOptions);
+
+  if (!session?.user?.email) {
+    const rateLimit = checkAnonymousRateLimit({
+      key: getAnonymousClientKey(request, "nihongo-trial:assessment-generate"),
+      limit: 20,
+      windowMs: 60_000,
+    });
+
+    if (!rateLimit.allowed) {
+      return anonymousRateLimitResponse(rateLimit.resetAt);
+    }
+  }
+
   const targetLevel = getTargetLevel(request);
 
   try {

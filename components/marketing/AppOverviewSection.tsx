@@ -18,6 +18,7 @@ type AppOverview = {
   description: Record<UiLanguage, string>;
   features: Record<UiLanguage, string[]>;
   href: string;
+  trialHref?: string;
 };
 
 const appOverviews: AppOverview[] = [
@@ -30,10 +31,11 @@ const appOverviews: AppOverview[] = [
       en: "A Japanese mini workspace previewing the dashboard, AI tutor, flashcards, and JLPT/JFT practice paths before subscribing.",
     },
     features: {
-      id: ["AI tutor teaser", "Preview flashcard", "Reading & listening terkunci", "Preview mock test"],
-      en: ["AI tutor teaser", "Flashcard preview", "Reading & listening locked", "Mock test preview"],
+      id: ["Pre-assessment real", "Flashcard real", "Quiz real", "Progress tidak disimpan"],
+      en: ["Real pre-assessment", "Real flashcards", "Real quiz", "Progress is not saved"],
     },
     href: "/overview/nihongo",
+    trialHref: "/apps/nihongo/pre-assessment",
   },
   {
     name: "Nexus AI English",
@@ -116,12 +118,29 @@ export function AppOverviewSection() {
               ))}
             </div>
 
-            <Link
-              href={app.href}
-              className="mt-5 inline-flex min-h-10 items-center justify-center gap-2 rounded-full bg-blue-600 px-4 text-sm font-black text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700 active:scale-95"
-            >
-              {language === "id" ? "Overview trial" : "Trial overview"} <ArrowRight size={16} />
-            </Link>
+            <div className="mt-5 flex flex-col gap-2 sm:flex-row">
+              <Link
+                href={app.trialHref ?? app.href}
+                className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full bg-blue-600 px-4 text-sm font-black text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700 active:scale-95"
+              >
+                {app.trialHref
+                  ? language === "id"
+                    ? "Coba trial gratis"
+                    : "Try free trial"
+                  : language === "id"
+                    ? "Overview trial"
+                    : "Trial overview"}{" "}
+                <ArrowRight size={16} />
+              </Link>
+              {app.trialHref ? (
+                <Link
+                  href={app.href}
+                  className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-blue-100 bg-white px-4 text-sm font-black text-blue-700 transition hover:bg-blue-50 active:scale-95"
+                >
+                  {language === "id" ? "Lihat overview" : "View overview"}
+                </Link>
+              ) : null}
+            </div>
           </article>
         );
       })}

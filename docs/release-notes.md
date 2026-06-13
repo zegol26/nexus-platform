@@ -29,6 +29,45 @@
 - `npx tsc --noEmit`
 - `npm run build`
 
+## [2026.06.13] - Anonymous Nihongo Trial and Documentation Consolidation
+
+Status: UAT OK, ready for git/Vercel release.
+
+### Added
+
+- Added anonymous trial access for prospective Nexus AI Nihongo paid users on
+  `/apps/nihongo/pre-assessment`, `/apps/nihongo/flashcards`, and
+  `/apps/nihongo/quiz`.
+- Trial users can experience real pre-assessment scoring, flashcard decks, and
+  quiz batches without login.
+- Added the canonical AI agent handbook and project memory docs under
+  `AGENTS.md`, `docs/`, `tasks/`, and `skills/`.
+
+### Changed
+
+- Other Nihongo app routes remain locked for anonymous users and route back to
+  login/checkout instead of opening paid or progress-bearing surfaces.
+- Anonymous pre-assessment submissions return a trial result without creating
+  assessment sessions, profiles, badges, rewards, or lesson progress.
+- Speaking upload/evaluation is skipped in anonymous trial mode because it is
+  cost-bearing and not needed to save progress.
+- Anonymous trial analytics events are acknowledged but not written to the
+  database, keeping the campaign funnel read-only for unauthenticated traffic.
+- Anonymous trial API requests now use a best-effort per-IP rate limit for
+  pre-assessment, flashcards, and quiz endpoints.
+- John AI Coach replies are now repaired/replaced server-side if a model reply
+  contains Japanese/CJK, Korean, Arabic, Cyrillic, or other forbidden scripts.
+- Login page labels, actions, and feature chips use the shared ID/EN dictionary.
+- The authenticated platform header no longer repeats the "Platform Console"
+  title/subtitle block.
+
+### Tested
+
+- UAT OK.
+- `npx tsc --noEmit --pretty false`
+- `npm test`
+- `npx eslint proxy.ts lib/nexus/nihongo-trial.ts app/apps/nihongo/layout.tsx components/apps/nihongo/NihongoSidebar.tsx app/apps/nihongo/pre-assessment/page.tsx app/api/apps/nihongo/flashcards/route.ts app/api/apps/nihongo/pre-assessment/profile/route.ts app/api/apps/nihongo/pre-assessment/submit/route.ts`
+
 ## [vNext] - Nexus Kingdom Retaliation Visibility
 
 ### Fixed

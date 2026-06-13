@@ -3,29 +3,50 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
 import { canUseFlashcard } from "@/lib/nexus/access-guards";
+import {
+  anonymousRateLimitResponse,
+  checkAnonymousRateLimit,
+  getAnonymousClientKey,
+} from "@/lib/nexus/anonymous-rate-limit";
+import { getAnonymousNihongoTrialAccess } from "@/lib/nexus/nihongo-trial";
 
 export async function GET(request: Request) {
-  const session = await getServerSession(authOptions);
-  if (!session?.user?.email) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
-  const user = await prisma.user.findUnique({
-    where: { email: session.user.email },
-    select: { id: true, role: true },
-  });
-
-  if (!user) {
-    return NextResponse.json({ error: "User not found" }, { status: 404 });
-  }
-
   const { searchParams } = new URL(request.url);
   const deck = searchParams.get("deck");
   const level = searchParams.get("level");
   const limit = Number(searchParams.get("limit") ?? "80");
-  const access = user.role === "ADMIN" || user.role === "SUPER_ADMIN"
-    ? { allowed: true, plan: "ADMIN" }
-    : await canUseFlashcard(user.id, limit);
+  const session = await getServerSession(authOptions);
+  if (!session?.user?.email) {
+    const rateLimit = checkAnonymousRateLimit({
+      key: getAnonymousClientKey(request, "nihongo-trial:flashcards"),
+      limit: 60,
+      windowMs: 60_000,
+    });
+
+    if (!rateLimit.allowed) {
+      return anonymousRateLimitResponse(rateLimit.resetAt);
+    }
+  }
+
+  const user = session?.user?.email
+    ? await prisma.user.findUnique({
+        where: { email: session.user.email },
+        select: { id: true, role: true },
+      })
+    : null;
+
+  const access = !session?.user?.email
+    ? getAnonymousNihongoTrialAccess(limit)
+    : user?.role === "ADMIN" || user?.role === "SUPER_ADMIN"
+      ? { allowed: true, plan: "ADMIN" }
+      : user
+        ? await canUseFlashcard(user.id, limit)
+        : null;
+
+  if (!access) {
+    return NextResponse.json({ error: "User not found" }, { status: 404 });
+  }
+
   const takeLimit = access.limit ? Math.min(limit, access.limit) : limit;
 
   const where = {

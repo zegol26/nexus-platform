@@ -8,6 +8,11 @@ import { evaluateAssessment, type PronunciationEvaluation, type SubmittedAssessm
 import { evaluatePlacement } from "@/lib/nihongo/assessment/evaluatePlacement";
 import { generatePreAssessmentQuestionBank } from "@/lib/nihongo/assessment/questionBank";
 import { validateAssessmentQuestionBank } from "@/lib/nihongo/assessment/validators";
+import {
+  anonymousRateLimitResponse,
+  checkAnonymousRateLimit,
+  getAnonymousClientKey,
+} from "@/lib/nexus/anonymous-rate-limit";
 
 type SubmitBody = {
   answers?: SubmittedAssessmentAnswer[];
@@ -18,10 +23,28 @@ type SubmitBody = {
 };
 
 export async function POST(request: Request) {
+  const body = (await request.json()) as SubmitBody;
+  const answers = body.answers ?? [];
+  const pronunciation = sanitizePronunciation(body.pronunciation);
+
+  if (answers.length === 0) {
+    return NextResponse.json({ error: "At least one answer is required." }, { status: 400 });
+  }
+
   const session = await getServerSession(authOptions);
 
   if (!session?.user?.email) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    const rateLimit = checkAnonymousRateLimit({
+      key: getAnonymousClientKey(request, "nihongo-trial:assessment-submit"),
+      limit: 10,
+      windowMs: 60_000,
+    });
+
+    if (!rateLimit.allowed) {
+      return anonymousRateLimitResponse(rateLimit.resetAt);
+    }
+
+    return submitAnonymousTrialAssessment({ answers, pronunciation });
   }
 
   const user = await prisma.user.findUnique({
@@ -30,14 +53,6 @@ export async function POST(request: Request) {
 
   if (!user) {
     return NextResponse.json({ error: "User not found" }, { status: 404 });
-  }
-
-  const body = (await request.json()) as SubmitBody;
-  const answers = body.answers ?? [];
-  const pronunciation = sanitizePronunciation(body.pronunciation);
-
-  if (answers.length === 0) {
-    return NextResponse.json({ error: "At least one answer is required." }, { status: 400 });
   }
 
   const bankRows = await prisma.assessmentQuestion.findMany({
@@ -194,6 +209,117 @@ export async function POST(request: Request) {
       aiFeedbackIndonesian: evaluation.aiFeedbackIndonesian,
       encouragementJapanese: evaluation.encouragementJapanese,
       pronunciation: pronunciation ?? null,
+      badge,
+      recommendedLessons,
+      nextLesson,
+    },
+  });
+}
+
+async function submitAnonymousTrialAssessment(params: {
+  answers: SubmittedAssessmentAnswer[];
+  pronunciation?: SubmitBody["pronunciation"];
+}) {
+  const bankRows = await prisma.assessmentQuestion.findMany({
+    where: {
+      id: {
+        in: params.answers.map((answer) => answer.questionId),
+      },
+    },
+  });
+
+  if (bankRows.length > 0) {
+    const questions = bankRows.map((row) => ({
+      id: row.id,
+      level: row.level,
+      skill: row.skill,
+      questionType: row.questionType,
+      prompt: row.prompt,
+      passage: row.passage,
+      options: Array.isArray(row.options) ? row.options.map(String) : [],
+      correctAnswer: row.correctAnswer,
+      explanation: row.explanation,
+      difficulty: row.difficulty,
+      tags: row.tags,
+    }));
+    const targetLevel = questions.some((question) => question.level === "N5") ? "N5" : "N4";
+    const placement = evaluatePlacement({
+      targetLevel,
+      questions,
+      answers: params.answers,
+    });
+    const weaknessTags = Object.entries(placement.scoreBySkill)
+      .filter(([, score]) => score < 70)
+      .map(([skill]) => skill);
+    const strengthTags = Object.entries(placement.scoreBySkill)
+      .filter(([, score]) => score >= 80)
+      .map(([skill]) => skill);
+    const badgeId = mapPlacementToBadge(placement.readinessLabel);
+    const [badge, recommendedLessons] = await Promise.all([
+      prisma.nihongoBadge.findUnique({ where: { id: badgeId } }),
+      recommendNihongoLessons({ prisma, weaknessTags, limit: 5 }),
+    ]);
+    const nextLesson = recommendedLessons[0] ?? null;
+
+    return NextResponse.json({
+      sessionId: null,
+      trial: true,
+      result: {
+        overallScore: placement.totalScore,
+        estimatedLevel: placement.readinessLabel,
+        placement,
+        scoreBySkill: placement.scoreBySkill,
+        scoreByLevel: placement.scoreByLevel,
+        bridgeScore: placement.bridgeScore,
+        recommendedLevel: placement.recommendedLevel,
+        weaknessTags,
+        strengthTags,
+        recommendedCurriculumFocus: weaknessTags.length ? weaknessTags : ["reading", "grammar"],
+        recommendedDailyPlan: buildPlacementDailyPlan(placement.readinessLabel, weaknessTags),
+        aiFeedbackIndonesian: `Placement trial Anda: ${placement.readinessLabel}. Skor total ${placement.totalScore}/100. Buat akun berbayar untuk menyimpan roadmap dan progres ini.`,
+        encouragementJapanese: "少しずつ進めば、必ず上手になります。",
+        pronunciation: params.pronunciation ?? null,
+        badge,
+        recommendedLessons,
+        nextLesson,
+      },
+    });
+  }
+
+  const questions = generatePreAssessmentQuestionBank();
+  const validation = validateAssessmentQuestionBank(questions);
+
+  if (!validation.valid) {
+    return NextResponse.json(
+      { error: "Assessment question bank failed validation.", details: validation.errors },
+      { status: 500 }
+    );
+  }
+
+  const evaluation = evaluateAssessment({
+    questions,
+    answers: params.answers,
+    pronunciation: params.pronunciation,
+  });
+  const [badge, recommendedLessons] = await Promise.all([
+    prisma.nihongoBadge.findUnique({ where: { id: evaluation.badgeId } }),
+    recommendNihongoLessons({ prisma, weaknessTags: evaluation.weaknessTags, limit: 5 }),
+  ]);
+  const nextLesson = recommendedLessons[0] ?? null;
+
+  return NextResponse.json({
+    sessionId: null,
+    trial: true,
+    result: {
+      overallScore: evaluation.overallScore,
+      estimatedLevel: evaluation.estimatedLevel,
+      weaknessTags: evaluation.weaknessTags,
+      strengthTags: evaluation.strengthTags,
+      recommendedCurriculumFocus: evaluation.recommendedCurriculumFocus,
+      recommendedDailyPlan: `${evaluation.recommendedDailyPlan} Buat akun berbayar untuk menyimpan progres trial ini.`,
+      aiFeedbackIndonesian: `${evaluation.aiFeedbackIndonesian} Ini adalah hasil trial tanpa login, jadi sistem tidak menyimpannya.`,
+      encouragementJapanese: evaluation.encouragementJapanese,
+      pronunciation: params.pronunciation ?? null,
       badge,
       recommendedLessons,
       nextLesson,

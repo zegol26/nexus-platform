@@ -78,13 +78,13 @@ export default function RegisterPage() {
   }
 
   return (
-    <main className="relative flex min-h-screen items-center justify-center bg-gray-50 p-6">
+    <main className="nexus-market-shell relative grid min-h-screen place-items-center px-4 py-10 sm:px-6">
       <div className="absolute right-4 top-4 sm:right-6">
         <LanguageToggle />
       </div>
       <form
         onSubmit={handleRegister}
-        className="w-full max-w-md rounded-2xl border bg-white p-8 shadow-sm"
+        className="nexus-card w-full max-w-md rounded-2xl bg-white p-5 shadow-sm sm:p-8"
       >
         <p className="text-sm font-medium text-blue-600">Nexus Platform</p>
 
@@ -112,7 +112,7 @@ export default function RegisterPage() {
           <div>
             <label className="text-sm font-medium text-gray-700">Name</label>
             <input
-              className="mt-1 w-full rounded-xl border px-4 py-3 text-sm outline-none focus:border-blue-500"
+              className="nexus-field mt-1 text-sm"
               value={name}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setName(e.target.value)
@@ -124,7 +124,7 @@ export default function RegisterPage() {
           <div>
             <label className="text-sm font-medium text-gray-700">Email</label>
             <input
-              className="mt-1 w-full rounded-xl border px-4 py-3 text-sm outline-none focus:border-blue-500"
+              className="nexus-field mt-1 text-sm"
               value={email}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setEmail(e.target.value)
@@ -142,7 +142,7 @@ export default function RegisterPage() {
               Password
             </label>
             <input
-              className="mt-1 w-full rounded-xl border px-4 py-3 text-sm outline-none focus:border-blue-500"
+              className="nexus-field mt-1 text-sm"
               value={password}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setPassword(e.target.value)

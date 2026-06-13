@@ -8,6 +8,7 @@ import {
   type AnalyticsEventType,
 } from "@/lib/analytics/trackEvent";
 import { prisma } from "@/lib/db/prisma";
+import { isNihongoTrialRoute } from "@/lib/nexus/nihongo-trial";
 
 export const runtime = "nodejs";
 
@@ -30,6 +31,12 @@ export async function POST(request: Request) {
     }
 
     const session = await getServerSession(authOptions);
+    const pagePath = getOptionalString(payload.pagePath);
+
+    if (!session?.user?.email && pagePath && isNihongoTrialRoute(pagePath)) {
+      return NextResponse.json({ ok: true, skipped: "anonymous_trial" });
+    }
+
     const user = session?.user?.email
       ? await prisma.user.findUnique({
           where: { email: session.user.email },
@@ -41,7 +48,7 @@ export async function POST(request: Request) {
       userId: user?.id ?? null,
       eventType: payload.eventType as AnalyticsEventType,
       appSlug: getOptionalString(payload.appSlug) ?? "nihongo",
-      pagePath: getOptionalString(payload.pagePath),
+      pagePath,
       lessonId: getOptionalString(payload.lessonId),
       quizId: getOptionalString(payload.quizId),
       flashcardDeck: getOptionalString(payload.flashcardDeck),

@@ -24,8 +24,13 @@ const nihongoMenu = [
 ] satisfies Array<{ labelKey: UiTextKey; href: string; marker: string }>;
 
 const squidShapes = ["circle", "triangle", "square"] as const;
+const trialUnlockedHrefs = new Set([
+  "/apps/nihongo/pre-assessment",
+  "/apps/nihongo/flashcards",
+  "/apps/nihongo/quiz",
+]);
 
-export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
+export function NihongoSidebar({ mobile = false, trialMode = false }: { mobile?: boolean; trialMode?: boolean }) {
   const pathname = usePathname();
   const { theme } = useNihongoTheme();
   const { language } = useLanguage();
@@ -64,7 +69,7 @@ export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
       </div>
 
       <Link
-        href="/platform/dashboard"
+        href={trialMode ? "/overview/nihongo" : "/platform/dashboard"}
         className="relative inline-flex items-center text-[10px] font-semibold uppercase tracking-[0.28em] text-cyan-700"
       >
         <span aria-hidden className="mr-1 inline-block w-3">
@@ -109,6 +114,7 @@ export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
         {nihongoMenu.map((item, idx) => {
           const isActive =
             pathname === item.href || pathname?.startsWith(item.href + "/");
+          const isLocked = trialMode && !trialUnlockedHrefs.has(item.href);
 
           const squidShape = squidShapes[idx % squidShapes.length];
           const marker = isRockstar ? "*" : item.marker;
@@ -116,11 +122,14 @@ export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
           return (
             <Link
               key={item.href}
-              href={item.href}
+              href={isLocked ? "/checkout" : item.href}
               aria-current={isActive ? "page" : undefined}
+              aria-disabled={isLocked ? true : undefined}
               className={`group relative flex items-center gap-2.5 rounded-md px-2.5 py-2 text-sm font-semibold transition ${
                 isActive
                   ? "bg-cyan-600 text-white shadow-sm"
+                  : isLocked
+                    ? "text-slate-400 hover:bg-amber-50 hover:text-slate-700"
                   : "text-slate-600 hover:bg-cyan-50 hover:text-slate-950"
               }`}
             >
@@ -140,6 +149,11 @@ export function NihongoSidebar({ mobile = false }: { mobile?: boolean }) {
               <span className="flex-1 truncate">
                 {getUiText(item.labelKey, language)}
               </span>
+              {isLocked ? (
+                <span className="rounded-full bg-amber-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-amber-700 ring-1 ring-amber-100">
+                  Lock
+                </span>
+              ) : null}
             </Link>
           );
         })}

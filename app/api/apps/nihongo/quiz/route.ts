@@ -1,6 +1,13 @@
 import { NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
 import { conceptQuestions } from "@/lib/nihongo/quiz/conceptQuestions";
+import {
+  anonymousRateLimitResponse,
+  checkAnonymousRateLimit,
+  getAnonymousClientKey,
+} from "@/lib/nexus/anonymous-rate-limit";
 
 type QuizCard = {
   id: string;
@@ -132,6 +139,19 @@ function buildFlashcardQuestions(cards: QuizCard[], count: number) {
 }
 
 export async function GET(request: Request) {
+  const session = await getServerSession(authOptions);
+  if (!session?.user?.email) {
+    const rateLimit = checkAnonymousRateLimit({
+      key: getAnonymousClientKey(request, "nihongo-trial:quiz"),
+      limit: 60,
+      windowMs: 60_000,
+    });
+
+    if (!rateLimit.allowed) {
+      return anonymousRateLimitResponse(rateLimit.resetAt);
+    }
+  }
+
   const { searchParams } = new URL(request.url);
   const level = searchParams.get("level") ?? undefined;
   const category = searchParams.get("category") ?? undefined;

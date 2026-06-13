@@ -4,6 +4,7 @@
 
 | Release Note | Date/Time (JST) | Author | Status | Summary |
 | --- | --- | --- | --- | --- |
+| RN-2026.06.13-001 | 2026-06-13 00:00 +09:00 | Nexus Platform Team | UAT OK | Added anonymous Nexus AI Nihongo trial access for pre-assessment, flashcards, and quiz without login; kept paid/progress-bearing surfaces locked; added anonymous rate limits and no-persist analytics behavior; hardened John English-only output; localized login copy; removed redundant platform header title; and consolidated agent/project documentation. |
 | RN-2026.05.28-001 | 2026-05-28 00:25 +09:00 | Nexus Platform Team | Completed | Fixed Nexus Kingdom target visibility and retaliation: target scouting now prioritizes recent attackers, lists kingdoms across all continents instead of only the first six, and incoming attack notifications include `Serang balik`. |
 | RN-2026.05.27-004 | 2026-05-27 23:58 +09:00 | Nexus Platform Team | Completed | Fixed the remaining plan catalog regression: billing/admin now self-heal separate Monthly, Quarterly, and Yearly rows per app, Settings locks period/duration instead of editing one monthly row into another period, and favicon uses `/nexus-ai-logo.png`. |
 | RN-2026.05.27-003 | 2026-05-27 23:45 +09:00 | Nexus Platform Team | Completed | Fixed admin plan pricing/period settings and checkout visibility regression: admin now edits rupiah, fixed periods update duration, `/checkout` lists all active order items, and billing exposes sandbox checkout only when sandbox UAT is enabled. |
@@ -25,6 +26,48 @@
 | RN-2026.05.04-001 | 2026-05-04 01:10 +09:00 | Nexus Platform Team | Completed | Fixed character foundation lesson access and verified kana/kanji grids in localhost. |
 | RN-2026.05.03-002 | 2026-05-03 23:45 +09:00 | Nexus Platform Team | Completed | Added seedable Nihongo character content for kana, kanji, and vocabulary compounds, linked to lesson pages. |
 | RN-2026.05.03-001 | 2026-05-03 23:09 +09:00 | Nexus Platform Team | Release Candidate | Admin Operations Console, billing/trial foundation, recording visibility, architecture docs, and Ai-chan assistant foundation. |
+
+## RN-2026.06.13-001
+
+Completed anonymous Nexus AI Nihongo trial access and documentation
+consolidation. UAT passed and the release is ready for git/Vercel deployment.
+
+### Included Changes
+
+- Added anonymous trial access for `/apps/nihongo/pre-assessment`,
+  `/apps/nihongo/flashcards`, and `/apps/nihongo/quiz`.
+- Anonymous users can receive real pre-assessment scoring, flashcard decks, and
+  quiz batches without login.
+- Other Nihongo routes stay locked for anonymous visitors and route back toward
+  login/checkout instead of exposing paid or progress-bearing surfaces.
+- Anonymous pre-assessment submissions return trial results without creating
+  persisted assessment sessions, profiles, badges, rewards, or lesson progress.
+- Speaking upload/evaluation is skipped in anonymous trial mode because it is
+  cost-bearing and not required for unsaved trial results.
+- Anonymous analytics tracking is acknowledged but not written to the database.
+- Added best-effort per-IP rate limits for anonymous pre-assessment, flashcard,
+  and quiz API requests.
+- Hardened John AI Coach with a server-side English-only repair/replacement
+  guard for replies containing forbidden scripts.
+- Localized remaining login page labels, actions, and feature chips through the
+  shared ID/EN dictionary.
+- Removed the redundant "Platform Console" title/subtitle from the platform
+  header.
+- Consolidated project memory into `AGENTS.md`, canonical `docs/`, `tasks/`,
+  and `skills/` files while preserving admin-rendered architecture docs.
+
+### Verification
+
+- UAT OK.
+- `npx tsc --noEmit --pretty false`
+- `npm test`
+- `npx eslint proxy.ts lib/nexus/nihongo-trial.ts app/apps/nihongo/layout.tsx components/apps/nihongo/NihongoSidebar.tsx app/apps/nihongo/pre-assessment/page.tsx app/api/apps/nihongo/flashcards/route.ts app/api/apps/nihongo/pre-assessment/profile/route.ts app/api/apps/nihongo/pre-assessment/submit/route.ts`
+
+### Deployment Notes
+
+- Release should go through `git push origin main` and Vercel Git deployment.
+- Before any production alias change, verify the candidate deployment for
+  `/checkout`, `/api/auth/csrf`, login, billing, and payment sandbox behavior.
 
 ## RN-2026.05.28-001
 

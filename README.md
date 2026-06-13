@@ -1,43 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nexus Platform
 
-## Nexus AI Nihongo
+Nexus Platform is the parent application for Nexus Talenta Indonesia Academy. It provides authentication, billing, app access, admin operations, public academy/checkout pages, community, and shared navigation for multiple AI-assisted learning apps.
 
-- JLPT N5 and N4 rehearsal pages are available under `/apps/nihongo/full-rehearsal-n5` and `/apps/nihongo/full-rehearsal-n4`.
-- JLPT N5 and N4 mock tests are available under `/apps/nihongo/mock-test/n5` and `/apps/nihongo/mock-test/n4`.
-- Quiz generation includes curriculum-aligned concept questions for beginner, N5, N4, A2, and N3 practice, with Indonesian explanations.
-- Run regression locally with `npm run lint`, `npx tsc --noEmit --pretty false`, `npm test`, `npm run validate:game`, and `npm run build`.
+## Apps
 
-## Getting Started
+- Nexus AI Nihongo: Japanese learning for Indonesian learners with curriculum, AI tutor, voice, reading, listening, flashcards, quizzes, JLPT mock tests, assessment, badges, and Nexus Kingdoms.
+- Nexus AI English: interview practice, Dynamic Conversational English, and John AI Coach.
+- Nexus AI Arabic: Arabic learning for daily, work, umrah, travel, and dialect contexts.
+- PMP Exam Prep: PMP learning, ITTO, glossary, simulator, readiness, and Andromeda AI instructor.
 
-First, run the development server:
+## Start Here
+
+- Agent handbook: `AGENTS.md`
+- Documentation index: `docs/index.md`
+- Current project state: `docs/project-state.md`
+- Current sprint: `tasks/current-sprint.md`
+- Known issues: `docs/known-issues.md`
+- Release notes: `docs/release-notes.md`
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Verification
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npx tsc --noEmit --pretty false
+npm test
+npm run validate:game
+npm run build
+```
 
-## Learn More
+Additional focused checks:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run validate:community
+npm run validate:n5-rehearsal
+npm run sanity:english-listening
+npm run sanity:english-questions
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The app deploys to Vercel. Production secrets belong in Vercel Environment Variables, not source files or admin settings. Use `npm run build` for resilient local/Vercel builds and `npm run build:strict` when migration and seed must be mandatory.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Read `docs/deployment.md` before production deploys, aliases, Midtrans changes, or database/seed changes.
