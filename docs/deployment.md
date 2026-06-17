@@ -44,6 +44,11 @@ Before aliasing or promoting a production deployment:
   before rendering. A genuinely settled provider transaction must render as
   local `PAID` with active app access for the purchased plan duration, without
   requiring an admin manual status edit.
+- Admin payments expose a manual "Sync Midtrans" action for incident testing and
+  fallback recovery. It only performs a Midtrans Status API inquiry for the
+  selected local order and activates access through the normal paid path when
+  the provider status maps to paid; it must not manually mark an unpaid Midtrans
+  order as paid.
 
 ## Environment Variables
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AdminPaymentActions } from "@/components/admin/AdminPaymentActions";
 import { AdminSection, EmptyState } from "@/components/admin/AdminTable";
 import { MidtransPaymentControl } from "@/components/admin/MidtransPaymentControl";
 import { prisma } from "@/lib/db/prisma";
@@ -148,8 +149,18 @@ export default async function AdminPaymentsPage() {
                       </div>
                     </div>
                     <div className="max-w-xs rounded-2xl bg-slate-50 p-3 text-xs leading-5 text-slate-500">
-                      Status pembayaran diperbarui dari Midtrans gateway/webhook.
-                      Action manual tidak ditampilkan di console ini.
+                      <p>
+                        Status pembayaran diperbarui dari Midtrans gateway/webhook.
+                        Gunakan sync manual untuk inquiry ulang ke Midtrans tanpa override status.
+                      </p>
+                      <div className="mt-3">
+                        <AdminPaymentActions
+                          paymentId={payment.id}
+                          paymentStatus={payment.status}
+                          paymentProvider={payment.provider}
+                          providerRef={payment.providerRef}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
