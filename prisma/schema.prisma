@@ -330,6 +330,7 @@ model AppUserAccess {
   accessStartsAt  DateTime  @default(now())
   accessExpiresAt DateTime?
   lastOpenedAt    DateTime?
+  sourcePaymentId String?
 
   user User        @relation(fields: [userId], references: [id])
   app  PlatformApp @relation(fields: [appId], references: [id])
@@ -337,6 +338,7 @@ model AppUserAccess {
   createdAt DateTime @default(now())
 
   @@unique([userId, appId])
+  @@index([sourcePaymentId])
 }
 
 model SubscriptionPlan {
@@ -367,6 +369,7 @@ model Subscription {
   userId String
   appId  String
   planId String?
+  sourcePaymentId String? @unique
 
   status     SubscriptionStatus @default(TRIAL)
   startedAt  DateTime           @default(now())

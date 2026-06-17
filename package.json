@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "test": "tsc -p tsconfig.test.json && node .test-dist/tests/policies.test.js && node .test-dist/tests/english-dce.test.js",
+    "reconcile-payment": "tsx scripts/reconcile-payment.ts",
     "sanity:english-listening": "tsx scripts/sanity-check-english-listening.ts",
     "sanity:english-questions": "tsx scripts/sanity-check-english-questions.ts",
     "validate:n5-rehearsal": "tsx scripts/validate-n5-rehearsal-data.ts",

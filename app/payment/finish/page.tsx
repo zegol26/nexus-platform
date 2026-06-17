@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { CheckCircle2, Clock3, Home, LayoutDashboard } from "lucide-react";
+import { CheckCircle2, Home, LayoutDashboard } from "lucide-react";
 import { MarketingFooter, MarketingNav } from "@/components/layout/MarketingChrome";
+import { PaymentFinishStatus } from "@/components/platform/PaymentFinishStatus";
 
 export default async function PaymentFinishPage({
   searchParams,
@@ -33,13 +34,7 @@ export default async function PaymentFinishPage({
                 Academy.
               </p>
 
-              <div className="mt-5 grid gap-3 rounded-2xl bg-slate-50 p-4 text-sm text-slate-600">
-                <p className="flex items-center gap-2 font-semibold text-slate-950">
-                  <Clock3 size={18} /> Ringkasan transaksi
-                </p>
-                <p>Order ID: {orderId || "Menunggu data gateway"}</p>
-                <p>Status gateway: {status || "Dalam proses"}</p>
-              </div>
+              <PaymentFinishStatus orderId={orderId} gatewayStatus={status} />
 
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link href="/platform/billing" className="nexus-primary">

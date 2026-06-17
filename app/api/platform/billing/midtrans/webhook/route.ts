@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db/prisma";
 import { withRouteMetrics } from "@/lib/observability/route-metrics";
-import { activatePaidAccess } from "@/lib/platform/activate-subscription";
+import { activatePaidAccessForPayment } from "@/lib/platform/activate-subscription";
 import {
   getMidtransMode,
   getMidtransRuntimeMode,
@@ -53,8 +53,14 @@ async function handleMidtransWebhook(req: Request) {
         providerRef: body.order_id,
       },
     },
-    select: { rawPayload: true },
+    select: { id: true, paidAt: true, rawPayload: true, status: true },
   });
+
+  if (!paymentForMode) {
+    console.warn("midtrans_webhook_unknown_order", { orderId: body.order_id });
+    return NextResponse.json({ error: "Payment not found" }, { status: 404 });
+  }
+
   const rawPaymentPayload = parseRawPayload(paymentForMode?.rawPayload ?? null);
   const paymentMode =
     typeof rawPaymentPayload.midtransMode === "string"
@@ -85,25 +91,32 @@ async function handleMidtransWebhook(req: Request) {
     return NextResponse.json({ error: "Invalid signature" }, { status: 401 });
   }
 
-  const status = mapMidtransStatus(body.transaction_status, body.fraud_status);
+  const mappedStatus = mapMidtransStatus(body.transaction_status, body.fraud_status);
+  const status =
+    paymentForMode.status === "PAID" && mappedStatus !== "PAID"
+      ? "PAID"
+      : mappedStatus;
 
-  const payment = await prisma.paymentTransaction.update({
-    where: {
-      provider_providerRef: {
-        provider: "MIDTRANS",
-        providerRef: body.order_id,
+  await prisma.$transaction(async (tx) => {
+    const payment = await tx.paymentTransaction.update({
+      where: { id: paymentForMode.id },
+      data: {
+        status,
+        paidAt: status === "PAID" ? paymentForMode.paidAt ?? new Date() : null,
+        rawPayload: JSON.stringify({
+          ...rawPaymentPayload,
+          midtransMode: mode,
+          notification: body,
+          transaction_status: body.transaction_status,
+          fraud_status: body.fraud_status ?? null,
+        }),
       },
-    },
-    data: {
-      status,
-      paidAt: status === "PAID" ? new Date() : null,
-      rawPayload: JSON.stringify(body),
-    },
-  });
+    });
 
-  if (status === "PAID") {
-    await activatePaidAccess(payment.id);
-  }
+    if (status === "PAID") {
+      await activatePaidAccessForPayment(tx, payment.id);
+    }
+  });
 
   return NextResponse.json({ ok: true, status });
 }

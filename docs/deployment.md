@@ -31,6 +31,10 @@ Before aliasing or promoting a production deployment:
 - Do not store live secrets in `PlatformSetting`, docs, screenshots, or source.
 - Finish Redirect URL is `/payment/finish`.
 - Webhooks verify using the transaction's stored `midtransMode` when present.
+- Midtrans webhook activation must remain database-backed, atomic, and idempotent:
+  update `PaymentTransaction`, upsert `AppUserAccess`, and upsert the source
+  `Subscription` in one transaction. The finish page may poll local payment
+  status, but must not activate access from redirect query parameters alone.
 
 ## Environment Variables
 

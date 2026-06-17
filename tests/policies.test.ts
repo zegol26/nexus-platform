@@ -149,6 +149,9 @@ test("midtrans mode policy separates sandbox and production payment flows", () =
   assert.equal(mapMidtransStatus("settlement"), "PAID");
   assert.equal(mapMidtransStatus("capture", "challenge"), "WAITING_VERIFICATION");
   assert.equal(mapMidtransStatus("pending"), "PENDING");
+  assert.notEqual(mapMidtransStatus("failure"), "PAID");
+  assert.notEqual(mapMidtransStatus("refund"), "PAID");
+  assert.notEqual(mapMidtransStatus("chargeback"), "PAID");
 });
 
 test("production payment runtime is always open while sandbox remains toggleable", () => {

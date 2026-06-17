@@ -1,7 +1,15 @@
+import type { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/db/prisma";
 
 export async function activatePaidAccess(paymentId: string) {
-  const payment = await prisma.paymentTransaction.findUnique({
+  return prisma.$transaction((tx) => activatePaidAccessForPayment(tx, paymentId));
+}
+
+export async function activatePaidAccessForPayment(
+  tx: Prisma.TransactionClient,
+  paymentId: string
+) {
+  const payment = await tx.paymentTransaction.findUnique({
     where: { id: paymentId },
     include: { plan: true },
   });
@@ -13,7 +21,7 @@ export async function activatePaidAccess(paymentId: string) {
   const billingPlan = payment.plan?.code ?? "MANUAL";
   const billingPeriod = payment.plan?.billingPeriod ?? `${payment.durationDays}_DAYS`;
 
-  await prisma.appUserAccess.upsert({
+  await tx.appUserAccess.upsert({
     where: { userId_appId: { userId: payment.userId, appId: payment.appId } },
     update: {
       status: "ACTIVE",
@@ -21,6 +29,7 @@ export async function activatePaidAccess(paymentId: string) {
       billingPeriod,
       accessStartsAt: new Date(),
       accessExpiresAt: expiresAt,
+      sourcePaymentId: payment.id,
     },
     create: {
       userId: payment.userId,
@@ -29,14 +38,22 @@ export async function activatePaidAccess(paymentId: string) {
       billingPlan,
       billingPeriod,
       accessExpiresAt: expiresAt,
+      sourcePaymentId: payment.id,
     },
   });
 
-  await prisma.subscription.create({
-    data: {
+  await tx.subscription.upsert({
+    where: { sourcePaymentId: payment.id },
+    update: {
+      status: "ACTIVE",
+      startedAt: new Date(),
+      expiresAt,
+    },
+    create: {
       userId: payment.userId,
       appId: payment.appId,
       planId: payment.planId,
+      sourcePaymentId: payment.id,
       status: "ACTIVE",
       startedAt: new Date(),
       expiresAt,
