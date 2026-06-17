@@ -39,6 +39,11 @@ Before aliasing or promoting a production deployment:
   misconfigured, the payment status endpoint may perform a bounded server-side
   Midtrans Status API inquiry for the exact local `orderId`, validate the
   provider order and amount, and then run the same idempotent activation path.
+- Authenticated billing, dashboard, app launcher, and admin payment pages run a
+  bounded automatic Midtrans inquiry for recent pending local Midtrans orders
+  before rendering. A genuinely settled provider transaction must render as
+  local `PAID` with active app access for the purchased plan duration, without
+  requiring an admin manual status edit.
 
 ## Environment Variables
 

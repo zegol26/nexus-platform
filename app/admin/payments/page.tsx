@@ -3,6 +3,7 @@ import { AdminSection, EmptyState } from "@/components/admin/AdminTable";
 import { MidtransPaymentControl } from "@/components/admin/MidtransPaymentControl";
 import { prisma } from "@/lib/db/prisma";
 import { ensurePlatformSettings, getBillingSettings } from "@/lib/platform/settings";
+import { syncRecentPendingMidtransPayments } from "@/lib/platform/sync-midtrans-payment";
 
 function parsePayload(rawPayload: string | null) {
   if (!rawPayload) return {};
@@ -34,6 +35,7 @@ function monthLabel(date: Date) {
 
 export default async function AdminPaymentsPage() {
   await ensurePlatformSettings();
+  await syncRecentPendingMidtransPayments();
   const [payments, billingSettings] = await Promise.all([
     prisma.paymentTransaction.findMany({
       include: { user: true, app: true, plan: true, proof: true },

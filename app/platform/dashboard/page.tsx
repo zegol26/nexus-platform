@@ -6,6 +6,7 @@ import { prisma } from "@/lib/db/prisma";
 import { getOrCreateGameProfile } from "@/lib/gamification/kingdom";
 import { platformApps } from "@/lib/platform/app-registry";
 import { filterValidAppAccess, isAdminRole } from "@/lib/platform/access";
+import { syncPendingMidtransPaymentsForUser } from "@/lib/platform/sync-midtrans-payment";
 import { KingdomCard } from "@/components/nihongo/game/KingdomCard";
 import { CertificateAction } from "@/components/certificates/CertificateAction";
 
@@ -76,6 +77,8 @@ export default async function PlatformDashboardPage() {
   if (!session?.user?.email) {
     redirect("/login");
   }
+
+  await syncPendingMidtransPaymentsForUser(session.user.email);
 
   const user = await prisma.user.findUnique({
     where: { email: session.user.email },

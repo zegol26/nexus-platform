@@ -6,6 +6,7 @@ import { prisma } from "@/lib/db/prisma";
 import { getBillingSettings } from "@/lib/platform/settings";
 import { isMidtransModeAvailable } from "@/lib/platform/midtrans";
 import { ensureSubscriptionPlanCatalog } from "@/lib/platform/plan-catalog";
+import { syncPendingMidtransPaymentsForUser } from "@/lib/platform/sync-midtrans-payment";
 
 export const dynamic = "force-dynamic";
 
@@ -79,6 +80,7 @@ export default async function PlatformBillingPage({
   }
 
   await ensureSubscriptionPlanCatalog();
+  await syncPendingMidtransPaymentsForUser(session.user.email);
 
   const [user, plans, billingSettings] = await Promise.all([
     prisma.user.findUnique({

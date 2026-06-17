@@ -19,6 +19,12 @@ type PaymentStatusPayload = {
 const FINAL_FAILURE_STATUSES = new Set(["REJECTED", "EXPIRED"]);
 const POLL_INTERVAL_MS = 2500;
 const MAX_POLL_MS = 30000;
+const APP_ENTRY_PATHS: Record<string, string> = {
+  nihongo: "/apps/nihongo/dashboard",
+  english: "/apps/english/dashboard",
+  arabic: "/apps/arabic/dashboard",
+  pmp: "/apps/pmp/dashboard",
+};
 
 export function PaymentFinishStatus({
   orderId,
@@ -111,9 +117,9 @@ export function PaymentFinishStatus({
         ) : null}
       </div>
 
-      {isSuccess && payload?.app.slug === "nihongo" ? (
-        <Link href="/apps/nihongo/dashboard" className="nexus-primary w-fit">
-          <ExternalLink size={18} /> Buka Nexus AI Nihongo
+      {isSuccess && payload?.app.slug ? (
+        <Link href={APP_ENTRY_PATHS[payload.app.slug] ?? "/platform/apps"} className="nexus-primary w-fit">
+          <ExternalLink size={18} /> Buka {payload.app.name}
         </Link>
       ) : null}
     </div>

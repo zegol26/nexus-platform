@@ -3,30 +3,9 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
 import { isValidAppAccess } from "@/lib/platform/access";
-import { activatePaidAccessForPayment } from "@/lib/platform/activate-subscription";
-import {
-  getMidtransMode,
-  getMidtransRuntimeMode,
-  getMidtransTransactionStatus,
-  mapMidtransStatus,
-} from "@/lib/platform/midtrans";
-import { getBillingSettings } from "@/lib/platform/settings";
+import { syncMidtransPaymentStatus } from "@/lib/platform/sync-midtrans-payment";
 
 export const dynamic = "force-dynamic";
-
-function parseRawPayload(rawPayload: string | null) {
-  if (!rawPayload) return {};
-  try {
-    return JSON.parse(rawPayload) as Record<string, unknown>;
-  } catch {
-    return {};
-  }
-}
-
-function providerString(payload: Record<string, unknown>, key: string) {
-  const value = payload[key];
-  return typeof value === "string" ? value : undefined;
-}
 
 export async function GET(req: Request) {
   const session = await getServerSession(authOptions);
@@ -49,8 +28,6 @@ export async function GET(req: Request) {
       providerRef: true,
       status: true,
       paidAt: true,
-      amountCents: true,
-      rawPayload: true,
       appId: true,
       app: {
         select: {
@@ -66,54 +43,16 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: "Payment not found" }, { status: 404 });
   }
 
-  const rawPayload = parseRawPayload(payment.rawPayload);
-  const paymentMode =
-    typeof rawPayload.midtransMode === "string" ? rawPayload.midtransMode : null;
-  const billingSettings = paymentMode ? null : await getBillingSettings();
-  const mode = paymentMode
-    ? getMidtransMode(paymentMode)
-    : getMidtransRuntimeMode(billingSettings?.midtransMode);
-
   if (payment.status !== "PAID") {
     try {
-      const providerStatus = await getMidtransTransactionStatus(mode, payment.providerRef ?? orderId);
-      const transactionStatus = providerString(providerStatus, "transaction_status");
-      const fraudStatus = providerString(providerStatus, "fraud_status");
-      const grossAmount = providerString(providerStatus, "gross_amount");
-      const providerOrderId = providerString(providerStatus, "order_id");
-      const amountMatches =
-        grossAmount !== undefined &&
-        Math.round(Number(grossAmount)) === Math.round(payment.amountCents / 100);
+      const syncResult = await syncMidtransPaymentStatus({
+        orderId,
+        userEmail: session?.user?.email ?? undefined,
+      });
 
-      if (providerOrderId === payment.providerRef && transactionStatus && amountMatches) {
-        const mappedStatus = mapMidtransStatus(transactionStatus, fraudStatus);
-
-        await prisma.$transaction(async (tx) => {
-          const updatedPayment = await tx.paymentTransaction.update({
-            where: { id: payment.id },
-            data: {
-              status: mappedStatus,
-              paidAt:
-                mappedStatus === "PAID"
-                  ? payment.paidAt ?? new Date()
-                  : null,
-              rawPayload: JSON.stringify({
-                ...rawPayload,
-                midtransMode: mode,
-                statusInquiry: providerStatus,
-                transaction_status: transactionStatus,
-                fraud_status: fraudStatus ?? null,
-              }),
-            },
-          });
-
-          if (mappedStatus === "PAID") {
-            await activatePaidAccessForPayment(tx, updatedPayment.id);
-          }
-        });
-
-        payment.status = mappedStatus;
-        payment.paidAt = mappedStatus === "PAID" ? payment.paidAt ?? new Date() : null;
+      if (syncResult.ok) {
+        payment.status = syncResult.payment.status;
+        payment.paidAt = syncResult.payment.paidAt;
       }
     } catch (error) {
       console.warn("midtrans_status_inquiry_failed", {

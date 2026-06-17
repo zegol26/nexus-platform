@@ -5,6 +5,7 @@ import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
 import { platformApps } from "@/lib/platform/app-registry";
 import { filterValidAppAccess, isAdminRole, isValidAppAccess } from "@/lib/platform/access";
+import { syncPendingMidtransPaymentsForUser } from "@/lib/platform/sync-midtrans-payment";
 
 export const dynamic = "force-dynamic";
 
@@ -33,6 +34,8 @@ export default async function PlatformAppsPage() {
   if (!session?.user?.email) {
     redirect("/login");
   }
+
+  await syncPendingMidtransPaymentsForUser(session.user.email);
 
   const user = await prisma.user.findUnique({
     where: { email: session.user.email },
