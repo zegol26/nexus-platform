@@ -4,6 +4,7 @@
 
 | Release Note | Date/Time (JST) | Author | Status | Summary |
 | --- | --- | --- | --- | --- |
+| RN-2026.06.17-001 | 2026-06-17 16:20 +09:00 | Nexus Platform Team | Production Verified | Added Midtrans paid-status reconciliation, automatic and manual admin sync, atomic paid access activation, production alias correction, and the reusable `skills/midtrans-billing.md` project skill. |
 | RN-2026.06.13-001 | 2026-06-13 00:00 +09:00 | Nexus Platform Team | UAT OK | Added anonymous Nexus AI Nihongo trial access for pre-assessment, flashcards, and quiz without login; kept paid/progress-bearing surfaces locked; added anonymous rate limits and no-persist analytics behavior; hardened John English-only output; localized login copy; removed redundant platform header title; and consolidated agent/project documentation. |
 | RN-2026.05.28-001 | 2026-05-28 00:25 +09:00 | Nexus Platform Team | Completed | Fixed Nexus Kingdom target visibility and retaliation: target scouting now prioritizes recent attackers, lists kingdoms across all continents instead of only the first six, and incoming attack notifications include `Serang balik`. |
 | RN-2026.05.27-004 | 2026-05-27 23:58 +09:00 | Nexus Platform Team | Completed | Fixed the remaining plan catalog regression: billing/admin now self-heal separate Monthly, Quarterly, and Yearly rows per app, Settings locks period/duration instead of editing one monthly row into another period, and favicon uses `/nexus-ai-logo.png`. |
@@ -26,6 +27,74 @@
 | RN-2026.05.04-001 | 2026-05-04 01:10 +09:00 | Nexus Platform Team | Completed | Fixed character foundation lesson access and verified kana/kanji grids in localhost. |
 | RN-2026.05.03-002 | 2026-05-03 23:45 +09:00 | Nexus Platform Team | Completed | Added seedable Nihongo character content for kana, kanji, and vocabulary compounds, linked to lesson pages. |
 | RN-2026.05.03-001 | 2026-05-03 23:09 +09:00 | Nexus Platform Team | Release Candidate | Admin Operations Console, billing/trial foundation, recording visibility, architecture docs, and Ai-chan assistant foundation. |
+
+## RN-2026.06.17-001
+
+Added Midtrans settlement reconciliation and documented the integration path for
+future work.
+
+### Impact
+
+- Midtrans QRIS/Snap payments could show `settlement` or paid at Midtrans while
+  Nexus Platform still rendered `PENDING`.
+- Affected production examples included:
+  - `nexus-1781659578035-f7425e21b8c6` for Nexus AI Arabic monthly.
+  - `nexus-1781676345935-2ecabf03eafc58` for Nexus AI English monthly.
+
+### Root Cause
+
+- The live production deployment did not yet include the new status inquiry and
+  admin sync code.
+- After the git deploy completed, `nexustalenta-academy.com` still pointed at an
+  older Vercel deployment until the custom domain alias was explicitly
+  repointed.
+- The previous operational surface relied too heavily on webhook delivery and
+  did not give admin a safe provider-backed manual inquiry action.
+
+### Included Changes
+
+- Added server-side Midtrans Status API inquiry through
+  `lib/platform/sync-midtrans-payment.ts`.
+- Added automatic bounded sync on payment finish/status, user billing,
+  dashboard, app launcher, and admin payments.
+- Added admin-only `Sync Midtrans` action for Midtrans payments. The button
+  performs provider inquiry and activates access only when provider status maps
+  to paid.
+- Kept manual `Verify Paid` out of the normal Midtrans path so operators do not
+  bypass provider settlement validation.
+- Made paid activation atomic and idempotent by updating `PaymentTransaction`,
+  `AppUserAccess`, and source `Subscription` through the same activation path.
+- Added `sourcePaymentId` links for app access and subscriptions.
+- Added `scripts/reconcile-payment.ts` for controlled operational
+  reconciliation.
+- Added `skills/midtrans-billing.md` so future agents know the required code
+  paths, status rules, deploy checklist, and recovery flow.
+
+### Verification
+
+- `npm run lint`: passed with existing warnings only.
+- `npx tsc --noEmit --pretty false`: passed.
+- `npm test`: passed.
+- `npm run build`: passed.
+- Vercel production deployment `nexus-platform-dhz4ciz02` reached Ready.
+- `nexustalenta-academy.com` was repointed to the latest production deployment.
+- Production smoke:
+  - `/checkout`: HTTP 200.
+  - `/api/auth/csrf`: HTTP 200.
+  - `/payment/finish?order_id=<order>`: HTTP 200.
+  - admin sync route without login: HTTP 403, confirming the route is live and
+    admin-protected.
+- Production reconciliation confirmed both affected orders became `PAID` with
+  active app access.
+
+### Countermeasures
+
+- For future Midtrans work, load `skills/midtrans-billing.md` before editing.
+- Always validate provider `order_id` and `gross_amount` before changing local
+  payment/access state.
+- Always verify custom domain alias after production deploys; a Ready production
+  deployment does not by itself prove `nexustalenta-academy.com` serves that
+  deployment.
 
 ## RN-2026.06.13-001
 

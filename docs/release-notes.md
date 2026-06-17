@@ -1,5 +1,48 @@
 # Release Notes
 
+## [2026.06.17] - Midtrans Settlement Sync and Paid Access Recovery
+
+Status: Production deployed and verified.
+
+### Added
+
+- Added `skills/midtrans-billing.md` as the reusable project skill for future
+  Midtrans integration, debugging, reconciliation, and deployment work.
+- Added automatic Midtrans Status API fallback sync on customer payment finish,
+  billing, dashboard, app launcher, and admin payment surfaces.
+- Added admin-only `Sync Midtrans` action for Midtrans payments. The action
+  performs provider inquiry and only activates access when Midtrans maps to
+  paid; it does not manually mark unpaid orders as paid.
+
+### Fixed
+
+- Fixed paid Midtrans QRIS/Snap orders staying `PENDING` locally when webhook
+  delivery did not update the database.
+- Made paid access activation atomic and idempotent by updating payment status,
+  app access, and source subscription through the same activation path.
+- Repointed `nexustalenta-academy.com` from the stale production deployment to
+  the latest production deployment after the git deploy completed.
+
+### Production Recovery
+
+- Reconciled `nexus-1781659578035-f7425e21b8c6` for Nexus AI Arabic monthly to
+  `PAID` with active app access.
+- Reconciled `nexus-1781676345935-2ecabf03eafc58` for Nexus AI English monthly
+  to `PAID` with active app access.
+
+### Tested
+
+- `npm run lint`
+- `npx tsc --noEmit --pretty false`
+- `npm test`
+- `npm run build`
+- Production smoke:
+  - `/checkout` returned `200`
+  - `/api/auth/csrf` returned `200`
+  - `/payment/finish?order_id=<order>` returned `200`
+  - admin sync route returned `403` without login, confirming the route exists
+    and is admin-protected
+
 ## [vNext] - Certificate UAT
 
 ### Added
