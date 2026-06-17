@@ -53,6 +53,12 @@ export function getMidtransBaseUrl(mode: string) {
     : "https://app.sandbox.midtrans.com";
 }
 
+export function getMidtransApiBaseUrl(mode: string) {
+  return mode === "production"
+    ? "https://api.midtrans.com"
+    : "https://api.sandbox.midtrans.com";
+}
+
 export function getMidtransServerKey(mode: string) {
   return mode === "production"
     ? process.env.MIDTRANS_PRODUCTION_SERVER_KEY
@@ -129,6 +135,32 @@ export async function createMidtransSnapTransaction(
   if (!response.ok || !payload?.token || !payload.redirect_url) {
     const detail = payload?.error_messages?.join("; ") ?? `HTTP ${response.status}`;
     throw new Error(`Midtrans Snap failed: ${detail}`);
+  }
+
+  return payload;
+}
+
+export async function getMidtransTransactionStatus(mode: string, orderId: string) {
+  const serverKey = getMidtransServerKey(mode);
+  if (!serverKey) {
+    throw new Error(`MIDTRANS_${mode.toUpperCase()}_SERVER_KEY is not configured`);
+  }
+
+  const response = await fetch(
+    `${getMidtransApiBaseUrl(mode)}/v2/${encodeURIComponent(orderId)}/status`,
+    {
+      method: "GET",
+      headers: {
+        Authorization: `Basic ${Buffer.from(`${serverKey}:`).toString("base64")}`,
+        Accept: "application/json",
+      },
+      cache: "no-store",
+    }
+  );
+
+  const payload = (await response.json().catch(() => null)) as Record<string, unknown> | null;
+  if (!response.ok || !payload) {
+    throw new Error(`Midtrans status inquiry failed with HTTP ${response.status}`);
   }
 
   return payload;

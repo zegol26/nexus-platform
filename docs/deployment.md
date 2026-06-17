@@ -35,6 +35,10 @@ Before aliasing or promoting a production deployment:
   update `PaymentTransaction`, upsert `AppUserAccess`, and upsert the source
   `Subscription` in one transaction. The finish page may poll local payment
   status, but must not activate access from redirect query parameters alone.
+- If Midtrans notification delivery is delayed or the notification URL is
+  misconfigured, the payment status endpoint may perform a bounded server-side
+  Midtrans Status API inquiry for the exact local `orderId`, validate the
+  provider order and amount, and then run the same idempotent activation path.
 
 ## Environment Variables
 
