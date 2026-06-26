@@ -3,7 +3,11 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
 import { conceptQuestions } from "@/lib/nihongo/quiz/conceptQuestions";
-import { fisherYates, shuffleWithCorrect } from "@/lib/nihongo/randomize-options";
+import {
+  fisherYates,
+  placeCorrectAnswerAt,
+  shuffleWithCorrect,
+} from "@/lib/nihongo/randomize-options";
 import {
   anonymousRateLimitResponse,
   checkAnonymousRateLimit,
@@ -32,6 +36,15 @@ function randomizeQuizQuestionOptions<T extends { options: string[]; answer: str
     ...question,
     options: shuffleWithCorrect(question.options, question.answer),
   };
+}
+
+function balanceAnswerPositions<T extends { options: string[]; answer: string }>(
+  questions: T[]
+): T[] {
+  return questions.map((question, index) => ({
+    ...question,
+    options: placeCorrectAnswerAt(question.options, question.answer, index % 4),
+  }));
 }
 
 function getIndonesianMeaning(back: string) {
@@ -201,9 +214,8 @@ export async function GET(request: Request) {
         .slice(0, conceptCount)
         .map(randomizeQuizQuestionOptions);
       const flashcardBatch = buildFlashcardQuestions(cards, flashcardCount);
-      const questions = shuffle([...conceptBatch, ...flashcardBatch]).slice(
-        0,
-        count
+      const questions = balanceAnswerPositions(
+        shuffle([...conceptBatch, ...flashcardBatch]).slice(0, count)
       );
 
       return NextResponse.json({
@@ -212,9 +224,11 @@ export async function GET(request: Request) {
       });
     }
 
-    const questions = shuffle(matchingConceptQuestions)
-      .slice(0, count)
-      .map(randomizeQuizQuestionOptions);
+    const questions = balanceAnswerPositions(
+      shuffle(matchingConceptQuestions)
+        .slice(0, count)
+        .map(randomizeQuizQuestionOptions)
+    );
 
     return NextResponse.json({
       questions,
@@ -222,7 +236,7 @@ export async function GET(request: Request) {
     });
   }
 
-  const questions = buildFlashcardQuestions(cards, count);
+  const questions = balanceAnswerPositions(buildFlashcardQuestions(cards, count));
 
   return NextResponse.json({
     questions,
