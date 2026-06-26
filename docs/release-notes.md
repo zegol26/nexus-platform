@@ -2,7 +2,7 @@
 
 ## [2026.06.26] - English Mobile TTS Playback and Cache
 
-Status: Production deployment via git push to `main`.
+Status: Production deployed and verified.
 
 ### Added
 
@@ -21,6 +21,13 @@ Status: Production deployment via git push to `main`.
 - iPhone Safari: first tap prepares audio, second tap plays; blocked state says, "Audio blocked by browser. Tap Play again."
 - Chrome mobile: replaying prepared audio does not call `/api/voice/speak`.
 - Desktop Chrome: DCE single voice, DCE dialogue voice, John voice reply, and English interview prompt audio show ready/playing states.
+
+### Production Verification
+
+- Git commit `989cf0b` deployed to Vercel production as `nexus-platform-newxizyo3-zegol26s-projects.vercel.app`.
+- Repointed `nexustalenta-academy.com` and `www.nexustalenta-academy.com` to the verified deployment.
+- Smoke checks returned `200` for `/`, `/checkout`, `/api/auth/csrf`, and `/login`.
+- `/api/voice/speak/cache/not-real` returned `401` without login, confirming the new protected cache route is live.
 
 ## [2026.06.17] - Midtrans Settlement Sync and Paid Access Recovery
 

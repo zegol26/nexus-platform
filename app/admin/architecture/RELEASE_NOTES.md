@@ -4,7 +4,7 @@
 
 | Release Note | Date/Time (JST) | Author | Status | Summary |
 | --- | --- | --- | --- | --- |
-| RN-2026.06.26-001 | 2026-06-26 00:00 +09:00 | Nexus Platform Team | Production Deploy | Fixed English mobile TTS playback flow for iOS/Safari, added database-backed voice TTS cache URLs, browser-only replay from prepared object URLs, development cache/playback logs, and a more alert John voice profile. |
+| RN-2026.06.26-001 | 2026-06-26 00:00 +09:00 | Nexus Platform Team | Production Verified | Fixed English mobile TTS playback flow for iOS/Safari, added database-backed voice TTS cache URLs, browser-only replay from prepared object URLs, development cache/playback logs, and a more alert John voice profile. |
 | RN-2026.06.17-001 | 2026-06-17 16:20 +09:00 | Nexus Platform Team | Production Verified | Added Midtrans paid-status reconciliation, automatic and manual admin sync, atomic paid access activation, production alias correction, and the reusable `skills/midtrans-billing.md` project skill. |
 | RN-2026.06.13-001 | 2026-06-13 00:00 +09:00 | Nexus Platform Team | UAT OK | Added anonymous Nexus AI Nihongo trial access for pre-assessment, flashcards, and quiz without login; kept paid/progress-bearing surfaces locked; added anonymous rate limits and no-persist analytics behavior; hardened John English-only output; localized login copy; removed redundant platform header title; and consolidated agent/project documentation. |
 | RN-2026.05.28-001 | 2026-05-28 00:25 +09:00 | Nexus Platform Team | Completed | Fixed Nexus Kingdom target visibility and retaliation: target scouting now prioritizes recent attackers, lists kingdoms across all continents instead of only the first six, and incoming attack notifications include `Serang balik`. |
@@ -46,6 +46,13 @@ Fixed Nexus AI English TTS playback for mobile browser policy constraints and re
 - iPhone Safari: prepare first, then tap Ready to Play.
 - Chrome mobile: replay prepared audio without re-calling `/api/voice/speak`.
 - Desktop Chrome: confirm DCE single, DCE dialogue, John voice, and interview prompt playback.
+
+### Production Verification
+
+- Commit `989cf0b` deployed to Vercel production as `nexus-platform-newxizyo3-zegol26s-projects.vercel.app`.
+- `nexustalenta-academy.com` and `www.nexustalenta-academy.com` were repointed to the verified deployment.
+- Smoke checks passed for `/`, `/checkout`, `/api/auth/csrf`, and `/login`.
+- `/api/voice/speak/cache/not-real` returned `401` without login, confirming the new protected cache route is live.
 
 ## RN-2026.06.17-001
 
