@@ -4,7 +4,7 @@
 
 | Release Note | Date/Time (JST) | Author | Status | Summary |
 | --- | --- | --- | --- | --- |
-| RN-2026.06.26-002 | 2026-06-26 00:00 +09:00 | Nexus Platform Team | Implemented | Replaced Nexus AI Arabic app branding in sidebar/dashboard, normalized English DCE answer option placement across the existing five-module levels, randomized Nihongo quiz/pre-assessment options, and added database-backed pre-assessment question variants through a production-safe migration. |
+| RN-2026.06.26-002 | 2026-06-26 00:00 +09:00 | Nexus Platform Team | Production Verified | Replaced Nexus AI Arabic app branding in sidebar/dashboard, normalized English DCE answer option placement across the existing five-module levels, randomized Nihongo quiz/pre-assessment options, and added database-backed pre-assessment question variants through a production-safe migration. |
 | RN-2026.06.26-001 | 2026-06-26 00:00 +09:00 | Nexus Platform Team | Production Verified | Fixed English mobile TTS playback flow for iOS/Safari, added database-backed voice TTS cache URLs, browser-only replay from prepared object URLs, development cache/playback logs, and a more alert John voice profile. |
 | RN-2026.06.17-001 | 2026-06-17 16:20 +09:00 | Nexus Platform Team | Production Verified | Added Midtrans paid-status reconciliation, automatic and manual admin sync, atomic paid access activation, production alias correction, and the reusable `skills/midtrans-billing.md` project skill. |
 | RN-2026.06.13-001 | 2026-06-13 00:00 +09:00 | Nexus Platform Team | UAT OK | Added anonymous Nexus AI Nihongo trial access for pre-assessment, flashcards, and quiz without login; kept paid/progress-bearing surfaces locked; added anonymous rate limits and no-persist analytics behavior; hardened John English-only output; localized login copy; removed redundant platform header title; and consolidated agent/project documentation. |
@@ -74,6 +74,15 @@ Refined Arabic branding, English DCE option quality, and Nihongo assessment vari
 - `npm run sanity:english-questions`
 - `npm run sanity:english-listening`
 - `npm run sanity:nihongo-options`
+- `npm run lint`
+
+### Production Verification
+
+- Commit `427afef` deployed to Vercel production as `nexus-platform-59799kkwt-zegol26s-projects.vercel.app`.
+- Aliased `nexustalenta-academy.com` and `www.nexustalenta-academy.com` to the verified deployment.
+- Nihongo quiz smoke on both apex and `www` returned 20 questions with correct answers distributed `A=5, B=5, C=5, D=5`.
+- Nihongo pre-assessment smoke returned `source=question_bank`, 22 questions, and database-backed variant tags.
+- Checkout, CSRF, and login production smoke returned HTTP 200.
 
 ## RN-2026.06.17-001
 

@@ -2,7 +2,7 @@
 
 ## [2026.06.26] - Arabic Brand, English DCE Options, and Nihongo Assessment Variants
 
-Status: Implemented, awaiting production verification.
+Status: Production deployed and verified.
 
 ### Added
 
@@ -16,6 +16,14 @@ Status: Implemented, awaiting production verification.
 - Added English DCE validation for answer-position distribution so future content cannot silently put every correct answer in option A.
 - Randomized Nihongo pre-assessment and quiz options at API response time while keeping string-based answer evaluation intact.
 - Updated pre-assessment DB selection to avoid duplicate variants of the same base question in one generated assessment.
+
+### Production Verification
+
+- Commit `427afef` deployed to Vercel production as `nexus-platform-59799kkwt-zegol26s-projects.vercel.app`.
+- `nexustalenta-academy.com` and `www.nexustalenta-academy.com` were aliased to the verified deployment.
+- Nihongo quiz smoke returned 20 questions with correct answers distributed `A=5, B=5, C=5, D=5`.
+- Nihongo pre-assessment smoke returned `source=question_bank`, 22 questions, and database-backed variant tags.
+- `/checkout`, `/api/auth/csrf`, and `/login` returned HTTP 200.
 
 ## [2026.06.26] - English Mobile TTS Playback and Cache
 
