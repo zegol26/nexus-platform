@@ -280,9 +280,11 @@ export function EnglishInterviewClient() {
                 <div className="mt-5 grid gap-4 lg:grid-cols-[1fr_1fr]">
                   <div className="rounded-2xl bg-slate-50 p-4">
                     <p className="mb-3 text-sm font-semibold text-slate-700">Question audio</p>
-                    <audio controls src={question.audioUrl} className="w-full">
-                      <track kind="captions" />
-                    </audio>
+                    <QuestionPromptAudio
+                      audioUrl={question.audioUrl}
+                      audioReady={question.audioReady}
+                      questionId={question.id}
+                    />
                     {!question.audioReady && (
                       <p className="mt-2 text-xs text-amber-700">Audio akan dibuat dan dicache saat pertama kali diputar.</p>
                     )}
@@ -353,6 +355,111 @@ function ReviewCard({ review }: { review: Review }) {
       <p className="mt-2">{review.feedback}</p>
       {review.recommendation && <p className="mt-2">Practice: {review.recommendation}</p>}
       {typeof review.overallScore === "number" && <p className="mt-2 font-semibold">Overall: {review.overallScore}/100</p>}
+    </div>
+  );
+}
+
+type TtsPlayState = "idle" | "preparing" | "ready" | "playing" | "blocked" | "error";
+
+function QuestionPromptAudio({
+  audioUrl,
+  audioReady,
+  questionId,
+}: {
+  audioUrl: string;
+  audioReady: boolean;
+  questionId: string;
+}) {
+  const [state, setState] = useState<TtsPlayState>("idle");
+  const [localUrl, setLocalUrl] = useState<string | null>(null);
+  const [message, setMessage] = useState("");
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (localUrl) URL.revokeObjectURL(localUrl);
+    };
+  }, [localUrl]);
+
+  function devLog(messageText: string, metadata?: Record<string, unknown>) {
+    if (process.env.NODE_ENV === "development") {
+      console.log(`[english-interview-tts] ${messageText}`, metadata ?? "");
+    }
+  }
+
+  async function prepareAudio() {
+    setState("preparing");
+    setMessage("");
+    try {
+      devLog(audioReady ? "tts cache hit" : "tts cache miss", { questionId });
+      const response = await fetch(audioUrl);
+      if (!response.ok) {
+        const payload = await response.json().catch(() => null);
+        throw new Error(payload?.error ?? `Audio failed (HTTP ${response.status}).`);
+      }
+
+      const objectUrl = URL.createObjectURL(await response.blob());
+      setLocalUrl((current) => {
+        if (current) URL.revokeObjectURL(current);
+        return objectUrl;
+      });
+      setState("ready");
+      setMessage("Ready to Play");
+    } catch (cause) {
+      setState("error");
+      setMessage(cause instanceof Error ? cause.message : "Audio failed.");
+    }
+  }
+
+  async function playAudio() {
+    if (!localUrl) {
+      await prepareAudio();
+      return;
+    }
+
+    setState("playing");
+    setMessage("");
+    try {
+      if (!audioRef.current) {
+        audioRef.current = new Audio(localUrl);
+        audioRef.current.addEventListener("ended", () => setState("ready"));
+      }
+      audioRef.current.src = localUrl;
+      audioRef.current.currentTime = 0;
+      await audioRef.current.play();
+      devLog("audio play success", { questionId });
+    } catch {
+      devLog("audio play failure", { questionId });
+      setState("blocked");
+      setMessage("Audio blocked by browser. Tap Play again.");
+    }
+  }
+
+  const label =
+    state === "idle"
+      ? "Prepare audio"
+      : state === "preparing"
+        ? "Preparing..."
+        : state === "ready"
+          ? "Ready to Play"
+          : state === "playing"
+            ? "Playing..."
+            : state === "blocked"
+              ? "Play again"
+              : "Try again";
+
+  return (
+    <div>
+      <button
+        type="button"
+        onClick={localUrl ? playAudio : prepareAudio}
+        disabled={state === "preparing" || state === "playing"}
+        className="rounded-full bg-blue-700 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-800 disabled:bg-slate-400"
+      >
+        {label}
+      </button>
+      <p className="mt-2 text-xs text-slate-500">Status: {state}</p>
+      {message && <p className="mt-2 text-xs text-blue-700">{message}</p>}
     </div>
   );
 }

@@ -856,6 +856,24 @@ model FeatureUsage {
   @@index([feature])
 }
 
+model VoiceTtsCache {
+  id            String   @id @default(cuid())
+  cacheKey      String   @unique
+  textHash      String
+  voiceProfile  String
+  provider      String
+  audioBase64   String
+  audioMimeType String
+  textLength    Int
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  lastUsedAt    DateTime @default(now())
+
+  @@index([voiceProfile])
+  @@index([textHash])
+  @@index([lastUsedAt])
+}
+
 model UserGameProfile {
   id                    String    @id @default(cuid())
   userId                String    @unique

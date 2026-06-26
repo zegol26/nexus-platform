@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type {
   DceComprehensionQuestion,
   DceDialogue,
@@ -212,11 +212,15 @@ function ListeningTab({ items }: { items: DceListeningItem[] }) {
   );
 }
 
+type TtsPlayState = "idle" | "preparing" | "ready" | "playing" | "blocked" | "error";
+
 function ListeningPlayer({ text, id, speakers }: { text: string; id: string; speakers: string[] }) {
-  const [loading, setLoading] = useState(false);
-  const [playingDialogue, setPlayingDialogue] = useState(false);
-  const [audioUrl, setAudioUrl] = useState<string | null>(null);
+  const [singleState, setSingleState] = useState<TtsPlayState>("idle");
+  const [dialogueState, setDialogueState] = useState<TtsPlayState>("idle");
+  const [singleAudioUrl, setSingleAudioUrl] = useState<string | null>(null);
+  const [dialogueAudioUrls, setDialogueAudioUrls] = useState<string[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const singleAudioRef = useRef<HTMLAudioElement | null>(null);
   const dialogueLines = useMemo(
     () =>
       text
@@ -230,96 +234,181 @@ function ListeningPlayer({ text, id, speakers }: { text: string; id: string; spe
     [text]
   );
 
-  async function generate() {
-    setLoading(true);
-    setError(null);
-    try {
-      const res = await fetch("/api/voice/speak", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text, voiceProfile: "john" }),
-      });
-      if (!res.ok) {
-        const payload = await res.json().catch(() => null);
-        setError(payload?.error ?? `Voice failed (HTTP ${res.status}).`);
-        return;
-      }
-      const blob = await res.blob();
-      const url = URL.createObjectURL(blob);
-      setAudioUrl((current) => {
-        if (current) URL.revokeObjectURL(current);
-        return url;
-      });
-    } catch (cause) {
-      setError(cause instanceof Error ? cause.message : "Voice failed.");
-    } finally {
-      setLoading(false);
+  useEffect(() => {
+    return () => {
+      if (singleAudioUrl) URL.revokeObjectURL(singleAudioUrl);
+      for (const url of dialogueAudioUrls) URL.revokeObjectURL(url);
+    };
+  }, [singleAudioUrl, dialogueAudioUrls]);
+
+  function devLog(message: string, metadata?: Record<string, unknown>) {
+    if (process.env.NODE_ENV === "development") {
+      console.log(`[english-dce-tts] ${message}`, metadata ?? "");
     }
   }
 
-  async function speakLine(lineText: string, voiceProfile: "john" | "englishFemale") {
+  async function prepareTtsAudio(lineText: string, voiceProfile: "john" | "englishFemale") {
     const res = await fetch("/api/voice/speak", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text: lineText, voiceProfile }),
+      body: JSON.stringify({ text: lineText, voiceProfile, returnUrl: true }),
     });
+    const payload = await res.json().catch(() => null);
     if (!res.ok) {
-      const payload = await res.json().catch(() => null);
       throw new Error(payload?.error ?? `Voice failed (HTTP ${res.status}).`);
     }
-    const blob = await res.blob();
-    const url = URL.createObjectURL(blob);
+
+    const cachedUrl = typeof payload?.audioUrl === "string" ? payload.audioUrl : "";
+    if (!cachedUrl) throw new Error("Voice URL was not returned.");
+    devLog(payload.cacheStatus === "hit" ? "tts cache hit" : "tts cache miss", {
+      id,
+      voiceProfile,
+      cacheKey: payload.cacheKey,
+    });
+
+    const audioResponse = await fetch(cachedUrl);
+    if (!audioResponse.ok) {
+      throw new Error(`Voice cache failed (HTTP ${audioResponse.status}).`);
+    }
+
+    return URL.createObjectURL(await audioResponse.blob());
+  }
+
+  async function prepareSingle() {
+    setSingleState("preparing");
+    setError(null);
+    try {
+      const url = await prepareTtsAudio(text, "john");
+      setSingleAudioUrl((current) => {
+        if (current) URL.revokeObjectURL(current);
+        return url;
+      });
+      setSingleState("ready");
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : "Voice failed.");
+      setSingleState("error");
+    }
+  }
+
+  async function prepareDialogue() {
+    setDialogueState("preparing");
+    setError(null);
+    try {
+      const urls: string[] = [];
+      for (const line of dialogueLines) {
+        urls.push(
+          await prepareTtsAudio(
+            line.text,
+            line.speaker === speakers[0] ? "john" : "englishFemale"
+          )
+        );
+      }
+      setDialogueAudioUrls((current) => {
+        for (const url of current) URL.revokeObjectURL(url);
+        return urls;
+      });
+      setDialogueState("ready");
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : "Voice failed.");
+      setDialogueState("error");
+    } finally {
+      if (dialogueLines.length === 0) setDialogueState("idle");
+    }
+  }
+
+  async function playObjectUrl(url: string) {
     await new Promise<void>((resolve, reject) => {
       const audio = new Audio(url);
       audio.onended = () => resolve();
       audio.onerror = () => reject(new Error("Audio playback failed."));
       void audio.play().catch(reject);
     });
-    URL.revokeObjectURL(url);
   }
 
-  async function playDialogueVoices() {
-    setPlayingDialogue(true);
+  async function playSingle() {
+    if (!singleAudioUrl) {
+      await prepareSingle();
+      return;
+    }
+    setSingleState("playing");
     setError(null);
     try {
-      for (const line of dialogueLines) {
-        await speakLine(line.text, line.speaker === speakers[0] ? "john" : "englishFemale");
+      if (!singleAudioRef.current) {
+        singleAudioRef.current = new Audio(singleAudioUrl);
       }
-    } catch (cause) {
-      setError(cause instanceof Error ? cause.message : "Voice failed.");
-    } finally {
-      setPlayingDialogue(false);
+      singleAudioRef.current.src = singleAudioUrl;
+      singleAudioRef.current.currentTime = 0;
+      await singleAudioRef.current.play();
+      devLog("audio play success", { id, mode: "single" });
+      singleAudioRef.current.onended = () => setSingleState("ready");
+    } catch {
+      devLog("audio play failure", { id, mode: "single" });
+      setError("Audio blocked by browser. Tap Play again.");
+      setSingleState("blocked");
     }
   }
 
+  async function playDialogueVoices() {
+    if (!dialogueAudioUrls.length) {
+      await prepareDialogue();
+      return;
+    }
+    setDialogueState("playing");
+    setError(null);
+    try {
+      for (const url of dialogueAudioUrls) {
+        await playObjectUrl(url);
+      }
+      devLog("audio play success", { id, mode: "dialogue" });
+      setDialogueState("ready");
+    } catch {
+      devLog("audio play failure", { id, mode: "dialogue" });
+      setError("Audio blocked by browser. Tap Play again.");
+      setDialogueState("blocked");
+    }
+  }
+
+  const isBusy =
+    singleState === "preparing" ||
+    singleState === "playing" ||
+    dialogueState === "preparing" ||
+    dialogueState === "playing";
+
   return (
     <div className="mt-4 rounded-2xl bg-slate-50 p-4">
-      {audioUrl ? (
-        <audio controls src={audioUrl} className="w-full">
-          <track kind="captions" />
-        </audio>
-      ) : (
-        <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2">
         <button
           type="button"
           onClick={playDialogueVoices}
-          disabled={playingDialogue || loading || dialogueLines.length === 0}
+          disabled={isBusy || dialogueLines.length === 0}
           className="rounded-full bg-blue-700 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-800 disabled:bg-slate-400"
           aria-label={`Play dialogue voices for ${id}`}
         >
-          {playingDialogue ? "Playing..." : "Play John + partner voices"}
+          {dialogueState === "idle" && "Prepare John + partner voices"}
+          {dialogueState === "preparing" && "Preparing..."}
+          {dialogueState === "ready" && "Play John + partner voices"}
+          {dialogueState === "playing" && "Playing..."}
+          {dialogueState === "blocked" && "Play again"}
+          {dialogueState === "error" && "Try again"}
         </button>
         <button
           type="button"
-          onClick={generate}
-          disabled={loading || playingDialogue}
+          onClick={singleAudioUrl ? playSingle : prepareSingle}
+          disabled={isBusy}
           className="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:border-blue-300 disabled:text-slate-400"
           aria-label={`Generate single voice audio for ${id}`}
         >
-          {loading ? "Generating..." : "Single John voice"}
+          {singleState === "idle" && "Prepare single John voice"}
+          {singleState === "preparing" && "Preparing..."}
+          {singleState === "ready" && "Ready to Play"}
+          {singleState === "playing" && "Playing..."}
+          {singleState === "blocked" && "Play again"}
+          {singleState === "error" && "Try again"}
         </button>
-        </div>
-      )}
+      </div>
+      <p className="mt-2 text-xs text-slate-500">
+        Status: {singleState === "ready" || dialogueState === "ready" ? "Ready to Play" : singleState}
+      </p>
       {error && <p className="mt-2 text-xs text-rose-700">{error}</p>}
     </div>
   );

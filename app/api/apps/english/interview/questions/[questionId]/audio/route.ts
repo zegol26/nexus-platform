@@ -2,6 +2,12 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db/prisma";
 import { generateEnglishInterviewTtsBase64 } from "@/lib/english/interview/tts";
 
+function devLog(message: string, metadata?: Record<string, unknown>) {
+  if (process.env.NODE_ENV === "development") {
+    console.log(`[english-interview-audio] ${message}`, metadata ?? "");
+  }
+}
+
 export async function GET(
   request: Request,
   context: { params: Promise<{ questionId: string }> }
@@ -17,6 +23,7 @@ export async function GET(
   }
 
   if (!question.audioBase64) {
+    devLog("tts cache miss", { questionId: question.id });
     const audio = await generateEnglishInterviewTtsBase64(question.audioText);
     question = await prisma.englishInterviewQuestion.update({
       where: { id: question.id },
@@ -26,6 +33,8 @@ export async function GET(
         audioProvider: audio.audioProvider,
       },
     });
+  } else {
+    devLog("tts cache hit", { questionId: question.id });
   }
 
   if (!question.audioBase64 || !question.audioMimeType) {

@@ -1,5 +1,27 @@
 # Release Notes
 
+## [2026.06.26] - English Mobile TTS Playback and Cache
+
+Status: Production deployment via git push to `main`.
+
+### Added
+
+- Added database-backed `VoiceTtsCache` storage for generated voice responses.
+- Added cached voice URL mode to `/api/voice/speak`; English clients prepare audio once, then replay from browser object URLs.
+- Added explicit English TTS UI states: idle, preparing, ready, playing, blocked, and error.
+
+### Fixed
+
+- Fixed iOS/Safari autoplay policy failures by avoiding `audio.play()` immediately after async TTS generation.
+- Updated John voice settings/instructions to sound more alert without generating audio on every replay.
+- Added development-only TTS cache and playback logs.
+
+### Manual Regression Checklist
+
+- iPhone Safari: first tap prepares audio, second tap plays; blocked state says, "Audio blocked by browser. Tap Play again."
+- Chrome mobile: replaying prepared audio does not call `/api/voice/speak`.
+- Desktop Chrome: DCE single voice, DCE dialogue voice, John voice reply, and English interview prompt audio show ready/playing states.
+
 ## [2026.06.17] - Midtrans Settlement Sync and Paid Access Recovery
 
 Status: Production deployed and verified.

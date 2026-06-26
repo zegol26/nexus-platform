@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import OpenAI from "openai";
+import { createHash } from "node:crypto";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
 import { withRouteMetrics } from "@/lib/observability/route-metrics";
@@ -10,9 +11,14 @@ export const runtime = "nodejs";
 const MAX_TEXT_LENGTH = 1200;
 
 type SpeakResult = {
-  buffer: ArrayBuffer;
+  buffer: ArrayBuffer | Buffer;
   contentType: string;
   provider: "elevenlabs" | "openai";
+};
+
+type CachedSpeakResult = SpeakResult & {
+  cacheKey: string;
+  cacheStatus: "hit" | "miss";
 };
 
 type VoiceProfileId = "aichan" | "john" | "englishFemale";
@@ -47,14 +53,14 @@ const VOICE_PROFILES: Record<VoiceProfileId, VoiceProfile> = {
   john: {
     elevenlabsVoiceIdEnv: "ELEVENLABS_JOHN_VOICE_ID",
     elevenlabsSettings: {
-      stability: 0.55,
-      similarity_boost: 0.85,
-      style: 0.35,
+      stability: 0.42,
+      similarity_boost: 0.86,
+      style: 0.55,
     },
     openaiVoiceEnv: "OPENAI_ENGLISH_TTS_VOICE",
-    openaiVoiceDefault: "onyx",
+    openaiVoiceDefault: "verse",
     openaiInstructions:
-      "You are John, a 40-something male English coach. Speak in clear, modern, mid-Atlantic English with a calm, warm, mentor-like tone — think senior teacher or seasoned podcast host. Lower-mid pitch, unhurried pace, gentle pauses for emphasis. Never theatrical, never robotic, never overly formal. Pronounce Indonesian names and learner-facing words with respect and care. Smile through your voice without becoming bubbly.",
+      "You are John, a 40-something male English coach. Speak in clear, modern, mid-Atlantic English with warm mentor energy, like a seasoned conversation coach who is fully awake and engaged. Use a natural medium pitch, crisp articulation, and a slightly brisk pace. Add friendly lift at the start of key sentences and confident emphasis on corrections. Never sound sleepy, monotone, theatrical, robotic, or overly formal. Pronounce Indonesian names and learner-facing words with respect and care. Smile through your voice without becoming bubbly.",
   },
   englishFemale: {
     elevenlabsVoiceIdEnv: "ELEVENLABS_ENGLISH_FEMALE_VOICE_ID",
@@ -73,6 +79,26 @@ const VOICE_PROFILES: Record<VoiceProfileId, VoiceProfile> = {
 function resolveProfile(value: unknown): VoiceProfileId {
   if (value === "englishFemale") return "englishFemale";
   return value === "john" ? "john" : "aichan";
+}
+
+function devLog(message: string, metadata?: Record<string, unknown>) {
+  if (process.env.NODE_ENV === "development") {
+    console.log(`[voice/speak] ${message}`, metadata ?? "");
+  }
+}
+
+function buildCacheKey(text: string, profileId: VoiceProfileId) {
+  const textHash = createHash("sha256").update(text).digest("hex");
+  const cacheKey = createHash("sha256")
+    .update(`${profileId}:${textHash}`)
+    .digest("hex")
+    .slice(0, 40);
+
+  return { cacheKey, textHash };
+}
+
+function toBuffer(buffer: ArrayBuffer | Buffer) {
+  return Buffer.isBuffer(buffer) ? buffer : Buffer.from(buffer);
 }
 
 async function speakWithElevenLabs(
@@ -145,6 +171,91 @@ async function speakWithOpenAI(
   };
 }
 
+async function getOrCreateCachedSpeech(
+  text: string,
+  profileId: VoiceProfileId,
+  profile: VoiceProfile
+): Promise<CachedSpeakResult | null> {
+  const { cacheKey, textHash } = buildCacheKey(text, profileId);
+  const cached = await prisma.voiceTtsCache.findUnique({
+    where: { cacheKey },
+  });
+
+  if (cached) {
+    devLog("tts cache hit", {
+      cacheKey,
+      voiceProfile: profileId,
+      textLength: text.length,
+    });
+    await prisma.voiceTtsCache.update({
+      where: { cacheKey },
+      data: { lastUsedAt: new Date() },
+    });
+    return {
+      buffer: Buffer.from(cached.audioBase64, "base64"),
+      contentType: cached.audioMimeType,
+      provider: cached.provider === "elevenlabs" ? "elevenlabs" : "openai",
+      cacheKey,
+      cacheStatus: "hit",
+    };
+  }
+
+  devLog("tts cache miss", {
+    cacheKey,
+    voiceProfile: profileId,
+    textLength: text.length,
+  });
+
+  let result = await speakWithElevenLabs(text, profile);
+  if (!result) {
+    result = await speakWithOpenAI(text, profile);
+  }
+
+  if (!result) return null;
+
+  const buffer = toBuffer(result.buffer);
+  try {
+    await prisma.voiceTtsCache.create({
+      data: {
+        cacheKey,
+        textHash,
+        voiceProfile: profileId,
+        provider: result.provider,
+        audioBase64: buffer.toString("base64"),
+        audioMimeType: result.contentType,
+        textLength: text.length,
+      },
+    });
+    devLog("generated URL recreated", { cacheKey, voiceProfile: profileId });
+  } catch {
+    const racedCache = await prisma.voiceTtsCache.findUnique({
+      where: { cacheKey },
+    });
+    if (racedCache) {
+      devLog("generated URL reused after concurrent create", {
+        cacheKey,
+        voiceProfile: profileId,
+      });
+      return {
+        buffer: Buffer.from(racedCache.audioBase64, "base64"),
+        contentType: racedCache.audioMimeType,
+        provider: racedCache.provider === "elevenlabs" ? "elevenlabs" : "openai",
+        cacheKey,
+        cacheStatus: "hit",
+      };
+    }
+    throw new Error("Voice cache write failed.");
+  }
+
+  return {
+    buffer,
+    contentType: result.contentType,
+    provider: result.provider,
+    cacheKey,
+    cacheStatus: "miss",
+  };
+}
+
 export async function POST(request: Request) {
   return withRouteMetrics(
     {
@@ -177,6 +288,7 @@ async function speakVoice(request: Request) {
     const body = (await request.json().catch(() => null)) as {
       text?: unknown;
       voiceProfile?: unknown;
+      returnUrl?: unknown;
     } | null;
 
     const text =
@@ -200,10 +312,7 @@ async function speakVoice(request: Request) {
     const profileId = resolveProfile(body?.voiceProfile);
     const profile = VOICE_PROFILES[profileId];
 
-    let result = await speakWithElevenLabs(text, profile);
-    if (!result) {
-      result = await speakWithOpenAI(text, profile);
-    }
+    const result = await getOrCreateCachedSpeech(text, profileId, profile);
 
     if (!result) {
       return NextResponse.json(
@@ -215,11 +324,38 @@ async function speakVoice(request: Request) {
       );
     }
 
-    return new NextResponse(Buffer.from(result.buffer), {
+    if (body?.returnUrl === true) {
+      const audioUrl = `/api/voice/speak/cache/${result.cacheKey}`;
+      devLog(
+        result.cacheStatus === "hit"
+          ? "generated URL reused"
+          : "generated URL recreated",
+        { audioUrl, voiceProfile: profileId }
+      );
+      return NextResponse.json(
+        {
+          audioUrl,
+          cacheKey: result.cacheKey,
+          cacheStatus: result.cacheStatus,
+          provider: result.provider,
+          contentType: result.contentType,
+        },
+        {
+          headers: {
+            "Cache-Control": "private, max-age=3600",
+            "X-TTS-Cache": result.cacheStatus,
+            "X-Voice-Provider": result.provider,
+          },
+        }
+      );
+    }
+
+    return new NextResponse(new Uint8Array(toBuffer(result.buffer)), {
       headers: {
         "Content-Type": result.contentType,
-        "Cache-Control": "no-store",
+        "Cache-Control": "private, max-age=3600",
         "X-Voice-Provider": result.provider,
+        "X-TTS-Cache": result.cacheStatus,
       },
     });
   } catch (error) {
@@ -235,3 +371,4 @@ async function speakVoice(request: Request) {
     );
   }
 }
+

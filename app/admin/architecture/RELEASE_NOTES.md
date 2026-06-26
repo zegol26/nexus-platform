@@ -4,6 +4,7 @@
 
 | Release Note | Date/Time (JST) | Author | Status | Summary |
 | --- | --- | --- | --- | --- |
+| RN-2026.06.26-001 | 2026-06-26 00:00 +09:00 | Nexus Platform Team | Production Deploy | Fixed English mobile TTS playback flow for iOS/Safari, added database-backed voice TTS cache URLs, browser-only replay from prepared object URLs, development cache/playback logs, and a more alert John voice profile. |
 | RN-2026.06.17-001 | 2026-06-17 16:20 +09:00 | Nexus Platform Team | Production Verified | Added Midtrans paid-status reconciliation, automatic and manual admin sync, atomic paid access activation, production alias correction, and the reusable `skills/midtrans-billing.md` project skill. |
 | RN-2026.06.13-001 | 2026-06-13 00:00 +09:00 | Nexus Platform Team | UAT OK | Added anonymous Nexus AI Nihongo trial access for pre-assessment, flashcards, and quiz without login; kept paid/progress-bearing surfaces locked; added anonymous rate limits and no-persist analytics behavior; hardened John English-only output; localized login copy; removed redundant platform header title; and consolidated agent/project documentation. |
 | RN-2026.05.28-001 | 2026-05-28 00:25 +09:00 | Nexus Platform Team | Completed | Fixed Nexus Kingdom target visibility and retaliation: target scouting now prioritizes recent attackers, lists kingdoms across all continents instead of only the first six, and incoming attack notifications include `Serang balik`. |
@@ -27,6 +28,24 @@
 | RN-2026.05.04-001 | 2026-05-04 01:10 +09:00 | Nexus Platform Team | Completed | Fixed character foundation lesson access and verified kana/kanji grids in localhost. |
 | RN-2026.05.03-002 | 2026-05-03 23:45 +09:00 | Nexus Platform Team | Completed | Added seedable Nihongo character content for kana, kanji, and vocabulary compounds, linked to lesson pages. |
 | RN-2026.05.03-001 | 2026-05-03 23:09 +09:00 | Nexus Platform Team | Release Candidate | Admin Operations Console, billing/trial foundation, recording visibility, architecture docs, and Ai-chan assistant foundation. |
+
+## RN-2026.06.26-001
+
+Fixed Nexus AI English TTS playback for mobile browser policy constraints and reduced repeated TTS cost.
+
+### Changes
+
+- Added `VoiceTtsCache` for generated `/api/voice/speak` audio.
+- Added cached voice URL responses for English clients so prepare/generate happens before playback.
+- Updated John, DCE listening, and English interview prompt audio to use explicit idle/preparing/ready/playing/blocked/error UI states.
+- Avoided autoplay after async TTS fetch/generation; users tap again to play prepared audio on iPhone Safari.
+- Tuned John voice toward clearer, more alert delivery while preserving cache reuse.
+
+### Manual Checks
+
+- iPhone Safari: prepare first, then tap Ready to Play.
+- Chrome mobile: replay prepared audio without re-calling `/api/voice/speak`.
+- Desktop Chrome: confirm DCE single, DCE dialogue, John voice, and interview prompt playback.
 
 ## RN-2026.06.17-001
 

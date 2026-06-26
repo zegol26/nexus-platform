@@ -7,15 +7,17 @@ type VoiceState =
   | "recording"
   | "transcribing"
   | "thinking"
-  | "speaking"
+  | "preparing"
   | "error";
+
+type TtsPlaybackState = "idle" | "preparing" | "ready" | "playing" | "blocked" | "error";
 
 const STATE_LABEL: Record<VoiceState, string> = {
   idle: "Talk with John",
   recording: "John is listening...",
   transcribing: "John is reading what you said...",
   thinking: "John is thinking...",
-  speaking: "John is speaking...",
+  preparing: "John is preparing his voice...",
   error: "Let's try that again",
 };
 
@@ -45,8 +47,8 @@ function pickRecorderMime(): string | undefined {
 
 export function JohnVoicePanel({ onUserTranscript, onStateChange }: Props) {
   const [state, setState] = useState<VoiceState>("idle");
+  const [ttsState, setTtsState] = useState<TtsPlaybackState>("idle");
   const [error, setError] = useState<string | null>(null);
-  const [autoplayBlocked, setAutoplayBlocked] = useState(false);
   const [hasAudioUrl, setHasAudioUrl] = useState(false);
 
   const recorderRef = useRef<MediaRecorder | null>(null);
@@ -66,42 +68,77 @@ export function JohnVoicePanel({ onUserTranscript, onStateChange }: Props) {
     };
   }, []);
 
-  const playAudioBlob = useCallback(async (blob: Blob) => {
-    const url = URL.createObjectURL(blob);
+  const devLog = useCallback((message: string, metadata?: Record<string, unknown>) => {
+    if (process.env.NODE_ENV === "development") {
+      console.log(`[english-john-tts] ${message}`, metadata ?? "");
+    }
+  }, []);
+
+  const prepareJohnVoice = useCallback(async (reply: string) => {
+    setState("preparing");
+    setTtsState("preparing");
+    const speakResp = await fetch("/api/voice/speak", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: reply, voiceProfile: "john", returnUrl: true }),
+    });
+    const payload = await speakResp.json().catch(() => null);
+    if (!speakResp.ok) {
+      throw new Error(
+        (payload?.error as string | undefined) ??
+          `Voice failed (HTTP ${speakResp.status}).`
+      );
+    }
+
+    const cachedUrl = typeof payload?.audioUrl === "string" ? payload.audioUrl : "";
+    if (!cachedUrl) throw new Error("Voice URL was not returned.");
+    devLog(payload.cacheStatus === "hit" ? "tts cache hit" : "tts cache miss", {
+      cacheKey: payload.cacheKey,
+      provider: payload.provider,
+    });
+
+    const audioResponse = await fetch(cachedUrl);
+    if (!audioResponse.ok) {
+      throw new Error(`Voice cache failed (HTTP ${audioResponse.status}).`);
+    }
+
+    const url = URL.createObjectURL(await audioResponse.blob());
     if (audioUrlRef.current) URL.revokeObjectURL(audioUrlRef.current);
     audioUrlRef.current = url;
     setHasAudioUrl(true);
 
     if (!audioRef.current) {
       audioRef.current = new Audio();
-      audioRef.current.addEventListener("ended", () => setState("idle"));
+      audioRef.current.addEventListener("ended", () => {
+        setState("idle");
+        setTtsState("ready");
+      });
     }
     audioRef.current.src = url;
-    setAutoplayBlocked(false);
+    setState("idle");
+    setTtsState("ready");
+  }, [devLog]);
 
-    try {
-      await audioRef.current.play();
-    } catch {
-      setAutoplayBlocked(true);
-      setState("idle");
-    }
-  }, []);
-
-  const handleRepeat = useCallback(async () => {
+  const playPreparedAudio = useCallback(async () => {
     if (!audioUrlRef.current || !audioRef.current) return;
-    setAutoplayBlocked(false);
-    setState("speaking");
+    setError(null);
+    setTtsState("playing");
     try {
+      audioRef.current.src = audioUrlRef.current;
       audioRef.current.currentTime = 0;
       await audioRef.current.play();
+      devLog("audio play success", { mode: "john" });
     } catch {
-      setAutoplayBlocked(true);
+      devLog("audio play failure", { mode: "john" });
+      setError("Audio blocked by browser. Tap Play again.");
+      setTtsState("blocked");
       setState("idle");
     }
-  }, []);
+  }, [devLog]);
 
   const failWith = useCallback((message: string) => {
     setError(message);
+    setTtsState("error");
     setState("error");
     streamRef.current?.getTracks().forEach((t) => t.stop());
     streamRef.current = null;
@@ -168,35 +205,20 @@ export function JohnVoicePanel({ onUserTranscript, onStateChange }: Props) {
         return;
       }
 
-      setState("speaking");
       try {
-        const speakResp = await fetch("/api/voice/speak", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ text: reply, voiceProfile: "john" }),
-        });
-        if (!speakResp.ok) {
-          const payload = await speakResp.json().catch(() => null);
-          failWith(
-            (payload?.error as string | undefined) ??
-              `Voice failed (HTTP ${speakResp.status}).`
-          );
-          return;
-        }
-        const audioBlob = await speakResp.blob();
-        await playAudioBlob(audioBlob);
+        await prepareJohnVoice(reply);
       } catch (cause) {
         failWith(
           cause instanceof Error ? `Voice failed: ${cause.message}` : "Voice failed."
         );
       }
     },
-    [failWith, onUserTranscript, playAudioBlob]
+    [failWith, onUserTranscript, prepareJohnVoice]
   );
 
   const startRecording = useCallback(async () => {
     setError(null);
-    setAutoplayBlocked(false);
+    setTtsState((current) => (current === "ready" ? current : "idle"));
 
     if (typeof navigator === "undefined" || !navigator.mediaDevices?.getUserMedia) {
       failWith("Your browser doesn't support recording. Use Chrome/Edge/Safari latest.");
@@ -248,14 +270,16 @@ export function JohnVoicePanel({ onUserTranscript, onStateChange }: Props) {
 
   const resetError = useCallback(() => {
     setError(null);
+    setTtsState(hasAudioUrl ? "ready" : "idle");
     setState("idle");
-  }, []);
+  }, [hasAudioUrl]);
 
   const isBusy =
     state === "recording" ||
     state === "transcribing" ||
     state === "thinking" ||
-    state === "speaking";
+    state === "preparing" ||
+    ttsState === "playing";
 
   return (
     <div className="rounded-3xl border border-blue-200 bg-gradient-to-br from-blue-50 via-white to-blue-50/40 p-5 shadow-sm">
@@ -264,7 +288,7 @@ export function JohnVoicePanel({ onUserTranscript, onStateChange }: Props) {
           className={`relative flex h-12 w-12 items-center justify-center rounded-full text-xl ${
             state === "recording"
               ? "bg-rose-500 text-white"
-              : state === "speaking"
+              : ttsState === "playing" || ttsState === "ready"
                 ? "bg-emerald-500 text-white"
                 : "bg-blue-700 text-white"
           }`}
@@ -283,7 +307,7 @@ export function JohnVoicePanel({ onUserTranscript, onStateChange }: Props) {
         </div>
       </div>
 
-      {error && state === "error" && (
+      {error && (state === "error" || ttsState === "blocked") && (
         <div className="mt-3 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700">
           {error}
           <button
@@ -296,7 +320,7 @@ export function JohnVoicePanel({ onUserTranscript, onStateChange }: Props) {
         </div>
       )}
 
-      {(state === "transcribing" || state === "thinking") && (
+      {(state === "transcribing" || state === "thinking" || state === "preparing") && (
         <div className="mt-3 flex items-center gap-1 text-xs text-blue-700">
           <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-blue-500" />
           <span
@@ -310,13 +334,14 @@ export function JohnVoicePanel({ onUserTranscript, onStateChange }: Props) {
         </div>
       )}
 
-      {autoplayBlocked && hasAudioUrl && (
+      {(ttsState === "ready" || ttsState === "blocked" || ttsState === "playing") && hasAudioUrl && (
         <button
           type="button"
-          onClick={handleRepeat}
+          onClick={playPreparedAudio}
+          disabled={ttsState === "playing"}
           className="mt-3 w-full rounded-full bg-amber-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-amber-600"
         >
-          Tap to play John&apos;s voice
+          {ttsState === "playing" ? "Playing..." : ttsState === "ready" ? "Ready to Play" : "Play again"}
         </button>
       )}
 
@@ -342,7 +367,7 @@ export function JohnVoicePanel({ onUserTranscript, onStateChange }: Props) {
 
         <button
           type="button"
-          onClick={handleRepeat}
+          onClick={playPreparedAudio}
           disabled={!hasAudioUrl || isBusy}
           className="rounded-full border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-blue-300 hover:bg-blue-50 disabled:opacity-40"
         >
