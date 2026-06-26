@@ -4,6 +4,7 @@
 
 | Release Note | Date/Time (JST) | Author | Status | Summary |
 | --- | --- | --- | --- | --- |
+| RN-2026.06.26-002 | 2026-06-26 00:00 +09:00 | Nexus Platform Team | Implemented | Replaced Nexus AI Arabic app branding in sidebar/dashboard, normalized English DCE answer option placement across the existing five-module levels, randomized Nihongo quiz/pre-assessment options, and added database-backed pre-assessment question variants through a production-safe migration. |
 | RN-2026.06.26-001 | 2026-06-26 00:00 +09:00 | Nexus Platform Team | Production Verified | Fixed English mobile TTS playback flow for iOS/Safari, added database-backed voice TTS cache URLs, browser-only replay from prepared object URLs, development cache/playback logs, and a more alert John voice profile. |
 | RN-2026.06.17-001 | 2026-06-17 16:20 +09:00 | Nexus Platform Team | Production Verified | Added Midtrans paid-status reconciliation, automatic and manual admin sync, atomic paid access activation, production alias correction, and the reusable `skills/midtrans-billing.md` project skill. |
 | RN-2026.06.13-001 | 2026-06-13 00:00 +09:00 | Nexus Platform Team | UAT OK | Added anonymous Nexus AI Nihongo trial access for pre-assessment, flashcards, and quiz without login; kept paid/progress-bearing surfaces locked; added anonymous rate limits and no-persist analytics behavior; hardened John English-only output; localized login copy; removed redundant platform header title; and consolidated agent/project documentation. |
@@ -53,6 +54,26 @@ Fixed Nexus AI English TTS playback for mobile browser policy constraints and re
 - `nexustalenta-academy.com` and `www.nexustalenta-academy.com` were repointed to the verified deployment.
 - Smoke checks passed for `/`, `/checkout`, `/api/auth/csrf`, and `/login`.
 - `/api/voice/speak/cache/not-real` returned `401` without login, confirming the new protected cache route is live.
+
+## RN-2026.06.26-002
+
+Refined Arabic branding, English DCE option quality, and Nihongo assessment variation.
+
+### Changes
+
+- Added a dedicated Nexus AI Arabic mark in both the Arabic sidebar and dashboard hero.
+- Preserved the existing English DCE five-module-per-level structure while normalizing correct-answer positions across A/B/C/D.
+- Added English DCE validation that fails when a question group puts every correct answer in the same option position.
+- Randomized Nihongo quiz and pre-assessment options before returning API responses.
+- Added a production-safe migration that creates curated `AssessmentQuestion` variants from existing database questions, giving repeat pre-assessments more variation without destructive seed behavior.
+- Updated the Nihongo assessment selector so one generated session does not include multiple variants of the same base question.
+
+### Checks
+
+- `npx tsc --noEmit --pretty false`
+- `npm run sanity:english-questions`
+- `npm run sanity:english-listening`
+- `npm run sanity:nihongo-options`
 
 ## RN-2026.06.17-001
 

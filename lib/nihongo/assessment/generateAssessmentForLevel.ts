@@ -4,6 +4,7 @@ export type AssessmentTargetLevel = "N5" | "N4";
 
 export type BankAssessmentQuestion = {
   id: string;
+  sourceKey?: string;
   level: string;
   skill: string;
   questionType: string;
@@ -125,7 +126,7 @@ async function findBankQuestions(
     take: params.take * 4,
   });
 
-  return shuffle(rows).slice(0, params.take).map((row) => ({
+  return dedupeQuestions(shuffle(rows).map((row) => ({
     id: row.id,
     level: row.level,
     skill: row.skill,
@@ -137,7 +138,8 @@ async function findBankQuestions(
     explanation: row.explanation,
     difficulty: row.difficulty,
     tags: row.tags,
-  }));
+    sourceKey: row.sourceKey,
+  }))).slice(0, params.take);
 }
 
 export function validateGeneratedAssessment(questions: BankAssessmentQuestion[]) {
@@ -193,8 +195,9 @@ function shuffle<T>(items: T[]) {
 function dedupeQuestions(questions: BankAssessmentQuestion[]) {
   const seen = new Set<string>();
   return questions.filter((question) => {
-    if (seen.has(question.id)) return false;
-    seen.add(question.id);
+    const baseKey = (question.sourceKey ?? question.id).replace(/-v[2-5]$/, "");
+    if (seen.has(baseKey)) return false;
+    seen.add(baseKey);
     return true;
   });
 }

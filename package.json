@@ -12,6 +12,7 @@
     "reconcile-payment": "tsx scripts/reconcile-payment.ts",
     "sanity:english-listening": "tsx scripts/sanity-check-english-listening.ts",
     "sanity:english-questions": "tsx scripts/sanity-check-english-questions.ts",
+    "sanity:nihongo-options": "tsx scripts/sanity-check-nihongo-options.ts",
     "validate:n5-rehearsal": "tsx scripts/validate-n5-rehearsal-data.ts",
     "validate:community": "tsx scripts/validate-community-copy.ts",
     "validate:game": "tsx scripts/validate-game-config.ts"

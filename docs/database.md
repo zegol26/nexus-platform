@@ -26,12 +26,15 @@ Recent migrations include:
 - `20260521120000_usage_metrics_midtrans_plans`
 - `20260521133000_rename_nihongo_academy`
 - `20260521134500_restore_nihongo_app_name`
+- `20260626133000_add_assessment_question_variants`
 
 ## Seed Policy
 
 Seeds must be idempotent and production-safe. Use stable unique keys such as slug, source key, app code, or plan code. Do not use destructive `deleteMany()` + recreate behavior for user-visible data.
 
 Production history includes a stale seed incident that removed lessons 41 and 42 and reset admin access. Every future seed touching user-visible data needs careful review.
+
+The Nihongo pre-assessment question variants are also created by migration from existing `AssessmentQuestion` rows so production receives the variation data during normal deploy migrations even when `RUN_SEED_ON_BUILD` is not enabled.
 
 ## Build Behavior
 

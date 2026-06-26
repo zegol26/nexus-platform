@@ -3,6 +3,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
 import { conceptQuestions } from "@/lib/nihongo/quiz/conceptQuestions";
+import { fisherYates, shuffleWithCorrect } from "@/lib/nihongo/randomize-options";
 import {
   anonymousRateLimitResponse,
   checkAnonymousRateLimit,
@@ -21,7 +22,16 @@ type QuizCard = {
 };
 
 function shuffle<T>(items: T[]): T[] {
-  return [...items].sort(() => Math.random() - 0.5);
+  return fisherYates(items);
+}
+
+function randomizeQuizQuestionOptions<T extends { options: string[]; answer: string }>(
+  question: T
+): T {
+  return {
+    ...question,
+    options: shuffleWithCorrect(question.options, question.answer),
+  };
 }
 
 function getIndonesianMeaning(back: string) {
@@ -160,14 +170,19 @@ export async function GET(request: Request) {
     25
   );
 
-  const cards: QuizCard[] = await prisma.nihongoFlashcard.findMany({
-    where: {
-      ...(level ? { level } : {}),
-      ...(category ? { category } : {}),
-    },
-    take: 250,
-    orderBy: [{ level: "asc" }, { deck: "asc" }, { createdAt: "asc" }],
-  });
+  let cards: QuizCard[] = [];
+  try {
+    cards = await prisma.nihongoFlashcard.findMany({
+      where: {
+        ...(level ? { level } : {}),
+        ...(category ? { category } : {}),
+      },
+      take: 250,
+      orderBy: [{ level: "asc" }, { deck: "asc" }, { createdAt: "asc" }],
+    });
+  } catch (error) {
+    console.error("[nihongo/quiz] flashcard lookup failed; using concept bank fallback", error);
+  }
 
   const matchingConceptQuestions = conceptQuestions.filter(
     (question) =>
@@ -182,10 +197,9 @@ export async function GET(request: Request) {
     if (shouldMixHalfConceptHalfFlashcard && cards.length > 0) {
       const conceptCount = Math.ceil(count / 2);
       const flashcardCount = count - conceptCount;
-      const conceptBatch = shuffle(matchingConceptQuestions).slice(
-        0,
-        conceptCount
-      );
+      const conceptBatch = shuffle(matchingConceptQuestions)
+        .slice(0, conceptCount)
+        .map(randomizeQuizQuestionOptions);
       const flashcardBatch = buildFlashcardQuestions(cards, flashcardCount);
       const questions = shuffle([...conceptBatch, ...flashcardBatch]).slice(
         0,
@@ -198,7 +212,9 @@ export async function GET(request: Request) {
       });
     }
 
-    const questions = shuffle(matchingConceptQuestions).slice(0, count);
+    const questions = shuffle(matchingConceptQuestions)
+      .slice(0, count)
+      .map(randomizeQuizQuestionOptions);
 
     return NextResponse.json({
       questions,

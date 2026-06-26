@@ -128,7 +128,7 @@ const n4Reading = [
 ] as const;
 
 function buildQuestions(): SeedQuestion[] {
-  return [
+  const baseQuestions = [
     ...simple(n5Vocabulary, "N5", "vocabulary", "multiple_choice", 1, "Apa arti/bacaan kata ini?"),
     ...simple(n4Vocabulary, "N4", "vocabulary", "multiple_choice", 2, "Apa arti/bacaan kata ini?"),
     ...simple(n5Grammar, "N5", "grammar", "fill_blank", 1, "Lengkapi kalimat berikut."),
@@ -140,6 +140,8 @@ function buildQuestions(): SeedQuestion[] {
     ...reading(n5Reading, "N5", 1),
     ...reading(n4Reading, "N4", 2),
   ];
+
+  return baseQuestions.flatMap(createCuratedVariants);
 }
 
 function simple(
@@ -207,6 +209,93 @@ function validateQuestion(question: SeedQuestion) {
   if (errors.length > 0) {
     throw new Error(`${question.sourceKey}: ${errors.join("; ")}`);
   }
+}
+
+function createCuratedVariants(question: SeedQuestion): SeedQuestion[] {
+  return Array.from({ length: 5 }, (_, index) => {
+    const variantNumber = index + 1;
+    const sourceKey =
+      variantNumber === 1 ? question.sourceKey : `${question.sourceKey}-v${variantNumber}`;
+    return {
+      ...question,
+      sourceKey,
+      prompt: promptForVariant(question, index),
+      options: placeCorrectAnswerAt(question.options, question.correctAnswer, index),
+      tags:
+        variantNumber === 1
+          ? question.tags
+          : [...question.tags, `variant_${variantNumber}`],
+    };
+  });
+}
+
+function promptForVariant(question: SeedQuestion, variantIndex: number) {
+  if (question.skill === "reading") {
+    const hints = [
+      "Fokus: apa informasi yang benar menurut teks?",
+      "Fokus: bagian mana yang sesuai dengan isi bacaan?",
+      "Fokus: pilih pernyataan yang paling didukung oleh teks.",
+      "Fokus: cek detail waktu, tempat, alasan, atau tindakan di teks.",
+      "Fokus: jawaban harus bisa dibuktikan dari kalimat dalam teks.",
+    ];
+    return `${question.prompt}\n${hints[variantIndex]}`;
+  }
+
+  const promptBody = question.prompt.split("\n").slice(1).join("\n") || question.prompt;
+  const instructions: Record<SeedQuestion["skill"], string[]> = {
+    vocabulary: [
+      "Apa arti/bacaan kata ini?",
+      "Pilih makna atau bacaan yang paling natural.",
+      "Cocokkan kosakata ini dengan arti Indonesia yang tepat.",
+      "Pilih jawaban yang sesuai dengan kosakata Jepang berikut.",
+      "Perhatikan bentuk katanya, lalu pilih arti/bacaan yang tepat.",
+    ],
+    grammar: [
+      "Lengkapi kalimat berikut.",
+      "Pilih bentuk grammar yang membuat kalimat natural.",
+      "Isi bagian kosong dengan bentuk yang tepat.",
+      "Perhatikan konteks waktu/nuansa, lalu pilih bentuk yang benar.",
+      "Pilih jawaban yang membuat kalimat Jepang lengkap dan sopan.",
+    ],
+    particle: [
+      "Pilih partikel yang tepat.",
+      "Isi bagian kosong dengan partikel yang sesuai fungsi kalimat.",
+      "Perhatikan objek, lokasi, waktu, atau arah, lalu pilih partikel.",
+      "Pilih partikel yang membuat hubungan kata menjadi benar.",
+      "Cek konteks kalimat, lalu pilih partikel paling natural.",
+    ],
+    kanji: [
+      "Pilih arti atau bacaan yang tepat.",
+      "Cocokkan kanji/kata ini dengan bacaan atau makna yang benar.",
+      "Perhatikan bentuk kanji, lalu pilih jawaban paling tepat.",
+      "Pilih opsi yang sesuai dengan kanji atau kata berkanji berikut.",
+      "Gunakan ingatan kosakata, bukan menebak bentuk huruf saja.",
+    ],
+    reading: [],
+  };
+
+  return `${instructions[question.skill][variantIndex]}\n${promptBody}`;
+}
+
+function placeCorrectAnswerAt(
+  options: readonly string[],
+  correctAnswer: string,
+  targetIndex: number
+) {
+  const uniqueOptions = Array.from(
+    new Map(options.map((option) => [option.trim().toLocaleLowerCase(), option.trim()])).values()
+  );
+  const correctKey = correctAnswer.trim().toLocaleLowerCase();
+  const currentIndex = uniqueOptions.findIndex(
+    (option) => option.toLocaleLowerCase() === correctKey
+  );
+
+  if (currentIndex < 0) return [...options];
+
+  const reordered = [...uniqueOptions];
+  const [correct] = reordered.splice(currentIndex, 1);
+  reordered.splice(targetIndex % (reordered.length + 1), 0, correct);
+  return reordered;
 }
 
 function isGenericReadingPrompt(prompt: string) {

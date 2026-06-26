@@ -1,5 +1,22 @@
 # Release Notes
 
+## [2026.06.26] - Arabic Brand, English DCE Options, and Nihongo Assessment Variants
+
+Status: Implemented, awaiting production verification.
+
+### Added
+
+- Added a dedicated Nexus AI Arabic brand mark for the Arabic sidebar and dashboard hero.
+- Added `sanity:nihongo-options` to audit Nihongo pre-assessment and quiz option randomization.
+- Added a production-safe migration that creates five curated `AssessmentQuestion` variants per base pre-assessment question from existing database rows.
+
+### Improved
+
+- Kept English DCE at five modules per level and normalized answer option placement across Reading, Listening, Vocabulary, Grammar, and Dialogue questions.
+- Added English DCE validation for answer-position distribution so future content cannot silently put every correct answer in option A.
+- Randomized Nihongo pre-assessment and quiz options at API response time while keeping string-based answer evaluation intact.
+- Updated pre-assessment DB selection to avoid duplicate variants of the same base question in one generated assessment.
+
 ## [2026.06.26] - English Mobile TTS Playback and Cache
 
 Status: Production deployed and verified.

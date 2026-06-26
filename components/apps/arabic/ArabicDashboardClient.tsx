@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { ArabicBrandMark } from "@/components/apps/arabic/ArabicBrandMark";
 import { clientTrack } from "@/lib/analytics/clientTrack";
 
 type ProgressData = {
@@ -72,14 +73,7 @@ export function ArabicDashboardClient() {
         <div className="grid gap-0 lg:grid-cols-[1.35fr_0.65fr]">
           <div className="p-6 sm:p-8 lg:p-10">
             <div className="mb-7 inline-flex items-center gap-5">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/Nexustalenta.svg"
-                alt="Nexus Talenta"
-                width={120}
-                height={120}
-                className="h-[120px] w-[120px] rounded-2xl object-contain shadow-sm ring-1 ring-emerald-100"
-              />
+              <ArabicBrandMark size="lg" />
               <span className="flex flex-col">
                 <span className="text-[11px] font-bold uppercase tracking-[0.32em] text-emerald-700">
                   Nexus AI

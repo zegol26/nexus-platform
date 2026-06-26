@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ArabicBrandMark } from "@/components/apps/arabic/ArabicBrandMark";
 import { getUiText, type UiTextKey } from "@/components/i18n/dictionary";
 import { useLanguage } from "@/components/i18n/LanguageProvider";
 
@@ -53,14 +54,7 @@ export function ArabicSidebar({ mobile = false }: { mobile?: boolean }) {
             aria-hidden
             className="absolute -inset-2.5 rounded-full bg-emerald-400/20 blur-xl"
           />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/Nexustalenta.svg"
-            alt="Nexus Talenta"
-            width={56}
-            height={56}
-            className="relative h-14 w-14 object-contain"
-          />
+          <ArabicBrandMark />
         </div>
         <div className="min-w-0">
           <p className="text-[9px] font-semibold uppercase tracking-[0.24em] text-emerald-700">

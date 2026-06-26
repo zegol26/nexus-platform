@@ -10,6 +10,7 @@ import {
 import { validateAssessmentQuestionBank } from "@/lib/nihongo/assessment/validators";
 import { prisma } from "@/lib/db/prisma";
 import { generateAssessmentForLevel, type AssessmentTargetLevel } from "@/lib/nihongo/assessment/generateAssessmentForLevel";
+import { randomizeQuestionOptions } from "@/lib/nihongo/randomize-options";
 import {
   anonymousRateLimitResponse,
   checkAnonymousRateLimit,
@@ -39,13 +40,15 @@ export async function GET(request: Request) {
     });
 
     const questions = [
-      ...bankQuestions.map((question) => ({
+      ...bankQuestions.map((question) => {
+        const randomized = randomizeQuestionOptions(question);
+        return {
         id: question.id,
         category: mapSkillToCategory(question.skill),
         type: question.questionType === "reading_mcq" ? "reading_multiple_choice" : "multiple_choice",
         prompt: question.prompt,
         instructionIndonesian: getInstruction(question.skill),
-        options: question.options,
+        options: randomized.options,
         level: question.level,
         tags: question.tags,
         passage: question.passage
@@ -58,18 +61,22 @@ export async function GET(request: Request) {
                   : undefined,
             }
           : undefined,
-      })),
-      ...preAssessmentListeningQuestions.map((question) => ({
+        };
+      }),
+      ...preAssessmentListeningQuestions.map((question) => {
+        const randomized = randomizeQuestionOptions(question);
+        return {
         id: question.id,
         category: question.category,
         type: question.type,
         prompt: question.prompt,
         instructionIndonesian: question.instructionIndonesian,
-        options: question.options,
+        options: randomized.options,
         level: question.level,
         tags: question.tags,
         audioUrl: question.audioUrl,
-      })),
+        };
+      }),
     ];
 
     return NextResponse.json({
@@ -88,7 +95,9 @@ export async function GET(request: Request) {
 
   const questions = generatePreAssessmentQuestionBank();
   const validation = validateAssessmentQuestionBank(questions);
-  const safeQuestions = validation.valid ? questions : getFallbackAssessmentQuestions();
+  const safeQuestions = (validation.valid ? questions : getFallbackAssessmentQuestions()).map(
+    randomizeQuestionOptions
+  );
 
   return NextResponse.json({
     questions: safeQuestions.map((question) => ({

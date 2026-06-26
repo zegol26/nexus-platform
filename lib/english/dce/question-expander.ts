@@ -208,6 +208,75 @@ function rotateOptions(options: string[], answer: string, seed: number) {
   };
 }
 
+function hashSeed(value: string) {
+  let hash = 2166136261;
+  for (let index = 0; index < value.length; index += 1) {
+    hash ^= value.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+  return Math.abs(hash);
+}
+
+function distributeOptions(options: string[], answerIndex: number, seed: string) {
+  const answer = options[answerIndex];
+  if (!answer) {
+    return { options: [...options], answerIndex };
+  }
+
+  const normalized = Array.from(
+    new Map(options.map((option) => [option.trim().toLocaleLowerCase(), option.trim()])).values()
+  ).filter(Boolean);
+  const answerKey = answer.trim().toLocaleLowerCase();
+  const withoutAnswer = normalized.filter((option) => option.toLocaleLowerCase() !== answerKey);
+  const padded = [answer, ...withoutAnswer];
+
+  for (const word of distractorWords) {
+    if (padded.length >= Math.max(4, options.length)) break;
+    if (!padded.some((option) => option.toLocaleLowerCase() === word.toLocaleLowerCase())) {
+      padded.push(word);
+    }
+  }
+
+  const selected = padded.slice(0, Math.max(4, options.length));
+  const targetIndex = hashSeed(seed) % selected.length;
+  const currentIndex = selected.findIndex((option) => option.trim().toLocaleLowerCase() === answerKey);
+  const reordered = [...selected];
+
+  if (currentIndex >= 0 && currentIndex !== targetIndex) {
+    const [correct] = reordered.splice(currentIndex, 1);
+    reordered.splice(targetIndex, 0, correct);
+  }
+
+  return {
+    options: reordered,
+    answerIndex: reordered.findIndex((option) => option.trim().toLocaleLowerCase() === answerKey),
+  };
+}
+
+function normalizeComprehensionOptions(
+  item: DceComprehensionQuestion,
+  seedPrefix: string
+): DceComprehensionQuestion {
+  const distributed = distributeOptions(item.options, item.answerIndex, `${seedPrefix}:${item.id}:${item.question}`);
+  return {
+    ...item,
+    options: distributed.options,
+    answerIndex: distributed.answerIndex,
+  };
+}
+
+function normalizeGapOptions<T extends DceGapFill | DceGrammarDrill>(
+  item: T,
+  seedPrefix: string
+): T {
+  const distributed = distributeOptions(item.options, item.answerIndex, `${seedPrefix}:${item.id}:${item.prompt}`);
+  return {
+    ...item,
+    options: distributed.options,
+    answerIndex: distributed.answerIndex,
+  };
+}
+
 function mutateSentence(sentence: string, seed: number) {
   const replacements: Array<[RegExp, string[]]> = [
     [/\b(six|seven|eight|nine|ten|twenty|thirty|fifty|one|two|three|four|five)\b/i, ["four", "five", "ten", "twelve"]],
@@ -323,7 +392,7 @@ function generateComprehensionCandidates(params: {
     });
   }
 
-  lines.forEach((line, index) => {
+  lines.forEach((line) => {
     if (!line.speaker) return;
     addGeneratedQuestion({
       questions: generated,
@@ -659,7 +728,7 @@ function grammarTemplate(structure: string, index: number): Pick<DceGrammarDrill
 }
 
 export function expandDceModuleQuestions(module: DceModule): DceModule {
-  return {
+  const expanded = {
     ...module,
     functionalLanguage: [...module.functionalLanguage],
     vocabularyThemes: [...module.vocabularyThemes],
@@ -670,6 +739,34 @@ export function expandDceModuleQuestions(module: DceModule): DceModule {
     grammar: expandGrammar(module.grammar, module),
     dialogue: expandDialogue(module.dialogue, module),
     roleplay: module.roleplay.map((item) => ({ ...item })),
+  };
+
+  return {
+    ...expanded,
+    reading: expanded.reading.map((item) => ({
+      ...item,
+      questions: item.questions.map((question) =>
+        normalizeComprehensionOptions(question, `${module.slug}:reading:${item.id}`)
+      ),
+    })),
+    listening: expanded.listening.map((item) => ({
+      ...item,
+      questions: item.questions.map((question) =>
+        normalizeComprehensionOptions(question, `${module.slug}:listening:${item.id}`)
+      ),
+    })),
+    vocabulary: expanded.vocabulary.map((item) =>
+      normalizeGapOptions(item, `${module.slug}:vocabulary`)
+    ),
+    grammar: expanded.grammar.map((item) =>
+      normalizeGapOptions(item, `${module.slug}:grammar`)
+    ),
+    dialogue: expanded.dialogue.map((item) => ({
+      ...item,
+      questions: item.questions.map((question) =>
+        normalizeComprehensionOptions(question, `${module.slug}:dialogue:${item.id}`)
+      ),
+    })),
   };
 }
 

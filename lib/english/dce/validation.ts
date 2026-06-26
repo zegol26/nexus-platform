@@ -49,10 +49,6 @@ function addIssue(
   });
 }
 
-function correctAnswer(question: DceComprehensionQuestion | DceGapFill | DceGrammarDrill) {
-  return question.options[question.answerIndex];
-}
-
 function validateQuestionCore(params: {
   issues: EnglishSanityIssue[];
   level: string;
@@ -164,6 +160,14 @@ function validateComprehensionQuestions(params: {
   skillType: "reading" | "listening" | "conversation";
 }) {
   const seen = new Set<string>();
+  validateAnswerDistribution({
+    issues: params.issues,
+    level: params.level,
+    section: params.section,
+    itemId: params.itemId,
+    answerIndexes: params.questions.map((question) => question.answerIndex),
+  });
+
   for (const question of params.questions) {
     const key = question.question.trim().toLocaleLowerCase();
     if (seen.has(key)) {
@@ -203,6 +207,14 @@ function validateDrills(params: {
   items: Array<DceGapFill | DceGrammarDrill>;
   skillType: "vocabulary" | "grammar";
 }) {
+  validateAnswerDistribution({
+    issues: params.issues,
+    level: params.level,
+    section: params.section,
+    itemId: params.itemId,
+    answerIndexes: params.items.map((item) => item.answerIndex),
+  });
+
   for (const item of params.items) {
     validateQuestionCore({
       issues: params.issues,
@@ -215,6 +227,28 @@ function validateDrills(params: {
       answerIndex: item.answerIndex,
       explanation: item.rationale,
       skillType: params.skillType,
+    });
+  }
+}
+
+function validateAnswerDistribution(params: {
+  issues: EnglishSanityIssue[];
+  level: string;
+  section: string;
+  itemId: string;
+  answerIndexes: number[];
+}) {
+  if (params.answerIndexes.length < 4) return;
+
+  const distinctIndexes = new Set(params.answerIndexes);
+  if (distinctIndexes.size <= 1) {
+    addIssue(params.issues, {
+      severity: "error",
+      itemId: params.itemId,
+      section: params.section,
+      level: params.level,
+      issue: "Correct answers all land on the same option position.",
+      suggestedFix: "Shuffle or rotate options so correct answers are distributed across A, B, C, and D.",
     });
   }
 }
