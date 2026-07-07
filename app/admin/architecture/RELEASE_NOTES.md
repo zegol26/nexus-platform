@@ -4,7 +4,7 @@
 
 | Release Note | Date/Time (JST) | Author | Status | Summary |
 | --- | --- | --- | --- | --- |
-| RN-2026.07.08-001 | 2026-07-08 00:00 +09:00 | Nexus Platform Team | Production Pending | Fixed Talk with John push-to-talk transcription by locking John STT input language to English before the tutor prompt, adding John tutor language config, filtering non-English-script John history, and preserving Nihongo voice defaults. |
+| RN-2026.07.08-001 | 2026-07-08 00:00 +09:00 | Nexus Platform Team | Production Verified | Fixed Talk with John push-to-talk transcription by locking John STT input language to English before the tutor prompt, adding John tutor language config, filtering non-English-script John history, and preserving Nihongo voice defaults. |
 | RN-2026.06.26-002 | 2026-06-26 00:00 +09:00 | Nexus Platform Team | Production Verified | Replaced Nexus AI Arabic app branding in sidebar/dashboard, normalized English DCE answer option placement across the existing five-module levels, randomized Nihongo quiz/pre-assessment options, and added database-backed pre-assessment question variants through a production-safe migration. |
 | RN-2026.06.26-001 | 2026-06-26 00:00 +09:00 | Nexus Platform Team | Production Verified | Fixed English mobile TTS playback flow for iOS/Safari, added database-backed voice TTS cache URLs, browser-only replay from prepared object URLs, development cache/playback logs, and a more alert John voice profile. |
 | RN-2026.06.17-001 | 2026-06-17 16:20 +09:00 | Nexus Platform Team | Production Verified | Added Midtrans paid-status reconciliation, automatic and manual admin sync, atomic paid access activation, production alias correction, and the reusable `skills/midtrans-billing.md` project skill. |
@@ -55,6 +55,12 @@ Fixed Nexus AI English Talk with John push-to-talk transcription so John no long
 - iPhone Safari with Japanese browser/device locale: record English in Talk with John, confirm English transcript and English reply.
 - Speak Japanese in Talk with John, confirm the retry message appears instead of a Japanese tutor turn.
 - Verify existing Nihongo voice conversation remains on Japanese transcription defaults.
+
+### Production Verification
+
+- Commit `60e9adc` deployed to Vercel production.
+- `nexustalenta-academy.com` and `www.nexustalenta-academy.com` were aliased to the verified deployment.
+- Smoke checks passed for `/`, `/checkout`, `/api/auth/csrf`, `/login`, and `/platform/billing`.
 
 ## RN-2026.06.26-001
 

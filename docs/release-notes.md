@@ -2,7 +2,7 @@
 
 ## [2026.07.08] - John English PTT STT Language Lock
 
-Status: Production deployment in progress via git/Vercel.
+Status: Production deployed and verified.
 
 ### Fixed
 
@@ -27,6 +27,12 @@ Status: Production deployment in progress via git/Vercel.
 - iPhone Safari with Japanese browser/device locale: Talk with John transcribes English speech as English and John replies in English.
 - Speaking Japanese in Talk with John shows the friendly retry message instead of sending Japanese text into the tutor prompt.
 - Existing Nihongo voice conversation still uses the Japanese transcription default.
+
+### Production Verification
+
+- Commit `60e9adc` deployed to Vercel production.
+- `nexustalenta-academy.com` and `www.nexustalenta-academy.com` were aliased to the verified deployment.
+- Smoke checks returned HTTP 200 for `/`, `/checkout`, `/api/auth/csrf`, `/login`, and `/platform/billing`.
 
 ## [2026.06.26] - Arabic Brand, English DCE Options, and Nihongo Assessment Variants
 
