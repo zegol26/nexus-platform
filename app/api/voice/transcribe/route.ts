@@ -9,6 +9,7 @@ import {
   canUseVoiceConversation,
   incrementFeatureUsage,
 } from "@/lib/nexus/access-guards";
+import { JOHN_TUTOR_CONFIG, isJohnTutorId } from "@/lib/english/john-tutor-config";
 
 export const runtime = "nodejs";
 
@@ -24,6 +25,7 @@ const SUPPORTED_MIME = new Set([
 ]);
 
 const MAX_AUDIO_BYTES = 5 * 1024 * 1024;
+const DEFAULT_TRANSCRIBE_LANGUAGE = "ja";
 
 export async function POST(request: Request) {
   return withRouteMetrics(
@@ -83,6 +85,11 @@ async function transcribeVoice(request: Request) {
 
     const formData = await request.formData();
     const audio = formData.get("audio");
+    const tutorId = formData.get("tutorId");
+    const courseId = formData.get("courseId");
+    const clientLocale = formData.get("clientLocale");
+    const tutorConfig = isJohnTutorId(tutorId) ? JOHN_TUTOR_CONFIG : null;
+    const sttLanguage = tutorConfig?.inputLanguage ?? DEFAULT_TRANSCRIBE_LANGUAGE;
 
     if (!(audio instanceof File) || audio.size === 0) {
       return NextResponse.json(
@@ -118,12 +125,24 @@ async function transcribeVoice(request: Request) {
 
     let transcript: string;
     try {
+      if (process.env.NODE_ENV === "development") {
+        console.log("[voice/transcribe] stt request", {
+          tutorId: tutorConfig?.tutorId ?? (typeof tutorId === "string" ? tutorId : null),
+          courseId: typeof courseId === "string" ? courseId : null,
+          selectedSttLanguage: sttLanguage,
+          clientLocale: typeof clientLocale === "string" ? clientLocale : null,
+          finalPromptLanguage: tutorConfig?.outputLanguage ?? null,
+          historyScopedByTutorLanguage: Boolean(tutorConfig),
+          audioType,
+          audioSize: audio.size,
+        });
+      }
+
       const result = await openai.audio.transcriptions.create({
         file: audio,
         model,
-        // Hint Japanese + Indonesian — Whisper auto-detects but a hint
-        // improves accuracy for code-switched speech.
-        language: "ja",
+        // Explicit source language improves accuracy and avoids cross-tutor leakage.
+        language: sttLanguage,
       });
       transcript = result.text?.trim() ?? "";
     } catch (error) {
@@ -140,6 +159,31 @@ async function transcribeVoice(request: Request) {
     if (!transcript) {
       return NextResponse.json(
         { error: "Suara terlalu pelan atau kosong. Coba bicara lebih jelas." },
+        { status: 422 }
+      );
+    }
+
+    const transcriptLanguage = detectTranscriptLanguage(transcript);
+    if (process.env.NODE_ENV === "development") {
+      console.log("[voice/transcribe] stt result", {
+        tutorId: tutorConfig?.tutorId ?? null,
+        courseId: typeof courseId === "string" ? courseId : null,
+        selectedSttLanguage: sttLanguage,
+        clientLocale: typeof clientLocale === "string" ? clientLocale : null,
+        detectedTranscriptLanguage: transcriptLanguage,
+        rawTranscript: transcript,
+        finalPromptLanguage: tutorConfig?.outputLanguage ?? null,
+        historyScopedByTutorLanguage: Boolean(tutorConfig),
+      });
+    }
+
+    if (tutorConfig && transcriptLanguage === "ja") {
+      return NextResponse.json(
+        {
+          error:
+            "I heard Japanese. For John English practice, please speak in English or try recording again.",
+          detectedLanguage: transcriptLanguage,
+        },
         { status: 422 }
       );
     }
@@ -161,4 +205,18 @@ async function transcribeVoice(request: Request) {
       { status: 500 }
     );
   }
+}
+
+function detectTranscriptLanguage(text: string): "ja" | "unknown" {
+  const japaneseMatches =
+    text.match(/[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff]/g) ?? [];
+  if (japaneseMatches.length < 2) return "unknown";
+
+  const lettersAndJapanese =
+    text.match(/[A-Za-z\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff]/g) ?? [];
+  if (lettersAndJapanese.length === 0) return "unknown";
+
+  return japaneseMatches.length / lettersAndJapanese.length >= 0.35
+    ? "ja"
+    : "unknown";
 }

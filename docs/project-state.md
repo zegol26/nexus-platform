@@ -41,6 +41,7 @@ The codebase is a Next.js 16 App Router app using TypeScript, Prisma 7, PostgreS
 - Anonymous Nexus AI Nihongo trial is UAT OK for pre-assessment, flashcards, and quiz without login. Paid/progress-bearing Nihongo surfaces remain locked, anonymous analytics are acknowledged without persistence, and anonymous APIs use best-effort rate limits.
 - Project memory has been consolidated into `AGENTS.md`, canonical `docs/`, `tasks/`, and `skills/` files while preserving the admin-rendered architecture docs.
 - John in Nexus AI English now has a server-side English-only output guard. If a model reply contains Japanese/CJK, Korean, Arabic, or Cyrillic script, the API repairs or replaces it with an English coaching redirect before returning it.
+- John push-to-talk now identifies the tutor as `john` and locks OpenAI speech-to-text input language to English (`en`) before the tutor prompt runs; the shared voice route still defaults to Japanese for existing Nihongo voice flows.
 - Login page copy now uses the universal ID/EN dictionary for field labels, action text, and feature chips.
 - Platform header no longer displays the redundant "Platform Console" title/subtitle block.
 

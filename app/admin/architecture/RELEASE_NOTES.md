@@ -4,6 +4,7 @@
 
 | Release Note | Date/Time (JST) | Author | Status | Summary |
 | --- | --- | --- | --- | --- |
+| RN-2026.07.08-001 | 2026-07-08 00:00 +09:00 | Nexus Platform Team | Production Pending | Fixed Talk with John push-to-talk transcription by locking John STT input language to English before the tutor prompt, adding John tutor language config, filtering non-English-script John history, and preserving Nihongo voice defaults. |
 | RN-2026.06.26-002 | 2026-06-26 00:00 +09:00 | Nexus Platform Team | Production Verified | Replaced Nexus AI Arabic app branding in sidebar/dashboard, normalized English DCE answer option placement across the existing five-module levels, randomized Nihongo quiz/pre-assessment options, and added database-backed pre-assessment question variants through a production-safe migration. |
 | RN-2026.06.26-001 | 2026-06-26 00:00 +09:00 | Nexus Platform Team | Production Verified | Fixed English mobile TTS playback flow for iOS/Safari, added database-backed voice TTS cache URLs, browser-only replay from prepared object URLs, development cache/playback logs, and a more alert John voice profile. |
 | RN-2026.06.17-001 | 2026-06-17 16:20 +09:00 | Nexus Platform Team | Production Verified | Added Midtrans paid-status reconciliation, automatic and manual admin sync, atomic paid access activation, production alias correction, and the reusable `skills/midtrans-billing.md` project skill. |
@@ -29,6 +30,31 @@
 | RN-2026.05.04-001 | 2026-05-04 01:10 +09:00 | Nexus Platform Team | Completed | Fixed character foundation lesson access and verified kana/kanji grids in localhost. |
 | RN-2026.05.03-002 | 2026-05-03 23:45 +09:00 | Nexus Platform Team | Completed | Added seedable Nihongo character content for kana, kanji, and vocabulary compounds, linked to lesson pages. |
 | RN-2026.05.03-001 | 2026-05-03 23:09 +09:00 | Nexus Platform Team | Release Candidate | Admin Operations Console, billing/trial foundation, recording visibility, architecture docs, and Ai-chan assistant foundation. |
+
+## RN-2026.07.08-001
+
+Fixed Nexus AI English Talk with John push-to-talk transcription so John no longer inherits the shared Japanese STT language hint.
+
+### Changes
+
+- Added a John tutor language config with `tutorId: "john"`, subject `english`, English input/output/UI language, and mixed-language disabled.
+- Updated the John voice client to send tutor, course, language, and browser-locale metadata with the existing audio upload.
+- Updated `/api/voice/transcribe` to resolve John server-side and pass `language: "en"` to OpenAI transcription before the tutor prompt runs.
+- Preserved Nihongo voice behavior by keeping Japanese as the shared transcription route default when no John tutor id is present.
+- Added a John-only post-transcription guard for mostly Japanese-script transcripts with a friendly retry message.
+- Scoped John chat history to English-script turns before sending context to the AI model.
+- Added development-only STT logs for tutor id, course id, selected STT language, browser locale, detected transcript language, raw transcript, final prompt language, and history scoping.
+
+### Checks
+
+- `npm test`
+- `npx tsc --noEmit --pretty false`
+
+### Manual Regression Checklist
+
+- iPhone Safari with Japanese browser/device locale: record English in Talk with John, confirm English transcript and English reply.
+- Speak Japanese in Talk with John, confirm the retry message appears instead of a Japanese tutor turn.
+- Verify existing Nihongo voice conversation remains on Japanese transcription defaults.
 
 ## RN-2026.06.26-001
 

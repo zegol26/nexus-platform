@@ -1,6 +1,11 @@
 import assert from "node:assert/strict";
 import { groupRecordings } from "../lib/admin/recordings";
 import {
+  JOHN_TUTOR_CONFIG,
+  isJohnTutorId,
+  scopeJohnHistoryToEnglish,
+} from "../lib/english/john-tutor-config";
+import {
   TRIAL_AI_TUTOR_LIMIT,
   TRIAL_FLASHCARD_LIMIT,
   TRIAL_LESSON_LIMIT,
@@ -238,6 +243,31 @@ test("admin recordings are grouped by user and question with newest recording fi
   assert.equal(grouped[0].total, 3);
   assert.deepEqual(grouped[0].questions.map((question) => question.questionId), ["q-1", "q-2"]);
   assert.deepEqual(grouped[0].questions[1].recordings.map((recording) => recording.id), ["new", "old"]);
+});
+
+test("John tutor config locks English input and output language", () => {
+  assert.equal(JOHN_TUTOR_CONFIG.tutorId, "john");
+  assert.equal(JOHN_TUTOR_CONFIG.subject, "english");
+  assert.equal(JOHN_TUTOR_CONFIG.courseId, "english-john");
+  assert.equal(JOHN_TUTOR_CONFIG.inputLanguage, "en");
+  assert.equal(JOHN_TUTOR_CONFIG.outputLanguage, "en");
+  assert.equal(JOHN_TUTOR_CONFIG.uiLanguage, "en");
+  assert.equal(JOHN_TUTOR_CONFIG.allowMixedLanguage, false);
+  assert.equal(isJohnTutorId("john"), true);
+  assert.equal(isJohnTutorId("aichan"), false);
+});
+
+test("John history scope excludes non-English-script turns", () => {
+  const scoped = scopeJohnHistoryToEnglish([
+    { role: "assistant", content: "Let's practice ordering coffee." },
+    { role: "user", content: "こんにちは、元気ですか" },
+    { role: "user", content: "I would like a coffee, please." },
+  ]);
+
+  assert.deepEqual(scoped, [
+    { role: "assistant", content: "Let's practice ordering coffee." },
+    { role: "user", content: "I would like a coffee, please." },
+  ]);
 });
 
 let failed = 0;

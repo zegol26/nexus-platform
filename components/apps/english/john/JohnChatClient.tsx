@@ -5,6 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import { JohnVoicePanel } from "./JohnVoicePanel";
 import { JohnAvatar } from "./JohnAvatar";
 import { clientTrack } from "@/lib/analytics/clientTrack";
+import { JOHN_TUTOR_CONFIG } from "@/lib/english/john-tutor-config";
 
 type ChatMessage = {
   role: "user" | "assistant";
@@ -33,6 +34,13 @@ async function callJohn(args: {
     body: JSON.stringify({
       message: args.message,
       mode: args.mode,
+      tutorId: JOHN_TUTOR_CONFIG.tutorId,
+      subject: JOHN_TUTOR_CONFIG.subject,
+      courseId: JOHN_TUTOR_CONFIG.courseId,
+      inputLanguage: JOHN_TUTOR_CONFIG.inputLanguage,
+      outputLanguage: JOHN_TUTOR_CONFIG.outputLanguage,
+      uiLanguage: JOHN_TUTOR_CONFIG.uiLanguage,
+      allowMixedLanguage: JOHN_TUTOR_CONFIG.allowMixedLanguage,
       cefrLevel: args.cefrLevel,
       personaSlug: args.personaSlug ?? null,
       history: args.history.map((turn) => ({

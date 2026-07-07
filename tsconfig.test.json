@@ -16,6 +16,8 @@
     "tests/**/*.ts",
     "lib/admin/**/*.ts",
     "lib/english/dce/**/*.ts",
+    "lib/english/john-language-policy.ts",
+    "lib/english/john-tutor-config.ts",
     "lib/nexus/access-policy.ts",
     "lib/nihongo/lesson-cache-policy.ts",
     "lib/platform/payment-policy.ts",

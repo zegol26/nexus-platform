@@ -1,5 +1,33 @@
 # Release Notes
 
+## [2026.07.08] - John English PTT STT Language Lock
+
+Status: Production deployment in progress via git/Vercel.
+
+### Fixed
+
+- Fixed Talk with John push-to-talk transcription using the shared voice route's Japanese STT language hint.
+- Added John tutor language config with English input/output/UI language and `allowMixedLanguage: false`.
+- Locked John voice transcription to OpenAI STT language `en` before the John prompt runs, so browser locale or auto language detection cannot turn English speech into Japanese text.
+- Added a John-specific post-transcription guard that asks the learner to retry when the transcript is mostly Japanese script.
+
+### Improved
+
+- Scoped John conversation history to English-script turns before sending context to the model.
+- Added development-only STT logging for tutor id, course id, selected STT language, browser locale, detected transcript language, raw transcript, prompt language, and history scoping.
+- Preserved existing Nihongo voice behavior by keeping the shared transcription route default language as Japanese unless the request identifies John.
+
+### Checks
+
+- `npm test`
+- `npx tsc --noEmit --pretty false`
+
+### Manual Regression Checklist
+
+- iPhone Safari with Japanese browser/device locale: Talk with John transcribes English speech as English and John replies in English.
+- Speaking Japanese in Talk with John shows the friendly retry message instead of sending Japanese text into the tutor prompt.
+- Existing Nihongo voice conversation still uses the Japanese transcription default.
+
 ## [2026.06.26] - Arabic Brand, English DCE Options, and Nihongo Assessment Variants
 
 Status: Production deployed and verified.

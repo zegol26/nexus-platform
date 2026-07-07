@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { JOHN_TUTOR_CONFIG } from "@/lib/english/john-tutor-config";
 
 type VoiceState =
   | "idle"
@@ -157,6 +158,14 @@ export function JohnVoicePanel({ onUserTranscript, onStateChange }: Props) {
         "audio",
         blob,
         `voice.${blob.type.includes("mp4") ? "m4a" : "webm"}`
+      );
+      formData.set("tutorId", JOHN_TUTOR_CONFIG.tutorId);
+      formData.set("courseId", JOHN_TUTOR_CONFIG.courseId);
+      formData.set("inputLanguage", JOHN_TUTOR_CONFIG.inputLanguage);
+      formData.set("outputLanguage", JOHN_TUTOR_CONFIG.outputLanguage);
+      formData.set(
+        "clientLocale",
+        typeof navigator !== "undefined" ? navigator.language : "unknown"
       );
 
       let transcriptText = "";
