@@ -1,0 +1,2906 @@
+{
+  "schemaVersion": "storyarc.content.v1",
+  "packageId": "storyarc-initial-90-b5-g11-story-mode",
+  "appSlug": "storyarc",
+  "releaseTarget": "initial-90-release-1",
+  "curriculum": {
+    "sourceKey": "indonesia-phase-ef-descriptive-gap",
+    "sourceTitle": "StoryArc Phase E/F Descriptive Mapping",
+    "sourceAuthority": "UNVERIFIED_PROJECT_MAPPING",
+    "sourceVerificationNote": "Academic lead must supply verified CP identifiers before curriculum-alignment claims.",
+    "versionKey": "initial-90-v1",
+    "versionTitle": "Initial 90-item release mapping"
+  },
+  "competencies": [
+    {
+      "competencyKey": "cpa-f-discuss",
+      "title": "Discussion and opinion exchange",
+      "description": "Exchange, support, and challenge opinions with justification in group settings."
+    },
+    {
+      "competencyKey": "cpa-f-expo",
+      "title": "Analytical exposition",
+      "description": "Comprehend and produce argument texts with thesis and supporting points."
+    },
+    {
+      "competencyKey": "cpa-f-listen",
+      "title": "Extended listening",
+      "description": "Follow discussions, presentations, and talks; identify decisions and viewpoints."
+    },
+    {
+      "competencyKey": "cpa-f-present",
+      "title": "Oral presentation",
+      "description": "Deliver structured presentations with signposting and supporting data."
+    },
+    {
+      "competencyKey": "cpa-f-repair",
+      "title": "Interpersonal repair and negotiation",
+      "description": "Handle complaints, apologies, disagreement, and compromise."
+    },
+    {
+      "competencyKey": "cpa-f-cause",
+      "title": "Cause-effect and evaluation",
+      "description": "Express causes, effects, and evaluative reflection on outcomes."
+    },
+    {
+      "competencyKey": "cpa-f-formal",
+      "title": "Formal written correspondence",
+      "description": "Write formal emails and requests with appropriate register."
+    },
+    {
+      "competencyKey": "cpa-f-task",
+      "title": "Task management language",
+      "description": "Give instructions, delegate, report progress and problems in team projects."
+    },
+    {
+      "competencyKey": "cpa-e-interact",
+      "title": "Familiar spoken interaction",
+      "description": "Interact in everyday school situations: introductions, small talk, preferences, invitations, clarification."
+    },
+    {
+      "competencyKey": "cpa-e-lang",
+      "title": "Language awareness in context",
+      "description": "Use present and past forms, prepositions of place, and question forms to support communication."
+    },
+    {
+      "competencyKey": "cpa-e-desc",
+      "title": "Descriptive texts",
+      "description": "Comprehend and produce descriptions of people and places."
+    },
+    {
+      "competencyKey": "cpa-e-func",
+      "title": "Functional reading and writing",
+      "description": "Use posters, forms, and short messages for real purposes."
+    }
+  ],
+  "objectives": [
+    {
+      "objectiveKey": "obj-g11-01",
+      "competencyKey": "cpa-f-discuss",
+      "title": "Express and support opinions with reasons",
+      "primarySkill": "VOCABULARY"
+    },
+    {
+      "objectiveKey": "obj-g11-02",
+      "competencyKey": "cpa-f-repair",
+      "title": "Agree and disagree politely with hedging",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-03",
+      "competencyKey": "cpa-f-listen",
+      "title": "Follow group discussions and identify decisions",
+      "primarySkill": "LISTENING"
+    },
+    {
+      "objectiveKey": "obj-g11-04",
+      "competencyKey": "cpa-f-repair",
+      "title": "Make suggestions and negotiate plans",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-06",
+      "competencyKey": "cpa-f-expo",
+      "title": "Write a persuasive paragraph with thesis and support",
+      "primarySkill": "WRITING"
+    },
+    {
+      "objectiveKey": "obj-g11-07",
+      "competencyKey": "cpa-f-task",
+      "title": "Give instructions and delegate tasks clearly",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-08",
+      "competencyKey": "cpa-f-task",
+      "title": "Give progress updates and report problems",
+      "primarySkill": "GRAMMAR"
+    },
+    {
+      "objectiveKey": "obj-g11-09",
+      "competencyKey": "cpa-f-listen",
+      "title": "Follow presentations and Q&A with note-taking",
+      "primarySkill": "LISTENING"
+    },
+    {
+      "objectiveKey": "obj-g11-10",
+      "competencyKey": "cpa-f-present",
+      "title": "Structure a presentation with signposting",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-11",
+      "competencyKey": "cpa-f-present",
+      "title": "Describe data and visuals in a talk",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-12",
+      "competencyKey": "cpa-f-repair",
+      "title": "Complain, apologize, and repair relationships",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-13",
+      "competencyKey": "cpa-f-cause",
+      "title": "Express cause and effect",
+      "primarySkill": "GRAMMAR"
+    },
+    {
+      "objectiveKey": "obj-g11-14",
+      "competencyKey": "cpa-f-formal",
+      "title": "Write formal emails and requests",
+      "primarySkill": "WRITING"
+    },
+    {
+      "objectiveKey": "obj-g11-15",
+      "competencyKey": "cpa-f-cause",
+      "title": "Evaluate outcomes and reflect on experience",
+      "primarySkill": "WRITING"
+    },
+    {
+      "objectiveKey": "obj-g10-04",
+      "competencyKey": "cpa-e-desc",
+      "title": "Describe people and places",
+      "primarySkill": "VOCABULARY"
+    },
+    {
+      "objectiveKey": "obj-g10-05",
+      "competencyKey": "cpa-e-lang",
+      "title": "Ask for and give directions",
+      "primarySkill": "GRAMMAR"
+    },
+    {
+      "objectiveKey": "obj-g10-12",
+      "competencyKey": "cpa-e-interact",
+      "title": "Ask for help, repetition, and clarification",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g10-14",
+      "competencyKey": "cpa-e-func",
+      "title": "Write short messages with appropriate informal register",
+      "primarySkill": "WRITING"
+    }
+  ],
+  "assets": [
+    {
+      "assetId": "scene-clubroom-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_SCENE",
+      "purpose": "Original Bridge Club room scene placeholder pending production art",
+      "sourceType": "original-human",
+      "sourceReference": "storyarc-asset-brief-clubroom",
+      "authorOrGenerator": "Nexus StoryArc content team",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/clubroom/v1",
+      "contentHash": "procedural-clubroom-v1",
+      "mimeType": "application/x-phaser-procedural-scene",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "scene-office-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_SCENE",
+      "purpose": "Original principal office scene placeholder pending production art",
+      "sourceType": "original-human",
+      "sourceReference": "storyarc-asset-brief-office",
+      "authorOrGenerator": "Nexus StoryArc content team",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/office/v1",
+      "contentHash": "procedural-office-v1",
+      "mimeType": "application/x-phaser-procedural-scene",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "scene-hall-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_SCENE",
+      "purpose": "Original assembly hall scene placeholder pending production art",
+      "sourceType": "original-human",
+      "sourceReference": "storyarc-asset-brief-hall",
+      "authorOrGenerator": "Nexus StoryArc content team",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/hall/v1",
+      "contentHash": "procedural-hall-v1",
+      "mimeType": "application/x-phaser-procedural-scene",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "scene-cafeteria-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_SCENE",
+      "purpose": "Original cafeteria scene placeholder pending production art",
+      "sourceType": "original-human",
+      "sourceReference": "storyarc-asset-brief-cafeteria",
+      "authorOrGenerator": "Nexus StoryArc content team",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/cafeteria/v1",
+      "contentHash": "procedural-cafeteria-v1",
+      "mimeType": "application/x-phaser-procedural-scene",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "scene-workshop-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_SCENE",
+      "purpose": "Original SMK media workshop scene placeholder pending production art",
+      "sourceType": "original-human",
+      "sourceReference": "storyarc-asset-brief-workshop",
+      "authorOrGenerator": "Nexus StoryArc content team",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/workshop/v1",
+      "contentHash": "procedural-workshop-v1",
+      "mimeType": "application/x-phaser-procedural-scene",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "char-hana-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_CHARACTER",
+      "purpose": "Original temporary Hana character presentation",
+      "sourceType": "original-human",
+      "sourceReference": "lib/storyarc/game/create-school-gate-game.ts",
+      "authorOrGenerator": "Nexus StoryArc implementation",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/hana/v1",
+      "contentHash": "procedural-hana-v1",
+      "mimeType": "application/x-phaser-procedural-character",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "char-ryo-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_CHARACTER",
+      "purpose": "Original temporary Ryo character presentation",
+      "sourceType": "original-human",
+      "sourceReference": "storyarc-character-bible-ryo",
+      "authorOrGenerator": "Nexus StoryArc content team",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/ryo/v1",
+      "contentHash": "procedural-ryo-v1",
+      "mimeType": "application/x-phaser-procedural-character",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "char-john-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_CHARACTER",
+      "purpose": "Original temporary John mentor presentation",
+      "sourceType": "original-human",
+      "sourceReference": "storyarc-character-bible-john",
+      "authorOrGenerator": "Nexus StoryArc content team",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/john/v1",
+      "contentHash": "procedural-john-v1",
+      "mimeType": "application/x-phaser-procedural-character",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "char-ratna-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_CHARACTER",
+      "purpose": "Original temporary Principal Ratna presentation",
+      "sourceType": "original-human",
+      "sourceReference": "storyarc-character-bible-ratna",
+      "authorOrGenerator": "Nexus StoryArc content team",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/ratna/v1",
+      "contentHash": "procedural-ratna-v1",
+      "mimeType": "application/x-phaser-procedural-character",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "char-maya-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_CHARACTER",
+      "purpose": "Original temporary Maya exchange-student presentation",
+      "sourceType": "original-human",
+      "sourceReference": "storyarc-character-bible-maya",
+      "authorOrGenerator": "Nexus StoryArc content team",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/maya/v1",
+      "contentHash": "procedural-maya-v1",
+      "mimeType": "application/x-phaser-procedural-character",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "char-sari-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_CHARACTER",
+      "purpose": "Original temporary Sari junior-member presentation",
+      "sourceType": "original-human",
+      "sourceReference": "storyarc-character-bible-sari",
+      "authorOrGenerator": "Nexus StoryArc content team",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/sari/v1",
+      "contentHash": "procedural-sari-v1",
+      "mimeType": "application/x-phaser-procedural-character",
+      "byteSize": 0,
+      "temporary": true
+    }
+  ],
+  "items": [
+    {
+      "stableId": "sm-g11-01",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "STORY_MODE",
+      "phase": "PHASE_F",
+      "title": "Big Idea, Small Budget",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING",
+        "VOCABULARY"
+      ],
+      "objectiveKeys": [
+        "obj-g11-01",
+        "obj-g11-04"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "arcId": "arc-the-pitch",
+        "episodeId": "sm-g11-01",
+        "lessonBlocks": [
+          {
+            "blockType": "episode-brief",
+            "season": "season-2-build-something-real",
+            "arcTitleEn": "The Pitch",
+            "episodeNumber": 1,
+            "sceneIntentId": "Setahun berlalu. Klub kini beranggota sepuluh orang dan bermimpi besar: Bridge Festival antar-sekolah pertama. Rapat ide menuntut opini beralasan dan negosiasi.",
+            "questIntentId": "Quest: The Big Pitch — pilih konsep festival lewat diskusi yang sehat.",
+            "prerequisites": [
+              "sc-g11-01",
+              "sc-g11-04"
+            ],
+            "relationshipNotes": "Mendukung ide dengan alasan menaikkan respek Ryo; memihak tanpa alasan menurunkannya."
+          },
+          {
+            "blockType": "rubric-definition",
+            "rubricRevisionId": "rubric-g11-story-evidence-v1",
+            "scale": "0-4 per criterion",
+            "criteria": [
+              {
+                "criterionId": "recall-accuracy",
+                "titleEn": "Recall accuracy",
+                "descriptorId": "Ungkapan yang dipilih sesuai dengan sumber belajar yang direferensikan."
+              },
+              {
+                "criterionId": "context-fit",
+                "titleEn": "Context fit",
+                "descriptorId": "Ungkapan sesuai dengan lawan bicara, tujuan, dan situasi baru."
+              },
+              {
+                "criterionId": "meaning-preservation",
+                "titleEn": "Meaning preservation",
+                "descriptorId": "Pilihan mempertahankan makna dan register yang ditargetkan."
+              }
+            ]
+          }
+        ],
+        "scene": {
+          "sceneId": "scene-festival-brainstorm",
+          "locationId": "loc-clubroom",
+          "arcId": "arc-the-pitch",
+          "episodeId": "sm-g11-01",
+          "assetIds": [
+            "scene-clubroom-procedural-v1",
+            "char-hana-procedural-v1",
+            "char-ryo-procedural-v1",
+            "char-john-procedural-v1"
+          ],
+          "entryNodeId": "hana-dream",
+          "dialogueNodes": [
+            {
+              "id": "hana-dream",
+              "speakerId": "char-hana",
+              "text": "Okay, listen. Maya's school wants a joint event. FIVE schools want in. I'm calling it the Bridge Festival — one day, our campus, booths, performances, the works. Reactions, go.",
+              "expressionState": "warm",
+              "nextNodeId": "ryo-reality",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "ryo-reality",
+              "speakerId": "char-ryo",
+              "text": "Budget reality: we have 800 thousand and a broken speaker. Five schools means permits, insurance, parking. I'm not saying no. I'm saying: convince me.",
+              "expressionState": "neutral",
+              "nextNodeId": "opinion-round",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "opinion-round",
+              "speakerId": "char-john",
+              "text": "Perfect setup for today's rule: opinions need legs. Give us yours — with a reason it can stand on.",
+              "expressionState": "warm",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "opinion-reasoned",
+                  "text": "The way I see it, we should do it — but start smaller. Two schools this year, five next year. A good small festival beats a broken big one.",
+                  "dimension": "natural",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "ryo-respects",
+                  "actionType": "ryo-trust-up",
+                  "feedback": {
+                    "lenses": [
+                      "NATURALNESS",
+                      "CONTEXT"
+                    ],
+                    "message": "Opini + alasan + usulan bertahap. Ryo langsung mengangguk — ini bahasa yang dia hormati.",
+                    "modelUtterance": "The way I see it, we should start smaller — a good small festival beats a broken big one."
+                  }
+                },
+                {
+                  "id": "opinion-empty",
+                  "text": "I agree with Hana. It sounds fun.",
+                  "dimension": "vague",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "ryo-unimpressed",
+                  "actionType": "neutral-continue",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "\"Fun\" bukan alasan yang bisa membayar sewa sound system. Opini butuh kaki: alasan atau bukti.",
+                    "modelUtterance": "I agree — because a joint event doubles our audience without doubling our cost."
+                  }
+                },
+                {
+                  "id": "opinion-harsh",
+                  "text": "Honestly? Five schools with our budget is delusional.",
+                  "dimension": "too-direct",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "hana-deflates",
+                  "actionType": "hana-trust-down",
+                  "feedback": {
+                    "lenses": [
+                      "SOCIAL_COMMUNICATION",
+                      "NATURALNESS"
+                    ],
+                    "message": "Isi analisisnya benar — pengemasannya melukai. \"I'm not sure five schools fits our budget yet\" menyampaikan hal yang sama tanpa kata \"delusional\".",
+                    "modelUtterance": "I'm not sure five schools fits our budget yet — what if we phase it?"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ryo-respects",
+              "speakerId": "char-ryo",
+              "text": "Phased. Two schools, one venue, rented gear only for what we can't borrow. …I can work with this. Hana? HANA: Fine, but year two, I want ALL five. In writing.",
+              "expressionState": "neutral",
+              "nextNodeId": "negotiate-close",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "ryo-unimpressed",
+              "speakerId": "char-ryo",
+              "text": "\"Fun.\" I'll write that in the budget column. Anyone have an actual argument? HANA: Okay, okay — let's build one together. Numbers first, dreams second. Briefly.",
+              "expressionState": "neutral",
+              "nextNodeId": "negotiate-close",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "hana-deflates",
+              "speakerId": "char-hana",
+              "text": "…Wow. Okay. JOHN: Same analysis, kinder packaging — try \"I'm not sure it fits our budget yet.\" The room hears the idea instead of the sting. HANA: (quietly) The phased thing isn't bad, though.",
+              "expressionState": "concerned",
+              "nextNodeId": "negotiate-close",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "negotiate-close",
+              "speakerId": "char-hana",
+              "text": "So: phased festival. But we still disagree on the date — mid-semester or after exams?",
+              "expressionState": "warm",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "negotiate-trade",
+                  "text": "Why don't we ask Maya's school? I'll draft the message tonight if someone checks the exam calendar. Deal?",
+                  "dimension": "natural",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "meeting-end",
+                  "actionType": "quest-progress",
+                  "feedback": {
+                    "lenses": [
+                      "NATURALNESS",
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Usulan + pembagian kerja bersyarat (\"I'll… if someone…\"). Negosiasi yang menggerakkan rapat.",
+                    "modelUtterance": "Why don't we ask them? I'll draft the message if you check the calendar."
+                  }
+                },
+                {
+                  "id": "negotiate-stall",
+                  "text": "Whatever the group wants. I'm flexible. Totally flexible.",
+                  "dimension": "socially-weak",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "meeting-end",
+                  "actionType": "neutral-continue",
+                  "feedback": {
+                    "lenses": [
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Fleksibel kedengarannya baik, tetapi rapat butuh usulan, bukan gema. Tahun lalu Ryo sudah menegur \"whenever is not a day\" — masih berlaku.",
+                    "modelUtterance": "How about we decide after checking both calendars — tomorrow, latest?"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "meeting-end",
+              "speakerId": "char-john",
+              "text": "Motion recorded: phased Bridge Festival, date pending calendars. A year ago, this room was empty. Look at it now — arguing properly, like a real organization. I'm oddly proud.",
+              "expressionState": "warm",
+              "terminal": true,
+              "choices": []
+            }
+          ],
+          "hotspots": [
+            {
+              "id": "hotspot-budget-board",
+              "label": "Study Ryo's budget board",
+              "actionType": "inspect-budget"
+            },
+            {
+              "id": "hotspot-maya-letter",
+              "label": "Reread Maya's partnership letter",
+              "actionType": "inspect-letter"
+            }
+          ]
+        },
+        "vocabulary": [],
+        "expressions": [
+          {
+            "entryId": "exp-the-way-i-see-it",
+            "expression": "The way I see it, ___",
+            "meaningId": "menurut-pandangan-saya",
+            "register": "informal",
+            "sourceIntentKey": "intent-opinions",
+            "recallHookId": "rh-the-way-i-see-it"
+          },
+          {
+            "entryId": "exp-why-dont-we",
+            "expression": "Why don't we ___?",
+            "meaningId": "kenapa-tidak-kita",
+            "register": "informal",
+            "sourceIntentKey": "intent-negotiation",
+            "recallHookId": "rh-why-dont-we"
+          },
+          {
+            "entryId": "exp-i-can-work-with-this",
+            "expression": "I can work with this",
+            "meaningId": "ini-bisa-saya-terima",
+            "register": "informal",
+            "sourceIntentKey": "intent-negotiation",
+            "recallHookId": "rh-i-can-work-with-this"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-the-way-i-see-it",
+            "sourceEntryId": "exp-the-way-i-see-it",
+            "objectiveKey": "obj-g11-01",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-why-dont-we",
+            "sourceEntryId": "exp-why-dont-we",
+            "objectiveKey": "obj-g11-04",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [
+          {
+            "hookId": "rh-the-way-i-see-it",
+            "sourceEntryId": "exp-the-way-i-see-it"
+          },
+          {
+            "hookId": "rh-why-dont-we",
+            "sourceEntryId": "exp-why-dont-we"
+          }
+        ]
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sm-g11-02",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "STORY_MODE",
+      "phase": "PHASE_F",
+      "title": "The Proposal",
+      "primarySkill": "WRITING",
+      "supportingSkills": [
+        "READING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-14",
+        "obj-g11-06"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "arcId": "arc-the-pitch",
+        "episodeId": "sm-g11-02",
+        "lessonBlocks": [
+          {
+            "blockType": "episode-brief",
+            "season": "season-2-build-something-real",
+            "arcTitleEn": "The Pitch",
+            "episodeNumber": 2,
+            "sceneIntentId": "Proposal resmi kepada Ibu Ratna dan calon sponsor. Kontras register dengan pesan santai Grade 10 menjadi pelajaran inti: penerima menentukan gaya.",
+            "questIntentId": "Quest: Paper Trail — tulis email sponsor yang benar dan hadapi Ibu Ratna dengan proposal yang meyakinkan.",
+            "prerequisites": [
+              "sc-g11-14",
+              "sc-g11-06"
+            ],
+            "relationshipNotes": "Email yang tepat register membuka jalur sponsor; kegagalan register mengulang siklus revisi."
+          }
+        ],
+        "scene": {
+          "sceneId": "scene-proposal-office",
+          "locationId": "loc-office",
+          "arcId": "arc-the-pitch",
+          "episodeId": "sm-g11-02",
+          "assetIds": [
+            "scene-office-procedural-v1",
+            "char-ratna-procedural-v1",
+            "char-hana-procedural-v1"
+          ],
+          "entryNodeId": "hana-panic",
+          "dialogueNodes": [
+            {
+              "id": "hana-panic",
+              "speakerId": "char-hana",
+              "text": "Sponsor email draft, due in an hour. I typed it like I text Maya and it reads like a birthday card. You're better at switching registers — fix my opener?",
+              "expressionState": "concerned",
+              "nextNodeId": "email-choice",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "email-choice",
+              "speakerId": "char-hana",
+              "text": "Current draft: \"hey Laras Bay Hotel!! quick question — wanna sponsor our super cool festival? it'll be awesome, promise 😅\"",
+              "expressionState": "concerned",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "email-formal",
+                  "text": "Rewrite: \"Dear Ms. Anjani, I am writing on behalf of the Global Communication Club to request Laras Bay Hotel's sponsorship of our inter-school Bridge Festival on 14 March…\"",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "hana-relief",
+                  "actionType": "recall-formal-register",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Register berpindah sempurna: dari gaya chat Grade 10 ke korespondensi formal. \"On behalf of\" menandakan Anda mewakili organisasi.",
+                    "modelUtterance": "I am writing on behalf of the Global Communication Club to request your sponsorship."
+                  }
+                },
+                {
+                  "id": "email-half",
+                  "text": "Rewrite: \"Hello hotel team, our club has a festival. Sponsor us please. Thank you very much for your attention.\"",
+                  "dimension": "understandable-unnatural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "hana-hmm",
+                  "actionType": "recall-formal-partial",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT",
+                      "NATURALNESS"
+                    ],
+                    "message": "Lebih sopan, tetapi masih tanpa identitas, tanggal, dan permintaan spesifik. Email formal menjawab: siapa, apa, kapan, mengapa Anda.",
+                    "modelUtterance": "I am writing on behalf of our club to request sponsorship for our festival on 14 March."
+                  }
+                },
+                {
+                  "id": "email-keep-casual",
+                  "text": "Honestly, keep it! Sponsors like fun energy. Add more emojis even.",
+                  "dimension": "context-inappropriate",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "hana-doubt",
+                  "actionType": "recall-formal-miss",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Energi menyenangkan ≠ register chat. Manajer hotel menilai profesionalisme dari email pertama — taruhannya sponsor sungguhan.",
+                    "modelUtterance": "Dear Ms. Anjani, I am writing on behalf of our club…"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "hana-relief",
+              "speakerId": "char-hana",
+              "text": "THAT. That sounds like people with a safety plan. Sent. Now — Ibu Ratna. Bring the persuasive paragraph, she reads fast and mercilessly.",
+              "expressionState": "warm",
+              "nextNodeId": "ratna-review",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "hana-hmm",
+              "speakerId": "char-hana",
+              "text": "Better-ish? It still doesn't say who we are or when the thing is. One more pass — who, what, when, then send. Then: Ibu Ratna.",
+              "expressionState": "surprised",
+              "nextNodeId": "ratna-review",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "hana-doubt",
+              "speakerId": "char-hana",
+              "text": "You know what, no. Last year YOU taught ME the register thing with Maya's email — teacher-style for teachers, chat-style for friends. Hotel managers are the teacher category. Rewrite time. …Done. Now, Ibu Ratna.",
+              "expressionState": "surprised",
+              "nextNodeId": "ratna-review",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "ratna-review",
+              "speakerId": "char-ratna",
+              "text": "A festival with five schools. Ambitious. My concern is simple: last year's inspection found this club charming. Charming does not manage two hundred visitors. One paragraph — convince me you can.",
+              "expressionState": "neutral",
+              "nextNodeId": "persuade-moment",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "persuade-moment",
+              "speakerId": "narrator",
+              "text": "One paragraph. Make it count.",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "persuade-structured",
+                  "text": "We've phased it: two schools, not five. Some will say that's still big — but we ran two events without incident, and we have a written safety plan. All it takes is conditional approval: miss a checkpoint, cancel us.",
+                  "dimension": "natural",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "ratna-approves",
+                  "actionType": "quest-progress",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT",
+                      "NATURALNESS"
+                    ],
+                    "message": "Klaim + bukti rekam jejak + konsesi (\"some will say\") + ajakan kecil dengan jaminan. Ini paragraf persuasif hidup.",
+                    "modelUtterance": "Some will say it's too big — but we have the track record and a written plan. All it takes is a conditional approval."
+                  }
+                },
+                {
+                  "id": "persuade-plead",
+                  "text": "Please, Bu. We'll be really careful. We really, really want this. It means so much to us.",
+                  "dimension": "socially-weak",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "ratna-unmoved",
+                  "actionType": "neutral-continue",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Keinginan bukan bukti. Ibu Ratna butuh alasan operasional: rekam jejak, rencana, jaminan.",
+                    "modelUtterance": "We ran two events without incident, and this proposal includes a written safety plan."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ratna-approves",
+              "speakerId": "char-ratna",
+              "text": "Conditional approval. Every checkpoint, documented. Miss one, and the festival becomes a bake sale. …For the record: \"or you cancel us\" was a bold clause. I respect bold clauses.",
+              "expressionState": "neutral",
+              "terminal": true,
+              "choices": []
+            },
+            {
+              "id": "ratna-unmoved",
+              "speakerId": "char-ratna",
+              "text": "Wanting it is not a plan. Come back tomorrow with evidence and checkpoints — the exchange visit, the showcase, name them, number them. I want reasons, not feelings. You have until three.",
+              "expressionState": "neutral",
+              "terminal": true,
+              "choices": []
+            }
+          ],
+          "hotspots": [
+            {
+              "id": "hotspot-proposal-folder",
+              "label": "Check the proposal folder",
+              "actionType": "inspect-proposal"
+            },
+            {
+              "id": "hotspot-ratna-award-wall",
+              "label": "Look at Ibu Ratna's award wall",
+              "actionType": "inspect-awards"
+            }
+          ]
+        },
+        "vocabulary": [],
+        "expressions": [
+          {
+            "entryId": "exp-on-behalf-of",
+            "expression": "on behalf of ___",
+            "meaningId": "atas-nama",
+            "register": "formal",
+            "sourceIntentKey": "intent-formal-email",
+            "recallHookId": "rh-on-behalf-of"
+          },
+          {
+            "entryId": "exp-all-it-takes-is",
+            "expression": "All it takes is ___",
+            "meaningId": "yang-dibutuhkan-hanya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-persuasive-writing",
+            "recallHookId": "rh-all-it-takes-is"
+          },
+          {
+            "entryId": "exp-some-will-say",
+            "expression": "Some will say ___",
+            "meaningId": "sebagian-akan-berkata",
+            "register": "neutral",
+            "sourceIntentKey": "intent-persuasive-writing",
+            "recallHookId": "rh-some-will-say"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-on-behalf-of",
+            "sourceEntryId": "exp-on-behalf-of",
+            "objectiveKey": "obj-g11-14",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-all-it-takes-is",
+            "sourceEntryId": "exp-all-it-takes-is",
+            "objectiveKey": "obj-g11-06",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-some-will-say",
+            "sourceEntryId": "exp-some-will-say",
+            "objectiveKey": "obj-g11-06",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [
+          {
+            "hookId": "rh-on-behalf-of",
+            "sourceEntryId": "exp-on-behalf-of"
+          },
+          {
+            "hookId": "rh-all-it-takes-is",
+            "sourceEntryId": "exp-all-it-takes-is"
+          },
+          {
+            "hookId": "rh-some-will-say",
+            "sourceEntryId": "exp-some-will-say"
+          }
+        ],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-story-evidence-v1",
+          "evidenceIntent": "RECALL_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sm-g11-03",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "STORY_MODE",
+      "phase": "PHASE_F",
+      "title": "Green Light, Yellow Flags",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-07",
+        "obj-g11-02"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "arcId": "arc-the-pitch",
+        "episodeId": "sm-g11-03",
+        "lessonBlocks": [
+          {
+            "blockType": "episode-brief",
+            "season": "season-2-build-something-real",
+            "arcTitleEn": "The Pitch",
+            "episodeNumber": 3,
+            "sceneIntentId": "Persetujuan bersyarat turun. Pembagian tugas besar pertama — dan bibit konflik: Hana mengambil terlalu banyak, Ryo menolak terlalu tajam.",
+            "questIntentId": "Quest: Division of Labor — bagikan enam tugas festival dengan pemilik dan tenggat yang jelas.",
+            "prerequisites": [
+              "sc-g11-07",
+              "sc-g11-02"
+            ],
+            "relationshipNotes": "Menengahi Hana-Ryo lebih awal melunakkan konflik Arc 5; membiarkannya mempertajam Episode 5."
+          }
+        ],
+        "scene": {
+          "sceneId": "scene-task-division",
+          "locationId": "loc-clubroom",
+          "arcId": "arc-the-pitch",
+          "episodeId": "sm-g11-03",
+          "assetIds": [
+            "scene-clubroom-procedural-v1",
+            "char-hana-procedural-v1",
+            "char-ryo-procedural-v1"
+          ],
+          "entryNodeId": "green-light",
+          "dialogueNodes": [
+            {
+              "id": "green-light",
+              "speakerId": "char-hana",
+              "text": "CONDITIONAL APPROVAL, PEOPLE! Okay: six task areas. Venue, equipment, schools liaison, publicity, budget, food. I'll take venue, liaison, publicity, and food. Easy.",
+              "expressionState": "warm",
+              "nextNodeId": "ryo-flags",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "ryo-flags",
+              "speakerId": "char-ryo",
+              "text": "Four of six. That's not a division, that's a monopoly. You did this at the showcase too — took everything, slept nowhere, and the snacks ran out because no one owned them.",
+              "expressionState": "neutral",
+              "nextNodeId": "mediate-moment",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "mediate-moment",
+              "speakerId": "narrator",
+              "text": "Hana's smile is doing that thing where it isn't one. Someone should say something.",
+              "expressionState": "concerned",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "mediate-balanced",
+                  "text": "He's got a point, Hana — and Ryo, that came out sharp. What if we cap it at two areas each? Hana keeps liaison and publicity, I'll take venue and food, Ryo gets equipment and budget.",
+                  "dimension": "natural",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "division-lands",
+                  "actionType": "hana-trust-up",
+                  "feedback": {
+                    "lenses": [
+                      "SOCIAL_COMMUNICATION",
+                      "CONTEXT"
+                    ],
+                    "message": "Anda memvalidasi isi Ryo, menandai nadanya, dan memberi usulan konkret. Mediasi tiga-langkah yang bersih.",
+                    "modelUtterance": "He's got a point — and that came out sharp. What if we cap it at two areas each?"
+                  }
+                },
+                {
+                  "id": "mediate-side-hana",
+                  "text": "Let her take four. Hana always delivers.",
+                  "dimension": "context-inappropriate",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "ryo-withdraws",
+                  "actionType": "ryo-trust-down",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT",
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Loyalitas yang mengabaikan data (snack habis, Hana kelelahan) bukan dukungan — itu mempercepat tabrakan Arc 5.",
+                    "modelUtterance": "She delivers, but four areas broke her last time. Two each is safer."
+                  }
+                },
+                {
+                  "id": "mediate-silent",
+                  "text": "(Stay out of it. Their fight, not yours.)",
+                  "dimension": "narrative",
+                  "classification": "NARRATIVE_CHOICE",
+                  "nextNodeId": "tension-lingers",
+                  "actionType": "neutral-continue",
+                  "feedback": {
+                    "lenses": [
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Pilihan sah — tetapi ketegangan yang tidak ditangani punya kebiasaan menagih bunga.",
+                    "modelUtterance": "What if we cap areas at two each?"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "division-lands",
+              "speakerId": "char-hana",
+              "text": "…Two each. Fine. FINE. But I'm writing the master checklist. RYO: Deadlines on everything. Venue booking by Friday, equipment quotes by Monday. Say \"on it\" so I know you heard me. EVERYONE: On it.",
+              "expressionState": "warm",
+              "nextNodeId": "flags-close",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "ryo-withdraws",
+              "speakerId": "char-ryo",
+              "text": "Fine. Four areas, one Hana. I'll do equipment and budget and watch. When something drops — and something will drop — the log will show whose idea this was.",
+              "expressionState": "neutral",
+              "nextNodeId": "flags-close",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "tension-lingers",
+              "speakerId": "char-hana",
+              "text": "It's settled then, four for me. RYO: (already packing his bag) Sure. Settled. (The word lands like a dropped wrench. This isn't over.)",
+              "expressionState": "concerned",
+              "nextNodeId": "flags-close",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "flags-close",
+              "speakerId": "narrator",
+              "text": "Green light secured. Tasks assigned — cleanly or not. On the whiteboard, six areas and six deadlines. Under one of them, someone has drawn a tiny yellow flag.",
+              "expressionState": "neutral",
+              "terminal": true,
+              "choices": []
+            }
+          ],
+          "hotspots": [
+            {
+              "id": "hotspot-task-whiteboard",
+              "label": "Review the task whiteboard",
+              "actionType": "inspect-whiteboard"
+            },
+            {
+              "id": "hotspot-approval-letter",
+              "label": "Read the conditional approval letter",
+              "actionType": "inspect-approval"
+            }
+          ]
+        },
+        "vocabulary": [],
+        "expressions": [
+          {
+            "entryId": "exp-hes-got-a-point",
+            "expression": "He's/She's got a point",
+            "meaningId": "dia-ada-benarnya",
+            "register": "informal",
+            "sourceIntentKey": "intent-disagreement",
+            "recallHookId": "rh-hes-got-a-point"
+          },
+          {
+            "entryId": "exp-on-it",
+            "expression": "On it",
+            "meaningId": "segera-dikerjakan",
+            "register": "informal",
+            "sourceIntentKey": "intent-delegation",
+            "recallHookId": "rh-on-it"
+          },
+          {
+            "entryId": "exp-cap-it-at",
+            "expression": "cap it at ___",
+            "meaningId": "batasi-maksimal",
+            "register": "informal",
+            "sourceIntentKey": "intent-negotiation",
+            "recallHookId": "rh-cap-it-at"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-on-it",
+            "sourceEntryId": "exp-on-it",
+            "objectiveKey": "obj-g11-07",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-hes-got-a-point",
+            "sourceEntryId": "exp-hes-got-a-point",
+            "objectiveKey": "obj-g11-02",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [
+          {
+            "hookId": "rh-on-it",
+            "sourceEntryId": "exp-on-it"
+          },
+          {
+            "hookId": "rh-hes-got-a-point",
+            "sourceEntryId": "exp-hes-got-a-point"
+          }
+        ]
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sm-g11-04",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "STORY_MODE",
+      "phase": "PHASE_F",
+      "title": "Missed Deadline",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "GRAMMAR",
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-08",
+        "obj-g11-13"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "arcId": "arc-friction",
+        "episodeId": "sm-g11-04",
+        "lessonBlocks": [
+          {
+            "blockType": "episode-brief",
+            "season": "season-2-build-something-real",
+            "arcTitleEn": "Friction",
+            "episodeNumber": 4,
+            "sceneIntentId": "Vendor sound system membatalkan sepihak — dan kabar itu tertahan tiga hari. Laporan status jujur vs defensif menentukan seberapa buruk kerusakannya.",
+            "questIntentId": "Quest: Damage Report — telusuri rantai sebab dan laporkan dengan jujur, lengkap dengan usulan perbaikan.",
+            "prerequisites": [
+              "sc-g11-08",
+              "sc-g11-13"
+            ],
+            "relationshipNotes": "Laporan jujur + solusi menjaga kepercayaan tim; menutupi masalah menyiapkan ledakan Episode 5."
+          }
+        ],
+        "scene": {
+          "sceneId": "scene-vendor-crisis",
+          "locationId": "loc-workshop",
+          "arcId": "arc-friction",
+          "episodeId": "sm-g11-04",
+          "assetIds": [
+            "scene-workshop-procedural-v1",
+            "char-ryo-procedural-v1",
+            "char-hana-procedural-v1"
+          ],
+          "entryNodeId": "ryo-discovers",
+          "dialogueNodes": [
+            {
+              "id": "ryo-discovers",
+              "speakerId": "char-ryo",
+              "text": "Status meeting in five minutes. Quick check of the vendor thread and— wait. The sound vendor cancelled. On TUESDAY. It's Friday. Who was watching this thread? …It was your area this week.",
+              "expressionState": "concerned",
+              "nextNodeId": "own-the-news",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "own-the-news",
+              "speakerId": "narrator",
+              "text": "Three days of silence on your watch. The meeting starts now. Hana walks in, checklist in hand.",
+              "expressionState": "concerned",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "report-honest",
+                  "text": "Bad news first, my area: the sound vendor cancelled Tuesday — I missed the message, so we've lost three days. It turns out they double-booked. I've shortlisted two replacements; both need an answer by Monday.",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "hana-processes",
+                  "actionType": "recall-progress-report",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT",
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Buruk + cepat + milik sendiri + solusi. \"It turns out\" membuka temuan; dua opsi + tenggat membuat rapat bisa bertindak.",
+                    "modelUtterance": "Bad news, my area: the vendor cancelled — it turns out they double-booked. Two replacements shortlisted, decision needed by Monday."
+                  }
+                },
+                {
+                  "id": "report-bury",
+                  "text": "Everything's mostly on track. Small vendor hiccup, handling it, next topic.",
+                  "dimension": "vague",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "ryo-exposes",
+                  "actionType": "recall-progress-miss",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "\"Hiccup\" untuk kehilangan sound system tiga minggu sebelum festival? Laporan samar selalu terbongkar — biasanya di momen terburuk.",
+                    "modelUtterance": "Not on track: the sound vendor cancelled. Here's the recovery plan."
+                  }
+                },
+                {
+                  "id": "report-blame",
+                  "text": "The vendor cancelled because THEY double-booked. Their fault entirely. Nothing I could've done.",
+                  "dimension": "context-inappropriate",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "ryo-corrects",
+                  "actionType": "recall-progress-partial",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT",
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Sebab awal memang vendor — tetapi tiga hari keterlambatan deteksi adalah bagian Anda. Laporan matang memisahkan dua rantai sebab itu.",
+                    "modelUtterance": "The vendor double-booked — and I compounded it by missing the message for three days. Recovery plan: …"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "hana-processes",
+              "speakerId": "char-hana",
+              "text": "Okay. Okay okay okay. Three days hurts, but two shortlisted vendors by Monday is workable. Send specs tonight. And — thank you for leading with it. Don't make it a habit.",
+              "expressionState": "concerned",
+              "nextNodeId": "chain-analysis",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "ryo-exposes",
+              "speakerId": "char-ryo",
+              "text": "Define \"hiccup\". Because the thread says our ENTIRE SOUND SYSTEM evaporated Tuesday. HANA: Tuesday?! It's Friday! (The room temperature drops five degrees. This is how Episode 5 starts.)",
+              "expressionState": "concerned",
+              "nextNodeId": "chain-analysis",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "ryo-corrects",
+              "speakerId": "char-ryo",
+              "text": "Their double-booking, your three silent days. Both true. The log doesn't care about fault, it cares about time — and we just spent three days we didn't have. HANA: Recovery options. Now, please.",
+              "expressionState": "neutral",
+              "nextNodeId": "chain-analysis",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "chain-analysis",
+              "speakerId": "char-ryo",
+              "text": "For the log: walk me through the chain. Why exactly are we three days behind?",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "chain-precise",
+                  "text": "The vendor double-booked, which led to Tuesday's cancellation. The message sat unread because notifications were off on the shared account — so we lost three days, which means the replacement decision now has zero slack.",
+                  "dimension": "natural",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "episode-close",
+                  "actionType": "quest-progress",
+                  "feedback": {
+                    "lenses": [
+                      "GRAMMAR",
+                      "CONTEXT"
+                    ],
+                    "message": "Rantai kausal presisi: which led to… so… which means. Akar masalah (notifikasi mati) teridentifikasi — itu yang diperbaiki.",
+                    "modelUtterance": "The double-booking led to the cancellation; unread notifications meant three lost days, which means zero slack now."
+                  }
+                },
+                {
+                  "id": "chain-jumbled",
+                  "text": "Because the vendor after we booked and then Tuesday nobody but the account, so three days basically.",
+                  "dimension": "understandable-unnatural",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "episode-close",
+                  "actionType": "neutral-continue",
+                  "feedback": {
+                    "lenses": [
+                      "GRAMMAR",
+                      "NATURALNESS"
+                    ],
+                    "message": "Potongan-potongan sebabnya ada, rantainya tidak. Gunakan konektor: \"which led to\", \"so\", \"which means\" untuk merangkai.",
+                    "modelUtterance": "The double-booking led to the cancellation, and the unread message meant three lost days."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "episode-close",
+              "speakerId": "char-ryo",
+              "text": "Logged. New rule: shared account notifications on, everyone, always. …For what it's worth: vendors cancel. It's what happens in the next hour that shows who you are.",
+              "expressionState": "neutral",
+              "terminal": true,
+              "choices": []
+            }
+          ],
+          "hotspots": [
+            {
+              "id": "hotspot-vendor-thread",
+              "label": "Read the vendor message thread",
+              "actionType": "inspect-thread"
+            },
+            {
+              "id": "hotspot-incident-log",
+              "label": "Open the incident log",
+              "actionType": "inspect-log"
+            }
+          ]
+        },
+        "vocabulary": [],
+        "expressions": [
+          {
+            "entryId": "exp-it-turns-out",
+            "expression": "It turns out ___",
+            "meaningId": "ternyata",
+            "register": "neutral",
+            "sourceIntentKey": "intent-progress",
+            "recallHookId": "rh-it-turns-out-g11"
+          },
+          {
+            "entryId": "exp-running-behind",
+            "expression": "We're running behind",
+            "meaningId": "kami-terlambat-jadwal",
+            "register": "neutral",
+            "sourceIntentKey": "intent-progress",
+            "recallHookId": "rh-running-behind"
+          },
+          {
+            "entryId": "exp-which-meant",
+            "expression": "which meant ___",
+            "meaningId": "yang-berarti",
+            "register": "neutral",
+            "sourceIntentKey": "intent-cause-effect",
+            "recallHookId": "rh-which-meant"
+          },
+          {
+            "entryId": "exp-lead-with-it",
+            "expression": "lead with it",
+            "meaningId": "sampaikan-di-awal",
+            "register": "informal",
+            "sourceIntentKey": "intent-progress",
+            "recallHookId": "rh-lead-with-it"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-it-turns-out-g11",
+            "sourceEntryId": "exp-it-turns-out",
+            "objectiveKey": "obj-g11-08",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-running-behind",
+            "sourceEntryId": "exp-running-behind",
+            "objectiveKey": "obj-g11-08",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-which-meant",
+            "sourceEntryId": "exp-which-meant",
+            "objectiveKey": "obj-g11-13",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [
+          {
+            "hookId": "rh-it-turns-out-g11",
+            "sourceEntryId": "exp-it-turns-out"
+          },
+          {
+            "hookId": "rh-which-meant",
+            "sourceEntryId": "exp-which-meant"
+          }
+        ],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-story-evidence-v1",
+          "evidenceIntent": "RECALL_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sm-g11-05",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "STORY_MODE",
+      "phase": "PHASE_F",
+      "title": "The Argument",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-02",
+        "obj-g11-12"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "arcId": "arc-friction",
+        "episodeId": "sm-g11-05",
+        "lessonBlocks": [
+          {
+            "blockType": "episode-brief",
+            "season": "season-2-build-something-real",
+            "arcTitleEn": "Friction",
+            "episodeNumber": 5,
+            "sceneIntentId": "Puncak konflik musim: kelelahan Hana bertemu kejujuran tumpul Ryo di depan seluruh klub. Pilihan pemain menentukan kedalaman luka — bukan mencegah konflik, tetapi mengelolanya.",
+            "questIntentId": "Quest: The Blowup — konflik tak terhindarkan; tugas Anda menjaga agar yang pecah adalah masalahnya, bukan persahabatannya.",
+            "prerequisites": [
+              "sc-g11-02",
+              "sc-g11-12"
+            ],
+            "relationshipNotes": "Episode berisiko hubungan tertinggi Season 2. Konsekuensi terbawa ke Episode 6."
+          }
+        ],
+        "scene": {
+          "sceneId": "scene-the-argument",
+          "locationId": "loc-clubroom",
+          "arcId": "arc-friction",
+          "episodeId": "sm-g11-05",
+          "assetIds": [
+            "scene-clubroom-procedural-v1",
+            "char-hana-procedural-v1",
+            "char-ryo-procedural-v1"
+          ],
+          "entryNodeId": "spark",
+          "dialogueNodes": [
+            {
+              "id": "spark",
+              "speakerId": "char-ryo",
+              "text": "Publicity report says posters went up Monday. I walked past six empty boards today. So either the report is wrong, or the boards are lying. Which is it, Hana?",
+              "expressionState": "neutral",
+              "nextNodeId": "hana-snaps",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "hana-snaps",
+              "speakerId": "char-hana",
+              "text": "The printer broke, Ryo. I've been fixing venue permits, liaison emails, AND food quotes all week. I wrote \"Monday\" because they WILL go up — I didn't have time to update a spreadsheet cell for you. Some of us are drowning here!",
+              "expressionState": "concerned",
+              "nextNodeId": "ryo-doubles",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "ryo-doubles",
+              "speakerId": "char-ryo",
+              "text": "Then the report should say \"drowning\", not \"done\". I can fix broken printers. I can't fix wrong data. If your reports aren't real, the whole checklist is theater.",
+              "expressionState": "neutral",
+              "nextNodeId": "intervention-point",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "intervention-point",
+              "speakerId": "narrator",
+              "text": "Dewi has stopped drawing. Sari looks at the door. Ten members watch two founders take the club apart. Your move.",
+              "expressionState": "concerned",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "intervene-structure",
+                  "text": "Stop — both of you are right and both of you are bleeding. Ryo, you need true data. Hana, you need actual help, not an audit. Can we talk about the four-areas thing we ignored in week one?",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "root-surfaced",
+                  "actionType": "recall-hedged-disagreement",
+                  "feedback": {
+                    "lenses": [
+                      "SOCIAL_COMMUNICATION",
+                      "CONTEXT"
+                    ],
+                    "message": "Anda memvalidasi kedua sisi, memisahkan kebutuhan dari serangan, dan mengangkat akar masalah. Ini mediasi kelas berat.",
+                    "modelUtterance": "You're both right and both bleeding — the real issue is the four areas we never fixed."
+                  }
+                },
+                {
+                  "id": "intervene-hush",
+                  "text": "Guys, guys — not in front of the juniors. Save it for later, yeah?",
+                  "dimension": "vague",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "postponed-explosion",
+                  "actionType": "recall-hedged-partial",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Menunda bukan menyelesaikan — dan \"not in front of the juniors\" menyiratkan konflik itu memalukan, bukan bisa diperbaiki. Bom hanya pindah ruangan.",
+                    "modelUtterance": "Let's pause — this is about the four-areas decision, and it deserves a real conversation."
+                  }
+                },
+                {
+                  "id": "intervene-pick-side",
+                  "text": "Ryo's right. Fake reports are worse than late posters. That's just facts.",
+                  "dimension": "too-direct",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "hana-breaks",
+                  "actionType": "recall-hedged-miss",
+                  "feedback": {
+                    "lenses": [
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Faktanya mungkin benar; memilih sisi di depan sepuluh orang menghancurkan orangnya. \"I see both sides\" bukan kelemahan — itu cara data DAN manusia selamat.",
+                    "modelUtterance": "The data point is fair — and so is the workload point. Both need fixing."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "root-surfaced",
+              "speakerId": "char-hana",
+              "text": "…The four areas. (long exhale) I said two each and then I just— kept absorbing things. I didn't want the festival to feel like it wasn't mine. That came out wrong. I mean — I'm tired. I'm so tired, and I made the report lie for me.",
+              "expressionState": "concerned",
+              "nextNodeId": "ryo-softens",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "ryo-softens",
+              "speakerId": "char-ryo",
+              "text": "…I owe you half an apology. I audited the report. I never once asked how you were doing. The data mattered more to me than the person generating it. That's… a bug. In me.",
+              "expressionState": "concerned",
+              "nextNodeId": "fragile-truce",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "postponed-explosion",
+              "speakerId": "narrator",
+              "text": "They stop — for the juniors' sake. Hana leaves first, too brightly. Ryo reorganizes cables that were already organized. The argument didn't end; it just went underground, where arguments grow roots. Episode 6 will be harder now.",
+              "expressionState": "concerned",
+              "nextNodeId": "fragile-truce",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "hana-breaks",
+              "speakerId": "char-hana",
+              "text": "\"Just facts.\" Right. Well — here's another fact: I quit publicity. And liaison. Ryo can audit an empty spreadsheet. (She's gone before anyone breathes. That could have gone better.)",
+              "expressionState": "concerned",
+              "nextNodeId": "fragile-truce",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "fragile-truce",
+              "speakerId": "narrator",
+              "text": "The clubroom empties slowly. On the whiteboard, six task areas. Under \"publicity\", someone has erased \"done\" and written, in small honest letters: \"behind — need help\". It's a start. Repair work begins tomorrow.",
+              "expressionState": "neutral",
+              "terminal": true,
+              "choices": []
+            }
+          ],
+          "hotspots": [
+            {
+              "id": "hotspot-status-report",
+              "label": "Look at the disputed status report",
+              "actionType": "inspect-report"
+            },
+            {
+              "id": "hotspot-whiteboard-edit",
+              "label": "Read the edited whiteboard",
+              "actionType": "inspect-whiteboard"
+            }
+          ]
+        },
+        "vocabulary": [],
+        "expressions": [
+          {
+            "entryId": "exp-i-see-your-point-but",
+            "expression": "I see your point, but ___",
+            "meaningId": "saya-paham-tapi",
+            "register": "neutral",
+            "sourceIntentKey": "intent-disagreement",
+            "recallHookId": "rh-i-see-your-point-but"
+          },
+          {
+            "entryId": "exp-came-out-wrong",
+            "expression": "That came out wrong",
+            "meaningId": "maksudku-bukan-begitu",
+            "register": "informal",
+            "sourceIntentKey": "intent-repair",
+            "recallHookId": "rh-came-out-wrong"
+          },
+          {
+            "entryId": "exp-i-owe-you-an-apology",
+            "expression": "I owe you an apology",
+            "meaningId": "saya-berutang-maaf",
+            "register": "neutral",
+            "sourceIntentKey": "intent-repair",
+            "recallHookId": "rh-i-owe-you-an-apology"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-i-see-your-point-but",
+            "sourceEntryId": "exp-i-see-your-point-but",
+            "objectiveKey": "obj-g11-02",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-came-out-wrong",
+            "sourceEntryId": "exp-came-out-wrong",
+            "objectiveKey": "obj-g11-12",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-i-owe-you-an-apology",
+            "sourceEntryId": "exp-i-owe-you-an-apology",
+            "objectiveKey": "obj-g11-12",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [
+          {
+            "hookId": "rh-i-see-your-point-but",
+            "sourceEntryId": "exp-i-see-your-point-but"
+          },
+          {
+            "hookId": "rh-came-out-wrong",
+            "sourceEntryId": "exp-came-out-wrong"
+          },
+          {
+            "hookId": "rh-i-owe-you-an-apology",
+            "sourceEntryId": "exp-i-owe-you-an-apology"
+          }
+        ],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-story-evidence-v1",
+          "evidenceIntent": "RECALL_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sm-g11-06",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "STORY_MODE",
+      "phase": "PHASE_F",
+      "title": "Repair Work",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-04",
+        "obj-g11-12",
+        "obj-g10-12"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "arcId": "arc-friction",
+        "episodeId": "sm-g11-06",
+        "lessonBlocks": [
+          {
+            "blockType": "episode-brief",
+            "season": "season-2-build-something-real",
+            "arcTitleEn": "Friction",
+            "episodeNumber": 6,
+            "sceneIntentId": "Sehari setelah ledakan. Memperbaiki kepercayaan lewat kompromi nyata — dan perangkat klarifikasi Grade 10 kembali dalam konteks emosional: memastikan Anda benar-benar memahami maksud orang sebelum menanggapinya.",
+            "questIntentId": "Quest: Rebuild — fasilitasi kompromi pembagian tugas baru dan pastikan kedua pihak merasa didengar.",
+            "prerequisites": [
+              "sm-g11-05",
+              "sc-g11-04"
+            ],
+            "relationshipNotes": "Keberhasilan di sini memulihkan trio inti sebelum Arc 6; setengah hati meninggalkan retakan sampai festival."
+          }
+        ],
+        "scene": {
+          "sceneId": "scene-repair-cafeteria",
+          "locationId": "loc-cafeteria",
+          "arcId": "arc-friction",
+          "episodeId": "sm-g11-06",
+          "assetIds": [
+            "scene-cafeteria-procedural-v1",
+            "char-hana-procedural-v1",
+            "char-ryo-procedural-v1"
+          ],
+          "entryNodeId": "neutral-ground",
+          "dialogueNodes": [
+            {
+              "id": "neutral-ground",
+              "speakerId": "narrator",
+              "text": "Neutral ground: the cafeteria corner table, after hours. You got them both here — that alone took diplomacy. Two teas, one untouched bakso, zero eye contact.",
+              "expressionState": "neutral",
+              "nextNodeId": "hana-opens",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "hana-opens",
+              "speakerId": "char-hana",
+              "text": "So. Yesterday I said the report \"lied for me\", which sounds dramatic, but what I meant was… honestly I don't even know how to say what I meant.",
+              "expressionState": "concerned",
+              "nextNodeId": "clarify-emotions",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "clarify-emotions",
+              "speakerId": "narrator",
+              "text": "This is the moment. She's reaching for words. Help her find them — the Grade 10 way.",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "clarify-paraphrase",
+                  "text": "Let me check I've got it — so you mean the \"done\" wasn't a lie to us, it was a promise to yourself that kept slipping. Right?",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "hana-heard",
+                  "actionType": "recall-clarification-empathy",
+                  "feedback": {
+                    "lenses": [
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Perangkat konfirmasi Grade 10 (\"so you mean…, right?\") — kini dipakai untuk emosi, bukan arah jalan. Retrieval dalam konteks yang benar-benar baru.",
+                    "modelUtterance": "So you mean it was a promise to yourself that kept slipping — right?"
+                  }
+                },
+                {
+                  "id": "clarify-skip",
+                  "text": "It's fine, we all get it. Let's just talk about the new task split.",
+                  "dimension": "too-direct",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "hana-unheard",
+                  "actionType": "recall-clarification-miss",
+                  "feedback": {
+                    "lenses": [
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Efisien — dan dingin. Melewati \"apakah saya dipahami\" berarti membangun kompromi di atas fondasi retak.",
+                    "modelUtterance": "Before the task split — let me check I understood what you meant."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "hana-heard",
+              "speakerId": "char-hana",
+              "text": "…Yes. Exactly that. (to Ryo) I wasn't hiding it FROM you. I was hiding it from me. RYO: (long pause) …I can work with that. I audit spreadsheets, not people. From now on, tell me \"behind\" and I'll bring hands, not questions.",
+              "expressionState": "warm",
+              "nextNodeId": "negotiation-table",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "hana-unheard",
+              "speakerId": "char-hana",
+              "text": "Right. The task split. Sure. (Something in her folds up and puts itself away. Ryo notices. The compromise will be signed today — and renegotiated forever.)",
+              "expressionState": "concerned",
+              "nextNodeId": "negotiation-table",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "negotiation-table",
+              "speakerId": "char-ryo",
+              "text": "Task split, take two. Publicity is drowning, equipment is stable. Proposals?",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "propose-trade",
+                  "text": "Why don't we split publicity three ways for two weeks — and Hana, you hand liaison to me until the festival? I'll escalate anything above my pay grade. Let's meet halfway on control: you review, I run.",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "deal-struck",
+                  "actionType": "recall-negotiation-chunk",
+                  "feedback": {
+                    "lenses": [
+                      "NATURALNESS",
+                      "CONTEXT"
+                    ],
+                    "message": "\"Why don't we\" + pembagian konkret + \"meet halfway\" dengan kontrol yang dinegosiasikan. Bahasa Episode 6 Grade 10 — naik kelas.",
+                    "modelUtterance": "Why don't we split it three ways — and meet halfway on control: you review, I run."
+                  }
+                },
+                {
+                  "id": "propose-vague-again",
+                  "text": "We'll all just… help more? Generally? Team spirit and stuff?",
+                  "dimension": "vague",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "ryo-deadpans",
+                  "actionType": "recall-negotiation-miss",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "\"Help more generally\" adalah bagaimana empat area menjadi milik satu orang. Kompromi butuh angka: siapa, apa, sampai kapan.",
+                    "modelUtterance": "Split publicity three ways for two weeks; liaison moves to me until the festival."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "deal-struck",
+              "speakerId": "char-hana",
+              "text": "Review-and-run. Deal. (she finally eats the bakso) You know what's annoying? The mudskipper on our poster is now emotionally healthier than all three of us. RYO: The mudskipper has no deadlines. HANA: The mudskipper is FREE.",
+              "expressionState": "warm",
+              "nextNodeId": "repair-done",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "ryo-deadpans",
+              "speakerId": "char-ryo",
+              "text": "\"Team spirit\" is not a unit of measurement. Fine — I'll draft the split myself tonight: three-way publicity, liaison to me, review rights to Hana. Object by nine or it ships.",
+              "expressionState": "neutral",
+              "nextNodeId": "repair-done",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "repair-done",
+              "speakerId": "narrator",
+              "text": "It's not the old easy trio — it's something sturdier: a team that broke once and learned where the cracks run. The festival is in nineteen days. For the first time this month, that feels like enough.",
+              "expressionState": "warm",
+              "terminal": true,
+              "choices": []
+            }
+          ],
+          "hotspots": [
+            {
+              "id": "hotspot-new-task-draft",
+              "label": "Review the new task split draft",
+              "actionType": "inspect-draft"
+            },
+            {
+              "id": "hotspot-mudskipper-poster",
+              "label": "Look at the mudskipper poster",
+              "actionType": "inspect-poster"
+            }
+          ]
+        },
+        "vocabulary": [],
+        "expressions": [
+          {
+            "entryId": "exp-so-you-mean",
+            "expression": "So you mean ___, right?",
+            "meaningId": "jadi-maksudmu",
+            "register": "neutral",
+            "sourceIntentKey": "intent-clarification",
+            "recallHookId": "rh-so-you-mean"
+          },
+          {
+            "entryId": "exp-meet-halfway",
+            "expression": "let's meet halfway",
+            "meaningId": "kompromi-di-tengah",
+            "register": "informal",
+            "sourceIntentKey": "intent-negotiation",
+            "recallHookId": "rh-meet-halfway"
+          },
+          {
+            "entryId": "exp-why-dont-we",
+            "expression": "Why don't we ___?",
+            "meaningId": "kenapa-tidak-kita",
+            "register": "informal",
+            "sourceIntentKey": "intent-negotiation",
+            "recallHookId": "rh-why-dont-we"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-so-you-mean",
+            "sourceEntryId": "exp-so-you-mean",
+            "objectiveKey": "obj-g10-12",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-meet-halfway",
+            "sourceEntryId": "exp-meet-halfway",
+            "objectiveKey": "obj-g11-04",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-why-dont-we",
+            "sourceEntryId": "exp-why-dont-we",
+            "objectiveKey": "obj-g11-04",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [
+          {
+            "hookId": "rh-so-you-mean",
+            "sourceEntryId": "exp-so-you-mean"
+          },
+          {
+            "hookId": "rh-meet-halfway",
+            "sourceEntryId": "exp-meet-halfway"
+          },
+          {
+            "hookId": "rh-why-dont-we",
+            "sourceEntryId": "exp-why-dont-we"
+          }
+        ],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-story-evidence-v1",
+          "evidenceIntent": "RECALL_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sm-g11-07",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "STORY_MODE",
+      "phase": "PHASE_F",
+      "title": "Rehearsal",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-10",
+        "obj-g11-11",
+        "obj-g11-09"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "arcId": "arc-showtime",
+        "episodeId": "sm-g11-07",
+        "lessonBlocks": [
+          {
+            "blockType": "episode-brief",
+            "season": "season-2-build-something-real",
+            "arcTitleEn": "Showtime",
+            "episodeNumber": 7,
+            "sceneIntentId": "Gladi resik presentasi pembukaan festival. John melatih struktur dan data-talk; Ryo dipaksa naik panggung — pertumbuhan karakternya diuji.",
+            "questIntentId": "Quest: Stage Ready — bangun presentasi pembukaan dengan peta, penanda, data, dan penutup; bantu Ryo bertahan di panggung.",
+            "prerequisites": [
+              "sc-g11-10",
+              "sc-g11-11",
+              "sc-g11-09"
+            ],
+            "relationshipNotes": "Mendukung Ryo di sini membayar dividen besar di Episode 8.",
+            "johnContent": {
+              "learningContextId": "Sesi pelatihan presentasi menjelang festival.",
+              "expectedStudentIntent": "Berlatih struktur presentasi dan menerima umpan balik formatif.",
+              "tutorGoal": "Menajamkan signposting dan data-talk tanpa mematikan kepercayaan diri; satu poin perbaikan per giliran.",
+              "relevantLanguage": [
+                "I'll cover three things",
+                "Moving on to",
+                "So what does this mean?",
+                "To sum up"
+              ],
+              "acceptableResponseDimensions": [
+                "natural",
+                "understandable-unnatural",
+                "vague"
+              ],
+              "contextualFollowUpIntent": "John merespons isi nyata latihan siswa: jika peta hilang, ia minta peta; jika data tanpa makna, ia tanya \"so what?\"."
+            }
+          }
+        ],
+        "scene": {
+          "sceneId": "scene-rehearsal-hall",
+          "locationId": "loc-hall",
+          "arcId": "arc-showtime",
+          "episodeId": "sm-g11-07",
+          "assetIds": [
+            "scene-hall-procedural-v1",
+            "char-john-procedural-v1",
+            "char-ryo-procedural-v1",
+            "char-hana-procedural-v1"
+          ],
+          "entryNodeId": "john-setup",
+          "dialogueNodes": [
+            {
+              "id": "john-setup",
+              "speakerId": "char-john",
+              "text": "Festival opening: five minutes, three speakers. Hana opens, you carry the middle with the numbers, Ryo demos the workshop corner. Rule of the day: the audience should always know where they are in your talk. Show me your opening line for the data section.",
+              "expressionState": "warm",
+              "nextNodeId": "map-practice",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "map-practice",
+              "speakerId": "char-john",
+              "text": "Go — as if two hundred people are watching.",
+              "expressionState": "warm",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "map-clean",
+                  "text": "I'll cover three things in two minutes: who's coming, what it costs, and why it's safe. First — who's coming.",
+                  "dimension": "natural",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "john-approves-map",
+                  "actionType": "quest-progress",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Peta + transisi langsung ke bagian pertama. Dua ratus orang kini tahu bentuk dua menit ke depan.",
+                    "modelUtterance": "I'll cover three things: who's coming, what it costs, and why it's safe."
+                  }
+                },
+                {
+                  "id": "map-ramble",
+                  "text": "So, um, the festival, there's honestly a lot to say, various aspects and elements, where do I even start…",
+                  "dimension": "vague",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "john-redirects",
+                  "actionType": "neutral-continue",
+                  "feedback": {
+                    "lenses": [
+                      "NATURALNESS",
+                      "CONTEXT"
+                    ],
+                    "message": "\"Where do I even start\" — penonton juga tidak tahu. Peta dulu: tiga hal, disebut namanya, lalu mulai dari yang pertama.",
+                    "modelUtterance": "I'll cover three things: guests, cost, and safety. First, guests."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "john-approves-map",
+              "speakerId": "char-john",
+              "text": "Clean. Now the dangerous part — the budget slide. Numbers put audiences to sleep unless you give them meaning. Sixty percent sponsor-funded: make me feel it.",
+              "expressionState": "warm",
+              "nextNodeId": "data-practice",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "john-redirects",
+              "speakerId": "char-john",
+              "text": "Breathe. You know this material — you built half of it. Map first: three things, name them, take the first. Again. (You rebuild it. Cleaner this time.) Good. Now — the budget slide.",
+              "expressionState": "warm",
+              "nextNodeId": "data-practice",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "data-practice",
+              "speakerId": "char-john",
+              "text": "\"The budget is 4.2 million, 60 percent covered.\" Upgrade that sentence.",
+              "expressionState": "warm",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "data-meaningful",
+                  "text": "Two sponsors already cover roughly two-thirds of the cost — so every booth fee goes straight into making the day better, not into keeping the lights on. So what does that mean? Cheap tickets, better festival.",
+                  "dimension": "natural",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "ryo-panic",
+                  "actionType": "quest-progress",
+                  "feedback": {
+                    "lenses": [
+                      "NATURALNESS",
+                      "CONTEXT"
+                    ],
+                    "message": "\"Roughly two-thirds\" + konsekuensi nyata + \"so what\". Angka menjadi cerita.",
+                    "modelUtterance": "Sponsors cover roughly two-thirds — so booth fees improve the day, not keep the lights on."
+                  }
+                },
+                {
+                  "id": "data-dry",
+                  "text": "The budget is 4,200,000 rupiah. Sponsorship coverage is 60 percent. Booth fees constitute the remaining 40 percent. Next slide.",
+                  "dimension": "overly-formal",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "ryo-panic",
+                  "actionType": "neutral-continue",
+                  "feedback": {
+                    "lenses": [
+                      "NATURALNESS"
+                    ],
+                    "message": "Akurat dan… anestesi. Tambahkan perbandingan manusiawi dan satu \"so what\" — penonton mengingat makna, bukan digit.",
+                    "modelUtterance": "Sponsors cover roughly two-thirds — so what does that mean? Better festival, cheaper tickets."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ryo-panic",
+              "speakerId": "char-ryo",
+              "text": "(from the wings) Update: I have rewritten my demo intro eleven times and I hate all eleven. Stage lights are a design flaw. Humans were not meant to be perceived at this brightness.",
+              "expressionState": "concerned",
+              "nextNodeId": "help-ryo",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "help-ryo",
+              "speakerId": "narrator",
+              "text": "Ryo — who once explained a camera slider in six words — is drowning in draft twelve.",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "help-play-strength",
+                  "text": "Ryo. Forget speeches. Do what you did for Maya: show the thing, name the steps, let the machine be the star. Your six-word style IS a stage style — I'll intro you, you demo.",
+                  "dimension": "natural",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "rehearsal-ends",
+                  "actionType": "ryo-trust-up",
+                  "feedback": {
+                    "lenses": [
+                      "SOCIAL_COMMUNICATION",
+                      "CONTEXT"
+                    ],
+                    "message": "Anda mengubah kelemahannya menjadi format: demo, bukan pidato. Callback ke tur Maya menunjukkan Anda memperhatikan siapa dia.",
+                    "modelUtterance": "Your six-word style IS a stage style — I'll intro you, you demo."
+                  }
+                },
+                {
+                  "id": "help-generic",
+                  "text": "Just be confident! Imagine everyone in their pajamas or whatever. You'll be fine.",
+                  "dimension": "socially-weak",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "rehearsal-ends",
+                  "actionType": "neutral-continue",
+                  "feedback": {
+                    "lenses": [
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Nasihat generik untuk masalah spesifik. Ryo tidak butuh keberanian — dia butuh format yang cocok dengan cara dia berkomunikasi.",
+                    "modelUtterance": "Do it as a demo, not a speech — show, name the steps, done."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "rehearsal-ends",
+              "speakerId": "char-john",
+              "text": "Full run-through, from the top. (Twenty minutes later.) Notes: Hana, breathe at the commas. You — the \"so what\" line stays, it's the best sentence in the show. Ryo… that demo was genuinely excellent. See you all Saturday. Sleep. That's the real note.",
+              "expressionState": "warm",
+              "terminal": true,
+              "choices": []
+            }
+          ],
+          "hotspots": [
+            {
+              "id": "hotspot-stage-podium",
+              "label": "Stand at the podium",
+              "actionType": "use-podium"
+            },
+            {
+              "id": "hotspot-runsheet",
+              "label": "Check the opening run sheet",
+              "actionType": "inspect-runsheet"
+            }
+          ]
+        },
+        "vocabulary": [],
+        "expressions": [
+          {
+            "entryId": "exp-ill-cover",
+            "expression": "I'll cover ___ things",
+            "meaningId": "saya-akan-membahas",
+            "register": "neutral",
+            "sourceIntentKey": "intent-presentation-listening",
+            "recallHookId": "rh-ill-cover"
+          },
+          {
+            "entryId": "exp-so-what-does-this-mean",
+            "expression": "So what does this mean?",
+            "meaningId": "jadi-apa-artinya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-data-talk",
+            "recallHookId": "rh-so-what-does-this-mean"
+          },
+          {
+            "entryId": "exp-from-the-top",
+            "expression": "from the top",
+            "meaningId": "dari-awal-lagi",
+            "register": "informal",
+            "sourceIntentKey": "intent-presentation-structure",
+            "recallHookId": "rh-from-the-top"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-ill-cover",
+            "sourceEntryId": "exp-ill-cover",
+            "objectiveKey": "obj-g11-10",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-so-what-does-this-mean",
+            "sourceEntryId": "exp-so-what-does-this-mean",
+            "objectiveKey": "obj-g11-11",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [
+          {
+            "hookId": "rh-ill-cover",
+            "sourceEntryId": "exp-ill-cover"
+          },
+          {
+            "hookId": "rh-so-what-does-this-mean",
+            "sourceEntryId": "exp-so-what-does-this-mean"
+          }
+        ]
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sm-g11-08",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "STORY_MODE",
+      "phase": "PHASE_F",
+      "title": "Festival Day",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING",
+        "VOCABULARY"
+      ],
+      "objectiveKeys": [
+        "obj-g11-10",
+        "obj-g10-05",
+        "obj-g10-04"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "arcId": "arc-showtime",
+        "episodeId": "sm-g11-08",
+        "lessonBlocks": [
+          {
+            "blockType": "episode-brief",
+            "season": "season-2-build-something-real",
+            "arcTitleEn": "Showtime",
+            "episodeNumber": 8,
+            "sceneIntentId": "Hari festival: presentasi live, tamu tak terduga, dan recall besar Season 1 — bahasa tur kampus kembali saat delegasi Maya tiba dan butuh pemandu.",
+            "questIntentId": "Quest: Showtime — buka festival di panggung, lalu selamatkan situasi ketika delegasi tamu datang lebih awal.",
+            "prerequisites": [
+              "sm-g11-07",
+              "sm-g10-08"
+            ],
+            "relationshipNotes": "Maya kembali; kualitas recall tur Anda menentukan kesan lima sekolah."
+          }
+        ],
+        "scene": {
+          "sceneId": "scene-festival-day",
+          "locationId": "loc-hall",
+          "arcId": "arc-showtime",
+          "episodeId": "sm-g11-08",
+          "assetIds": [
+            "scene-hall-procedural-v1",
+            "char-hana-procedural-v1",
+            "char-ryo-procedural-v1",
+            "char-maya-procedural-v1"
+          ],
+          "entryNodeId": "opening-stage",
+          "dialogueNodes": [
+            {
+              "id": "opening-stage",
+              "speakerId": "narrator",
+              "text": "The hall holds two hundred people and one very nervous mudskipper banner. Hana's opener lands. Your turn: the two-minute middle. The lights are exactly as bright as Ryo warned.",
+              "expressionState": "neutral",
+              "nextNodeId": "stage-delivery",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "stage-delivery",
+              "speakerId": "narrator",
+              "text": "Microphone on. Two hundred faces. Go.",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "stage-structured",
+                  "text": "Good morning! I'll cover three things in two minutes: who's here, what it cost, and why this matters. First — who's here: five schools said yes to a club that had three members last year.",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "stage-success",
+                  "actionType": "recall-presentation-structure",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Peta dari gladi resik, dieksekusi di panggung sungguhan. Dua ratus orang tahu persis ke mana Anda membawa mereka.",
+                    "modelUtterance": "I'll cover three things: who's here, what it cost, and why this matters."
+                  }
+                },
+                {
+                  "id": "stage-freeze",
+                  "text": "Um. Hi. So the festival. It's… happening. Which is great. There are… aspects…",
+                  "dimension": "vague",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "stage-recovery",
+                  "actionType": "recall-presentation-miss",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Panggung memakan peta yang tidak dilatih. Pemulihan: berhenti, tarik napas, mulai dari peta — \"I'll cover three things\".",
+                    "modelUtterance": "Let me start over: I'll cover three things — guests, cost, and why it matters."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "stage-success",
+              "speakerId": "narrator",
+              "text": "The \"so what\" line about sponsor money gets actual applause — from the sponsor's table, no less. Hana mouths \"BEST SENTENCE IN THE SHOW\" from the wings. And then her face changes: phone in hand, eyes wide.",
+              "expressionState": "warm",
+              "nextNodeId": "maya-early",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "stage-recovery",
+              "speakerId": "narrator",
+              "text": "You stop. Breathe. \"Let me start over — I'll cover three things.\" The map saves you; the rest flows. Backstage, Hana gives you the double thumbs-up she's been giving since the gate, day one. Then her phone buzzes — and her face changes.",
+              "expressionState": "neutral",
+              "nextNodeId": "maya-early",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "maya-early",
+              "speakerId": "char-maya",
+              "text": "SURPRISE. Our bus beat the schedule by forty minutes, and I have four school delegations in the parking lot with zero idea where anything is. You're the one who gives directions better than a map app — deploy yourself.",
+              "expressionState": "warm",
+              "nextNodeId": "tour-recall",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "tour-recall",
+              "speakerId": "char-maya",
+              "text": "Four groups, four destinations: food row, workshop demos, main stage, exhibition wing. Brief my group leaders — fast and clear.",
+              "expressionState": "warm",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "tour-crisp",
+                  "text": "Easy. Food row: straight past the fountain — you'll smell it first. Workshop: right at the library, third door, film posters on it, you can't miss it. Stage: follow the music. Exhibition: glass doors by the stage.",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "festival-peak",
+                  "actionType": "recall-tour-language",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT",
+                      "NATURALNESS"
+                    ],
+                    "message": "Bahasa tur Season 1 dalam mode kilat: landmark + belokan + ciri khas + \"you can't miss it\". Empat kelompok, nol tersesat.",
+                    "modelUtterance": "Right at the library, third door — covered in film posters, you can't miss it."
+                  }
+                },
+                {
+                  "id": "tour-hesitant",
+                  "text": "The workshop is… somewhere right-ish? Food is… follow other people? Honestly the campus map app is pretty good—",
+                  "dimension": "vague",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "maya-teases-again",
+                  "actionType": "recall-tour-miss",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Dua tahun di kampus ini dan \"right-ish\"? Pola lamanya masih ada: lurus melewati — belok di — ciri khas.",
+                    "modelUtterance": "Straight past the fountain, right at the library, third door — film posters on it."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "festival-peak",
+              "speakerId": "char-maya",
+              "text": "(hours later, at the food row) Confession: two years ago I told my school \"that club is kind of great.\" Today four schools asked how to BE you. Whatever you three fixed after you broke — it shows. Same time next year?",
+              "expressionState": "warm",
+              "nextNodeId": "festival-close",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "maya-teases-again",
+              "speakerId": "char-maya",
+              "text": "\"Right-ish.\" Incredible. Okay, plan B: you WALK my leaders there personally, one group at a time, while I stall with Singapore small-talk. Go go go. (It works — barely, sweatily.)",
+              "expressionState": "surprised",
+              "nextNodeId": "festival-close",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "festival-close",
+              "speakerId": "narrator",
+              "text": "Final count: five schools, two hundred eleven visitors, one sponsor already asking about next year, zero disasters. On the whiteboard back in the clubroom, under the tiny yellow flag someone drew weeks ago, Ryo has added: \"survived.\" High praise.",
+              "expressionState": "warm",
+              "terminal": true,
+              "choices": []
+            }
+          ],
+          "hotspots": [
+            {
+              "id": "hotspot-main-stage",
+              "label": "Look out from the main stage",
+              "actionType": "inspect-stage"
+            },
+            {
+              "id": "hotspot-visitor-count",
+              "label": "Check the visitor counter",
+              "actionType": "inspect-counter"
+            }
+          ]
+        },
+        "vocabulary": [],
+        "expressions": [
+          {
+            "entryId": "exp-ill-cover",
+            "expression": "I'll cover ___ things",
+            "meaningId": "saya-akan-membahas",
+            "register": "neutral",
+            "sourceIntentKey": "intent-presentation-listening",
+            "recallHookId": "rh-ill-cover"
+          },
+          {
+            "entryId": "exp-go-straight-past",
+            "expression": "go straight past ___",
+            "meaningId": "lurus-melewati",
+            "register": "neutral",
+            "sourceIntentKey": "intent-directions",
+            "recallHookId": "rh-go-straight-past"
+          },
+          {
+            "entryId": "exp-you-cant-miss-it",
+            "expression": "You can't miss it",
+            "meaningId": "pasti-langsung-terlihat",
+            "register": "informal",
+            "sourceIntentKey": "intent-describing",
+            "recallHookId": "rh-you-cant-miss-it"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-ill-cover",
+            "sourceEntryId": "exp-ill-cover",
+            "objectiveKey": "obj-g11-10",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-go-straight-past",
+            "sourceEntryId": "exp-go-straight-past",
+            "objectiveKey": "obj-g10-05",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-you-cant-miss-it",
+            "sourceEntryId": "exp-you-cant-miss-it",
+            "objectiveKey": "obj-g10-04",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [
+          {
+            "hookId": "rh-ill-cover",
+            "sourceEntryId": "exp-ill-cover"
+          },
+          {
+            "hookId": "rh-go-straight-past",
+            "sourceEntryId": "exp-go-straight-past"
+          },
+          {
+            "hookId": "rh-you-cant-miss-it",
+            "sourceEntryId": "exp-you-cant-miss-it"
+          }
+        ],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-story-evidence-v1",
+          "evidenceIntent": "RECALL_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sm-g11-09",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "STORY_MODE",
+      "phase": "PHASE_F",
+      "title": "After the Lights",
+      "primarySkill": "WRITING",
+      "supportingSkills": [
+        "SPEAKING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-15",
+        "obj-g11-13"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "arcId": "arc-showtime",
+        "episodeId": "sm-g11-09",
+        "lessonBlocks": [
+          {
+            "blockType": "episode-brief",
+            "season": "season-2-build-something-real",
+            "arcTitleEn": "Showtime",
+            "episodeNumber": 9,
+            "sceneIntentId": "Finale Season 2: retrospeksi jujur pasca-festival. Sari direkrut sebagai penerus. Keputusan tentang masa depan klub menyiapkan Season 3.",
+            "questIntentId": "Quest: The Honest Review — pimpin evaluasi festival: yang berhasil, yang gagal, pelajaran, dan aturan tahun depan.",
+            "prerequisites": [
+              "sc-g11-15",
+              "sm-g11-08"
+            ],
+            "relationshipNotes": "Finale membayar busur konflik: evaluasi yang menilai keputusan (bukan orang) menyegel pemulihan Hana-Ryo."
+          }
+        ],
+        "scene": {
+          "sceneId": "scene-after-lights",
+          "locationId": "loc-clubroom",
+          "arcId": "arc-showtime",
+          "episodeId": "sm-g11-09",
+          "assetIds": [
+            "scene-clubroom-procedural-v1",
+            "char-hana-procedural-v1",
+            "char-ryo-procedural-v1",
+            "char-sari-procedural-v1"
+          ],
+          "entryNodeId": "retro-open",
+          "dialogueNodes": [
+            {
+              "id": "retro-open",
+              "speakerId": "char-hana",
+              "text": "Official post-festival review. House rules: we evaluate decisions, not people. I'll go first with a fail: MY report system broke in week six — one person shouldn't own four areas, and the checklist shouldn't accept \"done\" without a photo. Your turn.",
+              "expressionState": "warm",
+              "nextNodeId": "review-turn",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "review-turn",
+              "speakerId": "narrator",
+              "text": "Sari, the Grade 10 recruit, is taking notes like this is sacred text. Model it well.",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "review-balanced",
+                  "text": "What went well: the phased plan — quality stayed high, so four more schools want in. What fell short: arrival buffers; the early bus cost twenty chaotic minutes. What we learned: schedule for buses. Next time, a buffer.",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "ryo-adds",
+                  "actionType": "recall-evaluation-frame",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT",
+                      "NATURALNESS"
+                    ],
+                    "message": "Kerangka evaluasi lengkap: berhasil + sebab, gagal + bukti, pelajaran + aturan baru. Sari baru saja belajar cara klub ini berpikir.",
+                    "modelUtterance": "What went well…, what fell short…, what we learned is…, next time we'll…"
+                  }
+                },
+                {
+                  "id": "review-rosy",
+                  "text": "Honestly? Everything was amazing. Ten out of ten. No notes. We're incredible.",
+                  "dimension": "context-inappropriate",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "ryo-corrects-rosy",
+                  "actionType": "recall-evaluation-miss",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Perayaan itu perlu — tetapi review tanpa \"fell short\" tidak menghasilkan apa pun untuk tahun depan. Jujur pada data adalah budaya yang klub ini bayar mahal untuk dipelajari.",
+                    "modelUtterance": "Great day overall — and two things fell short that we should fix for next year."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ryo-adds",
+              "speakerId": "char-ryo",
+              "text": "Adding to the buffer point: the early bus led to the parking scramble, which meant our best guide — you — left the hall mid-programme. One cause, two costs. Fix the buffer, both disappear. Also, for the record: the mudskipper merchandise sold out. I counted. Twice.",
+              "expressionState": "neutral",
+              "nextNodeId": "sari-question",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "ryo-corrects-rosy",
+              "speakerId": "char-ryo",
+              "text": "Ten out of ten? The guest buses arrived into a parking scramble, which pulled our best guide out of the hall mid-programme. Great day, real flaws. Both true — write both down. That's the whole point of this room.",
+              "expressionState": "neutral",
+              "nextNodeId": "sari-question",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "sari-question",
+              "speakerId": "char-sari",
+              "text": "Um — question from the new kid. You three graduate eventually. Season after season, who… keeps this? The reviews, the checklist, the honesty rules — is there a manual?",
+              "expressionState": "neutral",
+              "nextNodeId": "succession-moment",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "succession-moment",
+              "speakerId": "narrator",
+              "text": "The question lands heavier than she meant it to. Hana looks at Ryo. Ryo looks at you.",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "succession-invest",
+                  "text": "There's no manual — yet. What we learned is that systems die without owners. So: Sari, you're review-keeper starting today. Shadow me this semester; next year, you run this meeting and I take notes.",
+                  "dimension": "natural",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "season-close",
+                  "actionType": "quest-progress",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT",
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Pelajaran evaluasi diubah menjadi suksesi nyata: pemilik, jadwal, transisi. Season 3 baru saja dipersiapkan.",
+                    "modelUtterance": "Systems die without owners — so you're review-keeper starting today."
+                  }
+                },
+                {
+                  "id": "succession-defer",
+                  "text": "Eh, that's future-us's problem. We've got a whole year. Snacks first, legacy later.",
+                  "dimension": "narrative",
+                  "classification": "NARRATIVE_CHOICE",
+                  "nextNodeId": "season-close",
+                  "actionType": "neutral-continue",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Manusiawi — dan tahun berjalan lebih cepat dari yang Anda kira. Pertanyaan Sari akan kembali di Season 3, dengan tenggat.",
+                    "modelUtterance": "Fair — but let's at least name an owner before we forget."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "season-close",
+              "speakerId": "char-hana",
+              "text": "Review filed. Festival: survived, evaluated, and — per four schools' emails — repeatable. (she looks around the room) Two years ago this was a dusty room with my name on a sticky note. Now it has a manual, a mudskipper, and a waiting list. Whatever Grade 12 throws at us… we've handled worse. We've handled US.",
+              "expressionState": "warm",
+              "terminal": true,
+              "choices": []
+            }
+          ],
+          "hotspots": [
+            {
+              "id": "hotspot-review-log",
+              "label": "Read the review log",
+              "actionType": "inspect-review-log"
+            },
+            {
+              "id": "hotspot-sold-out-merch",
+              "label": "Look at the empty merch box",
+              "actionType": "inspect-merch"
+            }
+          ]
+        },
+        "vocabulary": [],
+        "expressions": [
+          {
+            "entryId": "exp-what-we-learned",
+            "expression": "What we learned is ___",
+            "meaningId": "pelajaran-yang-kami-dapat",
+            "register": "neutral",
+            "sourceIntentKey": "intent-reflection",
+            "recallHookId": "rh-what-we-learned"
+          },
+          {
+            "entryId": "exp-fell-short",
+            "expression": "___ fell short",
+            "meaningId": "tidak-mencapai-target",
+            "register": "neutral",
+            "sourceIntentKey": "intent-reflection",
+            "recallHookId": "rh-fell-short"
+          },
+          {
+            "entryId": "exp-led-to",
+            "expression": "___ led to ___",
+            "meaningId": "menyebabkan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-cause-effect",
+            "recallHookId": "rh-led-to"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-what-we-learned",
+            "sourceEntryId": "exp-what-we-learned",
+            "objectiveKey": "obj-g11-15",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-fell-short",
+            "sourceEntryId": "exp-fell-short",
+            "objectiveKey": "obj-g11-15",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-led-to",
+            "sourceEntryId": "exp-led-to",
+            "objectiveKey": "obj-g11-13",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [
+          {
+            "hookId": "rh-what-we-learned",
+            "sourceEntryId": "exp-what-we-learned"
+          },
+          {
+            "hookId": "rh-fell-short",
+            "sourceEntryId": "exp-fell-short"
+          },
+          {
+            "hookId": "rh-led-to",
+            "sourceEntryId": "exp-led-to"
+          }
+        ],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-story-evidence-v1",
+          "evidenceIntent": "RECALL_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    }
+  ]
+}

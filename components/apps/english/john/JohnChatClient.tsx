@@ -21,14 +21,24 @@ type RoleplayContext = {
   cefrLevel: string;
 };
 
+type Usage = {
+  limit: number;
+  used: number;
+  remaining: number;
+  resetsAt: string;
+  allowed?: boolean;
+};
+
 async function callJohn(args: {
   message: string;
   mode: "text" | "voice";
   history: ChatMessage[];
   cefrLevel: string;
   personaSlug?: string | null;
+  apiEndpoint: string;
+  courseId: string;
 }) {
-  const res = await fetch("/api/apps/english/john", {
+  const res = await fetch(args.apiEndpoint, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -36,7 +46,7 @@ async function callJohn(args: {
       mode: args.mode,
       tutorId: JOHN_TUTOR_CONFIG.tutorId,
       subject: JOHN_TUTOR_CONFIG.subject,
-      courseId: JOHN_TUTOR_CONFIG.courseId,
+      courseId: args.courseId,
       inputLanguage: JOHN_TUTOR_CONFIG.inputLanguage,
       outputLanguage: JOHN_TUTOR_CONFIG.outputLanguage,
       uiLanguage: JOHN_TUTOR_CONFIG.uiLanguage,
@@ -54,6 +64,7 @@ async function callJohn(args: {
     ok: res.ok,
     reply: typeof data?.reply === "string" ? (data.reply as string) : null,
     error: typeof data?.error === "string" ? (data.error as string) : null,
+    access: data?.access as Usage | undefined,
   };
 }
 
@@ -68,9 +79,31 @@ const CEFR_LEVELS = ["A1", "A2", "B1", "B2", "C1"] as const;
 
 type Props = {
   initialRoleplay?: RoleplayContext;
+  apiEndpoint?: string;
+  courseId?: string;
+  contextId?: string;
+  pagePath?: string;
+  appKicker?: string;
+  title?: string;
+  description?: string;
+  backHref?: string;
+  backLabel?: string;
+  initialUsage?: Usage;
 };
 
-export function JohnChatClient({ initialRoleplay }: Props) {
+export function JohnChatClient({
+  initialRoleplay,
+  apiEndpoint = "/api/apps/english/john",
+  courseId = JOHN_TUTOR_CONFIG.courseId,
+  contextId,
+  pagePath = "/apps/english/john",
+  appKicker = "Nexus AI English · John",
+  title = "Conversational English Coach",
+  description = "John is a 40-something English coach. Practice free chat, roleplays, or quick coaching drills — by text or by voice.",
+  backHref = "/apps/english/dashboard",
+  backLabel = "Back to English Hub",
+  initialUsage,
+}: Props) {
   const [messages, setMessages] = useState<ChatMessage[]>(() => {
     if (initialRoleplay) {
       return [
@@ -84,7 +117,7 @@ export function JohnChatClient({ initialRoleplay }: Props) {
       {
         role: "assistant",
         content:
-          "Hey, I'm John — your conversational English coach here on Nexus AI English. Tell me your CEFR level (or pick one above) and what you'd like to practice today. We can do free chat, a roleplay, or quick drills.",
+          `Hey, I'm John — your conversational English coach here on ${appKicker.replace(" · John", "")}. Pick your CEFR level and tell me what you'd like to practice today.`,
       },
     ];
   });
@@ -92,18 +125,20 @@ export function JohnChatClient({ initialRoleplay }: Props) {
   const [loading, setLoading] = useState(false);
   const [cefrLevel, setCefrLevel] = useState<string>(initialRoleplay?.cefrLevel ?? "B1");
   const [personaSlug] = useState<string | null>(initialRoleplay?.personaSlug ?? null);
+  const [usage, setUsage] = useState<Usage | undefined>(initialUsage);
+  const quotaBlocked = usage?.remaining === 0;
 
   useEffect(() => {
     clientTrack({
       eventType: "PAGE_VIEW",
-      pagePath: "/apps/english/john",
+      pagePath,
       metadata: { personaSlug, cefrLevel },
     });
-  }, [personaSlug, cefrLevel]);
+  }, [personaSlug, cefrLevel, pagePath]);
 
   const sendMessage = async (message = input) => {
     const trimmed = message.trim();
-    if (!trimmed || loading) return;
+    if (!trimmed || loading || quotaBlocked) return;
 
     const nextHistory: ChatMessage[] = [
       ...messages,
@@ -113,13 +148,16 @@ export function JohnChatClient({ initialRoleplay }: Props) {
     setInput("");
     setLoading(true);
 
-    const { ok, reply, error } = await callJohn({
+    const { ok, reply, error, access } = await callJohn({
       message: trimmed,
       mode: "text",
       history: messages,
       cefrLevel,
       personaSlug,
+      apiEndpoint,
+      courseId,
     });
+    if (access) setUsage(access);
     setMessages((current) => [
       ...current,
       {
@@ -132,19 +170,23 @@ export function JohnChatClient({ initialRoleplay }: Props) {
 
   const handleVoiceTranscript = useCallback(
     async (transcript: string): Promise<string | null> => {
+      if (quotaBlocked) return null;
       let snapshotHistory: ChatMessage[] = [];
       setMessages((current) => {
         snapshotHistory = current;
         return [...current, { role: "user", content: transcript, voice: true }];
       });
 
-      const { ok, reply, error } = await callJohn({
+      const { ok, reply, error, access } = await callJohn({
         message: transcript,
         mode: "voice",
         history: snapshotHistory,
         cefrLevel,
         personaSlug,
+        apiEndpoint,
+        courseId,
       });
+      if (access) setUsage(access);
       const replyText = ok && reply ? reply : (error ?? "John didn't reply.");
       setMessages((current) => [
         ...current,
@@ -152,7 +194,7 @@ export function JohnChatClient({ initialRoleplay }: Props) {
       ]);
       return ok && reply ? reply : null;
     },
-    [cefrLevel, personaSlug]
+    [apiEndpoint, cefrLevel, courseId, personaSlug, quotaBlocked]
   );
 
   return (
@@ -164,22 +206,21 @@ export function JohnChatClient({ initialRoleplay }: Props) {
               <JohnAvatar size={64} className="ring-2 ring-blue-200" />
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-700">
-                  Nexus AI English · John
+                  {appKicker}
                 </p>
                 <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950">
-                  Conversational English Coach
+                  {title}
                 </h1>
                 <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
-                  John is a 40-something English coach. Practice free chat,
-                  roleplays, or quick coaching drills — by text or by voice.
+                  {description}
                 </p>
               </div>
             </div>
             <Link
-              href="/apps/english/dashboard"
+              href={backHref}
               className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700"
             >
-              Back to English Hub
+              {backLabel}
             </Link>
           </div>
         </section>
@@ -254,7 +295,7 @@ export function JohnChatClient({ initialRoleplay }: Props) {
                 <button
                   type="button"
                   onClick={() => sendMessage()}
-                  disabled={loading}
+                  disabled={loading || quotaBlocked}
                   className="self-end rounded-2xl bg-slate-950 px-6 py-4 text-sm font-semibold text-white transition hover:bg-blue-800 disabled:bg-slate-400"
                 >
                   Send
@@ -264,7 +305,20 @@ export function JohnChatClient({ initialRoleplay }: Props) {
           </section>
 
           <aside className="space-y-4">
-            <JohnVoicePanel onUserTranscript={handleVoiceTranscript} />
+            <JohnVoicePanel
+              onUserTranscript={handleVoiceTranscript}
+              courseId={courseId}
+              contextId={contextId}
+              disabled={quotaBlocked}
+              quotaLabel={usage ? `${usage.remaining}/${usage.limit} requests remaining today` : undefined}
+            />
+
+            {usage && (
+              <div className={`rounded-3xl border p-5 text-sm ${quotaBlocked ? "border-amber-300 bg-amber-50 text-amber-950" : "border-emerald-200 bg-emerald-50 text-emerald-950"}`}>
+                <p className="font-semibold">Daily John quota</p>
+                <p className="mt-1">{usage.remaining} of {usage.limit} requests remaining.</p>
+              </div>
+            )}
 
             <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="text-lg font-semibold text-slate-950">Quick prompts</h2>
@@ -274,6 +328,7 @@ export function JohnChatClient({ initialRoleplay }: Props) {
                     key={prompt}
                     type="button"
                     onClick={() => sendMessage(prompt)}
+                    disabled={quotaBlocked}
                     className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-300 hover:bg-blue-50"
                   >
                     {prompt}

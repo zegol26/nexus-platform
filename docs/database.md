@@ -14,6 +14,7 @@
 - Game/community: `UserGameProfile`, `GameKingdom`, resources, army units, battle logs, cards, daily counters, community rooms/messages/reactions.
 - PMP: ITTO process/item, glossary, knowledge articles, AI feedback, brain dumps, lesson progress, readiness items.
 - Analytics/observability: `AnalyticsEvent`, `FeatureUsage`, `ServerRouteMetric`.
+- StoryArc LMS: `StoryArcClass`, `StoryArcClassMember`, `StoryArcAssignment`, `StoryArcAssignmentProgress`, `StoryArcLibraryDocument`, and `StoryArcLibraryUploadIntent`; assignments reference immutable published `StoryArcContentRevision` rows, while class authorization remains the Digital Library boundary.
 
 ## Migration Timeline
 
@@ -27,6 +28,10 @@ Recent migrations include:
 - `20260521133000_rename_nihongo_academy`
 - `20260521134500_restore_nihongo_app_name`
 - `20260626133000_add_assessment_question_variants`
+- `20260715190000_storyarc_classroom_lms`
+- `20260715213000_storyarc_assignment_scores`
+- `20260715230000_storyarc_digital_library`
+- `20260716090000_storyarc_private_blob_release1`
 
 ## Seed Policy
 
@@ -46,3 +51,5 @@ The Nihongo pre-assessment question variants are also created by migration from 
 - Listening audio can persist as database data URLs for MVP.
 - English interview answers store audio base64 and MIME metadata.
 - These storage choices are stable for MVP but should move to durable object storage before high volume.
+- StoryArc Digital Library Release 1 uses an expand-and-contract dual-read model. Existing `DATABASE` documents retain nullable `fileData` and the authenticated range reader. All new uploads are PDF-only, use a server-created expiring `StoryArcLibraryUploadIntent`, and upload directly from the browser to a dedicated private Vercel Blob pathname; completion verifies private-store metadata, exact size/type/pathname, and the first five PDF signature bytes before creating one metadata-only `VERCEL_BLOB` document. Blob reads use short-lived signed GET URLs so the binary does not pass through a Nexus Function. Existing rows are not backfilled in this release.
+- StoryArc Conversation with AI John stores one `FeatureUsage` row per user and WIB calendar day with `appSlug=storyarc` and `feature=STORYARC_AI_TUTOR`. Consumption uses an atomic `count < 5` update so concurrent text/voice requests cannot exceed the five-request daily limit. Voice transcription checks the same StoryArc quota without incrementing it; the John response route performs the single authoritative increment.

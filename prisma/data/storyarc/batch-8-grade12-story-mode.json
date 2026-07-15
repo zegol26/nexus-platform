@@ -1,0 +1,3214 @@
+{
+  "schemaVersion": "storyarc.content.v1",
+  "packageId": "storyarc-initial-90-b8-g12-story-mode",
+  "appSlug": "storyarc",
+  "releaseTarget": "initial-90-release-1",
+  "curriculum": {
+    "sourceKey": "indonesia-phase-ef-descriptive-gap",
+    "sourceTitle": "StoryArc Phase E/F Descriptive Mapping",
+    "sourceAuthority": "UNVERIFIED_PROJECT_MAPPING",
+    "sourceVerificationNote": "Academic lead must supply verified CP identifiers before curriculum-alignment claims.",
+    "versionKey": "initial-90-v1",
+    "versionTitle": "Initial 90-item release mapping"
+  },
+  "competencies": [
+    {
+      "competencyKey": "cpa-f-future",
+      "title": "Future plans and decision language",
+      "description": "Discuss plans, hopes, conditions, and justified choices about study and work."
+    },
+    {
+      "competencyKey": "cpa-f-worklit",
+      "title": "Work-and-study functional literacy",
+      "description": "Read job ads and brochures; write CVs, application letters, and related documents."
+    },
+    {
+      "competencyKey": "cpa-f-prospeak",
+      "title": "Professional spoken interaction",
+      "description": "Handle calls, interviews, workplace small talk, and professional farewells."
+    },
+    {
+      "competencyKey": "cpa-f-worklisten",
+      "title": "Workplace listening",
+      "description": "Understand instructions, safety briefings, interviews, and recruitment talks."
+    },
+    {
+      "competencyKey": "cpa-f-report",
+      "title": "Reports and reflective writing",
+      "description": "Write short reports and reflections on work and learning experiences."
+    },
+    {
+      "competencyKey": "cpa-f-media",
+      "title": "Media comprehension on work and trends",
+      "description": "Get the gist of talks, articles, and media about work and future trends."
+    },
+    {
+      "competencyKey": "cpa-e-interact",
+      "title": "Familiar spoken interaction",
+      "description": "Interact in everyday school situations: introductions, small talk, preferences, invitations, clarification."
+    },
+    {
+      "competencyKey": "cpa-e-narr",
+      "title": "Narrative basics",
+      "description": "Tell a simple connected story with sequencing language."
+    },
+    {
+      "competencyKey": "cpa-f-repair",
+      "title": "Interpersonal repair and negotiation",
+      "description": "Handle complaints, apologies, disagreement, and compromise."
+    },
+    {
+      "competencyKey": "cpa-f-expo",
+      "title": "Analytical exposition",
+      "description": "Comprehend and produce argument texts with thesis and supporting points."
+    },
+    {
+      "competencyKey": "cpa-f-task",
+      "title": "Task management language",
+      "description": "Give instructions, delegate, report progress and problems in team projects."
+    },
+    {
+      "competencyKey": "cpa-f-formal",
+      "title": "Formal written correspondence",
+      "description": "Write formal emails and requests with appropriate register."
+    },
+    {
+      "competencyKey": "cpa-f-cause",
+      "title": "Cause-effect and evaluation",
+      "description": "Express causes, effects, and evaluative reflection on outcomes."
+    }
+  ],
+  "objectives": [
+    {
+      "objectiveKey": "obj-g12-01",
+      "competencyKey": "cpa-f-future",
+      "title": "Talk about plans, hopes, and intentions",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g12-02",
+      "competencyKey": "cpa-f-worklit",
+      "title": "Describe skills, strengths, and experience",
+      "primarySkill": "GRAMMAR"
+    },
+    {
+      "objectiveKey": "obj-g12-03",
+      "competencyKey": "cpa-f-worklit",
+      "title": "Write a CV and application letter",
+      "primarySkill": "WRITING"
+    },
+    {
+      "objectiveKey": "obj-g12-04",
+      "competencyKey": "cpa-f-worklit",
+      "title": "Read job ads and program brochures for requirements",
+      "primarySkill": "READING"
+    },
+    {
+      "objectiveKey": "obj-g12-05",
+      "competencyKey": "cpa-f-worklisten",
+      "title": "Understand interviews and recruitment talks",
+      "primarySkill": "LISTENING"
+    },
+    {
+      "objectiveKey": "obj-g12-06",
+      "competencyKey": "cpa-f-prospeak",
+      "title": "Answer interview questions with structured examples",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g12-07",
+      "competencyKey": "cpa-f-prospeak",
+      "title": "Handle professional phone and video calls",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g12-08",
+      "competencyKey": "cpa-f-prospeak",
+      "title": "Manage workplace small talk and first-day interactions",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g12-09",
+      "competencyKey": "cpa-f-worklisten",
+      "title": "Understand spoken instructions and safety briefings",
+      "primarySkill": "LISTENING"
+    },
+    {
+      "objectiveKey": "obj-g12-10",
+      "competencyKey": "cpa-f-report",
+      "title": "Write short reports and reflections",
+      "primarySkill": "WRITING"
+    },
+    {
+      "objectiveKey": "obj-g12-11",
+      "competencyKey": "cpa-f-future",
+      "title": "Use conditionals to weigh decisions and consequences",
+      "primarySkill": "GRAMMAR"
+    },
+    {
+      "objectiveKey": "obj-g12-12",
+      "competencyKey": "cpa-f-future",
+      "title": "Discuss advantages and disadvantages",
+      "primarySkill": "WRITING"
+    },
+    {
+      "objectiveKey": "obj-g12-13",
+      "competencyKey": "cpa-f-future",
+      "title": "Persuade and justify a choice",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g12-14",
+      "competencyKey": "cpa-f-media",
+      "title": "Get the gist of media about work and trends",
+      "primarySkill": "LISTENING"
+    },
+    {
+      "objectiveKey": "obj-g12-15",
+      "competencyKey": "cpa-f-prospeak",
+      "title": "Say goodbye, thank, and stay connected",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g10-12",
+      "competencyKey": "cpa-e-interact",
+      "title": "Ask for help, repetition, and clarification",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g10-15",
+      "competencyKey": "cpa-e-narr",
+      "title": "Tell a simple connected story",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-02",
+      "competencyKey": "cpa-f-repair",
+      "title": "Agree and disagree politely with hedging",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-06",
+      "competencyKey": "cpa-f-expo",
+      "title": "Write a persuasive paragraph with thesis and support",
+      "primarySkill": "WRITING"
+    },
+    {
+      "objectiveKey": "obj-g11-07",
+      "competencyKey": "cpa-f-task",
+      "title": "Give instructions and delegate tasks clearly",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-08",
+      "competencyKey": "cpa-f-task",
+      "title": "Give progress updates and report problems",
+      "primarySkill": "GRAMMAR"
+    },
+    {
+      "objectiveKey": "obj-g11-12",
+      "competencyKey": "cpa-f-repair",
+      "title": "Complain, apologize, and repair relationships",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-14",
+      "competencyKey": "cpa-f-formal",
+      "title": "Write formal emails and requests",
+      "primarySkill": "WRITING"
+    },
+    {
+      "objectiveKey": "obj-g11-15",
+      "competencyKey": "cpa-f-cause",
+      "title": "Evaluate outcomes and reflect on experience",
+      "primarySkill": "WRITING"
+    }
+  ],
+  "assets": [
+    {
+      "assetId": "scene-hall-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_SCENE",
+      "purpose": "Original assembly hall scene placeholder pending production art",
+      "sourceType": "original-human",
+      "sourceReference": "storyarc-asset-brief-hall",
+      "authorOrGenerator": "Nexus StoryArc content team",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/hall/v1",
+      "contentHash": "procedural-hall-v1",
+      "mimeType": "application/x-phaser-procedural-scene",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "scene-clubroom-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_SCENE",
+      "purpose": "Original Bridge Club room scene placeholder pending production art",
+      "sourceType": "original-human",
+      "sourceReference": "storyarc-asset-brief-clubroom",
+      "authorOrGenerator": "Nexus StoryArc content team",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/clubroom/v1",
+      "contentHash": "procedural-clubroom-v1",
+      "mimeType": "application/x-phaser-procedural-scene",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "scene-library-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_SCENE",
+      "purpose": "Original library scene placeholder pending production art",
+      "sourceType": "original-human",
+      "sourceReference": "storyarc-asset-brief-library",
+      "authorOrGenerator": "Nexus StoryArc content team",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/library/v1",
+      "contentHash": "procedural-library-v1",
+      "mimeType": "application/x-phaser-procedural-scene",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "scene-office-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_SCENE",
+      "purpose": "Original principal office scene placeholder pending production art",
+      "sourceType": "original-human",
+      "sourceReference": "storyarc-asset-brief-office",
+      "authorOrGenerator": "Nexus StoryArc content team",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/office/v1",
+      "contentHash": "procedural-office-v1",
+      "mimeType": "application/x-phaser-procedural-scene",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "scene-workplace-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_SCENE",
+      "purpose": "Original internship workplace scene placeholder pending production art",
+      "sourceType": "original-human",
+      "sourceReference": "storyarc-asset-brief-workplace",
+      "authorOrGenerator": "Nexus StoryArc content team",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/workplace/v1",
+      "contentHash": "procedural-workplace-v1",
+      "mimeType": "application/x-phaser-procedural-scene",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "scene-school-gate-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_SCENE",
+      "purpose": "Original layered School Gate scene",
+      "sourceType": "original-human",
+      "sourceReference": "lib/storyarc/game/create-school-gate-game.ts",
+      "authorOrGenerator": "Nexus StoryArc implementation",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/school-gate/v1",
+      "contentHash": "procedural-school-gate-v1",
+      "mimeType": "application/x-phaser-procedural-scene",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "char-hana-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_CHARACTER",
+      "purpose": "Original temporary Hana character presentation",
+      "sourceType": "original-human",
+      "sourceReference": "lib/storyarc/game/create-school-gate-game.ts",
+      "authorOrGenerator": "Nexus StoryArc implementation",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/hana/v1",
+      "contentHash": "procedural-hana-v1",
+      "mimeType": "application/x-phaser-procedural-character",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "char-ryo-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_CHARACTER",
+      "purpose": "Original temporary Ryo character presentation",
+      "sourceType": "original-human",
+      "sourceReference": "storyarc-character-bible-ryo",
+      "authorOrGenerator": "Nexus StoryArc content team",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/ryo/v1",
+      "contentHash": "procedural-ryo-v1",
+      "mimeType": "application/x-phaser-procedural-character",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "char-john-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_CHARACTER",
+      "purpose": "Original temporary John mentor presentation",
+      "sourceType": "original-human",
+      "sourceReference": "storyarc-character-bible-john",
+      "authorOrGenerator": "Nexus StoryArc content team",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/john/v1",
+      "contentHash": "procedural-john-v1",
+      "mimeType": "application/x-phaser-procedural-character",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "char-halim-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_CHARACTER",
+      "purpose": "Original temporary Pak Halim mentor presentation",
+      "sourceType": "original-human",
+      "sourceReference": "storyarc-character-bible-halim",
+      "authorOrGenerator": "Nexus StoryArc content team",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/halim/v1",
+      "contentHash": "procedural-halim-v1",
+      "mimeType": "application/x-phaser-procedural-character",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "char-sari-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_CHARACTER",
+      "purpose": "Original temporary Sari junior-member presentation",
+      "sourceType": "original-human",
+      "sourceReference": "storyarc-character-bible-sari",
+      "authorOrGenerator": "Nexus StoryArc content team",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/sari/v1",
+      "contentHash": "procedural-sari-v1",
+      "mimeType": "application/x-phaser-procedural-character",
+      "byteSize": 0,
+      "temporary": true
+    },
+    {
+      "assetId": "char-ratna-procedural-v1",
+      "revision": 1,
+      "type": "PROCEDURAL_CHARACTER",
+      "purpose": "Original temporary Principal Ratna presentation",
+      "sourceType": "original-human",
+      "sourceReference": "storyarc-character-bible-ratna",
+      "authorOrGenerator": "Nexus StoryArc content team",
+      "license": "NEXUS-PROPRIETARY",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "procedural://storyarc/ratna/v1",
+      "contentHash": "procedural-ratna-v1",
+      "mimeType": "application/x-phaser-procedural-character",
+      "byteSize": 0,
+      "temporary": true
+    }
+  ],
+  "items": [
+    {
+      "stableId": "sm-g12-01",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "STORY_MODE",
+      "phase": "PHASE_F",
+      "title": "Career Day",
+      "primarySkill": "READING",
+      "supportingSkills": [
+        "SPEAKING",
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g12-04",
+        "obj-g12-01",
+        "obj-g12-14"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "arcId": "arc-open-doors",
+        "episodeId": "sm-g12-01",
+        "lessonBlocks": [
+          {
+            "blockType": "episode-brief",
+            "season": "season-3-crossroads",
+            "arcTitleEn": "Open Doors",
+            "episodeNumber": 1,
+            "sceneIntentId": "Kelas 12 dibuka dengan Career Day: aula penuh stan kampus dan perusahaan. Membaca brosur secara kritis dan bertanya kepada exhibitor menentukan pilihan magang tiap anggota klub.",
+            "questIntentId": "Quest: Three Doors — kunjungi tiga stan, baca syaratnya dengan benar, dan ajukan satu pertanyaan cerdas per stan.",
+            "prerequisites": [
+              "sc-g12-04",
+              "sc-g12-01"
+            ],
+            "relationshipNotes": "Membantu Hana dan Ryo membaca syarat memperkuat trio menjelang keputusan besar mereka."
+          },
+          {
+            "blockType": "rubric-definition",
+            "rubricRevisionId": "rubric-g12-story-evidence-v1",
+            "scale": "0-4 per criterion",
+            "criteria": [
+              {
+                "criterionId": "recall-accuracy",
+                "titleEn": "Recall accuracy",
+                "descriptorId": "Ungkapan yang dipilih sesuai dengan sumber belajar yang direferensikan."
+              },
+              {
+                "criterionId": "context-fit",
+                "titleEn": "Context fit",
+                "descriptorId": "Ungkapan sesuai dengan lawan bicara, tujuan, dan situasi baru."
+              },
+              {
+                "criterionId": "meaning-preservation",
+                "titleEn": "Meaning preservation",
+                "descriptorId": "Pilihan mempertahankan makna dan register yang ditargetkan."
+              }
+            ]
+          }
+        ],
+        "scene": {
+          "sceneId": "scene-career-day",
+          "locationId": "loc-hall",
+          "arcId": "arc-open-doors",
+          "episodeId": "sm-g12-01",
+          "assetIds": [
+            "scene-hall-procedural-v1",
+            "char-hana-procedural-v1",
+            "char-ryo-procedural-v1"
+          ],
+          "entryNodeId": "hall-open",
+          "dialogueNodes": [
+            {
+              "id": "hall-open",
+              "speakerId": "narrator",
+              "text": "The same hall that held the Bridge Festival now holds thirty booths and everyone's future. Hana clutches three brochures. Ryo reads one like it's a suspicious contract — which, to be fair, it might be.",
+              "expressionState": "neutral",
+              "nextNodeId": "ryo-brochure",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "ryo-brochure",
+              "speakerId": "char-ryo",
+              "text": "Studio Cakra internship. Read this line for me: \"Placement subject to mentor availability. A portfolio is a plus.\" Translation? I want a second opinion before I get excited.",
+              "expressionState": "neutral",
+              "nextNodeId": "brochure-check",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "brochure-check",
+              "speakerId": "narrator",
+              "text": "Two phrases, two traps — or not?",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "read-precise",
+                  "text": "Placement isn't guaranteed — it depends on mentors. And the portfolio isn't required; it just adds points. You qualify either way, but bring your reel anyway.",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "ryo-nods",
+                  "actionType": "recall-ad-reading",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "\"Subject to\" dan \"a plus\" dibaca tepat: janji bersyarat vs nilai tambah. Ryo mendapat gambaran risiko yang jujur.",
+                    "modelUtterance": "\"Subject to\" means not guaranteed; \"a plus\" means optional but helpful."
+                  }
+                },
+                {
+                  "id": "read-wrong",
+                  "text": "It says you MUST have a portfolio, and the placement is guaranteed. Easy.",
+                  "dimension": "context-inappropriate",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "ryo-corrects-read",
+                  "actionType": "recall-ad-miss",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Terbalik dua-duanya: \"a plus\" bukan wajib, \"subject to\" bukan jaminan. Salah baca syarat = salah rencana.",
+                    "modelUtterance": "The portfolio is optional — and the placement depends on mentor availability."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ryo-nods",
+              "speakerId": "char-ryo",
+              "text": "Not guaranteed. Good. I don't trust guaranteed things anyway. Now go — the hotel booth person keeps making eye contact with you and Hana's already interrogating the university table.",
+              "expressionState": "neutral",
+              "nextNodeId": "booth-question",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "ryo-corrects-read",
+              "speakerId": "char-ryo",
+              "text": "…I read it four times and got the opposite. \"A plus\" is optional. \"Subject to\" means maybe. We're both going to reread everything we sign for the rest of our lives. Go talk to the hotel booth.",
+              "expressionState": "neutral",
+              "nextNodeId": "booth-question",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "booth-question",
+              "speakerId": "narrator",
+              "text": "LARAS BAY HOTEL BOOTH. The recruiter smiles: \"Interested in the front-office internship? Any questions?\" This is your one shot at a smart question.",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "ask-smart",
+                  "text": "Yes — what would a typical first week look like for an intern? And is the English requirement conversational or written?",
+                  "dimension": "natural",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "recruiter-answers",
+                  "actionType": "quest-progress",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT",
+                      "NATURALNESS"
+                    ],
+                    "message": "Pertanyaan minggu-pertama menunjukkan Anda membayangkan diri bekerja; pertanyaan syarat menunjukkan Anda membaca teliti. Rekruter mencatat nama Anda.",
+                    "modelUtterance": "What would a typical first week look like for an intern?"
+                  }
+                },
+                {
+                  "id": "ask-nothing",
+                  "text": "Um. No. It all seems… clear. Thanks. (Take a brochure and retreat.)",
+                  "dimension": "socially-weak",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "recruiter-shrugs",
+                  "actionType": "neutral-continue",
+                  "feedback": {
+                    "lenses": [
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Ingat kata perekrut di kelas: \"asking nothing is the only wrong move.\" Kesempatan membangun kesan pertama baru saja lewat.",
+                    "modelUtterance": "What would my first week look like?"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "recruiter-answers",
+              "speakerId": "narrator",
+              "text": "RECRUITER: \"First week is shadowing — check-in desk, phone duty, one guest tour. And conversational English, mainly. Honestly? You just asked the two questions we wish everyone asked.\" She hands you a card with a name on it. A real name. A real door.",
+              "expressionState": "warm",
+              "nextNodeId": "plans-talk",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "recruiter-shrugs",
+              "speakerId": "narrator",
+              "text": "The recruiter's smile goes professional again. \"Well — the website has details.\" Behind you, some kid from 12-A asks about the first week and gets a business card. Noted. Painfully noted.",
+              "expressionState": "concerned",
+              "nextNodeId": "plans-talk",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "plans-talk",
+              "speakerId": "char-hana",
+              "text": "Debrief! University table says my essay scores might get me a communications scholarship — MIGHT. Ryo's in love with the studio. And you? What's the plan, gate-friend? And don't say \"still deciding\" without at least naming the options.",
+              "expressionState": "warm",
+              "nextNodeId": "state-plans",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "state-plans",
+              "speakerId": "narrator",
+              "text": "Say it out loud. Plans get real when they have words.",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "plans-structured",
+                  "text": "I'm going to apply for the hotel internship — that's decided. I'm hoping it turns into a job offer, but if that falls through, I might try the media diploma. Still weighing the last part.",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "episode-close",
+                  "actionType": "recall-future-forms",
+                  "feedback": {
+                    "lenses": [
+                      "NATURALNESS",
+                      "CONTEXT"
+                    ],
+                    "message": "Tiga tingkat kepastian dalam tiga kalimat: going to (pasti), hoping (harapan), might (cadangan). Hana bisa benar-benar membantu sekarang.",
+                    "modelUtterance": "I'm going to apply — that's decided. I'm hoping it leads somewhere; if it falls through, I might try the diploma."
+                  }
+                },
+                {
+                  "id": "plans-mush",
+                  "text": "I'll just… see what happens? Something will work out. Probably. The universe decides.",
+                  "dimension": "vague",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "hana-pushes",
+                  "actionType": "recall-future-miss",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "\"The universe\" tidak mengisi formulir pendaftaran. Rencana butuh kata kerja: going to, hoping to, might.",
+                    "modelUtterance": "I'm going to apply for the internship, and I might try the diploma as backup."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "hana-pushes",
+              "speakerId": "char-hana",
+              "text": "The universe once double-booked our sound vendor. We don't trust the universe. Tonight: three options, on paper, with pros and cons. Club rules apply to life now.",
+              "expressionState": "warm",
+              "nextNodeId": "episode-close",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "episode-close",
+              "speakerId": "narrator",
+              "text": "Three brochures, one business card, and — for the first time — the future has shapes instead of fog. Application season starts Monday.",
+              "expressionState": "warm",
+              "terminal": true,
+              "choices": []
+            }
+          ],
+          "hotspots": [
+            {
+              "id": "hotspot-studio-booth",
+              "label": "Visit the Studio Cakra booth",
+              "actionType": "inspect-studio-booth"
+            },
+            {
+              "id": "hotspot-hotel-card",
+              "label": "Look at the recruiter's card",
+              "actionType": "inspect-card"
+            }
+          ]
+        },
+        "vocabulary": [],
+        "expressions": [
+          {
+            "entryId": "exp-subject-to",
+            "expression": "subject to ___",
+            "meaningId": "tergantung-pada",
+            "register": "formal",
+            "sourceIntentKey": "intent-job-ads",
+            "recallHookId": "rh-subject-to"
+          },
+          {
+            "entryId": "exp-is-a-plus",
+            "expression": "___ is a plus",
+            "meaningId": "menjadi-nilai-tambah",
+            "register": "neutral",
+            "sourceIntentKey": "intent-job-ads",
+            "recallHookId": "rh-is-a-plus"
+          },
+          {
+            "entryId": "exp-im-hoping-to",
+            "expression": "I'm hoping to ___",
+            "meaningId": "saya-berharap",
+            "register": "neutral",
+            "sourceIntentKey": "intent-future-plans",
+            "recallHookId": "rh-im-hoping-to"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-subject-to",
+            "sourceEntryId": "exp-subject-to",
+            "objectiveKey": "obj-g12-04",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-is-a-plus",
+            "sourceEntryId": "exp-is-a-plus",
+            "objectiveKey": "obj-g12-04",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-im-hoping-to",
+            "sourceEntryId": "exp-im-hoping-to",
+            "objectiveKey": "obj-g12-01",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [
+          {
+            "hookId": "rh-subject-to",
+            "sourceEntryId": "exp-subject-to"
+          },
+          {
+            "hookId": "rh-is-a-plus",
+            "sourceEntryId": "exp-is-a-plus"
+          },
+          {
+            "hookId": "rh-im-hoping-to",
+            "sourceEntryId": "exp-im-hoping-to"
+          }
+        ],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-story-evidence-v1",
+          "evidenceIntent": "RECALL_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sm-g12-02",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "STORY_MODE",
+      "phase": "PHASE_F",
+      "title": "The Application",
+      "primarySkill": "WRITING",
+      "supportingSkills": [
+        "READING"
+      ],
+      "objectiveKeys": [
+        "obj-g12-02",
+        "obj-g12-03",
+        "obj-g11-06"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "arcId": "arc-open-doors",
+        "episodeId": "sm-g12-02",
+        "lessonBlocks": [
+          {
+            "blockType": "episode-brief",
+            "season": "season-3-crossroads",
+            "arcTitleEn": "Open Doors",
+            "episodeNumber": 2,
+            "sceneIntentId": "Malam penulisan lamaran di perpustakaan. John membimbing CV dan surat; dilema beasiswa Hana terungkap. Register formal kelas 11 kembali dengan taruhan lebih tinggi.",
+            "questIntentId": "Quest: Paper Armor — selesaikan CV dan surat lamaran hotel dengan mirroring syarat iklan.",
+            "prerequisites": [
+              "sc-g12-02",
+              "sc-g12-03"
+            ],
+            "relationshipNotes": "Mendengarkan dilema Hana dengan baik membuka kedalaman hubungan menjelang Episode 7.",
+            "johnContent": {
+              "learningContextId": "Sesi penulisan CV dan surat lamaran magang.",
+              "expectedStudentIntent": "Menyusun klaim keterampilan berbukti dan mencerminkan syarat iklan.",
+              "tutorGoal": "Menajamkan bukti pada klaim; menghapus klaim kosong; menjaga register formal.",
+              "relevantLanguage": [
+                "I'm confident with…",
+                "I am writing to apply for…",
+                "meet the requirements"
+              ],
+              "acceptableResponseDimensions": [
+                "natural",
+                "understandable-unnatural",
+                "overly-formal"
+              ],
+              "contextualFollowUpIntent": "Jika klaim tanpa bukti, John bertanya \"how would you prove that line?\"; jika register turun ke gaya chat, ia menunjuk pembacanya."
+            }
+          }
+        ],
+        "scene": {
+          "sceneId": "scene-application-night",
+          "locationId": "loc-library",
+          "arcId": "arc-open-doors",
+          "episodeId": "sm-g12-02",
+          "assetIds": [
+            "scene-library-procedural-v1",
+            "char-john-procedural-v1",
+            "char-hana-procedural-v1"
+          ],
+          "entryNodeId": "john-review",
+          "dialogueNodes": [
+            {
+              "id": "john-review",
+              "speakerId": "char-john",
+              "text": "Application clinic, library edition. Your CV draft says: \"Good at English and events.\" I've seen your three years — that line is criminally underselling. The ad wants front-office skills, English, and calm under pressure. Rewrite the claim line.",
+              "expressionState": "warm",
+              "nextNodeId": "cv-line",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "cv-line",
+              "speakerId": "char-john",
+              "text": "Out loud first. What's the line?",
+              "expressionState": "warm",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "cv-evidence",
+                  "text": "\"Conversational English, proven — co-guided a Singaporean delegation and handled live Q&A for 200 people. Calm under pressure: managed festival-day guest chaos with zero lost groups.\"",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "john-approves-cv",
+                  "actionType": "recall-skills-evidence",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Setiap klaim membawa buktinya sendiri — dan mencerminkan syarat iklan satu per satu. Ini baris CV yang dibaca dua kali oleh perekrut.",
+                    "modelUtterance": "Conversational English — co-guided a foreign delegation; calm under pressure — festival day, zero lost groups."
+                  }
+                },
+                {
+                  "id": "cv-empty",
+                  "text": "\"Hardworking, motivated, passionate team player with good communication skills and a positive attitude.\"",
+                  "dimension": "understandable-unnatural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "john-flags-empty",
+                  "actionType": "recall-skills-miss",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT",
+                      "NATURALNESS"
+                    ],
+                    "message": "Delapan kata sifat, nol bukti — kalimat yang sama ada di seratus CV lain. Ganti setiap kata sifat dengan satu fakta.",
+                    "modelUtterance": "Instead of \"good communication\": co-guided a foreign delegation on a full campus tour."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "john-approves-cv",
+              "speakerId": "char-john",
+              "text": "That's a CV with a pulse. Letter next — first paragraph names the position and where you found it, middle paragraph mirrors their three requirements. You know this pattern; you wrote it to a principal once, with a bolder closing clause than I'd have dared.",
+              "expressionState": "warm",
+              "nextNodeId": "hana-interrupts",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "john-flags-empty",
+              "speakerId": "char-john",
+              "text": "Read that sentence and tell me one thing it proves. …Exactly. Swap every adjective for a fact: the delegation tour, the festival Q&A, the vendor crisis. Facts are the only adjectives recruiters believe.",
+              "expressionState": "warm",
+              "nextNodeId": "hana-interrupts",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "hana-interrupts",
+              "speakerId": "char-hana",
+              "text": "(sliding into the chair opposite, uncharacteristically quiet) Can I ruin the mood for a second? The scholarship came through. Communications. Full ride. …In Singapore. Maya's city. Two thousand kilometers from everything and everyone I know. I have eleven days to answer.",
+              "expressionState": "concerned",
+              "nextNodeId": "hear-hana",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "hear-hana",
+              "speakerId": "narrator",
+              "text": "Full ride. Eleven days. Her hands are doing the okay-okay-okay thing without the words.",
+              "expressionState": "concerned",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "hear-first",
+                  "text": "Before anyone lists pros and cons — how do YOU feel about it, first reaction, no filter?",
+                  "dimension": "natural",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "hana-opens-up",
+                  "actionType": "hana-trust-up",
+                  "feedback": {
+                    "lenses": [
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Anda belajar ini dengan cara sulit di kelas 11: sebelum solusi, pastikan orangnya didengar. Hana mengingatnya juga.",
+                    "modelUtterance": "How do you feel about it — first reaction, no filter?"
+                  }
+                },
+                {
+                  "id": "solve-first",
+                  "text": "Full ride?! Take it, obviously. You'd be crazy not to. Singapore is amazing.",
+                  "dimension": "too-direct",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "hana-closes-up",
+                  "actionType": "neutral-continue",
+                  "feedback": {
+                    "lenses": [
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Mungkin benar — tetapi Anda baru saja memutuskan hidup orang lain dalam lima kata. Dia butuh didengar dulu, dinasihati kemudian.",
+                    "modelUtterance": "Big news. How are you feeling about it, honestly?"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "hana-opens-up",
+              "speakerId": "char-hana",
+              "text": "Terrified. And excited. And guilty about being excited. My mom cried — happy-cried, I think? It's everything I said I wanted back when this club was three people and a dusty room. It's just… I said it before I knew what leaving felt like.",
+              "expressionState": "concerned",
+              "nextNodeId": "episode-close",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "hana-closes-up",
+              "speakerId": "char-hana",
+              "text": "\"Obviously.\" Right. Everyone keeps saying that word. (she smiles the not-smile) Anyway — your letter's due first. We'll do my life later. JOHN: (quietly, to you) Revisit that conversation. Soon. Listen first this time.",
+              "expressionState": "concerned",
+              "nextNodeId": "episode-close",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "episode-close",
+              "speakerId": "narrator",
+              "text": "By closing time: one CV with evidence in every line, one letter that mirrors three requirements, and one scholarship decision hanging over the corner table like weather. Send button: pressed. Eleven days: counting.",
+              "expressionState": "neutral",
+              "terminal": true,
+              "choices": []
+            }
+          ],
+          "hotspots": [
+            {
+              "id": "hotspot-cv-draft",
+              "label": "Review the CV draft",
+              "actionType": "inspect-cv"
+            },
+            {
+              "id": "hotspot-scholarship-letter",
+              "label": "Glance at Hana's scholarship letter",
+              "actionType": "inspect-scholarship"
+            }
+          ]
+        },
+        "vocabulary": [],
+        "expressions": [
+          {
+            "entryId": "exp-im-confident-with",
+            "expression": "I'm confident with ___",
+            "meaningId": "saya-percaya-diri-dengan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-skills",
+            "recallHookId": "rh-im-confident-with"
+          },
+          {
+            "entryId": "exp-i-am-writing-to-apply",
+            "expression": "I am writing to apply for ___",
+            "meaningId": "saya-menulis-untuk-melamar",
+            "register": "formal",
+            "sourceIntentKey": "intent-cv-letter",
+            "recallHookId": "rh-i-am-writing-to-apply"
+          },
+          {
+            "entryId": "exp-all-it-takes-is",
+            "expression": "All it takes is ___",
+            "meaningId": "yang-dibutuhkan-hanya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-persuasive-writing",
+            "recallHookId": "rh-all-it-takes-is"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-im-confident-with",
+            "sourceEntryId": "exp-im-confident-with",
+            "objectiveKey": "obj-g12-02",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-i-am-writing-to-apply",
+            "sourceEntryId": "exp-i-am-writing-to-apply",
+            "objectiveKey": "obj-g12-03",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-all-it-takes-is",
+            "sourceEntryId": "exp-all-it-takes-is",
+            "objectiveKey": "obj-g11-06",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [
+          {
+            "hookId": "rh-im-confident-with",
+            "sourceEntryId": "exp-im-confident-with"
+          },
+          {
+            "hookId": "rh-i-am-writing-to-apply",
+            "sourceEntryId": "exp-i-am-writing-to-apply"
+          },
+          {
+            "hookId": "rh-all-it-takes-is",
+            "sourceEntryId": "exp-all-it-takes-is"
+          }
+        ],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-story-evidence-v1",
+          "evidenceIntent": "RECALL_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sm-g12-03",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "STORY_MODE",
+      "phase": "PHASE_F",
+      "title": "The Call",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g12-07",
+        "obj-g11-14"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "arcId": "arc-open-doors",
+        "episodeId": "sm-g12-03",
+        "lessonBlocks": [
+          {
+            "blockType": "episode-brief",
+            "season": "season-3-crossroads",
+            "arcTitleEn": "Open Doors",
+            "episodeNumber": 3,
+            "sceneIntentId": "Hotel menelepon: wawancara singkat via telepon, sekarang. Semua keterampilan telepon profesional diuji tanpa persiapan — di ruang klub yang mendadak sunyi.",
+            "questIntentId": "Quest: Answer the Phone — tangani panggilan koordinator magang dari pembuka sampai konfirmasi penutup.",
+            "prerequisites": [
+              "sc-g12-07",
+              "sm-g12-02"
+            ],
+            "relationshipNotes": "Ryo dan Sari menyaksikan; performa Anda menjadi cerita motivasi (atau komedi) klub."
+          }
+        ],
+        "scene": {
+          "sceneId": "scene-the-call",
+          "locationId": "loc-clubroom",
+          "arcId": "arc-open-doors",
+          "episodeId": "sm-g12-03",
+          "assetIds": [
+            "scene-clubroom-procedural-v1",
+            "char-ryo-procedural-v1",
+            "char-sari-procedural-v1"
+          ],
+          "entryNodeId": "phone-rings",
+          "dialogueNodes": [
+            {
+              "id": "phone-rings",
+              "speakerId": "narrator",
+              "text": "Unknown number. Laras Bay's area code. Ryo mutes the speaker he was testing. Sari freezes mid-snack. The room holds its breath with you. Three rings. Answer it.",
+              "expressionState": "neutral",
+              "nextNodeId": "call-open",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "call-open",
+              "speakerId": "narrator",
+              "text": "VOICE: \"Good afternoon, this is Rani from Laras Bay Hotel HR — am I speaking with the front-office internship applicant?\"",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "open-professional",
+                  "text": "Good afternoon, Bu Rani — yes, speaking. Thank you for calling.",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "call-body",
+                  "actionType": "recall-call-opener",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Konfirmasi identitas + sapaan balik + apresiasi. Sepuluh detik pertama: lulus.",
+                    "modelUtterance": "Good afternoon — yes, speaking. Thank you for calling."
+                  }
+                },
+                {
+                  "id": "open-flustered",
+                  "text": "Uh. Yeah? Who— oh. OH. The hotel. Yes. Hi. Hello. It's me. The person.",
+                  "dimension": "socially-weak",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "call-body-recover",
+                  "actionType": "recall-call-miss",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT",
+                      "NATURALNESS"
+                    ],
+                    "message": "\"The person\" — memang benar, tetapi bukan pembuka profesional. Tarik napas: sapa, konfirmasi, terima kasih.",
+                    "modelUtterance": "Good afternoon — yes, this is the applicant speaking."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "call-body",
+              "speakerId": "narrator",
+              "text": "RANI: \"Great. Quick screening, five minutes. Your letter mentions guest handling at a festival — mmkay let me pull it up — while I do: our shifts run seven to three or— (static) —to eleven, and interns pick— (static) —preference by Friday.\"",
+              "expressionState": "neutral",
+              "nextNodeId": "handle-static",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "call-body-recover",
+              "speakerId": "narrator",
+              "text": "RANI: (kindly) \"First official call? You'll do dozens at the front office — good practice starts now. Quick screening, five minutes. Our shifts run seven to three or— (static) —to eleven, and interns pick— (static) —by Friday.\"",
+              "expressionState": "neutral",
+              "nextNodeId": "handle-static",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "handle-static",
+              "speakerId": "narrator",
+              "text": "The line crackled through the important part. You caught maybe half the shift information.",
+              "expressionState": "concerned",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "static-flag",
+                  "text": "Sorry, Bu Rani — you're breaking up a little. Could you repeat the second shift time and the deadline? I want to note them correctly.",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "call-confirm",
+                  "actionType": "recall-call-repair",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "\"You're breaking up\" + permintaan spesifik + alasan profesional. Persis seperti pelajaran telepon — dan Rani justru terkesan.",
+                    "modelUtterance": "You're breaking up a little — could you repeat the second shift time?"
+                  }
+                },
+                {
+                  "id": "static-guess",
+                  "text": "(Half-heard is heard enough.) Got it, yes, all clear!",
+                  "dimension": "vague",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "call-confirm-bad",
+                  "actionType": "recall-call-guess",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Menebak informasi jadwal kerja = datang di shift yang salah pada minggu pertama. Frasa gangguan sinyal ada untuk momen ini.",
+                    "modelUtterance": "Sorry, the line broke up — could you repeat that?"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "call-confirm",
+              "speakerId": "narrator",
+              "text": "RANI: \"Of course — three-to-eleven is the second shift, preference due Friday noon.\" The rest of the screening flows: festival story, English comfort check, one scenario question. Then: \"Last thing — confirm what you've noted?\"",
+              "expressionState": "neutral",
+              "nextNodeId": "final-confirm",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "call-confirm-bad",
+              "speakerId": "narrator",
+              "text": "The screening continues. At the end, Rani says: \"So — confirm what you've noted?\" …The shift times you guessed at. This is your last chance to fix it honestly.",
+              "expressionState": "concerned",
+              "nextNodeId": "final-confirm",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "final-confirm",
+              "speakerId": "narrator",
+              "text": "Close the call properly.",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "confirm-full",
+                  "text": "So, to confirm: shifts are seven-to-three or three-to-eleven, my preference is due Friday noon, and the onsite interview invitation follows by email. Thank you, Bu Rani!",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "call-end",
+                  "actionType": "recall-call-confirm",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "\"So, to confirm\" mengunci tiga fakta penting. Panggilan lima menit, nol kesalahpahaman.",
+                    "modelUtterance": "So, to confirm: shifts, Friday deadline, email to follow. Thank you!"
+                  }
+                },
+                {
+                  "id": "confirm-rush",
+                  "text": "Yep, all noted, thanks, bye! (hang up fast before anything else can go wrong)",
+                  "dimension": "too-direct",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "call-end-messy",
+                  "actionType": "recall-call-rush",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT",
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Panggilan tanpa konfirmasi penutup = detail hilang di udara. Tiga puluh detik ringkasan menyelamatkan satu minggu kebingungan.",
+                    "modelUtterance": "So, to confirm: shifts, deadline Friday, email to follow. Thank you!"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "call-end",
+              "speakerId": "char-ryo",
+              "text": "(as you hang up) \"So, to confirm\" — you sounded like someone with a salary. SARI: (writing furiously) I'm putting this entire call in the club manual. What do I title it? RYO: \"How to sound employable.\" Chapter one.",
+              "expressionState": "neutral",
+              "terminal": true,
+              "choices": []
+            },
+            {
+              "id": "call-end-messy",
+              "speakerId": "char-ryo",
+              "text": "(dry as ever) You hung up on HR mid-sentence. Bold strategy. SARI: Should I… not write this one down? RYO: Write it down. The manual needs a \"what not to do\" chapter too. (Your phone buzzes: an email from Rani, kindly re-listing everything. Guardian angels work in HR.)",
+              "expressionState": "neutral",
+              "terminal": true,
+              "choices": []
+            }
+          ],
+          "hotspots": [
+            {
+              "id": "hotspot-phone-screen",
+              "label": "Check the phone screen",
+              "actionType": "inspect-phone"
+            },
+            {
+              "id": "hotspot-sari-manual",
+              "label": "Peek at Sari's club manual",
+              "actionType": "inspect-manual"
+            }
+          ]
+        },
+        "vocabulary": [],
+        "expressions": [
+          {
+            "entryId": "exp-so-to-confirm",
+            "expression": "So, to confirm: ___",
+            "meaningId": "jadi-untuk-konfirmasi",
+            "register": "neutral",
+            "sourceIntentKey": "intent-calls",
+            "recallHookId": "rh-so-to-confirm"
+          },
+          {
+            "entryId": "exp-youre-breaking-up",
+            "expression": "You're breaking up",
+            "meaningId": "suaranya-putus-putus",
+            "register": "neutral",
+            "sourceIntentKey": "intent-calls",
+            "recallHookId": "rh-youre-breaking-up"
+          },
+          {
+            "entryId": "exp-we-would-appreciate",
+            "expression": "We would appreciate ___",
+            "meaningId": "kami-akan-menghargai",
+            "register": "formal",
+            "sourceIntentKey": "intent-formal-email",
+            "recallHookId": "rh-we-would-appreciate"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-so-to-confirm",
+            "sourceEntryId": "exp-so-to-confirm",
+            "objectiveKey": "obj-g12-07",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-youre-breaking-up",
+            "sourceEntryId": "exp-youre-breaking-up",
+            "objectiveKey": "obj-g12-07",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-we-would-appreciate",
+            "sourceEntryId": "exp-we-would-appreciate",
+            "objectiveKey": "obj-g11-14",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [
+          {
+            "hookId": "rh-so-to-confirm",
+            "sourceEntryId": "exp-so-to-confirm"
+          },
+          {
+            "hookId": "rh-youre-breaking-up",
+            "sourceEntryId": "exp-youre-breaking-up"
+          }
+        ],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-story-evidence-v1",
+          "evidenceIntent": "RECALL_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sm-g12-04",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "STORY_MODE",
+      "phase": "PHASE_F",
+      "title": "First Day",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g12-08",
+        "obj-g12-09"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "arcId": "arc-the-internship",
+        "episodeId": "sm-g12-04",
+        "lessonBlocks": [
+          {
+            "blockType": "episode-brief",
+            "season": "season-3-crossroads",
+            "arcTitleEn": "The Internship",
+            "episodeNumber": 4,
+            "sceneIntentId": "Hari pertama magang di Laras Bay Hotel. Small talk pantry, perkenalan tim, dan briefing keselamatan Pak Halim — yang detailnya akan menentukan Episode 5.",
+            "questIntentId": "Quest: Day One — perkenalkan diri ke dua staf, dan pahami briefing Pak Halim dengan konfirmasi.",
+            "prerequisites": [
+              "sc-g12-08",
+              "sc-g12-09"
+            ],
+            "relationshipNotes": "Kesan pertama pada Pak Halim membentuk seberapa keras Episode 5 menghantam."
+          }
+        ],
+        "scene": {
+          "sceneId": "scene-first-day",
+          "locationId": "loc-workplace",
+          "arcId": "arc-the-internship",
+          "episodeId": "sm-g12-04",
+          "assetIds": [
+            "scene-workplace-procedural-v1",
+            "char-halim-procedural-v1"
+          ],
+          "entryNodeId": "lobby-arrival",
+          "dialogueNodes": [
+            {
+              "id": "lobby-arrival",
+              "speakerId": "narrator",
+              "text": "Laras Bay Hotel, 6:47 a.m. The lobby smells of coffee and floor polish. A staff member in a crisp uniform sorts key cards behind the desk. Thirteen minutes early — enough time for exactly one good first impression.",
+              "expressionState": "neutral",
+              "nextNodeId": "meet-staff",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "meet-staff",
+              "speakerId": "narrator",
+              "text": "She glances up. Now or never.",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "intro-workplace",
+                  "text": "Good morning — I'm the new front-office intern, first day. I'm told I should report to Pak Halim? And… any tips for a first-weeker?",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "staff-warms",
+                  "actionType": "recall-workplace-intro",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT",
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Identitas + tujuan + pertanyaan tips: pembuka orang baru yang sempurna. Small talk kantin, versi profesional.",
+                    "modelUtterance": "I'm the new intern — first day. Any tips for a first-weeker?"
+                  }
+                },
+                {
+                  "id": "intro-schoolish",
+                  "text": "Hey! What's up? Cool hotel. So like, where do interns hang?",
+                  "dimension": "context-inappropriate",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "staff-cools",
+                  "actionType": "recall-workplace-miss",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Register kantin di lobi hotel. Pola small talk-nya benar — konteksnya yang naik kelas: ini tempat kerja, dan dia sedang bekerja.",
+                    "modelUtterance": "Good morning — I'm the new intern. Should I report to Pak Halim?"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "staff-warms",
+              "speakerId": "narrator",
+              "text": "STAFF: \"Mbak Tia, housekeeping liaison. Tips: Pak Halim values two things — punctuality, which you've already passed, and people who ask before they touch anything. Coffee machine's honest, vending machine lies. He's in the briefing room.\" A map, drawn on a sticky note. Kindness, hotel edition.",
+              "expressionState": "warm",
+              "nextNodeId": "halim-briefing",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "staff-cools",
+              "speakerId": "narrator",
+              "text": "STAFF: (politely, cooler by five degrees) \"Interns report to Pak Halim. Briefing room, down the hall.\" She returns to the key cards. Lesson one, self-taught: the lobby is a stage, and everyone on it is working.",
+              "expressionState": "neutral",
+              "nextNodeId": "halim-briefing",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "halim-briefing",
+              "speakerId": "char-halim",
+              "text": "So. The festival kid. Rani showed me your call notes — tidy. Now forget school: here, mistakes cost money and reputations, in that order. Briefing, three rules. One: guest information never leaves this building — not names, not room numbers, not to your friends, not \"just once\". Two: only after I countersign may you process refunds — ONLY after. Three: if a guest raises their voice, you don't match it — you lower yours, and you get me. Repeat rule two back.",
+              "expressionState": "neutral",
+              "nextNodeId": "confirm-briefing",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "confirm-briefing",
+              "speakerId": "narrator",
+              "text": "He's watching. This is the same repeat-it-back ritual from the equipment room lesson — and from a corridor three years ago.",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "confirm-precise",
+                  "text": "Refunds only after you countersign — no exceptions, no \"processing while waiting\". Just to confirm rule one too: guest data stays in the building, full stop?",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "halim-approves",
+                  "actionType": "recall-briefing-confirm",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Konfirmasi presisi + konfirmasi sukarela aturan lain. \"Just to confirm\" — frasa keselamatan yang kini bernilai pekerjaan.",
+                    "modelUtterance": "Refunds only after your countersign — and just to confirm, guest data never leaves the building?"
+                  }
+                },
+                {
+                  "id": "confirm-loose",
+                  "text": "Rule two: refunds need your signature… at some point in the process. Roughly. I'll figure out the details as I go.",
+                  "dimension": "vague",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "halim-sharpens",
+                  "actionType": "recall-briefing-loose",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "\"Roughly\" dan aturan keuangan tidak boleh sekalimat. \"Only after\" adalah urutan mutlak — dengarkan kata pagar itu.",
+                    "modelUtterance": "Refunds only AFTER you countersign — never before."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "halim-approves",
+              "speakerId": "char-halim",
+              "text": "\"Full stop\" is correct. Good — you listen like someone who's been burned before. (almost a smile) Front desk shadowing starts at seven. Tia will hand you to Rani. Welcome to work.",
+              "expressionState": "neutral",
+              "terminal": true,
+              "choices": []
+            },
+            {
+              "id": "halim-sharpens",
+              "speakerId": "char-halim",
+              "text": "\"Roughly\" is how interns end up on the news. Again: only AFTER I countersign. Before means never. Say \"only after\". …Good. We'll drill it until \"roughly\" leaves your vocabulary. Front desk, seven o'clock.",
+              "expressionState": "concerned",
+              "terminal": true,
+              "choices": []
+            }
+          ],
+          "hotspots": [
+            {
+              "id": "hotspot-front-desk",
+              "label": "Observe the front desk",
+              "actionType": "inspect-desk"
+            },
+            {
+              "id": "hotspot-tia-sticky-map",
+              "label": "Check Tia's sticky-note map",
+              "actionType": "inspect-sticky-map"
+            }
+          ]
+        },
+        "vocabulary": [],
+        "expressions": [
+          {
+            "entryId": "exp-any-tips-for",
+            "expression": "Any tips for ___?",
+            "meaningId": "ada-saran-untuk",
+            "register": "informal",
+            "sourceIntentKey": "intent-workplace-talk",
+            "recallHookId": "rh-any-tips-for"
+          },
+          {
+            "entryId": "exp-just-to-confirm",
+            "expression": "Just to confirm — ___",
+            "meaningId": "sekadar-konfirmasi",
+            "register": "neutral",
+            "sourceIntentKey": "intent-safety",
+            "recallHookId": "rh-just-to-confirm"
+          },
+          {
+            "entryId": "exp-only-after",
+            "expression": "only after ___",
+            "meaningId": "hanya-setelah",
+            "register": "neutral",
+            "sourceIntentKey": "intent-safety",
+            "recallHookId": "rh-only-after"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-any-tips-for",
+            "sourceEntryId": "exp-any-tips-for",
+            "objectiveKey": "obj-g12-08",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-just-to-confirm",
+            "sourceEntryId": "exp-just-to-confirm",
+            "objectiveKey": "obj-g12-09",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-only-after",
+            "sourceEntryId": "exp-only-after",
+            "objectiveKey": "obj-g12-09",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [
+          {
+            "hookId": "rh-any-tips-for",
+            "sourceEntryId": "exp-any-tips-for"
+          },
+          {
+            "hookId": "rh-just-to-confirm",
+            "sourceEntryId": "exp-just-to-confirm"
+          },
+          {
+            "hookId": "rh-only-after",
+            "sourceEntryId": "exp-only-after"
+          }
+        ],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-story-evidence-v1",
+          "evidenceIntent": "RECALL_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sm-g12-05",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "STORY_MODE",
+      "phase": "PHASE_F",
+      "title": "The Mistake",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g10-12",
+        "obj-g11-08",
+        "obj-g12-09"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "arcId": "arc-the-internship",
+        "episodeId": "sm-g12-05",
+        "lessonBlocks": [
+          {
+            "blockType": "episode-brief",
+            "season": "season-3-crossroads",
+            "arcTitleEn": "The Internship",
+            "episodeNumber": 5,
+            "sceneIntentId": "Episode recall khas seri ini: instruksi setengah-didengar menyebabkan kesalahan nyata di tempat kerja. Perangkat klarifikasi Grade 10 dan pelaporan masalah Grade 11 kembali — dengan taruhan tertinggi sepanjang seri.",
+            "questIntentId": "Quest: Own It — temukan kesalahan Anda, laporkan dengan jujur, dan perbaiki prosesnya.",
+            "prerequisites": [
+              "sm-g12-04",
+              "sc-g10-12",
+              "sc-g11-08"
+            ],
+            "relationshipNotes": "Cara Anda menangani kesalahan menentukan kepercayaan Pak Halim — dan surat rekomendasi di Episode 8."
+          }
+        ],
+        "scene": {
+          "sceneId": "scene-the-mistake",
+          "locationId": "loc-workplace",
+          "arcId": "arc-the-internship",
+          "episodeId": "sm-g12-05",
+          "assetIds": [
+            "scene-workplace-procedural-v1",
+            "char-halim-procedural-v1",
+            "char-ryo-procedural-v1"
+          ],
+          "entryNodeId": "instruction-blur",
+          "dialogueNodes": [
+            {
+              "id": "instruction-blur",
+              "speakerId": "narrator",
+              "text": "Week three. Rani, rushing past with a clipboard: \"Group check-out at eleven — move the Menara tour group's luggage to bay two, NOT bay three, three's for the wedding. Oh, and the airport shuttle moved to— \" Her radio crackles. She's gone. You caught… most of that. Probably.",
+              "expressionState": "neutral",
+              "nextNodeId": "the-choice-moment",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "the-choice-moment",
+              "speakerId": "narrator",
+              "text": "Bay two or bay three? And the shuttle moved to… when? Rani is already across the lobby. Three years ago, in a corridor, you faced exactly this.",
+              "expressionState": "concerned",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "chase-clarify",
+                  "text": "(Chase her down.) Bu Rani, thirty seconds — so you mean luggage to bay TWO, three is wedding-only, right? And the shuttle moved to what time?",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "clarified-path",
+                  "actionType": "recall-clarification-apex",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT",
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Perangkat klarifikasi Grade 10, digunakan pada momen bernilai paling tinggi. Tiga puluh detik bertanya vs tiga jam kekacauan.",
+                    "modelUtterance": "So you mean bay two, and three is wedding-only, right? And the shuttle time?"
+                  }
+                },
+                {
+                  "id": "wing-it",
+                  "text": "(She said bay three… probably? She's busy. Move the luggage to bay three and look competent.)",
+                  "dimension": "socially-weak",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "mistake-happens",
+                  "actionType": "recall-clarification-fail",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "\"Terlihat kompeten\" dengan menebak adalah jebakan tertua di dunia kerja. Anda tahu alatnya — sejak kelas 10.",
+                    "modelUtterance": "Sorry, thirty seconds — bay two or bay three?"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "clarified-path",
+              "speakerId": "narrator",
+              "text": "RANI: \"Bay two, yes — thank you for CHECKING, the last intern guessed. Shuttle's now 1:15, board says 12:45, I'll fix it.\" The check-out flows like water. Pak Halim, passing: \"Heard you chased Rani down mid-crisis to confirm. That's not slowing us down. That's the job.\" …But the day isn't done with you yet.",
+              "expressionState": "warm",
+              "nextNodeId": "second-test",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "mistake-happens",
+              "speakerId": "narrator",
+              "text": "11:40. The wedding florist arrives at bay three to find forty tour-group suitcases where the flower arch should be. The bride's mother is asking pointed questions. Rani is staring at you across the lobby. The floor does not open up and swallow you, despite polite requests.",
+              "expressionState": "concerned",
+              "nextNodeId": "report-moment",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "report-moment",
+              "speakerId": "narrator",
+              "text": "Pak Halim approaches, radio in hand, face unreadable. Report.",
+              "expressionState": "concerned",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "report-own",
+                  "text": "Pak, my mistake. Rani said bay two; I half-heard it and guessed three instead of confirming. Luggage is being moved now — fifteen minutes. And I've asked Tia to apologize to the florist while I finish.",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "halim-verdict-good",
+                  "actionType": "recall-honest-report",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT",
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Laporan Grade 11 di bawah tekanan sungguhan: milik sendiri + akar (tidak konfirmasi) + pemulihan berjalan + mitigasi. Tidak ada yang bisa memecat kejujuran secepat ini.",
+                    "modelUtterance": "My mistake — I guessed instead of confirming. Recovery is underway; here's the fix."
+                  }
+                },
+                {
+                  "id": "report-deflect",
+                  "text": "The instructions were rushed, Pak. Anyone would've mixed up the bays. Rani was already gone before I could ask anything.",
+                  "dimension": "context-inappropriate",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "halim-verdict-hard",
+                  "actionType": "recall-deflect-report",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT",
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Setengah benar (instruksi memang terburu-buru) — tetapi Anda BISA mengejarnya, dan tidak melakukannya. Laporan yang menyalahkan tidak menyisakan ruang untuk belajar.",
+                    "modelUtterance": "Instructions were rushed — and I still should have chased the confirmation. That part's mine."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "second-test",
+              "speakerId": "narrator",
+              "text": "3 p.m. A guest's card is double-charged. Rani, swamped, waves: \"Just process the refund, I'll tell Halim later!\" …Rule two says ONLY after his countersign. Rani outranks you. The rule outranks Rani. You find Pak Halim first — he signs, nods slowly: \"Rani knows better. You now officially listen better than half my staff.\" (Sometimes the mistake you avoid is the story.)",
+              "expressionState": "warm",
+              "nextNodeId": "log-close",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "halim-verdict-good",
+              "speakerId": "char-halim",
+              "text": "(long pause) Wrong bay, right response. You found it, owned it, fixed it, and protected the guest experience — in that order. The log will say \"process gap: verbal handoffs during rush\", because that's ALSO true. Interns who report like this become staff. Remember today.",
+              "expressionState": "neutral",
+              "nextNodeId": "log-close",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "halim-verdict-hard",
+              "speakerId": "char-halim",
+              "text": "Stop. Rewind. Rani was three steps away — I watched you not follow her. The bays were half your mistake; this report is fully yours. (quieter) Try again. Just the true version. …Better. The log gets both: the process gap AND the guess. Learn the second one faster.",
+              "expressionState": "concerned",
+              "nextNodeId": "log-close",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "log-close",
+              "speakerId": "narrator",
+              "text": "That evening, Ryo texts from the studio: \"Heard hotels are exciting. My mentor made me re-render one frame 14 times today. Trade?\" You look at your log entry — honest, specific, already half-written in your head since Grade 11 — and reply: \"No trade. I'm exactly where I'm supposed to be.\"",
+              "expressionState": "warm",
+              "terminal": true,
+              "choices": []
+            }
+          ],
+          "hotspots": [
+            {
+              "id": "hotspot-luggage-bays",
+              "label": "Check the luggage bays",
+              "actionType": "inspect-bays"
+            },
+            {
+              "id": "hotspot-daily-log",
+              "label": "Open your daily log",
+              "actionType": "inspect-daily-log"
+            }
+          ]
+        },
+        "vocabulary": [],
+        "expressions": [
+          {
+            "entryId": "exp-so-you-mean",
+            "expression": "So you mean ___, right?",
+            "meaningId": "jadi-maksudmu",
+            "register": "neutral",
+            "sourceIntentKey": "intent-clarification",
+            "recallHookId": "rh-so-you-mean"
+          },
+          {
+            "entryId": "exp-it-turns-out",
+            "expression": "It turns out ___",
+            "meaningId": "ternyata",
+            "register": "neutral",
+            "sourceIntentKey": "intent-progress",
+            "recallHookId": "rh-it-turns-out-g11"
+          },
+          {
+            "entryId": "exp-thats-on-me",
+            "expression": "That's on me",
+            "meaningId": "itu-salah-saya",
+            "register": "informal",
+            "sourceIntentKey": "intent-repair",
+            "recallHookId": "rh-thats-on-me"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-so-you-mean",
+            "sourceEntryId": "exp-so-you-mean",
+            "objectiveKey": "obj-g10-12",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-it-turns-out-g11",
+            "sourceEntryId": "exp-it-turns-out",
+            "objectiveKey": "obj-g11-08",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-thats-on-me",
+            "sourceEntryId": "exp-thats-on-me",
+            "objectiveKey": "obj-g11-12",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [
+          {
+            "hookId": "rh-so-you-mean",
+            "sourceEntryId": "exp-so-you-mean"
+          },
+          {
+            "hookId": "rh-it-turns-out-g11",
+            "sourceEntryId": "exp-it-turns-out"
+          },
+          {
+            "hookId": "rh-thats-on-me",
+            "sourceEntryId": "exp-thats-on-me"
+          }
+        ],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-story-evidence-v1",
+          "evidenceIntent": "RECALL_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sm-g12-06",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "STORY_MODE",
+      "phase": "PHASE_F",
+      "title": "The Log",
+      "primarySkill": "WRITING",
+      "supportingSkills": [
+        "SPEAKING"
+      ],
+      "objectiveKeys": [
+        "obj-g12-10",
+        "obj-g11-15",
+        "obj-g11-07"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "arcId": "arc-the-internship",
+        "episodeId": "sm-g12-06",
+        "lessonBlocks": [
+          {
+            "blockType": "episode-brief",
+            "season": "season-3-crossroads",
+            "arcTitleEn": "The Internship",
+            "episodeNumber": 6,
+            "sceneIntentId": "Akhir magang mendekat: log mingguan Anda dinilai Pak Halim, Ryo ditawari pekerjaan tetap di studio, dan Sari menerima briefing klub jarak jauh — delegasi kelas 11 dalam register senior.",
+            "questIntentId": "Quest: Paper Trail II — serahkan log minggu terakhir yang jujur, dan briefing Sari untuk rapat klub tanpa Anda.",
+            "prerequisites": [
+              "sc-g12-10",
+              "sm-g12-05"
+            ],
+            "relationshipNotes": "Log jujur mengunci kepercayaan Halim; briefing yang baik mematangkan Sari untuk Episode 9."
+          }
+        ],
+        "scene": {
+          "sceneId": "scene-the-log",
+          "locationId": "loc-workplace",
+          "arcId": "arc-the-internship",
+          "episodeId": "sm-g12-06",
+          "assetIds": [
+            "scene-workplace-procedural-v1",
+            "char-halim-procedural-v1",
+            "char-sari-procedural-v1"
+          ],
+          "entryNodeId": "log-review",
+          "dialogueNodes": [
+            {
+              "id": "log-review",
+              "speakerId": "char-halim",
+              "text": "Final log week. Most interns write me fairy tales — \"assisted guests, learned a lot, everything wonderful.\" Yours have been… unusually honest. Don't ruin the streak. Read me your entry for Thursday. The difficult Thursday.",
+              "expressionState": "neutral",
+              "nextNodeId": "log-entry-choice",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "log-entry-choice",
+              "speakerId": "narrator",
+              "text": "Thursday: the double-booking incident. Two families, one room, zero spare rooms until you found the partner-hotel workaround. Also: you froze for a full minute at the desk. How does the entry read?",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "log-honest",
+                  "text": "\"Handled a double-booking (rooms 214). Froze for the first minute — Bu Rani covered me. Found a partner-hotel upgrade both families accepted. Reflection: my new checklist should cut the freeze to ten seconds.\"",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "halim-log-verdict",
+                  "actionType": "recall-log-honest",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Fakta + kegagalan kecil + pemulihan + refleksi yang menghasilkan alat. Ini log yang dibaca ulang manajer saat menulis rekomendasi.",
+                    "modelUtterance": "Froze for a minute, recovered, solved it — and wrote a checklist so next time takes ten seconds."
+                  }
+                },
+                {
+                  "id": "log-polished",
+                  "text": "\"Successfully resolved a double-booking with a creative partner-hotel solution. Both guests satisfied. A productive day of professional growth.\"",
+                  "dimension": "overly-formal",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "halim-sees-through",
+                  "actionType": "recall-log-varnish",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Semua kata benar, satu hal hilang: menit Anda membeku — yang disaksikan seisi lobi. Log yang memoles kebenaran berhenti dipercaya.",
+                    "modelUtterance": "Resolved the double-booking — after freezing for a minute, which the new checklist addresses."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "halim-log-verdict",
+              "speakerId": "char-halim",
+              "text": "\"The checklist should cut it to ten.\" (taps the page) THAT sentence — failure converted into equipment — is why my reference letter will say \"trustworthy under pressure\". Fairy-tale logs get polite references. Honest logs get phone calls to future employers. Now — I believe your club needs you on a video call?",
+              "expressionState": "neutral",
+              "nextNodeId": "sari-call",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "halim-sees-through",
+              "speakerId": "char-halim",
+              "text": "\"Professional growth.\" I was IN the lobby, kid. I watched sixty seconds of statue. (not unkindly) The freeze isn't the problem — every first-year freezes. Hiding it is. Rewrite with the minute included and what you built because of it. …Better. Now, your club call — take it in the break room.",
+              "expressionState": "concerned",
+              "nextNodeId": "sari-call",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "sari-call",
+              "speakerId": "char-sari",
+              "text": "(video call, club room in the background) Kak! Emergency-ish. First meeting of recruitment season is TOMORROW, Hana's buried in scholarship paperwork, Kak Ryo's at the studio, and I've never run one alone. I have the manual, but the manual doesn't breathe. Brief me?",
+              "expressionState": "concerned",
+              "nextNodeId": "brief-sari",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "brief-sari",
+              "speakerId": "narrator",
+              "text": "Delegation time — Grade 11 skill, senior edition. She needs owners, deadlines, and confidence.",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "brief-complete",
+                  "text": "You've got this. Dewi runs the icebreaker — she's done it twice. You own the welcome talk: use the map trick, 'I'll cover three things'. Rafi handles forms. Checkpoint call at eight. Who's doing what?",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "sari-repeats",
+                  "actionType": "recall-delegation-senior",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT",
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Delegasi lengkap: tugas + pemilik + alasan penugasan + checkpoint + cek pemahaman. Hana pernah melakukan ini untuk Anda.",
+                    "modelUtterance": "Three tasks, three owners, checkpoint at eight — now repeat it back to me."
+                  }
+                },
+                {
+                  "id": "brief-vague",
+                  "text": "Honestly, just wing it! Meetings run themselves. Be confident, say some words, snacks fix everything. You'll be fine!",
+                  "dimension": "vague",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "sari-panics",
+                  "actionType": "recall-delegation-miss",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT",
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "\"Wing it\" kepada orang yang meminta struktur adalah pengabaian berkostum semangat. Dia butuh tugas, pemilik, dan checkpoint.",
+                    "modelUtterance": "Three tasks, three owners, checkpoint at eight tonight."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "sari-repeats",
+              "speakerId": "char-sari",
+              "text": "Dewi icebreaker, me welcome-with-the-map-trick, Rafi forms, you at eight. (breathes) Okay. OKAY. I can see the whole meeting now. …Is this what being seniors felt like the whole time? Just — making lists sound like courage?",
+              "expressionState": "warm",
+              "nextNodeId": "episode-close",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "sari-panics",
+              "speakerId": "char-sari",
+              "text": "\"Wing it.\" Right. Cool. (visibly not cool) …Kak, respectfully, when YOU were nervous, did anyone say \"wing it\"? Because the manual says Kak Hana gave people task lists and checkpoints. (pause) Can we… do that instead? (You do it properly. She exhales like a person un-drowning.)",
+              "expressionState": "concerned",
+              "nextNodeId": "episode-close",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "episode-close",
+              "speakerId": "narrator",
+              "text": "Call ended. Log submitted. On the break-room table, your phone buzzes twice: Ryo — \"Studio offered me full-time after graduation. Diploma question just got REAL.\" And Hana — \"Eleven days became three. Corner table tomorrow? I need my club.\" Arc three is coming, ready or not.",
+              "expressionState": "neutral",
+              "terminal": true,
+              "choices": []
+            }
+          ],
+          "hotspots": [
+            {
+              "id": "hotspot-log-book",
+              "label": "Review your internship log",
+              "actionType": "inspect-log-book"
+            },
+            {
+              "id": "hotspot-reference-drawer",
+              "label": "Glance at Halim's reference-letter drawer",
+              "actionType": "inspect-drawer"
+            }
+          ]
+        },
+        "vocabulary": [],
+        "expressions": [
+          {
+            "entryId": "exp-ran-into",
+            "expression": "ran into ___ (a problem)",
+            "meaningId": "menemui-masalah",
+            "register": "neutral",
+            "sourceIntentKey": "intent-log",
+            "recallHookId": "rh-ran-into"
+          },
+          {
+            "entryId": "exp-what-we-learned",
+            "expression": "What we learned is ___",
+            "meaningId": "pelajaran-yang-kami-dapat",
+            "register": "neutral",
+            "sourceIntentKey": "intent-reflection",
+            "recallHookId": "rh-what-we-learned"
+          },
+          {
+            "entryId": "exp-take-care-of",
+            "expression": "Can you take care of ___?",
+            "meaningId": "bisa-tangani",
+            "register": "neutral",
+            "sourceIntentKey": "intent-delegation",
+            "recallHookId": "rh-take-care-of"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-ran-into",
+            "sourceEntryId": "exp-ran-into",
+            "objectiveKey": "obj-g12-10",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-what-we-learned",
+            "sourceEntryId": "exp-what-we-learned",
+            "objectiveKey": "obj-g11-15",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-take-care-of",
+            "sourceEntryId": "exp-take-care-of",
+            "objectiveKey": "obj-g11-07",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [
+          {
+            "hookId": "rh-ran-into",
+            "sourceEntryId": "exp-ran-into"
+          },
+          {
+            "hookId": "rh-what-we-learned",
+            "sourceEntryId": "exp-what-we-learned"
+          },
+          {
+            "hookId": "rh-take-care-of",
+            "sourceEntryId": "exp-take-care-of"
+          }
+        ],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-story-evidence-v1",
+          "evidenceIntent": "RECALL_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sm-g12-07",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "STORY_MODE",
+      "phase": "PHASE_F",
+      "title": "Two Letters",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "GRAMMAR"
+      ],
+      "objectiveKeys": [
+        "obj-g12-11",
+        "obj-g12-12",
+        "obj-g11-02"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "arcId": "arc-the-choice",
+        "episodeId": "sm-g12-07",
+        "lessonBlocks": [
+          {
+            "blockType": "episode-brief",
+            "season": "season-3-crossroads",
+            "arcTitleEn": "The Choice",
+            "episodeNumber": 7,
+            "sceneIntentId": "Meja pojok kantin, tiga sahabat, tiga keputusan: beasiswa Singapura Hana (3 hari), tawaran full-time Ryo vs diploma, dan dua surat Anda sendiri. Bahasa pengandaian dan untung-rugi menjadi cara mereka saling menolong.",
+            "questIntentId": "Quest: The Weighing — bantu Hana dan Ryo menimbang, lalu hadapi dua surat Anda sendiri.",
+            "prerequisites": [
+              "sc-g12-11",
+              "sc-g12-12"
+            ],
+            "relationshipNotes": "Episode kepercayaan tertinggi: nasihat yang jujur (bukan yang nyaman) memperdalam kedua hubungan."
+          }
+        ],
+        "scene": {
+          "sceneId": "scene-two-letters",
+          "locationId": "loc-clubroom",
+          "arcId": "arc-the-choice",
+          "episodeId": "sm-g12-07",
+          "assetIds": [
+            "scene-clubroom-procedural-v1",
+            "char-hana-procedural-v1",
+            "char-ryo-procedural-v1"
+          ],
+          "entryNodeId": "corner-table",
+          "dialogueNodes": [
+            {
+              "id": "corner-table",
+              "speakerId": "char-hana",
+              "text": "Emergency corner-table summit, club rules: honesty, no \"obviously\", and nobody decides anyone else's life. Agenda: my Singapore letter — three days left. Ryo's studio offer. And… whatever those two envelopes in front of you are. You first, Ryo.",
+              "expressionState": "concerned",
+              "nextNodeId": "ryo-weighs",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "ryo-weighs",
+              "speakerId": "char-ryo",
+              "text": "Studio full-time: I'd earn now, learn from Mas Bara, real projects. But no diploma means a ceiling later — promotions, certifications, visas if I ever work abroad. Diploma first: three years of theory I'll half-know, but doors stay open. I keep flip-flopping. Someone argue with me.",
+              "expressionState": "neutral",
+              "nextNodeId": "advise-ryo",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "advise-ryo",
+              "speakerId": "narrator",
+              "text": "He wants pushback, not agreement. Give him the tool, not the answer.",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "advise-conditional",
+                  "text": "Flip it: if the studio allowed a part-time diploma track, you'd take the job in a heartbeat, right? Then it isn't job-versus-diploma — it's whether to ASK. What tips the scale is one email you haven't sent.",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "ryo-blinks",
+                  "actionType": "recall-conditional-tool",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Pengandaian menemukan opsi ketiga yang tersembunyi. \"What tips the scale\" dari pelajaran untung-rugi — dipakai untuk sahabat.",
+                    "modelUtterance": "If they allowed part-time study, you'd take it — so the real question is whether to ask."
+                  }
+                },
+                {
+                  "id": "advise-pick",
+                  "text": "Take the job. Money's real, diplomas are paper. Done. Next agenda item.",
+                  "dimension": "too-direct",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "ryo-pushes-back",
+                  "actionType": "recall-conditional-miss",
+                  "feedback": {
+                    "lenses": [
+                      "SOCIAL_COMMUNICATION",
+                      "CONTEXT"
+                    ],
+                    "message": "Aturan meja: \"nobody decides anyone else's life\". Dia minta diargumentasikan, bukan diputuskan. Beri kerangka, bukan vonis.",
+                    "modelUtterance": "If you take it, you earn now — but what happens in year five without the paper?"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ryo-blinks",
+              "speakerId": "char-ryo",
+              "text": "…One email. I've spent three weeks agonizing and the answer is one email. (already typing) \"Dear Mas Bara, I am writing to ask whether the studio would support a part-time diploma arrangement—\" HANA: He learns. They grow up so fast. Okay. My turn. Terrify me with honesty.",
+              "expressionState": "neutral",
+              "nextNodeId": "hana-weighs",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "ryo-pushes-back",
+              "speakerId": "char-ryo",
+              "text": "\"Done\"? That's not arguing, that's coin-flipping with extra steps. (turns) YOU still owe the table a real analysis. HANA: Seconded. This table runs on reasons, remember? (Fine. The tools, then: conditionals, weights, the whole kit.)",
+              "expressionState": "neutral",
+              "nextNodeId": "hana-weighs",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "hana-weighs",
+              "speakerId": "char-hana",
+              "text": "Singapore. If I go, I get the program I dreamed about at fifteen — and I miss Sari's first year leading, my mom's fifty-fifth, everything here. If I stay, I keep everyone… and maybe spend years wondering. I've made the pros-cons list eleven times. The lists TIE, every time. Help.",
+              "expressionState": "concerned",
+              "nextNodeId": "advise-hana",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "advise-hana",
+              "speakerId": "narrator",
+              "text": "Eleven tied lists. You know exactly what's missing from all of them.",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "advise-weight",
+                  "text": "Lists tie when everything weighs the same — and it doesn't. One question: at twenty-five, which regret is heavier — 'I never went' or 'I missed those years here'? Don't answer fast. That weight IS the answer.",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "hana-quiet",
+                  "actionType": "recall-weighting-tool",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT",
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Pembobotan — bagian yang hilang dari sebelas daftar. Anda memberi alat penimbang, bukan jawabannya. Persis aturan meja.",
+                    "modelUtterance": "Lists tie when everything weighs the same. Which regret is heavier at twenty-five?"
+                  }
+                },
+                {
+                  "id": "advise-comfort",
+                  "text": "Whatever you choose will be fine! You're Hana — you make everything work. Both options are great, honestly.",
+                  "dimension": "vague",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "hana-deflates-again",
+                  "actionType": "recall-weighting-miss",
+                  "feedback": {
+                    "lenses": [
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Penghiburan yang menghindari penimbangan meninggalkan dia sendirian dengan daftar ke-dua belas. Kadang bantuan terbaik adalah pertanyaan yang berat.",
+                    "modelUtterance": "Which regret is heavier — never going, or missing these years?"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "hana-quiet",
+              "speakerId": "char-hana",
+              "text": "(a long, long silence — the kind she never does) …\"I never went\" is heavier. It's been heavier the whole time. I just needed someone to make me hold both. (wet laugh) Three years ago you couldn't order bakso without a script. Now you're — this. Okay. OKAY. Singapore. I'm answering yes tonight, before I un-know it.",
+              "expressionState": "warm",
+              "nextNodeId": "your-letters",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "hana-deflates-again",
+              "speakerId": "char-hana",
+              "text": "\"Everything will be fine\" — the official slogan of unhelpful. (sighs, then straightens) Fine, I'll ask MYSELF the hard one: which regret is heavier at twenty-five? …Never going. It's never going. (quietly) Singapore. Tonight. Before I un-know it.",
+              "expressionState": "concerned",
+              "nextNodeId": "your-letters",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "your-letters",
+              "speakerId": "char-ryo",
+              "text": "Two decisions down. (both turn to you) Those envelopes: the hotel's junior staff offer, and the media diploma acceptance. We've watched you weigh everyone else's life tonight, gate-friend. Your table. Your tools. Your turn.",
+              "expressionState": "neutral",
+              "nextNodeId": "episode-close",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "episode-close",
+              "speakerId": "narrator",
+              "text": "You lay both letters flat. If I take the job… if I take the diploma… what tips MY scale? For the first time all night, the tools point at their owner. The interview that decides it — the real one — is in four days. Sleep is optional; the decision isn't.",
+              "expressionState": "neutral",
+              "terminal": true,
+              "choices": []
+            }
+          ],
+          "hotspots": [
+            {
+              "id": "hotspot-two-envelopes",
+              "label": "Examine the two envelopes",
+              "actionType": "inspect-envelopes"
+            },
+            {
+              "id": "hotspot-hana-lists",
+              "label": "Look at Hana's eleven lists",
+              "actionType": "inspect-lists"
+            }
+          ]
+        },
+        "vocabulary": [],
+        "expressions": [
+          {
+            "entryId": "exp-if-i-take",
+            "expression": "If I take ___, I'll ___",
+            "meaningId": "jika-saya-ambil",
+            "register": "neutral",
+            "sourceIntentKey": "intent-conditionals",
+            "recallHookId": "rh-if-i-take"
+          },
+          {
+            "entryId": "exp-tips-the-scale",
+            "expression": "what tips the scale is ___",
+            "meaningId": "yang-menentukan-adalah",
+            "register": "neutral",
+            "sourceIntentKey": "intent-pros-cons",
+            "recallHookId": "rh-tips-the-scale"
+          },
+          {
+            "entryId": "exp-i-see-your-point-but",
+            "expression": "I see your point, but ___",
+            "meaningId": "saya-paham-tapi",
+            "register": "neutral",
+            "sourceIntentKey": "intent-disagreement",
+            "recallHookId": "rh-i-see-your-point-but"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-if-i-take",
+            "sourceEntryId": "exp-if-i-take",
+            "objectiveKey": "obj-g12-11",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-tips-the-scale",
+            "sourceEntryId": "exp-tips-the-scale",
+            "objectiveKey": "obj-g12-12",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-i-see-your-point-but",
+            "sourceEntryId": "exp-i-see-your-point-but",
+            "objectiveKey": "obj-g11-02",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [
+          {
+            "hookId": "rh-if-i-take",
+            "sourceEntryId": "exp-if-i-take"
+          },
+          {
+            "hookId": "rh-tips-the-scale",
+            "sourceEntryId": "exp-tips-the-scale"
+          },
+          {
+            "hookId": "rh-i-see-your-point-but",
+            "sourceEntryId": "exp-i-see-your-point-but"
+          }
+        ],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-story-evidence-v1",
+          "evidenceIntent": "RECALL_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sm-g12-08",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "STORY_MODE",
+      "phase": "PHASE_F",
+      "title": "The Interview",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g12-06",
+        "obj-g12-13",
+        "obj-g12-02"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "arcId": "arc-the-choice",
+        "episodeId": "sm-g12-08",
+        "lessonBlocks": [
+          {
+            "blockType": "episode-brief",
+            "season": "season-3-crossroads",
+            "arcTitleEn": "The Choice",
+            "episodeNumber": 8,
+            "sceneIntentId": "Wawancara klimaks seri: panel hotel untuk posisi junior staff (varian kerja) — dengan gladi bersama John sebelumnya. STAR, justifikasi, dan seluruh tiga tahun bermuara di satu ruangan.",
+            "questIntentId": "Quest: The Real Thing — lalui gladi John, lalu wawancara panel sesungguhnya.",
+            "prerequisites": [
+              "sc-g12-06",
+              "sc-g12-13",
+              "sm-g12-07"
+            ],
+            "relationshipNotes": "Rekomendasi Pak Halim menyertai berkas Anda; kualitas jawaban menentukan bunyi episode finale.",
+            "johnContent": {
+              "learningContextId": "Gladi wawancara terakhir sebelum panel sungguhan.",
+              "expectedStudentIntent": "Melatih jawaban STAR dan justifikasi pilihan di bawah tekanan.",
+              "tutorGoal": "Formatif murni: menguatkan struktur tanpa menghafalkan naskah; John TIDAK menilai wawancara sesungguhnya.",
+              "relevantLanguage": [
+                "The situation was…",
+                "So what I did was…",
+                "As a result…",
+                "That's a fair concern"
+              ],
+              "acceptableResponseDimensions": [
+                "natural",
+                "understandable-unnatural",
+                "vague"
+              ],
+              "contextualFollowUpIntent": "John menggali bagian STAR yang hilang dari jawaban nyata siswa; pada jawaban kuat ia menaikkan tekanan dengan pertanyaan lanjutan gaya panel."
+            }
+          }
+        ],
+        "scene": {
+          "sceneId": "scene-the-interview",
+          "locationId": "loc-office",
+          "arcId": "arc-the-choice",
+          "episodeId": "sm-g12-08",
+          "assetIds": [
+            "scene-office-procedural-v1",
+            "char-john-procedural-v1",
+            "char-halim-procedural-v1"
+          ],
+          "entryNodeId": "john-warmup",
+          "dialogueNodes": [
+            {
+              "id": "john-warmup",
+              "speakerId": "char-john",
+              "text": "Ten minutes before they call you in. Last rehearsal — not for new answers, just to warm the engine. Quick: they ask about a time you failed. Thirty seconds, STAR shape. Go.",
+              "expressionState": "warm",
+              "nextNodeId": "rehearsal-star",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "rehearsal-star",
+              "speakerId": "narrator",
+              "text": "You have the luggage-bay story loaded. Shape it.",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "star-tight",
+                  "text": "Situation: rushed handoff, week three. Task: luggage move, half-heard. Wrong: I guessed instead of confirming. Right: owned it in a minute, fixed it in fifteen. Result: a process change — and a rule I keep.",
+                  "dimension": "natural",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "john-sends-in",
+                  "actionType": "quest-progress",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "STAR dengan pengakuan ganda — salah dan pemulihan. Cerita kegagalan yang justru membuktikan kelayakan kerja.",
+                    "modelUtterance": "I guessed instead of confirming; owned it in a minute, fixed it in fifteen — and a process changed."
+                  }
+                },
+                {
+                  "id": "star-scattered",
+                  "text": "So there was luggage, and a wedding, and bays — bay three, which was wrong, or bay two was right — anyway the florist was upset, but eventually everything was okay and I learned things.",
+                  "dimension": "understandable-unnatural",
+                  "classification": "LEARNING_PRACTICE",
+                  "nextNodeId": "john-reshapes",
+                  "actionType": "neutral-continue",
+                  "feedback": {
+                    "lenses": [
+                      "NATURALNESS",
+                      "CONTEXT"
+                    ],
+                    "message": "Bahannya emas, urutannya lotere. Kunci STAR: situasi satu kalimat, lalu AKSI Anda, lalu hasil. Susun ulang.",
+                    "modelUtterance": "The situation was a rushed handoff. What I did was guess — then own it and fix it. As a result, the process changed."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "john-sends-in",
+              "speakerId": "char-john",
+              "text": "That's the one. Remember: they're not hunting for perfect people, they're hunting for people who repair well. You've been rehearsing that for three years without knowing it. (door opens) Go get your future.",
+              "expressionState": "warm",
+              "nextNodeId": "panel-opens",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "john-reshapes",
+              "speakerId": "char-john",
+              "text": "Breathe. One sentence of situation. Your action with \"I\". The result with a number. (you rebuild it — tighter, truer) There it is. Now keep that shape when your heart rate doubles. (door opens) Time.",
+              "expressionState": "warm",
+              "nextNodeId": "panel-opens",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "panel-opens",
+              "speakerId": "narrator",
+              "text": "The panel: Bu Rani, a regional manager you've never met, and — at the end of the table, reading your file with theatrical slowness — Pak Halim. MANAGER: \"Your file says festival organizer, club founder-ish, intern. Everyone's file says something like that. Walk me through the ONE moment that says who you'd be on our worst day.\"",
+              "expressionState": "neutral",
+              "nextNodeId": "panel-star",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "panel-star",
+              "speakerId": "narrator",
+              "text": "The real thing. The room is very quiet.",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "panel-mistake-story",
+                  "text": "Your worst day wants the person from mine: week three, I misrouted forty suitcases into a wedding bay on a guess. Within the hour I owned it, moved the bags, sent an apology ahead. Result: a written-handoff rule.",
+                  "dimension": "natural",
+                  "classification": "ASSESSED_INTERACTION",
+                  "nextNodeId": "panel-challenge",
+                  "actionType": "assessed-star-answer",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Jawaban ASSESSED: STAR utuh, kegagalan dimiliki, hasil sistemik. Pak Halim menahan senyum — itu data juga.",
+                    "modelUtterance": "My worst day: guessed, misrouted, owned it within the hour — and the process gained a written backup."
+                  }
+                },
+                {
+                  "id": "panel-safe-story",
+                  "text": "I'd say the festival — I helped organize a five-school event with two hundred visitors. It was very successful, everyone praised the committee, and it shows I work hard and love teamwork.",
+                  "dimension": "vague",
+                  "classification": "ASSESSED_INTERACTION",
+                  "nextNodeId": "panel-digs",
+                  "actionType": "assessed-star-generic",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Cerita sukses tanpa \"saya\" spesifik dan tanpa hari terburuk — persis jawaban yang manajer bilang ada di semua berkas. Mereka akan menggali; siapkan kejujuran.",
+                    "modelUtterance": "Let me answer with a failure instead — week three, the luggage bays…"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "panel-challenge",
+              "speakerId": "narrator",
+              "text": "MANAGER: (leaning in) \"You've also got a diploma acceptance on the table — we checked. Why should we invest in someone who might leave for school in a year?\" The justification question. The real one.",
+              "expressionState": "neutral",
+              "nextNodeId": "panel-justify",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "panel-digs",
+              "speakerId": "narrator",
+              "text": "MANAGER: \"Mm. The committee was successful. What did YOU break, personally, and what did you do about it?\" (They always dig. Halim's eyebrow suggests you have one more chance to tell the bay story properly. You take it — fully, honestly this time.) MANAGER: \"…Better. Much. Now—\"",
+              "expressionState": "neutral",
+              "nextNodeId": "panel-justify",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "panel-justify",
+              "speakerId": "narrator",
+              "text": "Defend the choice. Everything from the corner table applies to you now.",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "justify-honest",
+                  "text": "That's a fair concern — my plan: I asked HR about the weekend-diploma track before this interview. Hired, I do both. The biggest reason I want THIS job: your desk taught me more in twelve weeks than any classroom.",
+                  "dimension": "natural",
+                  "classification": "ASSESSED_INTERACTION",
+                  "nextNodeId": "panel-verdict",
+                  "actionType": "assessed-justification",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT",
+                      "NATURALNESS"
+                    ],
+                    "message": "Akui + rencana terverifikasi + alasan berlabel + \"pricing it in\". Justifikasi yang berdiri di bawah tekanan — trik yang Anda berikan ke Ryo, dipakai untuk diri sendiri.",
+                    "modelUtterance": "Fair concern — I've already asked about the weekend track. I'm pricing both in."
+                  }
+                },
+                {
+                  "id": "justify-deny",
+                  "text": "Oh, the diploma? I'd already decided not to take it. This job is all I want. One hundred percent. No other plans at all.",
+                  "dimension": "context-inappropriate",
+                  "classification": "ASSESSED_INTERACTION",
+                  "nextNodeId": "panel-verdict-doubt",
+                  "actionType": "assessed-justification-weak",
+                  "feedback": {
+                    "lenses": [
+                      "CONTEXT"
+                    ],
+                    "message": "Panel BARU SAJA bilang mereka mengecek. Menyangkal opsi yang mereka tahu ada terdengar seperti jawaban yang disetrika. Kejujuran + rencana selalu menang.",
+                    "modelUtterance": "It's real, and here's how it fits: the weekend track lets me do both."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "panel-verdict",
+              "speakerId": "narrator",
+              "text": "The manager looks at Halim. Halim shrugs the shrug of a man whose reference letter already said all this. RANI: \"We'll be in touch this week.\" Outside, John is very casually not-waiting by the door. \"Well?\" You exhale three years. \"…I told them about the suitcases.\" \"Then you did it right.\"",
+              "expressionState": "warm",
+              "terminal": true,
+              "choices": []
+            },
+            {
+              "id": "panel-verdict-doubt",
+              "speakerId": "narrator",
+              "text": "The manager makes a small note. Halim's face does something complicated. RANI: \"We'll… be in touch.\" Outside, John reads your face. \"The diploma question?\" You nod. \"They knew.\" \"They always know. Next time — and there will be one — lead with the truth and a plan. It interviews better than perfection. Every time.\"",
+              "expressionState": "concerned",
+              "terminal": true,
+              "choices": []
+            }
+          ],
+          "hotspots": [
+            {
+              "id": "hotspot-panel-table",
+              "label": "Take in the panel table",
+              "actionType": "inspect-panel"
+            },
+            {
+              "id": "hotspot-halim-letter",
+              "label": "Glimpse Halim's reference letter",
+              "actionType": "inspect-reference"
+            }
+          ]
+        },
+        "vocabulary": [],
+        "expressions": [
+          {
+            "entryId": "exp-the-situation-was",
+            "expression": "The situation was ___",
+            "meaningId": "situasinya-adalah",
+            "register": "neutral",
+            "sourceIntentKey": "intent-star",
+            "recallHookId": "rh-the-situation-was"
+          },
+          {
+            "entryId": "exp-as-a-result-star",
+            "expression": "As a result, ___",
+            "meaningId": "hasilnya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-star",
+            "recallHookId": "rh-as-a-result-star"
+          },
+          {
+            "entryId": "exp-thats-a-fair-concern",
+            "expression": "That's a fair concern — ___",
+            "meaningId": "kekhawatiran-yang-wajar",
+            "register": "neutral",
+            "sourceIntentKey": "intent-justify",
+            "recallHookId": "rh-thats-a-fair-concern"
+          },
+          {
+            "entryId": "exp-im-confident-with",
+            "expression": "I'm confident with ___",
+            "meaningId": "saya-percaya-diri-dengan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-skills",
+            "recallHookId": "rh-im-confident-with"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-the-situation-was",
+            "sourceEntryId": "exp-the-situation-was",
+            "objectiveKey": "obj-g12-06",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-as-a-result-star",
+            "sourceEntryId": "exp-as-a-result-star",
+            "objectiveKey": "obj-g12-06",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-thats-a-fair-concern",
+            "sourceEntryId": "exp-thats-a-fair-concern",
+            "objectiveKey": "obj-g12-13",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-im-confident-with",
+            "sourceEntryId": "exp-im-confident-with",
+            "objectiveKey": "obj-g12-02",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [
+          {
+            "hookId": "rh-the-situation-was",
+            "sourceEntryId": "exp-the-situation-was"
+          },
+          {
+            "hookId": "rh-as-a-result-star",
+            "sourceEntryId": "exp-as-a-result-star"
+          },
+          {
+            "hookId": "rh-thats-a-fair-concern",
+            "sourceEntryId": "exp-thats-a-fair-concern"
+          }
+        ],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-story-evidence-v1",
+          "evidenceIntent": "RECALL_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sm-g12-09",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "STORY_MODE",
+      "phase": "PHASE_F",
+      "title": "Graduation",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "WRITING"
+      ],
+      "objectiveKeys": [
+        "obj-g12-15",
+        "obj-g10-15"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "arcId": "arc-the-choice",
+        "episodeId": "sm-g12-09",
+        "lessonBlocks": [
+          {
+            "blockType": "episode-brief",
+            "season": "season-3-crossroads",
+            "arcTitleEn": "The Choice",
+            "episodeNumber": 9,
+            "sceneIntentId": "Finale seri. Kelulusan, serah terima klub kepada Sari, dan — di gerbang tempat semuanya dimulai — kisah tiga tahun diceritakan dengan seluruh perangkat bercerita Season 1. Recall pamungkas: obj-g10-15.",
+            "questIntentId": "Quest: The Last Story — sampaikan perpisahan yang layak untuk tiga tahun, dan tutup dengan kisah di gerbang.",
+            "prerequisites": [
+              "sc-g12-15",
+              "sm-g10-09"
+            ],
+            "relationshipNotes": "Semua nilai hubungan seri membayar di sini; varian dialog mencerminkan perjalanan Anda."
+          }
+        ],
+        "scene": {
+          "sceneId": "scene-graduation",
+          "locationId": "loc-gate",
+          "arcId": "arc-the-choice",
+          "episodeId": "sm-g12-09",
+          "assetIds": [
+            "scene-school-gate-procedural-v1",
+            "char-hana-procedural-v1",
+            "char-ryo-procedural-v1",
+            "char-john-procedural-v1",
+            "char-sari-procedural-v1"
+          ],
+          "entryNodeId": "handover",
+          "dialogueNodes": [
+            {
+              "id": "handover",
+              "speakerId": "char-sari",
+              "text": "(in the clubroom, holding the battered manual like a crown) Official handover. I, Sari, accept: one club, one manual, one emotionally significant trophy full of markers, and a mudskipper legacy I did not ask for. (deep breath) Any final words, seniors?",
+              "expressionState": "warm",
+              "nextNodeId": "farewell-sari",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "farewell-sari",
+              "speakerId": "narrator",
+              "text": "Your farewell to her sets the tone for everything after.",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "farewell-specific",
+                  "text": "Sari — I can't thank you enough for the night you briefed ME and taught me lists sound like courage. The club's in better hands than it started in. This isn't goodbye: checkpoint call every semester. Promise.",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "gate-gathering",
+                  "actionType": "recall-farewell-craft",
+                  "feedback": {
+                    "lenses": [
+                      "NATURALNESS",
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Terima kasih spesifik + pengakuan + jembatan konkret. Pelajaran perpisahan, dieksekusi penuh.",
+                    "modelUtterance": "I can't thank you enough for that night — and this isn't goodbye: checkpoint call every semester."
+                  }
+                },
+                {
+                  "id": "farewell-flat",
+                  "text": "Good luck with everything, Sari. Keep in touch! It's been fun. Anyway—",
+                  "dimension": "socially-weak",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "sari-calls-it",
+                  "actionType": "recall-farewell-thin",
+                  "feedback": {
+                    "lenses": [
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "\"Keep in touch\" tanpa mekanisme — janji yang mati dalam seminggu, dan Anda mengajarkan itu sendiri. Beri memori spesifik dan satu janji kecil.",
+                    "modelUtterance": "Thank you for the briefing night — and checkpoint call, every semester. Promise."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "sari-calls-it",
+              "speakerId": "char-sari",
+              "text": "\"Keep in touch\"? From the person whose farewell lesson literally has a slide titled \"keep in touch is where promises go to die\"? (folds arms, grinning) Try again, senior. With a mechanism. …Thank you. THAT one goes in the manual.",
+              "expressionState": "warm",
+              "nextNodeId": "gate-gathering",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "gate-gathering",
+              "speakerId": "narrator",
+              "text": "Sunset. The gate. Hana — Singapore visa printed — Ryo with his studio-plus-weekend-diploma contract, John pretending he isn't sentimental, and a cluster of juniors. HANA: \"Tradition demands it. Semester's end — someone tells the story. Except this time it's three years. And it's you. It was always going to be you.\"",
+              "expressionState": "warm",
+              "nextNodeId": "the-last-story",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "the-last-story",
+              "speakerId": "narrator",
+              "text": "The gate where Hana first said \"you look new\". Every tool you own, one last time.",
+              "expressionState": "neutral",
+              "terminal": false,
+              "choices": [
+                {
+                  "id": "story-full-craft",
+                  "text": "Okay, so this happened right here: a stranger said 'you look new' and adopted me. At first, an empty clubroom. Then — guess what — it filled. And that's how we built a bridge. In the end, we grew into ourselves.",
+                  "dimension": "natural",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "finale-warm",
+                  "actionType": "recall-story-finale",
+                  "feedback": {
+                    "lenses": [
+                      "NATURALNESS"
+                    ],
+                    "message": "Hook + at first + guess what + and-that's-how + in-the-end — seluruh perangkat Season 1, membingkai tiga tahun. Recall pamungkas seri: sempurna.",
+                    "modelUtterance": "Okay, so this happened right here… and that's how we built a bridge. In the end, we got used to becoming ourselves."
+                  }
+                },
+                {
+                  "id": "story-shy",
+                  "text": "I'm… not really the story person. Hana should do it. She's better at this. I'll just say thanks, everyone. It was a good three years.",
+                  "dimension": "vague",
+                  "classification": "RECALL_EVIDENCE",
+                  "nextNodeId": "circle-helps",
+                  "actionType": "recall-story-retreat",
+                  "feedback": {
+                    "lenses": [
+                      "SOCIAL_COMMUNICATION"
+                    ],
+                    "message": "Tiga tahun lalu, mungkin. Tetapi ruangan ini sudah mendengar Anda bercerita, memimpin, dan mewawancara. Mereka menunggu — dan mereka benar.",
+                    "modelUtterance": "Okay, so this happened three years ago, right here at this gate…"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "circle-helps",
+              "speakerId": "narrator",
+              "text": "RYO: \"Incorrect. The data shows you're exactly the story person.\" HANA: \"We'll start you off: 'Okay, so this happened…'\" (the whole circle, even John, chants it softly — and something in you unlocks. You take the breath. You tell it: the gate, the empty room, the storm, the bridge. All of it. Properly.)",
+              "expressionState": "warm",
+              "nextNodeId": "finale-warm",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "finale-warm",
+              "speakerId": "char-john",
+              "text": "(quiet, as the circle breaks into hugs) Three years ago I told a nervous kid: badly is fine, silently is not. (nods at the gate, the club, the people) You were never silent again. Wherever you're going — hotel desk, studio, campus — the English was never the point. It was the bridge. Class dismissed.",
+              "expressionState": "warm",
+              "nextNodeId": "post-credits",
+              "terminal": false,
+              "choices": []
+            },
+            {
+              "id": "post-credits",
+              "speakerId": "narrator",
+              "text": "The gate lights flicker on. Hana's flight is Sunday; Ryo starts Monday; your first shift — or first lecture — is soon enough. On the club noticeboard, next to a faded poster that once said \"beginners welcome\", Sari has pinned a new one. Same words. New handwriting. The story continues without needing you — which was, it turns out, the whole assignment. THE END (of Season 3).",
+              "expressionState": "warm",
+              "terminal": true,
+              "choices": []
+            }
+          ],
+          "hotspots": [
+            {
+              "id": "hotspot-old-club-notice",
+              "label": "Look at the old club notice",
+              "actionType": "inspect-old-notice"
+            },
+            {
+              "id": "hotspot-new-poster",
+              "label": "Read Sari's new poster",
+              "actionType": "inspect-new-poster"
+            }
+          ]
+        },
+        "vocabulary": [],
+        "expressions": [
+          {
+            "entryId": "exp-cant-thank-you-enough",
+            "expression": "I can't thank you enough",
+            "meaningId": "terima-kasih-tak-terhingga",
+            "register": "neutral",
+            "sourceIntentKey": "intent-farewell",
+            "recallHookId": "rh-cant-thank-you-enough"
+          },
+          {
+            "entryId": "exp-this-isnt-goodbye",
+            "expression": "This isn't goodbye",
+            "meaningId": "ini-bukan-perpisahan",
+            "register": "informal",
+            "sourceIntentKey": "intent-farewell",
+            "recallHookId": "rh-this-isnt-goodbye"
+          },
+          {
+            "entryId": "exp-thats-how",
+            "expression": "And that's how ___",
+            "meaningId": "begitulah-akhirnya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-storytelling",
+            "recallHookId": "rh-thats-how"
+          },
+          {
+            "entryId": "exp-at-first",
+            "expression": "at first",
+            "meaningId": "awalnya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-storytelling",
+            "recallHookId": "rh-at-first"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-cant-thank-you-enough",
+            "sourceEntryId": "exp-cant-thank-you-enough",
+            "objectiveKey": "obj-g12-15",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-this-isnt-goodbye",
+            "sourceEntryId": "exp-this-isnt-goodbye",
+            "objectiveKey": "obj-g12-15",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-thats-how",
+            "sourceEntryId": "exp-thats-how",
+            "objectiveKey": "obj-g10-15",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-at-first",
+            "sourceEntryId": "exp-at-first",
+            "objectiveKey": "obj-g10-15",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [
+          {
+            "hookId": "rh-cant-thank-you-enough",
+            "sourceEntryId": "exp-cant-thank-you-enough"
+          },
+          {
+            "hookId": "rh-this-isnt-goodbye",
+            "sourceEntryId": "exp-this-isnt-goodbye"
+          },
+          {
+            "hookId": "rh-thats-how",
+            "sourceEntryId": "exp-thats-how"
+          },
+          {
+            "hookId": "rh-at-first",
+            "sourceEntryId": "exp-at-first"
+          }
+        ],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-story-evidence-v1",
+          "evidenceIntent": "RECALL_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    }
+  ]
+}

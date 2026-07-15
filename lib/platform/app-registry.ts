@@ -31,6 +31,14 @@
     href: "/apps/pmp/dashboard",
     status: "active",
   },
+  {
+    id: "storyarc",
+    slug: "storyarc",
+    name: "Nexus StoryArc",
+    description: "English for SMA and SMK Grades 10–12 through school learning, interactive stories, and exam practice",
+    href: "/apps/storyarc",
+    status: "active",
+  },
 ];
 
 

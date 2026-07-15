@@ -1,0 +1,4446 @@
+{
+  "schemaVersion": "storyarc.content.v1",
+  "packageId": "storyarc-initial-90-b1-g10-school-core",
+  "appSlug": "storyarc",
+  "releaseTarget": "initial-90-release-1",
+  "curriculum": {
+    "sourceKey": "indonesia-phase-ef-descriptive-gap",
+    "sourceTitle": "StoryArc Phase E/F Descriptive Mapping",
+    "sourceAuthority": "UNVERIFIED_PROJECT_MAPPING",
+    "sourceVerificationNote": "Academic lead must supply verified CP identifiers before curriculum-alignment claims.",
+    "versionKey": "initial-90-v1",
+    "versionTitle": "Initial 90-item release mapping"
+  },
+  "competencies": [
+    {
+      "competencyKey": "cpa-e-interact",
+      "title": "Familiar spoken interaction",
+      "description": "Interact in everyday school situations: introductions, small talk, preferences, invitations, clarification."
+    },
+    {
+      "competencyKey": "cpa-e-listen",
+      "title": "Everyday listening comprehension",
+      "description": "Understand announcements and informal conversations for gist and detail."
+    },
+    {
+      "competencyKey": "cpa-e-desc",
+      "title": "Descriptive texts",
+      "description": "Comprehend and produce descriptions of people and places."
+    },
+    {
+      "competencyKey": "cpa-e-recount",
+      "title": "Recount texts",
+      "description": "Comprehend and produce recounts of past events."
+    },
+    {
+      "competencyKey": "cpa-e-narr",
+      "title": "Narrative basics",
+      "description": "Tell a simple connected story with sequencing language."
+    },
+    {
+      "competencyKey": "cpa-e-proc",
+      "title": "Procedure texts",
+      "description": "Explain and follow simple sequenced procedures."
+    },
+    {
+      "competencyKey": "cpa-e-func",
+      "title": "Functional reading and writing",
+      "description": "Use posters, forms, and short messages for real purposes."
+    },
+    {
+      "competencyKey": "cpa-e-lang",
+      "title": "Language awareness in context",
+      "description": "Use present and past forms, prepositions of place, and question forms to support communication."
+    }
+  ],
+  "objectives": [
+    {
+      "objectiveKey": "obj-g10-01",
+      "competencyKey": "cpa-e-interact",
+      "title": "Introduce yourself and respond naturally in a new-school context",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g10-02",
+      "competencyKey": "cpa-e-interact",
+      "title": "Open, maintain, and close small talk",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g10-03",
+      "competencyKey": "cpa-e-listen",
+      "title": "Understand school announcements for gist and detail",
+      "primarySkill": "LISTENING"
+    },
+    {
+      "objectiveKey": "obj-g10-04",
+      "competencyKey": "cpa-e-desc",
+      "title": "Describe people and places",
+      "primarySkill": "VOCABULARY"
+    },
+    {
+      "objectiveKey": "obj-g10-05",
+      "competencyKey": "cpa-e-lang",
+      "title": "Ask for and give directions",
+      "primarySkill": "GRAMMAR"
+    },
+    {
+      "objectiveKey": "obj-g10-06",
+      "competencyKey": "cpa-e-lang",
+      "title": "Talk about routines and schedules",
+      "primarySkill": "GRAMMAR"
+    },
+    {
+      "objectiveKey": "obj-g10-07",
+      "competencyKey": "cpa-e-func",
+      "title": "Read functional school texts",
+      "primarySkill": "READING"
+    },
+    {
+      "objectiveKey": "obj-g10-08",
+      "competencyKey": "cpa-e-interact",
+      "title": "Make, accept, and decline invitations politely",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g10-09",
+      "competencyKey": "cpa-e-recount",
+      "title": "Recount past events with past simple",
+      "primarySkill": "WRITING"
+    },
+    {
+      "objectiveKey": "obj-g10-10",
+      "competencyKey": "cpa-e-listen",
+      "title": "Follow informal conversations between peers",
+      "primarySkill": "LISTENING"
+    },
+    {
+      "objectiveKey": "obj-g10-11",
+      "competencyKey": "cpa-e-interact",
+      "title": "Express likes, dislikes, and preferences",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g10-12",
+      "competencyKey": "cpa-e-interact",
+      "title": "Ask for help, repetition, and clarification",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g10-13",
+      "competencyKey": "cpa-e-proc",
+      "title": "Explain a simple procedure in sequence",
+      "primarySkill": "VOCABULARY"
+    },
+    {
+      "objectiveKey": "obj-g10-14",
+      "competencyKey": "cpa-e-func",
+      "title": "Write short messages with appropriate informal register",
+      "primarySkill": "WRITING"
+    },
+    {
+      "objectiveKey": "obj-g10-15",
+      "competencyKey": "cpa-e-narr",
+      "title": "Tell a simple connected story",
+      "primarySkill": "SPEAKING"
+    }
+  ],
+  "assets": [
+    {
+      "assetId": "audio-sc-g10-01-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g10-01/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g10-01/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/068304fa5bdbde662135c2e14b2d326d418417f918c62cc1d02b15ca0e2d183e.mp3",
+      "contentHash": "sha256:068304fa5bdbde662135c2e14b2d326d418417f918c62cc1d02b15ca0e2d183e",
+      "mimeType": "audio/mpeg",
+      "byteSize": 475533,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g10-02-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g10-02/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g10-02/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/a6985ed1b75815a7615e7f44fcb7b4d3080c95d4932154049577cd21945f30ac.mp3",
+      "contentHash": "sha256:a6985ed1b75815a7615e7f44fcb7b4d3080c95d4932154049577cd21945f30ac",
+      "mimeType": "audio/mpeg",
+      "byteSize": 362057,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g10-03-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g10-03/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g10-03/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/925758c201e40f45216fbd61f7fc5d6a2e9c29395b9128d5ee12a60f8f50bbda.mp3",
+      "contentHash": "sha256:925758c201e40f45216fbd61f7fc5d6a2e9c29395b9128d5ee12a60f8f50bbda",
+      "mimeType": "audio/mpeg",
+      "byteSize": 345757,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g10-05-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g10-05/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g10-05/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/e0ea945eff0257e491d621f31bdc6fd3c09c38ed2da7a26231f754240854e4f9.mp3",
+      "contentHash": "sha256:e0ea945eff0257e491d621f31bdc6fd3c09c38ed2da7a26231f754240854e4f9",
+      "mimeType": "audio/mpeg",
+      "byteSize": 450456,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g10-06-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g10-06/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g10-06/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/808a6283e208e754dd573b77f0dc0c574cd4f3190cdf016e5535cacc1d8b9711.mp3",
+      "contentHash": "sha256:808a6283e208e754dd573b77f0dc0c574cd4f3190cdf016e5535cacc1d8b9711",
+      "mimeType": "audio/mpeg",
+      "byteSize": 376790,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g10-08-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g10-08/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g10-08/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/c8dae37d65700bbcf328b85cd73a4a2d7513a8908b1ff0e6d52a1f4189ee1c0c.mp3",
+      "contentHash": "sha256:c8dae37d65700bbcf328b85cd73a4a2d7513a8908b1ff0e6d52a1f4189ee1c0c",
+      "mimeType": "audio/mpeg",
+      "byteSize": 472712,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g10-10-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g10-10/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g10-10/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/4a4c73e90f04bc1b9d99790c69b2bff1116553befa7823af8d631ed29bc7aaea.mp3",
+      "contentHash": "sha256:4a4c73e90f04bc1b9d99790c69b2bff1116553befa7823af8d631ed29bc7aaea",
+      "mimeType": "audio/mpeg",
+      "byteSize": 522867,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g10-11-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g10-11/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g10-11/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/672aaf7b90b93030ded6c9d36d02081e8e3d356efef9e0f06825339401c9ce59.mp3",
+      "contentHash": "sha256:672aaf7b90b93030ded6c9d36d02081e8e3d356efef9e0f06825339401c9ce59",
+      "mimeType": "audio/mpeg",
+      "byteSize": 446067,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g10-12-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g10-12/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g10-12/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/0e412dc94cc8ff864013c5a9f53f53cbe318c4e4a2146f9bb7191700fc483293.mp3",
+      "contentHash": "sha256:0e412dc94cc8ff864013c5a9f53f53cbe318c4e4a2146f9bb7191700fc483293",
+      "mimeType": "audio/mpeg",
+      "byteSize": 565499,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g10-15-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g10-15/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g10-15/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/73c38c85f92fc95f54411729e24eb54fc78def2480a5a35219ada9fe93c06c6a.mp3",
+      "contentHash": "sha256:73c38c85f92fc95f54411729e24eb54fc78def2480a5a35219ada9fe93c06c6a",
+      "mimeType": "audio/mpeg",
+      "byteSize": 510955,
+      "temporary": true
+    }
+  ],
+  "items": [
+    {
+      "stableId": "sc-g10-01",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_10",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_E",
+      "title": "Introducing Yourself Beyond \"My Name Is\"",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING",
+        "VOCABULARY"
+      ],
+      "objectiveKeys": [
+        "obj-g10-01"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Introduce yourself so people want to keep talking",
+            "instructionId": "Setelah pelajaran ini, Anda dapat memperkenalkan diri secara alami dan menanggapi perkenalan orang lain.",
+            "canDoEn": "I can introduce myself and respond naturally on a first meeting."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Pikirkan pertemuan pertama Anda di sekolah baru. Jawab singkat dalam bahasa Inggris.",
+            "promptsEn": [
+              "What do people usually say first when they meet?",
+              "What do you want a new classmate to know about you?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Perkenalan alami memiliki tiga bagian: sapaan, informasi singkat, dan pertanyaan balik. Pertanyaan balik membuat percakapan terus berjalan.",
+            "patterns": [
+              {
+                "en": "Hi, I'm ___. Nice to meet you.",
+                "noteId": "Sapaan standar yang selalu aman."
+              },
+              {
+                "en": "I'm from ___, and I'm really into ___.",
+                "noteId": "\"into\" berarti sangat menyukai; terdengar alami untuk remaja."
+              },
+              {
+                "en": "How about you?",
+                "noteId": "Pertanyaan balik singkat agar lawan bicara ikut bercerita."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "A: Hey, are you new here? I haven't seen you before. B: Yeah, I just moved from Makassar. I'm Dinda. A: Nice to meet you, Dinda. I'm Bayu. So, how do you like it so far? B: It's big! I got lost twice this morning, honestly. A: Everyone does. What are you into? Any clubs yet? B: Not yet. I like photography, though. How about you?",
+            "tasks": [
+              {
+                "promptEn": "Where is Dinda from?",
+                "answerEn": "Makassar",
+                "explanationId": "Informasi disebutkan langsung setelah \"I just moved from\"."
+              },
+              {
+                "promptEn": "How does Dinda keep the conversation going at the end?",
+                "answerEn": "She asks \"How about you?\"",
+                "explanationId": "Pertanyaan balik adalah pola inti pelajaran ini."
+              },
+              {
+                "promptEn": "What detail does Dinda share about her morning?",
+                "answerEn": "She got lost twice.",
+                "explanationId": "Detail kecil membuat perkenalan terasa hidup."
+              }
+            ],
+            "audioAssetId": "audio-sc-g10-01-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "A classmate says: \"Hi, I'm Raka. Nice to meet you.\" Choose the most natural reply.",
+                "optionsEn": [
+                  "Nice to meet you too. I'm ___.",
+                  "Yes. My identity is ___.",
+                  "I am pleased to be acquainted with your person."
+                ],
+                "answerIndex": 0,
+                "explanationId": "Jawaban kedua tidak alami; jawaban ketiga terlalu formal untuk teman sebaya."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Make this sound more natural: \"I like football very much.\"",
+                "answerEn": "I'm really into football.",
+                "explanationId": "\"be into\" adalah ungkapan sehari-hari untuk kesukaan yang kuat."
+              },
+              {
+                "type": "choice",
+                "promptEn": "Which follow-up keeps the conversation alive?",
+                "optionsEn": [
+                  "OK.",
+                  "How about you?",
+                  "That is all."
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pertanyaan balik mengundang lawan bicara untuk berbagi."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Record a 30-second self-introduction for your first day: name, where you are from, one thing you are into, and one question for your new classmate.",
+            "supportEn": [
+              "Hi, I'm…",
+              "I'm from…",
+              "I'm really into…",
+              "How about you?"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "grammar",
+              "vocabulary",
+              "naturalness",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g10-01",
+            "noteId": "Ungkapan pelajaran ini langsung dipakai saat bertemu Hana di gerbang sekolah pada Episode 1."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "Your new classmate says \"I'm into robotics.\" What does she mean?",
+                "optionsEn": [
+                  "She is inside the robotics room.",
+                  "She really likes robotics.",
+                  "She is confused by robotics."
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"be into\" = sangat menyukai."
+              },
+              {
+                "promptEn": "Choose the best closing for a short first chat before class starts.",
+                "optionsEn": [
+                  "See you around!",
+                  "Goodbye forever.",
+                  "You are dismissed."
+                ],
+                "answerIndex": 0,
+                "explanationId": "\"See you around\" santai dan ramah; pilihan lain aneh atau kasar."
+              },
+              {
+                "promptEn": "Which introduction gives the listener something to respond to?",
+                "optionsEn": [
+                  "I'm Sinta.",
+                  "I'm Sinta. I just moved here, and I'm into badminton. How about you?",
+                  "My name is Sinta and that is my name."
+                ],
+                "answerIndex": 1,
+                "explanationId": "Informasi singkat plus pertanyaan balik membuat percakapan berlanjut."
+              }
+            ]
+          },
+          {
+            "blockType": "rubric-definition",
+            "rubricRevisionId": "rubric-g10-school-core-v1",
+            "scale": "0-4 per criterion",
+            "criteria": [
+              {
+                "criterionId": "task-fulfillment",
+                "titleEn": "Task fulfillment",
+                "descriptorId": "Jawaban menyelesaikan tuntutan end-check dan tetap relevan."
+              },
+              {
+                "criterionId": "language-accuracy",
+                "titleEn": "Language accuracy",
+                "descriptorId": "Grammar dan kosakata target digunakan secara akurat."
+              },
+              {
+                "criterionId": "meaning",
+                "titleEn": "Meaning",
+                "descriptorId": "Makna jawaban jelas dan dapat dibuktikan dari stimulus."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-classmate",
+            "term": "classmate",
+            "meaningId": "teman-sekelas",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-first-meeting",
+            "recallHookId": "rh-voc-classmate"
+          },
+          {
+            "entryId": "voc-hometown",
+            "term": "hometown",
+            "meaningId": "kota-asal",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-first-meeting",
+            "recallHookId": "rh-voc-hometown"
+          },
+          {
+            "entryId": "voc-hobby",
+            "term": "hobby",
+            "meaningId": "hobi",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-first-meeting",
+            "recallHookId": "rh-voc-hobby"
+          },
+          {
+            "entryId": "voc-nervous",
+            "term": "nervous",
+            "meaningId": "gugup",
+            "partOfSpeech": "adjective",
+            "sourceIntentKey": "intent-first-meeting",
+            "recallHookId": "rh-voc-nervous"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-nice-to-meet-you-too",
+            "expression": "Nice to meet you too",
+            "meaningId": "senang-bertemu-juga",
+            "register": "neutral",
+            "sourceIntentKey": "intent-first-meeting",
+            "recallHookId": "rh-nice-to-meet-you-too"
+          },
+          {
+            "entryId": "exp-im-really-into",
+            "expression": "I'm really into ___",
+            "meaningId": "saya-sangat-suka",
+            "register": "informal",
+            "sourceIntentKey": "intent-first-meeting",
+            "recallHookId": "rh-im-really-into"
+          },
+          {
+            "entryId": "exp-how-about-you",
+            "expression": "How about you?",
+            "meaningId": "kalau-kamu",
+            "register": "informal",
+            "sourceIntentKey": "intent-first-meeting",
+            "recallHookId": "rh-how-about-you"
+          },
+          {
+            "entryId": "exp-see-you-around",
+            "expression": "See you around",
+            "meaningId": "sampai-jumpa-lagi",
+            "register": "informal",
+            "sourceIntentKey": "intent-first-meeting",
+            "recallHookId": "rh-see-you-around"
+          },
+          {
+            "entryId": "exp-i-just-moved-here",
+            "expression": "I just moved here",
+            "meaningId": "saya-baru-pindah",
+            "register": "neutral",
+            "sourceIntentKey": "intent-first-meeting",
+            "recallHookId": "rh-i-just-moved-here"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-im-really-into",
+            "sourceEntryId": "exp-im-really-into",
+            "objectiveKey": "obj-g10-01",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-how-about-you",
+            "sourceEntryId": "exp-how-about-you",
+            "objectiveKey": "obj-g10-01",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g10-02",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_10",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_E",
+      "title": "Small Talk Starters",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g10-02"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Start and keep a light conversation going",
+            "instructionId": "Anda akan belajar membuka obrolan ringan, meresponsnya, dan menutupnya dengan sopan.",
+            "canDoEn": "I can start, continue, and end small talk with a classmate."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab dalam bahasa Inggris.",
+            "promptsEn": [
+              "What topics are safe to talk about with someone you just met?",
+              "What topics might be uncomfortable?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Obrolan ringan biasanya dimulai dari situasi bersama: cuaca, pelajaran, kantin, acara sekolah. Tanggapan yang baik menambahkan informasi, bukan hanya \"yes\" atau \"no\".",
+            "patterns": [
+              {
+                "en": "Crowded today, huh?",
+                "noteId": "Komentar situasi + \"huh?\" mengundang tanggapan santai."
+              },
+              {
+                "en": "Did you catch the announcement this morning?",
+                "noteId": "\"catch\" di sini berarti sempat mendengar."
+              },
+              {
+                "en": "Anyway, I'd better get to class.",
+                "noteId": "\"Anyway\" menandai penutupan obrolan dengan halus."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "A: Ugh, the canteen line is so long today. B: Right? It's because of the bazaar, I think. A: Oh yeah, that's this week, isn't it? Are you going? B: Probably. My friend has a stall there. A: Nice. Anyway, I'd better run, class starts in five. B: See you!",
+            "tasks": [
+              {
+                "promptEn": "What shared situation starts this small talk?",
+                "answerEn": "The long canteen line.",
+                "explanationId": "Komentar tentang situasi bersama adalah pembuka paling mudah."
+              },
+              {
+                "promptEn": "How does speaker A end the chat politely?",
+                "answerEn": "\"Anyway, I'd better run, class starts in five.\"",
+                "explanationId": "\"Anyway\" + alasan singkat adalah penutup yang halus."
+              },
+              {
+                "promptEn": "Does B answer with only yes/no?",
+                "answerEn": "No, B adds information about the bazaar and a friend's stall.",
+                "explanationId": "Menambahkan informasi menjaga percakapan tetap hidup."
+              }
+            ],
+            "audioAssetId": "audio-sc-g10-02-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "It starts raining while you wait with a classmate. Choose the most natural opener.",
+                "optionsEn": [
+                  "Wow, it's really coming down, huh?",
+                  "Precipitation is occurring presently.",
+                  "You. Talk to me about rain."
+                ],
+                "answerIndex": 0,
+                "explanationId": "Pilihan kedua terlalu formal; pilihan ketiga terlalu memerintah."
+              },
+              {
+                "type": "choice",
+                "promptEn": "Classmate: \"Did you watch the match last night?\" Which reply keeps the talk going?",
+                "optionsEn": [
+                  "Yes.",
+                  "Yeah, that last goal was crazy! Did you stay up for it?",
+                  "I do not discuss sports."
+                ],
+                "answerIndex": 1,
+                "explanationId": "Tanggapan + detail + pertanyaan balik = pola emas obrolan ringan."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Close this chat politely: you need to go to the library.",
+                "answerEn": "Anyway, I'd better head to the library. See you!",
+                "explanationId": "Gunakan \"anyway\" dan alasan singkat, lalu salam penutup."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "You are in the canteen line behind a classmate you barely know. Record a short small-talk exchange: open with the situation, respond to their answer, and close politely (both roles, 40 seconds).",
+            "supportEn": [
+              "…, huh?",
+              "Right? …",
+              "Anyway, I'd better…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "naturalness",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g10-01",
+            "noteId": "Dipraktikkan bersama Hana pada Episode 1 dan di kantin pada Episode 3."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "Which is the safest small-talk topic with a new classmate?",
+                "optionsEn": [
+                  "Their family's income",
+                  "Today's crowded schedule",
+                  "Their exam failures"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Situasi bersama aman; topik pribadi sensitif dihindari."
+              },
+              {
+                "promptEn": "\"Did you catch the announcement?\" Here, \"catch\" means…",
+                "optionsEn": [
+                  "to grab with your hands",
+                  "to hear/notice it",
+                  "to chase it"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"catch\" informal berarti sempat mendengar/melihat."
+              },
+              {
+                "promptEn": "What makes \"Anyway, I'd better get going\" polite?",
+                "optionsEn": [
+                  "It blames the other person.",
+                  "It signals closing softly and gives a reason.",
+                  "It is very loud."
+                ],
+                "answerIndex": 1,
+                "explanationId": "Penutup halus menjaga hubungan sosial."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-crowded",
+            "term": "crowded",
+            "meaningId": "ramai-penuh",
+            "partOfSpeech": "adjective",
+            "sourceIntentKey": "intent-small-talk",
+            "recallHookId": "rh-voc-crowded"
+          },
+          {
+            "entryId": "voc-announcement",
+            "term": "announcement",
+            "meaningId": "pengumuman",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-small-talk",
+            "recallHookId": "rh-voc-announcement"
+          },
+          {
+            "entryId": "voc-stall",
+            "term": "stall",
+            "meaningId": "stan-kios",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-small-talk",
+            "recallHookId": "rh-voc-stall"
+          },
+          {
+            "entryId": "voc-line",
+            "term": "line",
+            "meaningId": "antrean",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-small-talk",
+            "recallHookId": "rh-voc-line"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-huh-tag",
+            "expression": "…, huh?",
+            "meaningId": "ya-kan",
+            "register": "informal",
+            "sourceIntentKey": "intent-small-talk",
+            "recallHookId": "rh-huh-tag"
+          },
+          {
+            "entryId": "exp-did-you-catch",
+            "expression": "Did you catch ___?",
+            "meaningId": "apakah-kamu-sempat-dengar",
+            "register": "informal",
+            "sourceIntentKey": "intent-small-talk",
+            "recallHookId": "rh-did-you-catch"
+          },
+          {
+            "entryId": "exp-id-better-get-going",
+            "expression": "I'd better get going",
+            "meaningId": "saya-harus-segera-pergi",
+            "register": "neutral",
+            "sourceIntentKey": "intent-small-talk",
+            "recallHookId": "rh-id-better-get-going"
+          },
+          {
+            "entryId": "exp-right-agreement",
+            "expression": "Right?",
+            "meaningId": "iya-kan",
+            "register": "informal",
+            "sourceIntentKey": "intent-small-talk",
+            "recallHookId": "rh-right-agreement"
+          },
+          {
+            "entryId": "exp-anyway-closer",
+            "expression": "Anyway, …",
+            "meaningId": "ngomong-ngomong-penutup",
+            "register": "informal",
+            "sourceIntentKey": "intent-small-talk",
+            "recallHookId": "rh-anyway-closer"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-id-better-get-going",
+            "sourceEntryId": "exp-id-better-get-going",
+            "objectiveKey": "obj-g10-02",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-huh-tag",
+            "sourceEntryId": "exp-huh-tag",
+            "objectiveKey": "obj-g10-02",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g10-03",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_10",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_E",
+      "title": "Listening: Announcements Around School",
+      "primarySkill": "LISTENING",
+      "supportingSkills": [
+        "VOCABULARY"
+      ],
+      "objectiveKeys": [
+        "obj-g10-03"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Catch what matters in school announcements",
+            "instructionId": "Anda akan berlatih menangkap inti dan detail penting dari pengumuman sekolah berbahasa Inggris.",
+            "canDoEn": "I can understand the topic, time, place, and required action of a school announcement."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "What information do announcements usually contain?",
+              "What happens if you miss the time or place?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Pengumuman selalu menjawab: apa, siapa, kapan, di mana, dan apa yang harus dilakukan. Dengarkan kata sinyal seperti \"attention\", \"please note\", \"don't forget\".",
+            "patterns": [
+              {
+                "en": "Attention, all Grade 10 students…",
+                "noteId": "\"Attention\" menandai target pendengar."
+              },
+              {
+                "en": "…will be held in the assembly hall at 10 a.m.",
+                "noteId": "\"be held\" = diadakan; catat tempat dan waktu."
+              },
+              {
+                "en": "Please sign up at the student affairs office by Friday.",
+                "noteId": "\"by Friday\" = paling lambat Jumat."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "Attention, all students. This year's club fair will be held in the assembly hall this Thursday, starting at ten a.m. Classes will end early at nine thirty. Every club will have a booth, so bring your questions. If you want to start a new club, please collect a proposal form from the student affairs office by Wednesday afternoon. Don't forget: booths close at one p.m. sharp.",
+            "tasks": [
+              {
+                "promptEn": "What event is announced?",
+                "answerEn": "The club fair.",
+                "explanationId": "Inti pengumuman disebut di kalimat kedua."
+              },
+              {
+                "promptEn": "Where and when will it be held?",
+                "answerEn": "In the assembly hall, Thursday at 10 a.m.",
+                "explanationId": "Tempat dan waktu selalu berdampingan dengan \"be held\"."
+              },
+              {
+                "promptEn": "What must students do to start a new club?",
+                "answerEn": "Collect a proposal form from the student affairs office by Wednesday afternoon.",
+                "explanationId": "\"by Wednesday\" berarti batas akhir."
+              },
+              {
+                "promptEn": "What does \"at one p.m. sharp\" mean?",
+                "answerEn": "Exactly at 1 p.m., not later.",
+                "explanationId": "\"sharp\" menegaskan waktu tepat."
+              }
+            ],
+            "audioAssetId": "audio-sc-g10-03-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "\"Submissions are due by Monday.\" You can submit…",
+                "optionsEn": [
+                  "only on Monday",
+                  "on or before Monday",
+                  "any time after Monday"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"by\" = paling lambat."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"The meeting has been moved up to 8 a.m.\" The meeting is now…",
+                "optionsEn": [
+                  "earlier than before",
+                  "later than before",
+                  "cancelled"
+                ],
+                "answerIndex": 0,
+                "explanationId": "\"moved up\" = dimajukan."
+              },
+              {
+                "type": "choice",
+                "promptEn": "Which word signals who the announcement is for?",
+                "optionsEn": [
+                  "Attention, Grade 10 students",
+                  "Thank you",
+                  "Good afternoon"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Frasa \"Attention + kelompok\" menandai sasaran."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "writing",
+            "promptEn": "Listen to (read) the announcement again and write a two-line reminder note for a friend who missed it: event, place, time, and one deadline.",
+            "supportEn": [
+              "Club fair — Thursday, 10 a.m., assembly hall.",
+              "Proposal forms due Wednesday afternoon!"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g10-04",
+            "noteId": "Keterampilan ini menentukan apakah Anda menemukan stan Bridge Club di Episode 4."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"The tryouts will be held on the main field.\" \"Held\" means…",
+                "optionsEn": [
+                  "cancelled",
+                  "carried/organized there",
+                  "delayed"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"be held\" = diadakan/diselenggarakan."
+              },
+              {
+                "promptEn": "An announcement says \"booths close at 1 p.m. sharp.\" You arrive at 1:10. What happens?",
+                "optionsEn": [
+                  "The booths are already closed.",
+                  "The booths just opened.",
+                  "Nothing, times are flexible."
+                ],
+                "answerIndex": 0,
+                "explanationId": "\"sharp\" menandakan waktu tepat tanpa toleransi."
+              },
+              {
+                "promptEn": "The most important first thing to catch in any announcement is…",
+                "optionsEn": [
+                  "the speaker's name",
+                  "who it is for and what it is about",
+                  "the background music"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Sasaran dan topik menentukan apakah Anda perlu detailnya."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-assembly-hall",
+            "term": "assembly hall",
+            "meaningId": "aula-sekolah",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-announcements",
+            "recallHookId": "rh-voc-assembly-hall"
+          },
+          {
+            "entryId": "voc-booth",
+            "term": "booth",
+            "meaningId": "stan-pameran",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-announcements",
+            "recallHookId": "rh-voc-booth"
+          },
+          {
+            "entryId": "voc-deadline",
+            "term": "deadline",
+            "meaningId": "tenggat-waktu",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-announcements",
+            "recallHookId": "rh-voc-deadline"
+          },
+          {
+            "entryId": "voc-proposal",
+            "term": "proposal",
+            "meaningId": "proposal-usulan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-announcements",
+            "recallHookId": "rh-voc-proposal"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-will-be-held",
+            "expression": "will be held",
+            "meaningId": "akan-diadakan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-announcements",
+            "recallHookId": "rh-will-be-held"
+          },
+          {
+            "entryId": "exp-by-deadline",
+            "expression": "by ___ (deadline)",
+            "meaningId": "paling-lambat",
+            "register": "neutral",
+            "sourceIntentKey": "intent-announcements",
+            "recallHookId": "rh-by-deadline"
+          },
+          {
+            "entryId": "exp-sign-up",
+            "expression": "sign up",
+            "meaningId": "mendaftar",
+            "register": "neutral",
+            "sourceIntentKey": "intent-announcements",
+            "recallHookId": "rh-sign-up"
+          },
+          {
+            "entryId": "exp-dont-forget",
+            "expression": "Don't forget…",
+            "meaningId": "jangan-lupa",
+            "register": "neutral",
+            "sourceIntentKey": "intent-announcements",
+            "recallHookId": "rh-dont-forget"
+          },
+          {
+            "entryId": "exp-sharp-time",
+            "expression": "at ___ sharp",
+            "meaningId": "tepat-pukul",
+            "register": "neutral",
+            "sourceIntentKey": "intent-announcements",
+            "recallHookId": "rh-sharp-time"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-sign-up",
+            "sourceEntryId": "exp-sign-up",
+            "objectiveKey": "obj-g10-03",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-by-deadline",
+            "sourceEntryId": "exp-by-deadline",
+            "objectiveKey": "obj-g10-03",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g10-04",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_10",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_E",
+      "title": "Describing People and Places",
+      "primarySkill": "VOCABULARY",
+      "supportingSkills": [
+        "WRITING",
+        "SPEAKING"
+      ],
+      "objectiveKeys": [
+        "obj-g10-04"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Describe people and places so others can picture them",
+            "instructionId": "Anda akan menyusun deskripsi orang dan tempat dengan urutan yang jelas: kesan umum, lalu detail.",
+            "canDoEn": "I can describe a person or place with a clear general impression and supporting details."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "Describe your classroom in three English words.",
+              "Think of a friend: what is the first thing people notice about them?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Deskripsi yang baik bergerak dari umum ke khusus. Untuk orang: penampilan lalu kepribadian. Untuk tempat: kesan umum lalu bagian-bagiannya. Urutan kata sifat: opini sebelum fakta (a cozy small room).",
+            "patterns": [
+              {
+                "en": "She's easy to spot — she always wears a red hijab.",
+                "noteId": "\"easy to spot\" = mudah dikenali; detail khas membantu pendengar."
+              },
+              {
+                "en": "The library is quiet and a little old, but really comfortable.",
+                "noteId": "Kesan umum + kontras dengan \"but\"."
+              },
+              {
+                "en": "It's the tall building right next to the canteen.",
+                "noteId": "Posisi relatif membuat tempat mudah ditemukan."
+              }
+            ]
+          },
+          {
+            "blockType": "reading",
+            "textEn": "Cakrawala's media workshop is the busiest room on campus. From outside it looks like an ordinary classroom, but inside it is full of screens, cables, and half-finished projects. Posters from old student films cover one wall. The room smells faintly of coffee because the seniors practically live there. In the corner sits Ryo's desk — the tidiest spot in the whole messy room, with tools lined up like a hospital tray.",
+            "tasks": [
+              {
+                "promptEn": "What is the general impression of the workshop?",
+                "answerEn": "It is the busiest room on campus.",
+                "explanationId": "Kalimat pertama memberi kesan umum."
+              },
+              {
+                "promptEn": "Which detail contrasts with the messy room?",
+                "answerEn": "Ryo's desk is the tidiest spot, with tools lined up neatly.",
+                "explanationId": "Kontras membuat deskripsi hidup dan menggambarkan karakter."
+              },
+              {
+                "promptEn": "Why does the room smell of coffee?",
+                "answerEn": "Because the seniors spend very long hours there.",
+                "explanationId": "\"practically live there\" adalah hiperbola umum."
+              }
+            ]
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Choose the natural adjective order.",
+                "optionsEn": [
+                  "a small cozy room",
+                  "a cozy small room",
+                  "a room cozy small"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Opini (cozy) sebelum ukuran (small)."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Combine into one description: \"The canteen is loud. The canteen is friendly.\"",
+                "answerEn": "The canteen is loud but friendly.",
+                "explanationId": "\"but\" menghubungkan dua kesan yang kontras."
+              },
+              {
+                "type": "choice",
+                "promptEn": "Which sentence helps someone find a place?",
+                "optionsEn": [
+                  "It exists on campus.",
+                  "It's right next to the canteen, across from the library.",
+                  "It is a place with walls."
+                ],
+                "answerIndex": 1,
+                "explanationId": "Posisi relatif (next to, across from) memandu pendengar."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "writing",
+            "promptEn": "Write a 60–80 word description of one place in your school for a visitor: general impression first, then two details, then where to find it.",
+            "supportEn": [
+              "From outside it looks…, but inside…",
+              "It's right next to…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "grammar",
+              "vocabulary",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g10-06",
+            "noteId": "Anda akan mendeskripsikan Bridge Club kepada calon anggota di Episode 6 dan kampus kepada Maya di Episode 8."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"She's easy to spot\" means…",
+                "optionsEn": [
+                  "she is easy to recognize",
+                  "she has spots",
+                  "she is always clean"
+                ],
+                "answerIndex": 0,
+                "explanationId": "\"spot\" sebagai kata kerja = melihat/mengenali."
+              },
+              {
+                "promptEn": "A good description usually starts with…",
+                "optionsEn": [
+                  "the smallest detail",
+                  "a general impression",
+                  "an apology"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Umum ke khusus memudahkan pembaca membayangkan."
+              },
+              {
+                "promptEn": "\"The lab is right across from the library.\" Where is the lab?",
+                "optionsEn": [
+                  "Inside the library",
+                  "Facing the library on the other side",
+                  "Far behind the library"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"across from\" = berseberangan."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-tidy",
+            "term": "tidy",
+            "meaningId": "rapi",
+            "partOfSpeech": "adjective",
+            "sourceIntentKey": "intent-describing",
+            "recallHookId": "rh-voc-tidy"
+          },
+          {
+            "entryId": "voc-messy",
+            "term": "messy",
+            "meaningId": "berantakan",
+            "partOfSpeech": "adjective",
+            "sourceIntentKey": "intent-describing",
+            "recallHookId": "rh-voc-messy"
+          },
+          {
+            "entryId": "voc-cozy",
+            "term": "cozy",
+            "meaningId": "nyaman-hangat",
+            "partOfSpeech": "adjective",
+            "sourceIntentKey": "intent-describing",
+            "recallHookId": "rh-voc-cozy"
+          },
+          {
+            "entryId": "voc-workshop",
+            "term": "workshop",
+            "meaningId": "bengkel-ruang-praktik",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-describing",
+            "recallHookId": "rh-voc-workshop"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-easy-to-spot",
+            "expression": "easy to spot",
+            "meaningId": "mudah-dikenali",
+            "register": "informal",
+            "sourceIntentKey": "intent-describing",
+            "recallHookId": "rh-easy-to-spot"
+          },
+          {
+            "entryId": "exp-right-next-to",
+            "expression": "right next to ___",
+            "meaningId": "tepat-di-sebelah",
+            "register": "neutral",
+            "sourceIntentKey": "intent-describing",
+            "recallHookId": "rh-right-next-to"
+          },
+          {
+            "entryId": "exp-across-from",
+            "expression": "across from ___",
+            "meaningId": "di-seberang",
+            "register": "neutral",
+            "sourceIntentKey": "intent-describing",
+            "recallHookId": "rh-across-from"
+          },
+          {
+            "entryId": "exp-looks-like-but",
+            "expression": "It looks ___, but it's actually ___",
+            "meaningId": "kelihatannya-tapi-sebenarnya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-describing",
+            "recallHookId": "rh-looks-like-but"
+          },
+          {
+            "entryId": "exp-you-cant-miss-it",
+            "expression": "You can't miss it",
+            "meaningId": "pasti-langsung-terlihat",
+            "register": "informal",
+            "sourceIntentKey": "intent-describing",
+            "recallHookId": "rh-you-cant-miss-it"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-you-cant-miss-it",
+            "sourceEntryId": "exp-you-cant-miss-it",
+            "objectiveKey": "obj-g10-04",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-right-next-to",
+            "sourceEntryId": "exp-right-next-to",
+            "objectiveKey": "obj-g10-04",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g10-05",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_10",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_E",
+      "title": "Directions Around Campus",
+      "primarySkill": "GRAMMAR",
+      "supportingSkills": [
+        "SPEAKING",
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g10-05"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Ask for and give directions people can actually follow",
+            "instructionId": "Anda akan menggunakan preposisi tempat dan urutan langkah untuk memberi arah, serta bertanya arah dengan sopan.",
+            "canDoEn": "I can ask for directions politely and give directions in clear steps."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "When did you last get lost? What did you do?",
+              "Which is easier: asking for directions or reading a map?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Arah yang jelas memakai urutan (first, then), belokan (turn left/right), jarak (go past, go straight), dan posisi (next to, behind, on your left). Bertanya arah dimulai dengan \"Excuse me\".",
+            "patterns": [
+              {
+                "en": "Excuse me, how do I get to the library?",
+                "noteId": "Pembuka sopan untuk bertanya arah."
+              },
+              {
+                "en": "Go straight past the canteen, then turn left.",
+                "noteId": "\"go past\" = melewati; urutan langkah dengan \"then\"."
+              },
+              {
+                "en": "It's on your right, just behind the main hall.",
+                "noteId": "Akhiri dengan posisi akhir yang jelas."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "A: Excuse me, how do I get to the media workshop? B: Sure. Go straight down this corridor, past the science labs. Turn right at the stairs — don't go up, just turn. It's the second door on your left, right across from the printing room. A: Past the labs, right at the stairs, second door on the left. Got it. Thanks! B: No problem. You can't miss it, the door is covered in film posters.",
+            "tasks": [
+              {
+                "promptEn": "Where should A turn right?",
+                "answerEn": "At the stairs.",
+                "explanationId": "Titik belok selalu diikat pada penanda (landmark)."
+              },
+              {
+                "promptEn": "How does A confirm the directions?",
+                "answerEn": "A repeats the key steps back.",
+                "explanationId": "Mengulang langkah adalah strategi konfirmasi penting."
+              },
+              {
+                "promptEn": "What makes the workshop easy to find at the end?",
+                "answerEn": "The door is covered in film posters.",
+                "explanationId": "Ciri khas memperkuat arah."
+              }
+            ],
+            "audioAssetId": "audio-sc-g10-05-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Complete: \"Go ___ the canteen and turn left.\"",
+                "optionsEn": [
+                  "past",
+                  "into",
+                  "under"
+                ],
+                "answerIndex": 0,
+                "explanationId": "\"go past\" = melewati tanpa masuk."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Make this polite: \"Where is the teachers' office?\"",
+                "answerEn": "Excuse me, could you tell me where the teachers' office is?",
+                "explanationId": "\"Excuse me\" + pertanyaan tidak langsung terdengar sopan."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"It's the second door on your left.\" Which door is it?",
+                "optionsEn": [
+                  "The door behind you",
+                  "The second door on the left side",
+                  "Any left door"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Urutan + sisi menentukan pintu yang tepat."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Record directions from your classroom to the canteen (or another real place) in 3–4 steps. Use one landmark, one turn, and a clear final position.",
+            "supportEn": [
+              "Go straight past…",
+              "Turn left/right at…",
+              "It's on your…, next to…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "grammar",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g10-02",
+            "noteId": "Dipakai saat tersesat mencari kelas 10-B di Episode 2, dan menjadi kunci tur kampus untuk Maya di Episode 8."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"Go past the library\" means…",
+                "optionsEn": [
+                  "enter the library",
+                  "walk beyond the library without entering",
+                  "stop at the library"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"past\" = melewati."
+              },
+              {
+                "promptEn": "Which is the best final step of directions?",
+                "optionsEn": [
+                  "\"It's somewhere over there.\"",
+                  "\"It's on your right, across from the lab.\"",
+                  "\"You will find it eventually.\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Posisi akhir harus spesifik."
+              },
+              {
+                "promptEn": "Someone gives you long directions. The best response is…",
+                "optionsEn": [
+                  "walk away silently",
+                  "repeat the key steps to confirm",
+                  "say \"impossible\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Konfirmasi mencegah tersesat dan melatih menyimak."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-corridor",
+            "term": "corridor",
+            "meaningId": "koridor-lorong",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-directions",
+            "recallHookId": "rh-voc-corridor"
+          },
+          {
+            "entryId": "voc-stairs",
+            "term": "stairs",
+            "meaningId": "tangga",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-directions",
+            "recallHookId": "rh-voc-stairs"
+          },
+          {
+            "entryId": "voc-landmark",
+            "term": "landmark",
+            "meaningId": "penanda-tempat",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-directions",
+            "recallHookId": "rh-voc-landmark"
+          },
+          {
+            "entryId": "voc-entrance",
+            "term": "entrance",
+            "meaningId": "pintu-masuk",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-directions",
+            "recallHookId": "rh-voc-entrance"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-how-do-i-get-to",
+            "expression": "How do I get to ___?",
+            "meaningId": "bagaimana-cara-ke",
+            "register": "neutral",
+            "sourceIntentKey": "intent-directions",
+            "recallHookId": "rh-how-do-i-get-to"
+          },
+          {
+            "entryId": "exp-go-straight-past",
+            "expression": "go straight past ___",
+            "meaningId": "lurus-melewati",
+            "register": "neutral",
+            "sourceIntentKey": "intent-directions",
+            "recallHookId": "rh-go-straight-past"
+          },
+          {
+            "entryId": "exp-turn-left-at",
+            "expression": "turn left/right at ___",
+            "meaningId": "belok-di",
+            "register": "neutral",
+            "sourceIntentKey": "intent-directions",
+            "recallHookId": "rh-turn-left-at"
+          },
+          {
+            "entryId": "exp-on-your-left",
+            "expression": "on your left/right",
+            "meaningId": "di-sebelah-kirimu",
+            "register": "neutral",
+            "sourceIntentKey": "intent-directions",
+            "recallHookId": "rh-on-your-left"
+          },
+          {
+            "entryId": "exp-got-it",
+            "expression": "Got it",
+            "meaningId": "mengerti",
+            "register": "informal",
+            "sourceIntentKey": "intent-directions",
+            "recallHookId": "rh-got-it"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-go-straight-past",
+            "sourceEntryId": "exp-go-straight-past",
+            "objectiveKey": "obj-g10-05",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-turn-left-at",
+            "sourceEntryId": "exp-turn-left-at",
+            "objectiveKey": "obj-g10-05",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g10-06",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_10",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_E",
+      "title": "Routines and Schedules",
+      "primarySkill": "GRAMMAR",
+      "supportingSkills": [
+        "SPEAKING"
+      ],
+      "objectiveKeys": [
+        "obj-g10-06"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Talk about routines and plan schedules together",
+            "instructionId": "Anda akan memakai present simple dan kata keterangan frekuensi untuk membicarakan rutinitas dan menyusun jadwal.",
+            "canDoEn": "I can describe my routine and negotiate a shared schedule."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "What time does your school day usually start?",
+              "What do you always do after school?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Rutinitas memakai present simple. Kata frekuensi (always, usually, sometimes, never) berdiri sebelum kata kerja utama tetapi sesudah \"be\". Jadwal memakai \"on Mondays\", \"at 3 p.m.\", \"every week\".",
+            "patterns": [
+              {
+                "en": "I usually get to school before seven.",
+                "noteId": "\"usually\" sebelum kata kerja utama."
+              },
+              {
+                "en": "Practice is always on Wednesdays.",
+                "noteId": "\"always\" sesudah \"be\"; hari memakai \"on\"."
+              },
+              {
+                "en": "Does Thursday work for you?",
+                "noteId": "Cara alami menawarkan jadwal — \"work\" berarti cocok."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "A: So when should the club meet? B: I have basketball on Mondays and Thursdays. A: What about Wednesdays? I'm free after three. B: Wednesday works. Not too late, though — I catch the four thirty bus. A: Three to four fifteen, then. Every week? B: Every week. I never miss the bus, just so you know.",
+            "tasks": [
+              {
+                "promptEn": "Why can't B meet on Mondays or Thursdays?",
+                "answerEn": "B has basketball practice.",
+                "explanationId": "Bentrok jadwal dinyatakan dengan present simple."
+              },
+              {
+                "promptEn": "What limits the meeting length?",
+                "answerEn": "B catches the 4:30 bus.",
+                "explanationId": "Rutinitas tetap membentuk batas jadwal."
+              },
+              {
+                "promptEn": "What does \"Wednesday works\" mean?",
+                "answerEn": "Wednesday is suitable / fits the schedule.",
+                "explanationId": "\"work\" untuk jadwal = cocok."
+              }
+            ],
+            "audioAssetId": "audio-sc-g10-06-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Choose the correct sentence.",
+                "optionsEn": [
+                  "She usually is late.",
+                  "She is usually late.",
+                  "Usually she is late always."
+                ],
+                "answerIndex": 1,
+                "explanationId": "Kata frekuensi sesudah \"be\"."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Ask if Friday is suitable for your friend.",
+                "answerEn": "Does Friday work for you?",
+                "explanationId": "Pola \"Does ___ work for you?\" untuk menawarkan waktu."
+              },
+              {
+                "type": "choice",
+                "promptEn": "Complete: \"The club meets ___ Wednesdays ___ 3 p.m.\"",
+                "optionsEn": [
+                  "in / on",
+                  "on / at",
+                  "at / in"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"on\" untuk hari, \"at\" untuk jam."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Record yourself proposing a weekly study schedule to a friend: say your routine, suggest a day and time, and ask if it works for them (30–40 seconds).",
+            "supportEn": [
+              "I usually…",
+              "How about ___ at ___?",
+              "Does that work for you?"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "grammar",
+              "naturalness"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g10-05",
+            "noteId": "Dipakai saat menyusun jadwal latihan Bridge Club di Episode 5 dan menyusun agenda kunjungan Maya di Episode 7."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"Does Tuesday work for you?\" is asking…",
+                "optionsEn": [
+                  "if you have a job on Tuesday",
+                  "if Tuesday fits your schedule",
+                  "if Tuesday is a working day"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"work\" = cocok untuk jadwal."
+              },
+              {
+                "promptEn": "Choose the correct frequency-word position.",
+                "optionsEn": [
+                  "I go always home at four.",
+                  "I always go home at four.",
+                  "Always I go at four home."
+                ],
+                "answerIndex": 1,
+                "explanationId": "Frekuensi sebelum kata kerja utama."
+              },
+              {
+                "promptEn": "\"I catch the 4:30 bus\" tells us…",
+                "optionsEn": [
+                  "a one-time plan",
+                  "a regular routine",
+                  "a past event"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Present simple menyatakan kebiasaan tetap."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-schedule",
+            "term": "schedule",
+            "meaningId": "jadwal",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-routines",
+            "recallHookId": "rh-voc-schedule"
+          },
+          {
+            "entryId": "voc-weekly",
+            "term": "weekly",
+            "meaningId": "mingguan",
+            "partOfSpeech": "adjective",
+            "sourceIntentKey": "intent-routines",
+            "recallHookId": "rh-voc-weekly"
+          },
+          {
+            "entryId": "voc-practice-session",
+            "term": "practice",
+            "meaningId": "latihan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-routines",
+            "recallHookId": "rh-voc-practice-session"
+          },
+          {
+            "entryId": "voc-free-time",
+            "term": "free",
+            "meaningId": "senggang-kosong",
+            "partOfSpeech": "adjective",
+            "sourceIntentKey": "intent-routines",
+            "recallHookId": "rh-voc-free-time"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-does-x-work-for-you",
+            "expression": "Does ___ work for you?",
+            "meaningId": "apakah-cocok-untukmu",
+            "register": "neutral",
+            "sourceIntentKey": "intent-routines",
+            "recallHookId": "rh-does-x-work-for-you"
+          },
+          {
+            "entryId": "exp-im-free-after",
+            "expression": "I'm free after ___",
+            "meaningId": "saya-kosong-setelah",
+            "register": "neutral",
+            "sourceIntentKey": "intent-routines",
+            "recallHookId": "rh-im-free-after"
+          },
+          {
+            "entryId": "exp-catch-the-bus",
+            "expression": "catch the bus",
+            "meaningId": "mengejar-naik-bus",
+            "register": "neutral",
+            "sourceIntentKey": "intent-routines",
+            "recallHookId": "rh-catch-the-bus"
+          },
+          {
+            "entryId": "exp-what-about-day",
+            "expression": "What about ___?",
+            "meaningId": "bagaimana-dengan",
+            "register": "informal",
+            "sourceIntentKey": "intent-routines",
+            "recallHookId": "rh-what-about-day"
+          },
+          {
+            "entryId": "exp-not-too-late",
+            "expression": "not too late, though",
+            "meaningId": "tapi-jangan-terlalu-larut",
+            "register": "informal",
+            "sourceIntentKey": "intent-routines",
+            "recallHookId": "rh-not-too-late"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-does-x-work-for-you",
+            "sourceEntryId": "exp-does-x-work-for-you",
+            "objectiveKey": "obj-g10-06",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-im-free-after",
+            "sourceEntryId": "exp-im-free-after",
+            "objectiveKey": "obj-g10-06",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g10-07",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_10",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_E",
+      "title": "Reading Club Posters and Forms",
+      "primarySkill": "READING",
+      "supportingSkills": [
+        "VOCABULARY"
+      ],
+      "objectiveKeys": [
+        "obj-g10-07"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Find what you need fast in posters and forms",
+            "instructionId": "Anda akan berlatih membaca cepat (scanning) teks fungsional: poster, formulir, dan pengumuman tertulis.",
+            "canDoEn": "I can scan posters and forms to find requirements, dates, and contacts."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "Do you read every word of a poster? Why not?",
+              "What information do you look for first on a sign-up form?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Teks fungsional tidak dibaca kata per kata. Cari kata kunci: who (siapa boleh ikut), when (kapan), where (di mana), how (cara daftar), dan syarat seperti \"open to\", \"required\", \"no experience needed\".",
+            "patterns": [
+              {
+                "en": "Open to all Grade 10–12 students.",
+                "noteId": "\"open to\" menunjukkan siapa yang boleh ikut."
+              },
+              {
+                "en": "No experience needed — beginners welcome!",
+                "noteId": "Frasa khas poster yang mengundang pemula."
+              },
+              {
+                "en": "Fill in this form and hand it in by Friday.",
+                "noteId": "\"fill in\" = mengisi; \"hand in\" = menyerahkan."
+              }
+            ]
+          },
+          {
+            "blockType": "reading",
+            "textEn": "GLOBAL COMMUNICATION CLUB — RESTART! Ever wanted to speak English without feeling judged? So do we. We meet Wednesdays, 3:00–4:15, Club Room 2 (the one with the world map on the door). No experience needed — nervous speakers especially welcome. What we do: games, movie talk, guest visits, and one big project each semester. Open to all grades and all tracks, SMA and SMK. Interested? Fill in the form below and drop it in the box outside Room 2 by Friday. Questions? Find Hana in 11-B or message the club account. — Form: Name / Class / Track / Why do you want to join? (one sentence is fine) / Have you ever… spoken English outside class? (yes/no, be honest, no one checks)",
+            "tasks": [
+              {
+                "promptEn": "Who can join the club?",
+                "answerEn": "All grades and all tracks, SMA and SMK.",
+                "explanationId": "Cari frasa \"open to\"."
+              },
+              {
+                "promptEn": "What must an interested student do by Friday?",
+                "answerEn": "Fill in the form and drop it in the box outside Room 2.",
+                "explanationId": "Instruksi tindakan + tenggat \"by Friday\"."
+              },
+              {
+                "promptEn": "What tone does the poster use, and how do you know?",
+                "answerEn": "Friendly and welcoming — e.g., \"nervous speakers especially welcome\", \"no one checks\".",
+                "explanationId": "Nada teks memengaruhi siapa yang berani mendaftar."
+              },
+              {
+                "promptEn": "Where exactly does the club meet?",
+                "answerEn": "Club Room 2, the one with the world map on the door.",
+                "explanationId": "Detail lokasi sering diberi ciri khas."
+              }
+            ]
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "\"Hand in the form\" means…",
+                "optionsEn": [
+                  "hold the form in your hand",
+                  "submit the form",
+                  "throw the form away"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"hand in\" = menyerahkan/mengumpulkan."
+              },
+              {
+                "type": "choice",
+                "promptEn": "A poster says \"Auditions: members only.\" You are not a member. Can you audition?",
+                "optionsEn": [
+                  "Yes",
+                  "No",
+                  "Only on Fridays"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"members only\" membatasi peserta."
+              },
+              {
+                "type": "choice",
+                "promptEn": "The fastest way to find a deadline on a poster is to scan for…",
+                "optionsEn": [
+                  "adjectives",
+                  "dates and the word \"by\"",
+                  "the title font"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Scanning mencari pola informasi, bukan membaca semua."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "writing",
+            "promptEn": "Fill in the club form for yourself in English: name, class, track, one honest sentence about why you want to join, and your yes/no answer.",
+            "supportEn": [
+              "I want to join because…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "grammar",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g10-04",
+            "noteId": "Poster inilah yang Anda temukan di pameran klub pada Episode 4."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"Beginners welcome\" tells you…",
+                "optionsEn": [
+                  "only experts may join",
+                  "you can join without experience",
+                  "you must be a beginner"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Frasa ini menghilangkan syarat pengalaman."
+              },
+              {
+                "promptEn": "\"Fill in\" a form means…",
+                "optionsEn": [
+                  "complete it with your information",
+                  "fold it",
+                  "photograph it"
+                ],
+                "answerIndex": 0,
+                "explanationId": "\"fill in/out\" = mengisi."
+              },
+              {
+                "promptEn": "Which question is the form NOT asking?",
+                "optionsEn": [
+                  "Your class",
+                  "Your reason for joining",
+                  "Your exam scores"
+                ],
+                "answerIndex": 2,
+                "explanationId": "Scanning juga berarti tahu apa yang TIDAK ada."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-form",
+            "term": "form",
+            "meaningId": "formulir",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-functional-reading",
+            "recallHookId": "rh-voc-form"
+          },
+          {
+            "entryId": "voc-track-program",
+            "term": "track",
+            "meaningId": "jurusan-program",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-functional-reading",
+            "recallHookId": "rh-voc-track-program"
+          },
+          {
+            "entryId": "voc-beginner",
+            "term": "beginner",
+            "meaningId": "pemula",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-functional-reading",
+            "recallHookId": "rh-voc-beginner"
+          },
+          {
+            "entryId": "voc-semester",
+            "term": "semester",
+            "meaningId": "semester",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-functional-reading",
+            "recallHookId": "rh-voc-semester"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-open-to",
+            "expression": "open to ___",
+            "meaningId": "terbuka-untuk",
+            "register": "neutral",
+            "sourceIntentKey": "intent-functional-reading",
+            "recallHookId": "rh-open-to"
+          },
+          {
+            "entryId": "exp-no-experience-needed",
+            "expression": "no experience needed",
+            "meaningId": "tanpa-pengalaman",
+            "register": "neutral",
+            "sourceIntentKey": "intent-functional-reading",
+            "recallHookId": "rh-no-experience-needed"
+          },
+          {
+            "entryId": "exp-fill-in",
+            "expression": "fill in",
+            "meaningId": "mengisi-formulir",
+            "register": "neutral",
+            "sourceIntentKey": "intent-functional-reading",
+            "recallHookId": "rh-fill-in"
+          },
+          {
+            "entryId": "exp-hand-in",
+            "expression": "hand in",
+            "meaningId": "menyerahkan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-functional-reading",
+            "recallHookId": "rh-hand-in"
+          },
+          {
+            "entryId": "exp-find-me-in",
+            "expression": "Find me in ___",
+            "meaningId": "temui-saya-di",
+            "register": "informal",
+            "sourceIntentKey": "intent-functional-reading",
+            "recallHookId": "rh-find-me-in"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-fill-in",
+            "sourceEntryId": "exp-fill-in",
+            "objectiveKey": "obj-g10-07",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g10-08",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_10",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_E",
+      "title": "Invitations: Making, Accepting, Declining",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g10-08"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Invite people — and say no without hurting anyone",
+            "instructionId": "Anda akan belajar mengundang, menerima, dan menolak undangan dengan pelembut (softener) yang menjaga hubungan.",
+            "canDoEn": "I can make, accept, and politely decline invitations."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "How do you feel when someone rejects your invitation flatly?",
+              "How do you usually say no politely in Indonesian?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Menolak undangan dalam bahasa Inggris hampir selalu memakai tiga bagian: apresiasi (\"I'd love to\"), alasan singkat (\"but I've got practice\"), dan alternatif atau harapan (\"maybe next time?\"). Tanpa pelembut, penolakan terdengar kasar meski tata bahasanya benar.",
+            "patterns": [
+              {
+                "en": "Do you want to join us for lunch?",
+                "noteId": "Undangan santai antarteman."
+              },
+              {
+                "en": "I'd love to, but I've got homework due. Rain check?",
+                "noteId": "\"Rain check\" = lain kali ya — sangat alami."
+              },
+              {
+                "en": "Sure, count me in!",
+                "noteId": "Penerimaan antusias."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "A: Hey, a few of us are checking out the new bakso place after school. Want to come? B: Ah, I'd love to, but I promised my mom I'd be home early today. C: Next time, then. What about you, Rin? D: Sure, count me in. I've been wanting to try it. A: Nice. B, we'll drag you along next week, no excuses. B: Deal. Save me a seat — and don't order everything without me.",
+            "tasks": [
+              {
+                "promptEn": "What three parts make B's refusal polite?",
+                "answerEn": "Appreciation (I'd love to), a short reason (promised my mom), and future hope (Deal / next week).",
+                "explanationId": "Pola tiga bagian adalah inti pelajaran ini."
+              },
+              {
+                "promptEn": "How does D accept?",
+                "answerEn": "\"Sure, count me in.\"",
+                "explanationId": "\"count me in\" = ikut."
+              },
+              {
+                "promptEn": "Does the group stay friendly after the refusal? How do you know?",
+                "answerEn": "Yes — they joke about dragging B along next week and B says \"Save me a seat\".",
+                "explanationId": "Penolakan yang baik tidak merusak suasana."
+              }
+            ],
+            "audioAssetId": "audio-sc-g10-08-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "A classmate invites you to watch a match, but you are busy. Choose the best refusal.",
+                "optionsEn": [
+                  "No.",
+                  "I'd love to, but I've got extra class today. Next time for sure!",
+                  "I refuse your invitation."
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pilihan pertama dan ketiga benar tata bahasanya, tetapi lemah secara sosial."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Invite a friend to study together tomorrow, casually.",
+                "answerEn": "Want to study together tomorrow?",
+                "explanationId": "\"Want to…?\" adalah undangan santai yang umum."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"Rain check?\" means…",
+                "optionsEn": [
+                  "Is it raining?",
+                  "Can we do it another time?",
+                  "Please check the weather."
+                ],
+                "answerIndex": 1,
+                "explanationId": "Idiom untuk menunda dengan niat tetap ikut."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Record two turns: (1) invite a classmate to your club's first meeting; (2) then politely decline a different invitation using the three-part pattern.",
+            "supportEn": [
+              "Want to come to…?",
+              "I'd love to, but…",
+              "Maybe next time?"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "naturalness",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g10-03",
+            "noteId": "Menentukan suasana makan siang di Episode 3 dan keberhasilan merekrut anggota di Episode 6."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "Which refusal keeps the friendship warm?",
+                "optionsEn": [
+                  "\"Can't come.\"",
+                  "\"I'd love to, but I have practice. Save me a seat next time!\"",
+                  "\"I regret to decline your kind invitation herewith.\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pelembut + alasan + harapan; pilihan ketiga terlalu formal untuk teman."
+              },
+              {
+                "promptEn": "\"Count me in\" means…",
+                "optionsEn": [
+                  "include me",
+                  "count the people",
+                  "I'm not sure"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Ungkapan penerimaan."
+              },
+              {
+                "promptEn": "Why is \"No.\" alone a weak refusal between friends?",
+                "optionsEn": [
+                  "It is grammatically wrong.",
+                  "It is socially cold — it gives no appreciation or reason.",
+                  "It is too long."
+                ],
+                "answerIndex": 1,
+                "explanationId": "Masalahnya sosial, bukan tata bahasa — inti dimensi komunikasi."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-invitation",
+            "term": "invitation",
+            "meaningId": "undangan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-invitations",
+            "recallHookId": "rh-voc-invitation"
+          },
+          {
+            "entryId": "voc-promise",
+            "term": "promise",
+            "meaningId": "janji",
+            "partOfSpeech": "verb",
+            "sourceIntentKey": "intent-invitations",
+            "recallHookId": "rh-voc-promise"
+          },
+          {
+            "entryId": "voc-excuse",
+            "term": "excuse",
+            "meaningId": "alasan-dalih",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-invitations",
+            "recallHookId": "rh-voc-excuse"
+          },
+          {
+            "entryId": "voc-treat",
+            "term": "treat",
+            "meaningId": "traktiran",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-invitations",
+            "recallHookId": "rh-voc-treat"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-want-to-come",
+            "expression": "Want to come?",
+            "meaningId": "mau-ikut",
+            "register": "informal",
+            "sourceIntentKey": "intent-invitations",
+            "recallHookId": "rh-want-to-come"
+          },
+          {
+            "entryId": "exp-id-love-to-but",
+            "expression": "I'd love to, but ___",
+            "meaningId": "mau-sekali-tapi",
+            "register": "neutral",
+            "sourceIntentKey": "intent-invitations",
+            "recallHookId": "rh-id-love-to-but"
+          },
+          {
+            "entryId": "exp-count-me-in",
+            "expression": "Count me in",
+            "meaningId": "saya-ikut",
+            "register": "informal",
+            "sourceIntentKey": "intent-invitations",
+            "recallHookId": "rh-count-me-in"
+          },
+          {
+            "entryId": "exp-rain-check",
+            "expression": "Rain check?",
+            "meaningId": "lain-kali-ya",
+            "register": "informal",
+            "sourceIntentKey": "intent-invitations",
+            "recallHookId": "rh-rain-check"
+          },
+          {
+            "entryId": "exp-maybe-next-time",
+            "expression": "Maybe next time?",
+            "meaningId": "mungkin-lain-kali",
+            "register": "neutral",
+            "sourceIntentKey": "intent-invitations",
+            "recallHookId": "rh-maybe-next-time"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-id-love-to-but",
+            "sourceEntryId": "exp-id-love-to-but",
+            "objectiveKey": "obj-g10-08",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-count-me-in",
+            "sourceEntryId": "exp-count-me-in",
+            "objectiveKey": "obj-g10-08",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g10-09",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_10",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_E",
+      "title": "Recount: What Happened Last Weekend",
+      "primarySkill": "WRITING",
+      "supportingSkills": [
+        "GRAMMAR",
+        "SPEAKING"
+      ],
+      "objectiveKeys": [
+        "obj-g10-09"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Tell what happened, in order, in the past",
+            "instructionId": "Anda akan menulis dan menceritakan pengalaman lampau (recount) dengan past simple dan urutan waktu.",
+            "canDoEn": "I can recount a past experience with correct past forms and clear order."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "What did you do last weekend? One sentence.",
+              "Which is harder: remembering events or putting verbs in the past?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Recount memakai past simple (went, saw, was) dan penanda urutan (last Saturday, first, after that, in the end). Struktur: orientasi (siapa, kapan, di mana) → rangkaian kejadian → komentar penutup.",
+            "patterns": [
+              {
+                "en": "Last Saturday, my cousins came over.",
+                "noteId": "Orientasi: kapan + siapa."
+              },
+              {
+                "en": "After that, we tried to cook nasi goreng — and burned it.",
+                "noteId": "\"After that\" menjaga urutan; detail kecil menghidupkan cerita."
+              },
+              {
+                "en": "It was a mess, but honestly, it was the best part.",
+                "noteId": "Komentar penutup memberi makna pada cerita."
+              }
+            ]
+          },
+          {
+            "blockType": "reading",
+            "textEn": "Last Sunday, my father finally taught me to ride his old motorcycle. First, he made me push it around the yard for twenty minutes — no engine, just pushing. I thought he was joking. Then he explained the balance, and after that, he let me start the engine. I rode in a straight line for about ten meters and immediately drove into the fence. My father laughed so hard he had to sit down. In the end, I didn't really learn to ride that day, but I learned that my father laughs like a broken horn.",
+            "tasks": [
+              {
+                "promptEn": "What three orientation facts does the first sentence give?",
+                "answerEn": "When (last Sunday), who (my father and I), what (learning to ride).",
+                "explanationId": "Orientasi membuka setiap recount."
+              },
+              {
+                "promptEn": "List the sequence markers in order.",
+                "answerEn": "First, Then, after that, In the end.",
+                "explanationId": "Penanda urutan adalah kerangka recount."
+              },
+              {
+                "promptEn": "What makes the ending effective?",
+                "answerEn": "A personal comment/reflection with humor.",
+                "explanationId": "Recount ditutup komentar, bukan sekadar kejadian terakhir."
+              }
+            ]
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "transform",
+                "promptEn": "Put in the past: \"We eat at the canteen and meet our teacher.\"",
+                "answerEn": "We ate at the canteen and met our teacher.",
+                "explanationId": "eat→ate, meet→met (tak beraturan)."
+              },
+              {
+                "type": "choice",
+                "promptEn": "Choose the correct sentence.",
+                "optionsEn": [
+                  "I didn't went home early.",
+                  "I didn't go home early.",
+                  "I not went home early."
+                ],
+                "answerIndex": 1,
+                "explanationId": "Setelah \"didn't\" gunakan bentuk dasar."
+              },
+              {
+                "type": "choice",
+                "promptEn": "Which order marker fits the LAST event?",
+                "optionsEn": [
+                  "First",
+                  "In the end",
+                  "Meanwhile"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"In the end\" menutup rangkaian kejadian."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "writing",
+            "promptEn": "Write an 80–100 word recount of something real from your last weekend: orientation, three events in order, and one closing comment. Include at least one thing that went wrong.",
+            "supportEn": [
+              "Last…, First…, Then…, After that…, In the end…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "grammar",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g10-09",
+            "noteId": "Keterampilan ini memuncak saat Anda menceritakan kisah satu semester di Episode 9."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "Which verb is the correct past of \"teach\"?",
+                "optionsEn": [
+                  "teached",
+                  "taught",
+                  "teach"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Kata kerja tak beraturan."
+              },
+              {
+                "promptEn": "A recount usually ends with…",
+                "optionsEn": [
+                  "a new character",
+                  "a personal comment on the experience",
+                  "a list of vocabulary"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Reorientasi/komentar menutup recount."
+              },
+              {
+                "promptEn": "\"He laughed so hard he had to sit down\" — why include details like this?",
+                "optionsEn": [
+                  "They make the recount vivid and personal.",
+                  "They are required by grammar.",
+                  "They replace past tense."
+                ],
+                "answerIndex": 0,
+                "explanationId": "Detail hidup membedakan cerita yang menarik."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-yard",
+            "term": "yard",
+            "meaningId": "halaman",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-recount",
+            "recallHookId": "rh-voc-yard"
+          },
+          {
+            "entryId": "voc-fence",
+            "term": "fence",
+            "meaningId": "pagar",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-recount",
+            "recallHookId": "rh-voc-fence"
+          },
+          {
+            "entryId": "voc-engine",
+            "term": "engine",
+            "meaningId": "mesin",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-recount",
+            "recallHookId": "rh-voc-engine"
+          },
+          {
+            "entryId": "voc-balance",
+            "term": "balance",
+            "meaningId": "keseimbangan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-recount",
+            "recallHookId": "rh-voc-balance"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-came-over",
+            "expression": "come over",
+            "meaningId": "datang-berkunjung",
+            "register": "informal",
+            "sourceIntentKey": "intent-recount",
+            "recallHookId": "rh-came-over"
+          },
+          {
+            "entryId": "exp-after-that",
+            "expression": "after that",
+            "meaningId": "setelah-itu",
+            "register": "neutral",
+            "sourceIntentKey": "intent-recount",
+            "recallHookId": "rh-after-that"
+          },
+          {
+            "entryId": "exp-in-the-end",
+            "expression": "in the end",
+            "meaningId": "pada-akhirnya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-recount",
+            "recallHookId": "rh-in-the-end"
+          },
+          {
+            "entryId": "exp-it-turned-out",
+            "expression": "it turned out ___",
+            "meaningId": "ternyata",
+            "register": "neutral",
+            "sourceIntentKey": "intent-recount",
+            "recallHookId": "rh-it-turned-out"
+          },
+          {
+            "entryId": "exp-went-wrong",
+            "expression": "went wrong",
+            "meaningId": "berjalan-kacau",
+            "register": "neutral",
+            "sourceIntentKey": "intent-recount",
+            "recallHookId": "rh-went-wrong"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-in-the-end",
+            "sourceEntryId": "exp-in-the-end",
+            "objectiveKey": "obj-g10-09",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-it-turned-out",
+            "sourceEntryId": "exp-it-turned-out",
+            "objectiveKey": "obj-g10-09",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g10-10",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_10",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_E",
+      "title": "Listening: Friends Talking",
+      "primarySkill": "LISTENING",
+      "supportingSkills": [
+        "VOCABULARY"
+      ],
+      "objectiveKeys": [
+        "obj-g10-10"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Follow fast, casual talk between friends",
+            "instructionId": "Anda akan berlatih memahami percakapan santai: bentuk singkat (gonna, wanna), sikap pembicara, dan makna tersirat.",
+            "canDoEn": "I can follow an informal conversation and catch the speakers' attitudes."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "Why is friends' English harder to hear than a teacher's English?",
+              "What do you do when you miss a word in a conversation?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Percakapan santai penuh bentuk pendek: gonna (going to), wanna (want to), dunno (don't know), kinda (kind of). Nada suara membawa sikap: antusias, ragu, bercanda. Anda tidak perlu setiap kata — tangkap arah dan sikap.",
+            "patterns": [
+              {
+                "en": "I'm gonna check out the new club.",
+                "noteId": "gonna = going to; \"check out\" = melihat-lihat."
+              },
+              {
+                "en": "I dunno, sounds kinda boring.",
+                "noteId": "dunno = don't know; kinda = agak."
+              },
+              {
+                "en": "Come on, give it a chance!",
+                "noteId": "\"Come on\" membujuk; sikap pembicara jelas dari frasa ini."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "A: You going to the club fair tomorrow? B: I dunno. I was gonna skip it, honestly. A: What? Come on, everyone's going. B: That's exactly why. It's gonna be packed. A: Okay, fair. But the food stalls open at ten, and I'm not queueing alone. B: …You should've started with the food. Fine, I'm in. A: Knew it. Meet you at the gate at nine forty-five. B: Make it nine fifty. I'm not that excited.",
+            "tasks": [
+              {
+                "promptEn": "Why does B want to skip the fair at first?",
+                "answerEn": "It will be too crowded (\"packed\").",
+                "explanationId": "Alasan tersirat dari \"That's exactly why\"."
+              },
+              {
+                "promptEn": "What changes B's mind?",
+                "answerEn": "The food stalls.",
+                "explanationId": "\"You should've started with the food\" menunjukkan perubahan sikap."
+              },
+              {
+                "promptEn": "What does \"Make it nine fifty\" show about B's attitude?",
+                "answerEn": "B agrees but jokingly keeps some reluctance.",
+                "explanationId": "Sikap sering muncul di detail kecil, bukan pernyataan langsung."
+              },
+              {
+                "promptEn": "What does \"packed\" mean here?",
+                "answerEn": "Very crowded.",
+                "explanationId": "Sinonim santai untuk \"crowded\"."
+              }
+            ],
+            "audioAssetId": "audio-sc-g10-10-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "\"I was gonna skip it\" means…",
+                "optionsEn": [
+                  "I planned not to go",
+                  "I jumped over it",
+                  "I went quickly"
+                ],
+                "answerIndex": 0,
+                "explanationId": "\"skip\" = melewatkan acara."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"Fine, I'm in\" signals…",
+                "optionsEn": [
+                  "agreement to join",
+                  "anger",
+                  "confusion"
+                ],
+                "answerIndex": 0,
+                "explanationId": "\"I'm in\" = ikut; \"fine\" di sini setengah menyerah, setengah setuju."
+              },
+              {
+                "type": "choice",
+                "promptEn": "Which strategy helps most when friends talk fast?",
+                "optionsEn": [
+                  "Translate every word in your head",
+                  "Follow the attitude and key words, then confirm",
+                  "Give up and nod"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Menangkap arah + konfirmasi lebih realistis daripada kata per kata."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Summarize the conversation aloud in 3–4 sentences: what was decided, and how did each speaker feel? Use at least one short form (gonna/kinda).",
+            "supportEn": [
+              "They decided to…",
+              "At first B felt…, but…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "clarity",
+              "naturalness"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g10-03",
+            "noteId": "Percakapan kantin di Episode 3 dan rapat klub di Episode 5 memakai gaya santai ini."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"kinda\" is a casual form of…",
+                "optionsEn": [
+                  "kind of",
+                  "kindly",
+                  "kind"
+                ],
+                "answerIndex": 0,
+                "explanationId": "kinda = kind of = agak."
+              },
+              {
+                "promptEn": "\"It's gonna be packed\" predicts…",
+                "optionsEn": [
+                  "an empty event",
+                  "a very crowded event",
+                  "a cancelled event"
+                ],
+                "answerIndex": 1,
+                "explanationId": "packed = penuh sesak."
+              },
+              {
+                "promptEn": "\"You should've started with the food\" implies…",
+                "optionsEn": [
+                  "the food argument was the most convincing",
+                  "they should cook first",
+                  "the fair serves no food"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Makna tersirat: argumen makanan yang berhasil membujuk."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-packed",
+            "term": "packed",
+            "meaningId": "penuh-sesak",
+            "partOfSpeech": "adjective",
+            "sourceIntentKey": "intent-informal-listening",
+            "recallHookId": "rh-voc-packed"
+          },
+          {
+            "entryId": "voc-queue",
+            "term": "queue",
+            "meaningId": "mengantre",
+            "partOfSpeech": "verb",
+            "sourceIntentKey": "intent-informal-listening",
+            "recallHookId": "rh-voc-queue"
+          },
+          {
+            "entryId": "voc-skip",
+            "term": "skip",
+            "meaningId": "melewatkan",
+            "partOfSpeech": "verb",
+            "sourceIntentKey": "intent-informal-listening",
+            "recallHookId": "rh-voc-skip"
+          },
+          {
+            "entryId": "voc-fair-event",
+            "term": "fair",
+            "meaningId": "pameran-pekan-raya",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-informal-listening",
+            "recallHookId": "rh-voc-fair-event"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-check-out",
+            "expression": "check out ___",
+            "meaningId": "melihat-lihat",
+            "register": "informal",
+            "sourceIntentKey": "intent-informal-listening",
+            "recallHookId": "rh-check-out"
+          },
+          {
+            "entryId": "exp-im-in",
+            "expression": "I'm in",
+            "meaningId": "saya-ikut",
+            "register": "informal",
+            "sourceIntentKey": "intent-informal-listening",
+            "recallHookId": "rh-im-in"
+          },
+          {
+            "entryId": "exp-come-on",
+            "expression": "Come on",
+            "meaningId": "ayolah",
+            "register": "informal",
+            "sourceIntentKey": "intent-informal-listening",
+            "recallHookId": "rh-come-on"
+          },
+          {
+            "entryId": "exp-give-it-a-chance",
+            "expression": "give it a chance",
+            "meaningId": "coba-dulu",
+            "register": "informal",
+            "sourceIntentKey": "intent-informal-listening",
+            "recallHookId": "rh-give-it-a-chance"
+          },
+          {
+            "entryId": "exp-knew-it",
+            "expression": "Knew it",
+            "meaningId": "sudah-kuduga",
+            "register": "informal",
+            "sourceIntentKey": "intent-informal-listening",
+            "recallHookId": "rh-knew-it"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-im-in",
+            "sourceEntryId": "exp-im-in",
+            "objectiveKey": "obj-g10-10",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-give-it-a-chance",
+            "sourceEntryId": "exp-give-it-a-chance",
+            "objectiveKey": "obj-g10-10",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g10-11",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_10",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_E",
+      "title": "Likes, Dislikes, and Preferences",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "VOCABULARY"
+      ],
+      "objectiveKeys": [
+        "obj-g10-11"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Say what you like — with the right strength",
+            "instructionId": "Anda akan menyatakan suka, tidak suka, dan preferensi dengan tingkat kekuatan yang tepat, dari \"love\" sampai \"can't stand\".",
+            "canDoEn": "I can express likes, dislikes, and preferences at the right strength."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "Name one thing you love and one you can't stand.",
+              "Is \"I don't really like it\" strong or soft?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Kesukaan punya skala: love → really like → like → don't mind → not really into → can't stand. Preferensi memakai \"I'd rather\" atau \"I prefer X to Y\". Melunakkan ketidaksukaan menjaga sopan santun: \"I'm not really a fan of…\" lebih halus daripada \"I hate…\".",
+            "patterns": [
+              {
+                "en": "I'd rather play than watch.",
+                "noteId": "\"I'd rather + verb\" untuk pilihan."
+              },
+              {
+                "en": "I'm not really a fan of horror movies.",
+                "noteId": "Ketidaksukaan yang halus."
+              },
+              {
+                "en": "I don't mind waiting.",
+                "noteId": "\"don't mind\" = tidak keberatan, netral."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "A: Movie night ideas — horror or comedy? B: Honestly? I can't stand horror. I don't sleep for a week. A: Noted. Comedy it is. What about the new superhero one? C: I don't mind it, but I'd rather watch something we can laugh at together. B: Same. And snacks matter more than the movie anyway. A: You two are impossible. Comedy, extra popcorn. Done.",
+            "tasks": [
+              {
+                "promptEn": "Rank the three speakers' feelings about horror.",
+                "answerEn": "B strongly dislikes it (can't stand); A and C don't state strong feelings.",
+                "explanationId": "Kekuatan ungkapan menunjukkan intensitas."
+              },
+              {
+                "promptEn": "What does C prefer, and how is it expressed?",
+                "answerEn": "Something they can laugh at together — \"I'd rather watch…\".",
+                "explanationId": "\"I'd rather\" menandai preferensi."
+              },
+              {
+                "promptEn": "What does \"I don't mind it\" tell you?",
+                "answerEn": "C is neutral about the superhero movie.",
+                "explanationId": "Netral ≠ suka ≠ tidak suka."
+              }
+            ],
+            "audioAssetId": "audio-sc-g10-11-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Which is the softest way to refuse a food you dislike?",
+                "optionsEn": [
+                  "I hate this.",
+                  "I'm not really a fan of durian, sorry!",
+                  "This is disgusting."
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pelembut menjaga perasaan tuan rumah."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Express a preference: playing futsal > watching futsal.",
+                "answerEn": "I'd rather play futsal than watch it.",
+                "explanationId": "\"I'd rather X than Y\"."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"I don't mind\" means…",
+                "optionsEn": [
+                  "I dislike it",
+                  "It's okay with me",
+                  "I love it"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Netral/tidak keberatan."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Record 30 seconds about your tastes: one thing you love, one you don't mind, one you're not really into, and one preference with \"I'd rather\". Make it true.",
+            "supportEn": [
+              "I'm really into…",
+              "I don't mind…",
+              "I'm not really a fan of…",
+              "I'd rather… than…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "vocabulary",
+              "naturalness"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g10-03",
+            "noteId": "Menentukan pilihan meja dan obrolan di kantin pada Episode 3, dan mencocokkan calon anggota dengan klub di Episode 6."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "Order from strongest dislike to neutral:",
+                "optionsEn": [
+                  "can't stand → not really into → don't mind",
+                  "don't mind → can't stand → not really into",
+                  "not really into → don't mind → can't stand"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Skala intensitas ketidaksukaan."
+              },
+              {
+                "promptEn": "\"I'd rather walk\" implies…",
+                "optionsEn": [
+                  "walking is impossible",
+                  "walking is my preferred choice",
+                  "I never walk"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Preferensi antara pilihan."
+              },
+              {
+                "promptEn": "Why say \"I'm not really a fan of it\" instead of \"I hate it\" to a friend's cooking?",
+                "optionsEn": [
+                  "Grammar requires it",
+                  "It protects the friend's feelings",
+                  "It is shorter"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Dimensi sosial komunikasi."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-taste-preference",
+            "term": "taste",
+            "meaningId": "selera",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-preferences",
+            "recallHookId": "rh-voc-taste-preference"
+          },
+          {
+            "entryId": "voc-snack",
+            "term": "snack",
+            "meaningId": "camilan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-preferences",
+            "recallHookId": "rh-voc-snack"
+          },
+          {
+            "entryId": "voc-genre",
+            "term": "genre",
+            "meaningId": "genre-jenis",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-preferences",
+            "recallHookId": "rh-voc-genre"
+          },
+          {
+            "entryId": "voc-favorite",
+            "term": "favorite",
+            "meaningId": "favorit",
+            "partOfSpeech": "adjective",
+            "sourceIntentKey": "intent-preferences",
+            "recallHookId": "rh-voc-favorite"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-cant-stand",
+            "expression": "I can't stand ___",
+            "meaningId": "sangat-tidak-tahan",
+            "register": "informal",
+            "sourceIntentKey": "intent-preferences",
+            "recallHookId": "rh-cant-stand"
+          },
+          {
+            "entryId": "exp-id-rather",
+            "expression": "I'd rather ___ than ___",
+            "meaningId": "lebih-memilih",
+            "register": "neutral",
+            "sourceIntentKey": "intent-preferences",
+            "recallHookId": "rh-id-rather"
+          },
+          {
+            "entryId": "exp-not-a-fan-of",
+            "expression": "I'm not really a fan of ___",
+            "meaningId": "kurang-suka-halus",
+            "register": "informal",
+            "sourceIntentKey": "intent-preferences",
+            "recallHookId": "rh-not-a-fan-of"
+          },
+          {
+            "entryId": "exp-dont-mind",
+            "expression": "I don't mind ___",
+            "meaningId": "tidak-keberatan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-preferences",
+            "recallHookId": "rh-dont-mind"
+          },
+          {
+            "entryId": "exp-same-agreement",
+            "expression": "Same.",
+            "meaningId": "sama-setuju",
+            "register": "informal",
+            "sourceIntentKey": "intent-preferences",
+            "recallHookId": "rh-same-agreement"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-id-rather",
+            "sourceEntryId": "exp-id-rather",
+            "objectiveKey": "obj-g10-11",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-not-a-fan-of",
+            "sourceEntryId": "exp-not-a-fan-of",
+            "objectiveKey": "obj-g10-11",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g10-12",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_10",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_E",
+      "title": "Asking for Help and Clarification",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g10-12"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Never stay lost: ask, check, confirm",
+            "instructionId": "Ini adalah perangkat penyelamat Anda: meminta pengulangan, menanyakan makna, dan mengecek pemahaman. Perangkat ini akan terus dipakai sampai kelas 12.",
+            "canDoEn": "I can ask for repetition, ask what something means, and confirm my understanding."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab jujur.",
+            "promptsEn": [
+              "What do you do when you don't understand English: guess, stay silent, or ask?",
+              "Why do many students choose silence?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Penutur yang baik bukan yang tidak pernah bingung — tetapi yang bisa keluar dari kebingungan. Tiga alat: (1) minta ulang, (2) tanya makna, (3) konfirmasi dengan kata sendiri. Bertanya bukan tanda lemah; diam adalah masalah sebenarnya.",
+            "patterns": [
+              {
+                "en": "Sorry, could you say that again?",
+                "noteId": "Minta ulang — sopan dan universal."
+              },
+              {
+                "en": "What does \"deadline\" mean?",
+                "noteId": "Tanya makna kata langsung."
+              },
+              {
+                "en": "So you mean we meet after class, right?",
+                "noteId": "Konfirmasi: ulangi dengan kata sendiri + \"right?\"."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "A: Okay, so bring the consent form tomorrow, or you can't join the field trip. B: Sorry, could you say that again? The what form? A: Consent form. It means your parents sign it to give permission. B: Ah, got it. So my parents sign it, and I bring it tomorrow — right? A: Exactly. And don't fold it, the office scans them. B: One more thing — what does \"scan\" mean here? A: They photograph it into the computer. B: Okay. Unfolded, signed, tomorrow. Thanks!",
+            "tasks": [
+              {
+                "promptEn": "Which three clarification tools does B use?",
+                "answerEn": "Asking for repetition, asking meaning, and confirming in his own words.",
+                "explanationId": "Ketiga alat muncul dalam satu percakapan nyata."
+              },
+              {
+                "promptEn": "What happens because B asks instead of staying silent?",
+                "answerEn": "B fully understands what to do (signed, unfolded, tomorrow).",
+                "explanationId": "Bertanya mencegah kesalahan nyata."
+              },
+              {
+                "promptEn": "How does B confirm at the end?",
+                "answerEn": "By summarizing: \"Unfolded, signed, tomorrow.\"",
+                "explanationId": "Ringkasan singkat adalah konfirmasi terkuat."
+              }
+            ],
+            "audioAssetId": "audio-sc-g10-12-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Your teacher speaks too fast. The best response is…",
+                "optionsEn": [
+                  "Stay silent and copy your friend later.",
+                  "\"Sorry, could you slow down a little? I want to get this right.\"",
+                  "\"You speak too fast.\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pilihan ketiga benar tata bahasa tetapi terdengar menyalahkan."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Ask the meaning of \"venue\".",
+                "answerEn": "What does \"venue\" mean?",
+                "explanationId": "Pola tanya makna: What does ___ mean?"
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"So you mean the test covers chapter one only, right?\" This is…",
+                "optionsEn": [
+                  "asking for repetition",
+                  "confirming understanding",
+                  "changing the topic"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Parafrase + \"right?\" = konfirmasi."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Record a mini-roleplay (both voices): a friend gives you a complicated instruction; you ask for repetition, ask one meaning, and confirm with a summary.",
+            "supportEn": [
+              "Sorry, could you say that again?",
+              "What does ___ mean?",
+              "So you mean…, right?"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "naturalness",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g10-02",
+            "noteId": "Alat ini menyelamatkan Anda dari arah Ryo yang super singkat di Episode 2 — dan kelak, dari kesalahan besar di tempat magang kelas 12."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "The strongest way to confirm an instruction is…",
+                "optionsEn": [
+                  "saying \"yes\" quickly",
+                  "repeating the key points in your own words",
+                  "nodding twice"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Parafrase membuktikan pemahaman."
+              },
+              {
+                "promptEn": "\"Could you say that again?\" is better than silence because…",
+                "optionsEn": [
+                  "it hides your confusion",
+                  "it fixes the misunderstanding immediately",
+                  "it ends the conversation"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Inti pelajaran: bertanya = strategi, bukan kelemahan."
+              },
+              {
+                "promptEn": "Choose the polite slow-down request.",
+                "optionsEn": [
+                  "\"Stop talking fast.\"",
+                  "\"Could you slow down a little, please?\"",
+                  "\"Repeat!\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Permintaan dengan \"could\" menjaga nada sopan."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-consent-form",
+            "term": "consent form",
+            "meaningId": "surat-izin-orang-tua",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-clarification",
+            "recallHookId": "rh-voc-consent-form"
+          },
+          {
+            "entryId": "voc-permission",
+            "term": "permission",
+            "meaningId": "izin",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-clarification",
+            "recallHookId": "rh-voc-permission"
+          },
+          {
+            "entryId": "voc-instruction",
+            "term": "instruction",
+            "meaningId": "instruksi-petunjuk",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-clarification",
+            "recallHookId": "rh-voc-instruction"
+          },
+          {
+            "entryId": "voc-misunderstanding",
+            "term": "misunderstanding",
+            "meaningId": "salah-paham",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-clarification",
+            "recallHookId": "rh-voc-misunderstanding"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-could-you-say-that-again",
+            "expression": "Could you say that again?",
+            "meaningId": "bisa-diulang",
+            "register": "neutral",
+            "sourceIntentKey": "intent-clarification",
+            "recallHookId": "rh-could-you-say-that-again"
+          },
+          {
+            "entryId": "exp-what-does-x-mean",
+            "expression": "What does ___ mean?",
+            "meaningId": "apa-artinya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-clarification",
+            "recallHookId": "rh-what-does-x-mean"
+          },
+          {
+            "entryId": "exp-so-you-mean",
+            "expression": "So you mean ___, right?",
+            "meaningId": "jadi-maksudmu",
+            "register": "neutral",
+            "sourceIntentKey": "intent-clarification",
+            "recallHookId": "rh-so-you-mean"
+          },
+          {
+            "entryId": "exp-could-you-slow-down",
+            "expression": "Could you slow down a little?",
+            "meaningId": "bisa-pelan-sedikit",
+            "register": "neutral",
+            "sourceIntentKey": "intent-clarification",
+            "recallHookId": "rh-could-you-slow-down"
+          },
+          {
+            "entryId": "exp-one-more-thing",
+            "expression": "One more thing…",
+            "meaningId": "satu-hal-lagi",
+            "register": "informal",
+            "sourceIntentKey": "intent-clarification",
+            "recallHookId": "rh-one-more-thing"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-could-you-say-that-again",
+            "sourceEntryId": "exp-could-you-say-that-again",
+            "objectiveKey": "obj-g10-12",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-what-does-x-mean",
+            "sourceEntryId": "exp-what-does-x-mean",
+            "objectiveKey": "obj-g10-12",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-so-you-mean",
+            "sourceEntryId": "exp-so-you-mean",
+            "objectiveKey": "obj-g10-12",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g10-13",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_10",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_E",
+      "title": "Explaining Simple Procedures",
+      "primarySkill": "VOCABULARY",
+      "supportingSkills": [
+        "SPEAKING",
+        "WRITING"
+      ],
+      "objectiveKeys": [
+        "obj-g10-13"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Explain how to do something, step by step",
+            "instructionId": "Keterampilan penting untuk siswa SMK dan siapa pun yang berbagi cara kerja: menjelaskan prosedur dengan urutan dan peringatan yang jelas.",
+            "canDoEn": "I can explain a simple procedure with clear steps and warnings."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "What is something you know how to do well?",
+              "What happens when instructions skip a step?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Prosedur memakai kalimat perintah (imperative), urutan (first, next, then, finally), dan peringatan (make sure, don't, be careful). Untuk alat, sebutkan bahan/alat dulu (You'll need…).",
+            "patterns": [
+              {
+                "en": "You'll need a memory card and a card reader.",
+                "noteId": "Sebutkan kebutuhan sebelum langkah."
+              },
+              {
+                "en": "First, plug it in. Then wait for the light to turn green.",
+                "noteId": "Imperative + penanda urutan."
+              },
+              {
+                "en": "Make sure the power is off before you open the case.",
+                "noteId": "\"Make sure\" untuk langkah keselamatan."
+              }
+            ]
+          },
+          {
+            "blockType": "reading",
+            "textEn": "HOW TO BORROW A CAMERA FROM THE MEDIA WORKSHOP: You'll need your student card and a booking form. First, check the schedule board to see which cameras are free. Next, fill in the booking form — write the exact times, not \"after school\". Then bring the form and your student card to the equipment desk. The staff will check the battery and lens with you; don't skip this, or you'll be blamed for old scratches. Finally, sign the log book. Return the camera before 4 p.m. the same day. Be careful with the strap — it looks strong, but it isn't.",
+            "tasks": [
+              {
+                "promptEn": "What do you need before starting?",
+                "answerEn": "A student card and a booking form.",
+                "explanationId": "\"You'll need…\" membuka prosedur."
+              },
+              {
+                "promptEn": "Why must you check the camera with the staff?",
+                "answerEn": "So you won't be blamed for existing damage/scratches.",
+                "explanationId": "Peringatan menjelaskan akibat jika dilewati."
+              },
+              {
+                "promptEn": "Which step comes right after filling in the form?",
+                "answerEn": "Bringing the form and student card to the equipment desk.",
+                "explanationId": "Penanda \"Then\" menjaga urutan."
+              }
+            ]
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Choose the correct warning form.",
+                "optionsEn": [
+                  "Make sure the file is saved before closing.",
+                  "Making sure the file save.",
+                  "The file makes sure to save."
+                ],
+                "answerIndex": 0,
+                "explanationId": "\"Make sure + klausa\"."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Turn into a procedure step: \"You should press the red button after that.\"",
+                "answerEn": "Then press the red button.",
+                "explanationId": "Prosedur memakai imperative + penanda urutan."
+              },
+              {
+                "type": "choice",
+                "promptEn": "Which marker introduces the last step?",
+                "optionsEn": [
+                  "Next",
+                  "Finally",
+                  "First"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"Finally\" menutup rangkaian langkah."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Explain a procedure you actually know (charging a phone safely, making instant noodles properly, setting up a tripod) in 5 steps with one \"make sure\" warning. Record 45 seconds.",
+            "supportEn": [
+              "You'll need…",
+              "First…, Next…, Then…, Finally…",
+              "Make sure…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "vocabulary",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g10-08",
+            "noteId": "Anda membantu Ryo mendemonstrasikan prosedur bengkel media kepada Maya di Episode 8."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"You'll need…\" at the start of a procedure introduces…",
+                "optionsEn": [
+                  "the steps",
+                  "the tools/materials",
+                  "the warning"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Kebutuhan disebut sebelum langkah."
+              },
+              {
+                "promptEn": "\"Don't skip this, or you'll be blamed\" — \"or\" here means…",
+                "optionsEn": [
+                  "a choice you can pick",
+                  "the consequence if you ignore the step",
+                  "an alternative tool"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"or\" dalam peringatan = akibat."
+              },
+              {
+                "promptEn": "Why write \"the exact times, not 'after school'\"?",
+                "optionsEn": [
+                  "Procedures need precise, checkable details.",
+                  "\"After school\" is bad grammar.",
+                  "Forms dislike short answers."
+                ],
+                "answerIndex": 0,
+                "explanationId": "Prosedur yang baik menghilangkan tafsir ganda."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-equipment",
+            "term": "equipment",
+            "meaningId": "peralatan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-procedures",
+            "recallHookId": "rh-voc-equipment"
+          },
+          {
+            "entryId": "voc-booking",
+            "term": "booking",
+            "meaningId": "pemesanan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-procedures",
+            "recallHookId": "rh-voc-booking"
+          },
+          {
+            "entryId": "voc-scratch",
+            "term": "scratch",
+            "meaningId": "goresan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-procedures",
+            "recallHookId": "rh-voc-scratch"
+          },
+          {
+            "entryId": "voc-strap",
+            "term": "strap",
+            "meaningId": "tali-pengikat",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-procedures",
+            "recallHookId": "rh-voc-strap"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-youll-need",
+            "expression": "You'll need ___",
+            "meaningId": "kamu-akan-butuh",
+            "register": "neutral",
+            "sourceIntentKey": "intent-procedures",
+            "recallHookId": "rh-youll-need"
+          },
+          {
+            "entryId": "exp-make-sure",
+            "expression": "Make sure ___",
+            "meaningId": "pastikan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-procedures",
+            "recallHookId": "rh-make-sure"
+          },
+          {
+            "entryId": "exp-first-next-then-finally",
+            "expression": "First… Next… Then… Finally…",
+            "meaningId": "penanda-urutan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-procedures",
+            "recallHookId": "rh-first-next-then-finally"
+          },
+          {
+            "entryId": "exp-be-careful-with",
+            "expression": "Be careful with ___",
+            "meaningId": "hati-hati-dengan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-procedures",
+            "recallHookId": "rh-be-careful-with"
+          },
+          {
+            "entryId": "exp-dont-skip",
+            "expression": "Don't skip ___",
+            "meaningId": "jangan-lewati",
+            "register": "neutral",
+            "sourceIntentKey": "intent-procedures",
+            "recallHookId": "rh-dont-skip"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-make-sure",
+            "sourceEntryId": "exp-make-sure",
+            "objectiveKey": "obj-g10-13",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-youll-need",
+            "sourceEntryId": "exp-youll-need",
+            "objectiveKey": "obj-g10-13",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g10-14",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_10",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_E",
+      "title": "Short Messages and Chats",
+      "primarySkill": "WRITING",
+      "supportingSkills": [
+        "READING"
+      ],
+      "objectiveKeys": [
+        "obj-g10-14"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Write short messages that get answered",
+            "instructionId": "Anda akan menulis pesan singkat yang jelas dan sesuai konteks: kepada teman, dan versi lebih sopan kepada kakak kelas atau guru.",
+            "canDoEn": "I can write clear short messages with the right level of politeness."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "How is texting a friend different from texting a teacher?",
+              "What makes a message confusing?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Pesan singkat yang baik menjawab: siapa Anda (jika perlu), apa yang Anda butuhkan, dan kapan. Kepada teman boleh sangat santai; kepada guru/kakak kelas tambahkan sapaan, \"please\", dan terima kasih. Jangan kirim \"hello\" saja lalu diam.",
+            "patterns": [
+              {
+                "en": "Hey, running 10 mins late. Order me an es teh?",
+                "noteId": "Pesan teman: langsung, singkat, jelas."
+              },
+              {
+                "en": "Good afternoon, Sir. This is Dinda from 10-B. May I ask about tomorrow's assignment?",
+                "noteId": "Pesan ke guru: sapaan + identitas + permintaan sopan."
+              },
+              {
+                "en": "Got it, thanks!",
+                "noteId": "Selalu tutup dengan konfirmasi singkat."
+              }
+            ]
+          },
+          {
+            "blockType": "reading",
+            "textEn": "CHAT 1 — To a friend: \"gate's locked?? where r u\" / \"side entrance, near the workshop. hurry, hana's counting people\" / \"omw 2 min\" — CHAT 2 — To a senior: \"Good afternoon, Kak Nadia. This is the new member from 10-B. Hana asked me to confirm: is the meeting still at 3 in Club Room 2? Thank you!\" / \"Hi! Yes, still at 3. Bring your form if you haven't handed it in.\" / \"Will do. See you there!\"",
+            "tasks": [
+              {
+                "promptEn": "Why is Chat 1 acceptable even with short forms?",
+                "answerEn": "Between friends, speed and clarity matter; both understand the context.",
+                "explanationId": "Register mengikuti hubungan."
+              },
+              {
+                "promptEn": "What three things does the Chat 2 opener include?",
+                "answerEn": "Greeting, identity, and a clear question.",
+                "explanationId": "Kepada orang yang lebih senior, konteks wajib."
+              },
+              {
+                "promptEn": "What does \"omw\" mean?",
+                "answerEn": "On my way.",
+                "explanationId": "Singkatan chat umum antar teman."
+              }
+            ]
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Which message to a teacher is appropriate?",
+                "optionsEn": [
+                  "\"hey where's the homework\"",
+                  "\"Good morning, Bu. This is Raka from 10-A. May I confirm the homework deadline? Thank you.\"",
+                  "\"HOMEWORK INFO PLEASE\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Sapaan + identitas + permintaan sopan."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Shorten for a close friend: \"I am currently on my way and will arrive in approximately five minutes.\"",
+                "answerEn": "omw, 5 min",
+                "explanationId": "Antar teman, ringkas itu wajar."
+              },
+              {
+                "type": "choice",
+                "promptEn": "You need a reply today. Which message works best?",
+                "optionsEn": [
+                  "\"Hello.\"",
+                  "\"Hi Kak, quick question — can I still hand in the form today? Need to know before 4.\"",
+                  "\"?????\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Kebutuhan + tenggat membuat pesan mudah dijawab."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "writing",
+            "promptEn": "Write two versions of the same request (borrowing a book you left in class): one chat to a close friend, one message to your homeroom teacher.",
+            "supportEn": [
+              "Friend: short forms fine.",
+              "Teacher: greeting + identity + polite request + thanks."
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "grammar",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g10-07",
+            "noteId": "Anda akan membalas email Maya dan mengoordinasikan kunjungan lewat pesan di Episode 7."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "Sending only \"hello\" to a busy person is weak because…",
+                "optionsEn": [
+                  "it is grammatically wrong",
+                  "it gives them nothing to answer",
+                  "it is too formal"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pesan harus membawa isi."
+              },
+              {
+                "promptEn": "Which element does a message to a senior need that a friend-chat doesn't?",
+                "optionsEn": [
+                  "emoji",
+                  "your identity and a greeting",
+                  "capital letters everywhere"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Identitas mencegah \"ini siapa ya?\"."
+              },
+              {
+                "promptEn": "\"Will do\" as a reply means…",
+                "optionsEn": [
+                  "I refuse",
+                  "I will do it / understood",
+                  "I already did it yesterday"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Konfirmasi singkat yang umum."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-assignment",
+            "term": "assignment",
+            "meaningId": "tugas",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-messages",
+            "recallHookId": "rh-voc-assignment"
+          },
+          {
+            "entryId": "voc-senior-student",
+            "term": "senior",
+            "meaningId": "kakak-kelas",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-messages",
+            "recallHookId": "rh-voc-senior-student"
+          },
+          {
+            "entryId": "voc-reply",
+            "term": "reply",
+            "meaningId": "balasan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-messages",
+            "recallHookId": "rh-voc-reply"
+          },
+          {
+            "entryId": "voc-confirm",
+            "term": "confirm",
+            "meaningId": "mengonfirmasi",
+            "partOfSpeech": "verb",
+            "sourceIntentKey": "intent-messages",
+            "recallHookId": "rh-voc-confirm"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-running-late",
+            "expression": "running late",
+            "meaningId": "akan-terlambat",
+            "register": "informal",
+            "sourceIntentKey": "intent-messages",
+            "recallHookId": "rh-running-late"
+          },
+          {
+            "entryId": "exp-on-my-way",
+            "expression": "on my way (omw)",
+            "meaningId": "sedang-menuju",
+            "register": "informal",
+            "sourceIntentKey": "intent-messages",
+            "recallHookId": "rh-on-my-way"
+          },
+          {
+            "entryId": "exp-may-i-ask",
+            "expression": "May I ask about ___?",
+            "meaningId": "boleh-saya-bertanya",
+            "register": "formal",
+            "sourceIntentKey": "intent-messages",
+            "recallHookId": "rh-may-i-ask"
+          },
+          {
+            "entryId": "exp-will-do",
+            "expression": "Will do",
+            "meaningId": "siap-akan-dilakukan",
+            "register": "informal",
+            "sourceIntentKey": "intent-messages",
+            "recallHookId": "rh-will-do"
+          },
+          {
+            "entryId": "exp-quick-question",
+            "expression": "Quick question — ___",
+            "meaningId": "pertanyaan-singkat",
+            "register": "informal",
+            "sourceIntentKey": "intent-messages",
+            "recallHookId": "rh-quick-question"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-may-i-ask",
+            "sourceEntryId": "exp-may-i-ask",
+            "objectiveKey": "obj-g10-14",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-quick-question",
+            "sourceEntryId": "exp-quick-question",
+            "objectiveKey": "obj-g10-14",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g10-15",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_10",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_E",
+      "title": "Telling a Simple Story",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "WRITING"
+      ],
+      "objectiveKeys": [
+        "obj-g10-15"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Tell a story people actually listen to",
+            "instructionId": "Anda akan menceritakan kisah sederhana secara lisan: pembukaan yang menarik, urutan jelas, puncak, dan penutup yang bermakna.",
+            "canDoEn": "I can tell a short connected story with a hook, a build-up, and an ending."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "Who is the best storyteller you know? What makes them good?",
+              "What is the difference between a report and a story?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Cerita lisan hidup karena: pembuka yang memancing (\"You won't believe what happened…\"), penanda urutan (at first, then, suddenly), penahan perhatian (\"and guess what?\"), dan penutup yang memberi makna. Gunakan suara dan jeda, bukan hanya kata.",
+            "patterns": [
+              {
+                "en": "Okay, so this happened last week…",
+                "noteId": "Pembuka cerita santai yang umum."
+              },
+              {
+                "en": "At first everything was fine. Then, suddenly…",
+                "noteId": "Kontras \"at first / suddenly\" membangun ketegangan."
+              },
+              {
+                "en": "And that's how I learned to always check the schedule.",
+                "noteId": "Penutup yang mengikat makna cerita."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "Okay, so this happened on my second day here. I wanted to look confident, right? So I walked into class like I owned the place, sat down, took out my books. At first, everything was fine. Then the teacher walked in — and guess what? It wasn't my class. Not even my grade. Twenty seniors staring at me. I just… stood up, bowed a little for some reason, and walked out in total silence. And that's how the whole school learned my name in one day. Honestly? Best accident ever.",
+            "tasks": [
+              {
+                "promptEn": "What is the story's hook?",
+                "answerEn": "\"Okay, so this happened on my second day here\" — plus wanting to look confident.",
+                "explanationId": "Pembuka memancing rasa ingin tahu."
+              },
+              {
+                "promptEn": "Which phrase builds the surprise?",
+                "answerEn": "\"Then the teacher walked in — and guess what?\"",
+                "explanationId": "\"guess what\" menahan perhatian pendengar."
+              },
+              {
+                "promptEn": "How does the ending give the story meaning?",
+                "answerEn": "It reframes the embarrassment as \"best accident ever\" — everyone learned the speaker's name.",
+                "explanationId": "Penutup reflektif mengubah kejadian jadi cerita."
+              }
+            ],
+            "audioAssetId": "audio-sc-g10-15-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Which opener makes people want to listen?",
+                "optionsEn": [
+                  "\"I will now narrate an event.\"",
+                  "\"You won't believe what happened at practice yesterday.\"",
+                  "\"An event occurred.\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pembuka santai + janji kejutan."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Add tension: \"Everything was fine. The lights went off.\"",
+                "answerEn": "At first everything was fine. Then, suddenly, the lights went off.",
+                "explanationId": "Penanda kontras membangun ketegangan."
+              },
+              {
+                "type": "choice",
+                "promptEn": "A good story ending usually…",
+                "optionsEn": [
+                  "stops at a random point",
+                  "connects the event to a feeling or lesson",
+                  "lists all the characters again"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Penutup memberi alasan cerita itu layak didengar."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Tell a 60-second true story from your first weeks at school: hook, build-up with \"at first/then/suddenly\", one \"guess what\" moment, and a closing line about what it meant.",
+            "supportEn": [
+              "Okay, so this happened…",
+              "At first… Then, suddenly…",
+              "And that's how…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "naturalness",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g10-09",
+            "noteId": "Di Episode 9 Anda menceritakan kisah semester ini di depan klub — dan di kelulusan kelak, kisah tiga tahun."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"And guess what?\" in a story is used to…",
+                "optionsEn": [
+                  "ask a real question",
+                  "hold attention before a surprise",
+                  "end the story"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Alat retoris penahan perhatian."
+              },
+              {
+                "promptEn": "\"At first… then suddenly…\" creates…",
+                "optionsEn": [
+                  "contrast and tension",
+                  "a list of facts",
+                  "a polite request"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Kontras waktu membangun cerita."
+              },
+              {
+                "promptEn": "What separates a story from a report?",
+                "optionsEn": [
+                  "Stories have feelings, tension, and a point; reports list facts.",
+                  "Stories are always longer.",
+                  "Reports use the past tense."
+                ],
+                "answerIndex": 0,
+                "explanationId": "Inti perbedaan genre lisan."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-confident",
+            "term": "confident",
+            "meaningId": "percaya-diri",
+            "partOfSpeech": "adjective",
+            "sourceIntentKey": "intent-storytelling",
+            "recallHookId": "rh-voc-confident"
+          },
+          {
+            "entryId": "voc-embarrassing",
+            "term": "embarrassing",
+            "meaningId": "memalukan",
+            "partOfSpeech": "adjective",
+            "sourceIntentKey": "intent-storytelling",
+            "recallHookId": "rh-voc-embarrassing"
+          },
+          {
+            "entryId": "voc-silence",
+            "term": "silence",
+            "meaningId": "keheningan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-storytelling",
+            "recallHookId": "rh-voc-silence"
+          },
+          {
+            "entryId": "voc-accident",
+            "term": "accident",
+            "meaningId": "kejadian-tak-sengaja",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-storytelling",
+            "recallHookId": "rh-voc-accident"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-you-wont-believe",
+            "expression": "You won't believe what happened",
+            "meaningId": "kamu-tak-akan-percaya",
+            "register": "informal",
+            "sourceIntentKey": "intent-storytelling",
+            "recallHookId": "rh-you-wont-believe"
+          },
+          {
+            "entryId": "exp-at-first",
+            "expression": "at first",
+            "meaningId": "awalnya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-storytelling",
+            "recallHookId": "rh-at-first"
+          },
+          {
+            "entryId": "exp-guess-what",
+            "expression": "and guess what?",
+            "meaningId": "dan-coba-tebak",
+            "register": "informal",
+            "sourceIntentKey": "intent-storytelling",
+            "recallHookId": "rh-guess-what"
+          },
+          {
+            "entryId": "exp-thats-how",
+            "expression": "And that's how ___",
+            "meaningId": "begitulah-akhirnya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-storytelling",
+            "recallHookId": "rh-thats-how"
+          },
+          {
+            "entryId": "exp-out-of-nowhere",
+            "expression": "out of nowhere",
+            "meaningId": "tiba-tiba-muncul",
+            "register": "informal",
+            "sourceIntentKey": "intent-storytelling",
+            "recallHookId": "rh-out-of-nowhere"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-at-first",
+            "sourceEntryId": "exp-at-first",
+            "objectiveKey": "obj-g10-15",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-thats-how",
+            "sourceEntryId": "exp-thats-how",
+            "objectiveKey": "obj-g10-15",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-guess-what",
+            "sourceEntryId": "exp-guess-what",
+            "objectiveKey": "obj-g10-15",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    }
+  ]
+}

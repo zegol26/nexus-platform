@@ -10,6 +10,9 @@ import {
   incrementFeatureUsage,
 } from "@/lib/nexus/access-guards";
 import { JOHN_TUTOR_CONFIG, isJohnTutorId } from "@/lib/english/john-tutor-config";
+import { getStoryArcSessionUser } from "@/lib/storyarc/access";
+import { STORYARC_JOHN_CONTEXT } from "@/lib/storyarc/language/context";
+import { getStoryArcJohnUsage } from "@/lib/storyarc/john/usage";
 
 export const runtime = "nodejs";
 
@@ -56,10 +59,20 @@ async function transcribeVoice(request: Request) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
+    const formData = await request.formData();
+    const contextId = formData.get("contextId");
+    const storyArcJohn = contextId === STORYARC_JOHN_CONTEXT.contextId;
+    const storyArcUser = storyArcJohn ? await getStoryArcSessionUser() : null;
+    if (storyArcJohn && storyArcUser?.id !== user.id) {
+      return NextResponse.json({ error: "StoryArc access is required." }, { status: 403 });
+    }
+
     const isAdmin = user.role === "ADMIN" || user.role === "SUPER_ADMIN";
-    const access = isAdmin
-      ? { allowed: true as const }
-      : await canUseVoiceConversation(user.id);
+    const access = storyArcJohn
+      ? await getStoryArcJohnUsage(user.id)
+      : isAdmin
+        ? { allowed: true as const }
+        : await canUseVoiceConversation(user.id);
     if (!access.allowed) {
       return NextResponse.json(
         {
@@ -83,7 +96,6 @@ async function transcribeVoice(request: Request) {
       );
     }
 
-    const formData = await request.formData();
     const audio = formData.get("audio");
     const tutorId = formData.get("tutorId");
     const courseId = formData.get("courseId");
@@ -190,7 +202,9 @@ async function transcribeVoice(request: Request) {
 
     // Always count voice conversations for cost monitoring; the
     // quota check above already lets admins through.
-    await incrementFeatureUsage(user.id, VOICE_CONVERSATION_FEATURE);
+    if (!storyArcJohn) {
+      await incrementFeatureUsage(user.id, VOICE_CONVERSATION_FEATURE);
+    }
 
     return NextResponse.json({ text: transcript });
   } catch (error) {

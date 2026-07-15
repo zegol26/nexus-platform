@@ -19,6 +19,7 @@ const adminLinks = [
   ["PMP ITTO", "/admin/apps/pmp/itto"],
   ["PMP Glossary", "/admin/apps/pmp/glossary"],
   ["PMP Knowledge", "/admin/apps/pmp/knowledge-base"],
+  ["StoryArc Content", "/admin/apps/storyarc/content"],
   ["Settings", "/admin/settings"],
   ["Architecture", "/admin/architecture"],
 ];

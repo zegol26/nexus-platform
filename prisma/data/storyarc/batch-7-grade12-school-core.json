@@ -1,0 +1,4403 @@
+{
+  "schemaVersion": "storyarc.content.v1",
+  "packageId": "storyarc-initial-90-b7-g12-school-core",
+  "appSlug": "storyarc",
+  "releaseTarget": "initial-90-release-1",
+  "curriculum": {
+    "sourceKey": "indonesia-phase-ef-descriptive-gap",
+    "sourceTitle": "StoryArc Phase E/F Descriptive Mapping",
+    "sourceAuthority": "UNVERIFIED_PROJECT_MAPPING",
+    "sourceVerificationNote": "Academic lead must supply verified CP identifiers before curriculum-alignment claims.",
+    "versionKey": "initial-90-v1",
+    "versionTitle": "Initial 90-item release mapping"
+  },
+  "competencies": [
+    {
+      "competencyKey": "cpa-f-future",
+      "title": "Future plans and decision language",
+      "description": "Discuss plans, hopes, conditions, and justified choices about study and work."
+    },
+    {
+      "competencyKey": "cpa-f-worklit",
+      "title": "Work-and-study functional literacy",
+      "description": "Read job ads and brochures; write CVs, application letters, and related documents."
+    },
+    {
+      "competencyKey": "cpa-f-prospeak",
+      "title": "Professional spoken interaction",
+      "description": "Handle calls, interviews, workplace small talk, and professional farewells."
+    },
+    {
+      "competencyKey": "cpa-f-worklisten",
+      "title": "Workplace listening",
+      "description": "Understand instructions, safety briefings, interviews, and recruitment talks."
+    },
+    {
+      "competencyKey": "cpa-f-report",
+      "title": "Reports and reflective writing",
+      "description": "Write short reports and reflections on work and learning experiences."
+    },
+    {
+      "competencyKey": "cpa-f-media",
+      "title": "Media comprehension on work and trends",
+      "description": "Get the gist of talks, articles, and media about work and future trends."
+    }
+  ],
+  "objectives": [
+    {
+      "objectiveKey": "obj-g12-01",
+      "competencyKey": "cpa-f-future",
+      "title": "Talk about plans, hopes, and intentions",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g12-02",
+      "competencyKey": "cpa-f-worklit",
+      "title": "Describe skills, strengths, and experience",
+      "primarySkill": "GRAMMAR"
+    },
+    {
+      "objectiveKey": "obj-g12-03",
+      "competencyKey": "cpa-f-worklit",
+      "title": "Write a CV and application letter",
+      "primarySkill": "WRITING"
+    },
+    {
+      "objectiveKey": "obj-g12-04",
+      "competencyKey": "cpa-f-worklit",
+      "title": "Read job ads and program brochures for requirements",
+      "primarySkill": "READING"
+    },
+    {
+      "objectiveKey": "obj-g12-05",
+      "competencyKey": "cpa-f-worklisten",
+      "title": "Understand interviews and recruitment talks",
+      "primarySkill": "LISTENING"
+    },
+    {
+      "objectiveKey": "obj-g12-06",
+      "competencyKey": "cpa-f-prospeak",
+      "title": "Answer interview questions with structured examples",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g12-07",
+      "competencyKey": "cpa-f-prospeak",
+      "title": "Handle professional phone and video calls",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g12-08",
+      "competencyKey": "cpa-f-prospeak",
+      "title": "Manage workplace small talk and first-day interactions",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g12-09",
+      "competencyKey": "cpa-f-worklisten",
+      "title": "Understand spoken instructions and safety briefings",
+      "primarySkill": "LISTENING"
+    },
+    {
+      "objectiveKey": "obj-g12-10",
+      "competencyKey": "cpa-f-report",
+      "title": "Write short reports and reflections",
+      "primarySkill": "WRITING"
+    },
+    {
+      "objectiveKey": "obj-g12-11",
+      "competencyKey": "cpa-f-future",
+      "title": "Use conditionals to weigh decisions and consequences",
+      "primarySkill": "GRAMMAR"
+    },
+    {
+      "objectiveKey": "obj-g12-12",
+      "competencyKey": "cpa-f-future",
+      "title": "Discuss advantages and disadvantages",
+      "primarySkill": "WRITING"
+    },
+    {
+      "objectiveKey": "obj-g12-13",
+      "competencyKey": "cpa-f-future",
+      "title": "Persuade and justify a choice",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g12-14",
+      "competencyKey": "cpa-f-media",
+      "title": "Get the gist of media about work and trends",
+      "primarySkill": "LISTENING"
+    },
+    {
+      "objectiveKey": "obj-g12-15",
+      "competencyKey": "cpa-f-prospeak",
+      "title": "Say goodbye, thank, and stay connected",
+      "primarySkill": "SPEAKING"
+    }
+  ],
+  "assets": [
+    {
+      "assetId": "audio-sc-g12-01-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g12-01/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g12-01/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/ff454c3cd5f21163bfe20a30bffb871d08d0dd97e7b3fc86062485ba73d90581.mp3",
+      "contentHash": "sha256:ff454c3cd5f21163bfe20a30bffb871d08d0dd97e7b3fc86062485ba73d90581",
+      "mimeType": "audio/mpeg",
+      "byteSize": 481802,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g12-05-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g12-05/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g12-05/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/bc82134e2e5b2e26be93fced7f3e375484ab3e63de07c3646a65ed05deddc4bb.mp3",
+      "contentHash": "sha256:bc82134e2e5b2e26be93fced7f3e375484ab3e63de07c3646a65ed05deddc4bb",
+      "mimeType": "audio/mpeg",
+      "byteSize": 588696,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g12-06-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g12-06/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g12-06/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/b94be795678afb07c566f102cbf5542f3d231792f85412c8db5c35a6a099c923.mp3",
+      "contentHash": "sha256:b94be795678afb07c566f102cbf5542f3d231792f85412c8db5c35a6a099c923",
+      "mimeType": "audio/mpeg",
+      "byteSize": 602175,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g12-07-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g12-07/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g12-07/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/9ca2a762e44b3415352f442cdd773c50e5de274202a486a8839f435241d8f218.mp3",
+      "contentHash": "sha256:9ca2a762e44b3415352f442cdd773c50e5de274202a486a8839f435241d8f218",
+      "mimeType": "audio/mpeg",
+      "byteSize": 857339,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g12-08-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g12-08/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g12-08/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/a96edad7aa45431bcee86b4adac38c8ff09f117955fe7837077d65ee260f1081.mp3",
+      "contentHash": "sha256:a96edad7aa45431bcee86b4adac38c8ff09f117955fe7837077d65ee260f1081",
+      "mimeType": "audio/mpeg",
+      "byteSize": 787749,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g12-09-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g12-09/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g12-09/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/d0e585224a245c5e08bd4a95472ae87f4f509828ab0343803d9bd4715bda9540.mp3",
+      "contentHash": "sha256:d0e585224a245c5e08bd4a95472ae87f4f509828ab0343803d9bd4715bda9540",
+      "mimeType": "audio/mpeg",
+      "byteSize": 624431,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g12-11-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g12-11/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g12-11/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/f32b30809933c10cf9b524ac4a6837ca6fc75d376faa0ae962943d65e1a1d9d6.mp3",
+      "contentHash": "sha256:f32b30809933c10cf9b524ac4a6837ca6fc75d376faa0ae962943d65e1a1d9d6",
+      "mimeType": "audio/mpeg",
+      "byteSize": 691827,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g12-13-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g12-13/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g12-13/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/38a445ffbb50f811fa53694b47661cd4778064161f1fff58e4df4e3f4f92042e.mp3",
+      "contentHash": "sha256:38a445ffbb50f811fa53694b47661cd4778064161f1fff58e4df4e3f4f92042e",
+      "mimeType": "audio/mpeg",
+      "byteSize": 803736,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g12-14-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g12-14/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g12-14/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/a4fb5d1dae8446208bb3f35364570df2f72dea675a2134951df245ba62edccfa.mp3",
+      "contentHash": "sha256:a4fb5d1dae8446208bb3f35364570df2f72dea675a2134951df245ba62edccfa",
+      "mimeType": "audio/mpeg",
+      "byteSize": 817528,
+      "temporary": true
+    }
+  ],
+  "items": [
+    {
+      "stableId": "sc-g12-01",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Plans, Hopes, and Intentions",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "GRAMMAR"
+      ],
+      "objectiveKeys": [
+        "obj-g12-01"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Talk about your future like you've thought about it",
+            "instructionId": "Kelas 12 dimulai: Anda akan membicarakan rencana, harapan, dan niat dengan bentuk masa depan yang tepat tingkat kepastiannya.",
+            "canDoEn": "I can talk about plans, hopes, and intentions with appropriate certainty levels."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab jujur.",
+            "promptsEn": [
+              "What do you want to be doing two years from now?",
+              "How sure are you: 90%, 50%, or \"please don't ask\"?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Masa depan punya tingkat kepastian: rencana pasti (\"I'm going to apply…\", \"I'm taking the test in May\"), niat (\"I plan to…\", \"I intend to…\"), harapan (\"I'm hoping to…\", \"I'd like to…\"), dan kemungkinan (\"I might…\", \"I'm considering…\"). Memilih bentuk yang salah membuat Anda terdengar lebih/kurang yakin dari kenyataan.",
+            "patterns": [
+              {
+                "en": "I'm going to apply for the multimedia program at the polytechnic.",
+                "noteId": "\"going to\" = rencana yang sudah diputuskan."
+              },
+              {
+                "en": "I'm hoping to get a scholarship, but I might work first if it falls through.",
+                "noteId": "Harapan + rencana cadangan dengan \"might\"."
+              },
+              {
+                "en": "I'm still weighing my options, honestly.",
+                "noteId": "Jawaban jujur saat belum memutuskan — lebih baik daripada pura-pura pasti."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "A: So, final year. What's the plan? B: Okay, real answer? I'm going to take the design school entrance test in March — that part's decided. I'm hoping to get into the Bandung campus, but if that falls through, I might take the internship-to-job route at a studio here. A: That's… a surprisingly complete plan. B: My sister made me write it down. She said \"a hope without a backup is just a wish.\" A: Harsh. B: Effective, though.",
+            "tasks": [
+              {
+                "promptEn": "Which part of B's future is decided, and how do you know?",
+                "answerEn": "Taking the entrance test in March — marked by \"I'm going to\" and \"that part's decided\".",
+                "explanationId": "\"going to\" menandai keputusan."
+              },
+              {
+                "promptEn": "What is B's backup plan and which word signals its uncertainty?",
+                "answerEn": "The internship-to-job route, signaled by \"might\".",
+                "explanationId": "\"might\" = kemungkinan, bukan kepastian."
+              },
+              {
+                "promptEn": "What does \"if that falls through\" mean?",
+                "answerEn": "If the first plan fails.",
+                "explanationId": "Idiom rencana gagal."
+              }
+            ],
+            "audioAssetId": "audio-sc-g12-01-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "You have registered for a test next month. Say it with the right certainty.",
+                "optionsEn": [
+                  "I might take a test someday.",
+                  "I'm taking the entrance test next month.",
+                  "I would have taken tests."
+                ],
+                "answerIndex": 1,
+                "explanationId": "Jadwal pasti memakai present continuous/going to."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Express a hope + backup: scholarship / work at an uncle's shop.",
+                "answerEn": "I'm hoping to get a scholarship, but if that falls through, I might work at my uncle's shop first.",
+                "explanationId": "Harapan + \"falls through\" + \"might\"."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"I'm considering taking a gap year\" means the speaker…",
+                "optionsEn": [
+                  "has decided on a gap year",
+                  "is thinking about it, not decided",
+                  "refuses a gap year"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"considering\" = menimbang."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Record 45 seconds about your real post-graduation picture: one decided plan, one hope, one backup with \"might\", and one honest uncertainty.",
+            "supportEn": [
+              "I'm going to…",
+              "I'm hoping to…",
+              "If that falls through, I might…",
+              "I'm still weighing…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "grammar",
+              "naturalness",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g12-01",
+            "noteId": "Career Day di Episode 1 Season 3 menuntut Anda membicarakan masa depan dengan orang asing profesional."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"I'm going to study nursing\" vs \"I might study nursing\" — the difference is…",
+                "optionsEn": [
+                  "politeness",
+                  "level of certainty",
+                  "past vs future"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Bentuk masa depan mengkode kepastian."
+              },
+              {
+                "promptEn": "\"If the scholarship falls through\" means if it…",
+                "optionsEn": [
+                  "succeeds",
+                  "fails/doesn't happen",
+                  "gets bigger"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Idiom kegagalan rencana."
+              },
+              {
+                "promptEn": "The most honest answer when undecided is…",
+                "optionsEn": [
+                  "inventing a fake sure plan",
+                  "\"I'm still weighing my options\" + what you're considering",
+                  "silence"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Ketidakpastian yang diartikulasikan tetap komunikatif."
+              }
+            ]
+          },
+          {
+            "blockType": "rubric-definition",
+            "rubricRevisionId": "rubric-g12-school-core-v1",
+            "scale": "0-4 per criterion",
+            "criteria": [
+              {
+                "criterionId": "task-fulfillment",
+                "titleEn": "Task fulfillment",
+                "descriptorId": "Jawaban menyelesaikan tuntutan end-check dan tetap relevan."
+              },
+              {
+                "criterionId": "language-accuracy",
+                "titleEn": "Language accuracy",
+                "descriptorId": "Grammar dan kosakata target digunakan secara akurat."
+              },
+              {
+                "criterionId": "meaning",
+                "titleEn": "Meaning",
+                "descriptorId": "Makna jawaban jelas dan dapat dibuktikan dari stimulus."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-scholarship",
+            "term": "scholarship",
+            "meaningId": "beasiswa",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-future-plans",
+            "recallHookId": "rh-voc-scholarship"
+          },
+          {
+            "entryId": "voc-entrance-test",
+            "term": "entrance test",
+            "meaningId": "ujian-masuk",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-future-plans",
+            "recallHookId": "rh-voc-entrance-test"
+          },
+          {
+            "entryId": "voc-polytechnic",
+            "term": "polytechnic",
+            "meaningId": "politeknik",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-future-plans",
+            "recallHookId": "rh-voc-polytechnic"
+          },
+          {
+            "entryId": "voc-gap-year",
+            "term": "gap year",
+            "meaningId": "tahun-jeda",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-future-plans",
+            "recallHookId": "rh-voc-gap-year"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-im-going-to",
+            "expression": "I'm going to ___",
+            "meaningId": "saya-akan-rencana-pasti",
+            "register": "neutral",
+            "sourceIntentKey": "intent-future-plans",
+            "recallHookId": "rh-im-going-to"
+          },
+          {
+            "entryId": "exp-im-hoping-to",
+            "expression": "I'm hoping to ___",
+            "meaningId": "saya-berharap",
+            "register": "neutral",
+            "sourceIntentKey": "intent-future-plans",
+            "recallHookId": "rh-im-hoping-to"
+          },
+          {
+            "entryId": "exp-falls-through",
+            "expression": "if ___ falls through",
+            "meaningId": "jika-gagal-terwujud",
+            "register": "informal",
+            "sourceIntentKey": "intent-future-plans",
+            "recallHookId": "rh-falls-through"
+          },
+          {
+            "entryId": "exp-weighing-my-options",
+            "expression": "weighing my options",
+            "meaningId": "menimbang-pilihan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-future-plans",
+            "recallHookId": "rh-weighing-my-options"
+          },
+          {
+            "entryId": "exp-take-the-route",
+            "expression": "take the ___ route",
+            "meaningId": "menempuh-jalur",
+            "register": "informal",
+            "sourceIntentKey": "intent-future-plans",
+            "recallHookId": "rh-take-the-route"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-im-hoping-to",
+            "sourceEntryId": "exp-im-hoping-to",
+            "objectiveKey": "obj-g12-01",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-weighing-my-options",
+            "sourceEntryId": "exp-weighing-my-options",
+            "objectiveKey": "obj-g12-01",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g12-02",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Describing Skills and Strengths",
+      "primarySkill": "GRAMMAR",
+      "supportingSkills": [
+        "SPEAKING",
+        "VOCABULARY"
+      ],
+      "objectiveKeys": [
+        "obj-g12-02"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Sell your skills without lying or shrinking",
+            "instructionId": "Anda akan mendeskripsikan keterampilan dan kekuatan diri dengan bukti — tidak sombong, tidak mengecilkan diri.",
+            "canDoEn": "I can describe my skills and strengths with supporting evidence."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab jujur.",
+            "promptsEn": [
+              "Name one thing you're actually good at.",
+              "Why is answering that question embarrassing for many Indonesians?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Klaim keterampilan butuh tiga bagian: kemampuan (\"I'm confident with…\", \"I'm good at…\"), tingkat (\"basic\", \"solid\", \"advanced\"), dan bukti (\"I edited our club's festival video\"). Hindari dua kutub: \"I am the best\" (sombong tanpa bukti) dan \"I can't really do anything\" (mengecilkan diri). Present perfect menghubungkan pengalaman ke sekarang: \"I've edited five event videos.\"",
+            "patterns": [
+              {
+                "en": "I'm confident with video editing — I've cut five event videos for our club.",
+                "noteId": "Klaim + bukti terukur."
+              },
+              {
+                "en": "My spoken English is solid in daily conversation, and I'm working on presentation skills.",
+                "noteId": "Jujur bertingkat: kuat di X, sedang membangun Y."
+              },
+              {
+                "en": "I'm a fast learner — the camera slider took me one afternoon.",
+                "noteId": "Sifat + contoh konkret satu baris."
+              }
+            ]
+          },
+          {
+            "blockType": "reading",
+            "textEn": "TWO SELF-DESCRIPTIONS, SAME PERSON: (A) \"I can do editing and stuff. I'm okay at English I guess. I help at events sometimes.\" (B) \"I'm confident with video editing — I've cut five event videos, including our festival opener that reached two hundred viewers in a week. My English is solid in conversation; I co-hosted a campus tour for a Singaporean delegation. I'm a fast learner: I taught myself subtitling software in two days because a deadline demanded it.\" Same skills. Same honesty. Only one of them gets the internship.",
+            "tasks": [
+              {
+                "promptEn": "What do B's claims have that A's don't?",
+                "answerEn": "Evidence: numbers, named events, and outcomes.",
+                "explanationId": "Bukti mengubah klaim menjadi fakta yang bisa dipercaya."
+              },
+              {
+                "promptEn": "Is B bragging? Why not?",
+                "answerEn": "No — every claim is tied to a checkable fact, and B admits what's still developing.",
+                "explanationId": "Sombong = klaim tanpa bukti; percaya diri = klaim dengan bukti."
+              },
+              {
+                "promptEn": "Find the \"fast learner\" evidence.",
+                "answerEn": "Self-taught subtitling software in two days under deadline.",
+                "explanationId": "Sifat abstrak butuh cerita konkret."
+              }
+            ]
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "transform",
+                "promptEn": "Upgrade: \"I can use a computer.\"",
+                "answerEn": "I'm comfortable with spreadsheets and slides — I built our club's budget tracker.",
+                "explanationId": "Spesifik + bukti mengalahkan umum."
+              },
+              {
+                "type": "choice",
+                "promptEn": "Choose the honest middle between bragging and shrinking.",
+                "optionsEn": [
+                  "\"I am the greatest editor in this school.\"",
+                  "\"I'm confident with editing — five event videos so far — and I'm still improving my color grading.\"",
+                  "\"I edit sometimes but I'm probably bad.\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Klaim + bukti + area pengembangan."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"I've volunteered at three school events\" uses present perfect because…",
+                "optionsEn": [
+                  "the events are happening now",
+                  "past experience is presented as relevant to the present",
+                  "it sounds fancy"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Present perfect = jembatan pengalaman ke sekarang."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Record a 45-second skills pitch about yourself (real skills only): two claims with evidence, one level statement, one developing area.",
+            "supportEn": [
+              "I'm confident with… — I've…",
+              "…is solid, and I'm working on…",
+              "I'm a fast learner: …"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "grammar",
+              "vocabulary",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g12-02",
+            "noteId": "Bahasa ini mengisi CV dan surat lamaran Anda di Episode 2 — dan jawaban wawancara di Episode 8."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "A skill claim becomes credible when it has…",
+                "optionsEn": [
+                  "capital letters",
+                  "evidence (numbers, events, outcomes)",
+                  "many adjectives"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Bukti = kredibilitas."
+              },
+              {
+                "promptEn": "\"My English is solid in conversation\" — \"solid\" here means…",
+                "optionsEn": [
+                  "hard like stone",
+                  "reliably good",
+                  "frozen"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"solid\" = mantap/andal."
+              },
+              {
+                "promptEn": "Admitting a developing area (\"still improving my color grading\") makes the pitch…",
+                "optionsEn": [
+                  "weaker",
+                  "more believable",
+                  "illegal"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Kejujuran terukur menaikkan kepercayaan pada klaim lainnya."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-strength",
+            "term": "strength",
+            "meaningId": "kekuatan-kelebihan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-skills",
+            "recallHookId": "rh-voc-strength"
+          },
+          {
+            "entryId": "voc-experience-work",
+            "term": "experience",
+            "meaningId": "pengalaman",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-skills",
+            "recallHookId": "rh-voc-experience-work"
+          },
+          {
+            "entryId": "voc-self-taught",
+            "term": "self-taught",
+            "meaningId": "belajar-mandiri",
+            "partOfSpeech": "adjective",
+            "sourceIntentKey": "intent-skills",
+            "recallHookId": "rh-voc-self-taught"
+          },
+          {
+            "entryId": "voc-outcome",
+            "term": "outcome",
+            "meaningId": "hasil",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-skills",
+            "recallHookId": "rh-voc-outcome"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-im-confident-with",
+            "expression": "I'm confident with ___",
+            "meaningId": "saya-percaya-diri-dengan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-skills",
+            "recallHookId": "rh-im-confident-with"
+          },
+          {
+            "entryId": "exp-hands-on-experience",
+            "expression": "hands-on experience",
+            "meaningId": "pengalaman-langsung",
+            "register": "neutral",
+            "sourceIntentKey": "intent-skills",
+            "recallHookId": "rh-hands-on-experience"
+          },
+          {
+            "entryId": "exp-fast-learner",
+            "expression": "a fast learner",
+            "meaningId": "cepat-belajar",
+            "register": "neutral",
+            "sourceIntentKey": "intent-skills",
+            "recallHookId": "rh-fast-learner"
+          },
+          {
+            "entryId": "exp-working-on",
+            "expression": "I'm working on ___",
+            "meaningId": "sedang-saya-kembangkan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-skills",
+            "recallHookId": "rh-working-on"
+          },
+          {
+            "entryId": "exp-solid-in",
+            "expression": "solid in ___",
+            "meaningId": "mantap-dalam",
+            "register": "informal",
+            "sourceIntentKey": "intent-skills",
+            "recallHookId": "rh-solid-in"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-im-confident-with",
+            "sourceEntryId": "exp-im-confident-with",
+            "objectiveKey": "obj-g12-02",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-fast-learner",
+            "sourceEntryId": "exp-fast-learner",
+            "objectiveKey": "obj-g12-02",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-hands-on-experience",
+            "sourceEntryId": "exp-hands-on-experience",
+            "objectiveKey": "obj-g12-02",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g12-03",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Writing a CV and Application Letter",
+      "primarySkill": "WRITING",
+      "supportingSkills": [
+        "READING"
+      ],
+      "objectiveKeys": [
+        "obj-g12-03"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "One page that opens doors",
+            "instructionId": "Anda akan menyusun CV satu halaman dan surat lamaran singkat yang menjawab kebutuhan spesifik lowongan/program.",
+            "canDoEn": "I can write a one-page CV and a short application letter matched to a specific opening."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "What has a Grade 12 student done that belongs on a CV? (More than you think.)",
+              "Why is one CV for all applications a mistake?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "CV siswa: data diri → pendidikan → pengalaman (organisasi, lomba, proyek, magang) → keterampilan → kontak referensi. Gunakan kata kerja aksi (organized, led, built, handled) + hasil. Surat lamaran tiga paragraf: mengapa Anda menulis (posisi + sumber info), mengapa Anda cocok (2 bukti terkuat, disesuaikan dengan syarat iklan), dan penutup tindak lanjut. Kunci: cerminkan kata kunci iklan.",
+            "patterns": [
+              {
+                "en": "Organized a five-school festival attended by 211 visitors.",
+                "noteId": "Kata kerja aksi + angka hasil — baris CV yang hidup."
+              },
+              {
+                "en": "I am writing to apply for the junior content position advertised on your website.",
+                "noteId": "Pembuka surat lamaran standar: posisi + sumber."
+              },
+              {
+                "en": "The role asks for teamwork under pressure; our festival committee taught me exactly that.",
+                "noteId": "Mencerminkan syarat iklan lalu membuktikannya."
+              }
+            ]
+          },
+          {
+            "blockType": "reading",
+            "textEn": "AD EXCERPT: \"Studio Cakra seeks a student intern for video production support. Requirements: basic editing skills, reliability under deadlines, teamwork. Plus: English communication.\" — MATCHED LETTER (middle paragraph): \"Your ad asks for editing, reliability, and teamwork. I have edited five event videos, including a festival opener produced in 48 hours to meet a fixed launch — that deadline is my favorite line on my CV, because we hit it. As treasurer-side coordinator of a five-school festival, I worked in a team where missed deadlines had public consequences. My English is conversation-solid: I co-guided a Singaporean delegation on a full campus tour.\" — Notice: every ad requirement is named, then proven, in order.",
+            "tasks": [
+              {
+                "promptEn": "How does the letter mirror the ad?",
+                "answerEn": "It names each requirement (editing, reliability, teamwork, English) and proves each with a specific experience, in the ad's order.",
+                "explanationId": "Teknik mirroring membuat perekrut mudah mencentang syarat."
+              },
+              {
+                "promptEn": "Which sentence proves \"reliability under deadlines\"?",
+                "answerEn": "The festival opener produced in 48 hours to meet a fixed launch.",
+                "explanationId": "Bukti tenggat konkret."
+              },
+              {
+                "promptEn": "Why mention consequences (\"missed deadlines had public consequences\")?",
+                "answerEn": "It shows the stakes were real — the teamwork claim carries weight.",
+                "explanationId": "Konteks menaikkan nilai bukti."
+              }
+            ]
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "transform",
+                "promptEn": "Turn into a CV line: \"I was in the committee and we did a charity event and it went well.\"",
+                "answerEn": "Coordinated logistics for a charity event that raised 3.2 million rupiah.",
+                "explanationId": "Kata kerja aksi + peran spesifik + hasil terukur."
+              },
+              {
+                "type": "choice",
+                "promptEn": "The first paragraph of an application letter must state…",
+                "optionsEn": [
+                  "your life story",
+                  "the position and where you saw it",
+                  "your salary hopes"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Posisi + sumber = konteks instan."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"One CV for all applications\" fails because…",
+                "optionsEn": [
+                  "printing is expensive",
+                  "each opening has different requirements to mirror",
+                  "CVs expire weekly"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Penyesuaian per lowongan adalah inti seleksi."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "writing",
+            "promptEn": "Choose a real target (internship, first job, or study program). Write your one-page CV (real activities only) and a three-paragraph application letter that mirrors at least three requirements you'd expect that target to have.",
+            "supportEn": [
+              "Organized/led/built/handled… + hasil",
+              "I am writing to apply for…",
+              "Your program asks for…; I…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "grammar",
+              "vocabulary",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g12-02",
+            "noteId": "Episode 2 Season 3: CV dan surat inilah yang Anda kirim untuk magang — dengan bimbingan John."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "The strongest CV lines contain…",
+                "optionsEn": [
+                  "adjectives about personality",
+                  "action verbs with measurable results",
+                  "long sentences"
+                ],
+                "answerIndex": 1,
+                "explanationId": "organized/led/built + angka."
+              },
+              {
+                "promptEn": "\"Mirroring\" an ad means…",
+                "optionsEn": [
+                  "copying the ad word by word as your letter",
+                  "naming the ad's requirements and proving each one",
+                  "sending the ad back"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Nama syarat → bukti syarat."
+              },
+              {
+                "promptEn": "Which belongs on a Grade 12 CV?",
+                "optionsEn": [
+                  "\"Future CEO\"",
+                  "\"Club treasurer; managed a 4.2-million-rupiah event budget\"",
+                  "\"Good vibes\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Peran nyata + tanggung jawab terukur."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-applicant",
+            "term": "applicant",
+            "meaningId": "pelamar",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-cv-letter",
+            "recallHookId": "rh-voc-applicant"
+          },
+          {
+            "entryId": "voc-requirement",
+            "term": "requirement",
+            "meaningId": "persyaratan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-cv-letter",
+            "recallHookId": "rh-voc-requirement"
+          },
+          {
+            "entryId": "voc-reference-person",
+            "term": "reference",
+            "meaningId": "pemberi-rekomendasi",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-cv-letter",
+            "recallHookId": "rh-voc-reference-person"
+          },
+          {
+            "entryId": "voc-treasurer",
+            "term": "treasurer",
+            "meaningId": "bendahara",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-cv-letter",
+            "recallHookId": "rh-voc-treasurer"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-apply-for-a-position",
+            "expression": "apply for a position",
+            "meaningId": "melamar-posisi",
+            "register": "formal",
+            "sourceIntentKey": "intent-cv-letter",
+            "recallHookId": "rh-apply-for-a-position"
+          },
+          {
+            "entryId": "exp-i-am-writing-to-apply",
+            "expression": "I am writing to apply for ___",
+            "meaningId": "saya-menulis-untuk-melamar",
+            "register": "formal",
+            "sourceIntentKey": "intent-cv-letter",
+            "recallHookId": "rh-i-am-writing-to-apply"
+          },
+          {
+            "entryId": "exp-meet-the-requirements",
+            "expression": "meet the requirements",
+            "meaningId": "memenuhi-syarat",
+            "register": "formal",
+            "sourceIntentKey": "intent-cv-letter",
+            "recallHookId": "rh-meet-the-requirements"
+          },
+          {
+            "entryId": "exp-attached-is-my",
+            "expression": "Attached is my ___",
+            "meaningId": "terlampir",
+            "register": "formal",
+            "sourceIntentKey": "intent-cv-letter",
+            "recallHookId": "rh-attached-is-my"
+          },
+          {
+            "entryId": "exp-advertised-on",
+            "expression": "advertised on ___",
+            "meaningId": "diiklankan-di",
+            "register": "formal",
+            "sourceIntentKey": "intent-cv-letter",
+            "recallHookId": "rh-advertised-on"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-i-am-writing-to-apply",
+            "sourceEntryId": "exp-i-am-writing-to-apply",
+            "objectiveKey": "obj-g12-03",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-meet-the-requirements",
+            "sourceEntryId": "exp-meet-the-requirements",
+            "objectiveKey": "obj-g12-03",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g12-04",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Reading Job Ads and Brochures",
+      "primarySkill": "READING",
+      "supportingSkills": [
+        "VOCABULARY"
+      ],
+      "objectiveKeys": [
+        "obj-g12-04"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Decode the fine print of your future",
+            "instructionId": "Anda akan membaca iklan lowongan dan brosur program: membedakan syarat wajib dari nilai tambah, dan menangkap jebakan detail.",
+            "canDoEn": "I can extract requirements, benefits, and deadlines from job ads and program brochures."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "What's the difference between \"must have\" and \"nice to have\"?",
+              "Have you ever missed an opportunity because of a detail you didn't read?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Bahasa iklan punya kode: wajib (\"must have\", \"required\", \"minimum\"), nilai tambah (\"preferred\", \"a plus\", \"is an advantage\"), janji (\"competitive allowance\", \"hands-on training\"), dan batasan (\"shortlisted candidates only\", \"placement subject to availability\"). Brosur program: perhatikan akreditasi, biaya tersembunyi, dan syarat kelulusan — bukan hanya foto gedung.",
+            "patterns": [
+              {
+                "en": "Minimum requirement: final-year vocational students. Design portfolio is a plus.",
+                "noteId": "\"minimum\" = wajib; \"a plus\" = menambah nilai tanpa menggugurkan."
+              },
+              {
+                "en": "Only shortlisted candidates will be contacted.",
+                "noteId": "Tidak dihubungi ≠ ditolak resmi; artinya belum lolos saringan."
+              },
+              {
+                "en": "Placement is subject to mentor availability.",
+                "noteId": "\"subject to\" = tergantung pada; janji bersyarat."
+              }
+            ]
+          },
+          {
+            "blockType": "reading",
+            "textEn": "INTERNSHIP AD — STUDIO CAKRA CREATIVE HOUSE. Positions: 2 production interns (video), 1 front-office intern (client service). Duration: 12 weeks, starting July. Must have: final-year SMA/SMK status, school permission letter, basic computer skills. For production: basic editing skills required; a personal portfolio is a plus. For front office: conversational English required. Allowance: transport + lunch, plus a completion certificate co-signed by the city creative association. Selection: document screening, then a practical test for production applicants OR a role-play interview for front-office applicants. Apply by 30 April; only shortlisted candidates will be contacted within two weeks. Note: placements are subject to mentor availability; Studio Cakra may adjust start dates by up to one month.",
+            "tasks": [
+              {
+                "promptEn": "Which requirement applies to front-office but not production?",
+                "answerEn": "Conversational English (production requires editing skills instead).",
+                "explanationId": "Syarat berbeda per posisi — kesalahan umum pelamar."
+              },
+              {
+                "promptEn": "Is a portfolio required for production?",
+                "answerEn": "No — it is \"a plus\", not a must.",
+                "explanationId": "Bedakan wajib vs nilai tambah."
+              },
+              {
+                "promptEn": "You applied and heard nothing for three weeks. What does the ad tell you?",
+                "answerEn": "You were not shortlisted — only shortlisted candidates are contacted within two weeks.",
+                "explanationId": "Membaca kebijakan seleksi mencegah harapan salah."
+              },
+              {
+                "promptEn": "What can change even after you're accepted?",
+                "answerEn": "The start date (by up to one month) and placement depends on mentor availability.",
+                "explanationId": "\"subject to\" dan klausul penyesuaian adalah detail penting."
+              }
+            ]
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "\"Prior experience is an advantage\" means…",
+                "optionsEn": [
+                  "experience is mandatory",
+                  "experience helps but isn't required",
+                  "experienced people are banned"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"advantage/plus/preferred\" = nilai tambah."
+              },
+              {
+                "type": "choice",
+                "promptEn": "A brochure says \"accommodation available*\" with a footnote. You should…",
+                "optionsEn": [
+                  "assume it's free",
+                  "read the footnote before deciding",
+                  "ignore footnotes"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Tanda bintang = syarat tersembunyi."
+              },
+              {
+                "type": "choice",
+                "promptEn": "Which detail disqualifies an application instantly?",
+                "optionsEn": [
+                  "No portfolio (production)",
+                  "Missing the 30 April deadline",
+                  "Being shy"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Tenggat adalah syarat mutlak."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "writing",
+            "promptEn": "Make a decision table for the Studio Cakra ad as if you were applying: position chosen, musts you meet, musts you lack (with a plan), pluses you have, and two questions you would ask before accepting.",
+            "supportEn": [
+              "Musts met: …",
+              "Gap + plan: …",
+              "Questions: …"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g12-01",
+            "noteId": "Career Day (Episode 1) menyebar brosur seperti ini — membaca cermat menentukan pilihan magang Anda."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"Required\" vs \"preferred\": which can you apply without?",
+                "optionsEn": [
+                  "required",
+                  "preferred",
+                  "neither"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"preferred\" tidak menggugurkan."
+              },
+              {
+                "promptEn": "\"Subject to availability\" warns you that…",
+                "optionsEn": [
+                  "the promise is conditional",
+                  "everything is guaranteed",
+                  "the ad is fake"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Janji bersyarat."
+              },
+              {
+                "promptEn": "The first two things to scan in any ad are…",
+                "optionsEn": [
+                  "logo and colors",
+                  "deadline and must-have requirements",
+                  "office photos"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Gugur di tenggat/syarat wajib = gugur total."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-internship",
+            "term": "internship",
+            "meaningId": "magang",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-job-ads",
+            "recallHookId": "rh-voc-internship"
+          },
+          {
+            "entryId": "voc-allowance",
+            "term": "allowance",
+            "meaningId": "tunjangan-uang-saku",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-job-ads",
+            "recallHookId": "rh-voc-allowance"
+          },
+          {
+            "entryId": "voc-shortlisted",
+            "term": "shortlisted",
+            "meaningId": "masuk-daftar-pendek",
+            "partOfSpeech": "adjective",
+            "sourceIntentKey": "intent-job-ads",
+            "recallHookId": "rh-voc-shortlisted"
+          },
+          {
+            "entryId": "voc-portfolio",
+            "term": "portfolio",
+            "meaningId": "portofolio",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-job-ads",
+            "recallHookId": "rh-voc-portfolio"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-must-have",
+            "expression": "must have ___",
+            "meaningId": "wajib-memiliki",
+            "register": "neutral",
+            "sourceIntentKey": "intent-job-ads",
+            "recallHookId": "rh-must-have"
+          },
+          {
+            "entryId": "exp-is-a-plus",
+            "expression": "___ is a plus",
+            "meaningId": "menjadi-nilai-tambah",
+            "register": "neutral",
+            "sourceIntentKey": "intent-job-ads",
+            "recallHookId": "rh-is-a-plus"
+          },
+          {
+            "entryId": "exp-subject-to",
+            "expression": "subject to ___",
+            "meaningId": "tergantung-pada",
+            "register": "formal",
+            "sourceIntentKey": "intent-job-ads",
+            "recallHookId": "rh-subject-to"
+          },
+          {
+            "entryId": "exp-apply-by",
+            "expression": "apply by ___",
+            "meaningId": "lamar-paling-lambat",
+            "register": "neutral",
+            "sourceIntentKey": "intent-job-ads",
+            "recallHookId": "rh-apply-by"
+          },
+          {
+            "entryId": "exp-shortlisted-only",
+            "expression": "only shortlisted candidates will be contacted",
+            "meaningId": "hanya-kandidat-terpilih-dihubungi",
+            "register": "formal",
+            "sourceIntentKey": "intent-job-ads",
+            "recallHookId": "rh-shortlisted-only"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-must-have",
+            "sourceEntryId": "exp-must-have",
+            "objectiveKey": "obj-g12-04",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-is-a-plus",
+            "sourceEntryId": "exp-is-a-plus",
+            "objectiveKey": "obj-g12-04",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g12-05",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Listening: Interviews and Recruitment",
+      "primarySkill": "LISTENING",
+      "supportingSkills": [
+        "VOCABULARY"
+      ],
+      "objectiveKeys": [
+        "obj-g12-05"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Hear what interviewers are really asking",
+            "instructionId": "Anda akan memahami pertanyaan wawancara dan pembicaraan rekrutmen: pertanyaan di balik pertanyaan, dan sinyal positif/negatif pewawancara.",
+            "canDoEn": "I can understand interview questions, including their underlying intent."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "\"Tell me about yourself\" — what is the interviewer actually asking?",
+              "Why do interviewers ask about failures?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Pertanyaan wawancara punya lapisan: \"Tell me about yourself\" = \"ringkas dirimu yang relevan dengan posisi ini\"; \"What's your weakness?\" = \"apakah kamu jujur dan berkembang?\"; \"Why should we choose you?\" = \"cocokkan dirimu dengan kebutuhan kami\". Sinyal pewawancara: \"walk me through…\" (minta kronologi), \"let's say…\" (skenario hipotetis), \"anything you'd like to ask us?\" (kesempatan, bukan basa-basi).",
+            "patterns": [
+              {
+                "en": "Walk me through your festival project — what was your part exactly?",
+                "noteId": "\"walk me through\" = ceritakan urut; \"exactly\" menuntut spesifik."
+              },
+              {
+                "en": "Let's say a client is unhappy with your edit. What do you do first?",
+                "noteId": "\"Let's say\" membuka skenario — dinilai: proses berpikir, bukan jawaban sempurna."
+              },
+              {
+                "en": "Do you have any questions for us?",
+                "noteId": "Selalu punya satu pertanyaan cerdas — ini bagian dari penilaian."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "RECRUITER (campus talk): Let me tell you what actually happens in our intern interviews, because most of you will over-prepare the wrong things. We don't expect perfect English — we expect recoverable English. If you don't understand a question, asking us to rephrase scores BETTER than answering the wrong question confidently. We always ask for one story of something going wrong; candidates who say \"nothing ever went wrong\" end the interview early, because they're either unobservant or untruthful. And when we ask \"any questions for us?\" — \"what would my first week look like?\" is a great question. \"Do you pay?\" is also fine, honestly. Asking nothing is the only wrong move.",
+            "tasks": [
+              {
+                "promptEn": "What does \"recoverable English\" mean in this talk?",
+                "answerEn": "English where you can fix breakdowns — e.g., asking for a rephrase instead of guessing.",
+                "explanationId": "Strategi klarifikasi dinilai positif — gema dari sc-g10-12."
+              },
+              {
+                "promptEn": "Why do \"nothing ever went wrong\" candidates fail?",
+                "answerEn": "They appear unobservant or untruthful.",
+                "explanationId": "Pertanyaan kegagalan menguji kejujuran + refleksi."
+              },
+              {
+                "promptEn": "What is \"the only wrong move\" at question time?",
+                "answerEn": "Asking nothing.",
+                "explanationId": "Bertanya = bukti keterlibatan."
+              }
+            ],
+            "audioAssetId": "audio-sc-g12-05-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "\"Walk me through your project\" wants…",
+                "optionsEn": [
+                  "a yes/no answer",
+                  "a step-by-step account of your role",
+                  "a walk outside"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Kronologi peran spesifik."
+              },
+              {
+                "type": "choice",
+                "promptEn": "You don't catch the interviewer's question. Best move?",
+                "optionsEn": [
+                  "Answer something else confidently",
+                  "\"Sorry, could you rephrase that?\"",
+                  "Silence"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Recoverable English — klarifikasi menang."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"Let's say your teammate misses a deadline\" is testing your…",
+                "optionsEn": [
+                  "memory of facts",
+                  "thinking process in a scenario",
+                  "grammar only"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Skenario menilai proses, bukan hafalan."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "writing",
+            "promptEn": "Listen (read) again and write interview prep notes: three things this recruiter rewards, two things that fail candidates, and the one question you would ask them.",
+            "supportEn": [
+              "Rewards: …",
+              "Fails: …",
+              "My question: …"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g12-03",
+            "noteId": "Telepon koordinator magang di Episode 3 dan wawancara Episode 8 menguji pemahaman ini secara langsung."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"What's your weakness?\" is really asking about…",
+                "optionsEn": [
+                  "your worst secret",
+                  "honesty and growth",
+                  "your enemies"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Lapisan di balik pertanyaan."
+              },
+              {
+                "promptEn": "Asking an interviewer to rephrase shows…",
+                "optionsEn": [
+                  "weakness",
+                  "communication strategy",
+                  "rudeness"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Recoverable English dinilai positif."
+              },
+              {
+                "promptEn": "\"Any questions for us?\" is…",
+                "optionsEn": [
+                  "a polite ending only",
+                  "part of the assessment",
+                  "a trick with no good answer"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pertanyaan balik dinilai."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-recruiter",
+            "term": "recruiter",
+            "meaningId": "perekrut",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-interview-listening",
+            "recallHookId": "rh-voc-recruiter"
+          },
+          {
+            "entryId": "voc-candidate",
+            "term": "candidate",
+            "meaningId": "kandidat",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-interview-listening",
+            "recallHookId": "rh-voc-candidate"
+          },
+          {
+            "entryId": "voc-scenario",
+            "term": "scenario",
+            "meaningId": "skenario",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-interview-listening",
+            "recallHookId": "rh-voc-scenario"
+          },
+          {
+            "entryId": "voc-rephrase",
+            "term": "rephrase",
+            "meaningId": "mengungkapkan-ulang",
+            "partOfSpeech": "verb",
+            "sourceIntentKey": "intent-interview-listening",
+            "recallHookId": "rh-voc-rephrase"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-walk-me-through",
+            "expression": "Walk me through ___",
+            "meaningId": "ceritakan-urut",
+            "register": "neutral",
+            "sourceIntentKey": "intent-interview-listening",
+            "recallHookId": "rh-walk-me-through"
+          },
+          {
+            "entryId": "exp-lets-say",
+            "expression": "Let's say ___",
+            "meaningId": "misalkan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-interview-listening",
+            "recallHookId": "rh-lets-say"
+          },
+          {
+            "entryId": "exp-could-you-rephrase",
+            "expression": "Could you rephrase that?",
+            "meaningId": "bisa-diungkapkan-ulang",
+            "register": "formal",
+            "sourceIntentKey": "intent-interview-listening",
+            "recallHookId": "rh-could-you-rephrase"
+          },
+          {
+            "entryId": "exp-any-questions-for-us",
+            "expression": "Any questions for us?",
+            "meaningId": "ada-pertanyaan-untuk-kami",
+            "register": "neutral",
+            "sourceIntentKey": "intent-interview-listening",
+            "recallHookId": "rh-any-questions-for-us"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-could-you-rephrase",
+            "sourceEntryId": "exp-could-you-rephrase",
+            "objectiveKey": "obj-g12-05",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-walk-me-through",
+            "sourceEntryId": "exp-walk-me-through",
+            "objectiveKey": "obj-g12-05",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g12-06",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Interview Answers: The STAR Pattern",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "GRAMMAR"
+      ],
+      "objectiveKeys": [
+        "obj-g12-06"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Answer with a story, not a shrug",
+            "instructionId": "Anda akan menjawab pertanyaan pengalaman dengan pola STAR: Situation, Task, Action, Result — struktur yang membuat jawaban wawancara meyakinkan.",
+            "canDoEn": "I can answer experience questions using the STAR pattern."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "\"Tell me about a time you solved a problem\" — what's your instinctive answer?",
+              "Was your answer a story or a claim (\"I'm good at solving problems\")?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "STAR: Situation (konteks singkat: kapan, di mana), Task (tanggung jawab/tantangan Anda), Action (yang ANDA lakukan — bukan \"we\" terus-menerus), Result (hasil terukur + pelajaran). Porsi: S+T ±25%, A ±50%, R ±25%. Bahasa khas: \"The situation was…\", \"My job was to…\", \"So what I did was…\", \"As a result…\".",
+            "patterns": [
+              {
+                "en": "The situation was: our sound vendor cancelled three weeks before the festival.",
+                "noteId": "Situasi dalam satu kalimat — tidak perlu sejarah lengkap."
+              },
+              {
+                "en": "So what I did was shortlist two replacements overnight and set a decision deadline.",
+                "noteId": "Aksi dengan \"I\" — pewawancara menilai Anda, bukan tim."
+              },
+              {
+                "en": "As a result, we signed a better vendor at the same price — and I learned to always have a plan B in writing.",
+                "noteId": "Hasil + pelajaran menutup jawaban dengan matang."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "MOCK ANSWER (annotated): Q: \"Tell me about a time you handled a conflict.\" A: \"The situation was our festival committee in Grade 11 — two leaders disagreed about task division, and the argument happened in front of ten members. My role was tricky: I wasn't the leader, but both were my friends. So what I did was three things: I validated both sides publicly, I named the real issue — an unfair task split we'd all ignored — and I proposed a two-areas-per-person cap. It wasn't comfortable. As a result, the split was renegotiated that week, and the festival ran with zero further blowups. What I learned is that conflicts are rarely about the sentence that starts them.\"",
+            "tasks": [
+              {
+                "promptEn": "Identify the four STAR parts in the answer.",
+                "answerEn": "S: committee argument in front of members; T: caught between two friends without authority; A: validated both, named the root issue, proposed the cap; R: renegotiated split, zero blowups + lesson.",
+                "explanationId": "Semua bagian hadir dengan porsi benar."
+              },
+              {
+                "promptEn": "Why does the speaker say \"what I did\" instead of \"what we did\"?",
+                "answerEn": "Interviewers assess the individual; \"I\" shows personal contribution.",
+                "explanationId": "Aksi pribadi adalah inti STAR."
+              },
+              {
+                "promptEn": "What makes the result strong?",
+                "answerEn": "It's concrete (renegotiated that week, zero blowups) and includes a lesson.",
+                "explanationId": "Hasil terukur + refleksi."
+              }
+            ],
+            "audioAssetId": "audio-sc-g12-06-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Which is an ACTION sentence (the A in STAR)?",
+                "optionsEn": [
+                  "\"Our club had many problems.\"",
+                  "\"So what I did was rewrite the schedule and brief each member personally.\"",
+                  "\"Teamwork is important.\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Aksi = kata kerja + \"I\"."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Fix this weak result: \"And then it was fine, I guess.\"",
+                "answerEn": "As a result, we hit the deadline, and the client renewed for a second video.",
+                "explanationId": "Hasil butuh bukti, bukan \"fine\"."
+              },
+              {
+                "type": "choice",
+                "promptEn": "The biggest portion of a STAR answer should be…",
+                "optionsEn": [
+                  "Situation",
+                  "Action",
+                  "Result"
+                ],
+                "answerIndex": 1,
+                "explanationId": "±50% pada aksi Anda."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Record a 60–90 second STAR answer to: \"Tell me about a time something went wrong in a team, and what you did.\" Use a real experience; all four parts; \"I\" in the action.",
+            "supportEn": [
+              "The situation was…",
+              "My job was to…",
+              "So what I did was…",
+              "As a result… What I learned is…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "grammar",
+              "vocabulary",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g12-08",
+            "noteId": "Wawancara klimaks Episode 8 dinilai pada pola ini — dan latihan resminya ada di Exam Lab."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "STAR stands for…",
+                "optionsEn": [
+                  "Situation, Task, Action, Result",
+                  "Story, Talk, Answer, Repeat",
+                  "Start, Try, Achieve, Rest"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Definisi pola."
+              },
+              {
+                "promptEn": "\"We did everything together\" throughout an answer is weak because…",
+                "optionsEn": [
+                  "teams are bad",
+                  "the interviewer can't see YOUR contribution",
+                  "it is ungrammatical"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Aksi pribadi harus terlihat."
+              },
+              {
+                "promptEn": "A STAR answer without a result is like…",
+                "optionsEn": [
+                  "a story with no ending",
+                  "a perfect answer",
+                  "a longer question"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Hasil memberi makna pada aksi."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-conflict",
+            "term": "conflict",
+            "meaningId": "konflik",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-star",
+            "recallHookId": "rh-voc-conflict"
+          },
+          {
+            "entryId": "voc-contribution",
+            "term": "contribution",
+            "meaningId": "kontribusi",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-star",
+            "recallHookId": "rh-voc-contribution"
+          },
+          {
+            "entryId": "voc-deadline-word",
+            "term": "deadline",
+            "meaningId": "tenggat",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-star",
+            "recallHookId": "rh-voc-deadline-word"
+          },
+          {
+            "entryId": "voc-client",
+            "term": "client",
+            "meaningId": "klien",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-star",
+            "recallHookId": "rh-voc-client"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-the-situation-was",
+            "expression": "The situation was ___",
+            "meaningId": "situasinya-adalah",
+            "register": "neutral",
+            "sourceIntentKey": "intent-star",
+            "recallHookId": "rh-the-situation-was"
+          },
+          {
+            "entryId": "exp-my-job-was-to",
+            "expression": "My job was to ___",
+            "meaningId": "tugas-saya-adalah",
+            "register": "neutral",
+            "sourceIntentKey": "intent-star",
+            "recallHookId": "rh-my-job-was-to"
+          },
+          {
+            "entryId": "exp-so-what-i-did-was",
+            "expression": "So what I did was ___",
+            "meaningId": "yang-saya-lakukan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-star",
+            "recallHookId": "rh-so-what-i-did-was"
+          },
+          {
+            "entryId": "exp-as-a-result-star",
+            "expression": "As a result, ___",
+            "meaningId": "hasilnya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-star",
+            "recallHookId": "rh-as-a-result-star"
+          },
+          {
+            "entryId": "exp-what-i-learned-is",
+            "expression": "What I learned is ___",
+            "meaningId": "yang-saya-pelajari",
+            "register": "neutral",
+            "sourceIntentKey": "intent-star",
+            "recallHookId": "rh-what-i-learned-is"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-the-situation-was",
+            "sourceEntryId": "exp-the-situation-was",
+            "objectiveKey": "obj-g12-06",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-so-what-i-did-was",
+            "sourceEntryId": "exp-so-what-i-did-was",
+            "objectiveKey": "obj-g12-06",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-as-a-result-star",
+            "sourceEntryId": "exp-as-a-result-star",
+            "objectiveKey": "obj-g12-06",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g12-07",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Phone and Video Call English",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g12-07"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Sound professional without a face",
+            "instructionId": "Telepon menghilangkan bahasa tubuh — tinggal suara dan kata. Anda akan menangani panggilan profesional: membuka, mengeja, mengonfirmasi, dan menutup.",
+            "canDoEn": "I can handle a professional phone or video call from opening to close."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab jujur.",
+            "promptsEn": [
+              "Do phone calls in any language make you nervous? Why?",
+              "What's harder on a call: speaking or the silence?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Struktur panggilan profesional: identifikasi diri (\"This is ___ calling about ___\"), tujuan dalam satu kalimat, konfirmasi detail (mengeja nama, mengulang angka), dan penutup dengan ringkasan tindakan. Masalah teknis punya frasanya sendiri: \"You're breaking up\", \"Could you speak up a little?\". Rekam jejak: selalu tutup dengan \"So, to confirm: …\".",
+            "patterns": [
+              {
+                "en": "Good morning, this is ___ from Cakrawala calling about the internship placement.",
+                "noteId": "Identifikasi + tujuan — sepuluh detik pertama menentukan nada panggilan."
+              },
+              {
+                "en": "That's R-Y-O, R as in rabbit, Y as in yellow, O as in orange.",
+                "noteId": "Mengeja dengan kata bantu mencegah salah tulis."
+              },
+              {
+                "en": "So, to confirm: Monday the 8th, 9 a.m., bring the permission letter. Thank you!",
+                "noteId": "Ringkasan penutup = asuransi kesalahpahaman."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "COORDINATOR: Studio Cakra, good morning. STUDENT: Good morning, this is Dinda from SMA-SMK Cakrawala, calling about the production internship — I received the acceptance email yesterday. COORDINATOR: Ah, one of the new interns! Congrats. You're calling to confirm the start date? STUDENT: Yes, and one question about documents. COORDINATOR: Start date is Monday the 8th — sorry, my mic is— can you hear me? STUDENT: You're breaking up a little. Could you repeat the date? COORDINATOR: Monday. The. 8th. Nine a.m. STUDENT: Got it. And the documents? COORDINATOR: Permission letter and one ID copy. STUDENT: Perfect. So, to confirm: Monday the 8th at nine, permission letter and ID copy. COORDINATOR: Exactly. See you then, Dinda.",
+            "tasks": [
+              {
+                "promptEn": "How does Dinda open the call?",
+                "answerEn": "Identity + origin + purpose in one sentence.",
+                "explanationId": "Pembuka profesional standar."
+              },
+              {
+                "promptEn": "What does Dinda do when the audio breaks?",
+                "answerEn": "Names the problem (\"You're breaking up\") and asks for a repeat.",
+                "explanationId": "Masalah teknis ditangani dengan frasa, bukan panik."
+              },
+              {
+                "promptEn": "Why does the call end safely?",
+                "answerEn": "Dinda confirms all details in a closing summary.",
+                "explanationId": "\"So, to confirm\" mengunci informasi."
+              }
+            ],
+            "audioAssetId": "audio-sc-g12-07-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Choose the professional call opener.",
+                "optionsEn": [
+                  "\"Hello? Who's this? You called me— oh wait, I called you.\"",
+                  "\"Good afternoon, this is Raka from Cakrawala, calling about the venue booking.\"",
+                  "\"HELLO. VENUE. YES?\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Identitas + tujuan."
+              },
+              {
+                "type": "transform",
+                "promptEn": "The caller's voice is too quiet. Ask politely.",
+                "answerEn": "Sorry, could you speak up a little? The line is quiet.",
+                "explanationId": "Frasa masalah teknis."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"So, to confirm: Thursday, 2 p.m., room 4\" protects you from…",
+                "optionsEn": [
+                  "long calls",
+                  "misheard details causing real mistakes",
+                  "polite endings"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Konfirmasi = jaring pengaman."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Record both sides of a call (60 seconds): you call a training program to confirm your registration; include an opener, one spelling-out of your name, one technical-problem phrase, and a closing confirmation.",
+            "supportEn": [
+              "This is ___ calling about…",
+              "…as in…",
+              "You're breaking up…",
+              "So, to confirm: …"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "naturalness",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g12-03",
+            "noteId": "Episode 3 (The Call) adalah panggilan sungguhan pertama Anda ke dunia kerja."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"You're breaking up\" means…",
+                "optionsEn": [
+                  "you are crying",
+                  "the audio is cutting out",
+                  "the call is over"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Frasa gangguan sinyal."
+              },
+              {
+                "promptEn": "Spelling with \"R as in rabbit\" is used to…",
+                "optionsEn": [
+                  "show off vocabulary",
+                  "prevent letters being misheard",
+                  "make calls longer"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Huruf mirip (B/P, M/N) sering tertukar di telepon."
+              },
+              {
+                "promptEn": "Every professional call should end with…",
+                "optionsEn": [
+                  "a joke",
+                  "a confirmation summary of the details",
+                  "an abrupt hang-up"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Ringkasan mengunci kesepakatan."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-coordinator",
+            "term": "coordinator",
+            "meaningId": "koordinator",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-calls",
+            "recallHookId": "rh-voc-coordinator"
+          },
+          {
+            "entryId": "voc-acceptance",
+            "term": "acceptance",
+            "meaningId": "penerimaan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-calls",
+            "recallHookId": "rh-voc-acceptance"
+          },
+          {
+            "entryId": "voc-document",
+            "term": "document",
+            "meaningId": "dokumen",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-calls",
+            "recallHookId": "rh-voc-document"
+          },
+          {
+            "entryId": "voc-line-connection",
+            "term": "line",
+            "meaningId": "sambungan-telepon",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-calls",
+            "recallHookId": "rh-voc-line-connection"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-this-is-x-calling-about",
+            "expression": "This is ___ calling about ___",
+            "meaningId": "saya-menelepon-tentang",
+            "register": "formal",
+            "sourceIntentKey": "intent-calls",
+            "recallHookId": "rh-this-is-x-calling-about"
+          },
+          {
+            "entryId": "exp-youre-breaking-up",
+            "expression": "You're breaking up",
+            "meaningId": "suaranya-putus-putus",
+            "register": "neutral",
+            "sourceIntentKey": "intent-calls",
+            "recallHookId": "rh-youre-breaking-up"
+          },
+          {
+            "entryId": "exp-could-you-speak-up",
+            "expression": "Could you speak up a little?",
+            "meaningId": "bisa-lebih-keras",
+            "register": "neutral",
+            "sourceIntentKey": "intent-calls",
+            "recallHookId": "rh-could-you-speak-up"
+          },
+          {
+            "entryId": "exp-so-to-confirm",
+            "expression": "So, to confirm: ___",
+            "meaningId": "jadi-untuk-konfirmasi",
+            "register": "neutral",
+            "sourceIntentKey": "intent-calls",
+            "recallHookId": "rh-so-to-confirm"
+          },
+          {
+            "entryId": "exp-as-in-spelling",
+            "expression": "___ as in ___ (spelling)",
+            "meaningId": "mengeja-dengan-kata-bantu",
+            "register": "neutral",
+            "sourceIntentKey": "intent-calls",
+            "recallHookId": "rh-as-in-spelling"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-so-to-confirm",
+            "sourceEntryId": "exp-so-to-confirm",
+            "objectiveKey": "obj-g12-07",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-this-is-x-calling-about",
+            "sourceEntryId": "exp-this-is-x-calling-about",
+            "objectiveKey": "obj-g12-07",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g12-08",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Workplace Small Talk and First Days",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g12-08"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Survive the first week without hiding in the toilet",
+            "instructionId": "Small talk kantor berbeda dari kantin: topiknya kerja-aman, lawan bicaranya beragam usia, dan Anda adalah orang baru. Anda akan menguasai interaksi hari-hari pertama magang.",
+            "canDoEn": "I can handle first-day introductions and safe workplace small talk."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "What topics are safe with a 40-year-old supervisor you met today?",
+              "Recall Grade 10 small talk — what changes at a workplace?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Evolusi dari sc-g10-02: pola sama (situasi bersama → tanggapan + info → penutup), register naik. Topik aman: pekerjaan itu sendiri, makan siang area kantor, perjalanan ke kantor. Topik hindari: gaji orang, gosip kantor, politik. Sebagai orang baru, pertanyaan adalah mata uang Anda: \"How long have you been here?\", \"Any tips for a first-weeker?\"",
+            "patterns": [
+              {
+                "en": "Hi, I'm the new intern — first day. You're in the editing team, right?",
+                "noteId": "Identitas + observasi = pembuka aman orang baru."
+              },
+              {
+                "en": "How long have you been at the studio?",
+                "noteId": "Pertanyaan aman yang orang senang jawab."
+              },
+              {
+                "en": "I'd better get back to it — thanks for the tips!",
+                "noteId": "Penutup kerja: kembali ke tugas + apresiasi."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "(Pantry, day one.) STAFF: You look new. And lost. Healthy combination. INTERN: That obvious? First day — I'm the production intern. I'm told the coffee machine has opinions. STAFF: It rejects everyone's card on Mondays. I'm Bara, motion graphics. INTERN: Nice to meet you. How long have you been here? BARA: Three years. Tip: the render farm queue is sacred — never cancel anyone's job, even if yours is urgent. Ask them first. INTERN: Noted. Render queue is sacred, ask first. Anything else a first-weeker should know? BARA: Lunch at 11:45, before the warteg line explodes. INTERN: You're a lifesaver. I'd better get back — thanks, Bara!",
+            "tasks": [
+              {
+                "promptEn": "How does the intern turn embarrassment into an opener?",
+                "answerEn": "With light self-humor (\"That obvious?\") plus identity.",
+                "explanationId": "Humor ringan menurunkan tembok — tanpa merendahkan diri berlebihan."
+              },
+              {
+                "promptEn": "What workplace rule does Bara share, and how does the intern respond?",
+                "answerEn": "Never cancel render jobs without asking; the intern repeats it back (\"Render queue is sacred, ask first\").",
+                "explanationId": "Konfirmasi ala Grade 10 — kini menyelamatkan karier magang."
+              },
+              {
+                "promptEn": "Which closing pattern does the intern reuse from Grade 10?",
+                "answerEn": "\"I'd better get back\" + thanks — the small-talk closer, work version.",
+                "explanationId": "Pola lama, register baru."
+              }
+            ],
+            "audioAssetId": "audio-sc-g12-08-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Safe first-day question to a senior staff member:",
+                "optionsEn": [
+                  "\"How much do you earn?\"",
+                  "\"How long have you been with the studio?\"",
+                  "\"Who's the laziest person here?\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Masa kerja aman; gaji dan gosip tidak."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Close a pantry chat because your mentor is waiting.",
+                "answerEn": "I'd better get back — my mentor's waiting. Thanks for the tips!",
+                "explanationId": "Alasan kerja + apresiasi."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"Any tips for a first-weeker?\" works because…",
+                "optionsEn": [
+                  "it flatters no one",
+                  "people enjoy sharing expertise, and you get survival info",
+                  "it avoids all conversation"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pertanyaan tips = mata uang orang baru."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Record a first-day pantry conversation (both voices, 60 seconds): introduce yourself as the intern, ask two safe questions, receive one workplace rule and confirm it back, close professionally.",
+            "supportEn": [
+              "Hi, I'm the new intern…",
+              "How long have you been…?",
+              "Noted — so … , right?",
+              "I'd better get back…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "naturalness",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g12-04",
+            "noteId": "Hari pertama di Laras Bay/Studio Cakra (Episode 4) memakai persis keterampilan ini."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "Workplace small talk differs from school small talk mainly in…",
+                "optionsEn": [
+                  "language",
+                  "register and safe-topic range",
+                  "volume"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pola sama, konteks menajam."
+              },
+              {
+                "promptEn": "Repeating a workplace rule back (\"so the queue is sacred, right?\") shows…",
+                "optionsEn": [
+                  "you weren't listening",
+                  "confirmation strategy — you'll actually follow it",
+                  "fear"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Konfirmasi Grade 10 dalam pakaian kerja."
+              },
+              {
+                "promptEn": "Which topic should a new intern avoid?",
+                "optionsEn": [
+                  "The lunch spot",
+                  "Colleagues' salaries",
+                  "The commute"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Gaji orang lain = zona merah."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-intern",
+            "term": "intern",
+            "meaningId": "anak-magang",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-workplace-talk",
+            "recallHookId": "rh-voc-intern"
+          },
+          {
+            "entryId": "voc-supervisor",
+            "term": "supervisor",
+            "meaningId": "penyelia-atasan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-workplace-talk",
+            "recallHookId": "rh-voc-supervisor"
+          },
+          {
+            "entryId": "voc-pantry",
+            "term": "pantry",
+            "meaningId": "dapur-kantor",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-workplace-talk",
+            "recallHookId": "rh-voc-pantry"
+          },
+          {
+            "entryId": "voc-commute",
+            "term": "commute",
+            "meaningId": "perjalanan-kerja",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-workplace-talk",
+            "recallHookId": "rh-voc-commute"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-im-the-new-intern",
+            "expression": "I'm the new intern",
+            "meaningId": "saya-anak-magang-baru",
+            "register": "neutral",
+            "sourceIntentKey": "intent-workplace-talk",
+            "recallHookId": "rh-im-the-new-intern"
+          },
+          {
+            "entryId": "exp-how-long-have-you-been",
+            "expression": "How long have you been ___?",
+            "meaningId": "sudah-berapa-lama",
+            "register": "neutral",
+            "sourceIntentKey": "intent-workplace-talk",
+            "recallHookId": "rh-how-long-have-you-been"
+          },
+          {
+            "entryId": "exp-any-tips-for",
+            "expression": "Any tips for ___?",
+            "meaningId": "ada-saran-untuk",
+            "register": "informal",
+            "sourceIntentKey": "intent-workplace-talk",
+            "recallHookId": "rh-any-tips-for"
+          },
+          {
+            "entryId": "exp-get-back-to-it",
+            "expression": "I'd better get back to it",
+            "meaningId": "saya-kembali-bekerja",
+            "register": "neutral",
+            "sourceIntentKey": "intent-workplace-talk",
+            "recallHookId": "rh-get-back-to-it"
+          },
+          {
+            "entryId": "exp-youre-a-lifesaver",
+            "expression": "You're a lifesaver",
+            "meaningId": "kamu-penyelamat",
+            "register": "informal",
+            "sourceIntentKey": "intent-workplace-talk",
+            "recallHookId": "rh-youre-a-lifesaver"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-how-long-have-you-been",
+            "sourceEntryId": "exp-how-long-have-you-been",
+            "objectiveKey": "obj-g12-08",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-get-back-to-it",
+            "sourceEntryId": "exp-get-back-to-it",
+            "objectiveKey": "obj-g12-08",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g12-09",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Instructions and Safety Briefings",
+      "primarySkill": "LISTENING",
+      "supportingSkills": [
+        "SPEAKING"
+      ],
+      "objectiveKeys": [
+        "obj-g12-09"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "When listening becomes safety-critical",
+            "instructionId": "Di tempat kerja, salah dengar bukan nilai jelek — bisa berarti alat rusak atau orang terluka. Anda akan memahami instruksi kerja dan briefing keselamatan secara presisi.",
+            "canDoEn": "I can follow workplace instructions and safety briefings precisely."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "What's the worst that happened when you misheard a school instruction? Now imagine a workshop.",
+              "Why do safety briefings repeat things?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Instruksi kerja memakai: urutan wajib (\"before you…\", \"only after…\"), larangan mutlak (\"never\", \"under no circumstances\"), dan kondisi (\"if X happens, stop and report\"). Dengar angka dan pengecualian dengan telinga ekstra. Budaya kerja yang baik: konfirmasi instruksi berisiko (\"Just to confirm — power off BEFORE opening?\") tidak pernah dianggap bodoh.",
+            "patterns": [
+              {
+                "en": "Never unplug the main drive while the light is blinking.",
+                "noteId": "\"never\" + kondisi spesifik = larangan mutlak."
+              },
+              {
+                "en": "Only after the supervisor signs the checklist may equipment leave the room.",
+                "noteId": "\"only after\" = urutan yang tidak bisa ditawar."
+              },
+              {
+                "en": "If you smell burning, stop everything and report to the floor manager first.",
+                "noteId": "Protokol kondisi darurat: tindakan + eskalasi."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "SUPERVISOR (equipment room briefing): Morning, interns. Three rules, and I mean all three. One: the battery cabinet. Charge only in the labeled slots — never on the workbench, we had a melted bench in 2024 and I still hear about it. Two: gear checkout. Nothing leaves this room until the checklist is signed by me or Ibu Wulan — only after signing, not \"signing later\". Three: cables. If a cable is frayed — even slightly — tag it red and drop it in the quarantine bin. Do not \"test\" it. Do not be a hero. Questions? …Nobody? Then one of you repeat rule two back to me. Yes, you.",
+            "tasks": [
+              {
+                "promptEn": "Where may batteries be charged?",
+                "answerEn": "Only in the labeled slots of the battery cabinet — never on the workbench.",
+                "explanationId": "Larangan mutlak + lokasi spesifik."
+              },
+              {
+                "promptEn": "When may equipment leave the room?",
+                "answerEn": "Only after the checklist is signed by the supervisor or Ibu Wulan.",
+                "explanationId": "\"only after\" — urutan wajib."
+              },
+              {
+                "promptEn": "What is the frayed-cable protocol?",
+                "answerEn": "Tag it red, put it in the quarantine bin, never test it.",
+                "explanationId": "Protokol kondisi: tindakan spesifik, bukan improvisasi."
+              },
+              {
+                "promptEn": "Why does the supervisor ask someone to repeat rule two?",
+                "answerEn": "Confirmation by repetition — the workplace version of \"so you mean…\".",
+                "explanationId": "Budaya konfirmasi keselamatan."
+              }
+            ],
+            "audioAssetId": "audio-sc-g12-09-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "\"Under no circumstances should the cover be removed while running\" means…",
+                "optionsEn": [
+                  "remove it quickly",
+                  "never remove it while running, no exceptions",
+                  "remove it if busy"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Larangan terkuat dalam bahasa instruksi."
+              },
+              {
+                "type": "choice",
+                "promptEn": "You're 90% sure of a risky instruction. You should…",
+                "optionsEn": [
+                  "proceed — 90% is enough",
+                  "confirm: \"Just to confirm — power off before opening?\"",
+                  "ask a fellow intern who is 60% sure"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Konfirmasi pada risiko = profesionalisme."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"Only after the test call may you email the client\" — what comes first?",
+                "optionsEn": [
+                  "The email",
+                  "The test call",
+                  "Either"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"only after X\" = X dulu."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "You are the senior intern. Record a 45-second briefing for a new intern about borrowing the club's camera (real rules from your school or invented sensibly): one \"never\", one \"only after\", one \"if…then report\".",
+            "supportEn": [
+              "Never…",
+              "Only after…",
+              "If…, stop and report to…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "clarity",
+              "grammar"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g12-04",
+            "noteId": "Briefing Pak Halim di Episode 4 — dan kesalahan di Episode 5 lahir dari instruksi yang tidak dikonfirmasi."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "Safety briefings repeat key rules because…",
+                "optionsEn": [
+                  "speakers forget",
+                  "repetition fights the cost of a single misheard rule",
+                  "time must be filled"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Redundansi = desain keselamatan."
+              },
+              {
+                "promptEn": "\"Do not be a hero\" in the briefing means…",
+                "optionsEn": [
+                  "heroes are banned from the studio",
+                  "don't improvise with dangerous equipment — follow protocol",
+                  "never help anyone"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Larangan improvisasi berisiko."
+              },
+              {
+                "promptEn": "The best response to a safety instruction you half-heard is…",
+                "optionsEn": [
+                  "nodding",
+                  "asking for a repeat immediately",
+                  "checking later maybe"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Di konteks keselamatan, klarifikasi bersifat wajib."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-briefing",
+            "term": "briefing",
+            "meaningId": "pengarahan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-safety",
+            "recallHookId": "rh-voc-briefing"
+          },
+          {
+            "entryId": "voc-frayed",
+            "term": "frayed",
+            "meaningId": "terkelupas-aus",
+            "partOfSpeech": "adjective",
+            "sourceIntentKey": "intent-safety",
+            "recallHookId": "rh-voc-frayed"
+          },
+          {
+            "entryId": "voc-checklist",
+            "term": "checklist",
+            "meaningId": "daftar-periksa",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-safety",
+            "recallHookId": "rh-voc-checklist"
+          },
+          {
+            "entryId": "voc-quarantine",
+            "term": "quarantine",
+            "meaningId": "karantina-isolasi",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-safety",
+            "recallHookId": "rh-voc-quarantine"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-under-no-circumstances",
+            "expression": "under no circumstances",
+            "meaningId": "dalam-keadaan-apa-pun-jangan",
+            "register": "formal",
+            "sourceIntentKey": "intent-safety",
+            "recallHookId": "rh-under-no-circumstances"
+          },
+          {
+            "entryId": "exp-only-after",
+            "expression": "only after ___",
+            "meaningId": "hanya-setelah",
+            "register": "neutral",
+            "sourceIntentKey": "intent-safety",
+            "recallHookId": "rh-only-after"
+          },
+          {
+            "entryId": "exp-just-to-confirm",
+            "expression": "Just to confirm — ___",
+            "meaningId": "sekadar-konfirmasi",
+            "register": "neutral",
+            "sourceIntentKey": "intent-safety",
+            "recallHookId": "rh-just-to-confirm"
+          },
+          {
+            "entryId": "exp-stop-and-report",
+            "expression": "stop and report to ___",
+            "meaningId": "berhenti-dan-lapor",
+            "register": "neutral",
+            "sourceIntentKey": "intent-safety",
+            "recallHookId": "rh-stop-and-report"
+          },
+          {
+            "entryId": "exp-safety-first",
+            "expression": "safety first",
+            "meaningId": "utamakan-keselamatan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-safety",
+            "recallHookId": "rh-safety-first"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-just-to-confirm",
+            "sourceEntryId": "exp-just-to-confirm",
+            "objectiveKey": "obj-g12-09",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-only-after",
+            "sourceEntryId": "exp-only-after",
+            "objectiveKey": "obj-g12-09",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g12-10",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Reports and Reflections (Internship Log)",
+      "primarySkill": "WRITING",
+      "supportingSkills": [
+        "READING"
+      ],
+      "objectiveKeys": [
+        "obj-g12-10"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Write the log your mentor actually reads",
+            "instructionId": "Log magang yang baik bukan buku harian — ia laporan singkat: fakta kegiatan, masalah + penanganan, dan refleksi. Kerangka evaluasi kelas 11 kembali dalam register kerja.",
+            "canDoEn": "I can write a concise internship log entry: activities, issues, and reflection."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "\"Today I did stuff and it was fine\" — why does this log entry fail?",
+              "Who reads an internship log, and what do they look for?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Struktur entri log: (1) aktivitas dengan kata kerja lampau spesifik (assisted, rendered, labeled, shadowed), (2) masalah + penanganan (\"ran into… / resolved by…\"), (3) refleksi satu-dua kalimat (\"what I'd do differently\"). Register netral-profesional; jujur tentang kesulitan tanpa drama.",
+            "patterns": [
+              {
+                "en": "Assisted the editor with subtitle timing for the hotel promo (94 lines).",
+                "noteId": "Aktivitas + objek + ukuran."
+              },
+              {
+                "en": "Ran into a codec mismatch on export; resolved by re-rendering with the house preset after checking with Mas Bara.",
+                "noteId": "Masalah + solusi + siapa dikonsultasikan."
+              },
+              {
+                "en": "Reflection: I lost an hour guessing before asking. Next time, I'll confirm the preset first.",
+                "noteId": "Refleksi jujur → aturan pribadi berikutnya."
+              }
+            ]
+          },
+          {
+            "blockType": "reading",
+            "textEn": "LOG ENTRY — WEEK 2, DAY 3 (model): Activities: Shadowed the front-office team for the morning check-in rush (07:00–09:00); handled two guest questions in English under supervision. Labeled and archived 41 raw clips from the beach shoot. Issue: A guest complained about a delayed airport pickup. I didn't know the compensation policy, so instead of guessing, I said, \"Let me check with my supervisor so I give you the right answer,\" and escalated to Pak Halim. He resolved it with a voucher; I observed the conversation. Reflection: \"I don't know, let me check\" felt embarrassing for three seconds and correct for the rest of the day. What I learned is that escalating early protects the guest, the hotel, and me. Tomorrow I'll ask for the compensation policy document so next time I can answer faster.",
+            "tasks": [
+              {
+                "promptEn": "What makes the activities section strong?",
+                "answerEn": "Specific verbs, times, and quantities (07:00–09:00, 41 clips, two questions).",
+                "explanationId": "Terukur = kredibel."
+              },
+              {
+                "promptEn": "How did the intern handle not knowing the policy?",
+                "answerEn": "Said \"let me check with my supervisor\", escalated to Pak Halim, and observed the resolution.",
+                "explanationId": "Eskalasi jujur > tebakan percaya diri."
+              },
+              {
+                "promptEn": "What converts the reflection into future action?",
+                "answerEn": "The plan to request the compensation policy document.",
+                "explanationId": "Refleksi → tindakan berikutnya — pola evaluasi kelas 11."
+              }
+            ]
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "transform",
+                "promptEn": "Upgrade this log line: \"Helped with video things.\"",
+                "answerEn": "Assisted the editor with rough-cut selection for the promo video (three of eight scenes).",
+                "explanationId": "Kata kerja spesifik + objek + ukuran."
+              },
+              {
+                "type": "choice",
+                "promptEn": "The issue section should contain…",
+                "optionsEn": [
+                  "only successes",
+                  "the problem, your action, and who you consulted",
+                  "complaints about coworkers"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Masalah + penanganan, tanpa drama."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"What I'd do differently\" belongs in…",
+                "optionsEn": [
+                  "the reflection",
+                  "the title",
+                  "nowhere — never admit anything"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Refleksi jujur adalah nilai log, bukan kelemahannya."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "writing",
+            "promptEn": "Write a 100–120 word log entry for a real or realistic day (school project day works too): activities with measures, one issue with your handling, and a reflection ending in a next-time rule.",
+            "supportEn": [
+              "Activities: …",
+              "Issue: … resolved by…",
+              "Reflection: … Next time, I'll…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "grammar",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g12-06",
+            "noteId": "Episode 6 (The Log): entri log Anda dibaca — dan dinilai — oleh Pak Halim."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "A log entry differs from a diary because it…",
+                "optionsEn": [
+                  "is longer",
+                  "reports facts, handling, and lessons for a professional reader",
+                  "hides problems"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pembaca profesional mencari fakta + penanganan."
+              },
+              {
+                "promptEn": "\"Ran into a codec mismatch; resolved by…\" is the pattern for…",
+                "optionsEn": [
+                  "issue + resolution",
+                  "greeting",
+                  "opinion"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Pola masalah-solusi log."
+              },
+              {
+                "promptEn": "Admitting \"I lost an hour guessing\" in a log…",
+                "optionsEn": [
+                  "gets interns fired",
+                  "shows honest reflection mentors value",
+                  "is illegal"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Refleksi jujur = pertumbuhan yang terlihat."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-shadowing",
+            "term": "shadow (someone)",
+            "meaningId": "mengikuti-belajar",
+            "partOfSpeech": "verb",
+            "sourceIntentKey": "intent-log",
+            "recallHookId": "rh-voc-shadowing"
+          },
+          {
+            "entryId": "voc-escalate-work",
+            "term": "escalate",
+            "meaningId": "meneruskan-ke-atasan",
+            "partOfSpeech": "verb",
+            "sourceIntentKey": "intent-log",
+            "recallHookId": "rh-voc-escalate-work"
+          },
+          {
+            "entryId": "voc-compensation",
+            "term": "compensation",
+            "meaningId": "kompensasi",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-log",
+            "recallHookId": "rh-voc-compensation"
+          },
+          {
+            "entryId": "voc-archive",
+            "term": "archive",
+            "meaningId": "mengarsipkan",
+            "partOfSpeech": "verb",
+            "sourceIntentKey": "intent-log",
+            "recallHookId": "rh-voc-archive"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-ran-into",
+            "expression": "ran into ___ (a problem)",
+            "meaningId": "menemui-masalah",
+            "register": "neutral",
+            "sourceIntentKey": "intent-log",
+            "recallHookId": "rh-ran-into"
+          },
+          {
+            "entryId": "exp-resolved-by",
+            "expression": "resolved by ___",
+            "meaningId": "diselesaikan-dengan",
+            "register": "formal",
+            "sourceIntentKey": "intent-log",
+            "recallHookId": "rh-resolved-by"
+          },
+          {
+            "entryId": "exp-let-me-check-with",
+            "expression": "Let me check with ___",
+            "meaningId": "saya-cek-dulu-dengan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-log",
+            "recallHookId": "rh-let-me-check-with"
+          },
+          {
+            "entryId": "exp-under-supervision",
+            "expression": "under supervision",
+            "meaningId": "di-bawah-pengawasan",
+            "register": "formal",
+            "sourceIntentKey": "intent-log",
+            "recallHookId": "rh-under-supervision"
+          },
+          {
+            "entryId": "exp-next-time-ill",
+            "expression": "Next time, I'll ___",
+            "meaningId": "lain-kali-saya-akan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-log",
+            "recallHookId": "rh-next-time-ill"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-let-me-check-with",
+            "sourceEntryId": "exp-let-me-check-with",
+            "objectiveKey": "obj-g12-10",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-ran-into",
+            "sourceEntryId": "exp-ran-into",
+            "objectiveKey": "obj-g12-10",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g12-11",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Conditionals for Decisions",
+      "primarySkill": "GRAMMAR",
+      "supportingSkills": [
+        "SPEAKING"
+      ],
+      "objectiveKeys": [
+        "obj-g12-11"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Think in if-thens before you choose",
+            "instructionId": "Keputusan besar kelas 12 butuh bahasa pengandaian: konsekuensi nyata (first conditional), skenario alternatif (second), dan belajar dari masa lalu (third, ringan).",
+            "canDoEn": "I can use conditionals to weigh decisions and their consequences."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "Complete honestly: \"If I take the job offer, …\"",
+              "Do you decide with feelings first or consequences first?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Tiga alat pengandaian untuk keputusan: (1) First conditional — konsekuensi realistis: \"If I take the internship route, I'll earn sooner.\" (2) Second conditional — skenario andai: \"If I got the scholarship, I would move to Bandung.\" (3) Third conditional ringan — pelajaran lampau: \"If I had asked earlier, I wouldn't have lost that chance.\" Ditambah \"unless\" (kecuali jika) dan \"as long as\" (asalkan).",
+            "patterns": [
+              {
+                "en": "If I accept the studio offer, I'll start earning in July — but I'll close the university door for a year.",
+                "noteId": "First conditional dua sisi: manfaat + biaya."
+              },
+              {
+                "en": "If money weren't a factor, I would choose the design school without blinking.",
+                "noteId": "Second conditional membuka preferensi jujur."
+              },
+              {
+                "en": "I'll take it, as long as they put the mentorship in writing.",
+                "noteId": "\"as long as\" = syarat penerimaan."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "A: Two letters. One studio job, one diploma program. Talk it out with me. B: Okay. If I take the job, I'll earn immediately and keep the mentor I already trust. But if the studio downsizes — and studios do — I'll have no credential to fall back on. A: And the diploma? B: If I take the diploma, I'll graduate with a paper that opens doors… in three years. Unless I find weekend work, my savings die in six months. A: Dream scenario? B: Honestly? If the studio let me work part-time while studying, I'd take both in a heartbeat. A: …Have you ASKED them? B: …If I had thought of that last week, I would have slept much better.",
+            "tasks": [
+              {
+                "promptEn": "List one first-conditional consequence for each option.",
+                "answerEn": "Job: immediate earnings/trusted mentor; diploma: credential in three years.",
+                "explanationId": "Konsekuensi realistis dipetakan dengan first conditional."
+              },
+              {
+                "promptEn": "What does the \"unless\" clause warn about?",
+                "answerEn": "Savings run out in six months unless B finds weekend work.",
+                "explanationId": "\"unless\" = risiko dengan pengecualian."
+              },
+              {
+                "promptEn": "Which sentence is a third conditional, and what does it express?",
+                "answerEn": "\"If I had thought of that last week, I would have slept much better\" — a lesson/regret about the past.",
+                "explanationId": "Third conditional menoleh ke belakang."
+              }
+            ],
+            "audioAssetId": "audio-sc-g12-11-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "\"___ they offer transport allowance, I can't accept — the commute costs more than the pay.\"",
+                "optionsEn": [
+                  "Unless",
+                  "If",
+                  "As long as"
+                ],
+                "answerIndex": 0,
+                "explanationId": "\"Unless\" = kecuali jika."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Make a realistic consequence: taking the night shift → more pay, less study time.",
+                "answerEn": "If I take the night shift, I'll earn more, but I'll have less time to study.",
+                "explanationId": "First conditional dua sisi."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"If I were you, I would ask for the offer in writing\" is used to…",
+                "optionsEn": [
+                  "describe a real plan",
+                  "give advice via an imagined position",
+                  "talk about the past"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Second conditional untuk saran."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Record 60 seconds weighing a real choice you face: two first-conditional consequences per option, one \"unless\" risk, and one \"if I were…\" honest preference.",
+            "supportEn": [
+              "If I…, I'll…",
+              "Unless…",
+              "If money weren't a factor, I would…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "grammar",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g12-07",
+            "noteId": "Episode 7 (Two Letters) adalah episode pengandaian: dua tawaran, satu keputusan."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"If I take it, I'll move out\" expresses…",
+                "optionsEn": [
+                  "an unreal dream",
+                  "a realistic consequence of a possible choice",
+                  "a past regret"
+                ],
+                "answerIndex": 1,
+                "explanationId": "First conditional."
+              },
+              {
+                "promptEn": "\"As long as the contract includes training\" means the speaker accepts…",
+                "optionsEn": [
+                  "unconditionally",
+                  "only if that condition holds",
+                  "never"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Syarat penerimaan."
+              },
+              {
+                "promptEn": "\"If I had applied earlier, I would have been shortlisted\" is about…",
+                "optionsEn": [
+                  "next year",
+                  "a lesson from a past miss",
+                  "a current plan"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Third conditional = pelajaran lampau."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-consequence-dec",
+            "term": "consequence",
+            "meaningId": "konsekuensi",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-conditionals",
+            "recallHookId": "rh-voc-consequence-dec"
+          },
+          {
+            "entryId": "voc-credential",
+            "term": "credential",
+            "meaningId": "kredensial-ijazah",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-conditionals",
+            "recallHookId": "rh-voc-credential"
+          },
+          {
+            "entryId": "voc-downsize",
+            "term": "downsize",
+            "meaningId": "merampingkan-phk",
+            "partOfSpeech": "verb",
+            "sourceIntentKey": "intent-conditionals",
+            "recallHookId": "rh-voc-downsize"
+          },
+          {
+            "entryId": "voc-savings",
+            "term": "savings",
+            "meaningId": "tabungan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-conditionals",
+            "recallHookId": "rh-voc-savings"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-if-i-take",
+            "expression": "If I take ___, I'll ___",
+            "meaningId": "jika-saya-ambil",
+            "register": "neutral",
+            "sourceIntentKey": "intent-conditionals",
+            "recallHookId": "rh-if-i-take"
+          },
+          {
+            "entryId": "exp-fall-back-on",
+            "expression": "fall back on ___",
+            "meaningId": "pegangan-cadangan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-conditionals",
+            "recallHookId": "rh-fall-back-on"
+          },
+          {
+            "entryId": "exp-as-long-as",
+            "expression": "as long as ___",
+            "meaningId": "asalkan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-conditionals",
+            "recallHookId": "rh-as-long-as"
+          },
+          {
+            "entryId": "exp-in-a-heartbeat",
+            "expression": "in a heartbeat",
+            "meaningId": "tanpa-ragu-sedetik",
+            "register": "informal",
+            "sourceIntentKey": "intent-conditionals",
+            "recallHookId": "rh-in-a-heartbeat"
+          },
+          {
+            "entryId": "exp-in-the-long-run",
+            "expression": "in the long run",
+            "meaningId": "dalam-jangka-panjang",
+            "register": "neutral",
+            "sourceIntentKey": "intent-conditionals",
+            "recallHookId": "rh-in-the-long-run"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-if-i-take",
+            "sourceEntryId": "exp-if-i-take",
+            "objectiveKey": "obj-g12-11",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-in-the-long-run",
+            "sourceEntryId": "exp-in-the-long-run",
+            "objectiveKey": "obj-g12-11",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g12-12",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Advantages and Disadvantages",
+      "primarySkill": "WRITING",
+      "supportingSkills": [
+        "SPEAKING"
+      ],
+      "objectiveKeys": [
+        "obj-g12-12"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Weigh both sides on paper before life makes you",
+            "instructionId": "Anda akan menyusun analisis untung-rugi tertulis: dua sisi yang adil, pembobotan, dan simpulan berpihak yang jujur.",
+            "canDoEn": "I can write a balanced advantages-disadvantages analysis with a weighted conclusion."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "Why do pros-and-cons lists sometimes feel useless?",
+              "What's missing when both columns are equally long?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Analisis dua sisi yang jujur: (1) sisi A dengan \"on the one hand / one clear advantage is\", (2) sisi B dengan \"on the other hand / the main drawback is\", (3) pembobotan — kunci yang sering hilang: \"what tips the scale for me is…\", karena daftar sama panjang tidak memutuskan apa pun; bobot yang memutuskan.",
+            "patterns": [
+              {
+                "en": "One clear advantage of working first is financial independence at eighteen.",
+                "noteId": "Keuntungan + spesifik."
+              },
+              {
+                "en": "On the other hand, the main drawback is postponing the credential most careers eventually ask for.",
+                "noteId": "Kerugian utama diberi label \"main\" — tidak semua poin setara."
+              },
+              {
+                "en": "What tips the scale for me is the mentorship — money returns, mentors rarely do.",
+                "noteId": "Pembobotan personal yang jujur memutuskan analisis."
+              }
+            ]
+          },
+          {
+            "blockType": "reading",
+            "textEn": "MODEL ANALYSIS — \"Working Straight After SMK: Worth It?\" On the one hand, working immediately has three real advantages. Income starts at eighteen, which matters in families where every hand counts. Skills compound on real projects instead of graded exercises. And a good first employer functions as a paid school — my internship mentor taught me more in six weeks than some courses manage in a year. On the other hand, the drawbacks are structural. The main one is the credential ceiling: many promotions eventually require the diploma you skipped. Salaries also start lower and can stay lower. So which side wins? It depends on one variable: the quality of the first workplace. If the employer teaches, working first is a head start; if it only uses you, it is a trap wearing a salary. What tips the scale is not the money — it is whether year one makes you more valuable in year five.",
+            "tasks": [
+              {
+                "promptEn": "Which advantage does the writer rank highest, and how do you know?",
+                "answerEn": "The employer-as-paid-school point — it gets the personal evidence (mentor comparison).",
+                "explanationId": "Bukti pribadi menandai bobot."
+              },
+              {
+                "promptEn": "What is the \"main drawback\" and why is it called structural?",
+                "answerEn": "The credential ceiling — it is built into how promotions work, not a personal failing.",
+                "explanationId": "Struktural = melekat pada sistem."
+              },
+              {
+                "promptEn": "What single variable decides the writer's conclusion?",
+                "answerEn": "The quality of the first workplace — whether it teaches or just uses you.",
+                "explanationId": "Analisis matang menemukan variabel penentu, bukan sekadar dua daftar."
+              }
+            ]
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "\"On the other hand\" introduces…",
+                "optionsEn": [
+                  "a second advantage",
+                  "the opposing side",
+                  "the conclusion"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Penanda pergantian sisi."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Add weighting to: \"Pros: near home, friends there. Cons: low pay.\"",
+                "answerEn": "What tips the scale for me is the pay — closeness comforts me now, but low pay limits me for years.",
+                "explanationId": "Pembobotan mengubah daftar menjadi keputusan."
+              },
+              {
+                "type": "choice",
+                "promptEn": "A fair analysis presents the opposing side…",
+                "optionsEn": [
+                  "as weakly as possible",
+                  "at its strongest before answering it",
+                  "not at all"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Steel-manning membuat simpulan kredibel."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "writing",
+            "promptEn": "Write a 110–130 word advantages-disadvantages analysis of a real choice you face (study path, job, organization role): two advantages, two disadvantages with one labeled \"main\", and a weighted conclusion using \"what tips the scale\".",
+            "supportEn": [
+              "On the one hand…",
+              "The main drawback is…",
+              "What tips the scale for me is…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "grammar",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g12-07",
+            "noteId": "Analisis inilah yang Anda tulis di Episode 7 sebelum memilih di antara dua surat."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "Equal-length pro/con lists fail to decide because…",
+                "optionsEn": [
+                  "lists are old-fashioned",
+                  "counting points ignores their different weights",
+                  "cons always win"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Bobot > jumlah."
+              },
+              {
+                "promptEn": "\"What tips the scale\" means…",
+                "optionsEn": [
+                  "what breaks the scale",
+                  "the factor that decides between close options",
+                  "the heaviest object"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Idiom pembobotan keputusan."
+              },
+              {
+                "promptEn": "Labeling one drawback as \"the main one\" shows…",
+                "optionsEn": [
+                  "bias",
+                  "prioritization — not all points weigh the same",
+                  "laziness"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Analisis = memeringkat, bukan mendata."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-drawback",
+            "term": "drawback",
+            "meaningId": "kekurangan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-pros-cons",
+            "recallHookId": "rh-voc-drawback"
+          },
+          {
+            "entryId": "voc-independence",
+            "term": "independence",
+            "meaningId": "kemandirian",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-pros-cons",
+            "recallHookId": "rh-voc-independence"
+          },
+          {
+            "entryId": "voc-promotion",
+            "term": "promotion",
+            "meaningId": "kenaikan-jabatan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-pros-cons",
+            "recallHookId": "rh-voc-promotion"
+          },
+          {
+            "entryId": "voc-variable",
+            "term": "variable",
+            "meaningId": "variabel-faktor",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-pros-cons",
+            "recallHookId": "rh-voc-variable"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-on-the-one-hand",
+            "expression": "on the one hand / on the other hand",
+            "meaningId": "di-satu-sisi-di-sisi-lain",
+            "register": "neutral",
+            "sourceIntentKey": "intent-pros-cons",
+            "recallHookId": "rh-on-the-one-hand"
+          },
+          {
+            "entryId": "exp-the-main-drawback",
+            "expression": "the main drawback is ___",
+            "meaningId": "kekurangan-utamanya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-pros-cons",
+            "recallHookId": "rh-the-main-drawback"
+          },
+          {
+            "entryId": "exp-tips-the-scale",
+            "expression": "what tips the scale is ___",
+            "meaningId": "yang-menentukan-adalah",
+            "register": "neutral",
+            "sourceIntentKey": "intent-pros-cons",
+            "recallHookId": "rh-tips-the-scale"
+          },
+          {
+            "entryId": "exp-weigh-the-options",
+            "expression": "weigh the options",
+            "meaningId": "menimbang-pilihan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-pros-cons",
+            "recallHookId": "rh-weigh-the-options"
+          },
+          {
+            "entryId": "exp-it-depends-on",
+            "expression": "It depends on ___",
+            "meaningId": "tergantung-pada",
+            "register": "neutral",
+            "sourceIntentKey": "intent-pros-cons",
+            "recallHookId": "rh-it-depends-on"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-tips-the-scale",
+            "sourceEntryId": "exp-tips-the-scale",
+            "objectiveKey": "obj-g12-12",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-weigh-the-options",
+            "sourceEntryId": "exp-weigh-the-options",
+            "objectiveKey": "obj-g12-12",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g12-13",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Persuading and Justifying a Choice",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "WRITING"
+      ],
+      "objectiveKeys": [
+        "obj-g12-13"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Defend your choice to people who matter",
+            "instructionId": "Memilih itu setengah pekerjaan; mempertahankan pilihan di depan pewawancara, orang tua, atau panel beasiswa adalah setengah lainnya. Anda akan membangun justifikasi yang berdiri saat ditekan.",
+            "canDoEn": "I can justify a choice persuasively and handle challenges to it."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab jujur.",
+            "promptsEn": [
+              "Who is the hardest person for you to justify a decision to?",
+              "\"Because I want it\" — when does this stop working as a reason?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Justifikasi kuat: keputusan jelas → alasan berperingkat (\"the biggest reason is…\") → bukti kecocokan → pengakuan risiko + mitigasi (\"I know…, that's why I…\") → komitmen. Saat ditantang, jangan membangun ulang dari nol: \"That's fair — and here's how I've prepared for exactly that.\"",
+            "patterns": [
+              {
+                "en": "I chose the vocational route, and the biggest reason is simple: I learn by building, not by listening.",
+                "noteId": "Keputusan + alasan terbesar diberi label."
+              },
+              {
+                "en": "I know the credential question is real. That's why the studio contract includes a part-time diploma clause.",
+                "noteId": "Akui risiko + tunjukkan mitigasi — bukan defensif."
+              },
+              {
+                "en": "That's a fair concern — and it's exactly what my first-year plan answers.",
+                "noteId": "Menjawab tantangan tanpa panik."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "PANEL: Your grades qualify you for university. Why should we give a scholarship to someone choosing a design diploma instead? STUDENT: Fair question — it looks like a step down on paper. The biggest reason is fit: I've spent three years making things — festival branding, event videos, a club identity system — and every teacher who graded my essays said the same thing: \"good, but your portfolio is where you're alive.\" The diploma's studio-first model matches how I actually improve. PANEL: And if the design market shrinks? STUDENT: That's a fair concern. That's why my plan includes the certification track in motion graphics — a growing niche — and why I chose a program with an industry placement in year two. I'm not avoiding the risk; I'm pricing it in. PANEL: …\"Pricing it in.\" Where did you learn to argue like this? STUDENT: A club with a very honest treasurer.",
+            "tasks": [
+              {
+                "promptEn": "What is the student's \"biggest reason\" and its evidence?",
+                "answerEn": "Fit — three years of made things and consistent teacher feedback about the portfolio.",
+                "explanationId": "Alasan berlabel + bukti eksternal."
+              },
+              {
+                "promptEn": "How does the student handle the market-risk challenge?",
+                "answerEn": "Acknowledges it as fair, then shows prepared mitigations (certification niche, industry placement).",
+                "explanationId": "Akui + mitigasi, tanpa defensif."
+              },
+              {
+                "promptEn": "\"I'm pricing it in\" means…",
+                "answerEn": "The risk is included in the plan, not ignored.",
+                "explanationId": "Idiom pengelolaan risiko."
+              }
+            ],
+            "audioAssetId": "audio-sc-g12-13-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "The strongest justification opener is…",
+                "optionsEn": [
+                  "\"It's just what I want, okay?\"",
+                  "\"I chose X, and the biggest reason is…\"",
+                  "\"Everyone else is doing it.\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Keputusan + alasan berperingkat."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Answer this challenge without panic: \"Isn't that program expensive?\"",
+                "answerEn": "That's a fair concern — that's why I applied for the fee waiver and lined up weekend work; the numbers close.",
+                "explanationId": "Akui + mitigasi konkret."
+              },
+              {
+                "type": "choice",
+                "promptEn": "Acknowledging a risk in your own choice makes your case…",
+                "optionsEn": [
+                  "collapse",
+                  "stronger — you've clearly thought it through",
+                  "shorter"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Risiko yang diakui + mitigasi = kedewasaan berpikir."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Record 60–90 seconds justifying a real choice (path after graduation, or a major commitment) to a skeptical listener: decision, biggest reason with evidence, one acknowledged risk with mitigation, and a closing commitment.",
+            "supportEn": [
+              "The biggest reason is…",
+              "I know… That's why…",
+              "That's a fair concern — and…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "vocabulary",
+              "naturalness",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g12-08",
+            "noteId": "\"Why should we accept you?\" di Episode 8 adalah pertanyaan justifikasi — dan panelnya sungguhan."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"That's a fair concern — and here's how I've prepared\" does what?",
+                "optionsEn": [
+                  "surrenders the argument",
+                  "validates the challenge, then answers it",
+                  "changes the topic"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pola menjawab tantangan."
+              },
+              {
+                "promptEn": "Ranking reasons (\"the biggest reason is…\") helps because…",
+                "optionsEn": [
+                  "it sounds dramatic",
+                  "listeners remember and test your strongest ground",
+                  "small reasons are secrets"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Peringkat memfokuskan persuasi."
+              },
+              {
+                "promptEn": "A justification with zero acknowledged risks sounds…",
+                "optionsEn": [
+                  "perfect",
+                  "naive or rehearsed",
+                  "professional"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Tanpa risiko = belum berpikir."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-justification",
+            "term": "justification",
+            "meaningId": "justifikasi-pembenaran",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-justify",
+            "recallHookId": "rh-voc-justification"
+          },
+          {
+            "entryId": "voc-mitigation",
+            "term": "mitigation",
+            "meaningId": "mitigasi",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-justify",
+            "recallHookId": "rh-voc-mitigation"
+          },
+          {
+            "entryId": "voc-panel",
+            "term": "panel",
+            "meaningId": "panel-penilai",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-justify",
+            "recallHookId": "rh-voc-panel"
+          },
+          {
+            "entryId": "voc-niche",
+            "term": "niche",
+            "meaningId": "ceruk-khusus",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-justify",
+            "recallHookId": "rh-voc-niche"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-the-biggest-reason-is",
+            "expression": "The biggest reason is ___",
+            "meaningId": "alasan-terbesarnya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-justify",
+            "recallHookId": "rh-the-biggest-reason-is"
+          },
+          {
+            "entryId": "exp-i-know-thats-why",
+            "expression": "I know ___. That's why ___",
+            "meaningId": "saya-tahu-karena-itulah",
+            "register": "neutral",
+            "sourceIntentKey": "intent-justify",
+            "recallHookId": "rh-i-know-thats-why"
+          },
+          {
+            "entryId": "exp-thats-a-fair-concern",
+            "expression": "That's a fair concern — ___",
+            "meaningId": "kekhawatiran-yang-wajar",
+            "register": "neutral",
+            "sourceIntentKey": "intent-justify",
+            "recallHookId": "rh-thats-a-fair-concern"
+          },
+          {
+            "entryId": "exp-pricing-it-in",
+            "expression": "pricing it in",
+            "meaningId": "memperhitungkan-risiko",
+            "register": "informal",
+            "sourceIntentKey": "intent-justify",
+            "recallHookId": "rh-pricing-it-in"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-the-biggest-reason-is",
+            "sourceEntryId": "exp-the-biggest-reason-is",
+            "objectiveKey": "obj-g12-13",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-thats-a-fair-concern",
+            "sourceEntryId": "exp-thats-a-fair-concern",
+            "objectiveKey": "obj-g12-13",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g12-14",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Media About Work and Trends",
+      "primarySkill": "LISTENING",
+      "supportingSkills": [
+        "READING"
+      ],
+      "objectiveKeys": [
+        "obj-g12-14"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Follow the conversation about your future",
+            "instructionId": "Berita dan konten tentang dunia kerja membentuk keputusan Anda. Anda akan menangkap inti media berbahasa Inggris tentang tren kerja — dan membedakan fakta dari hype.",
+            "canDoEn": "I can get the gist of media about work trends and separate claims from evidence."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "Where do you hear about \"jobs of the future\" — and do you trust it?",
+              "What's the difference between a trend and a headline?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Media tren kerja punya pola: klaim besar (\"X is the future\"), angka (\"demand grew 40%\"), kutipan ahli, dan kualifikasi tersembunyi (\"experts say… could… by 2030\"). Dengar kata pagar: \"could\", \"is expected to\", \"in some sectors\" — mereka mengubah kepastian menjadi kemungkinan. Inti bertahan: siapa mengklaim apa, berdasarkan data apa.",
+            "patterns": [
+              {
+                "en": "Demand for local content creators is expected to keep growing — though mostly in tourism-heavy regions.",
+                "noteId": "\"is expected to\" + batasan wilayah = klaim terpagari."
+              },
+              {
+                "en": "According to the city labor office, hospitality openings doubled since the new terminal opened.",
+                "noteId": "Sumber + angka + sebab — klaim kuat."
+              },
+              {
+                "en": "\"Learn AI or be left behind\" — catchy, but what does the data actually show?",
+                "noteId": "Pertanyaan penguji hype."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "PODCAST EXCERPT: Host: This week: is the \"creative economy boom\" real for teenagers in mid-size coastal cities, or just capital-city talk? Guest: Both, honestly. The real part: since the new ferry terminal opened, Tanjung Laras hotels doubled their content budgets — that's from the city labor office, not from influencers. Short-form video editors and bilingual front-office staff are genuinely in demand. The hype part: \"everyone will be a content creator\". No. What the data shows is that businesses need a FEW skilled creators and MANY people who can communicate with visitors — which is why, and nobody wants to hear this, conversational English is quietly outperforming editing software on hiring checklists. Host: So if you're seventeen here, the move is…? Guest: Both skills, one portfolio. And read the actual job ads, not the headlines about them.",
+            "tasks": [
+              {
+                "promptEn": "Which claim is supported by an official source?",
+                "answerEn": "Hotels doubling content budgets — from the city labor office.",
+                "explanationId": "Sumber resmi membedakan fakta dari opini."
+              },
+              {
+                "promptEn": "What does the guest call hype, and what does the data show instead?",
+                "answerEn": "\"Everyone will be a content creator\" is hype; data shows few skilled creators + many visitor-facing communicators are needed.",
+                "explanationId": "Klaim besar vs pola data."
+              },
+              {
+                "promptEn": "What skill \"quietly outperforms\" editing software on hiring checklists?",
+                "answerEn": "Conversational English.",
+                "explanationId": "Temuan kunci untuk pendengar SMA/SMK."
+              }
+            ],
+            "audioAssetId": "audio-sc-g12-14-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "\"Could create thousands of jobs by 2030\" is…",
+                "optionsEn": [
+                  "a guaranteed fact",
+                  "a hedged prediction",
+                  "a lie"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"could… by 2030\" = pagar prediksi."
+              },
+              {
+                "type": "choice",
+                "promptEn": "The most trustworthy claim cites…",
+                "optionsEn": [
+                  "\"many people say\"",
+                  "a named source with numbers",
+                  "a viral video"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Sumber + angka."
+              },
+              {
+                "type": "choice",
+                "promptEn": "The guest's practical advice for a seventeen-year-old is…",
+                "optionsEn": [
+                  "wait for trends to settle",
+                  "build both skills and read actual job ads",
+                  "move to the capital"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Gist + tindakan."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "writing",
+            "promptEn": "Write a 5-line gist summary of the podcast for a friend deciding their path: the question, the real part (with source), the hype part, the surprising finding, and the advice.",
+            "supportEn": [
+              "Question: …",
+              "Real: … (source: …)",
+              "Hype: …",
+              "Surprise: …",
+              "Advice: …"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g12-01",
+            "noteId": "Video expo di Career Day (Episode 1) memakai bahasa media seperti ini — dan keputusan Anda bergantung pada membacanya dengan kritis."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "Hedging words like \"could\" and \"is expected to\" signal…",
+                "optionsEn": [
+                  "certainty",
+                  "possibility, not guarantee",
+                  "the past"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pagar prediksi."
+              },
+              {
+                "promptEn": "\"That's from the labor office, not from influencers\" contrasts…",
+                "optionsEn": [
+                  "two equal sources",
+                  "an official source vs. unverified voices",
+                  "old and new data"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Hierarki sumber."
+              },
+              {
+                "promptEn": "The gist of a work-trend story is…",
+                "optionsEn": [
+                  "its headline",
+                  "who claims what, based on what data, meaning what for you",
+                  "its length"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Kerangka gist media."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-trend-work",
+            "term": "trend",
+            "meaningId": "tren",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-media",
+            "recallHookId": "rh-voc-trend-work"
+          },
+          {
+            "entryId": "voc-demand",
+            "term": "demand",
+            "meaningId": "permintaan-pasar",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-media",
+            "recallHookId": "rh-voc-demand"
+          },
+          {
+            "entryId": "voc-hype",
+            "term": "hype",
+            "meaningId": "hype-gembar-gembor",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-media",
+            "recallHookId": "rh-voc-hype"
+          },
+          {
+            "entryId": "voc-bilingual",
+            "term": "bilingual",
+            "meaningId": "dwibahasa",
+            "partOfSpeech": "adjective",
+            "sourceIntentKey": "intent-media",
+            "recallHookId": "rh-voc-bilingual"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-is-expected-to",
+            "expression": "is expected to ___",
+            "meaningId": "diperkirakan-akan",
+            "register": "formal",
+            "sourceIntentKey": "intent-media",
+            "recallHookId": "rh-is-expected-to"
+          },
+          {
+            "entryId": "exp-according-to",
+            "expression": "according to ___",
+            "meaningId": "menurut",
+            "register": "neutral",
+            "sourceIntentKey": "intent-media",
+            "recallHookId": "rh-according-to"
+          },
+          {
+            "entryId": "exp-in-demand",
+            "expression": "in demand",
+            "meaningId": "banyak-dicari",
+            "register": "neutral",
+            "sourceIntentKey": "intent-media",
+            "recallHookId": "rh-in-demand"
+          },
+          {
+            "entryId": "exp-what-the-data-shows",
+            "expression": "what the data shows is ___",
+            "meaningId": "yang-ditunjukkan-data",
+            "register": "neutral",
+            "sourceIntentKey": "intent-media",
+            "recallHookId": "rh-what-the-data-shows"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-according-to",
+            "sourceEntryId": "exp-according-to",
+            "objectiveKey": "obj-g12-14",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-in-demand",
+            "sourceEntryId": "exp-in-demand",
+            "objectiveKey": "obj-g12-14",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g12-15",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_12",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Goodbyes, Thanks, Staying Connected",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "WRITING"
+      ],
+      "objectiveKeys": [
+        "obj-g12-15"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "End chapters without losing people",
+            "instructionId": "Perpisahan yang baik adalah keterampilan: berterima kasih secara spesifik, berpamitan dengan hangat, dan menjaga pintu tetap terbuka — kepada teman, mentor, dan tempat magang.",
+            "canDoEn": "I can say meaningful goodbyes, give specific thanks, and keep professional connections alive."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab jujur.",
+            "promptsEn": [
+              "What do you want people to remember on your last day?",
+              "Why do most \"let's keep in touch\" promises die?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Tiga lapis perpisahan: (1) terima kasih spesifik — sebut hal nyata (\"thank you for the render-queue lecture that saved me twice\"), bukan generik; (2) pengakuan hubungan (\"this place taught me…\", \"you made week one survivable\"); (3) jembatan masa depan yang konkret: bukan \"keep in touch\" kosong, tetapi \"I'll send you the final cut when it's done\" — janji kecil yang bisa ditepati.",
+            "patterns": [
+              {
+                "en": "I can't thank you enough for the patience in week one — I was a walking hazard.",
+                "noteId": "Terima kasih + memori spesifik + humor."
+              },
+              {
+                "en": "This isn't goodbye — I still owe you the final cut of the promo.",
+                "noteId": "Jembatan konkret: janji kecil yang menjaga koneksi."
+              },
+              {
+                "en": "If a junior position opens next year, I'd love to hear about it.",
+                "noteId": "Membuka pintu profesional dengan sopan, tanpa menuntut."
+              }
+            ]
+          },
+          {
+            "blockType": "reading",
+            "textEn": "TWO FAREWELL MESSAGES TO A MENTOR: (A) \"Thank you for everything. Keep in touch!\" (B) \"Pak Halim — three things I'm taking from these twelve weeks: 'let me check' beats guessing, logs are for honesty not decoration, and guests remember how problems END, not how they start. Thank you for letting me watch you fix things. The final promo cut will be in your inbox by Friday, as promised. And if the front office ever needs a bilingual junior next year — you know where my CV lives. — D.\" One of these mentors will answer a reference request in two years. Guess which.",
+            "tasks": [
+              {
+                "promptEn": "What makes message B memorable?",
+                "answerEn": "Specific lessons learned, a concrete promise (Friday cut), and a polite future opening.",
+                "explanationId": "Spesifik + janji kecil + pintu terbuka."
+              },
+              {
+                "promptEn": "Why is \"keep in touch\" alone weak?",
+                "answerEn": "It has no concrete action attached, so nothing happens.",
+                "explanationId": "Janji tanpa mekanisme = harapan kosong."
+              },
+              {
+                "promptEn": "How does B ask about future work without demanding?",
+                "answerEn": "\"If… ever needs… — you know where my CV lives\" — conditional and light.",
+                "explanationId": "Membuka pintu tanpa menekan."
+              }
+            ]
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "transform",
+                "promptEn": "Make this thanks specific: \"Thanks for helping me.\"",
+                "answerEn": "Thanks for walking me through the booking system twice without making me feel slow.",
+                "explanationId": "Momen nyata membuat terima kasih hidup."
+              },
+              {
+                "type": "choice",
+                "promptEn": "The strongest \"stay connected\" line is…",
+                "optionsEn": [
+                  "\"Keep in touch!\"",
+                  "\"I'll send you the festival photos by Sunday — and I want to hear how the renovation goes.\"",
+                  "\"Bye forever, probably.\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Tindakan konkret dua arah."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"I can't thank you enough\" expresses…",
+                "optionsEn": [
+                  "inability to speak",
+                  "deep gratitude",
+                  "a complaint"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Idiom terima kasih mendalam."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Record a 60-second farewell speech for a real context you'll face (last club meeting, internship end, graduation): one specific thanks with a memory, one thing this place taught you, one concrete bridge to the future.",
+            "supportEn": [
+              "I can't thank you enough for…",
+              "What this place taught me is…",
+              "This isn't goodbye — …"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "naturalness",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g12-09",
+            "noteId": "Episode 9 — Graduation: pidato perpisahan di gerbang tempat semuanya dimulai."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "Specific thanks beats generic thanks because…",
+                "optionsEn": [
+                  "it is longer",
+                  "it proves you noticed and remembered",
+                  "it uses harder words"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Spesifisitas = perhatian yang tulus."
+              },
+              {
+                "promptEn": "A \"bridge to the future\" in a farewell is…",
+                "optionsEn": [
+                  "a physical bridge",
+                  "a small concrete promise or opening that keeps the connection alive",
+                  "an apology"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Mekanisme koneksi berkelanjutan."
+              },
+              {
+                "promptEn": "\"This isn't goodbye\" works best when followed by…",
+                "optionsEn": [
+                  "silence",
+                  "a concrete plan or promise",
+                  "tears only"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Klaim butuh mekanisme."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-farewell",
+            "term": "farewell",
+            "meaningId": "perpisahan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-farewell",
+            "recallHookId": "rh-voc-farewell"
+          },
+          {
+            "entryId": "voc-gratitude",
+            "term": "gratitude",
+            "meaningId": "rasa-terima-kasih",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-farewell",
+            "recallHookId": "rh-voc-gratitude"
+          },
+          {
+            "entryId": "voc-reference-request",
+            "term": "reference request",
+            "meaningId": "permintaan-rekomendasi",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-farewell",
+            "recallHookId": "rh-voc-reference-request"
+          },
+          {
+            "entryId": "voc-chapter",
+            "term": "chapter (of life)",
+            "meaningId": "babak-kehidupan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-farewell",
+            "recallHookId": "rh-voc-chapter"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-cant-thank-you-enough",
+            "expression": "I can't thank you enough",
+            "meaningId": "terima-kasih-tak-terhingga",
+            "register": "neutral",
+            "sourceIntentKey": "intent-farewell",
+            "recallHookId": "rh-cant-thank-you-enough"
+          },
+          {
+            "entryId": "exp-this-isnt-goodbye",
+            "expression": "This isn't goodbye",
+            "meaningId": "ini-bukan-perpisahan",
+            "register": "informal",
+            "sourceIntentKey": "intent-farewell",
+            "recallHookId": "rh-this-isnt-goodbye"
+          },
+          {
+            "entryId": "exp-keep-in-touch-plus",
+            "expression": "keep in touch (+ concrete plan)",
+            "meaningId": "tetap-terhubung",
+            "register": "informal",
+            "sourceIntentKey": "intent-farewell",
+            "recallHookId": "rh-keep-in-touch-plus"
+          },
+          {
+            "entryId": "exp-what-this-place-taught-me",
+            "expression": "What this place taught me is ___",
+            "meaningId": "yang-tempat-ini-ajarkan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-farewell",
+            "recallHookId": "rh-what-this-place-taught-me"
+          },
+          {
+            "entryId": "exp-you-know-where-my-cv-lives",
+            "expression": "you know where my CV lives",
+            "meaningId": "cv-saya-selalu-tersedia",
+            "register": "informal",
+            "sourceIntentKey": "intent-farewell",
+            "recallHookId": "rh-you-know-where-my-cv-lives"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-cant-thank-you-enough",
+            "sourceEntryId": "exp-cant-thank-you-enough",
+            "objectiveKey": "obj-g12-15",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-this-isnt-goodbye",
+            "sourceEntryId": "exp-this-isnt-goodbye",
+            "objectiveKey": "obj-g12-15",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g12-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    }
+  ]
+}

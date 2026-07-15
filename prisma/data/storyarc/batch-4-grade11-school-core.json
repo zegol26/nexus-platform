@@ -1,0 +1,4410 @@
+{
+  "schemaVersion": "storyarc.content.v1",
+  "packageId": "storyarc-initial-90-b4-g11-school-core",
+  "appSlug": "storyarc",
+  "releaseTarget": "initial-90-release-1",
+  "curriculum": {
+    "sourceKey": "indonesia-phase-ef-descriptive-gap",
+    "sourceTitle": "StoryArc Phase E/F Descriptive Mapping",
+    "sourceAuthority": "UNVERIFIED_PROJECT_MAPPING",
+    "sourceVerificationNote": "Academic lead must supply verified CP identifiers before curriculum-alignment claims.",
+    "versionKey": "initial-90-v1",
+    "versionTitle": "Initial 90-item release mapping"
+  },
+  "competencies": [
+    {
+      "competencyKey": "cpa-f-discuss",
+      "title": "Discussion and opinion exchange",
+      "description": "Exchange, support, and challenge opinions with justification in group settings."
+    },
+    {
+      "competencyKey": "cpa-f-expo",
+      "title": "Analytical exposition",
+      "description": "Comprehend and produce argument texts with thesis and supporting points."
+    },
+    {
+      "competencyKey": "cpa-f-listen",
+      "title": "Extended listening",
+      "description": "Follow discussions, presentations, and talks; identify decisions and viewpoints."
+    },
+    {
+      "competencyKey": "cpa-f-present",
+      "title": "Oral presentation",
+      "description": "Deliver structured presentations with signposting and supporting data."
+    },
+    {
+      "competencyKey": "cpa-f-repair",
+      "title": "Interpersonal repair and negotiation",
+      "description": "Handle complaints, apologies, disagreement, and compromise."
+    },
+    {
+      "competencyKey": "cpa-f-cause",
+      "title": "Cause-effect and evaluation",
+      "description": "Express causes, effects, and evaluative reflection on outcomes."
+    },
+    {
+      "competencyKey": "cpa-f-formal",
+      "title": "Formal written correspondence",
+      "description": "Write formal emails and requests with appropriate register."
+    },
+    {
+      "competencyKey": "cpa-f-task",
+      "title": "Task management language",
+      "description": "Give instructions, delegate, report progress and problems in team projects."
+    }
+  ],
+  "objectives": [
+    {
+      "objectiveKey": "obj-g11-01",
+      "competencyKey": "cpa-f-discuss",
+      "title": "Express and support opinions with reasons",
+      "primarySkill": "VOCABULARY"
+    },
+    {
+      "objectiveKey": "obj-g11-02",
+      "competencyKey": "cpa-f-repair",
+      "title": "Agree and disagree politely with hedging",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-03",
+      "competencyKey": "cpa-f-listen",
+      "title": "Follow group discussions and identify decisions",
+      "primarySkill": "LISTENING"
+    },
+    {
+      "objectiveKey": "obj-g11-04",
+      "competencyKey": "cpa-f-repair",
+      "title": "Make suggestions and negotiate plans",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-05",
+      "competencyKey": "cpa-f-expo",
+      "title": "Read analytical expositions and identify arguments",
+      "primarySkill": "READING"
+    },
+    {
+      "objectiveKey": "obj-g11-06",
+      "competencyKey": "cpa-f-expo",
+      "title": "Write a persuasive paragraph with thesis and support",
+      "primarySkill": "WRITING"
+    },
+    {
+      "objectiveKey": "obj-g11-07",
+      "competencyKey": "cpa-f-task",
+      "title": "Give instructions and delegate tasks clearly",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-08",
+      "competencyKey": "cpa-f-task",
+      "title": "Give progress updates and report problems",
+      "primarySkill": "GRAMMAR"
+    },
+    {
+      "objectiveKey": "obj-g11-09",
+      "competencyKey": "cpa-f-listen",
+      "title": "Follow presentations and Q&A with note-taking",
+      "primarySkill": "LISTENING"
+    },
+    {
+      "objectiveKey": "obj-g11-10",
+      "competencyKey": "cpa-f-present",
+      "title": "Structure a presentation with signposting",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-11",
+      "competencyKey": "cpa-f-present",
+      "title": "Describe data and visuals in a talk",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-12",
+      "competencyKey": "cpa-f-repair",
+      "title": "Complain, apologize, and repair relationships",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-13",
+      "competencyKey": "cpa-f-cause",
+      "title": "Express cause and effect",
+      "primarySkill": "GRAMMAR"
+    },
+    {
+      "objectiveKey": "obj-g11-14",
+      "competencyKey": "cpa-f-formal",
+      "title": "Write formal emails and requests",
+      "primarySkill": "WRITING"
+    },
+    {
+      "objectiveKey": "obj-g11-15",
+      "competencyKey": "cpa-f-cause",
+      "title": "Evaluate outcomes and reflect on experience",
+      "primarySkill": "WRITING"
+    }
+  ],
+  "assets": [
+    {
+      "assetId": "audio-sc-g11-01-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g11-01/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g11-01/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/818dd1a372e441b991971763731404c58bb307d7b52e3b487af500a0531fe4b3.mp3",
+      "contentHash": "sha256:818dd1a372e441b991971763731404c58bb307d7b52e3b487af500a0531fe4b3",
+      "mimeType": "audio/mpeg",
+      "byteSize": 404689,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g11-02-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g11-02/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g11-02/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/3372cc30b438d0d9a1f3b3a99c53737c1b2133602e2138613fc3ab5f7be2ad89.mp3",
+      "contentHash": "sha256:3372cc30b438d0d9a1f3b3a99c53737c1b2133602e2138613fc3ab5f7be2ad89",
+      "mimeType": "audio/mpeg",
+      "byteSize": 452650,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g11-03-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g11-03/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g11-03/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/e9f58278a9a338eb2f3bc04c980844b620a61e6457d9272696deca95fcd1c4d2.mp3",
+      "contentHash": "sha256:e9f58278a9a338eb2f3bc04c980844b620a61e6457d9272696deca95fcd1c4d2",
+      "mimeType": "audio/mpeg",
+      "byteSize": 723801,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g11-04-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g11-04/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g11-04/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/c0fae86f893ddcae49964aa33bc724d0d047c72a7b2c54f58daaf4dd8f85e8fa.mp3",
+      "contentHash": "sha256:c0fae86f893ddcae49964aa33bc724d0d047c72a7b2c54f58daaf4dd8f85e8fa",
+      "mimeType": "audio/mpeg",
+      "byteSize": 415660,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g11-07-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g11-07/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g11-07/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/39ac595e34c930b57ddb09b15dfe41f8e7497bbe3d5ec8d8b1b799771379401a.mp3",
+      "contentHash": "sha256:39ac595e34c930b57ddb09b15dfe41f8e7497bbe3d5ec8d8b1b799771379401a",
+      "mimeType": "audio/mpeg",
+      "byteSize": 686185,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g11-08-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g11-08/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g11-08/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/38c7c72bd5cc5ae1f5d696fe093474f931490d9f290e039b9c072732376f7ef0.mp3",
+      "contentHash": "sha256:38c7c72bd5cc5ae1f5d696fe093474f931490d9f290e039b9c072732376f7ef0",
+      "mimeType": "audio/mpeg",
+      "byteSize": 687438,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g11-09-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g11-09/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g11-09/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/608f802c006353777d9fee089444bf9ba02d00a748c4e1469aff495f5b2b409f.mp3",
+      "contentHash": "sha256:608f802c006353777d9fee089444bf9ba02d00a748c4e1469aff495f5b2b409f",
+      "mimeType": "audio/mpeg",
+      "byteSize": 894328,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g11-11-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g11-11/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g11-11/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/c71b9a8f6e76df95f7f54a210eb164e6ac06a34ffc409bc159de4cf7beb737d6.mp3",
+      "contentHash": "sha256:c71b9a8f6e76df95f7f54a210eb164e6ac06a34ffc409bc159de4cf7beb737d6",
+      "mimeType": "audio/mpeg",
+      "byteSize": 478668,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-sc-g11-12-listening-1-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for sc-g11-12/listening-1",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://sc-g11-12/listening-1",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/f51c1e6ee6b56cd61b9ac137b2201b6078f71512185a946038b60fe03bd9802f.mp3",
+      "contentHash": "sha256:f51c1e6ee6b56cd61b9ac137b2201b6078f71512185a946038b60fe03bd9802f",
+      "mimeType": "audio/mpeg",
+      "byteSize": 681169,
+      "temporary": true
+    }
+  ],
+  "items": [
+    {
+      "stableId": "sc-g11-01",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Opinions with Reasons",
+      "primarySkill": "VOCABULARY",
+      "supportingSkills": [
+        "SPEAKING",
+        "WRITING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-01"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Have an opinion — and back it up",
+            "instructionId": "Di kelas 11, pendapat tanpa alasan tidak cukup. Anda akan menyatakan opini dengan dukungan: alasan, contoh, atau akibat.",
+            "canDoEn": "I can state an opinion and support it with a reason or example."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "Should phones be allowed in class? One sentence.",
+              "Now add \"because…\" — did your sentence get stronger?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Opini kuat punya tiga lapis: pernyataan (In my opinion…), alasan (because/since…), dan dukungan (for example / that's why…). Variasikan pembuka opini agar tidak monoton: \"I'd say…\", \"To be honest…\", \"The way I see it…\".",
+            "patterns": [
+              {
+                "en": "The way I see it, a food bazaar beats a music show — it makes money instead of costing money.",
+                "noteId": "Opini + alasan langsung dalam satu napas."
+              },
+              {
+                "en": "To be honest, I think we're not ready yet.",
+                "noteId": "\"To be honest\" menandai opini jujur yang mungkin tidak populer."
+              },
+              {
+                "en": "For example, last year's bazaar funded two clubs.",
+                "noteId": "Contoh konkret adalah dukungan terkuat."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "A: I think we should hold the festival outdoors. B: Why, though? A: Three reasons. It fits more people, the workshop demos need space, and honestly — the hall smells like old paint. B: Fair. But if it rains, we lose everything. A: That's why we book the hall as a backup. Opinion, reasons, plan B. B: …Okay, that was annoyingly convincing.",
+            "tasks": [
+              {
+                "promptEn": "How many reasons does A give?",
+                "answerEn": "Three: capacity, demo space, and the hall's smell.",
+                "explanationId": "Opini didukung alasan bernomor — mudah diikuti."
+              },
+              {
+                "promptEn": "How does A handle B's objection about rain?",
+                "answerEn": "By proposing a backup plan (booking the hall).",
+                "explanationId": "Menjawab keberatan memperkuat, bukan melemahkan, opini."
+              },
+              {
+                "promptEn": "What makes the argument \"annoyingly convincing\"?",
+                "answerEn": "Structure: opinion + reasons + plan B.",
+                "explanationId": "Struktur mengalahkan volume suara."
+              }
+            ],
+            "audioAssetId": "audio-sc-g11-01-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Which opinion is best supported?",
+                "optionsEn": [
+                  "\"Homework is bad. Just bad.\"",
+                  "\"I'd say daily homework backfires — for example, half our class copies answers at the gate anyway.\"",
+                  "\"Everyone knows homework is wrong.\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Opini + contoh nyata; pilihan lain hanya pengulangan klaim."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Strengthen: \"School should start later.\"",
+                "answerEn": "The way I see it, school should start later, because sleepy students learn half as much in the first period.",
+                "explanationId": "Tambahkan pembuka opini + alasan."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"To be honest, I don't think this plan works\" signals…",
+                "optionsEn": [
+                  "a rude attack",
+                  "an honest, possibly unpopular opinion",
+                  "a joke"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Penanda kejujuran melembutkan opini kritis."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Record a 45-second opinion on: \"Should our school require one club per student?\" Use an opinion opener, two reasons, and one example.",
+            "supportEn": [
+              "The way I see it…",
+              "because…",
+              "For example…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "vocabulary",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g11-01",
+            "noteId": "Rapat ide festival di Episode 1 Season 2 menuntut opini yang didukung alasan."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "The strongest support for an opinion is…",
+                "optionsEn": [
+                  "saying it louder",
+                  "a concrete example or reason",
+                  "repeating it three times"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Dukungan konkret adalah inti argumentasi."
+              },
+              {
+                "promptEn": "\"The way I see it…\" is used to…",
+                "optionsEn": [
+                  "describe eyesight",
+                  "introduce a personal opinion",
+                  "end a discussion"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pembuka opini yang alami."
+              },
+              {
+                "promptEn": "Answering an objection with a backup plan makes your opinion…",
+                "optionsEn": [
+                  "weaker",
+                  "stronger",
+                  "irrelevant"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Mengantisipasi keberatan = argumen matang."
+              }
+            ]
+          },
+          {
+            "blockType": "rubric-definition",
+            "rubricRevisionId": "rubric-g11-school-core-v1",
+            "scale": "0-4 per criterion",
+            "criteria": [
+              {
+                "criterionId": "task-fulfillment",
+                "titleEn": "Task fulfillment",
+                "descriptorId": "Jawaban menyelesaikan tuntutan end-check dan tetap relevan."
+              },
+              {
+                "criterionId": "language-accuracy",
+                "titleEn": "Language accuracy",
+                "descriptorId": "Grammar dan kosakata target digunakan secara akurat."
+              },
+              {
+                "criterionId": "meaning",
+                "titleEn": "Meaning",
+                "descriptorId": "Makna jawaban jelas dan dapat dibuktikan dari stimulus."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-reason",
+            "term": "reason",
+            "meaningId": "alasan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-opinions",
+            "recallHookId": "rh-voc-reason"
+          },
+          {
+            "entryId": "voc-convincing",
+            "term": "convincing",
+            "meaningId": "meyakinkan",
+            "partOfSpeech": "adjective",
+            "sourceIntentKey": "intent-opinions",
+            "recallHookId": "rh-voc-convincing"
+          },
+          {
+            "entryId": "voc-backup",
+            "term": "backup",
+            "meaningId": "cadangan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-opinions",
+            "recallHookId": "rh-voc-backup"
+          },
+          {
+            "entryId": "voc-objection",
+            "term": "objection",
+            "meaningId": "keberatan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-opinions",
+            "recallHookId": "rh-voc-objection"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-the-way-i-see-it",
+            "expression": "The way I see it, ___",
+            "meaningId": "menurut-pandangan-saya",
+            "register": "informal",
+            "sourceIntentKey": "intent-opinions",
+            "recallHookId": "rh-the-way-i-see-it"
+          },
+          {
+            "entryId": "exp-to-be-honest",
+            "expression": "To be honest, ___",
+            "meaningId": "sejujurnya",
+            "register": "informal",
+            "sourceIntentKey": "intent-opinions",
+            "recallHookId": "rh-to-be-honest"
+          },
+          {
+            "entryId": "exp-thats-why",
+            "expression": "That's why ___",
+            "meaningId": "itulah-sebabnya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-opinions",
+            "recallHookId": "rh-thats-why"
+          },
+          {
+            "entryId": "exp-for-example",
+            "expression": "for example",
+            "meaningId": "sebagai-contoh",
+            "register": "neutral",
+            "sourceIntentKey": "intent-opinions",
+            "recallHookId": "rh-for-example"
+          },
+          {
+            "entryId": "exp-fair-point",
+            "expression": "Fair point",
+            "meaningId": "poin-yang-masuk-akal",
+            "register": "informal",
+            "sourceIntentKey": "intent-opinions",
+            "recallHookId": "rh-fair-point"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-the-way-i-see-it",
+            "sourceEntryId": "exp-the-way-i-see-it",
+            "objectiveKey": "obj-g11-01",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-fair-point",
+            "sourceEntryId": "exp-fair-point",
+            "objectiveKey": "obj-g11-01",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g11-02",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Agreeing and Disagreeing Politely",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-02"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Disagree without starting a war",
+            "instructionId": "Anda akan belajar hedging: cara tidak setuju yang membuat diskusi terus berjalan, bukan berhenti.",
+            "canDoEn": "I can disagree politely using hedging and partial agreement."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "What happens in a group when someone says \"you're wrong\" directly?",
+              "How do you disagree with a close friend vs. a teacher?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Ketidaksetujuan yang sehat memakai tiga teknik: setuju sebagian (\"I see your point, but…\"), pelunak (\"might\", \"not sure\"), dan menyerang ide bukan orang (\"that plan might not work\" ≠ \"you are wrong\").",
+            "patterns": [
+              {
+                "en": "I see your point, but the budget won't survive it.",
+                "noteId": "Setuju sebagian dulu, baru keberatan."
+              },
+              {
+                "en": "I'm not sure that would work on a rainy day.",
+                "noteId": "\"I'm not sure\" melunakkan tanpa menyerah."
+              },
+              {
+                "en": "That might be true — do we have the numbers, though?",
+                "noteId": "Pertanyaan menguji ide tanpa menyerang orangnya."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "A: We should sell tickets at the gate only. Simple. B: I see your point — it IS simpler. But last year the gate line took forty minutes. People left. A: They can wait. B: Some can. Parents with little kids won't. What if we do both: presale for families, gate for everyone else? A: …That might actually work. Fine. But you're running the presale table. B: Deal.",
+            "tasks": [
+              {
+                "promptEn": "How does B open the disagreement?",
+                "answerEn": "With partial agreement: \"I see your point — it IS simpler.\"",
+                "explanationId": "Setuju sebagian membuka telinga lawan bicara."
+              },
+              {
+                "promptEn": "What evidence does B use?",
+                "answerEn": "Last year's forty-minute gate line and people leaving.",
+                "explanationId": "Data mengalahkan opini keras."
+              },
+              {
+                "promptEn": "How does the disagreement end?",
+                "answerEn": "With a compromise: presale for families, gate for others.",
+                "explanationId": "Ketidaksetujuan yang baik menghasilkan solusi, bukan pemenang."
+              }
+            ],
+            "audioAssetId": "audio-sc-g11-02-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Your teammate proposes a weak idea. Choose the best response.",
+                "optionsEn": [
+                  "\"That's a terrible idea.\"",
+                  "\"I see where you're coming from, but I'm not sure it fits our budget. What if we scale it down?\"",
+                  "\"Whatever you say.\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Setuju sebagian + pelunak + alternatif; pilihan ketiga menghindar, bukan berdiskusi."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Soften: \"Your schedule is wrong.\"",
+                "answerEn": "I might be missing something, but I think there's a clash in the schedule.",
+                "explanationId": "Serang masalahnya (\"a clash\"), bukan pemiliknya (\"your\")."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"That might be true, but…\" is an example of…",
+                "optionsEn": [
+                  "full agreement",
+                  "hedged disagreement",
+                  "changing the topic"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"might\" + \"but\" = tidak setuju dengan pelunak."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "A friend insists your club should skip this year's festival. You disagree. Record a 40-second response using partial agreement, one piece of evidence, and a compromise offer.",
+            "supportEn": [
+              "I see your point, but…",
+              "I'm not sure…",
+              "What if we…?"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "naturalness",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g11-05",
+            "noteId": "Teknik ini diuji habis-habisan saat Hana dan Ryo bertengkar di Episode 5."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"I see your point, but…\" works because it…",
+                "optionsEn": [
+                  "hides your real opinion",
+                  "acknowledges the other side before objecting",
+                  "ends the discussion"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pengakuan membuat keberatan didengar."
+              },
+              {
+                "promptEn": "Which sentence attacks the idea, not the person?",
+                "optionsEn": [
+                  "\"You never think things through.\"",
+                  "\"This timeline might be too tight.\"",
+                  "\"You're always like this.\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Fokus pada rencana, bukan karakter."
+              },
+              {
+                "promptEn": "In a group decision, hedged disagreement usually leads to…",
+                "optionsEn": [
+                  "silence",
+                  "compromise and better plans",
+                  "immediate victory"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Tujuannya solusi bersama."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-compromise",
+            "term": "compromise",
+            "meaningId": "kompromi",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-disagreement",
+            "recallHookId": "rh-voc-compromise"
+          },
+          {
+            "entryId": "voc-presale",
+            "term": "presale",
+            "meaningId": "penjualan-awal",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-disagreement",
+            "recallHookId": "rh-voc-presale"
+          },
+          {
+            "entryId": "voc-clash",
+            "term": "clash",
+            "meaningId": "bentrok",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-disagreement",
+            "recallHookId": "rh-voc-clash"
+          },
+          {
+            "entryId": "voc-evidence",
+            "term": "evidence",
+            "meaningId": "bukti",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-disagreement",
+            "recallHookId": "rh-voc-evidence"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-i-see-your-point-but",
+            "expression": "I see your point, but ___",
+            "meaningId": "saya-paham-tapi",
+            "register": "neutral",
+            "sourceIntentKey": "intent-disagreement",
+            "recallHookId": "rh-i-see-your-point-but"
+          },
+          {
+            "entryId": "exp-im-not-sure-that",
+            "expression": "I'm not sure that ___",
+            "meaningId": "saya-tidak-yakin",
+            "register": "neutral",
+            "sourceIntentKey": "intent-disagreement",
+            "recallHookId": "rh-im-not-sure-that"
+          },
+          {
+            "entryId": "exp-that-might-be-true",
+            "expression": "That might be true, but ___",
+            "meaningId": "mungkin-benar-tapi",
+            "register": "neutral",
+            "sourceIntentKey": "intent-disagreement",
+            "recallHookId": "rh-that-might-be-true"
+          },
+          {
+            "entryId": "exp-where-youre-coming-from",
+            "expression": "I see where you're coming from",
+            "meaningId": "saya-paham-maksudmu",
+            "register": "informal",
+            "sourceIntentKey": "intent-disagreement",
+            "recallHookId": "rh-where-youre-coming-from"
+          },
+          {
+            "entryId": "exp-what-if-we",
+            "expression": "What if we ___?",
+            "meaningId": "bagaimana-kalau-kita",
+            "register": "informal",
+            "sourceIntentKey": "intent-disagreement",
+            "recallHookId": "rh-what-if-we"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-i-see-your-point-but",
+            "sourceEntryId": "exp-i-see-your-point-but",
+            "objectiveKey": "obj-g11-02",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-what-if-we",
+            "sourceEntryId": "exp-what-if-we",
+            "objectiveKey": "obj-g11-02",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g11-03",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Listening: Group Discussions",
+      "primarySkill": "LISTENING",
+      "supportingSkills": [
+        "VOCABULARY"
+      ],
+      "objectiveKeys": [
+        "obj-g11-03"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Track who wants what — and what was decided",
+            "instructionId": "Diskusi kelompok itu berisik: pendapat bertabrakan, topik berbelok. Anda akan berlatih mengikuti giliran bicara dan menangkap keputusan akhir.",
+            "canDoEn": "I can follow a group discussion, track viewpoints, and identify the final decision."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "In group work, how do you know a decision was actually made?",
+              "What phrases signal \"we've decided\"?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Dalam diskusi, dengarkan penanda: usulan (\"what if\", \"how about\"), keberatan (\"but\", \"the problem is\"), dan keputusan (\"so we're agreed\", \"let's go with\", \"settled\"). Keputusan sering muncul dalam satu kalimat pendek di akhir — jangan lengah.",
+            "patterns": [
+              {
+                "en": "So, to sum up: we're going with the outdoor plan.",
+                "noteId": "\"go with\" = memilih opsi; penanda keputusan."
+              },
+              {
+                "en": "The problem is, we only have two weeks.",
+                "noteId": "Penanda keberatan/kendala."
+              },
+              {
+                "en": "Are we all on the same page?",
+                "noteId": "Cek kesepakatan sebelum menutup diskusi."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "HANA: Okay, mascot for the festival. Ideas? DEWI: A crane. Elegant, easy to draw. RYO: Cranes are everywhere. What about a mudskipper? Nobody has a mudskipper. HANA: A mudskipper. The fish that walks. RYO: Exactly. Memorable. DEWI: …I hate that I like it. HANA: Problem is, can you draw a cute mudskipper? DEWI: Give me ten minutes. (later) DEWI: Behold. HANA: Okay, that's disturbingly cute. Are we all on the same page? ALL: Yeah. HANA: Settled — mascot is the mudskipper. Ryo, never tell anyone it was your idea, you'll be insufferable.",
+            "tasks": [
+              {
+                "promptEn": "What are the two candidate mascots?",
+                "answerEn": "A crane and a mudskipper.",
+                "explanationId": "Dua usulan muncul di awal diskusi."
+              },
+              {
+                "promptEn": "What concern does Hana raise?",
+                "answerEn": "Whether a mudskipper can be drawn cute.",
+                "explanationId": "\"Problem is…\" menandai keberatan."
+              },
+              {
+                "promptEn": "What is the final decision and who signals it?",
+                "answerEn": "The mudskipper; Hana signals it with \"Settled\".",
+                "explanationId": "Kata keputusan pendek di akhir diskusi."
+              },
+              {
+                "promptEn": "What does \"Are we all on the same page?\" ask?",
+                "answerEn": "Whether everyone agrees.",
+                "explanationId": "Idiom cek kesepakatan."
+              }
+            ],
+            "audioAssetId": "audio-sc-g11-03-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "\"Let's go with option B\" means…",
+                "optionsEn": [
+                  "let's walk to B",
+                  "we choose option B",
+                  "option B is cancelled"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"go with\" = memilih."
+              },
+              {
+                "type": "choice",
+                "promptEn": "Which phrase signals a decision is NOT final yet?",
+                "optionsEn": [
+                  "\"Settled.\"",
+                  "\"Let's sleep on it.\"",
+                  "\"We're agreed.\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"sleep on it\" = tunda keputusan."
+              },
+              {
+                "type": "choice",
+                "promptEn": "In a noisy discussion, your first listening priority is…",
+                "optionsEn": [
+                  "every joke",
+                  "proposals, objections, and the final decision",
+                  "who talks loudest"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Tiga penanda inti diskusi."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "writing",
+            "promptEn": "Write meeting minutes (3–4 lines) for the mascot discussion: proposals, key objection, and final decision with who agreed.",
+            "supportEn": [
+              "Proposals: …",
+              "Concern: …",
+              "Decision: …"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g11-01",
+            "noteId": "Rapat festival Episode 1 menuntut Anda melacak usulan dan keputusan secara real time."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"Settled\" at the end of a discussion means…",
+                "optionsEn": [
+                  "the argument continues",
+                  "the decision is final",
+                  "everyone went home"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Penanda keputusan final."
+              },
+              {
+                "promptEn": "\"The problem is…\" introduces…",
+                "optionsEn": [
+                  "a proposal",
+                  "an objection or constraint",
+                  "a decision"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Penanda kendala."
+              },
+              {
+                "promptEn": "Good meeting notes always capture…",
+                "optionsEn": [
+                  "every word spoken",
+                  "decisions and who owns what",
+                  "the seating order"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Keputusan + penanggung jawab = inti notulen."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-mascot",
+            "term": "mascot",
+            "meaningId": "maskot",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-group-discussion",
+            "recallHookId": "rh-voc-mascot"
+          },
+          {
+            "entryId": "voc-proposal-idea",
+            "term": "proposal",
+            "meaningId": "usulan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-group-discussion",
+            "recallHookId": "rh-voc-proposal-idea"
+          },
+          {
+            "entryId": "voc-memorable",
+            "term": "memorable",
+            "meaningId": "mudah-diingat",
+            "partOfSpeech": "adjective",
+            "sourceIntentKey": "intent-group-discussion",
+            "recallHookId": "rh-voc-memorable"
+          },
+          {
+            "entryId": "voc-minutes",
+            "term": "minutes",
+            "meaningId": "notulen",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-group-discussion",
+            "recallHookId": "rh-voc-minutes"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-go-with",
+            "expression": "go with ___",
+            "meaningId": "memilih-opsi",
+            "register": "informal",
+            "sourceIntentKey": "intent-group-discussion",
+            "recallHookId": "rh-go-with"
+          },
+          {
+            "entryId": "exp-on-the-same-page",
+            "expression": "on the same page",
+            "meaningId": "sepaham",
+            "register": "informal",
+            "sourceIntentKey": "intent-group-discussion",
+            "recallHookId": "rh-on-the-same-page"
+          },
+          {
+            "entryId": "exp-the-problem-is",
+            "expression": "The problem is, ___",
+            "meaningId": "masalahnya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-group-discussion",
+            "recallHookId": "rh-the-problem-is"
+          },
+          {
+            "entryId": "exp-settled",
+            "expression": "Settled.",
+            "meaningId": "sudah-diputuskan",
+            "register": "informal",
+            "sourceIntentKey": "intent-group-discussion",
+            "recallHookId": "rh-settled"
+          },
+          {
+            "entryId": "exp-sleep-on-it",
+            "expression": "sleep on it",
+            "meaningId": "pikirkan-dulu-semalam",
+            "register": "informal",
+            "sourceIntentKey": "intent-group-discussion",
+            "recallHookId": "rh-sleep-on-it"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-on-the-same-page",
+            "sourceEntryId": "exp-on-the-same-page",
+            "objectiveKey": "obj-g11-03",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-go-with",
+            "sourceEntryId": "exp-go-with",
+            "objectiveKey": "obj-g11-03",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g11-04",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Suggestions and Negotiation",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-04"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Suggest, trade, and meet in the middle",
+            "instructionId": "Anda akan mengusulkan ide, menawar, dan mencapai kompromi — bahasa inti kerja tim kelas 11.",
+            "canDoEn": "I can make suggestions and negotiate a compromise."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "When did you last negotiate something (time, price, turns)?",
+              "What's the difference between winning and agreeing?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Usulan halus memakai bentuk tanya: \"Why don't we…\", \"How about…\", \"What if we…\". Menawar memakai syarat: \"I'll do X if you do Y\". Kompromi ditandai \"let's meet halfway\" atau \"deal\".",
+            "patterns": [
+              {
+                "en": "Why don't we split the shift — you take mornings, I take afternoons?",
+                "noteId": "Usulan + pembagian konkret."
+              },
+              {
+                "en": "I'll handle the poster if you handle the sound system.",
+                "noteId": "Tawar-menawar bersyarat."
+              },
+              {
+                "en": "Let's meet halfway: two rehearsals, not four.",
+                "noteId": "Frasa kompromi klasik."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "A: We need someone at the booth all Saturday. B: All Saturday? I have a tournament till noon. A: How about this — I cover the morning, you take over at one? B: Make it two and I'll bring my own table decorations. A: …Deal. But if the decorations are creepy dolls again, the deal's off. B: They were VINTAGE. Fine. Non-creepy decorations. Two o'clock.",
+            "tasks": [
+              {
+                "promptEn": "What is the first suggestion?",
+                "answerEn": "A covers the morning, B takes over at one.",
+                "explanationId": "\"How about this\" membuka usulan."
+              },
+              {
+                "promptEn": "What counter-offer does B make?",
+                "answerEn": "Starting at two, plus bringing decorations.",
+                "explanationId": "Menawar dengan menambahkan nilai."
+              },
+              {
+                "promptEn": "What condition is attached to the final deal?",
+                "answerEn": "No creepy dolls.",
+                "explanationId": "\"the deal's off\" = kesepakatan batal jika syarat dilanggar."
+              }
+            ],
+            "audioAssetId": "audio-sc-g11-04-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Choose the softest suggestion form.",
+                "optionsEn": [
+                  "\"Do this now.\"",
+                  "\"Why don't we try the smaller venue first?\"",
+                  "\"The venue will be small. Final.\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Bentuk tanya mengundang persetujuan, bukan memaksa."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Make a conditional trade: you design the poster; your friend prints it.",
+                "answerEn": "I'll design the poster if you handle the printing.",
+                "explanationId": "Pola \"I'll X if you Y\"."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"Let's meet halfway\" means…",
+                "optionsEn": [
+                  "let's meet at the mall",
+                  "let's each give up part of our demand",
+                  "let's cancel the plan"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Idiom kompromi."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Negotiate aloud (both roles, 45 seconds): your partner wants practice every day; you can only do twice a week. Reach a real compromise using one suggestion form and one conditional trade.",
+            "supportEn": [
+              "Why don't we…?",
+              "I'll… if you…",
+              "Let's meet halfway."
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "naturalness",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g11-06",
+            "noteId": "Kemampuan ini memperbaiki klub setelah pertengkaran besar di Episode 6."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"Make it two and I'll bring decorations\" is…",
+                "optionsEn": [
+                  "a refusal",
+                  "a counter-offer",
+                  "an apology"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Menawar balik dengan syarat baru."
+              },
+              {
+                "promptEn": "\"The deal's off\" means…",
+                "optionsEn": [
+                  "the agreement is cancelled",
+                  "the discount ended",
+                  "the meeting moved"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Idiom pembatalan kesepakatan."
+              },
+              {
+                "promptEn": "A good negotiation ends when…",
+                "optionsEn": [
+                  "one side surrenders completely",
+                  "both sides accept a workable middle",
+                  "everyone is angry"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Kompromi yang bisa dijalankan adalah tujuannya."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-shift",
+            "term": "shift",
+            "meaningId": "giliran-jaga",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-negotiation",
+            "recallHookId": "rh-voc-shift"
+          },
+          {
+            "entryId": "voc-tournament",
+            "term": "tournament",
+            "meaningId": "turnamen",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-negotiation",
+            "recallHookId": "rh-voc-tournament"
+          },
+          {
+            "entryId": "voc-venue",
+            "term": "venue",
+            "meaningId": "tempat-acara",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-negotiation",
+            "recallHookId": "rh-voc-venue"
+          },
+          {
+            "entryId": "voc-condition",
+            "term": "condition",
+            "meaningId": "syarat",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-negotiation",
+            "recallHookId": "rh-voc-condition"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-why-dont-we",
+            "expression": "Why don't we ___?",
+            "meaningId": "kenapa-tidak-kita",
+            "register": "informal",
+            "sourceIntentKey": "intent-negotiation",
+            "recallHookId": "rh-why-dont-we"
+          },
+          {
+            "entryId": "exp-how-about-this",
+            "expression": "How about this — ___",
+            "meaningId": "bagaimana-kalau-begini",
+            "register": "informal",
+            "sourceIntentKey": "intent-negotiation",
+            "recallHookId": "rh-how-about-this"
+          },
+          {
+            "entryId": "exp-ill-x-if-you-y",
+            "expression": "I'll ___ if you ___",
+            "meaningId": "saya-akan-jika-kamu",
+            "register": "neutral",
+            "sourceIntentKey": "intent-negotiation",
+            "recallHookId": "rh-ill-x-if-you-y"
+          },
+          {
+            "entryId": "exp-meet-halfway",
+            "expression": "let's meet halfway",
+            "meaningId": "kompromi-di-tengah",
+            "register": "informal",
+            "sourceIntentKey": "intent-negotiation",
+            "recallHookId": "rh-meet-halfway"
+          },
+          {
+            "entryId": "exp-take-over",
+            "expression": "take over",
+            "meaningId": "mengambil-alih",
+            "register": "neutral",
+            "sourceIntentKey": "intent-negotiation",
+            "recallHookId": "rh-take-over"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-meet-halfway",
+            "sourceEntryId": "exp-meet-halfway",
+            "objectiveKey": "obj-g11-04",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-why-dont-we",
+            "sourceEntryId": "exp-why-dont-we",
+            "objectiveKey": "obj-g11-04",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g11-05",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Reading Arguments (Analytical Exposition)",
+      "primarySkill": "READING",
+      "supportingSkills": [
+        "WRITING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-05"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Find the thesis, weigh the arguments",
+            "instructionId": "Anda akan membedah teks eksposisi analitis: menemukan tesis, memetakan argumen, dan menilai bukti.",
+            "canDoEn": "I can identify the thesis, arguments, and evidence in an exposition text."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "When you read an opinion article, what do you look for first?",
+              "Is \"many people say\" strong evidence? Why not?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Eksposisi analitis: tesis (posisi penulis) → argumen berurutan (firstly, furthermore, in addition) → penegasan ulang (therefore, in conclusion). Bedakan klaim (\"school gardens are valuable\") dari bukti (\"schools with gardens report 20% less canteen waste\").",
+            "patterns": [
+              {
+                "en": "There are three reasons why every school needs a garden.",
+                "noteId": "Tesis + peta argumen dalam satu kalimat."
+              },
+              {
+                "en": "Furthermore, gardening teaches patience no app can.",
+                "noteId": "\"Furthermore\" menambah argumen."
+              },
+              {
+                "en": "Therefore, the school should turn the empty lot into a garden this year.",
+                "noteId": "Kesimpulan menegaskan tesis dengan tindakan."
+              }
+            ]
+          },
+          {
+            "blockType": "reading",
+            "textEn": "WHY OUR SCHOOL SHOULD JOIN THE INTER-SCHOOL FESTIVAL NETWORK. Joining the festival network would change what our students believe they can do. Firstly, network schools exchange visits every semester; our students would use English for real communication, not just exams — the strongest reason on this list. Secondly, the network shares costs. Last year, three member schools split one sound system rental; we currently pay for everything alone. Furthermore, membership pushes quality upward: when guests are coming, everyone rehearses differently. Some argue the network means extra work for teachers. That concern is real, but member schools rotate hosting duties, so no school hosts more than once a year. Therefore, the student council should submit our application this semester, while the network is still accepting new schools for free.",
+            "tasks": [
+              {
+                "promptEn": "What is the thesis?",
+                "answerEn": "The school should join the inter-school festival network.",
+                "explanationId": "Posisi penulis, ditegaskan lagi di kesimpulan."
+              },
+              {
+                "promptEn": "Which argument uses concrete evidence, and what is it?",
+                "answerEn": "Cost sharing — three schools split one sound system rental.",
+                "explanationId": "Bukti spesifik memperkuat klaim."
+              },
+              {
+                "promptEn": "How does the writer handle the counter-argument?",
+                "answerEn": "Acknowledges the teacher-workload concern, then answers it with rotating hosting duties.",
+                "explanationId": "Eksposisi kuat mengakui lalu menjawab keberatan."
+              },
+              {
+                "promptEn": "Why does the writer say \"this semester\"?",
+                "answerEn": "The network is still accepting schools for free — urgency supports the call to action.",
+                "explanationId": "Urgensi mendorong tindakan."
+              }
+            ]
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "\"Furthermore\" signals…",
+                "optionsEn": [
+                  "a contrast",
+                  "an additional argument",
+                  "a conclusion"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Penambah argumen."
+              },
+              {
+                "type": "choice",
+                "promptEn": "Which is evidence, not a claim?",
+                "optionsEn": [
+                  "\"Gardens are wonderful.\"",
+                  "\"Schools with gardens report 20% less canteen waste.\"",
+                  "\"Everyone loves gardens.\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Angka/fakta yang bisa dicek = bukti."
+              },
+              {
+                "type": "choice",
+                "promptEn": "Acknowledging a counter-argument makes a text…",
+                "optionsEn": [
+                  "weaker",
+                  "more balanced and convincing",
+                  "confusing"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Menjawab keberatan menunjukkan penulis berpikir dua sisi."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "writing",
+            "promptEn": "Map the text: write the thesis in one line, list the three arguments with their evidence, and note how the counter-argument is answered.",
+            "supportEn": [
+              "Thesis: …",
+              "Arg 1/2/3: … (evidence: …)",
+              "Counter answered by: …"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g11-02",
+            "noteId": "Struktur ini menjadi tulang punggung proposal festival kepada Ibu Ratna di Episode 2."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "The thesis of an exposition is…",
+                "optionsEn": [
+                  "the writer's position",
+                  "the first example",
+                  "the title"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Tesis = posisi yang dibela seluruh teks."
+              },
+              {
+                "promptEn": "\"Some argue…, but…\" is the move for…",
+                "optionsEn": [
+                  "adding a joke",
+                  "handling a counter-argument",
+                  "changing the thesis"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Mengakui lalu menjawab keberatan."
+              },
+              {
+                "promptEn": "The strongest argument in the text is marked by…",
+                "optionsEn": [
+                  "\"the strongest reason on this list\"",
+                  "\"some argue\"",
+                  "\"therefore\""
+                ],
+                "answerIndex": 0,
+                "explanationId": "Penulis memberi sinyal bobot argumen secara eksplisit."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-thesis",
+            "term": "thesis",
+            "meaningId": "tesis-posisi",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-exposition",
+            "recallHookId": "rh-voc-thesis"
+          },
+          {
+            "entryId": "voc-argument",
+            "term": "argument",
+            "meaningId": "argumen",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-exposition",
+            "recallHookId": "rh-voc-argument"
+          },
+          {
+            "entryId": "voc-membership",
+            "term": "membership",
+            "meaningId": "keanggotaan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-exposition",
+            "recallHookId": "rh-voc-membership"
+          },
+          {
+            "entryId": "voc-urgency",
+            "term": "urgency",
+            "meaningId": "urgensi",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-exposition",
+            "recallHookId": "rh-voc-urgency"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-there-are-three-reasons",
+            "expression": "There are ___ reasons why ___",
+            "meaningId": "ada-sekian-alasan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-exposition",
+            "recallHookId": "rh-there-are-three-reasons"
+          },
+          {
+            "entryId": "exp-furthermore",
+            "expression": "Furthermore, ___",
+            "meaningId": "lebih-lanjut",
+            "register": "formal",
+            "sourceIntentKey": "intent-exposition",
+            "recallHookId": "rh-furthermore"
+          },
+          {
+            "entryId": "exp-some-argue-but",
+            "expression": "Some argue ___, but ___",
+            "meaningId": "sebagian-berpendapat-namun",
+            "register": "formal",
+            "sourceIntentKey": "intent-exposition",
+            "recallHookId": "rh-some-argue-but"
+          },
+          {
+            "entryId": "exp-therefore",
+            "expression": "Therefore, ___",
+            "meaningId": "oleh-karena-itu",
+            "register": "formal",
+            "sourceIntentKey": "intent-exposition",
+            "recallHookId": "rh-therefore"
+          },
+          {
+            "entryId": "exp-call-to-action",
+            "expression": "should ___ this semester (call to action)",
+            "meaningId": "ajakan-bertindak",
+            "register": "formal",
+            "sourceIntentKey": "intent-exposition",
+            "recallHookId": "rh-call-to-action"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-some-argue-but",
+            "sourceEntryId": "exp-some-argue-but",
+            "objectiveKey": "obj-g11-05",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-therefore",
+            "sourceEntryId": "exp-therefore",
+            "objectiveKey": "obj-g11-05",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g11-06",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Writing a Persuasive Paragraph",
+      "primarySkill": "WRITING",
+      "supportingSkills": [
+        "READING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-06"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "One paragraph that changes one mind",
+            "instructionId": "Anda akan menulis paragraf persuasif: klaim, dua dukungan, jawaban atas keberatan, dan ajakan bertindak.",
+            "canDoEn": "I can write a persuasive paragraph with a claim, support, and a call to action."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "What was the last thing you convinced someone to do?",
+              "What worked: feelings, facts, or both?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Paragraf persuasif ringkas: (1) klaim tegas, (2) alasan + bukti, (3) jawab satu keberatan, (4) ajakan spesifik. Kata kunci: \"should\", \"the real question is\", \"imagine if\", \"all it takes is\".",
+            "patterns": [
+              {
+                "en": "Our club deserves a corner at the festival — and here's why.",
+                "noteId": "Klaim + janji alasan."
+              },
+              {
+                "en": "Worried about cost? The booth reuses last year's stands.",
+                "noteId": "Menjawab keberatan sebelum diucapkan pembaca."
+              },
+              {
+                "en": "All it takes is one signature on this form.",
+                "noteId": "Ajakan bertindak yang kecil dan konkret."
+              }
+            ]
+          },
+          {
+            "blockType": "reading",
+            "textEn": "MODEL PARAGRAPH: The student council should give new clubs a free booth at the festival. New clubs have no budget — charging them the standard fee guarantees empty booths and a quieter festival for everyone. A free booth costs the council almost nothing; the space exists whether it is used or not. Some will say paying clubs deserve priority, and they do — for location, not for existence. Last year, two new clubs skipped the festival because of the fee, and one of them dissolved a month later. Imagine if one free table could have saved it. All it takes is a one-line change in the festival rules. Make the change this week, before booth registration opens.",
+            "tasks": [
+              {
+                "promptEn": "What is the claim?",
+                "answerEn": "The student council should give new clubs a free booth.",
+                "explanationId": "Kalimat pertama adalah klaim."
+              },
+              {
+                "promptEn": "How is the counter-argument (\"paying clubs deserve priority\") handled?",
+                "answerEn": "Partially accepted — priority for location, not for existence.",
+                "explanationId": "Konsesi cerdas: memberi sebagian, mempertahankan inti."
+              },
+              {
+                "promptEn": "What is the call to action, and why is it effective?",
+                "answerEn": "Change one line in the rules this week — small, specific, and time-bound.",
+                "explanationId": "Ajakan kecil lebih mudah dipenuhi daripada tuntutan besar."
+              }
+            ]
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Which claim is strongest for a persuasive paragraph?",
+                "optionsEn": [
+                  "\"The canteen could maybe possibly improve somehow.\"",
+                  "\"The canteen should open a second payment line at rush hour.\"",
+                  "\"Canteens exist in schools.\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Klaim tegas + spesifik + bisa ditindaklanjuti."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Turn into a call to action: \"It would be good if students recycled bottles.\"",
+                "answerEn": "Put your bottle in the green bin today — all it takes is three extra steps.",
+                "explanationId": "Perintah konkret + usaha kecil."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"Worried about cost?\" is a technique for…",
+                "optionsEn": [
+                  "asking the reader's budget",
+                  "answering an objection before it's raised",
+                  "avoiding the topic"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pre-empting keberatan."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "writing",
+            "promptEn": "Write a 90–110 word persuasive paragraph to your principal: your club needs one specific thing (a room, a small budget, an event slot). Claim, two supports (one with evidence), one answered objection, one small call to action.",
+            "supportEn": [
+              "…should… — and here's why.",
+              "Some will say…, and…",
+              "All it takes is…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "grammar",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g11-02",
+            "noteId": "Paragraf inti proposal Bridge Festival di Episode 2 memakai struktur ini."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "A persuasive paragraph should end with…",
+                "optionsEn": [
+                  "a new topic",
+                  "a specific call to action",
+                  "an apology"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Tanpa ajakan, persuasi tidak menghasilkan tindakan."
+              },
+              {
+                "promptEn": "\"They do — for location, not for existence\" is an example of…",
+                "optionsEn": [
+                  "full surrender",
+                  "partial concession that protects the claim",
+                  "sarcasm"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Konsesi terukur memperkuat kredibilitas."
+              },
+              {
+                "promptEn": "Evidence like \"two clubs skipped the festival because of the fee\" works because it is…",
+                "optionsEn": [
+                  "emotional",
+                  "specific and checkable",
+                  "long"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Spesifik + dapat diverifikasi = persuasif."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-claim",
+            "term": "claim",
+            "meaningId": "klaim-pernyataan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-persuasive-writing",
+            "recallHookId": "rh-voc-claim"
+          },
+          {
+            "entryId": "voc-fee",
+            "term": "fee",
+            "meaningId": "biaya",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-persuasive-writing",
+            "recallHookId": "rh-voc-fee"
+          },
+          {
+            "entryId": "voc-priority",
+            "term": "priority",
+            "meaningId": "prioritas",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-persuasive-writing",
+            "recallHookId": "rh-voc-priority"
+          },
+          {
+            "entryId": "voc-dissolve",
+            "term": "dissolve",
+            "meaningId": "membubarkan",
+            "partOfSpeech": "verb",
+            "sourceIntentKey": "intent-persuasive-writing",
+            "recallHookId": "rh-voc-dissolve"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-heres-why",
+            "expression": "— and here's why",
+            "meaningId": "dan-inilah-alasannya",
+            "register": "informal",
+            "sourceIntentKey": "intent-persuasive-writing",
+            "recallHookId": "rh-heres-why"
+          },
+          {
+            "entryId": "exp-some-will-say",
+            "expression": "Some will say ___",
+            "meaningId": "sebagian-akan-berkata",
+            "register": "neutral",
+            "sourceIntentKey": "intent-persuasive-writing",
+            "recallHookId": "rh-some-will-say"
+          },
+          {
+            "entryId": "exp-imagine-if",
+            "expression": "Imagine if ___",
+            "meaningId": "bayangkan-jika",
+            "register": "neutral",
+            "sourceIntentKey": "intent-persuasive-writing",
+            "recallHookId": "rh-imagine-if"
+          },
+          {
+            "entryId": "exp-all-it-takes-is",
+            "expression": "All it takes is ___",
+            "meaningId": "yang-dibutuhkan-hanya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-persuasive-writing",
+            "recallHookId": "rh-all-it-takes-is"
+          },
+          {
+            "entryId": "exp-before-x-opens",
+            "expression": "before ___ opens/closes",
+            "meaningId": "sebelum-dibuka-ditutup",
+            "register": "neutral",
+            "sourceIntentKey": "intent-persuasive-writing",
+            "recallHookId": "rh-before-x-opens"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-all-it-takes-is",
+            "sourceEntryId": "exp-all-it-takes-is",
+            "objectiveKey": "obj-g11-06",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-some-will-say",
+            "sourceEntryId": "exp-some-will-say",
+            "objectiveKey": "obj-g11-06",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g11-07",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Instructions and Delegating",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-07"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Hand out tasks people actually finish",
+            "instructionId": "Delegasi bukan memerintah: Anda akan memberi tugas dengan jelas — apa, siapa, kapan — dan memastikan pemahamannya.",
+            "canDoEn": "I can delegate tasks clearly with owners, deadlines, and confirmation."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "Why do delegated tasks often fail: bad people or bad instructions?",
+              "How do you feel when someone dumps a vague task on you?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Delegasi yang jelas punya empat bagian: tugas spesifik, pemilik, tenggat, dan cek pemahaman. Pelunak menjaga hubungan: \"Can you take care of…\", \"Would you mind handling…\". Tawarkan konteks: orang bekerja lebih baik saat tahu alasannya.",
+            "patterns": [
+              {
+                "en": "Can you take care of the sound check? It needs to be done by Friday noon.",
+                "noteId": "Tugas + pemilik + tenggat dalam dua kalimat."
+              },
+              {
+                "en": "Leave the poster to me — you focus on the guest list.",
+                "noteId": "\"Leave ___ to me\" membagi wilayah kerja."
+              },
+              {
+                "en": "Quick check — who's doing what by when?",
+                "noteId": "Konfirmasi pembagian sebelum bubar."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "HANA: Okay, festival prep, three tasks, three people. Dewi — can you take care of the banner? Sketch by Wednesday, final by Monday. DEWI: On it. HANA: Ryo, would you mind handling the equipment list? You know the workshop inventory better than anyone. RYO: List by tomorrow. Rentals need two weeks' notice, so decide fast. HANA: Noted. I'll take the permits — Ibu Ratna's office loves me. Quick check: banner Wednesday, equipment tomorrow, permits Friday. Who's stuck, speak now. DEWI: What size is the banner? HANA: …Excellent question. Three by one meter. THIS is why we do the check.",
+            "tasks": [
+              {
+                "promptEn": "Why does Hana give Ryo the equipment task?",
+                "answerEn": "He knows the workshop inventory best.",
+                "explanationId": "Delegasi cocok dengan keahlian + alasan disebutkan."
+              },
+              {
+                "promptEn": "What extra information does Ryo volunteer?",
+                "answerEn": "Rentals need two weeks' notice.",
+                "explanationId": "Pemilik tugas yang baik menambahkan kendala penting."
+              },
+              {
+                "promptEn": "What does the final \"quick check\" catch?",
+                "answerEn": "A missing detail — the banner size.",
+                "explanationId": "Cek pemahaman menangkap lubang instruksi."
+              }
+            ],
+            "audioAssetId": "audio-sc-g11-07-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Which delegation is complete?",
+                "optionsEn": [
+                  "\"Someone should handle tickets sometime.\"",
+                  "\"Rina, can you handle ticket sales? Booth opens Saturday 8 a.m., cash box from me on Friday.\"",
+                  "\"Tickets! Go!\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pemilik + tugas + waktu + logistik."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Soften: \"Ryo. Fix the projector.\"",
+                "answerEn": "Ryo, would you mind taking a look at the projector when you have a minute?",
+                "explanationId": "\"Would you mind\" + fleksibilitas menjaga nada."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"Who's doing what by when?\" is asked to…",
+                "optionsEn": [
+                  "start an argument",
+                  "confirm the task split before ending the meeting",
+                  "assign blame"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Ritual konfirmasi delegasi."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "You lead a three-person team preparing a class presentation. Record 45 seconds delegating: three specific tasks, three owners, deadlines, and one closing check question.",
+            "supportEn": [
+              "Can you take care of…?",
+              "Leave … to me.",
+              "Quick check — who's doing what by when?"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "clarity",
+              "naturalness"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g11-03",
+            "noteId": "Pembagian tugas festival di Episode 3 — dan kelak, briefing kepada Sari di kelas 12."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "A complete delegation always includes…",
+                "optionsEn": [
+                  "task, owner, deadline",
+                  "a threat",
+                  "at least five tasks"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Tiga elemen minimum delegasi."
+              },
+              {
+                "promptEn": "\"Leave that to me\" means…",
+                "optionsEn": [
+                  "abandon that",
+                  "I'll handle it",
+                  "put it on the table"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Mengambil kepemilikan tugas."
+              },
+              {
+                "promptEn": "Telling Ryo WHY he got the equipment task (\"you know the inventory best\") makes him…",
+                "optionsEn": [
+                  "suspicious",
+                  "more motivated and precise",
+                  "slower"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Konteks meningkatkan kualitas kerja."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-inventory",
+            "term": "inventory",
+            "meaningId": "inventaris",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-delegation",
+            "recallHookId": "rh-voc-inventory"
+          },
+          {
+            "entryId": "voc-permit",
+            "term": "permit",
+            "meaningId": "surat-izin-acara",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-delegation",
+            "recallHookId": "rh-voc-permit"
+          },
+          {
+            "entryId": "voc-rental",
+            "term": "rental",
+            "meaningId": "sewa",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-delegation",
+            "recallHookId": "rh-voc-rental"
+          },
+          {
+            "entryId": "voc-banner",
+            "term": "banner",
+            "meaningId": "spanduk",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-delegation",
+            "recallHookId": "rh-voc-banner"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-take-care-of",
+            "expression": "Can you take care of ___?",
+            "meaningId": "bisa-tangani",
+            "register": "neutral",
+            "sourceIntentKey": "intent-delegation",
+            "recallHookId": "rh-take-care-of"
+          },
+          {
+            "entryId": "exp-would-you-mind",
+            "expression": "Would you mind handling ___?",
+            "meaningId": "berkenankah-menangani",
+            "register": "neutral",
+            "sourceIntentKey": "intent-delegation",
+            "recallHookId": "rh-would-you-mind"
+          },
+          {
+            "entryId": "exp-leave-it-to-me",
+            "expression": "Leave ___ to me",
+            "meaningId": "serahkan-pada-saya",
+            "register": "informal",
+            "sourceIntentKey": "intent-delegation",
+            "recallHookId": "rh-leave-it-to-me"
+          },
+          {
+            "entryId": "exp-on-it",
+            "expression": "On it",
+            "meaningId": "segera-dikerjakan",
+            "register": "informal",
+            "sourceIntentKey": "intent-delegation",
+            "recallHookId": "rh-on-it"
+          },
+          {
+            "entryId": "exp-whos-doing-what",
+            "expression": "Who's doing what by when?",
+            "meaningId": "siapa-mengerjakan-apa-kapan",
+            "register": "informal",
+            "sourceIntentKey": "intent-delegation",
+            "recallHookId": "rh-whos-doing-what"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-take-care-of",
+            "sourceEntryId": "exp-take-care-of",
+            "objectiveKey": "obj-g11-07",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-on-it",
+            "sourceEntryId": "exp-on-it",
+            "objectiveKey": "obj-g11-07",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g11-08",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Progress Updates and Problems",
+      "primarySkill": "GRAMMAR",
+      "supportingSkills": [
+        "SPEAKING",
+        "WRITING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-08"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Report progress — including the bad news",
+            "instructionId": "Anda akan melaporkan status pekerjaan dengan jujur: yang selesai, yang berjalan, yang macet — memakai present perfect dan continuous.",
+            "canDoEn": "I can give an honest progress update, including problems, with correct aspect forms."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab jujur.",
+            "promptsEn": [
+              "Have you ever hidden a problem until it exploded?",
+              "What's harder: doing a task or admitting it's stuck?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Laporan status memakai tiga bentuk: selesai (present perfect: \"I've finished the design\"), berjalan (continuous: \"I'm still waiting for the vendor\"), dan masalah (\"It turns out…\", \"We've hit a snag\"). Laporan buruk yang cepat lebih baik daripada laporan baik yang bohong.",
+            "patterns": [
+              {
+                "en": "I've finished the layout, and I'm still working on the colors.",
+                "noteId": "Selesai vs berjalan dalam satu kalimat."
+              },
+              {
+                "en": "We're running behind — the printer pushed us to Thursday.",
+                "noteId": "\"running behind\" = terlambat dari jadwal, + sebabnya."
+              },
+              {
+                "en": "It turns out the hall is double-booked. Here's what I suggest…",
+                "noteId": "\"It turns out\" membuka temuan tak terduga; solusi menyertai masalah."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "HANA: Status round. Dewi? DEWI: Banner's done — I've hung it in the hall to dry. Photos in the group chat. HANA: Love it. Ryo? RYO: Equipment: mostly on track. But it turns out the mixer we booked died at another school's event. I've found a replacement — costs 200 more. Decision needed today. HANA: Ugh. Okay, approved, I'll move it from decorations. Me: permits… I'm still waiting on one signature. I've been chasing it for three days. If it's not signed by Friday, we escalate to Ibu Ratna. RYO: Should've escalated Tuesday. HANA: Yes, thank you, hindsight.",
+            "tasks": [
+              {
+                "promptEn": "Which task is fully complete?",
+                "answerEn": "The banner (\"Banner's done — I've hung it…\").",
+                "explanationId": "Present perfect menandai penyelesaian."
+              },
+              {
+                "promptEn": "What problem does Ryo report, and what makes his report strong?",
+                "answerEn": "The booked mixer died; strong because he brings a found replacement and a clear decision request.",
+                "explanationId": "Masalah + solusi + kebutuhan keputusan = laporan matang."
+              },
+              {
+                "promptEn": "What is Hana's stuck item and her plan B?",
+                "answerEn": "One unsigned permit; escalate to Ibu Ratna by Friday.",
+                "explanationId": "Item macet perlu tenggat eskalasi."
+              }
+            ],
+            "audioAssetId": "audio-sc-g11-08-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Choose the correct form: \"I ___ the vendor twice this week, still no reply.\"",
+                "optionsEn": [
+                  "call",
+                  "have called",
+                  "am call",
+                  "calls"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pengalaman sampai kini: present perfect."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Report this honestly: the poster is late because the file was corrupted.",
+                "answerEn": "We're running behind on the poster — it turns out the file was corrupted, so I'm redoing the layout. New ETA: Thursday.",
+                "explanationId": "Terlambat + sebab + tindakan + estimasi baru."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"We've hit a snag\" means…",
+                "optionsEn": [
+                  "we finished early",
+                  "we ran into an unexpected problem",
+                  "we won a prize"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Idiom masalah tak terduga."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Give a 40-second status update on an imaginary project: one finished item (present perfect), one in progress (continuous), one problem with \"it turns out\" + your proposed fix.",
+            "supportEn": [
+              "I've finished…",
+              "I'm still working on…",
+              "It turns out… so I suggest…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "grammar",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g11-04",
+            "noteId": "Episode 4 (Missed Deadline) berdiri di atas keterampilan ini — dan ia kembali menyelamatkan Anda di tempat magang kelas 12."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"I've been chasing it for three days\" emphasizes…",
+                "optionsEn": [
+                  "a finished action",
+                  "an ongoing effort up to now",
+                  "a future plan"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Perfect continuous: usaha berlangsung sampai kini."
+              },
+              {
+                "promptEn": "The best time to report a problem is…",
+                "optionsEn": [
+                  "as soon as you find it, with a proposed fix",
+                  "after the deadline passes",
+                  "never"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Prinsip inti pelaporan."
+              },
+              {
+                "promptEn": "\"Running behind\" refers to…",
+                "optionsEn": [
+                  "exercising",
+                  "being late against the schedule",
+                  "leading the race"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Idiom keterlambatan jadwal."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-status",
+            "term": "status",
+            "meaningId": "status-kemajuan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-progress",
+            "recallHookId": "rh-voc-status"
+          },
+          {
+            "entryId": "voc-escalate",
+            "term": "escalate",
+            "meaningId": "eskalasi-naikkan",
+            "partOfSpeech": "verb",
+            "sourceIntentKey": "intent-progress",
+            "recallHookId": "rh-voc-escalate"
+          },
+          {
+            "entryId": "voc-replacement",
+            "term": "replacement",
+            "meaningId": "pengganti",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-progress",
+            "recallHookId": "rh-voc-replacement"
+          },
+          {
+            "entryId": "voc-eta",
+            "term": "ETA",
+            "meaningId": "perkiraan-selesai",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-progress",
+            "recallHookId": "rh-voc-eta"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-it-turns-out",
+            "expression": "It turns out ___",
+            "meaningId": "ternyata",
+            "register": "neutral",
+            "sourceIntentKey": "intent-progress",
+            "recallHookId": "rh-it-turns-out-g11"
+          },
+          {
+            "entryId": "exp-running-behind",
+            "expression": "We're running behind",
+            "meaningId": "kami-terlambat-jadwal",
+            "register": "neutral",
+            "sourceIntentKey": "intent-progress",
+            "recallHookId": "rh-running-behind"
+          },
+          {
+            "entryId": "exp-on-track",
+            "expression": "on track",
+            "meaningId": "sesuai-jadwal",
+            "register": "neutral",
+            "sourceIntentKey": "intent-progress",
+            "recallHookId": "rh-on-track"
+          },
+          {
+            "entryId": "exp-hit-a-snag",
+            "expression": "We've hit a snag",
+            "meaningId": "menemui-kendala",
+            "register": "informal",
+            "sourceIntentKey": "intent-progress",
+            "recallHookId": "rh-hit-a-snag"
+          },
+          {
+            "entryId": "exp-decision-needed",
+            "expression": "Decision needed by ___",
+            "meaningId": "perlu-keputusan-sebelum",
+            "register": "neutral",
+            "sourceIntentKey": "intent-progress",
+            "recallHookId": "rh-decision-needed"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-it-turns-out-g11",
+            "sourceEntryId": "exp-it-turns-out",
+            "objectiveKey": "obj-g11-08",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-running-behind",
+            "sourceEntryId": "exp-running-behind",
+            "objectiveKey": "obj-g11-08",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-on-track",
+            "sourceEntryId": "exp-on-track",
+            "objectiveKey": "obj-g11-08",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g11-09",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Listening: Presentations and Q&A",
+      "primarySkill": "LISTENING",
+      "supportingSkills": [
+        "WRITING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-09"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Follow a talk, catch the structure, survive the Q&A",
+            "instructionId": "Anda akan memakai signposting pembicara untuk mencatat presentasi secara efisien dan mengikuti dinamika tanya-jawab.",
+            "canDoEn": "I can follow a structured talk using signposts and track Q&A exchanges."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "How do you take notes: every word, or key points?",
+              "What makes a question in Q&A good or bad?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Pembicara yang baik memberi peta: \"I'll cover three things\", \"Moving on to…\", \"To sum up…\". Catat pada penanda itu — bukan di tengah kalimat. Dalam Q&A, dengarkan apakah jawaban benar-benar menjawab, atau mengelak.",
+            "patterns": [
+              {
+                "en": "Today I'll cover three things: the plan, the budget, and the risks.",
+                "noteId": "Peta presentasi — siapkan tiga judul catatan."
+              },
+              {
+                "en": "Moving on to the budget…",
+                "noteId": "Penanda pindah bagian; catatan bagian baru."
+              },
+              {
+                "en": "Good question — let me come back to that after the demo.",
+                "noteId": "Menunda jawaban dengan sopan; catat sebagai \"open question\"."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "SPEAKER: Good afternoon! I'll cover three things today: what the Bridge Festival is, what it costs, and what could go wrong. First, the festival: one day, five schools, thirty booths — the first inter-school event Cakrawala has ever hosted. Moving on to cost: our budget is 4.2 million, and 60 percent is already covered by two sponsors. The remaining forty comes from booth fees. Finally, risks. Rain is the big one — so we've booked the hall as backup. To sum up: one day, five schools, mostly funded, rain-proofed. Questions? — STUDENT: What happens to booth fees if the festival is cancelled? SPEAKER: Good question. Full refund within a week — it's written into the booth agreement. STUDENT 2: Why only five schools? SPEAKER: Honestly? Parking. Our lot fits five buses. Next year we'll negotiate with the mosque lot next door.",
+            "tasks": [
+              {
+                "promptEn": "What three sections does the speaker announce?",
+                "answerEn": "What the festival is, what it costs, what could go wrong.",
+                "explanationId": "Peta di awal = kerangka catatan Anda."
+              },
+              {
+                "promptEn": "How is the budget covered?",
+                "answerEn": "60% from two sponsors, 40% from booth fees.",
+                "explanationId": "Angka muncul tepat setelah penanda \"Moving on to cost\"."
+              },
+              {
+                "promptEn": "Does the speaker answer the refund question directly?",
+                "answerEn": "Yes — full refund within a week, per the booth agreement.",
+                "explanationId": "Jawaban langsung + sumber aturan."
+              },
+              {
+                "promptEn": "What is the honest reason for the five-school limit?",
+                "answerEn": "Parking capacity.",
+                "explanationId": "Q&A sering memunculkan detail paling jujur."
+              }
+            ],
+            "audioAssetId": "audio-sc-g11-09-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "\"To sum up\" tells the listener…",
+                "optionsEn": [
+                  "a new topic starts",
+                  "the summary is coming — check your notes",
+                  "the Q&A is cancelled"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Penanda ringkasan = momen memverifikasi catatan."
+              },
+              {
+                "type": "choice",
+                "promptEn": "The most efficient note for \"60 percent is already covered by two sponsors\" is…",
+                "optionsEn": [
+                  "writing the full sentence",
+                  "\"60% ✓ sponsors (2)\"",
+                  "nothing, you'll remember"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Catatan telegrafis menangkap angka dan sumber."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"Let me come back to that\" during Q&A means…",
+                "optionsEn": [
+                  "the question is refused forever",
+                  "the answer is postponed — note it as open",
+                  "the talk is over"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pertanyaan terbuka perlu ditandai agar tidak hilang."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "writing",
+            "promptEn": "Re-listen (re-read) and produce structured notes: three section headings with 2 facts each, plus both Q&A exchanges in one line each.",
+            "supportEn": [
+              "1. What: …",
+              "2. Cost: …",
+              "3. Risks: …",
+              "Q1/Q2: …"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g11-07",
+            "noteId": "Anda akan berada di kedua sisi: mencatat saat gladi (Episode 7) dan menjawab Q&A saat festival (Episode 8)."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "Signposts like \"Moving on to…\" help listeners…",
+                "optionsEn": [
+                  "relax",
+                  "organize notes by section",
+                  "leave early"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Peta pembicara = struktur catatan."
+              },
+              {
+                "promptEn": "In Q&A, an evasive answer is one that…",
+                "optionsEn": [
+                  "answers directly with facts",
+                  "talks around the question without answering",
+                  "is short"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Membedakan jawaban vs pengelakan adalah keterampilan menyimak kritis."
+              },
+              {
+                "promptEn": "The best moment to write is…",
+                "optionsEn": [
+                  "during every word",
+                  "at signposts and numbers",
+                  "only at the end"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Menulis terus-menerus membuat Anda berhenti mendengar."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-sponsor",
+            "term": "sponsor",
+            "meaningId": "sponsor",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-presentation-listening",
+            "recallHookId": "rh-voc-sponsor"
+          },
+          {
+            "entryId": "voc-refund",
+            "term": "refund",
+            "meaningId": "pengembalian-dana",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-presentation-listening",
+            "recallHookId": "rh-voc-refund"
+          },
+          {
+            "entryId": "voc-agreement",
+            "term": "agreement",
+            "meaningId": "perjanjian",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-presentation-listening",
+            "recallHookId": "rh-voc-agreement"
+          },
+          {
+            "entryId": "voc-capacity",
+            "term": "capacity",
+            "meaningId": "kapasitas",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-presentation-listening",
+            "recallHookId": "rh-voc-capacity"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-ill-cover",
+            "expression": "I'll cover ___ things",
+            "meaningId": "saya-akan-membahas",
+            "register": "neutral",
+            "sourceIntentKey": "intent-presentation-listening",
+            "recallHookId": "rh-ill-cover"
+          },
+          {
+            "entryId": "exp-moving-on-to",
+            "expression": "Moving on to ___",
+            "meaningId": "beralih-ke",
+            "register": "neutral",
+            "sourceIntentKey": "intent-presentation-listening",
+            "recallHookId": "rh-moving-on-to"
+          },
+          {
+            "entryId": "exp-to-sum-up",
+            "expression": "To sum up, ___",
+            "meaningId": "kesimpulannya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-presentation-listening",
+            "recallHookId": "rh-to-sum-up"
+          },
+          {
+            "entryId": "exp-good-question",
+            "expression": "Good question — ___",
+            "meaningId": "pertanyaan-bagus",
+            "register": "neutral",
+            "sourceIntentKey": "intent-presentation-listening",
+            "recallHookId": "rh-good-question"
+          },
+          {
+            "entryId": "exp-come-back-to-that",
+            "expression": "let me come back to that",
+            "meaningId": "saya-jawab-nanti",
+            "register": "neutral",
+            "sourceIntentKey": "intent-presentation-listening",
+            "recallHookId": "rh-come-back-to-that"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-moving-on-to",
+            "sourceEntryId": "exp-moving-on-to",
+            "objectiveKey": "obj-g11-09",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-to-sum-up",
+            "sourceEntryId": "exp-to-sum-up",
+            "objectiveKey": "obj-g11-09",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g11-10",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Presentation Skills 1: Structure",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "WRITING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-10"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Build a talk the audience can follow blind",
+            "instructionId": "Anda akan menyusun presentasi dengan signposting: pembuka, peta, isi berurutan, ringkasan, dan penutup.",
+            "canDoEn": "I can deliver a short presentation with clear structure and signposting."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "Think of the most confusing presentation you've seen. What was missing?",
+              "Why do audiences love \"I'll cover three things\"?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Struktur lima bagian: hook (mengapa peduli), peta (\"I'll cover…\"), isi dengan penanda (\"First… Moving on… Finally…\"), ringkasan (\"To sum up…\"), penutup + ajakan. Aturan emas: satu bagian, satu pesan.",
+            "patterns": [
+              {
+                "en": "Let me start with a question: when did you last speak English outside class?",
+                "noteId": "Hook berupa pertanyaan menarik pendengar masuk."
+              },
+              {
+                "en": "First, the problem. Moving on to our solution. Finally, what we need from you.",
+                "noteId": "Tiga penanda = tiga bagian yang tidak mungkin tertukar."
+              },
+              {
+                "en": "So — one club, one festival, one signature. That's all we're asking.",
+                "noteId": "Penutup mengikat pesan jadi satu kalimat."
+              }
+            ]
+          },
+          {
+            "blockType": "reading",
+            "textEn": "MODEL OUTLINE (2-minute talk): HOOK — \"Raise your hand if you've ever forgotten English the second a foreigner spoke to you.\" MAP — \"I'll cover three things: why it happens, what our club does about it, and how you can join.\" BODY 1 — the freeze: knowing words ≠ using words. BODY 2 — the club: weekly games, real guests, zero judgment. BODY 3 — joining: one form, no fee, Wednesdays. SUM UP — \"Knowing isn't using; using needs practice; practice needs a place.\" CLOSE — \"The place exists. Room 2. Wednesday. Come once.\"",
+            "tasks": [
+              {
+                "promptEn": "What makes the hook effective?",
+                "answerEn": "It involves the audience physically (raise your hand) with a shared, relatable experience.",
+                "explanationId": "Hook terbaik membuat pendengar merasa \"itu saya\"."
+              },
+              {
+                "promptEn": "How many messages does each body section carry?",
+                "answerEn": "Exactly one.",
+                "explanationId": "Satu bagian, satu pesan."
+              },
+              {
+                "promptEn": "How does the close mirror the sum-up?",
+                "answerEn": "It converts the summary logic into a concrete action: come to Room 2 on Wednesday.",
+                "explanationId": "Penutup mengubah pemahaman menjadi tindakan."
+              }
+            ]
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Which order is correct?",
+                "optionsEn": [
+                  "Map → Hook → Close → Body",
+                  "Hook → Map → Body → Sum up → Close",
+                  "Body → Body → Body → Hook"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Struktur lima bagian standar."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Write a map sentence for a talk about reducing canteen queues.",
+                "answerEn": "I'll cover three things: why the queue happens, two fixes that cost nothing, and what we need from the canteen team.",
+                "explanationId": "Peta = daftar bagian dalam satu kalimat."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"One section, one message\" prevents…",
+                "optionsEn": [
+                  "short talks",
+                  "audiences losing the thread",
+                  "questions"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Kepadatan pesan menjaga alur pendengar."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Deliver a 90-second talk introducing your club (real or imagined) using all five parts. Record it; the signposts must be audible.",
+            "supportEn": [
+              "Let me start with…",
+              "I'll cover three things…",
+              "Moving on to…",
+              "To sum up…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "clarity",
+              "naturalness"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g11-07",
+            "noteId": "Gladi resik Episode 7 memakai struktur ini; penilaian resmi menyusul di Exam Lab."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "The \"map\" of a talk is…",
+                "optionsEn": [
+                  "a drawing of the room",
+                  "a one-sentence preview of the sections",
+                  "the conclusion"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Peta memberi pendengar kerangka."
+              },
+              {
+                "promptEn": "A talk without signposts feels…",
+                "optionsEn": [
+                  "professional",
+                  "like one long unbroken sentence",
+                  "shorter"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Penanda adalah paragraf-nya bahasa lisan."
+              },
+              {
+                "promptEn": "The close should…",
+                "optionsEn": [
+                  "introduce new data",
+                  "turn the message into one action or takeaway",
+                  "apologize for the talk"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Penutup = tindakan/ingatan tunggal."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-outline",
+            "term": "outline",
+            "meaningId": "kerangka",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-presentation-structure",
+            "recallHookId": "rh-voc-outline"
+          },
+          {
+            "entryId": "voc-audience",
+            "term": "audience",
+            "meaningId": "pendengar-hadirin",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-presentation-structure",
+            "recallHookId": "rh-voc-audience"
+          },
+          {
+            "entryId": "voc-takeaway",
+            "term": "takeaway",
+            "meaningId": "pesan-utama",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-presentation-structure",
+            "recallHookId": "rh-voc-takeaway"
+          },
+          {
+            "entryId": "voc-rehearsal",
+            "term": "rehearsal",
+            "meaningId": "gladi-latihan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-presentation-structure",
+            "recallHookId": "rh-voc-rehearsal"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-let-me-start-with",
+            "expression": "Let me start with ___",
+            "meaningId": "izinkan-saya-mulai-dengan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-presentation-structure",
+            "recallHookId": "rh-let-me-start-with"
+          },
+          {
+            "entryId": "exp-raise-your-hand-if",
+            "expression": "Raise your hand if ___",
+            "meaningId": "angkat-tangan-jika",
+            "register": "neutral",
+            "sourceIntentKey": "intent-presentation-structure",
+            "recallHookId": "rh-raise-your-hand-if"
+          },
+          {
+            "entryId": "exp-thats-all-were-asking",
+            "expression": "That's all we're asking",
+            "meaningId": "hanya-itu-permintaan-kami",
+            "register": "neutral",
+            "sourceIntentKey": "intent-presentation-structure",
+            "recallHookId": "rh-thats-all-were-asking"
+          },
+          {
+            "entryId": "exp-one-section-one-message",
+            "expression": "one section, one message",
+            "meaningId": "satu-bagian-satu-pesan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-presentation-structure",
+            "recallHookId": "rh-one-section-one-message"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-let-me-start-with",
+            "sourceEntryId": "exp-let-me-start-with",
+            "objectiveKey": "obj-g11-10",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g11-11",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Presentation Skills 2: Data and Delivery",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "VOCABULARY"
+      ],
+      "objectiveKeys": [
+        "obj-g11-11"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Make numbers talk",
+            "instructionId": "Anda akan mendeskripsikan data dan grafik secara lisan: tren naik-turun, perbandingan, dan makna di balik angka. Relevan untuk SMA, SMK, dan dunia kerja.",
+            "canDoEn": "I can describe data, trends, and comparisons in a presentation."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "\"Sales went up.\" What three questions does this leave unanswered?",
+              "Why do audiences forget numbers but remember comparisons?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Bahasa tren: naik (rise, increase, climb), turun (drop, fall, decline), stabil (stay flat, level off), dengan intensitas (sharply, slightly, steadily). Angka butuh makna: \"roughly a third\" lebih menempel daripada \"33,4%\". Selalu tutup data dengan \"so what\".",
+            "patterns": [
+              {
+                "en": "Attendance climbed steadily from forty to ninety over three months.",
+                "noteId": "Tren + intensitas + rentang angka."
+              },
+              {
+                "en": "That's roughly double what we expected.",
+                "noteId": "Perbandingan membumikan angka."
+              },
+              {
+                "en": "So what does this mean? We need a bigger room.",
+                "noteId": "Data tanpa kesimpulan hanyalah angka."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "RYO (rehearsing): This chart shows club membership this semester. We started with three people. In week four — the club fair — we jumped sharply to eleven. Then it leveled off around ten; one person left, citing, quote, \"too much talking in the talking club.\" Membership held steady until the exchange visit, then climbed again to fifteen. So what does this mean? Events drive growth. Meetings keep it. If we want twenty members, we need one more public event this semester — and that's the festival.",
+            "tasks": [
+              {
+                "promptEn": "Describe the trend in week four and its cause.",
+                "answerEn": "A sharp jump to eleven, caused by the club fair.",
+                "explanationId": "Tren selalu diikat pada peristiwa."
+              },
+              {
+                "promptEn": "What does \"leveled off\" mean?",
+                "answerEn": "It stopped rising and stayed around the same number.",
+                "explanationId": "Idiom tren stabil."
+              },
+              {
+                "promptEn": "What is Ryo's \"so what\"?",
+                "answerEn": "Events drive growth, so the festival is needed to reach twenty members.",
+                "explanationId": "Kesimpulan data → tindakan."
+              }
+            ],
+            "audioAssetId": "audio-sc-g11-11-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Ticket sales: 40 → 42 → 41 → 43 over four weeks. The trend is…",
+                "optionsEn": [
+                  "rising sharply",
+                  "roughly flat",
+                  "falling steadily"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Fluktuasi kecil = datar/stabil."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Humanize: \"67% of members attended.\"",
+                "answerEn": "Roughly two out of three members showed up.",
+                "explanationId": "Pecahan sederhana lebih mudah dibayangkan."
+              },
+              {
+                "type": "choice",
+                "promptEn": "Which closes a data slide best?",
+                "optionsEn": [
+                  "\"Next slide.\"",
+                  "\"So what does this mean? We need one more event.\"",
+                  "\"Those are the numbers.\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"So what\" mengubah angka menjadi keputusan."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Describe this data aloud (45 seconds): canteen queue time — Mon 12 min, Tue 14, Wed 15, Thu 22 (bakso day), Fri 13. Use two trend verbs, one comparison, and one \"so what\".",
+            "supportEn": [
+              "…climbed/jumped/leveled off…",
+              "That's roughly…",
+              "So what does this mean?"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "vocabulary",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g11-07",
+            "noteId": "Slide data festival di gladi Episode 7 dan panggung Episode 8 memakai bahasa ini."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"Dropped sharply\" describes a fall that is…",
+                "optionsEn": [
+                  "small and slow",
+                  "big and fast",
+                  "imaginary"
+                ],
+                "answerIndex": 1,
+                "explanationId": "sharply = tajam."
+              },
+              {
+                "promptEn": "\"Roughly a third\" is used instead of \"33.4%\" because…",
+                "optionsEn": [
+                  "it's more precise",
+                  "it's easier for listeners to grasp and remember",
+                  "percentages are wrong"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Bahasa lisan mengutamakan daya tangkap."
+              },
+              {
+                "promptEn": "Every data section should end with…",
+                "optionsEn": [
+                  "more data",
+                  "the meaning/action (\"so what\")",
+                  "an apology"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Angka harus bermuara pada makna."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-trend",
+            "term": "trend",
+            "meaningId": "tren-kecenderungan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-data-talk",
+            "recallHookId": "rh-voc-trend"
+          },
+          {
+            "entryId": "voc-chart",
+            "term": "chart",
+            "meaningId": "grafik",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-data-talk",
+            "recallHookId": "rh-voc-chart"
+          },
+          {
+            "entryId": "voc-membership-count",
+            "term": "membership",
+            "meaningId": "jumlah-anggota",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-data-talk",
+            "recallHookId": "rh-voc-membership-data"
+          },
+          {
+            "entryId": "voc-attendance",
+            "term": "attendance",
+            "meaningId": "kehadiran",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-data-talk",
+            "recallHookId": "rh-voc-attendance"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-climbed-steadily",
+            "expression": "climbed steadily",
+            "meaningId": "naik-stabil",
+            "register": "neutral",
+            "sourceIntentKey": "intent-data-talk",
+            "recallHookId": "rh-climbed-steadily"
+          },
+          {
+            "entryId": "exp-jumped-sharply",
+            "expression": "jumped sharply",
+            "meaningId": "melonjak-tajam",
+            "register": "neutral",
+            "sourceIntentKey": "intent-data-talk",
+            "recallHookId": "rh-jumped-sharply"
+          },
+          {
+            "entryId": "exp-leveled-off",
+            "expression": "leveled off",
+            "meaningId": "mendatar",
+            "register": "neutral",
+            "sourceIntentKey": "intent-data-talk",
+            "recallHookId": "rh-leveled-off"
+          },
+          {
+            "entryId": "exp-roughly-a-third",
+            "expression": "roughly a third / double",
+            "meaningId": "kira-kira-sepertiga-dua-kali",
+            "register": "neutral",
+            "sourceIntentKey": "intent-data-talk",
+            "recallHookId": "rh-roughly-a-third"
+          },
+          {
+            "entryId": "exp-so-what-does-this-mean",
+            "expression": "So what does this mean?",
+            "meaningId": "jadi-apa-artinya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-data-talk",
+            "recallHookId": "rh-so-what-does-this-mean"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-so-what-does-this-mean",
+            "sourceEntryId": "exp-so-what-does-this-mean",
+            "objectiveKey": "obj-g11-11",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-leveled-off",
+            "sourceEntryId": "exp-leveled-off",
+            "objectiveKey": "obj-g11-11",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g11-12",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Complaints, Apologies, Repair",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-12"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Fix what went wrong — between people",
+            "instructionId": "Konflik itu pasti; kerusakan permanen itu pilihan. Anda akan menyampaikan keluhan tanpa menyerang dan meminta maaf tanpa alasan palsu.",
+            "canDoEn": "I can raise a complaint constructively and apologize sincerely."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab jujur.",
+            "promptsEn": [
+              "What's the worst apology you've ever received? Why was it bad?",
+              "Is \"I'm sorry you feel that way\" an apology?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Keluhan konstruktif: fakta + dampak + permintaan (\"When the file came late, I had to redo the schedule — next time, just tell me early\"). Permintaan maaf tulus: akui spesifik + tanggung jawab + perbaikan (\"I missed the deadline. That's on me. I'll finish it tonight\"). Hindari: \"I'm sorry BUT…\" — 'but' menghapus maafnya.",
+            "patterns": [
+              {
+                "en": "When you changed the plan without telling me, I looked unprepared in front of everyone.",
+                "noteId": "Fakta + dampak, tanpa label karakter."
+              },
+              {
+                "en": "You're right, and I'm sorry. That's on me.",
+                "noteId": "\"That's on me\" = tanggung jawab penuh."
+              },
+              {
+                "en": "That came out wrong — let me try again.",
+                "noteId": "Perbaikan cepat saat kalimat sendiri menyakiti."
+              }
+            ]
+          },
+          {
+            "blockType": "listening",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "DEWI: Can we talk? When my mural design got repainted without anyone asking me, I found out from a photo in the group chat. That… stung. HANA: Oh no. Dewi — you're right, and I'm sorry. The inspector was coming, I panicked, and I made a call that wasn't mine to make. That's on me. DEWI: I get the panic. But it was my work. HANA: It was. Here's what I want to do: the wall's yours again — full design, my budget line pays for the paint. And next time anything touches your art, you hear it from me first, not a photo. DEWI: …Okay. Deal. But I'm painting a tiny angry Hana in the corner. HANA: That's fair.",
+            "tasks": [
+              {
+                "promptEn": "What makes Dewi's complaint constructive?",
+                "answerEn": "She states the fact (repainted without asking) and the impact (found out from a photo; it stung) without attacking Hana's character.",
+                "explanationId": "Fakta + dampak membuka dialog; label menutupnya."
+              },
+              {
+                "promptEn": "Identify the three parts of Hana's apology.",
+                "answerEn": "Specific acknowledgment (a call that wasn't mine), responsibility (that's on me), and repair (wall returned + paint budget + inform first).",
+                "explanationId": "Akui + tanggung jawab + perbaikan."
+              },
+              {
+                "promptEn": "Why is \"I'm sorry BUT the inspector was coming\" weaker than what Hana said?",
+                "answerEn": "\"But\" turns the apology into an excuse; Hana explained the panic without using it to cancel her responsibility.",
+                "explanationId": "Penjelasan boleh; pembatalan maaf tidak."
+              }
+            ],
+            "audioAssetId": "audio-sc-g11-12-listening-1-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Choose the constructive complaint.",
+                "optionsEn": [
+                  "\"You're so careless with other people's stuff.\"",
+                  "\"When my speaker came back scratched, I had to pay for the repair. Can we agree on a checklist for borrowed gear?\"",
+                  "\"Typical. Whatever.\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Fakta + dampak + permintaan solusi."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Fix this apology: \"Sorry, but you also never remind me.\"",
+                "answerEn": "I'm sorry — I forgot, and that's on me. Could you remind me next time as a backup, though?",
+                "explanationId": "Pisahkan tanggung jawab dari permintaan bantuan."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"That came out wrong\" is used when…",
+                "optionsEn": [
+                  "you exit a room",
+                  "your own words just hurt someone unintentionally",
+                  "the printer breaks"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Alat perbaikan percakapan secara real-time."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "speaking",
+            "promptEn": "Record both sides (60 seconds): (1) complain constructively — a teammate presented your slide idea as theirs; (2) then switch roles and apologize with all three parts.",
+            "supportEn": [
+              "When…, I…",
+              "You're right, and I'm sorry. That's on me.",
+              "Here's what I want to do…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "naturalness",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g11-05",
+            "noteId": "Pusat episode The Argument (E5) dan Repair Work (E6) — lalu kembali dalam register profesional saat magang kelas 12."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"That's on me\" expresses…",
+                "optionsEn": [
+                  "blaming others",
+                  "taking responsibility",
+                  "asking for payment"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Idiom tanggung jawab."
+              },
+              {
+                "promptEn": "Why does \"I'm sorry, but…\" fail?",
+                "optionsEn": [
+                  "It is too short",
+                  "\"But\" cancels the apology by shifting blame",
+                  "Apologies need five words"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Struktur menghapus makna maaf."
+              },
+              {
+                "promptEn": "A complete repair offer includes…",
+                "optionsEn": [
+                  "a concrete fix and a prevention promise",
+                  "a gift card",
+                  "silence"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Perbaikan + pencegahan = kepercayaan pulih."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-complaint",
+            "term": "complaint",
+            "meaningId": "keluhan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-repair",
+            "recallHookId": "rh-voc-complaint"
+          },
+          {
+            "entryId": "voc-apology",
+            "term": "apology",
+            "meaningId": "permintaan-maaf",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-repair",
+            "recallHookId": "rh-voc-apology"
+          },
+          {
+            "entryId": "voc-responsibility",
+            "term": "responsibility",
+            "meaningId": "tanggung-jawab",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-repair",
+            "recallHookId": "rh-voc-responsibility"
+          },
+          {
+            "entryId": "voc-sting",
+            "term": "sting",
+            "meaningId": "menyakitkan-perih",
+            "partOfSpeech": "verb",
+            "sourceIntentKey": "intent-repair",
+            "recallHookId": "rh-voc-sting"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-can-we-talk",
+            "expression": "Can we talk?",
+            "meaningId": "bisa-bicara-sebentar",
+            "register": "informal",
+            "sourceIntentKey": "intent-repair",
+            "recallHookId": "rh-can-we-talk"
+          },
+          {
+            "entryId": "exp-thats-on-me",
+            "expression": "That's on me",
+            "meaningId": "itu-salah-saya",
+            "register": "informal",
+            "sourceIntentKey": "intent-repair",
+            "recallHookId": "rh-thats-on-me"
+          },
+          {
+            "entryId": "exp-came-out-wrong",
+            "expression": "That came out wrong",
+            "meaningId": "maksudku-bukan-begitu",
+            "register": "informal",
+            "sourceIntentKey": "intent-repair",
+            "recallHookId": "rh-came-out-wrong"
+          },
+          {
+            "entryId": "exp-i-owe-you-an-apology",
+            "expression": "I owe you an apology",
+            "meaningId": "saya-berutang-maaf",
+            "register": "neutral",
+            "sourceIntentKey": "intent-repair",
+            "recallHookId": "rh-i-owe-you-an-apology"
+          },
+          {
+            "entryId": "exp-heres-what-i-want-to-do",
+            "expression": "Here's what I want to do",
+            "meaningId": "ini-rencana-perbaikan-saya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-repair",
+            "recallHookId": "rh-heres-what-i-want-to-do"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-thats-on-me",
+            "sourceEntryId": "exp-thats-on-me",
+            "objectiveKey": "obj-g11-12",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-i-owe-you-an-apology",
+            "sourceEntryId": "exp-i-owe-you-an-apology",
+            "objectiveKey": "obj-g11-12",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g11-13",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Cause and Effect",
+      "primarySkill": "GRAMMAR",
+      "supportingSkills": [
+        "WRITING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-13"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Explain why things happened — precisely",
+            "instructionId": "Anda akan menghubungkan sebab dan akibat dengan because/since/due to/so/as a result, dan membedakan sebab dari sekadar urutan waktu.",
+            "canDoEn": "I can express cause and effect accurately in speech and writing."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "Why were you late (or early) today? Answer with \"because\".",
+              "\"It rained, then we lost\" — did the rain CAUSE the loss?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Sebab: because/since + klausa; due to + frasa benda. Akibat: so, therefore, as a result. Rantai: \"X led to Y, which meant Z\". Hati-hati: urutan waktu bukan bukti sebab — \"after\" ≠ \"because\".",
+            "patterns": [
+              {
+                "en": "The demo failed because the battery died mid-scene.",
+                "noteId": "because + klausa sebab."
+              },
+              {
+                "en": "Due to the rain, the opening moved indoors.",
+                "noteId": "due to + frasa benda; register lebih formal."
+              },
+              {
+                "en": "The mixer broke, so we borrowed one — which meant returning it by six.",
+                "noteId": "Rantai akibat: satu sebab, dua konsekuensi."
+              }
+            ]
+          },
+          {
+            "blockType": "reading",
+            "textEn": "INCIDENT NOTE (club log): Last Saturday's mini-showcase started twenty minutes late. Why? The chain: our sound check was scheduled at nine, but the hall was still locked because the janitor's schedule changed — nobody had told the office we needed early access. Since we couldn't test the mics, we started cold; as a result, the first two performances had feedback issues, and the audience at the back heard almost nothing. One missing email led to a locked door, which led to a skipped sound check, which meant a rough opening. The fix costs nothing: add the office to the event checklist.",
+            "tasks": [
+              {
+                "promptEn": "What is the root cause of the late start?",
+                "answerEn": "Nobody told the office the club needed early access.",
+                "explanationId": "Rantai sebab selalu punya akar; \"pintu terkunci\" hanyalah gejala."
+              },
+              {
+                "promptEn": "Map the chain in order.",
+                "answerEn": "Missing email → locked door → skipped sound check → feedback issues/rough opening.",
+                "explanationId": "\"led to… which meant…\" merangkai akibat."
+              },
+              {
+                "promptEn": "Which connector introduces a formal cause phrase?",
+                "answerEn": "\"Due to\" (as in \"due to the rain\").",
+                "explanationId": "due to + frasa benda."
+              }
+            ]
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "\"___ the heavy traffic, the guests arrived late.\"",
+                "optionsEn": [
+                  "Because",
+                  "Due to",
+                  "So"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Diikuti frasa benda → due to; \"because\" butuh klausa."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Join with a result: \"The printer jammed. We wrote the labels by hand.\"",
+                "answerEn": "The printer jammed, so we wrote the labels by hand.",
+                "explanationId": "\"so\" menghubungkan akibat langsung."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"We lost after wearing the new jerseys\" proves…",
+                "optionsEn": [
+                  "the jerseys caused the loss",
+                  "only the time order, not the cause",
+                  "jerseys are unlucky"
+                ],
+                "answerIndex": 1,
+                "explanationId": "after ≠ because; korelasi bukan kausalitas."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "writing",
+            "promptEn": "Write a 60–80 word incident note about something that went wrong recently (real or invented): the chain of causes with at least three connectors, plus a one-line fix.",
+            "supportEn": [
+              "…because…",
+              "Due to…",
+              "…which meant…",
+              "As a result…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "grammar",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g11-04",
+            "noteId": "Menelusuri rantai sebab kegagalan vendor di Episode 4 memakai pola ini."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"Since the hall was locked, we waited outside.\" Here \"since\" means…",
+                "optionsEn": [
+                  "from that time",
+                  "because",
+                  "although"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"since\" kausal di awal klausa sebab."
+              },
+              {
+                "promptEn": "\"Which meant returning it by six\" expresses…",
+                "optionsEn": [
+                  "a cause",
+                  "a further consequence",
+                  "a contrast"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Rantai akibat lanjutan."
+              },
+              {
+                "promptEn": "A root cause is…",
+                "optionsEn": [
+                  "the first visible symptom",
+                  "the underlying cause that starts the chain",
+                  "the last event"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Perbaikan efektif menyasar akar."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-root-cause",
+            "term": "root cause",
+            "meaningId": "akar-masalah",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-cause-effect",
+            "recallHookId": "rh-voc-root-cause"
+          },
+          {
+            "entryId": "voc-consequence",
+            "term": "consequence",
+            "meaningId": "konsekuensi",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-cause-effect",
+            "recallHookId": "rh-voc-consequence"
+          },
+          {
+            "entryId": "voc-incident",
+            "term": "incident",
+            "meaningId": "insiden-kejadian",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-cause-effect",
+            "recallHookId": "rh-voc-incident"
+          },
+          {
+            "entryId": "voc-feedback-audio",
+            "term": "feedback (audio)",
+            "meaningId": "dengung-mikrofon",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-cause-effect",
+            "recallHookId": "rh-voc-feedback-audio"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-due-to",
+            "expression": "due to ___",
+            "meaningId": "karena-formal",
+            "register": "formal",
+            "sourceIntentKey": "intent-cause-effect",
+            "recallHookId": "rh-due-to"
+          },
+          {
+            "entryId": "exp-as-a-result",
+            "expression": "as a result",
+            "meaningId": "akibatnya",
+            "register": "formal",
+            "sourceIntentKey": "intent-cause-effect",
+            "recallHookId": "rh-as-a-result"
+          },
+          {
+            "entryId": "exp-led-to",
+            "expression": "___ led to ___",
+            "meaningId": "menyebabkan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-cause-effect",
+            "recallHookId": "rh-led-to"
+          },
+          {
+            "entryId": "exp-which-meant",
+            "expression": "which meant ___",
+            "meaningId": "yang-berarti",
+            "register": "neutral",
+            "sourceIntentKey": "intent-cause-effect",
+            "recallHookId": "rh-which-meant"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-led-to",
+            "sourceEntryId": "exp-led-to",
+            "objectiveKey": "obj-g11-13",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-which-meant",
+            "sourceEntryId": "exp-which-meant",
+            "objectiveKey": "obj-g11-13",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g11-14",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Formal Emails and Requests",
+      "primarySkill": "WRITING",
+      "supportingSkills": [
+        "READING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-14"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Write the email that gets a yes",
+            "instructionId": "Naik kelas dari chat: Anda akan menulis email formal kepada kepala sekolah, sponsor, atau instansi — dengan struktur dan register yang tepat.",
+            "canDoEn": "I can write a formal email with a clear request and appropriate register."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab singkat.",
+            "promptsEn": [
+              "Recall the friendly chat you wrote to Maya in Grade 10 — why would that style fail with a sponsor?",
+              "Who decides how formal your email must be?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Struktur email formal: subjek spesifik → sapaan (Dear Mr./Ms./Ibu/Bapak ___) → identitas & tujuan dalam dua kalimat → detail permintaan → tindak lanjut → penutup (We would appreciate…, Sincerely). Register formal: would/could, tanpa singkatan chat, tanpa emoji.",
+            "patterns": [
+              {
+                "en": "Subject: Request for Sponsorship — Cakrawala Bridge Festival, 14 March",
+                "noteId": "Subjek = isi + tanggal; bukan \"hello\" atau \"penting!!\"."
+              },
+              {
+                "en": "I am writing on behalf of the Global Communication Club to request…",
+                "noteId": "\"on behalf of\" menandai Anda mewakili organisasi."
+              },
+              {
+                "en": "We would appreciate the opportunity to discuss this at your convenience.",
+                "noteId": "Penutup formal yang membuka tindak lanjut."
+              }
+            ]
+          },
+          {
+            "blockType": "reading",
+            "textEn": "MODEL EMAIL — Subject: Request for Venue Use — Bridge Festival, 14 March. Dear Ibu Ratna, I am writing on behalf of the Global Communication Club to request the use of the assembly hall on Saturday, 14 March, from 8 a.m. to 4 p.m., for our first inter-school Bridge Festival. Five schools have confirmed attendance, and two sponsors are covering 60 percent of the costs. We will provide a cleanup crew and return the hall to its original condition by 6 p.m. A full proposal, including the budget and safety plan, is attached. We would appreciate your decision by 20 February, as invitations must be printed that week. Thank you for considering our request. Sincerely, [Club President], Global Communication Club.",
+            "tasks": [
+              {
+                "promptEn": "What three facts support the request before it is even discussed?",
+                "answerEn": "Five confirmed schools, sponsor funding, and a cleanup guarantee.",
+                "explanationId": "Email kuat menjawab keberatan sebelum muncul."
+              },
+              {
+                "promptEn": "Why does the email give a decision deadline?",
+                "answerEn": "Invitations must be printed that week — the reason is stated, so the deadline sounds practical, not demanding.",
+                "explanationId": "Tenggat + alasan = profesional."
+              },
+              {
+                "promptEn": "List three register features that make this formal.",
+                "answerEn": "\"I am writing on behalf of\", \"We would appreciate\", full sentences with no chat short forms.",
+                "explanationId": "Ciri register formal."
+              }
+            ]
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Choose the best formal subject line.",
+                "optionsEn": [
+                  "\"hi\"",
+                  "\"Request for Equipment Loan — Media Workshop, 3–5 April\"",
+                  "\"URGENT PLEASE READ NOW!!!\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Isi + rentang tanggal, tanpa huruf kapital panik."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Formalize: \"hey kak, can we borrow the hall sat? thx\"",
+                "answerEn": "Dear Ibu Ratna, I am writing to request the use of the assembly hall this Saturday for our club event. Thank you for considering our request.",
+                "explanationId": "Sapaan + tujuan + penutup formal."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"At your convenience\" means…",
+                "optionsEn": [
+                  "at the convenience store",
+                  "at a time that suits you",
+                  "immediately"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Frasa formal untuk fleksibilitas waktu."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "writing",
+            "promptEn": "Write a 100–130 word formal email to a local business asking them to sponsor one item for your school event. Include: specific subject, self/club identification, the exact request, two supporting facts, a reasoned deadline, and a formal close.",
+            "supportEn": [
+              "Subject: …",
+              "I am writing on behalf of…",
+              "We would appreciate…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "grammar",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g11-02",
+            "noteId": "Proposal Episode 2 hidup-mati oleh email ini — dan pola yang sama melamar magang di kelas 12."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"I am writing on behalf of the club\" means…",
+                "optionsEn": [
+                  "I write behind the club building",
+                  "I represent the club",
+                  "I write about the club's behavior"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"on behalf of\" = atas nama."
+              },
+              {
+                "promptEn": "A deadline in a formal request should come with…",
+                "optionsEn": [
+                  "a threat",
+                  "a practical reason",
+                  "capital letters"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Alasan membuat tenggat terdengar wajar."
+              },
+              {
+                "promptEn": "Which is OUT of place in a formal email?",
+                "optionsEn": [
+                  "\"We would appreciate…\"",
+                  "\"thx btw 😅\"",
+                  "\"Sincerely,\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Singkatan chat dan emoji merusak register."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-sponsorship",
+            "term": "sponsorship",
+            "meaningId": "pensponsoran",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-formal-email",
+            "recallHookId": "rh-voc-sponsorship"
+          },
+          {
+            "entryId": "voc-attachment",
+            "term": "attachment",
+            "meaningId": "lampiran",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-formal-email",
+            "recallHookId": "rh-voc-attachment"
+          },
+          {
+            "entryId": "voc-recipient",
+            "term": "recipient",
+            "meaningId": "penerima",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-formal-email",
+            "recallHookId": "rh-voc-recipient"
+          },
+          {
+            "entryId": "voc-consideration",
+            "term": "consideration",
+            "meaningId": "pertimbangan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-formal-email",
+            "recallHookId": "rh-voc-consideration"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-on-behalf-of",
+            "expression": "on behalf of ___",
+            "meaningId": "atas-nama",
+            "register": "formal",
+            "sourceIntentKey": "intent-formal-email",
+            "recallHookId": "rh-on-behalf-of"
+          },
+          {
+            "entryId": "exp-i-am-writing-to",
+            "expression": "I am writing to ___",
+            "meaningId": "saya-menulis-untuk",
+            "register": "formal",
+            "sourceIntentKey": "intent-formal-email",
+            "recallHookId": "rh-i-am-writing-to"
+          },
+          {
+            "entryId": "exp-we-would-appreciate",
+            "expression": "We would appreciate ___",
+            "meaningId": "kami-akan-menghargai",
+            "register": "formal",
+            "sourceIntentKey": "intent-formal-email",
+            "recallHookId": "rh-we-would-appreciate"
+          },
+          {
+            "entryId": "exp-at-your-convenience",
+            "expression": "at your convenience",
+            "meaningId": "pada-waktu-yang-sesuai",
+            "register": "formal",
+            "sourceIntentKey": "intent-formal-email",
+            "recallHookId": "rh-at-your-convenience"
+          },
+          {
+            "entryId": "exp-please-find-attached",
+            "expression": "Please find attached ___",
+            "meaningId": "terlampir",
+            "register": "formal",
+            "sourceIntentKey": "intent-formal-email",
+            "recallHookId": "rh-please-find-attached"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-on-behalf-of",
+            "sourceEntryId": "exp-on-behalf-of",
+            "objectiveKey": "obj-g11-14",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-i-am-writing-to",
+            "sourceEntryId": "exp-i-am-writing-to",
+            "objectiveKey": "obj-g11-14",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-we-would-appreciate",
+            "sourceEntryId": "exp-we-would-appreciate",
+            "objectiveKey": "obj-g11-14",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "sc-g11-15",
+      "revision": 1,
+      "kind": "LEARNING_ITEM",
+      "grade": "GRADE_11",
+      "track": "SCHOOL_CORE",
+      "phase": "PHASE_F",
+      "title": "Evaluating and Reflecting",
+      "primarySkill": "WRITING",
+      "supportingSkills": [
+        "SPEAKING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-15"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "objective",
+            "titleEn": "Look back honestly: what worked, what didn't",
+            "instructionId": "Anda akan mengevaluasi hasil kegiatan dengan bahasa reflektif: keberhasilan, kegagalan, pelajaran, dan rencana perbaikan.",
+            "canDoEn": "I can evaluate an experience honestly and state lessons learned."
+          },
+          {
+            "blockType": "warmup",
+            "instructionId": "Jawab jujur.",
+            "promptsEn": [
+              "After a big event, do you ever review what went wrong? Why/why not?",
+              "What's the difference between blaming and evaluating?"
+            ]
+          },
+          {
+            "blockType": "language-focus",
+            "explanationId": "Bahasa evaluasi: \"went well / fell short / could have been better\". Pelajaran: \"What we learned is…\", \"Next time, we'll…\". Refleksi jujur menilai keputusan, bukan orang: \"the plan underestimated…\" bukan \"Ryo failed…\".",
+            "patterns": [
+              {
+                "en": "The booth layout worked really well — visitors flowed naturally.",
+                "noteId": "Keberhasilan + alasannya."
+              },
+              {
+                "en": "Ticketing fell short: the queue hit forty minutes at peak.",
+                "noteId": "\"fell short\" = tidak mencapai target, dengan bukti."
+              },
+              {
+                "en": "Next time, we'll open a second line after the first ten minutes.",
+                "noteId": "Pelajaran diubah menjadi aturan yang bisa dijalankan."
+              }
+            ]
+          },
+          {
+            "blockType": "reading",
+            "textEn": "POST-EVENT REVIEW (club log, mini-showcase): WHAT WENT WELL — Attendance doubled our estimate (112 vs 55), largely because Dewi's posters went up a week earlier than planned. The MC pairing also worked: one calm voice, one energetic one. WHAT FELL SHORT — The opening was rough; as documented in the incident note, a skipped sound check led to feedback issues. We also underestimated snack demand — sold out by intermission, which meant unhappy guests during the second half. WHAT WE LEARNED — Early publicity beats big publicity; checklists must include other departments; food estimates should assume double the RSVP count. NEXT TIME — office added to the checklist, snack budget doubled, and one rehearsal moved to the actual venue.",
+            "tasks": [
+              {
+                "promptEn": "Why did attendance beat the estimate?",
+                "answerEn": "Posters went up a week earlier than planned.",
+                "explanationId": "Evaluasi mencari sebab keberhasilan, bukan hanya kegagalan."
+              },
+              {
+                "promptEn": "Find one \"fell short\" item and its evidence.",
+                "answerEn": "Snacks sold out by intermission (or: rough opening with feedback issues).",
+                "explanationId": "Kekurangan didukung bukti konkret."
+              },
+              {
+                "promptEn": "How are lessons converted into action?",
+                "answerEn": "Each lesson becomes a specific rule: checklist update, doubled snack budget, venue rehearsal.",
+                "explanationId": "Refleksi tanpa tindakan hanyalah kenangan."
+              }
+            ]
+          },
+          {
+            "blockType": "guided-practice",
+            "tasks": [
+              {
+                "type": "choice",
+                "promptEn": "Which is evaluation, not blame?",
+                "optionsEn": [
+                  "\"The schedule underestimated setup time.\"",
+                  "\"Rina ruined the schedule.\"",
+                  "\"Everything was fine, somehow.\""
+                ],
+                "answerIndex": 0,
+                "explanationId": "Menilai keputusan/rencana, bukan orang."
+              },
+              {
+                "type": "transform",
+                "promptEn": "Turn into a lesson + action: \"We ran out of chairs.\"",
+                "answerEn": "What we learned is that RSVP numbers underestimate real attendance — next time, we'll prepare seats for 1.5 times the RSVP count.",
+                "explanationId": "Pelajaran → aturan terukur."
+              },
+              {
+                "type": "choice",
+                "promptEn": "\"Could have been better\" signals…",
+                "optionsEn": [
+                  "total failure",
+                  "an area for improvement stated diplomatically",
+                  "perfection"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Bahasa evaluasi diplomatis."
+              }
+            ]
+          },
+          {
+            "blockType": "production",
+            "taskType": "writing",
+            "promptEn": "Write an 80–100 word review of a real activity you joined recently: one thing that went well (with why), one that fell short (with evidence), one lesson, one next-time rule.",
+            "supportEn": [
+              "…went really well because…",
+              "…fell short: …",
+              "What we learned is…",
+              "Next time, we'll…"
+            ],
+            "feedbackDimensions": [
+              "relevance",
+              "grammar",
+              "clarity"
+            ]
+          },
+          {
+            "blockType": "story-link",
+            "storyItemId": "sm-g11-09",
+            "noteId": "Retrospeksi klub setelah festival (Episode 9) memakai kerangka ini — begitu pula log magang kelas 12."
+          },
+          {
+            "blockType": "mastery-check",
+            "evidenceIntent": "ASSESSED_EVIDENCE",
+            "questions": [
+              {
+                "promptEn": "\"Fell short\" means…",
+                "optionsEn": [
+                  "fell down",
+                  "did not reach the target",
+                  "finished early"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Idiom evaluasi."
+              },
+              {
+                "promptEn": "A useful lesson learned must be…",
+                "optionsEn": [
+                  "vague enough for any event",
+                  "specific enough to change behavior next time",
+                  "about who to blame"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pelajaran harus mengubah tindakan."
+              },
+              {
+                "promptEn": "Reviews evaluate…",
+                "optionsEn": [
+                  "people's characters",
+                  "decisions and plans",
+                  "the weather only"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Evaluasi sehat menyasar sistem, bukan pribadi."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [
+          {
+            "entryId": "voc-review-evaluation",
+            "term": "review",
+            "meaningId": "evaluasi-tinjauan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-reflection",
+            "recallHookId": "rh-voc-review-evaluation"
+          },
+          {
+            "entryId": "voc-estimate",
+            "term": "estimate",
+            "meaningId": "perkiraan",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-reflection",
+            "recallHookId": "rh-voc-estimate"
+          },
+          {
+            "entryId": "voc-intermission",
+            "term": "intermission",
+            "meaningId": "jeda-istirahat",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-reflection",
+            "recallHookId": "rh-voc-intermission"
+          },
+          {
+            "entryId": "voc-publicity",
+            "term": "publicity",
+            "meaningId": "publikasi",
+            "partOfSpeech": "noun",
+            "sourceIntentKey": "intent-reflection",
+            "recallHookId": "rh-voc-publicity"
+          }
+        ],
+        "expressions": [
+          {
+            "entryId": "exp-went-well",
+            "expression": "___ went really well",
+            "meaningId": "berjalan-sangat-baik",
+            "register": "neutral",
+            "sourceIntentKey": "intent-reflection",
+            "recallHookId": "rh-went-well"
+          },
+          {
+            "entryId": "exp-fell-short",
+            "expression": "___ fell short",
+            "meaningId": "tidak-mencapai-target",
+            "register": "neutral",
+            "sourceIntentKey": "intent-reflection",
+            "recallHookId": "rh-fell-short"
+          },
+          {
+            "entryId": "exp-what-we-learned",
+            "expression": "What we learned is ___",
+            "meaningId": "pelajaran-yang-kami-dapat",
+            "register": "neutral",
+            "sourceIntentKey": "intent-reflection",
+            "recallHookId": "rh-what-we-learned"
+          },
+          {
+            "entryId": "exp-next-time-well",
+            "expression": "Next time, we'll ___",
+            "meaningId": "lain-kali-kami-akan",
+            "register": "neutral",
+            "sourceIntentKey": "intent-reflection",
+            "recallHookId": "rh-next-time-well"
+          },
+          {
+            "entryId": "exp-could-have-been-better",
+            "expression": "could have been better",
+            "meaningId": "masih-bisa-lebih-baik",
+            "register": "neutral",
+            "sourceIntentKey": "intent-reflection",
+            "recallHookId": "rh-could-have-been-better"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-what-we-learned",
+            "sourceEntryId": "exp-what-we-learned",
+            "objectiveKey": "obj-g11-15",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-next-time-well",
+            "sourceEntryId": "exp-next-time-well",
+            "objectiveKey": "obj-g11-15",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-school-core-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    }
+  ]
+}

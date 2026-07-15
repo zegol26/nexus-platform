@@ -23,7 +23,17 @@
     "lib/platform/payment-policy.ts",
     "lib/platform/access.ts",
     "lib/certificates/policy.ts",
-    "lib/platform/settings-policy.ts"
+    "lib/platform/settings-policy.ts",
+    "lib/platform/app-registry.ts",
+    "lib/storyarc/constants.ts",
+    "lib/storyarc/content/schema.ts",
+    "lib/storyarc/content/lifecycle.ts",
+    "lib/storyarc/content/foundation-fixture.ts",
+    "lib/storyarc/game/state.ts",
+    "lib/storyarc/learning/mastery-policy.ts",
+    "lib/storyarc/language/context.ts",
+    "lib/storyarc/library/policy.ts",
+    "lib/storyarc/library/blob-policy.ts"
   ],
   "exclude": ["node_modules", ".next", ".test-dist"]
 }

@@ -25,6 +25,10 @@ const STATE_LABEL: Record<VoiceState, string> = {
 type Props = {
   onUserTranscript: (text: string) => Promise<string | null>;
   onStateChange?: (state: VoiceState) => void;
+  courseId?: string;
+  contextId?: string;
+  disabled?: boolean;
+  quotaLabel?: string;
 };
 
 function pickRecorderMime(): string | undefined {
@@ -46,7 +50,14 @@ function pickRecorderMime(): string | undefined {
   return undefined;
 }
 
-export function JohnVoicePanel({ onUserTranscript, onStateChange }: Props) {
+export function JohnVoicePanel({
+  onUserTranscript,
+  onStateChange,
+  courseId = JOHN_TUTOR_CONFIG.courseId,
+  contextId,
+  disabled = false,
+  quotaLabel = "Push-to-talk · voice conversation",
+}: Props) {
   const [state, setState] = useState<VoiceState>("idle");
   const [ttsState, setTtsState] = useState<TtsPlaybackState>("idle");
   const [error, setError] = useState<string | null>(null);
@@ -160,7 +171,8 @@ export function JohnVoicePanel({ onUserTranscript, onStateChange }: Props) {
         `voice.${blob.type.includes("mp4") ? "m4a" : "webm"}`
       );
       formData.set("tutorId", JOHN_TUTOR_CONFIG.tutorId);
-      formData.set("courseId", JOHN_TUTOR_CONFIG.courseId);
+      formData.set("courseId", courseId);
+      if (contextId) formData.set("contextId", contextId);
       formData.set("inputLanguage", JOHN_TUTOR_CONFIG.inputLanguage);
       formData.set("outputLanguage", JOHN_TUTOR_CONFIG.outputLanguage);
       formData.set(
@@ -222,10 +234,11 @@ export function JohnVoicePanel({ onUserTranscript, onStateChange }: Props) {
         );
       }
     },
-    [failWith, onUserTranscript, prepareJohnVoice]
+    [contextId, courseId, failWith, onUserTranscript, prepareJohnVoice]
   );
 
   const startRecording = useCallback(async () => {
+    if (disabled) return;
     setError(null);
     setTtsState((current) => (current === "ready" ? current : "idle"));
 
@@ -269,7 +282,7 @@ export function JohnVoicePanel({ onUserTranscript, onStateChange }: Props) {
     recorderRef.current = recorder;
     recorder.start();
     setState("recording");
-  }, [failWith, handleAudio]);
+  }, [disabled, failWith, handleAudio]);
 
   const stopRecording = useCallback(() => {
     if (recorderRef.current && recorderRef.current.state === "recording") {
@@ -311,7 +324,7 @@ export function JohnVoicePanel({ onUserTranscript, onStateChange }: Props) {
         <div className="flex-1 min-w-0">
           <p className="text-sm font-semibold text-slate-950">{STATE_LABEL[state]}</p>
           <p className="text-xs text-slate-500">
-            Push-to-talk · 5 conversations/day on the trial plan
+            {quotaLabel}
           </p>
         </div>
       </div>
@@ -367,7 +380,7 @@ export function JohnVoicePanel({ onUserTranscript, onStateChange }: Props) {
           <button
             type="button"
             onClick={startRecording}
-            disabled={isBusy}
+            disabled={isBusy || disabled}
             className="flex-1 rounded-full bg-blue-700 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-800 disabled:bg-slate-400"
           >
             🎙 {state === "idle" || state === "error" ? "Talk with John" : "Wait..."}

@@ -72,11 +72,12 @@ export async function seedPlatform() {
     });
   }
 
-  const [nihongoApp, englishApp, arabicApp, pmpApp] = await Promise.all([
+  const [nihongoApp, englishApp, arabicApp, pmpApp, storyArcApp] = await Promise.all([
     prisma.platformApp.findUnique({ where: { slug: "nihongo" } }),
     prisma.platformApp.findUnique({ where: { slug: "english" } }),
     prisma.platformApp.findUnique({ where: { slug: "arabic" } }),
     prisma.platformApp.findUnique({ where: { slug: "pmp" } }),
+    prisma.platformApp.findUnique({ where: { slug: "storyarc" } }),
   ]);
 
   if (nihongoApp) {
@@ -195,10 +196,35 @@ export async function seedPlatform() {
     });
   }
 
+  if (storyArcApp) {
+    await prisma.subscriptionPlan.upsert({
+      where: { appId_code: { appId: storyArcApp.id, code: "STORYARC_MONTHLY" } },
+      update: {
+        name: "StoryArc Monthly",
+        description: "Monthly access to Nexus StoryArc",
+        currency: "IDR",
+        durationDays: 30,
+        billingPeriod: "MONTHLY",
+      },
+      create: {
+        appId: storyArcApp.id,
+        code: "STORYARC_MONTHLY",
+        name: "StoryArc Monthly",
+        description: "Monthly access to Nexus StoryArc",
+        priceCents: 9900000,
+        currency: "IDR",
+        durationDays: 30,
+        billingPeriod: "MONTHLY",
+        active: true,
+      },
+    });
+  }
+
   await seedAdditionalBillingPeriods(nihongoApp, "NIHONGO", "Nihongo");
   await seedAdditionalBillingPeriods(englishApp, "ENGLISH_INTERVIEW", "English Interview");
   await seedAdditionalBillingPeriods(arabicApp, "ARABIC", "Arabic");
   await seedAdditionalBillingPeriods(pmpApp, "PMP", "PMP Exam Prep");
+  await seedAdditionalBillingPeriods(storyArcApp, "STORYARC", "StoryArc");
 
   const adminEmail = process.env.ADMIN_EMAIL ?? "admin@nexus.local";
   const adminPassword = process.env.ADMIN_PASSWORD ?? "NexusAdmin123!";
@@ -225,7 +251,7 @@ export async function seedPlatform() {
     },
   });
 
-  const adminApps = [nihongoApp, englishApp, arabicApp, pmpApp].filter(
+  const adminApps = [nihongoApp, englishApp, arabicApp, pmpApp, storyArcApp].filter(
     (app): app is NonNullable<typeof app> => Boolean(app)
   );
 

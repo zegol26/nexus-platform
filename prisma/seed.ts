@@ -10,6 +10,7 @@ import { seedReadingPassages } from "./seed-reading-passages";
 import { seedReadingArticles } from "./seed-reading-articles";
 import { seedCharacterContent } from "./seed-character-content";
 import { seedPmpLearning } from "./seed-pmp-learning";
+import { seedStoryArcFoundation } from "./seed-storyarc-foundation";
 import { prisma } from "./seed-client";
 
 async function main() {
@@ -25,6 +26,7 @@ async function main() {
   await seedReadingArticles();
   await seedEnglishInterview();
   await seedPmpLearning();
+  await seedStoryArcFoundation();
 }
 
 main()

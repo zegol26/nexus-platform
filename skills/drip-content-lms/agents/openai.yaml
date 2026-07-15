@@ -1,0 +1,4 @@
+interface:
+  display_name: "Drip Content LMS"
+  short_description: "Design role-aware LMS drip and scoring flows"
+  default_prompt: "Use $drip-content-lms to design a secure role-aware assignment, drip-release, and scoring workflow."

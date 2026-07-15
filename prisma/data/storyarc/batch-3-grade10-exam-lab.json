@@ -1,0 +1,3044 @@
+{
+  "schemaVersion": "storyarc.content.v1",
+  "packageId": "storyarc-initial-90-b3-g10-exam-lab",
+  "appSlug": "storyarc",
+  "releaseTarget": "initial-90-release-1",
+  "curriculum": {
+    "sourceKey": "indonesia-phase-ef-descriptive-gap",
+    "sourceTitle": "StoryArc Phase E/F Descriptive Mapping",
+    "sourceAuthority": "UNVERIFIED_PROJECT_MAPPING",
+    "sourceVerificationNote": "Academic lead must supply verified CP identifiers before curriculum-alignment claims.",
+    "versionKey": "initial-90-v1",
+    "versionTitle": "Initial 90-item release mapping"
+  },
+  "competencies": [
+    {
+      "competencyKey": "cpa-e-interact",
+      "title": "Familiar spoken interaction",
+      "description": "Interact in everyday school situations: introductions, small talk, preferences, invitations, clarification."
+    },
+    {
+      "competencyKey": "cpa-e-listen",
+      "title": "Everyday listening comprehension",
+      "description": "Understand announcements and informal conversations for gist and detail."
+    },
+    {
+      "competencyKey": "cpa-e-desc",
+      "title": "Descriptive texts",
+      "description": "Comprehend and produce descriptions of people and places."
+    },
+    {
+      "competencyKey": "cpa-e-recount",
+      "title": "Recount texts",
+      "description": "Comprehend and produce recounts of past events."
+    },
+    {
+      "competencyKey": "cpa-e-narr",
+      "title": "Narrative basics",
+      "description": "Tell a simple connected story with sequencing language."
+    },
+    {
+      "competencyKey": "cpa-e-proc",
+      "title": "Procedure texts",
+      "description": "Explain and follow simple sequenced procedures."
+    },
+    {
+      "competencyKey": "cpa-e-func",
+      "title": "Functional reading and writing",
+      "description": "Use posters, forms, and short messages for real purposes."
+    },
+    {
+      "competencyKey": "cpa-e-lang",
+      "title": "Language awareness in context",
+      "description": "Use present and past forms, prepositions of place, and question forms to support communication."
+    }
+  ],
+  "objectives": [
+    {
+      "objectiveKey": "obj-g10-01",
+      "competencyKey": "cpa-e-interact",
+      "title": "Introduce yourself and respond naturally in a new-school context",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g10-02",
+      "competencyKey": "cpa-e-interact",
+      "title": "Open, maintain, and close small talk",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g10-03",
+      "competencyKey": "cpa-e-listen",
+      "title": "Understand school announcements for gist and detail",
+      "primarySkill": "LISTENING"
+    },
+    {
+      "objectiveKey": "obj-g10-04",
+      "competencyKey": "cpa-e-desc",
+      "title": "Describe people and places",
+      "primarySkill": "VOCABULARY"
+    },
+    {
+      "objectiveKey": "obj-g10-05",
+      "competencyKey": "cpa-e-lang",
+      "title": "Ask for and give directions",
+      "primarySkill": "GRAMMAR"
+    },
+    {
+      "objectiveKey": "obj-g10-06",
+      "competencyKey": "cpa-e-lang",
+      "title": "Talk about routines and schedules",
+      "primarySkill": "GRAMMAR"
+    },
+    {
+      "objectiveKey": "obj-g10-07",
+      "competencyKey": "cpa-e-func",
+      "title": "Read functional school texts",
+      "primarySkill": "READING"
+    },
+    {
+      "objectiveKey": "obj-g10-08",
+      "competencyKey": "cpa-e-interact",
+      "title": "Make, accept, and decline invitations politely",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g10-09",
+      "competencyKey": "cpa-e-recount",
+      "title": "Recount past events with past simple",
+      "primarySkill": "WRITING"
+    },
+    {
+      "objectiveKey": "obj-g10-10",
+      "competencyKey": "cpa-e-listen",
+      "title": "Follow informal conversations between peers",
+      "primarySkill": "LISTENING"
+    },
+    {
+      "objectiveKey": "obj-g10-11",
+      "competencyKey": "cpa-e-interact",
+      "title": "Express likes, dislikes, and preferences",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g10-12",
+      "competencyKey": "cpa-e-interact",
+      "title": "Ask for help, repetition, and clarification",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g10-13",
+      "competencyKey": "cpa-e-proc",
+      "title": "Explain a simple procedure in sequence",
+      "primarySkill": "VOCABULARY"
+    },
+    {
+      "objectiveKey": "obj-g10-14",
+      "competencyKey": "cpa-e-func",
+      "title": "Write short messages with appropriate informal register",
+      "primarySkill": "WRITING"
+    },
+    {
+      "objectiveKey": "obj-g10-15",
+      "competencyKey": "cpa-e-narr",
+      "title": "Tell a simple connected story",
+      "primarySkill": "SPEAKING"
+    }
+  ],
+  "assets": [
+    {
+      "assetId": "audio-ex-g10-01-sec-listening-announce-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for ex-g10-01/sec-listening-announce",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://ex-g10-01/sec-listening-announce",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/9ae55380a1795d8edf8c1582a99a79a7d40d415c4de7158f2215ba9d8e17203e.mp3",
+      "contentHash": "sha256:9ae55380a1795d8edf8c1582a99a79a7d40d415c4de7158f2215ba9d8e17203e",
+      "mimeType": "audio/mpeg",
+      "byteSize": 1278015,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-ex-g10-03-sec-photo-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for ex-g10-03/sec-photo",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://ex-g10-03/sec-photo",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/56e53d8ddc18980fa905b32e8ed6e16a99427b0c5c3eb09d8c53e1f2dc6e8e0d.mp3",
+      "contentHash": "sha256:56e53d8ddc18980fa905b32e8ed6e16a99427b0c5c3eb09d8c53e1f2dc6e8e0d",
+      "mimeType": "audio/mpeg",
+      "byteSize": 1119086,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-ex-g10-03-sec-qr-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for ex-g10-03/sec-qr",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://ex-g10-03/sec-qr",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/611ea3abdb24962a756bc0b261d8d4450d9d1ef75533285a203612869c48aab4.mp3",
+      "contentHash": "sha256:611ea3abdb24962a756bc0b261d8d4450d9d1ef75533285a203612869c48aab4",
+      "mimeType": "audio/mpeg",
+      "byteSize": 2598975,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-ex-g10-06-sec-1-listening-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for ex-g10-06/sec-1-listening",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://ex-g10-06/sec-1-listening",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/6011c528bdabaf449f2e5c07978f50139edcaeb11fdb7e59e547afc678249335.mp3",
+      "contentHash": "sha256:6011c528bdabaf449f2e5c07978f50139edcaeb11fdb7e59e547afc678249335",
+      "mimeType": "audio/mpeg",
+      "byteSize": 1922508,
+      "temporary": true
+    }
+  ],
+  "items": [
+    {
+      "stableId": "ex-g10-01",
+      "revision": 1,
+      "kind": "ASSESSMENT",
+      "grade": "GRADE_10",
+      "track": "EXAM_LAB",
+      "phase": "PHASE_E",
+      "title": "School Exam Practice: Semester 1",
+      "primarySkill": "READING",
+      "supportingSkills": [
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g10-03",
+        "obj-g10-04",
+        "obj-g10-07"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "exam-meta",
+            "modeId": "SCHOOL_EXAM",
+            "instructionId": "Latihan ujian sekolah Semester 1: teks deskriptif, pengumuman, dan teks fungsional. Kerjakan semua soal; setiap soal memiliki satu jawaban benar.",
+            "timeSuggestionMinutes": 25,
+            "originalContentNote": "Seluruh soal adalah konten orisinal Nexus StoryArc."
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-reading-desc",
+            "skill": "READING",
+            "textEn": "Read the text. — Our new library sits at the quiet end of campus, right behind the assembly hall. From outside it looks small, but inside it stretches back much further than you expect. The reading corner by the window is always the first spot taken: soft chairs, good light, and a strict no-phone rule that everyone secretly loves. The librarian, Bu Sari, is easy to spot — she wears a different flower pin every day and knows every student's favorite shelf.",
+            "questions": [
+              {
+                "qid": "q1",
+                "promptEn": "Where is the library located?",
+                "optionsEn": [
+                  "In front of the assembly hall",
+                  "Behind the assembly hall",
+                  "Next to the canteen",
+                  "Above the workshop"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Teks menyebut \"right behind the assembly hall\".",
+                "optionRationales": [
+                  "Incorrect. “In front of the assembly hall” is not supported by the prompt or stimulus; the supported answer is “Behind the assembly hall”.",
+                  "Correct. Teks menyebut \"right behind the assembly hall\".",
+                  "Incorrect. “Next to the canteen” is not supported by the prompt or stimulus; the supported answer is “Behind the assembly hall”.",
+                  "Incorrect. “Above the workshop” is not supported by the prompt or stimulus; the supported answer is “Behind the assembly hall”."
+                ]
+              },
+              {
+                "qid": "q2",
+                "promptEn": "\"From outside it looks small, but inside it stretches back much further\" means the library is…",
+                "optionsEn": [
+                  "smaller than it looks",
+                  "bigger than it looks",
+                  "exactly as it looks",
+                  "under renovation"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pola kontras looks-but menunjukkan kesan luar berbeda dari kenyataan.",
+                "optionRationales": [
+                  "Incorrect. “smaller than it looks” is not supported by the prompt or stimulus; the supported answer is “bigger than it looks”.",
+                  "Correct. Pola kontras looks-but menunjukkan kesan luar berbeda dari kenyataan.",
+                  "Incorrect. “exactly as it looks” is not supported by the prompt or stimulus; the supported answer is “bigger than it looks”.",
+                  "Incorrect. “under renovation” is not supported by the prompt or stimulus; the supported answer is “bigger than it looks”."
+                ]
+              },
+              {
+                "qid": "q3",
+                "promptEn": "Why is Bu Sari \"easy to spot\"?",
+                "optionsEn": [
+                  "She is very tall",
+                  "She wears a different flower pin every day",
+                  "She shouts at students",
+                  "She sits at the entrance"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Ciri khas yang disebut teks adalah pin bunga.",
+                "optionRationales": [
+                  "Incorrect. “She is very tall” is not supported by the prompt or stimulus; the supported answer is “She wears a different flower pin every day”.",
+                  "Correct. Ciri khas yang disebut teks adalah pin bunga.",
+                  "Incorrect. “She shouts at students” is not supported by the prompt or stimulus; the supported answer is “She wears a different flower pin every day”.",
+                  "Incorrect. “She sits at the entrance” is not supported by the prompt or stimulus; the supported answer is “She wears a different flower pin every day”."
+                ]
+              },
+              {
+                "qid": "q4",
+                "promptEn": "Which detail shows the reading corner is popular?",
+                "optionsEn": [
+                  "It has a no-phone rule",
+                  "It is always the first spot taken",
+                  "It is near the entrance",
+                  "It has many shelves"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"always the first spot taken\" = selalu lebih dulu terisi.",
+                "optionRationales": [
+                  "Incorrect. “It has a no-phone rule” is not supported by the prompt or stimulus; the supported answer is “It is always the first spot taken”.",
+                  "Correct. \"always the first spot taken\" = selalu lebih dulu terisi.",
+                  "Incorrect. “It is near the entrance” is not supported by the prompt or stimulus; the supported answer is “It is always the first spot taken”.",
+                  "Incorrect. “It has many shelves” is not supported by the prompt or stimulus; the supported answer is “It is always the first spot taken”."
+                ]
+              },
+              {
+                "qid": "q5",
+                "promptEn": "The main purpose of this text is to…",
+                "optionsEn": [
+                  "tell a past event",
+                  "describe a place",
+                  "give instructions",
+                  "invite readers to an event"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Struktur kesan umum + detail adalah ciri teks deskriptif.",
+                "optionRationales": [
+                  "Incorrect. “tell a past event” is not supported by the prompt or stimulus; the supported answer is “describe a place”.",
+                  "Correct. Struktur kesan umum + detail adalah ciri teks deskriptif.",
+                  "Incorrect. “give instructions” is not supported by the prompt or stimulus; the supported answer is “describe a place”.",
+                  "Incorrect. “invite readers to an event” is not supported by the prompt or stimulus; the supported answer is “describe a place”."
+                ]
+              },
+              {
+                "qid": "gen-sec-reading-desc-6",
+                "promptEn": "According to the notice, when and where will the library volunteer shift take place?",
+                "passageEn": "NOTICE: The library volunteer shift was originally planned for Saturday. It will now take place on Tuesday at 08:00 in Workshop 2 because the weather forecast changed. Bring the safety checklist.",
+                "optionsEn": [
+                  "Saturday at 08:00 in Workshop 2",
+                  "Tuesday at 11:00 in Workshop 2",
+                  "Tuesday at 08:00 in the media lab",
+                  "Tuesday at 08:00 in Workshop 2"
+                ],
+                "answerIndex": 3,
+                "explanationId": "The revised schedule explicitly states Tuesday at 08:00 in Workshop 2.",
+                "optionRationales": [
+                  "Incorrect. “Saturday at 08:00 in Workshop 2” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 08:00 in Workshop 2”.",
+                  "Incorrect. “Tuesday at 11:00 in Workshop 2” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 08:00 in Workshop 2”.",
+                  "Incorrect. “Tuesday at 08:00 in the media lab” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 08:00 in Workshop 2”.",
+                  "Correct. The revised schedule explicitly states Tuesday at 08:00 in Workshop 2."
+                ]
+              },
+              {
+                "qid": "gen-sec-reading-desc-7",
+                "promptEn": "What should Gilang do?",
+                "passageEn": "Subject: Action needed for the internship briefing. Hi Gilang, please email a printed résumé to the coordinator by Wednesday at 09:30. Do not leave it at the front desk because the office will be closed.",
+                "optionsEn": [
+                  "Bring a printed résumé after the event",
+                  "Call the office on Monday",
+                  "Email a printed résumé by Wednesday at 09:30",
+                  "Leave a printed résumé at the front desk"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The email requests an email submission by Wednesday at 09:30 and explicitly rejects the front-desk option.",
+                "optionRationales": [
+                  "Incorrect. “Bring a printed résumé after the event” is not supported by the prompt or stimulus; the supported answer is “Email a printed résumé by Wednesday at 09:30”.",
+                  "Incorrect. “Call the office on Monday” is not supported by the prompt or stimulus; the supported answer is “Email a printed résumé by Wednesday at 09:30”.",
+                  "Correct. The email requests an email submission by Wednesday at 09:30 and explicitly rejects the front-desk option.",
+                  "Incorrect. “Leave a printed résumé at the front desk” is not supported by the prompt or stimulus; the supported answer is “Email a printed résumé by Wednesday at 09:30”."
+                ]
+              },
+              {
+                "qid": "gen-sec-reading-desc-8",
+                "promptEn": "For the science club briefing scheduled on Thursday, which applicant clearly meets the stated requirements?",
+                "passageEn": "Hana's team needs a student assistant for the science club briefing. Applicants must be available on Thursday, communicate politely with visitors, and know how to use a shared spreadsheet. Training is provided, so previous event experience is optional.",
+                "optionsEn": [
+                  "A student who can attend but will not use the team spreadsheet",
+                  "A student available on Thursday who communicates politely and can use a shared spreadsheet",
+                  "A student available only on Tuesday who refuses visitor-facing tasks",
+                  "A student with event experience who cannot attend the required day"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Availability, visitor communication, and spreadsheet use are mandatory; prior event experience is optional.",
+                "optionRationales": [
+                  "Incorrect. “A student who can attend but will not use the team spreadsheet” is not supported by the prompt or stimulus; the supported answer is “A student available on Thursday who communicates politely and can use a shared spreadsheet”.",
+                  "Correct. Availability, visitor communication, and spreadsheet use are mandatory; prior event experience is optional.",
+                  "Incorrect. “A student available only on Tuesday who refuses visitor-facing tasks” is not supported by the prompt or stimulus; the supported answer is “A student available on Thursday who communicates politely and can use a shared spreadsheet”.",
+                  "Incorrect. “A student with event experience who cannot attend the required day” is not supported by the prompt or stimulus; the supported answer is “A student available on Thursday who communicates politely and can use a shared spreadsheet”."
+                ]
+              },
+              {
+                "qid": "gen-sec-reading-desc-9",
+                "promptEn": "Why did Intan's team still complete every essential task for the career workshop?",
+                "passageEn": "The career workshop started late because the original room is being used for an exam. Intan informed the participants, shortened the opening activity, and kept the final practice unchanged. As a result, the team still completed every essential task.",
+                "optionsEn": [
+                  "Intan adjusted the opening activity after explaining the delay",
+                  "The event started earlier than planned",
+                  "The team cancelled the final practice",
+                  "The reason for the delay disappeared immediately"
+                ],
+                "answerIndex": 0,
+                "explanationId": "The passage links the completed tasks to the shortened opening activity and clear update.",
+                "optionRationales": [
+                  "Correct. The passage links the completed tasks to the shortened opening activity and clear update.",
+                  "Incorrect. “The event started earlier than planned” is not supported by the prompt or stimulus; the supported answer is “Intan adjusted the opening activity after explaining the delay”.",
+                  "Incorrect. “The team cancelled the final practice” is not supported by the prompt or stimulus; the supported answer is “Intan adjusted the opening activity after explaining the delay”.",
+                  "Incorrect. “The reason for the delay disappeared immediately” is not supported by the prompt or stimulus; the supported answer is “Intan adjusted the opening activity after explaining the delay”."
+                ]
+              },
+              {
+                "qid": "gen-sec-reading-desc-10",
+                "promptEn": "In Room 10-B, what must a student do immediately after reading the safety card?",
+                "passageEn": "Before using the equipment in Room 10-B, first read the safety card, then inspect the power cable, and finally ask the supervisor to confirm the setup. If the cable is damaged, stop and report it; do not attempt a repair.",
+                "optionsEn": [
+                  "Repair any damaged cable",
+                  "Turn on the equipment immediately",
+                  "Leave the room without reporting anything",
+                  "Inspect the power cable"
+                ],
+                "answerIndex": 3,
+                "explanationId": "The procedure orders the cable inspection directly after reading the safety card.",
+                "optionRationales": [
+                  "Incorrect. “Repair any damaged cable” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Incorrect. “Turn on the equipment immediately” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Incorrect. “Leave the room without reporting anything” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Correct. The procedure orders the cable inspection directly after reading the safety card."
+                ]
+              },
+              {
+                "qid": "gen-sec-reading-desc-11",
+                "promptEn": "According to the notice, when and where will the campus tour take place?",
+                "passageEn": "NOTICE: The campus tour was originally planned for Friday. It will now take place on Monday at 16:00 in the library hall because the delivery will arrive late. Bring a student ID card.",
+                "optionsEn": [
+                  "Monday at 09:30 in the library hall",
+                  "Monday at 16:00 in Workshop 2",
+                  "Monday at 16:00 in the library hall",
+                  "Friday at 16:00 in the library hall"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The revised schedule explicitly states Monday at 16:00 in the library hall.",
+                "optionRationales": [
+                  "Incorrect. “Monday at 09:30 in the library hall” is not supported by the prompt or stimulus; the supported answer is “Monday at 16:00 in the library hall”.",
+                  "Incorrect. “Monday at 16:00 in Workshop 2” is not supported by the prompt or stimulus; the supported answer is “Monday at 16:00 in the library hall”.",
+                  "Correct. The revised schedule explicitly states Monday at 16:00 in the library hall.",
+                  "Incorrect. “Friday at 16:00 in the library hall” is not supported by the prompt or stimulus; the supported answer is “Monday at 16:00 in the library hall”."
+                ]
+              },
+              {
+                "qid": "gen-sec-reading-desc-12",
+                "promptEn": "What should Lukman do?",
+                "passageEn": "Subject: Action needed for the project rehearsal. Hi Lukman, please email the safety checklist to the coordinator by Tuesday at 08:00. Do not leave it at the front desk because the office will be closed.",
+                "optionsEn": [
+                  "Call the office on Saturday",
+                  "Email the safety checklist by Tuesday at 08:00",
+                  "Leave the safety checklist at the front desk",
+                  "Bring the safety checklist after the event"
+                ],
+                "answerIndex": 1,
+                "explanationId": "The email requests an email submission by Tuesday at 08:00 and explicitly rejects the front-desk option.",
+                "optionRationales": [
+                  "Incorrect. “Call the office on Saturday” is not supported by the prompt or stimulus; the supported answer is “Email the safety checklist by Tuesday at 08:00”.",
+                  "Correct. The email requests an email submission by Tuesday at 08:00 and explicitly rejects the front-desk option.",
+                  "Incorrect. “Leave the safety checklist at the front desk” is not supported by the prompt or stimulus; the supported answer is “Email the safety checklist by Tuesday at 08:00”.",
+                  "Incorrect. “Bring the safety checklist after the event” is not supported by the prompt or stimulus; the supported answer is “Email the safety checklist by Tuesday at 08:00”."
+                ]
+              }
+            ]
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-listening-announce",
+            "skill": "LISTENING",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "Attention, all Grade 10 students. Tomorrow's study tour to the maritime museum leaves at seven fifteen sharp from the front gate. Wear your sports uniform, not the batik one. Bring a packed lunch; the museum canteen is closed on weekdays. Permission slips must reach your homeroom teacher by four o'clock this afternoon — no slip, no seat.",
+            "questions": [
+              {
+                "qid": "q6",
+                "promptEn": "What time does the bus leave?",
+                "optionsEn": [
+                  "7:15",
+                  "7:50",
+                  "4:00",
+                  "7:45"
+                ],
+                "answerIndex": 0,
+                "explanationId": "\"seven fifteen sharp\" = 07.15 tepat.",
+                "optionRationales": [
+                  "Correct. \"seven fifteen sharp\" = 07.15 tepat.",
+                  "Incorrect. “7:50” is not supported by the prompt or stimulus; the supported answer is “7:15”.",
+                  "Incorrect. “4:00” is not supported by the prompt or stimulus; the supported answer is “7:15”.",
+                  "Incorrect. “7:45” is not supported by the prompt or stimulus; the supported answer is “7:15”."
+                ]
+              },
+              {
+                "qid": "q7",
+                "promptEn": "What should students wear?",
+                "optionsEn": [
+                  "Batik uniform",
+                  "Sports uniform",
+                  "Free clothes",
+                  "Scout uniform"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"Wear your sports uniform, not the batik one.\"",
+                "optionRationales": [
+                  "Incorrect. “Batik uniform” is not supported by the prompt or stimulus; the supported answer is “Sports uniform”.",
+                  "Correct. \"Wear your sports uniform, not the batik one.\"",
+                  "Incorrect. “Free clothes” is not supported by the prompt or stimulus; the supported answer is “Sports uniform”.",
+                  "Incorrect. “Scout uniform” is not supported by the prompt or stimulus; the supported answer is “Sports uniform”."
+                ]
+              },
+              {
+                "qid": "q8",
+                "promptEn": "\"No slip, no seat\" means…",
+                "optionsEn": [
+                  "students without a permission slip cannot join",
+                  "the bus has no seats",
+                  "slippery floors are dangerous",
+                  "seats must be reserved online"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Tanpa surat izin, tidak boleh ikut.",
+                "optionRationales": [
+                  "Correct. Tanpa surat izin, tidak boleh ikut.",
+                  "Incorrect. “the bus has no seats” is not supported by the prompt or stimulus; the supported answer is “students without a permission slip cannot join”.",
+                  "Incorrect. “slippery floors are dangerous” is not supported by the prompt or stimulus; the supported answer is “students without a permission slip cannot join”.",
+                  "Incorrect. “seats must be reserved online” is not supported by the prompt or stimulus; the supported answer is “students without a permission slip cannot join”."
+                ]
+              },
+              {
+                "qid": "gen-sec-listening-announce-4",
+                "promptEn": "What will Farah's teammate do next?",
+                "transcriptEn": "A: Farah, the project rehearsal has moved from Thursday to Friday at 16:00 because the projector needs repair. B: Thanks. I'll update the team calendar and bring the safety checklist.",
+                "optionsEn": [
+                  "Ignore the schedule change",
+                  "Update the team calendar",
+                  "Cancel the event",
+                  "Repair the room"
+                ],
+                "answerIndex": 1,
+                "explanationId": "The second speaker explicitly says the team calendar will be updated.",
+                "optionRationales": [
+                  "Incorrect. “Ignore the schedule change” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Correct. The second speaker explicitly says the team calendar will be updated.",
+                  "Incorrect. “Cancel the event” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Incorrect. “Repair the room” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”."
+                ]
+              },
+              {
+                "qid": "gen-sec-listening-announce-5",
+                "promptEn": "When will the safety orientation take place?",
+                "transcriptEn": "A: Gilang, the safety orientation has moved from Friday to Saturday at 08:00 because the original room is being used for an exam. B: Thanks. I'll update the team calendar and bring a printed résumé.",
+                "optionsEn": [
+                  "Saturday at 08:00",
+                  "Friday at 08:00",
+                  "Saturday at 11:00",
+                  "Tuesday at 08:00"
+                ],
+                "answerIndex": 0,
+                "explanationId": "The first speaker gives the revised time as Saturday at 08:00.",
+                "optionRationales": [
+                  "Correct. The first speaker gives the revised time as Saturday at 08:00.",
+                  "Incorrect. “Friday at 08:00” is not supported by the prompt or stimulus; the supported answer is “Saturday at 08:00”.",
+                  "Incorrect. “Saturday at 11:00” is not supported by the prompt or stimulus; the supported answer is “Saturday at 08:00”.",
+                  "Incorrect. “Tuesday at 08:00” is not supported by the prompt or stimulus; the supported answer is “Saturday at 08:00”."
+                ]
+              },
+              {
+                "qid": "gen-sec-listening-announce-6",
+                "promptEn": "What will Hana's teammate do next?",
+                "transcriptEn": "A: Hana, the library volunteer shift has moved from Saturday to Monday at 09:30 because the supervisor has an urgent meeting. B: Thanks. I'll update the team calendar and bring the project outline.",
+                "optionsEn": [
+                  "Cancel the event",
+                  "Repair the room",
+                  "Ignore the schedule change",
+                  "Update the team calendar"
+                ],
+                "answerIndex": 3,
+                "explanationId": "The second speaker explicitly says the team calendar will be updated.",
+                "optionRationales": [
+                  "Incorrect. “Cancel the event” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Incorrect. “Repair the room” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Incorrect. “Ignore the schedule change” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Correct. The second speaker explicitly says the team calendar will be updated."
+                ]
+              },
+              {
+                "qid": "gen-sec-listening-announce-7",
+                "promptEn": "When will the internship briefing take place?",
+                "transcriptEn": "A: Intan, the internship briefing has moved from Monday to Tuesday at 11:00 because the delivery will arrive late. B: Thanks. I'll update the team calendar and bring a signed consent form.",
+                "optionsEn": [
+                  "Tuesday at 14:30",
+                  "Thursday at 11:00",
+                  "Tuesday at 11:00",
+                  "Monday at 11:00"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The first speaker gives the revised time as Tuesday at 11:00.",
+                "optionRationales": [
+                  "Incorrect. “Tuesday at 14:30” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 11:00”.",
+                  "Incorrect. “Thursday at 11:00” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 11:00”.",
+                  "Correct. The first speaker gives the revised time as Tuesday at 11:00.",
+                  "Incorrect. “Monday at 11:00” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 11:00”."
+                ]
+              },
+              {
+                "qid": "gen-sec-listening-announce-8",
+                "promptEn": "What will Joko's teammate do next?",
+                "transcriptEn": "A: Joko, the science club briefing has moved from Tuesday to Wednesday at 13:00 because the weather forecast changed. B: Thanks. I'll update the team calendar and bring the revised schedule.",
+                "optionsEn": [
+                  "Ignore the schedule change",
+                  "Update the team calendar",
+                  "Cancel the event",
+                  "Repair the room"
+                ],
+                "answerIndex": 1,
+                "explanationId": "The second speaker explicitly says the team calendar will be updated.",
+                "optionRationales": [
+                  "Incorrect. “Ignore the schedule change” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Correct. The second speaker explicitly says the team calendar will be updated.",
+                  "Incorrect. “Cancel the event” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Incorrect. “Repair the room” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”."
+                ]
+              }
+            ],
+            "audioAssetId": "audio-ex-g10-01-sec-listening-announce-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "rubric-definition",
+            "rubricRevisionId": "rubric-g10-mcq-v1",
+            "scale": "0 or 1 per selected-response item",
+            "criteria": [
+              {
+                "criterionId": "answer-key",
+                "titleEn": "Answer-key accuracy",
+                "descriptorId": "Skor diberikan hanya ketika opsi cocok dengan kunci pada revisi soal."
+              },
+              {
+                "criterionId": "objective-lineage",
+                "titleEn": "Objective lineage",
+                "descriptorId": "Setiap skor ditelusuri ke objective dan skill item."
+              }
+            ]
+          },
+          {
+            "blockType": "rubric-definition",
+            "rubricRevisionId": "rubric-g10-mock-v1",
+            "scale": "0-4 per criterion",
+            "criteria": [
+              {
+                "criterionId": "section-score",
+                "titleEn": "Section score",
+                "descriptorId": "Selected-response dinilai dengan kunci revisi pada section masing-masing."
+              },
+              {
+                "criterionId": "constructed-response",
+                "titleEn": "Constructed response",
+                "descriptorId": "Tugas menulis dinilai dengan rubric writing yang direferensikan."
+              },
+              {
+                "criterionId": "recall-lineage",
+                "titleEn": "Recall lineage",
+                "descriptorId": "Section recall harus menyimpan source entry dan hook yang disetujui."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [],
+        "expressions": [],
+        "recallHooks": [],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-mcq-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "ex-g10-02",
+      "revision": 1,
+      "kind": "ASSESSMENT",
+      "grade": "GRADE_10",
+      "track": "EXAM_LAB",
+      "phase": "PHASE_E",
+      "title": "School Exam Practice: Semester 2",
+      "primarySkill": "WRITING",
+      "supportingSkills": [
+        "GRAMMAR",
+        "READING"
+      ],
+      "objectiveKeys": [
+        "obj-g10-09",
+        "obj-g10-13",
+        "obj-g10-06",
+        "obj-g10-14"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "exam-meta",
+            "modeId": "SCHOOL_EXAM",
+            "instructionId": "Latihan ujian Semester 2: recount, prosedur, dan penulisan pesan. Bagian A pilihan ganda, Bagian B tugas menulis dinilai dengan rubrik.",
+            "timeSuggestionMinutes": 35,
+            "originalContentNote": "Seluruh soal adalah konten orisinal Nexus StoryArc."
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-a-language",
+            "skill": "GRAMMAR",
+            "questions": [
+              {
+                "qid": "q1",
+                "promptEn": "Last month our class ___ a small charity bazaar.",
+                "optionsEn": [
+                  "holds",
+                  "held",
+                  "is holding",
+                  "hold"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"Last month\" menuntut past simple: held.",
+                "optionRationales": [
+                  "Incorrect. “holds” is not supported by the prompt or stimulus; the supported answer is “held”.",
+                  "Correct. \"Last month\" menuntut past simple: held.",
+                  "Incorrect. “is holding” is not supported by the prompt or stimulus; the supported answer is “held”.",
+                  "Incorrect. “hold” is not supported by the prompt or stimulus; the supported answer is “held”."
+                ]
+              },
+              {
+                "qid": "q2",
+                "promptEn": "We ___ any tents, so we borrowed two from the scouts.",
+                "optionsEn": [
+                  "didn't have",
+                  "don't had",
+                  "didn't had",
+                  "not have"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Negatif lampau: didn't + bentuk dasar.",
+                "optionRationales": [
+                  "Correct. Negatif lampau: didn't + bentuk dasar.",
+                  "Incorrect. “don't had” is not supported by the prompt or stimulus; the supported answer is “didn't have”.",
+                  "Incorrect. “didn't had” is not supported by the prompt or stimulus; the supported answer is “didn't have”.",
+                  "Incorrect. “not have” is not supported by the prompt or stimulus; the supported answer is “didn't have”."
+                ]
+              },
+              {
+                "qid": "q3",
+                "promptEn": "\"First, wash the brushes. ___, dry them on a clean cloth.\" Choose the best connector.",
+                "optionsEn": [
+                  "Finally",
+                  "Next",
+                  "In the end",
+                  "Suddenly"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Langkah kedua dari beberapa langkah memakai \"Next\"; \"Finally\" untuk langkah terakhir.",
+                "optionRationales": [
+                  "Incorrect. “Finally” is not supported by the prompt or stimulus; the supported answer is “Next”.",
+                  "Correct. Langkah kedua dari beberapa langkah memakai \"Next\"; \"Finally\" untuk langkah terakhir.",
+                  "Incorrect. “In the end” is not supported by the prompt or stimulus; the supported answer is “Next”.",
+                  "Incorrect. “Suddenly” is not supported by the prompt or stimulus; the supported answer is “Next”."
+                ]
+              },
+              {
+                "qid": "q4",
+                "promptEn": "\"___ the glue is completely dry before painting.\" Choose the correct warning.",
+                "optionsEn": [
+                  "Make sure",
+                  "Making sure",
+                  "You make surely",
+                  "Be sure of"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Peringatan prosedur: \"Make sure + klausa\".",
+                "optionRationales": [
+                  "Correct. Peringatan prosedur: \"Make sure + klausa\".",
+                  "Incorrect. “Making sure” is not supported by the prompt or stimulus; the supported answer is “Make sure”.",
+                  "Incorrect. “You make surely” is not supported by the prompt or stimulus; the supported answer is “Make sure”.",
+                  "Incorrect. “Be sure of” is not supported by the prompt or stimulus; the supported answer is “Make sure”."
+                ]
+              },
+              {
+                "qid": "q5",
+                "promptEn": "Choose the most appropriate message to a homeroom teacher.",
+                "optionsEn": [
+                  "\"hey, sick today, bye\"",
+                  "\"Good morning, Bu. This is Raka from 10-A. I'm not feeling well, so I can't come to school today. Thank you.\"",
+                  "\"RAKA ABSENT!!!\"",
+                  "\"Good morning. Someone is sick. Guess who.\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Sapaan + identitas + informasi jelas + penutup sopan.",
+                "optionRationales": [
+                  "Incorrect. “\"hey, sick today, bye\"” is not supported by the prompt or stimulus; the supported answer is “\"Good morning, Bu. This is Raka from 10-A. I'm not feeling well, so I can't come to school today. Thank you.\"”.",
+                  "Correct. Sapaan + identitas + informasi jelas + penutup sopan.",
+                  "Incorrect. “\"RAKA ABSENT!!!\"” is not supported by the prompt or stimulus; the supported answer is “\"Good morning, Bu. This is Raka from 10-A. I'm not feeling well, so I can't come to school today. Thank you.\"”.",
+                  "Incorrect. “\"Good morning. Someone is sick. Guess who.\"” is not supported by the prompt or stimulus; the supported answer is “\"Good morning, Bu. This is Raka from 10-A. I'm not feeling well, so I can't come to school today. Thank you.\"”."
+                ]
+              },
+              {
+                "qid": "q6",
+                "promptEn": "\"The workshop meets on Wednesdays ___ 3 p.m.\"",
+                "optionsEn": [
+                  "in",
+                  "on",
+                  "at",
+                  "by"
+                ],
+                "answerIndex": 2,
+                "explanationId": "\"at\" untuk jam.",
+                "optionRationales": [
+                  "Incorrect. “in” is not supported by the prompt or stimulus; the supported answer is “at”.",
+                  "Incorrect. “on” is not supported by the prompt or stimulus; the supported answer is “at”.",
+                  "Correct. \"at\" untuk jam.",
+                  "Incorrect. “by” is not supported by the prompt or stimulus; the supported answer is “at”."
+                ]
+              },
+              {
+                "qid": "gen-sec-a-language-7",
+                "promptEn": "Choose the best word or form: If you cannot find Room 10-B, ___ a staff member for directions.",
+                "optionsEn": [
+                  "asking",
+                  "asks",
+                  "ask",
+                  "asked"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The imperative uses the base verb “ask”.",
+                "optionRationales": [
+                  "Incorrect. “asking” is not supported by the prompt or stimulus; the supported answer is “ask”.",
+                  "Incorrect. “asks” is not supported by the prompt or stimulus; the supported answer is “ask”.",
+                  "Correct. The imperative uses the base verb “ask”.",
+                  "Incorrect. “asked” is not supported by the prompt or stimulus; the supported answer is “ask”."
+                ]
+              },
+              {
+                "qid": "gen-sec-a-language-8",
+                "promptEn": "Choose the best word or form: Farah usually ___ the revised schedule before class.",
+                "optionsEn": [
+                  "checking",
+                  "checks",
+                  "check",
+                  "checked"
+                ],
+                "answerIndex": 1,
+                "explanationId": "A third-person singular subject takes “checks” in the simple present.",
+                "optionRationales": [
+                  "Incorrect. “checking” is not supported by the prompt or stimulus; the supported answer is “checks”.",
+                  "Correct. A third-person singular subject takes “checks” in the simple present.",
+                  "Incorrect. “check” is not supported by the prompt or stimulus; the supported answer is “checks”.",
+                  "Incorrect. “checked” is not supported by the prompt or stimulus; the supported answer is “checks”."
+                ]
+              },
+              {
+                "qid": "gen-sec-a-language-9",
+                "promptEn": "Choose the best word or form: Gilang ___ the registration form yesterday before the student council meeting.",
+                "optionsEn": [
+                  "submitted",
+                  "submits",
+                  "submitting",
+                  "submit"
+                ],
+                "answerIndex": 0,
+                "explanationId": "The completed action and “yesterday” require the simple past form.",
+                "optionRationales": [
+                  "Correct. The completed action and “yesterday” require the simple past form.",
+                  "Incorrect. “submits” is not supported by the prompt or stimulus; the supported answer is “submitted”.",
+                  "Incorrect. “submitting” is not supported by the prompt or stimulus; the supported answer is “submitted”.",
+                  "Incorrect. “submit” is not supported by the prompt or stimulus; the supported answer is “submitted”."
+                ]
+              },
+              {
+                "qid": "gen-sec-a-language-10",
+                "promptEn": "Choose the best word or form: The campus tour starts ___ 13:00 on Friday.",
+                "optionsEn": [
+                  "in",
+                  "on",
+                  "from",
+                  "at"
+                ],
+                "answerIndex": 3,
+                "explanationId": "Use “at” before a precise clock time.",
+                "optionRationales": [
+                  "Incorrect. “in” is not supported by the prompt or stimulus; the supported answer is “at”.",
+                  "Incorrect. “on” is not supported by the prompt or stimulus; the supported answer is “at”.",
+                  "Incorrect. “from” is not supported by the prompt or stimulus; the supported answer is “at”.",
+                  "Correct. Use “at” before a precise clock time."
+                ]
+              },
+              {
+                "qid": "gen-sec-a-language-11",
+                "promptEn": "Choose the best word or form: If you cannot find the school office, ___ a staff member for directions.",
+                "optionsEn": [
+                  "asking",
+                  "asks",
+                  "ask",
+                  "asked"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The imperative uses the base verb “ask”.",
+                "optionRationales": [
+                  "Incorrect. “asking” is not supported by the prompt or stimulus; the supported answer is “ask”.",
+                  "Incorrect. “asks” is not supported by the prompt or stimulus; the supported answer is “ask”.",
+                  "Correct. The imperative uses the base verb “ask”.",
+                  "Incorrect. “asked” is not supported by the prompt or stimulus; the supported answer is “ask”."
+                ]
+              }
+            ]
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-a-reading",
+            "skill": "READING",
+            "formatId": "functional-reading",
+            "questions": [
+              {
+                "qid": "gen-sec-a-reading-1",
+                "promptEn": "According to the notice, when and where will the career workshop take place?",
+                "passageEn": "NOTICE: The career workshop was originally planned for Monday. It will now take place on Wednesday at 09:30 in the media lab because the team needs more preparation time. Bring a printed résumé.",
+                "optionsEn": [
+                  "Wednesday at 09:30 in the media lab",
+                  "Monday at 09:30 in the media lab",
+                  "Wednesday at 13:00 in the media lab",
+                  "Wednesday at 09:30 in the school office"
+                ],
+                "answerIndex": 0,
+                "explanationId": "The revised schedule explicitly states Wednesday at 09:30 in the media lab.",
+                "optionRationales": [
+                  "Correct. The revised schedule explicitly states Wednesday at 09:30 in the media lab.",
+                  "Incorrect. “Monday at 09:30 in the media lab” is not supported by the prompt or stimulus; the supported answer is “Wednesday at 09:30 in the media lab”.",
+                  "Incorrect. “Wednesday at 13:00 in the media lab” is not supported by the prompt or stimulus; the supported answer is “Wednesday at 09:30 in the media lab”.",
+                  "Incorrect. “Wednesday at 09:30 in the school office” is not supported by the prompt or stimulus; the supported answer is “Wednesday at 09:30 in the media lab”."
+                ]
+              },
+              {
+                "qid": "gen-sec-a-reading-2",
+                "promptEn": "What should Bagas do?",
+                "passageEn": "Subject: Action needed for the student council meeting. Hi Bagas, please email the project outline to the coordinator by Thursday at 11:00. Do not leave it at the front desk because the office will be closed.",
+                "optionsEn": [
+                  "Leave the project outline at the front desk",
+                  "Bring the project outline after the event",
+                  "Call the office on Tuesday",
+                  "Email the project outline by Thursday at 11:00"
+                ],
+                "answerIndex": 3,
+                "explanationId": "The email requests an email submission by Thursday at 11:00 and explicitly rejects the front-desk option.",
+                "optionRationales": [
+                  "Incorrect. “Leave the project outline at the front desk” is not supported by the prompt or stimulus; the supported answer is “Email the project outline by Thursday at 11:00”.",
+                  "Incorrect. “Bring the project outline after the event” is not supported by the prompt or stimulus; the supported answer is “Email the project outline by Thursday at 11:00”.",
+                  "Incorrect. “Call the office on Tuesday” is not supported by the prompt or stimulus; the supported answer is “Email the project outline by Thursday at 11:00”.",
+                  "Correct. The email requests an email submission by Thursday at 11:00 and explicitly rejects the front-desk option."
+                ]
+              },
+              {
+                "qid": "gen-sec-a-reading-3",
+                "promptEn": "For the campus tour scheduled on Friday, which applicant clearly meets the stated requirements?",
+                "passageEn": "Citra's team needs a student assistant for the campus tour. Applicants must be available on Friday, communicate politely with visitors, and know how to use a shared spreadsheet. Training is provided, so previous event experience is optional.",
+                "optionsEn": [
+                  "A student with event experience who cannot attend the required day",
+                  "A student who can attend but will not use the team spreadsheet",
+                  "A student available on Friday who communicates politely and can use a shared spreadsheet",
+                  "A student available only on Wednesday who refuses visitor-facing tasks"
+                ],
+                "answerIndex": 2,
+                "explanationId": "Availability, visitor communication, and spreadsheet use are mandatory; prior event experience is optional.",
+                "optionRationales": [
+                  "Incorrect. “A student with event experience who cannot attend the required day” is not supported by the prompt or stimulus; the supported answer is “A student available on Friday who communicates politely and can use a shared spreadsheet”.",
+                  "Incorrect. “A student who can attend but will not use the team spreadsheet” is not supported by the prompt or stimulus; the supported answer is “A student available on Friday who communicates politely and can use a shared spreadsheet”.",
+                  "Correct. Availability, visitor communication, and spreadsheet use are mandatory; prior event experience is optional.",
+                  "Incorrect. “A student available only on Wednesday who refuses visitor-facing tasks” is not supported by the prompt or stimulus; the supported answer is “A student available on Friday who communicates politely and can use a shared spreadsheet”."
+                ]
+              },
+              {
+                "qid": "gen-sec-a-reading-4",
+                "promptEn": "Why did Damar's team still complete every essential task for the project rehearsal?",
+                "passageEn": "The project rehearsal started late because the supervisor has an urgent meeting. Damar informed the participants, shortened the opening activity, and kept the final practice unchanged. As a result, the team still completed every essential task.",
+                "optionsEn": [
+                  "The reason for the delay disappeared immediately",
+                  "Damar adjusted the opening activity after explaining the delay",
+                  "The event started earlier than planned",
+                  "The team cancelled the final practice"
+                ],
+                "answerIndex": 1,
+                "explanationId": "The passage links the completed tasks to the shortened opening activity and clear update.",
+                "optionRationales": [
+                  "Incorrect. “The reason for the delay disappeared immediately” is not supported by the prompt or stimulus; the supported answer is “Damar adjusted the opening activity after explaining the delay”.",
+                  "Correct. The passage links the completed tasks to the shortened opening activity and clear update.",
+                  "Incorrect. “The event started earlier than planned” is not supported by the prompt or stimulus; the supported answer is “Damar adjusted the opening activity after explaining the delay”.",
+                  "Incorrect. “The team cancelled the final practice” is not supported by the prompt or stimulus; the supported answer is “Damar adjusted the opening activity after explaining the delay”."
+                ]
+              },
+              {
+                "qid": "gen-sec-a-reading-5",
+                "promptEn": "In the library hall, what must a student do immediately after reading the safety card?",
+                "passageEn": "Before using the equipment in the library hall, first read the safety card, then inspect the power cable, and finally ask the supervisor to confirm the setup. If the cable is damaged, stop and report it; do not attempt a repair.",
+                "optionsEn": [
+                  "Inspect the power cable",
+                  "Repair any damaged cable",
+                  "Turn on the equipment immediately",
+                  "Leave the room without reporting anything"
+                ],
+                "answerIndex": 0,
+                "explanationId": "The procedure orders the cable inspection directly after reading the safety card.",
+                "optionRationales": [
+                  "Correct. The procedure orders the cable inspection directly after reading the safety card.",
+                  "Incorrect. “Repair any damaged cable” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Incorrect. “Turn on the equipment immediately” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Incorrect. “Leave the room without reporting anything” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”."
+                ]
+              }
+            ]
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-b-writing",
+            "skill": "WRITING",
+            "rubricRevisionId": "rubric-g10-writing-v1",
+            "tasks": [
+              {
+                "taskId": "w1",
+                "promptEn": "Write an 80–100 word recount titled \"A Day That Did Not Go As Planned\". Include orientation, at least three events in order with past simple, and a closing comment.",
+                "criteriaIds": [
+                  "task-fulfillment",
+                  "organization",
+                  "grammar-past-forms",
+                  "vocabulary",
+                  "clarity"
+                ]
+              },
+              {
+                "taskId": "w2",
+                "promptEn": "Write a 5-step procedure explaining how to borrow a book from your school library. Include one \"Make sure…\" warning.",
+                "criteriaIds": [
+                  "task-fulfillment",
+                  "sequencing",
+                  "imperative-forms",
+                  "clarity"
+                ]
+              }
+            ]
+          },
+          {
+            "blockType": "rubric-definition",
+            "rubricRevisionId": "rubric-g10-writing-v1",
+            "scale": "0-4 per criterion",
+            "criteria": [
+              {
+                "criterionId": "task-fulfillment",
+                "titleEn": "Task fulfillment",
+                "descriptorId": "Semua bagian tugas dijawab dengan isi yang relevan."
+              },
+              {
+                "criterionId": "organization",
+                "titleEn": "Organization",
+                "descriptorId": "Struktur teks sesuai genre dan urutan logis."
+              },
+              {
+                "criterionId": "grammar-past-forms",
+                "titleEn": "Grammar (past forms)",
+                "descriptorId": "Bentuk lampau akurat dan konsisten."
+              },
+              {
+                "criterionId": "sequencing",
+                "titleEn": "Sequencing",
+                "descriptorId": "Penanda urutan digunakan tepat."
+              },
+              {
+                "criterionId": "imperative-forms",
+                "titleEn": "Imperatives",
+                "descriptorId": "Kalimat perintah prosedur tepat bentuk."
+              },
+              {
+                "criterionId": "vocabulary",
+                "titleEn": "Vocabulary",
+                "descriptorId": "Pilihan kata tepat dan bervariasi."
+              },
+              {
+                "criterionId": "clarity",
+                "titleEn": "Clarity",
+                "descriptorId": "Gagasan mudah dipahami tanpa membaca ulang."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [],
+        "expressions": [],
+        "recallHooks": [],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-writing-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "ex-g10-03",
+      "revision": 2,
+      "kind": "ASSESSMENT",
+      "grade": "GRADE_10",
+      "track": "EXAM_LAB",
+      "phase": "PHASE_E",
+      "title": "TOEIC-style Foundations: Listening",
+      "primarySkill": "LISTENING",
+      "supportingSkills": [],
+      "objectiveKeys": [
+        "obj-g10-03",
+        "obj-g10-10"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "exam-meta",
+            "modeId": "TOEIC_STYLE",
+            "instructionId": "Latihan gaya TOEIC tingkat dasar: deskripsi gambar dan tanya-jawab singkat. Semua soal orisinal Nexus.",
+            "timeSuggestionMinutes": 15,
+            "originalContentNote": "Konten latihan orisinal bergaya TOEIC. StoryArc tidak berafiliasi dengan ETS dan tidak mereproduksi soal TOEIC resmi.",
+            "disclaimerId": "TOEIC adalah merek dagang ETS. Latihan ini hanya meniru format interaksi umum."
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-photo",
+            "skill": "LISTENING",
+            "formatId": "photo-description",
+            "audioState": "generated-audio-temporary-approved",
+            "questions": [
+              {
+                "qid": "q1",
+                "imageBriefId": "Foto: seorang siswa menyerahkan formulir kepada petugas di meja kantor sekolah.",
+                "transcriptEn": "(A) The student is handing in a form at the desk. (B) The student is throwing paper into a bin. (C) The officer is closing the office door. (D) The student is writing on the wall.",
+                "optionsEn": [
+                  "The student is handing in a form at the desk.",
+                  "The student is throwing paper into a bin.",
+                  "The officer is closing the office door.",
+                  "The student is writing on the wall."
+                ],
+                "answerIndex": 0,
+                "explanationId": "\"handing in a form\" cocok dengan aksi pada gambar; pilihan lain mendeskripsikan aksi yang tidak terjadi.",
+                "optionRationales": [
+                  "Correct. \"handing in a form\" cocok dengan aksi pada gambar; pilihan lain mendeskripsikan aksi yang tidak terjadi.",
+                  "Incorrect. “B” is not supported by the prompt or stimulus; the supported answer is “A”.",
+                  "Incorrect. “C” is not supported by the prompt or stimulus; the supported answer is “A”.",
+                  "Incorrect. “D” is not supported by the prompt or stimulus; the supported answer is “A”."
+                ]
+              },
+              {
+                "qid": "q2",
+                "imageBriefId": "Foto: dua siswa mengantre di depan kios makanan yang ramai.",
+                "transcriptEn": "(A) The stall is empty. (B) The students are waiting in line at a food stall. (C) The students are cooking behind the counter. (D) The stall is being cleaned.",
+                "optionsEn": [
+                  "The stall is empty.",
+                  "The students are waiting in line at a food stall.",
+                  "The students are cooking behind the counter.",
+                  "The stall is being cleaned."
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"waiting in line\" = mengantre; sesuai gambar ramai.",
+                "optionRationales": [
+                  "Incorrect. “A” is not supported by the prompt or stimulus; the supported answer is “B”.",
+                  "Correct. \"waiting in line\" = mengantre; sesuai gambar ramai.",
+                  "Incorrect. “C” is not supported by the prompt or stimulus; the supported answer is “B”.",
+                  "Incorrect. “D” is not supported by the prompt or stimulus; the supported answer is “B”."
+                ]
+              },
+              {
+                "qid": "q3",
+                "imageBriefId": "Foto: seorang teknisi muda memasang kamera pada tripod di ruang praktik.",
+                "transcriptEn": "(A) The technician is repairing a printer. (B) The camera is lying on the floor. (C) The technician is mounting a camera on a tripod. (D) The room is completely dark.",
+                "optionsEn": [
+                  "The technician is repairing a printer.",
+                  "The camera is lying on the floor.",
+                  "The technician is mounting a camera on a tripod.",
+                  "The room is completely dark."
+                ],
+                "answerIndex": 2,
+                "explanationId": "\"mounting a camera on a tripod\" mendeskripsikan aksi utama.",
+                "optionRationales": [
+                  "Incorrect. “A” is not supported by the prompt or stimulus; the supported answer is “C”.",
+                  "Incorrect. “B” is not supported by the prompt or stimulus; the supported answer is “C”.",
+                  "Correct. \"mounting a camera on a tripod\" mendeskripsikan aksi utama.",
+                  "Incorrect. “D” is not supported by the prompt or stimulus; the supported answer is “C”."
+                ]
+              },
+              {
+                "qid": "gen-sec-photo-4",
+                "imageBriefId": "Original Nexus image brief: A technician places a camera on a tripod in the media lab.",
+                "transcriptEn": "(A) The media lab has no equipment. (B) A camera is being mounted on a tripod. (C) The camera is being packed in a box. (D) The technician is painting the wall.",
+                "promptEn": "Choose the sentence that best describes this image brief: A technician places a camera on a tripod in the media lab.",
+                "optionsEn": [
+                  "The media lab has no equipment.",
+                  "A camera is being mounted on a tripod.",
+                  "The camera is being packed in a box.",
+                  "The technician is painting the wall."
+                ],
+                "answerIndex": 1,
+                "explanationId": "Option B accurately describes the visible action: A camera is being mounted on a tripod.",
+                "optionRationales": [
+                  "Incorrect. “A” is not supported by the prompt or stimulus; the supported answer is “B”.",
+                  "Correct. Option B accurately describes the visible action: A camera is being mounted on a tripod.",
+                  "Incorrect. “C” is not supported by the prompt or stimulus; the supported answer is “B”.",
+                  "Incorrect. “D” is not supported by the prompt or stimulus; the supported answer is “B”."
+                ]
+              },
+              {
+                "qid": "gen-sec-photo-5",
+                "imageBriefId": "Original Nexus image brief: Three team members review a chart on a laptop.",
+                "transcriptEn": "(A) The team members are reviewing a chart together. (B) The laptop is turned off. (C) One person is working alone outdoors. (D) The chart is being thrown away.",
+                "promptEn": "Choose the sentence that best describes this image brief: Three team members review a chart on a laptop.",
+                "optionsEn": [
+                  "The team members are reviewing a chart together.",
+                  "The laptop is turned off.",
+                  "One person is working alone outdoors.",
+                  "The chart is being thrown away."
+                ],
+                "answerIndex": 0,
+                "explanationId": "Option A accurately describes the visible action: The team members are reviewing a chart together.",
+                "optionRationales": [
+                  "Correct. Option A accurately describes the visible action: The team members are reviewing a chart together.",
+                  "Incorrect. “B” is not supported by the prompt or stimulus; the supported answer is “A”.",
+                  "Incorrect. “C” is not supported by the prompt or stimulus; the supported answer is “A”.",
+                  "Incorrect. “D” is not supported by the prompt or stimulus; the supported answer is “A”."
+                ]
+              },
+              {
+                "qid": "gen-sec-photo-6",
+                "imageBriefId": "Original Nexus image brief: A supervisor demonstrates how to wear protective glasses.",
+                "transcriptEn": "(A) The supervisor is selling sunglasses. (B) The workers are removing every safety sign. (C) No demonstration is taking place. (D) The supervisor is demonstrating protective glasses.",
+                "promptEn": "Choose the sentence that best describes this image brief: A supervisor demonstrates how to wear protective glasses.",
+                "optionsEn": [
+                  "The supervisor is selling sunglasses.",
+                  "The workers are removing every safety sign.",
+                  "No demonstration is taking place.",
+                  "The supervisor is demonstrating protective glasses."
+                ],
+                "answerIndex": 3,
+                "explanationId": "Option D accurately describes the visible action: The supervisor is demonstrating protective glasses.",
+                "optionRationales": [
+                  "Incorrect. “A” is not supported by the prompt or stimulus; the supported answer is “D”.",
+                  "Incorrect. “B” is not supported by the prompt or stimulus; the supported answer is “D”.",
+                  "Incorrect. “C” is not supported by the prompt or stimulus; the supported answer is “D”.",
+                  "Correct. Option D accurately describes the visible action: The supervisor is demonstrating protective glasses."
+                ]
+              }
+            ],
+            "audioAssetId": "audio-ex-g10-03-sec-photo-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-qr",
+            "skill": "LISTENING",
+            "formatId": "question-response",
+            "audioState": "generated-audio-temporary-approved",
+            "questions": [
+              {
+                "qid": "q4",
+                "transcriptEn": "Q: \"When does the club meeting start?\" (A) In Club Room 2. (B) At three o'clock. (C) Yes, it does.",
+                "optionsEn": [
+                  "In Club Room 2.",
+                  "At three o'clock.",
+                  "Yes, it does."
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pertanyaan \"when\" dijawab waktu; (A) menjawab \"where\", (C) tidak relevan.",
+                "optionRationales": [
+                  "Incorrect. “A” is not supported by the prompt or stimulus; the supported answer is “B”.",
+                  "Correct. Pertanyaan \"when\" dijawab waktu; (A) menjawab \"where\", (C) tidak relevan.",
+                  "Incorrect. “C” is not supported by the prompt or stimulus; the supported answer is “B”."
+                ],
+                "promptEn": "Choose the response that best answers: “When does the club meeting start?”"
+              },
+              {
+                "qid": "q5",
+                "transcriptEn": "Q: \"Could you say that again, please?\" (A) Sure — the form is due Friday. (B) No, I'm not new here. (C) It's next to the library.",
+                "optionsEn": [
+                  "Sure — the form is due Friday.",
+                  "No, I'm not new here.",
+                  "It's next to the library."
+                ],
+                "answerIndex": 0,
+                "explanationId": "Permintaan pengulangan dijawab dengan mengulang informasi.",
+                "optionRationales": [
+                  "Correct. Permintaan pengulangan dijawab dengan mengulang informasi.",
+                  "Incorrect. “B” is not supported by the prompt or stimulus; the supported answer is “A”.",
+                  "Incorrect. “C” is not supported by the prompt or stimulus; the supported answer is “A”."
+                ],
+                "promptEn": "Choose the response that best answers: “Could you say that again, please?”"
+              },
+              {
+                "qid": "q6",
+                "transcriptEn": "Q: \"How do I get to the teachers' office?\" (A) It opens at seven. (B) Go straight past the labs and turn right. (C) I don't like offices.",
+                "optionsEn": [
+                  "It opens at seven.",
+                  "Go straight past the labs and turn right.",
+                  "I don't like offices."
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pertanyaan arah dijawab langkah arah.",
+                "optionRationales": [
+                  "Incorrect. “A” is not supported by the prompt or stimulus; the supported answer is “B”.",
+                  "Correct. Pertanyaan arah dijawab langkah arah.",
+                  "Incorrect. “C” is not supported by the prompt or stimulus; the supported answer is “B”."
+                ],
+                "promptEn": "Choose the response that best answers: “How do I get to the teachers' office?”"
+              },
+              {
+                "qid": "q7",
+                "transcriptEn": "Q: \"Do you want to join us for lunch?\" (A) I'd love to, but I have practice. (B) The canteen is crowded. (C) It was delicious yesterday.",
+                "optionsEn": [
+                  "I'd love to, but I have practice.",
+                  "The canteen is crowded.",
+                  "It was delicious yesterday."
+                ],
+                "answerIndex": 0,
+                "explanationId": "Undangan dijawab menerima/menolak; (A) penolakan sopan.",
+                "optionRationales": [
+                  "Correct. Undangan dijawab menerima/menolak; (A) penolakan sopan.",
+                  "Incorrect. “B” is not supported by the prompt or stimulus; the supported answer is “A”.",
+                  "Incorrect. “C” is not supported by the prompt or stimulus; the supported answer is “A”."
+                ],
+                "promptEn": "Choose the response that best answers: “Do you want to join us for lunch?”"
+              },
+              {
+                "qid": "q8",
+                "transcriptEn": "Q: \"Whose camera is this on the table?\" (A) It's Ryo's. (B) It's on the table. (C) Cameras are expensive.",
+                "optionsEn": [
+                  "It's Ryo's.",
+                  "It's on the table.",
+                  "Cameras are expensive."
+                ],
+                "answerIndex": 0,
+                "explanationId": "\"Whose\" menanyakan kepemilikan.",
+                "optionRationales": [
+                  "Correct. \"Whose\" menanyakan kepemilikan.",
+                  "Incorrect. “B” is not supported by the prompt or stimulus; the supported answer is “A”.",
+                  "Incorrect. “C” is not supported by the prompt or stimulus; the supported answer is “A”."
+                ],
+                "promptEn": "Choose the response that best answers: “Whose camera is this on the table?”"
+              },
+              {
+                "qid": "gen-sec-qr-6",
+                "promptEn": "Choose the response that best answers: “Where should I submit the project outline?”",
+                "transcriptEn": "Q: “Where should I submit the project outline?” (A) By 08:00. (B) Yes, you should. (C) It was submitted yesterday. (D) At the library hall.",
+                "optionsEn": [
+                  "By 08:00.",
+                  "Yes, you should.",
+                  "It was submitted yesterday.",
+                  "At the library hall."
+                ],
+                "answerIndex": 3,
+                "explanationId": "The correct response matches the question word and requested information.",
+                "optionRationales": [
+                  "Incorrect. “By 08:00.” is not supported by the prompt or stimulus; the supported answer is “At the library hall.”.",
+                  "Incorrect. “Yes, you should.” is not supported by the prompt or stimulus; the supported answer is “At the library hall.”.",
+                  "Incorrect. “It was submitted yesterday.” is not supported by the prompt or stimulus; the supported answer is “At the library hall.”.",
+                  "Correct. The correct response matches the question word and requested information."
+                ]
+              },
+              {
+                "qid": "gen-sec-qr-7",
+                "promptEn": "Choose the response that repeats the Wednesday 09:30 deadline.",
+                "transcriptEn": "Q: “Could you repeat the new deadline?” (A) No, I did not submit it. (B) The deadline was useful. (C) Sure — it is Wednesday at 09:30. (D) It is in Workshop 2.",
+                "optionsEn": [
+                  "No, I did not submit it.",
+                  "The deadline was useful.",
+                  "Sure — it is Wednesday at 09:30.",
+                  "It is in Workshop 2."
+                ],
+                "answerIndex": 2,
+                "explanationId": "The correct response matches the question word and requested information.",
+                "optionRationales": [
+                  "Incorrect. “No, I did not submit it.” is not supported by the prompt or stimulus; the supported answer is “Sure — it is Wednesday at 09:30.”.",
+                  "Incorrect. “The deadline was useful.” is not supported by the prompt or stimulus; the supported answer is “Sure — it is Wednesday at 09:30.”.",
+                  "Correct. The correct response matches the question word and requested information.",
+                  "Incorrect. “It is in Workshop 2.” is not supported by the prompt or stimulus; the supported answer is “Sure — it is Wednesday at 09:30.”."
+                ]
+              },
+              {
+                "qid": "gen-sec-qr-8",
+                "promptEn": "Choose the response that best answers: “Why was the internship briefing moved?”",
+                "transcriptEn": "Q: “Why was the internship briefing moved?” (A) Yes, it moved. (B) Because the weather forecast changed. (C) At 11:00. (D) In the media lab.",
+                "optionsEn": [
+                  "Yes, it moved.",
+                  "Because the weather forecast changed.",
+                  "At 11:00.",
+                  "In the media lab."
+                ],
+                "answerIndex": 1,
+                "explanationId": "The correct response matches the question word and requested information.",
+                "optionRationales": [
+                  "Incorrect. “Yes, it moved.” is not supported by the prompt or stimulus; the supported answer is “Because the weather forecast changed.”.",
+                  "Correct. The correct response matches the question word and requested information.",
+                  "Incorrect. “At 11:00.” is not supported by the prompt or stimulus; the supported answer is “Because the weather forecast changed.”.",
+                  "Incorrect. “In the media lab.” is not supported by the prompt or stimulus; the supported answer is “Because the weather forecast changed.”."
+                ]
+              },
+              {
+                "qid": "gen-sec-qr-9",
+                "promptEn": "Choose the response that best answers: “When does the science club briefing begin?”",
+                "transcriptEn": "Q: “When does the science club briefing begin?” (A) At 13:00. (B) In the school office. (C) Yes, it begins. (D) With the coordinator.",
+                "optionsEn": [
+                  "At 13:00.",
+                  "In the school office.",
+                  "Yes, it begins.",
+                  "With the coordinator."
+                ],
+                "answerIndex": 0,
+                "explanationId": "The correct response matches the question word and requested information.",
+                "optionRationales": [
+                  "Correct. The correct response matches the question word and requested information.",
+                  "Incorrect. “In the school office.” is not supported by the prompt or stimulus; the supported answer is “At 13:00.”.",
+                  "Incorrect. “Yes, it begins.” is not supported by the prompt or stimulus; the supported answer is “At 13:00.”.",
+                  "Incorrect. “With the coordinator.” is not supported by the prompt or stimulus; the supported answer is “At 13:00.”."
+                ]
+              },
+              {
+                "qid": "gen-sec-qr-10",
+                "promptEn": "Choose the response that best answers: “Where should I submit the safety checklist?”",
+                "transcriptEn": "Q: “Where should I submit the safety checklist?” (A) By 14:30. (B) Yes, you should. (C) It was submitted yesterday. (D) At the main auditorium.",
+                "optionsEn": [
+                  "By 14:30.",
+                  "Yes, you should.",
+                  "It was submitted yesterday.",
+                  "At the main auditorium."
+                ],
+                "answerIndex": 3,
+                "explanationId": "The correct response matches the question word and requested information.",
+                "optionRationales": [
+                  "Incorrect. “By 14:30.” is not supported by the prompt or stimulus; the supported answer is “At the main auditorium.”.",
+                  "Incorrect. “Yes, you should.” is not supported by the prompt or stimulus; the supported answer is “At the main auditorium.”.",
+                  "Incorrect. “It was submitted yesterday.” is not supported by the prompt or stimulus; the supported answer is “At the main auditorium.”.",
+                  "Correct. The correct response matches the question word and requested information."
+                ]
+              },
+              {
+                "qid": "gen-sec-qr-11",
+                "promptEn": "Choose the response that repeats the Monday 16:00 deadline.",
+                "transcriptEn": "Q: “Could you repeat the new deadline?” (A) No, I did not submit it. (B) The deadline was useful. (C) Sure — it is Monday at 16:00. (D) It is in Room 10-B.",
+                "optionsEn": [
+                  "No, I did not submit it.",
+                  "The deadline was useful.",
+                  "Sure — it is Monday at 16:00.",
+                  "It is in Room 10-B."
+                ],
+                "answerIndex": 2,
+                "explanationId": "The correct response matches the question word and requested information.",
+                "optionRationales": [
+                  "Incorrect. “No, I did not submit it.” is not supported by the prompt or stimulus; the supported answer is “Sure — it is Monday at 16:00.”.",
+                  "Incorrect. “The deadline was useful.” is not supported by the prompt or stimulus; the supported answer is “Sure — it is Monday at 16:00.”.",
+                  "Correct. The correct response matches the question word and requested information.",
+                  "Incorrect. “It is in Room 10-B.” is not supported by the prompt or stimulus; the supported answer is “Sure — it is Monday at 16:00.”."
+                ]
+              },
+              {
+                "qid": "gen-sec-qr-12",
+                "promptEn": "Choose the response that best answers: “Why was the campus tour moved?”",
+                "transcriptEn": "Q: “Why was the campus tour moved?” (A) Yes, it moved. (B) Because the supervisor has an urgent meeting. (C) At 08:00. (D) In the library hall.",
+                "optionsEn": [
+                  "Yes, it moved.",
+                  "Because the supervisor has an urgent meeting.",
+                  "At 08:00.",
+                  "In the library hall."
+                ],
+                "answerIndex": 1,
+                "explanationId": "The correct response matches the question word and requested information.",
+                "optionRationales": [
+                  "Incorrect. “Yes, it moved.” is not supported by the prompt or stimulus; the supported answer is “Because the supervisor has an urgent meeting.”.",
+                  "Correct. The correct response matches the question word and requested information.",
+                  "Incorrect. “At 08:00.” is not supported by the prompt or stimulus; the supported answer is “Because the supervisor has an urgent meeting.”.",
+                  "Incorrect. “In the library hall.” is not supported by the prompt or stimulus; the supported answer is “Because the supervisor has an urgent meeting.”."
+                ]
+              },
+              {
+                "qid": "gen-sec-qr-13",
+                "promptEn": "Choose the response that best answers: “When does the project rehearsal begin?”",
+                "transcriptEn": "Q: “When does the project rehearsal begin?” (A) At 09:30. (B) In Workshop 2. (C) Yes, it begins. (D) With the coordinator.",
+                "optionsEn": [
+                  "At 09:30.",
+                  "In Workshop 2.",
+                  "Yes, it begins.",
+                  "With the coordinator."
+                ],
+                "answerIndex": 0,
+                "explanationId": "The correct response matches the question word and requested information.",
+                "optionRationales": [
+                  "Correct. The correct response matches the question word and requested information.",
+                  "Incorrect. “In Workshop 2.” is not supported by the prompt or stimulus; the supported answer is “At 09:30.”.",
+                  "Incorrect. “Yes, it begins.” is not supported by the prompt or stimulus; the supported answer is “At 09:30.”.",
+                  "Incorrect. “With the coordinator.” is not supported by the prompt or stimulus; the supported answer is “At 09:30.”."
+                ]
+              },
+              {
+                "qid": "gen-sec-qr-14",
+                "promptEn": "Choose the response that best answers: “Where should I submit the revised schedule?”",
+                "transcriptEn": "Q: “Where should I submit the revised schedule?” (A) By 11:00. (B) Yes, you should. (C) It was submitted yesterday. (D) At the media lab.",
+                "optionsEn": [
+                  "By 11:00.",
+                  "Yes, you should.",
+                  "It was submitted yesterday.",
+                  "At the media lab."
+                ],
+                "answerIndex": 3,
+                "explanationId": "The correct response matches the question word and requested information.",
+                "optionRationales": [
+                  "Incorrect. “By 11:00.” is not supported by the prompt or stimulus; the supported answer is “At the media lab.”.",
+                  "Incorrect. “Yes, you should.” is not supported by the prompt or stimulus; the supported answer is “At the media lab.”.",
+                  "Incorrect. “It was submitted yesterday.” is not supported by the prompt or stimulus; the supported answer is “At the media lab.”.",
+                  "Correct. The correct response matches the question word and requested information."
+                ]
+              }
+            ],
+            "audioAssetId": "audio-ex-g10-03-sec-qr-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          }
+        ],
+        "vocabulary": [],
+        "expressions": [],
+        "recallHooks": [],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-mcq-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "ex-g10-04",
+      "revision": 1,
+      "kind": "ASSESSMENT",
+      "grade": "GRADE_10",
+      "track": "EXAM_LAB",
+      "phase": "PHASE_E",
+      "title": "TOEIC-style Foundations: Reading",
+      "primarySkill": "READING",
+      "supportingSkills": [
+        "GRAMMAR"
+      ],
+      "objectiveKeys": [
+        "obj-g10-06",
+        "obj-g10-07"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "exam-meta",
+            "modeId": "TOEIC_STYLE",
+            "instructionId": "Latihan gaya TOEIC tingkat dasar: melengkapi kalimat. Konteks sekolah dan tempat kerja ringan.",
+            "timeSuggestionMinutes": 12,
+            "originalContentNote": "Konten latihan orisinal bergaya TOEIC. StoryArc tidak berafiliasi dengan ETS.",
+            "disclaimerId": "TOEIC adalah merek dagang ETS. Latihan ini hanya meniru format interaksi umum."
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-incomplete",
+            "skill": "READING",
+            "formatId": "incomplete-sentences",
+            "questions": [
+              {
+                "qid": "q1",
+                "promptEn": "All visitors must ___ at the security desk before entering the building.",
+                "optionsEn": [
+                  "sign up",
+                  "sign in",
+                  "sign off",
+                  "sign away"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"sign in\" = lapor masuk; \"sign up\" = mendaftar program.",
+                "optionRationales": [
+                  "Incorrect. “sign up” is not supported by the prompt or stimulus; the supported answer is “sign in”.",
+                  "Correct. \"sign in\" = lapor masuk; \"sign up\" = mendaftar program.",
+                  "Incorrect. “sign off” is not supported by the prompt or stimulus; the supported answer is “sign in”.",
+                  "Incorrect. “sign away” is not supported by the prompt or stimulus; the supported answer is “sign in”."
+                ]
+              },
+              {
+                "qid": "q2",
+                "promptEn": "The staff meeting ___ every Monday at 8 a.m.",
+                "optionsEn": [
+                  "hold",
+                  "is held",
+                  "holding",
+                  "is holding"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Pasif kebiasaan: \"is held\" = diadakan.",
+                "optionRationales": [
+                  "Incorrect. “hold” is not supported by the prompt or stimulus; the supported answer is “is held”.",
+                  "Correct. Pasif kebiasaan: \"is held\" = diadakan.",
+                  "Incorrect. “holding” is not supported by the prompt or stimulus; the supported answer is “is held”.",
+                  "Incorrect. “is holding” is not supported by the prompt or stimulus; the supported answer is “is held”."
+                ]
+              },
+              {
+                "qid": "q3",
+                "promptEn": "Please submit the report ___ Friday afternoon.",
+                "optionsEn": [
+                  "until",
+                  "by",
+                  "on at",
+                  "since"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"by\" menandai tenggat.",
+                "optionRationales": [
+                  "Incorrect. “until” is not supported by the prompt or stimulus; the supported answer is “by”.",
+                  "Correct. \"by\" menandai tenggat.",
+                  "Incorrect. “on at” is not supported by the prompt or stimulus; the supported answer is “by”.",
+                  "Incorrect. “since” is not supported by the prompt or stimulus; the supported answer is “by”."
+                ]
+              },
+              {
+                "qid": "q4",
+                "promptEn": "The copier is ___ the supply room, next to the lockers.",
+                "optionsEn": [
+                  "at",
+                  "in",
+                  "between",
+                  "among"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"in the supply room\" — di dalam ruangan.",
+                "optionRationales": [
+                  "Incorrect. “at” is not supported by the prompt or stimulus; the supported answer is “in”.",
+                  "Correct. \"in the supply room\" — di dalam ruangan.",
+                  "Incorrect. “between” is not supported by the prompt or stimulus; the supported answer is “in”.",
+                  "Incorrect. “among” is not supported by the prompt or stimulus; the supported answer is “in”."
+                ]
+              },
+              {
+                "qid": "q5",
+                "promptEn": "Ms. Tanjung usually ___ the morning briefing when the manager is away.",
+                "optionsEn": [
+                  "lead",
+                  "leads",
+                  "leading",
+                  "is lead"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Present simple orang ketiga tunggal: leads.",
+                "optionRationales": [
+                  "Incorrect. “lead” is not supported by the prompt or stimulus; the supported answer is “leads”.",
+                  "Correct. Present simple orang ketiga tunggal: leads.",
+                  "Incorrect. “leading” is not supported by the prompt or stimulus; the supported answer is “leads”.",
+                  "Incorrect. “is lead” is not supported by the prompt or stimulus; the supported answer is “leads”."
+                ]
+              },
+              {
+                "qid": "q6",
+                "promptEn": "New interns should ask a supervisor ___ they are unsure about a task.",
+                "optionsEn": [
+                  "if",
+                  "so",
+                  "because of",
+                  "during"
+                ],
+                "answerIndex": 0,
+                "explanationId": "\"if\" = jika; menghubungkan syarat.",
+                "optionRationales": [
+                  "Correct. \"if\" = jika; menghubungkan syarat.",
+                  "Incorrect. “so” is not supported by the prompt or stimulus; the supported answer is “if”.",
+                  "Incorrect. “because of” is not supported by the prompt or stimulus; the supported answer is “if”.",
+                  "Incorrect. “during” is not supported by the prompt or stimulus; the supported answer is “if”."
+                ]
+              },
+              {
+                "qid": "q7",
+                "promptEn": "The training room is available ___ 1 p.m. and 3 p.m.",
+                "optionsEn": [
+                  "between",
+                  "among",
+                  "at",
+                  "from at"
+                ],
+                "answerIndex": 0,
+                "explanationId": "\"between X and Y\" untuk rentang waktu.",
+                "optionRationales": [
+                  "Correct. \"between X and Y\" untuk rentang waktu.",
+                  "Incorrect. “among” is not supported by the prompt or stimulus; the supported answer is “between”.",
+                  "Incorrect. “at” is not supported by the prompt or stimulus; the supported answer is “between”.",
+                  "Incorrect. “from at” is not supported by the prompt or stimulus; the supported answer is “between”."
+                ]
+              },
+              {
+                "qid": "q8",
+                "promptEn": "Please ___ the equipment checklist before returning the camera.",
+                "optionsEn": [
+                  "fill in",
+                  "fill up",
+                  "fall in",
+                  "feel in"
+                ],
+                "answerIndex": 0,
+                "explanationId": "\"fill in\" = mengisi dokumen.",
+                "optionRationales": [
+                  "Correct. \"fill in\" = mengisi dokumen.",
+                  "Incorrect. “fill up” is not supported by the prompt or stimulus; the supported answer is “fill in”.",
+                  "Incorrect. “fall in” is not supported by the prompt or stimulus; the supported answer is “fill in”.",
+                  "Incorrect. “feel in” is not supported by the prompt or stimulus; the supported answer is “fill in”."
+                ]
+              },
+              {
+                "qid": "q9",
+                "promptEn": "The cafeteria gets very ___ between twelve and one.",
+                "optionsEn": [
+                  "crowd",
+                  "crowded",
+                  "crowding",
+                  "crowds"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Adjektiva: crowded.",
+                "optionRationales": [
+                  "Incorrect. “crowd” is not supported by the prompt or stimulus; the supported answer is “crowded”.",
+                  "Correct. Adjektiva: crowded.",
+                  "Incorrect. “crowding” is not supported by the prompt or stimulus; the supported answer is “crowded”.",
+                  "Incorrect. “crowds” is not supported by the prompt or stimulus; the supported answer is “crowded”."
+                ]
+              },
+              {
+                "qid": "q10",
+                "promptEn": "___ you have any questions, please contact the front desk.",
+                "optionsEn": [
+                  "Should",
+                  "Must",
+                  "Ought",
+                  "Shall"
+                ],
+                "answerIndex": 0,
+                "explanationId": "\"Should you have…\" bentuk sopan formal dari \"if you have…\".",
+                "optionRationales": [
+                  "Correct. \"Should you have…\" bentuk sopan formal dari \"if you have…\".",
+                  "Incorrect. “Must” is not supported by the prompt or stimulus; the supported answer is “Should”.",
+                  "Incorrect. “Ought” is not supported by the prompt or stimulus; the supported answer is “Should”.",
+                  "Incorrect. “Shall” is not supported by the prompt or stimulus; the supported answer is “Should”."
+                ]
+              },
+              {
+                "qid": "gen-sec-incomplete-11",
+                "promptEn": "Choose the best word or form: If you cannot find the school office, ___ a staff member for directions.",
+                "optionsEn": [
+                  "asking",
+                  "asks",
+                  "ask",
+                  "asked"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The imperative uses the base verb “ask”.",
+                "optionRationales": [
+                  "Incorrect. “asking” is not supported by the prompt or stimulus; the supported answer is “ask”.",
+                  "Incorrect. “asks” is not supported by the prompt or stimulus; the supported answer is “ask”.",
+                  "Correct. The imperative uses the base verb “ask”.",
+                  "Incorrect. “asked” is not supported by the prompt or stimulus; the supported answer is “ask”."
+                ]
+              },
+              {
+                "qid": "gen-sec-incomplete-12",
+                "promptEn": "Choose the best word or form: Joko usually ___ the project outline before class.",
+                "optionsEn": [
+                  "checking",
+                  "checks",
+                  "check",
+                  "checked"
+                ],
+                "answerIndex": 1,
+                "explanationId": "A third-person singular subject takes “checks” in the simple present.",
+                "optionRationales": [
+                  "Incorrect. “checking” is not supported by the prompt or stimulus; the supported answer is “checks”.",
+                  "Correct. A third-person singular subject takes “checks” in the simple present.",
+                  "Incorrect. “check” is not supported by the prompt or stimulus; the supported answer is “checks”.",
+                  "Incorrect. “checked” is not supported by the prompt or stimulus; the supported answer is “checks”."
+                ]
+              },
+              {
+                "qid": "gen-sec-incomplete-13",
+                "promptEn": "Choose the best word or form: Kirana ___ the registration form yesterday before the library volunteer shift.",
+                "optionsEn": [
+                  "submitted",
+                  "submits",
+                  "submitting",
+                  "submit"
+                ],
+                "answerIndex": 0,
+                "explanationId": "The completed action and “yesterday” require the simple past form.",
+                "optionRationales": [
+                  "Correct. The completed action and “yesterday” require the simple past form.",
+                  "Incorrect. “submits” is not supported by the prompt or stimulus; the supported answer is “submitted”.",
+                  "Incorrect. “submitting” is not supported by the prompt or stimulus; the supported answer is “submitted”.",
+                  "Incorrect. “submit” is not supported by the prompt or stimulus; the supported answer is “submitted”."
+                ]
+              },
+              {
+                "qid": "gen-sec-incomplete-14",
+                "promptEn": "Choose the best word or form: The internship briefing starts ___ 09:30 on Wednesday.",
+                "optionsEn": [
+                  "in",
+                  "on",
+                  "from",
+                  "at"
+                ],
+                "answerIndex": 3,
+                "explanationId": "Use “at” before a precise clock time.",
+                "optionRationales": [
+                  "Incorrect. “in” is not supported by the prompt or stimulus; the supported answer is “at”.",
+                  "Incorrect. “on” is not supported by the prompt or stimulus; the supported answer is “at”.",
+                  "Incorrect. “from” is not supported by the prompt or stimulus; the supported answer is “at”.",
+                  "Correct. Use “at” before a precise clock time."
+                ]
+              },
+              {
+                "qid": "gen-sec-incomplete-15",
+                "promptEn": "Choose the best word or form: If you cannot find Workshop 2, ___ a staff member for directions.",
+                "optionsEn": [
+                  "asking",
+                  "asks",
+                  "ask",
+                  "asked"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The imperative uses the base verb “ask”.",
+                "optionRationales": [
+                  "Incorrect. “asking” is not supported by the prompt or stimulus; the supported answer is “ask”.",
+                  "Incorrect. “asks” is not supported by the prompt or stimulus; the supported answer is “ask”.",
+                  "Correct. The imperative uses the base verb “ask”.",
+                  "Incorrect. “asked” is not supported by the prompt or stimulus; the supported answer is “ask”."
+                ]
+              },
+              {
+                "qid": "gen-sec-incomplete-16",
+                "promptEn": "Choose the best word or form: Bagas usually ___ the safety checklist before class.",
+                "optionsEn": [
+                  "checking",
+                  "checks",
+                  "check",
+                  "checked"
+                ],
+                "answerIndex": 1,
+                "explanationId": "A third-person singular subject takes “checks” in the simple present.",
+                "optionRationales": [
+                  "Incorrect. “checking” is not supported by the prompt or stimulus; the supported answer is “checks”.",
+                  "Correct. A third-person singular subject takes “checks” in the simple present.",
+                  "Incorrect. “check” is not supported by the prompt or stimulus; the supported answer is “checks”.",
+                  "Incorrect. “checked” is not supported by the prompt or stimulus; the supported answer is “checks”."
+                ]
+              },
+              {
+                "qid": "gen-sec-incomplete-17",
+                "promptEn": "Choose the best word or form: Citra ___ the registration form yesterday before the student council meeting.",
+                "optionsEn": [
+                  "submitted",
+                  "submits",
+                  "submitting",
+                  "submit"
+                ],
+                "answerIndex": 0,
+                "explanationId": "The completed action and “yesterday” require the simple past form.",
+                "optionRationales": [
+                  "Correct. The completed action and “yesterday” require the simple past form.",
+                  "Incorrect. “submits” is not supported by the prompt or stimulus; the supported answer is “submitted”.",
+                  "Incorrect. “submitting” is not supported by the prompt or stimulus; the supported answer is “submitted”.",
+                  "Incorrect. “submit” is not supported by the prompt or stimulus; the supported answer is “submitted”."
+                ]
+              },
+              {
+                "qid": "gen-sec-incomplete-18",
+                "promptEn": "Choose the best word or form: The campus tour starts ___ 16:00 on Monday.",
+                "optionsEn": [
+                  "in",
+                  "on",
+                  "from",
+                  "at"
+                ],
+                "answerIndex": 3,
+                "explanationId": "Use “at” before a precise clock time.",
+                "optionRationales": [
+                  "Incorrect. “in” is not supported by the prompt or stimulus; the supported answer is “at”.",
+                  "Incorrect. “on” is not supported by the prompt or stimulus; the supported answer is “at”.",
+                  "Incorrect. “from” is not supported by the prompt or stimulus; the supported answer is “at”.",
+                  "Correct. Use “at” before a precise clock time."
+                ]
+              },
+              {
+                "qid": "gen-sec-incomplete-19",
+                "promptEn": "Choose the best word or form: If you cannot find Room 10-B, ___ a staff member for directions.",
+                "optionsEn": [
+                  "asking",
+                  "asks",
+                  "ask",
+                  "asked"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The imperative uses the base verb “ask”.",
+                "optionRationales": [
+                  "Incorrect. “asking” is not supported by the prompt or stimulus; the supported answer is “ask”.",
+                  "Incorrect. “asks” is not supported by the prompt or stimulus; the supported answer is “ask”.",
+                  "Correct. The imperative uses the base verb “ask”.",
+                  "Incorrect. “asked” is not supported by the prompt or stimulus; the supported answer is “ask”."
+                ]
+              },
+              {
+                "qid": "gen-sec-incomplete-20",
+                "promptEn": "Choose the best word or form: Farah usually ___ the revised schedule before class.",
+                "optionsEn": [
+                  "checking",
+                  "checks",
+                  "check",
+                  "checked"
+                ],
+                "answerIndex": 1,
+                "explanationId": "A third-person singular subject takes “checks” in the simple present.",
+                "optionRationales": [
+                  "Incorrect. “checking” is not supported by the prompt or stimulus; the supported answer is “checks”.",
+                  "Correct. A third-person singular subject takes “checks” in the simple present.",
+                  "Incorrect. “check” is not supported by the prompt or stimulus; the supported answer is “checks”.",
+                  "Incorrect. “checked” is not supported by the prompt or stimulus; the supported answer is “checks”."
+                ]
+              }
+            ]
+          }
+        ],
+        "vocabulary": [],
+        "expressions": [],
+        "recallHooks": [],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-mcq-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "ex-g10-05",
+      "revision": 1,
+      "kind": "ASSESSMENT",
+      "grade": "GRADE_10",
+      "track": "EXAM_LAB",
+      "phase": "PHASE_E",
+      "title": "Interview Basics: Introducing Yourself",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g10-01",
+        "obj-g10-02",
+        "obj-g10-11",
+        "obj-g10-12"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "exam-meta",
+            "modeId": "INTERVIEW",
+            "instructionId": "Wawancara dasar bersama John: memperkenalkan diri dengan percaya diri. Jawaban direkam, dinilai dari transkrip dengan rubrik berbicara. Tidak ada penilaian pelafalan akustik.",
+            "timeSuggestionMinutes": 10
+          },
+          {
+            "blockType": "john-interview",
+            "johnContent": {
+              "learningContextId": "Sesi wawancara perkenalan tingkat dasar untuk siswa kelas 10.",
+              "expectedStudentIntent": "Menjawab pertanyaan tentang diri sendiri secara alami dan lengkap.",
+              "tutorGoal": "Mengumpulkan sampel bicara yang cukup untuk setiap kriteria rubrik; menjaga suasana rendah tekanan.",
+              "relevantLanguage": [
+                "I'm really into…",
+                "How about you?",
+                "I'd rather…",
+                "Could you say that again?"
+              ],
+              "acceptableResponseDimensions": [
+                "natural",
+                "understandable-unnatural",
+                "too-direct",
+                "vague"
+              ],
+              "contextualFollowUpIntent": "John menindaklanjuti jawaban nyata siswa: jika siswa menyebut hobi, John bertanya detail hobi itu; jika jawaban satu kata, John meminta contoh; jika siswa tampak bingung, John menawarkan pengulangan dan menghargai penggunaan frasa klarifikasi."
+            },
+            "prompts": [
+              {
+                "promptId": "p1",
+                "promptEn": "Tell me about yourself — your name, your class, and one thing you're really into.",
+                "targetObjective": "obj-g10-01",
+                "followUpIntentId": "Gali detail dari hal yang disukai siswa; minta alasan singkat."
+              },
+              {
+                "promptId": "p2",
+                "promptEn": "What does a normal school day look like for you?",
+                "targetObjective": "obj-g10-02",
+                "followUpIntentId": "Tanyakan bagian favorit/paling berat dari rutinitas itu."
+              },
+              {
+                "promptId": "p3",
+                "promptEn": "Would you rather spend break time with many friends or one close friend? Why?",
+                "targetObjective": "obj-g10-11",
+                "followUpIntentId": "Minta contoh nyata dari pilihan siswa."
+              },
+              {
+                "promptId": "p4",
+                "promptEn": "(John speaks slightly fast on purpose) So-what-club-are-you-planning-to-join-this-semester?",
+                "targetObjective": "obj-g10-12",
+                "followUpIntentId": "Jika siswa meminta pengulangan/perlambatan, beri apresiasi eksplisit; ulangi dengan jelas. Jika siswa menebak, tunjukkan bahwa bertanya lebih aman."
+              },
+              {
+                "promptId": "p5",
+                "promptEn": "Invite me to visit your favorite spot at school — convince me in two sentences.",
+                "targetObjective": "obj-g10-01",
+                "followUpIntentId": "Tanggapi undangan siswa dengan satu pertanyaan lanjutan tentang tempat itu."
+              }
+            ]
+          },
+          {
+            "blockType": "rubric-definition",
+            "rubricRevisionId": "rubric-g10-speaking-v1",
+            "scale": "0-4 per criterion, transcript-based",
+            "criteria": [
+              {
+                "criterionId": "relevance",
+                "titleEn": "Response relevance",
+                "descriptorId": "Jawaban menjawab pertanyaan yang diajukan."
+              },
+              {
+                "criterionId": "grammar",
+                "titleEn": "Grammar",
+                "descriptorId": "Struktur dasar (present, frekuensi, preferensi) akurat."
+              },
+              {
+                "criterionId": "vocabulary",
+                "titleEn": "Vocabulary",
+                "descriptorId": "Kosakata dan ungkapan Grade 10 digunakan tepat."
+              },
+              {
+                "criterionId": "naturalness",
+                "titleEn": "Naturalness",
+                "descriptorId": "Ungkapan terdengar wajar, bukan terjemahan kaku."
+              },
+              {
+                "criterionId": "clarity",
+                "titleEn": "Clarity of expressed idea",
+                "descriptorId": "Gagasan tersampaikan runtut dan mudah diikuti dari transkrip."
+              }
+            ],
+            "pronunciationNoteId": "Pelafalan TIDAK dinilai: evaluasi akustik belum didukung implementasi. Lihat catatan IMPLEMENTATION GAP pada laporan generasi."
+          }
+        ],
+        "vocabulary": [],
+        "expressions": [],
+        "recallHooks": [],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-speaking-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "ex-g10-06",
+      "revision": 1,
+      "kind": "ASSESSMENT",
+      "grade": "GRADE_10",
+      "track": "EXAM_LAB",
+      "phase": "PHASE_E",
+      "title": "Grade 10 Mock Exam",
+      "primarySkill": "READING",
+      "supportingSkills": [
+        "LISTENING",
+        "WRITING"
+      ],
+      "objectiveKeys": [
+        "obj-g10-04",
+        "obj-g10-05",
+        "obj-g10-08",
+        "obj-g10-09",
+        "obj-g10-10",
+        "obj-g10-13",
+        "obj-g10-15"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "exam-meta",
+            "modeId": "MOCK_EXAM",
+            "instructionId": "Ujian gabungan Grade 10: tiga bagian berwaktu (listening, reading, writing) + dua bagian recall. Menguji kompetensi yang telah dipelajari dalam format berbeda.",
+            "timeSuggestionMinutes": 60,
+            "timedSectionsNote": "Runtime seksi berwaktu bergantung kapabilitas G5 (lihat IMPLEMENTATION GAP); tanpa timer, seksi berjalan tanpa batas waktu."
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-1-listening",
+            "skill": "LISTENING",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "DIALOGUE: A: \"You're coming to the farewell party, right? Saturday, four o'clock, the rooftop garden.\" B: \"I'd love to, but my cousin's wedding is that afternoon. I could drop by after six, though.\" A: \"Perfect — the food won't even be out before six anyway. Oh, and bring that speaker of yours.\" B: \"Deal. Don't let Rina near the playlist this time.\"",
+            "questions": [
+              {
+                "qid": "q1",
+                "promptEn": "Where is the party?",
+                "optionsEn": [
+                  "The rooftop garden",
+                  "The canteen",
+                  "B's house",
+                  "A wedding hall"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Disebut langsung: \"the rooftop garden\".",
+                "optionRationales": [
+                  "Correct. Disebut langsung: \"the rooftop garden\".",
+                  "Incorrect. “The canteen” is not supported by the prompt or stimulus; the supported answer is “The rooftop garden”.",
+                  "Incorrect. “B's house” is not supported by the prompt or stimulus; the supported answer is “The rooftop garden”.",
+                  "Incorrect. “A wedding hall” is not supported by the prompt or stimulus; the supported answer is “The rooftop garden”."
+                ]
+              },
+              {
+                "qid": "q2",
+                "promptEn": "Why can't B come at four?",
+                "optionsEn": [
+                  "B has a cousin's wedding",
+                  "B dislikes parties",
+                  "B has band practice",
+                  "B is out of town"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Alasan penolakan sebagian: pernikahan sepupu.",
+                "optionRationales": [
+                  "Correct. Alasan penolakan sebagian: pernikahan sepupu.",
+                  "Incorrect. “B dislikes parties” is not supported by the prompt or stimulus; the supported answer is “B has a cousin's wedding”.",
+                  "Incorrect. “B has band practice” is not supported by the prompt or stimulus; the supported answer is “B has a cousin's wedding”.",
+                  "Incorrect. “B is out of town” is not supported by the prompt or stimulus; the supported answer is “B has a cousin's wedding”."
+                ]
+              },
+              {
+                "qid": "q3",
+                "promptEn": "What does \"drop by\" mean?",
+                "optionsEn": [
+                  "fall down",
+                  "visit briefly",
+                  "cancel",
+                  "call by phone"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"drop by\" = mampir.",
+                "optionRationales": [
+                  "Incorrect. “fall down” is not supported by the prompt or stimulus; the supported answer is “visit briefly”.",
+                  "Correct. \"drop by\" = mampir.",
+                  "Incorrect. “cancel” is not supported by the prompt or stimulus; the supported answer is “visit briefly”.",
+                  "Incorrect. “call by phone” is not supported by the prompt or stimulus; the supported answer is “visit briefly”."
+                ]
+              },
+              {
+                "qid": "q4",
+                "promptEn": "What is B asked to bring?",
+                "optionsEn": [
+                  "Food",
+                  "A speaker",
+                  "A playlist",
+                  "Chairs"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"bring that speaker of yours\".",
+                "optionRationales": [
+                  "Incorrect. “Food” is not supported by the prompt or stimulus; the supported answer is “A speaker”.",
+                  "Correct. \"bring that speaker of yours\".",
+                  "Incorrect. “A playlist” is not supported by the prompt or stimulus; the supported answer is “A speaker”.",
+                  "Incorrect. “Chairs” is not supported by the prompt or stimulus; the supported answer is “A speaker”."
+                ]
+              },
+              {
+                "qid": "gen-sec-1-listening-5",
+                "promptEn": "When will the safety orientation take place?",
+                "transcriptEn": "A: Gilang, the safety orientation has moved from Friday to Saturday at 08:00 because the original room is being used for an exam. B: Thanks. I'll update the team calendar and bring a printed résumé.",
+                "optionsEn": [
+                  "Saturday at 08:00",
+                  "Friday at 08:00",
+                  "Saturday at 11:00",
+                  "Tuesday at 08:00"
+                ],
+                "answerIndex": 0,
+                "explanationId": "The first speaker gives the revised time as Saturday at 08:00.",
+                "optionRationales": [
+                  "Correct. The first speaker gives the revised time as Saturday at 08:00.",
+                  "Incorrect. “Friday at 08:00” is not supported by the prompt or stimulus; the supported answer is “Saturday at 08:00”.",
+                  "Incorrect. “Saturday at 11:00” is not supported by the prompt or stimulus; the supported answer is “Saturday at 08:00”.",
+                  "Incorrect. “Tuesday at 08:00” is not supported by the prompt or stimulus; the supported answer is “Saturday at 08:00”."
+                ]
+              },
+              {
+                "qid": "gen-sec-1-listening-6",
+                "promptEn": "What will Hana's teammate do next?",
+                "transcriptEn": "A: Hana, the library volunteer shift has moved from Saturday to Monday at 09:30 because the supervisor has an urgent meeting. B: Thanks. I'll update the team calendar and bring the project outline.",
+                "optionsEn": [
+                  "Cancel the event",
+                  "Repair the room",
+                  "Ignore the schedule change",
+                  "Update the team calendar"
+                ],
+                "answerIndex": 3,
+                "explanationId": "The second speaker explicitly says the team calendar will be updated.",
+                "optionRationales": [
+                  "Incorrect. “Cancel the event” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Incorrect. “Repair the room” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Incorrect. “Ignore the schedule change” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Correct. The second speaker explicitly says the team calendar will be updated."
+                ]
+              },
+              {
+                "qid": "gen-sec-1-listening-7",
+                "promptEn": "When will the internship briefing take place?",
+                "transcriptEn": "A: Intan, the internship briefing has moved from Monday to Tuesday at 11:00 because the delivery will arrive late. B: Thanks. I'll update the team calendar and bring a signed consent form.",
+                "optionsEn": [
+                  "Tuesday at 14:30",
+                  "Thursday at 11:00",
+                  "Tuesday at 11:00",
+                  "Monday at 11:00"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The first speaker gives the revised time as Tuesday at 11:00.",
+                "optionRationales": [
+                  "Incorrect. “Tuesday at 14:30” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 11:00”.",
+                  "Incorrect. “Thursday at 11:00” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 11:00”.",
+                  "Correct. The first speaker gives the revised time as Tuesday at 11:00.",
+                  "Incorrect. “Monday at 11:00” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 11:00”."
+                ]
+              },
+              {
+                "qid": "gen-sec-1-listening-8",
+                "promptEn": "What will Joko's teammate do next?",
+                "transcriptEn": "A: Joko, the science club briefing has moved from Tuesday to Wednesday at 13:00 because the weather forecast changed. B: Thanks. I'll update the team calendar and bring the revised schedule.",
+                "optionsEn": [
+                  "Ignore the schedule change",
+                  "Update the team calendar",
+                  "Cancel the event",
+                  "Repair the room"
+                ],
+                "answerIndex": 1,
+                "explanationId": "The second speaker explicitly says the team calendar will be updated.",
+                "optionRationales": [
+                  "Incorrect. “Ignore the schedule change” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Correct. The second speaker explicitly says the team calendar will be updated.",
+                  "Incorrect. “Cancel the event” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Incorrect. “Repair the room” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”."
+                ]
+              },
+              {
+                "qid": "gen-sec-1-listening-9",
+                "promptEn": "When will the career workshop take place?",
+                "transcriptEn": "A: Kirana, the career workshop has moved from Wednesday to Thursday at 14:30 because the team needs more preparation time. B: Thanks. I'll update the team calendar and bring a student ID card.",
+                "optionsEn": [
+                  "Thursday at 14:30",
+                  "Wednesday at 14:30",
+                  "Thursday at 08:00",
+                  "Saturday at 14:30"
+                ],
+                "answerIndex": 0,
+                "explanationId": "The first speaker gives the revised time as Thursday at 14:30.",
+                "optionRationales": [
+                  "Correct. The first speaker gives the revised time as Thursday at 14:30.",
+                  "Incorrect. “Wednesday at 14:30” is not supported by the prompt or stimulus; the supported answer is “Thursday at 14:30”.",
+                  "Incorrect. “Thursday at 08:00” is not supported by the prompt or stimulus; the supported answer is “Thursday at 14:30”.",
+                  "Incorrect. “Saturday at 14:30” is not supported by the prompt or stimulus; the supported answer is “Thursday at 14:30”."
+                ]
+              },
+              {
+                "qid": "gen-sec-1-listening-10",
+                "promptEn": "What will Lukman's teammate do next?",
+                "transcriptEn": "A: Lukman, the student council meeting has moved from Thursday to Friday at 16:00 because the projector needs repair. B: Thanks. I'll update the team calendar and bring the safety checklist.",
+                "optionsEn": [
+                  "Cancel the event",
+                  "Repair the room",
+                  "Ignore the schedule change",
+                  "Update the team calendar"
+                ],
+                "answerIndex": 3,
+                "explanationId": "The second speaker explicitly says the team calendar will be updated.",
+                "optionRationales": [
+                  "Incorrect. “Cancel the event” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Incorrect. “Repair the room” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Incorrect. “Ignore the schedule change” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Correct. The second speaker explicitly says the team calendar will be updated."
+                ]
+              },
+              {
+                "qid": "gen-sec-1-listening-11",
+                "promptEn": "When will the campus tour take place?",
+                "transcriptEn": "A: Alya, the campus tour has moved from Friday to Saturday at 08:00 because the original room is being used for an exam. B: Thanks. I'll update the team calendar and bring a printed résumé.",
+                "optionsEn": [
+                  "Saturday at 11:00",
+                  "Tuesday at 08:00",
+                  "Saturday at 08:00",
+                  "Friday at 08:00"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The first speaker gives the revised time as Saturday at 08:00.",
+                "optionRationales": [
+                  "Incorrect. “Saturday at 11:00” is not supported by the prompt or stimulus; the supported answer is “Saturday at 08:00”.",
+                  "Incorrect. “Tuesday at 08:00” is not supported by the prompt or stimulus; the supported answer is “Saturday at 08:00”.",
+                  "Correct. The first speaker gives the revised time as Saturday at 08:00.",
+                  "Incorrect. “Friday at 08:00” is not supported by the prompt or stimulus; the supported answer is “Saturday at 08:00”."
+                ]
+              },
+              {
+                "qid": "gen-sec-1-listening-12",
+                "promptEn": "What will Bagas's teammate do next?",
+                "transcriptEn": "A: Bagas, the project rehearsal has moved from Saturday to Monday at 09:30 because the supervisor has an urgent meeting. B: Thanks. I'll update the team calendar and bring the project outline.",
+                "optionsEn": [
+                  "Ignore the schedule change",
+                  "Update the team calendar",
+                  "Cancel the event",
+                  "Repair the room"
+                ],
+                "answerIndex": 1,
+                "explanationId": "The second speaker explicitly says the team calendar will be updated.",
+                "optionRationales": [
+                  "Incorrect. “Ignore the schedule change” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Correct. The second speaker explicitly says the team calendar will be updated.",
+                  "Incorrect. “Cancel the event” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Incorrect. “Repair the room” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”."
+                ]
+              }
+            ],
+            "audioAssetId": "audio-ex-g10-06-sec-1-listening-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-2-reading",
+            "skill": "READING",
+            "textEn": "HOW WE ALMOST LOST THE CLUBROOM — by the Bridge Club. Last month, the school announced a room inspection. Our clubroom, honestly, looked like a storm had personal problems with it. First, we made a plan: Ryo drew a map of the room with zones, and each member took one zone. Then we spent two afternoons sorting five years of forgotten props — we found a trophy nobody remembers winning. After that, Dewi painted a small mural by the window (approved by Ibu Ratna, mostly). In the end, the inspector gave us the highest room score in the building. The trophy now holds our markers.",
+            "questions": [
+              {
+                "qid": "q5",
+                "promptEn": "Why did the club clean the room?",
+                "optionsEn": [
+                  "A room inspection was announced",
+                  "Maya was visiting",
+                  "It was a new semester",
+                  "John complained"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Kalimat kedua menyebut inspeksi.",
+                "optionRationales": [
+                  "Correct. Kalimat kedua menyebut inspeksi.",
+                  "Incorrect. “Maya was visiting” is not supported by the prompt or stimulus; the supported answer is “A room inspection was announced”.",
+                  "Incorrect. “It was a new semester” is not supported by the prompt or stimulus; the supported answer is “A room inspection was announced”.",
+                  "Incorrect. “John complained” is not supported by the prompt or stimulus; the supported answer is “A room inspection was announced”."
+                ]
+              },
+              {
+                "qid": "q6",
+                "promptEn": "What was Ryo's contribution?",
+                "optionsEn": [
+                  "Painting a mural",
+                  "Drawing a zone map of the room",
+                  "Buying a trophy",
+                  "Talking to the inspector"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"Ryo drew a map of the room with zones\".",
+                "optionRationales": [
+                  "Incorrect. “Painting a mural” is not supported by the prompt or stimulus; the supported answer is “Drawing a zone map of the room”.",
+                  "Correct. \"Ryo drew a map of the room with zones\".",
+                  "Incorrect. “Buying a trophy” is not supported by the prompt or stimulus; the supported answer is “Drawing a zone map of the room”.",
+                  "Incorrect. “Talking to the inspector” is not supported by the prompt or stimulus; the supported answer is “Drawing a zone map of the room”."
+                ]
+              },
+              {
+                "qid": "q7",
+                "promptEn": "Which sequence is correct?",
+                "optionsEn": [
+                  "Plan → sort props → mural → inspection",
+                  "Mural → plan → inspection → sort props",
+                  "Sort props → plan → mural → inspection",
+                  "Inspection → plan → mural → sort props"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Ikuti penanda: First… Then… After that… In the end.",
+                "optionRationales": [
+                  "Correct. Ikuti penanda: First… Then… After that… In the end.",
+                  "Incorrect. “Mural → plan → inspection → sort props” is not supported by the prompt or stimulus; the supported answer is “Plan → sort props → mural → inspection”.",
+                  "Incorrect. “Sort props → plan → mural → inspection” is not supported by the prompt or stimulus; the supported answer is “Plan → sort props → mural → inspection”.",
+                  "Incorrect. “Inspection → plan → mural → sort props” is not supported by the prompt or stimulus; the supported answer is “Plan → sort props → mural → inspection”."
+                ]
+              },
+              {
+                "qid": "q8",
+                "promptEn": "\"Looked like a storm had personal problems with it\" is used to say the room was…",
+                "optionsEn": [
+                  "extremely messy",
+                  "damaged by weather",
+                  "haunted",
+                  "newly painted"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Hiperbola humor untuk \"sangat berantakan\".",
+                "optionRationales": [
+                  "Correct. Hiperbola humor untuk \"sangat berantakan\".",
+                  "Incorrect. “damaged by weather” is not supported by the prompt or stimulus; the supported answer is “extremely messy”.",
+                  "Incorrect. “haunted” is not supported by the prompt or stimulus; the supported answer is “extremely messy”.",
+                  "Incorrect. “newly painted” is not supported by the prompt or stimulus; the supported answer is “extremely messy”."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-5",
+                "promptEn": "In the library hall, what must a student do immediately after reading the safety card?",
+                "passageEn": "Before using the equipment in the library hall, first read the safety card, then inspect the power cable, and finally ask the supervisor to confirm the setup. If the cable is damaged, stop and report it; do not attempt a repair.",
+                "optionsEn": [
+                  "Inspect the power cable",
+                  "Repair any damaged cable",
+                  "Turn on the equipment immediately",
+                  "Leave the room without reporting anything"
+                ],
+                "answerIndex": 0,
+                "explanationId": "The procedure orders the cable inspection directly after reading the safety card.",
+                "optionRationales": [
+                  "Correct. The procedure orders the cable inspection directly after reading the safety card.",
+                  "Incorrect. “Repair any damaged cable” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Incorrect. “Turn on the equipment immediately” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Incorrect. “Leave the room without reporting anything” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-6",
+                "promptEn": "According to the notice, when and where will the library volunteer shift take place?",
+                "passageEn": "NOTICE: The library volunteer shift was originally planned for Saturday. It will now take place on Tuesday at 08:00 in Workshop 2 because the weather forecast changed. Bring the safety checklist.",
+                "optionsEn": [
+                  "Saturday at 08:00 in Workshop 2",
+                  "Tuesday at 11:00 in Workshop 2",
+                  "Tuesday at 08:00 in the media lab",
+                  "Tuesday at 08:00 in Workshop 2"
+                ],
+                "answerIndex": 3,
+                "explanationId": "The revised schedule explicitly states Tuesday at 08:00 in Workshop 2.",
+                "optionRationales": [
+                  "Incorrect. “Saturday at 08:00 in Workshop 2” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 08:00 in Workshop 2”.",
+                  "Incorrect. “Tuesday at 11:00 in Workshop 2” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 08:00 in Workshop 2”.",
+                  "Incorrect. “Tuesday at 08:00 in the media lab” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 08:00 in Workshop 2”.",
+                  "Correct. The revised schedule explicitly states Tuesday at 08:00 in Workshop 2."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-7",
+                "promptEn": "What should Gilang do?",
+                "passageEn": "Subject: Action needed for the internship briefing. Hi Gilang, please email a printed résumé to the coordinator by Wednesday at 09:30. Do not leave it at the front desk because the office will be closed.",
+                "optionsEn": [
+                  "Bring a printed résumé after the event",
+                  "Call the office on Monday",
+                  "Email a printed résumé by Wednesday at 09:30",
+                  "Leave a printed résumé at the front desk"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The email requests an email submission by Wednesday at 09:30 and explicitly rejects the front-desk option.",
+                "optionRationales": [
+                  "Incorrect. “Bring a printed résumé after the event” is not supported by the prompt or stimulus; the supported answer is “Email a printed résumé by Wednesday at 09:30”.",
+                  "Incorrect. “Call the office on Monday” is not supported by the prompt or stimulus; the supported answer is “Email a printed résumé by Wednesday at 09:30”.",
+                  "Correct. The email requests an email submission by Wednesday at 09:30 and explicitly rejects the front-desk option.",
+                  "Incorrect. “Leave a printed résumé at the front desk” is not supported by the prompt or stimulus; the supported answer is “Email a printed résumé by Wednesday at 09:30”."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-8",
+                "promptEn": "For the science club briefing scheduled on Thursday, which applicant clearly meets the stated requirements?",
+                "passageEn": "Hana's team needs a student assistant for the science club briefing. Applicants must be available on Thursday, communicate politely with visitors, and know how to use a shared spreadsheet. Training is provided, so previous event experience is optional.",
+                "optionsEn": [
+                  "A student who can attend but will not use the team spreadsheet",
+                  "A student available on Thursday who communicates politely and can use a shared spreadsheet",
+                  "A student available only on Tuesday who refuses visitor-facing tasks",
+                  "A student with event experience who cannot attend the required day"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Availability, visitor communication, and spreadsheet use are mandatory; prior event experience is optional.",
+                "optionRationales": [
+                  "Incorrect. “A student who can attend but will not use the team spreadsheet” is not supported by the prompt or stimulus; the supported answer is “A student available on Thursday who communicates politely and can use a shared spreadsheet”.",
+                  "Correct. Availability, visitor communication, and spreadsheet use are mandatory; prior event experience is optional.",
+                  "Incorrect. “A student available only on Tuesday who refuses visitor-facing tasks” is not supported by the prompt or stimulus; the supported answer is “A student available on Thursday who communicates politely and can use a shared spreadsheet”.",
+                  "Incorrect. “A student with event experience who cannot attend the required day” is not supported by the prompt or stimulus; the supported answer is “A student available on Thursday who communicates politely and can use a shared spreadsheet”."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-9",
+                "promptEn": "Why did Intan's team still complete every essential task for the career workshop?",
+                "passageEn": "The career workshop started late because the original room is being used for an exam. Intan informed the participants, shortened the opening activity, and kept the final practice unchanged. As a result, the team still completed every essential task.",
+                "optionsEn": [
+                  "Intan adjusted the opening activity after explaining the delay",
+                  "The event started earlier than planned",
+                  "The team cancelled the final practice",
+                  "The reason for the delay disappeared immediately"
+                ],
+                "answerIndex": 0,
+                "explanationId": "The passage links the completed tasks to the shortened opening activity and clear update.",
+                "optionRationales": [
+                  "Correct. The passage links the completed tasks to the shortened opening activity and clear update.",
+                  "Incorrect. “The event started earlier than planned” is not supported by the prompt or stimulus; the supported answer is “Intan adjusted the opening activity after explaining the delay”.",
+                  "Incorrect. “The team cancelled the final practice” is not supported by the prompt or stimulus; the supported answer is “Intan adjusted the opening activity after explaining the delay”.",
+                  "Incorrect. “The reason for the delay disappeared immediately” is not supported by the prompt or stimulus; the supported answer is “Intan adjusted the opening activity after explaining the delay”."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-10",
+                "promptEn": "In Room 10-B, what must a student do immediately after reading the safety card?",
+                "passageEn": "Before using the equipment in Room 10-B, first read the safety card, then inspect the power cable, and finally ask the supervisor to confirm the setup. If the cable is damaged, stop and report it; do not attempt a repair.",
+                "optionsEn": [
+                  "Repair any damaged cable",
+                  "Turn on the equipment immediately",
+                  "Leave the room without reporting anything",
+                  "Inspect the power cable"
+                ],
+                "answerIndex": 3,
+                "explanationId": "The procedure orders the cable inspection directly after reading the safety card.",
+                "optionRationales": [
+                  "Incorrect. “Repair any damaged cable” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Incorrect. “Turn on the equipment immediately” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Incorrect. “Leave the room without reporting anything” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Correct. The procedure orders the cable inspection directly after reading the safety card."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-11",
+                "promptEn": "According to the notice, when and where will the campus tour take place?",
+                "passageEn": "NOTICE: The campus tour was originally planned for Friday. It will now take place on Monday at 16:00 in the library hall because the delivery will arrive late. Bring a student ID card.",
+                "optionsEn": [
+                  "Monday at 09:30 in the library hall",
+                  "Monday at 16:00 in Workshop 2",
+                  "Monday at 16:00 in the library hall",
+                  "Friday at 16:00 in the library hall"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The revised schedule explicitly states Monday at 16:00 in the library hall.",
+                "optionRationales": [
+                  "Incorrect. “Monday at 09:30 in the library hall” is not supported by the prompt or stimulus; the supported answer is “Monday at 16:00 in the library hall”.",
+                  "Incorrect. “Monday at 16:00 in Workshop 2” is not supported by the prompt or stimulus; the supported answer is “Monday at 16:00 in the library hall”.",
+                  "Correct. The revised schedule explicitly states Monday at 16:00 in the library hall.",
+                  "Incorrect. “Friday at 16:00 in the library hall” is not supported by the prompt or stimulus; the supported answer is “Monday at 16:00 in the library hall”."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-12",
+                "promptEn": "What should Lukman do?",
+                "passageEn": "Subject: Action needed for the project rehearsal. Hi Lukman, please email the safety checklist to the coordinator by Tuesday at 08:00. Do not leave it at the front desk because the office will be closed.",
+                "optionsEn": [
+                  "Call the office on Saturday",
+                  "Email the safety checklist by Tuesday at 08:00",
+                  "Leave the safety checklist at the front desk",
+                  "Bring the safety checklist after the event"
+                ],
+                "answerIndex": 1,
+                "explanationId": "The email requests an email submission by Tuesday at 08:00 and explicitly rejects the front-desk option.",
+                "optionRationales": [
+                  "Incorrect. “Call the office on Saturday” is not supported by the prompt or stimulus; the supported answer is “Email the safety checklist by Tuesday at 08:00”.",
+                  "Correct. The email requests an email submission by Tuesday at 08:00 and explicitly rejects the front-desk option.",
+                  "Incorrect. “Leave the safety checklist at the front desk” is not supported by the prompt or stimulus; the supported answer is “Email the safety checklist by Tuesday at 08:00”.",
+                  "Incorrect. “Bring the safety checklist after the event” is not supported by the prompt or stimulus; the supported answer is “Email the safety checklist by Tuesday at 08:00”."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-13",
+                "promptEn": "For the safety orientation scheduled on Wednesday, which applicant clearly meets the stated requirements?",
+                "passageEn": "Alya's team needs a student assistant for the safety orientation. Applicants must be available on Wednesday, communicate politely with visitors, and know how to use a shared spreadsheet. Training is provided, so previous event experience is optional.",
+                "optionsEn": [
+                  "A student available on Wednesday who communicates politely and can use a shared spreadsheet",
+                  "A student available only on Monday who refuses visitor-facing tasks",
+                  "A student with event experience who cannot attend the required day",
+                  "A student who can attend but will not use the team spreadsheet"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Availability, visitor communication, and spreadsheet use are mandatory; prior event experience is optional.",
+                "optionRationales": [
+                  "Correct. Availability, visitor communication, and spreadsheet use are mandatory; prior event experience is optional.",
+                  "Incorrect. “A student available only on Monday who refuses visitor-facing tasks” is not supported by the prompt or stimulus; the supported answer is “A student available on Wednesday who communicates politely and can use a shared spreadsheet”.",
+                  "Incorrect. “A student with event experience who cannot attend the required day” is not supported by the prompt or stimulus; the supported answer is “A student available on Wednesday who communicates politely and can use a shared spreadsheet”.",
+                  "Incorrect. “A student who can attend but will not use the team spreadsheet” is not supported by the prompt or stimulus; the supported answer is “A student available on Wednesday who communicates politely and can use a shared spreadsheet”."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-14",
+                "promptEn": "Why did Bagas's team still complete every essential task for the library volunteer shift?",
+                "passageEn": "The library volunteer shift started late because the projector needs repair. Bagas informed the participants, shortened the opening activity, and kept the final practice unchanged. As a result, the team still completed every essential task.",
+                "optionsEn": [
+                  "The event started earlier than planned",
+                  "The team cancelled the final practice",
+                  "The reason for the delay disappeared immediately",
+                  "Bagas adjusted the opening activity after explaining the delay"
+                ],
+                "answerIndex": 3,
+                "explanationId": "The passage links the completed tasks to the shortened opening activity and clear update.",
+                "optionRationales": [
+                  "Incorrect. “The event started earlier than planned” is not supported by the prompt or stimulus; the supported answer is “Bagas adjusted the opening activity after explaining the delay”.",
+                  "Incorrect. “The team cancelled the final practice” is not supported by the prompt or stimulus; the supported answer is “Bagas adjusted the opening activity after explaining the delay”.",
+                  "Incorrect. “The reason for the delay disappeared immediately” is not supported by the prompt or stimulus; the supported answer is “Bagas adjusted the opening activity after explaining the delay”.",
+                  "Correct. The passage links the completed tasks to the shortened opening activity and clear update."
+                ]
+              }
+            ]
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-3-writing",
+            "skill": "WRITING",
+            "rubricRevisionId": "rubric-g10-writing-v1",
+            "tasks": [
+              {
+                "taskId": "w1",
+                "promptEn": "A new student will join your class next week. Write a 60–80 word message telling them: how to find your classroom from the front gate (two direction steps), one place worth visiting at break, and a friendly closing.",
+                "criteriaIds": [
+                  "task-fulfillment",
+                  "organization",
+                  "clarity"
+                ]
+              }
+            ]
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-4-recall-expressions",
+            "skill": "VOCABULARY",
+            "recallNoteId": "Bagian recall: ungkapan semester ini dalam konteks baru.",
+            "questions": [
+              {
+                "qid": "q9",
+                "promptEn": "Your friend explains something too fast on the phone. You say: \"Sorry, ___?\"",
+                "optionsEn": [
+                  "could you say that again",
+                  "what is your problem",
+                  "goodbye now",
+                  "you can't miss it"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Recall perangkat klarifikasi (sc-g10-12) dalam konteks telepon — konteks baru.",
+                "optionRationales": [
+                  "Correct. Recall perangkat klarifikasi (sc-g10-12) dalam konteks telepon — konteks baru.",
+                  "Incorrect. “what is your problem” is not supported by the prompt or stimulus; the supported answer is “could you say that again”.",
+                  "Incorrect. “goodbye now” is not supported by the prompt or stimulus; the supported answer is “could you say that again”.",
+                  "Incorrect. “you can't miss it” is not supported by the prompt or stimulus; the supported answer is “could you say that again”."
+                ]
+              },
+              {
+                "qid": "q10",
+                "promptEn": "A visitor asks about the library. You say: \"Go straight past the hall, turn left — ___, the door has a world map on it.\"",
+                "optionsEn": [
+                  "you can't miss it",
+                  "rain check",
+                  "count me in",
+                  "no pressure"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Recall deskripsi/arah (sc-g10-04/05): ciri khas + \"you can't miss it\".",
+                "optionRationales": [
+                  "Correct. Recall deskripsi/arah (sc-g10-04/05): ciri khas + \"you can't miss it\".",
+                  "Incorrect. “rain check” is not supported by the prompt or stimulus; the supported answer is “you can't miss it”.",
+                  "Incorrect. “count me in” is not supported by the prompt or stimulus; the supported answer is “you can't miss it”.",
+                  "Incorrect. “no pressure” is not supported by the prompt or stimulus; the supported answer is “you can't miss it”."
+                ]
+              },
+              {
+                "qid": "q11",
+                "promptEn": "You must refuse a senior's invitation politely. Choose the three-part refusal.",
+                "optionsEn": [
+                  "\"I'd love to, but I have a family event. Maybe next time?\"",
+                  "\"No. Busy. Bye.\"",
+                  "\"I regret to formally decline herewith.\"",
+                  "\"Maybe. I don't know. Whatever.\""
+                ],
+                "answerIndex": 0,
+                "explanationId": "Recall pola penolakan tiga bagian (sc-g10-08) pada lawan bicara baru (senior).",
+                "optionRationales": [
+                  "Correct. Recall pola penolakan tiga bagian (sc-g10-08) pada lawan bicara baru (senior).",
+                  "Incorrect. “\"No. Busy. Bye.\"” is not supported by the prompt or stimulus; the supported answer is “\"I'd love to, but I have a family event. Maybe next time?\"”.",
+                  "Incorrect. “\"I regret to formally decline herewith.\"” is not supported by the prompt or stimulus; the supported answer is “\"I'd love to, but I have a family event. Maybe next time?\"”.",
+                  "Incorrect. “\"Maybe. I don't know. Whatever.\"” is not supported by the prompt or stimulus; the supported answer is “\"I'd love to, but I have a family event. Maybe next time?\"”."
+                ]
+              },
+              {
+                "qid": "q12",
+                "promptEn": "Ending your story about the semester, the strongest closing is…",
+                "optionsEn": [
+                  "\"And that's how three strangers became a club.\"",
+                  "\"So. Yeah. The end.\"",
+                  "\"Event list complete.\"",
+                  "\"There were also other events.\""
+                ],
+                "answerIndex": 0,
+                "explanationId": "Recall penutup bermakna (sc-g10-15).",
+                "optionRationales": [
+                  "Correct. Recall penutup bermakna (sc-g10-15).",
+                  "Incorrect. “\"So. Yeah. The end.\"” is not supported by the prompt or stimulus; the supported answer is “\"And that's how three strangers became a club.\"”.",
+                  "Incorrect. “\"Event list complete.\"” is not supported by the prompt or stimulus; the supported answer is “\"And that's how three strangers became a club.\"”.",
+                  "Incorrect. “\"There were also other events.\"” is not supported by the prompt or stimulus; the supported answer is “\"And that's how three strangers became a club.\"”."
+                ]
+              },
+              {
+                "qid": "gen-sec-4-recall-expressions-5",
+                "promptEn": "During the project rehearsal, You are introducing the next part of a presentation. Which previously learned expression best fits?",
+                "recallSourceEntryId": "exp-could-you-say-that-again",
+                "optionsEn": [
+                  "Could you say that again?",
+                  "I just moved here",
+                  "…, huh?",
+                  "Did you catch ___?"
+                ],
+                "answerIndex": 0,
+                "explanationId": "“Could you say that again?” matches the communication purpose and preserves the intended register.",
+                "optionRationales": [
+                  "Correct. “Could you say that again?” matches the communication purpose and preserves the intended register.",
+                  "Incorrect. “I just moved here” is not supported by the prompt or stimulus; the supported answer is “Could you say that again?”.",
+                  "Incorrect. “…, huh?” is not supported by the prompt or stimulus; the supported answer is “Could you say that again?”.",
+                  "Incorrect. “Did you catch ___?” is not supported by the prompt or stimulus; the supported answer is “Could you say that again?”."
+                ]
+              },
+              {
+                "qid": "gen-sec-4-recall-expressions-6",
+                "promptEn": "During the safety orientation, You need to clarify a confusing instruction without sounding rude. Which previously learned expression best fits?",
+                "recallSourceEntryId": "exp-you-cant-miss-it",
+                "optionsEn": [
+                  "…, huh?",
+                  "Did you catch ___?",
+                  "I'd better get going",
+                  "You can't miss it"
+                ],
+                "answerIndex": 3,
+                "explanationId": "“You can't miss it” matches the communication purpose and preserves the intended register.",
+                "optionRationales": [
+                  "Incorrect. “…, huh?” is not supported by the prompt or stimulus; the supported answer is “You can't miss it”.",
+                  "Incorrect. “Did you catch ___?” is not supported by the prompt or stimulus; the supported answer is “You can't miss it”.",
+                  "Incorrect. “I'd better get going” is not supported by the prompt or stimulus; the supported answer is “You can't miss it”.",
+                  "Correct. “You can't miss it” matches the communication purpose and preserves the intended register."
+                ]
+              },
+              {
+                "qid": "gen-sec-4-recall-expressions-7",
+                "promptEn": "During the library volunteer shift, You want to disagree politely before offering another idea. Which previously learned expression best fits?",
+                "recallSourceEntryId": "exp-id-love-to-but",
+                "optionsEn": [
+                  "I'd better get going",
+                  "Right?",
+                  "I'd love to, but ___",
+                  "Did you catch ___?"
+                ],
+                "answerIndex": 2,
+                "explanationId": "“I'd love to, but ___” matches the communication purpose and preserves the intended register.",
+                "optionRationales": [
+                  "Incorrect. “I'd better get going” is not supported by the prompt or stimulus; the supported answer is “I'd love to, but ___”.",
+                  "Incorrect. “Right?” is not supported by the prompt or stimulus; the supported answer is “I'd love to, but ___”.",
+                  "Correct. “I'd love to, but ___” matches the communication purpose and preserves the intended register.",
+                  "Incorrect. “Did you catch ___?” is not supported by the prompt or stimulus; the supported answer is “I'd love to, but ___”."
+                ]
+              },
+              {
+                "qid": "gen-sec-4-recall-expressions-8",
+                "promptEn": "During the internship briefing, You are reporting an unexpected reason for a project delay. Which previously learned expression best fits?",
+                "recallSourceEntryId": "exp-thats-how",
+                "optionsEn": [
+                  "Anyway, …",
+                  "And that's how ___",
+                  "I'd better get going",
+                  "Right?"
+                ],
+                "answerIndex": 1,
+                "explanationId": "“And that's how ___” matches the communication purpose and preserves the intended register.",
+                "optionRationales": [
+                  "Incorrect. “Anyway, …” is not supported by the prompt or stimulus; the supported answer is “And that's how ___”.",
+                  "Correct. “And that's how ___” matches the communication purpose and preserves the intended register.",
+                  "Incorrect. “I'd better get going” is not supported by the prompt or stimulus; the supported answer is “And that's how ___”.",
+                  "Incorrect. “Right?” is not supported by the prompt or stimulus; the supported answer is “And that's how ___”."
+                ]
+              },
+              {
+                "qid": "gen-sec-4-recall-expressions-9",
+                "promptEn": "During the science club briefing, You need to take responsibility for a mistake in a team meeting. Which previously learned expression best fits?",
+                "recallSourceEntryId": "exp-could-you-say-that-again",
+                "optionsEn": [
+                  "Could you say that again?",
+                  "Right?",
+                  "Anyway, …",
+                  "will be held"
+                ],
+                "answerIndex": 0,
+                "explanationId": "“Could you say that again?” matches the communication purpose and preserves the intended register.",
+                "optionRationales": [
+                  "Correct. “Could you say that again?” matches the communication purpose and preserves the intended register.",
+                  "Incorrect. “Right?” is not supported by the prompt or stimulus; the supported answer is “Could you say that again?”.",
+                  "Incorrect. “Anyway, …” is not supported by the prompt or stimulus; the supported answer is “Could you say that again?”.",
+                  "Incorrect. “will be held” is not supported by the prompt or stimulus; the supported answer is “Could you say that again?”."
+                ]
+              },
+              {
+                "qid": "gen-sec-4-recall-expressions-10",
+                "promptEn": "During the career workshop, You are introducing the next part of a presentation. Which previously learned expression best fits?",
+                "recallSourceEntryId": "exp-you-cant-miss-it",
+                "optionsEn": [
+                  "Anyway, …",
+                  "will be held",
+                  "by ___ (deadline)",
+                  "You can't miss it"
+                ],
+                "answerIndex": 3,
+                "explanationId": "“You can't miss it” matches the communication purpose and preserves the intended register.",
+                "optionRationales": [
+                  "Incorrect. “Anyway, …” is not supported by the prompt or stimulus; the supported answer is “You can't miss it”.",
+                  "Incorrect. “will be held” is not supported by the prompt or stimulus; the supported answer is “You can't miss it”.",
+                  "Incorrect. “by ___ (deadline)” is not supported by the prompt or stimulus; the supported answer is “You can't miss it”.",
+                  "Correct. “You can't miss it” matches the communication purpose and preserves the intended register."
+                ]
+              },
+              {
+                "qid": "gen-sec-4-recall-expressions-11",
+                "promptEn": "During the student council meeting, You need to clarify a confusing instruction without sounding rude. Which previously learned expression best fits?",
+                "recallSourceEntryId": "exp-id-love-to-but",
+                "optionsEn": [
+                  "by ___ (deadline)",
+                  "sign up",
+                  "I'd love to, but ___",
+                  "will be held"
+                ],
+                "answerIndex": 2,
+                "explanationId": "“I'd love to, but ___” matches the communication purpose and preserves the intended register.",
+                "optionRationales": [
+                  "Incorrect. “by ___ (deadline)” is not supported by the prompt or stimulus; the supported answer is “I'd love to, but ___”.",
+                  "Incorrect. “sign up” is not supported by the prompt or stimulus; the supported answer is “I'd love to, but ___”.",
+                  "Correct. “I'd love to, but ___” matches the communication purpose and preserves the intended register.",
+                  "Incorrect. “will be held” is not supported by the prompt or stimulus; the supported answer is “I'd love to, but ___”."
+                ]
+              },
+              {
+                "qid": "gen-sec-4-recall-expressions-12",
+                "promptEn": "During the campus tour, You want to disagree politely before offering another idea. Which previously learned expression best fits?",
+                "recallSourceEntryId": "exp-thats-how",
+                "optionsEn": [
+                  "Don't forget…",
+                  "And that's how ___",
+                  "by ___ (deadline)",
+                  "sign up"
+                ],
+                "answerIndex": 1,
+                "explanationId": "“And that's how ___” matches the communication purpose and preserves the intended register.",
+                "optionRationales": [
+                  "Incorrect. “Don't forget…” is not supported by the prompt or stimulus; the supported answer is “And that's how ___”.",
+                  "Correct. “And that's how ___” matches the communication purpose and preserves the intended register.",
+                  "Incorrect. “by ___ (deadline)” is not supported by the prompt or stimulus; the supported answer is “And that's how ___”.",
+                  "Incorrect. “sign up” is not supported by the prompt or stimulus; the supported answer is “And that's how ___”."
+                ]
+              },
+              {
+                "qid": "gen-sec-4-recall-expressions-13",
+                "promptEn": "During the project rehearsal, You are reporting an unexpected reason for a project delay. Which previously learned expression best fits?",
+                "recallSourceEntryId": "exp-could-you-say-that-again",
+                "optionsEn": [
+                  "Could you say that again?",
+                  "Nice to meet you too",
+                  "I'm really into ___",
+                  "How about you?"
+                ],
+                "answerIndex": 0,
+                "explanationId": "“Could you say that again?” matches the communication purpose and preserves the intended register.",
+                "optionRationales": [
+                  "Correct. “Could you say that again?” matches the communication purpose and preserves the intended register.",
+                  "Incorrect. “Nice to meet you too” is not supported by the prompt or stimulus; the supported answer is “Could you say that again?”.",
+                  "Incorrect. “I'm really into ___” is not supported by the prompt or stimulus; the supported answer is “Could you say that again?”.",
+                  "Incorrect. “How about you?” is not supported by the prompt or stimulus; the supported answer is “Could you say that again?”."
+                ]
+              },
+              {
+                "qid": "gen-sec-4-recall-expressions-14",
+                "promptEn": "During the safety orientation, You need to take responsibility for a mistake in a team meeting. Which previously learned expression best fits?",
+                "recallSourceEntryId": "exp-you-cant-miss-it",
+                "optionsEn": [
+                  "I'm really into ___",
+                  "How about you?",
+                  "See you around",
+                  "You can't miss it"
+                ],
+                "answerIndex": 3,
+                "explanationId": "“You can't miss it” matches the communication purpose and preserves the intended register.",
+                "optionRationales": [
+                  "Incorrect. “I'm really into ___” is not supported by the prompt or stimulus; the supported answer is “You can't miss it”.",
+                  "Incorrect. “How about you?” is not supported by the prompt or stimulus; the supported answer is “You can't miss it”.",
+                  "Incorrect. “See you around” is not supported by the prompt or stimulus; the supported answer is “You can't miss it”.",
+                  "Correct. “You can't miss it” matches the communication purpose and preserves the intended register."
+                ]
+              }
+            ]
+          }
+        ],
+        "vocabulary": [],
+        "expressions": [
+          {
+            "entryId": "exp-could-you-say-that-again",
+            "expression": "Could you say that again?",
+            "meaningId": "bisa-diulang",
+            "register": "neutral",
+            "sourceIntentKey": "intent-clarification",
+            "recallHookId": "rh-could-you-say-that-again"
+          },
+          {
+            "entryId": "exp-you-cant-miss-it",
+            "expression": "You can't miss it",
+            "meaningId": "pasti-langsung-terlihat",
+            "register": "informal",
+            "sourceIntentKey": "intent-describing",
+            "recallHookId": "rh-you-cant-miss-it"
+          },
+          {
+            "entryId": "exp-id-love-to-but",
+            "expression": "I'd love to, but ___",
+            "meaningId": "mau-sekali-tapi",
+            "register": "neutral",
+            "sourceIntentKey": "intent-invitations",
+            "recallHookId": "rh-id-love-to-but"
+          },
+          {
+            "entryId": "exp-thats-how",
+            "expression": "And that's how ___",
+            "meaningId": "begitulah-akhirnya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-storytelling",
+            "recallHookId": "rh-thats-how"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-could-you-say-that-again",
+            "sourceEntryId": "exp-could-you-say-that-again",
+            "objectiveKey": "obj-g10-12",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-you-cant-miss-it",
+            "sourceEntryId": "exp-you-cant-miss-it",
+            "objectiveKey": "obj-g10-04",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-id-love-to-but",
+            "sourceEntryId": "exp-id-love-to-but",
+            "objectiveKey": "obj-g10-08",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-thats-how",
+            "sourceEntryId": "exp-thats-how",
+            "objectiveKey": "obj-g10-15",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [
+          {
+            "hookId": "rh-could-you-say-that-again",
+            "sourceEntryId": "exp-could-you-say-that-again"
+          },
+          {
+            "hookId": "rh-you-cant-miss-it",
+            "sourceEntryId": "exp-you-cant-miss-it"
+          },
+          {
+            "hookId": "rh-id-love-to-but",
+            "sourceEntryId": "exp-id-love-to-but"
+          },
+          {
+            "hookId": "rh-thats-how",
+            "sourceEntryId": "exp-thats-how"
+          }
+        ],
+        "assessment": {
+          "rubricRevisionId": "rubric-g10-mock-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    }
+  ]
+}

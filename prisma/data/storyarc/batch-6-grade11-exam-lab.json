@@ -1,0 +1,2941 @@
+{
+  "schemaVersion": "storyarc.content.v1",
+  "packageId": "storyarc-initial-90-b6-g11-exam-lab",
+  "appSlug": "storyarc",
+  "releaseTarget": "initial-90-release-1",
+  "curriculum": {
+    "sourceKey": "indonesia-phase-ef-descriptive-gap",
+    "sourceTitle": "StoryArc Phase E/F Descriptive Mapping",
+    "sourceAuthority": "UNVERIFIED_PROJECT_MAPPING",
+    "sourceVerificationNote": "Academic lead must supply verified CP identifiers before curriculum-alignment claims.",
+    "versionKey": "initial-90-v1",
+    "versionTitle": "Initial 90-item release mapping"
+  },
+  "competencies": [
+    {
+      "competencyKey": "cpa-f-discuss",
+      "title": "Discussion and opinion exchange",
+      "description": "Exchange, support, and challenge opinions with justification in group settings."
+    },
+    {
+      "competencyKey": "cpa-f-expo",
+      "title": "Analytical exposition",
+      "description": "Comprehend and produce argument texts with thesis and supporting points."
+    },
+    {
+      "competencyKey": "cpa-f-listen",
+      "title": "Extended listening",
+      "description": "Follow discussions, presentations, and talks; identify decisions and viewpoints."
+    },
+    {
+      "competencyKey": "cpa-f-present",
+      "title": "Oral presentation",
+      "description": "Deliver structured presentations with signposting and supporting data."
+    },
+    {
+      "competencyKey": "cpa-f-repair",
+      "title": "Interpersonal repair and negotiation",
+      "description": "Handle complaints, apologies, disagreement, and compromise."
+    },
+    {
+      "competencyKey": "cpa-f-cause",
+      "title": "Cause-effect and evaluation",
+      "description": "Express causes, effects, and evaluative reflection on outcomes."
+    },
+    {
+      "competencyKey": "cpa-f-formal",
+      "title": "Formal written correspondence",
+      "description": "Write formal emails and requests with appropriate register."
+    },
+    {
+      "competencyKey": "cpa-f-task",
+      "title": "Task management language",
+      "description": "Give instructions, delegate, report progress and problems in team projects."
+    }
+  ],
+  "objectives": [
+    {
+      "objectiveKey": "obj-g11-01",
+      "competencyKey": "cpa-f-discuss",
+      "title": "Express and support opinions with reasons",
+      "primarySkill": "VOCABULARY"
+    },
+    {
+      "objectiveKey": "obj-g11-02",
+      "competencyKey": "cpa-f-repair",
+      "title": "Agree and disagree politely with hedging",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-03",
+      "competencyKey": "cpa-f-listen",
+      "title": "Follow group discussions and identify decisions",
+      "primarySkill": "LISTENING"
+    },
+    {
+      "objectiveKey": "obj-g11-04",
+      "competencyKey": "cpa-f-repair",
+      "title": "Make suggestions and negotiate plans",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-05",
+      "competencyKey": "cpa-f-expo",
+      "title": "Read analytical expositions and identify arguments",
+      "primarySkill": "READING"
+    },
+    {
+      "objectiveKey": "obj-g11-06",
+      "competencyKey": "cpa-f-expo",
+      "title": "Write a persuasive paragraph with thesis and support",
+      "primarySkill": "WRITING"
+    },
+    {
+      "objectiveKey": "obj-g11-07",
+      "competencyKey": "cpa-f-task",
+      "title": "Give instructions and delegate tasks clearly",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-08",
+      "competencyKey": "cpa-f-task",
+      "title": "Give progress updates and report problems",
+      "primarySkill": "GRAMMAR"
+    },
+    {
+      "objectiveKey": "obj-g11-09",
+      "competencyKey": "cpa-f-listen",
+      "title": "Follow presentations and Q&A with note-taking",
+      "primarySkill": "LISTENING"
+    },
+    {
+      "objectiveKey": "obj-g11-10",
+      "competencyKey": "cpa-f-present",
+      "title": "Structure a presentation with signposting",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-11",
+      "competencyKey": "cpa-f-present",
+      "title": "Describe data and visuals in a talk",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-12",
+      "competencyKey": "cpa-f-repair",
+      "title": "Complain, apologize, and repair relationships",
+      "primarySkill": "SPEAKING"
+    },
+    {
+      "objectiveKey": "obj-g11-13",
+      "competencyKey": "cpa-f-cause",
+      "title": "Express cause and effect",
+      "primarySkill": "GRAMMAR"
+    },
+    {
+      "objectiveKey": "obj-g11-14",
+      "competencyKey": "cpa-f-formal",
+      "title": "Write formal emails and requests",
+      "primarySkill": "WRITING"
+    },
+    {
+      "objectiveKey": "obj-g11-15",
+      "competencyKey": "cpa-f-cause",
+      "title": "Evaluate outcomes and reflect on experience",
+      "primarySkill": "WRITING"
+    }
+  ],
+  "assets": [
+    {
+      "assetId": "audio-ex-g11-02-sec-conversations-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for ex-g11-02/sec-conversations",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://ex-g11-02/sec-conversations",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/c22725f32ab5f5ee013abb9432cb1f21b30fc37d82fd421480a6174ec8d5e887.mp3",
+      "contentHash": "sha256:c22725f32ab5f5ee013abb9432cb1f21b30fc37d82fd421480a6174ec8d5e887",
+      "mimeType": "audio/mpeg",
+      "byteSize": 1775804,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-ex-g11-02-sec-talks-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for ex-g11-02/sec-talks",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://ex-g11-02/sec-talks",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/3433638cfbff1c2e4dcddd5f71b10235df255c48608a4e3595a2bab7af22ef51.mp3",
+      "contentHash": "sha256:3433638cfbff1c2e4dcddd5f71b10235df255c48608a4e3595a2bab7af22ef51",
+      "mimeType": "audio/mpeg",
+      "byteSize": 1173629,
+      "temporary": true
+    },
+    {
+      "assetId": "audio-ex-g11-06-sec-1-listening-v1",
+      "revision": 1,
+      "type": "AUDIO_MP3",
+      "purpose": "English learning and assessment audio for ex-g11-06/sec-1-listening",
+      "sourceType": "generated",
+      "sourceReference": "approved-transcript://ex-g11-06/sec-1-listening",
+      "authorOrGenerator": "Microsoft Speech API, voice Microsoft David Desktop, encoded with @breezystack/lamejs",
+      "license": "NEXUS-GENERATED-OUTPUT",
+      "commercialUseAllowed": true,
+      "derivativeUseAllowed": true,
+      "attributionRequired": false,
+      "rightsOwner": "Nexus Talenta Indonesia Academy",
+      "approvalStatus": "TEMPORARY_APPROVED",
+      "storageLocation": "/storyarc/audio/f302abd985b1b74d87f16ec91d8224d123b5c7cb8719e0ce80440fdc4023076a.mp3",
+      "contentHash": "sha256:f302abd985b1b74d87f16ec91d8224d123b5c7cb8719e0ce80440fdc4023076a",
+      "mimeType": "audio/mpeg",
+      "byteSize": 2578286,
+      "temporary": true
+    }
+  ],
+  "items": [
+    {
+      "stableId": "ex-g11-01",
+      "revision": 1,
+      "kind": "ASSESSMENT",
+      "grade": "GRADE_11",
+      "track": "EXAM_LAB",
+      "phase": "PHASE_F",
+      "title": "School Exam Practice: Exposition and Discussion",
+      "primarySkill": "READING",
+      "supportingSkills": [
+        "WRITING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-05",
+        "obj-g11-06",
+        "obj-g11-13",
+        "obj-g11-14"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "exam-meta",
+            "modeId": "SCHOOL_EXAM",
+            "instructionId": "Latihan ujian sekolah kelas 11: teks eksposisi analitis, sebab-akibat, dan korespondensi formal. Bagian A pilihan ganda, Bagian B menulis.",
+            "timeSuggestionMinutes": 35,
+            "originalContentNote": "Seluruh soal adalah konten orisinal Nexus StoryArc."
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-a-exposition",
+            "skill": "READING",
+            "textEn": "WHY EVERY STUDENT SHOULD LEARN BASIC BUDGETING. Schools teach us to earn grades, but rarely to manage money — and that gap follows graduates for years. Firstly, budgeting is a daily skill: students already handle allowances, phone credit, and canteen choices, so the classroom examples are free and familiar. Secondly, small financial mistakes compound. A student who never tracks spending becomes an adult surprised by debt; the habit, not the amount, is what matters. Some argue that budgeting is the family's job to teach. Families teach values, certainly — but many parents were never taught the tools themselves, and schools exist precisely to fill such gaps. Therefore, one semester of practical budgeting, using real student cases, should be part of every Grade 11 timetable.",
+            "questions": [
+              {
+                "qid": "q1",
+                "promptEn": "What is the writer's thesis?",
+                "optionsEn": [
+                  "Schools should stop teaching grades",
+                  "Basic budgeting should be taught to every student",
+                  "Families should not teach money skills",
+                  "Debt is unavoidable"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Ditegaskan di pembuka dan kesimpulan (\"should be part of every Grade 11 timetable\").",
+                "optionRationales": [
+                  "Incorrect. “Schools should stop teaching grades” is not supported by the prompt or stimulus; the supported answer is “Basic budgeting should be taught to every student”.",
+                  "Correct. Ditegaskan di pembuka dan kesimpulan (\"should be part of every Grade 11 timetable\").",
+                  "Incorrect. “Families should not teach money skills” is not supported by the prompt or stimulus; the supported answer is “Basic budgeting should be taught to every student”.",
+                  "Incorrect. “Debt is unavoidable” is not supported by the prompt or stimulus; the supported answer is “Basic budgeting should be taught to every student”."
+                ]
+              },
+              {
+                "qid": "q2",
+                "promptEn": "Why does the writer say classroom examples are \"free and familiar\"?",
+                "optionsEn": [
+                  "Because textbooks are cheap",
+                  "Because students already manage allowances and daily spending",
+                  "Because teachers give free lessons",
+                  "Because banks sponsor schools"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Argumen pertama: konteks uang saku sehari-hari siswa.",
+                "optionRationales": [
+                  "Incorrect. “Because textbooks are cheap” is not supported by the prompt or stimulus; the supported answer is “Because students already manage allowances and daily spending”.",
+                  "Correct. Argumen pertama: konteks uang saku sehari-hari siswa.",
+                  "Incorrect. “Because teachers give free lessons” is not supported by the prompt or stimulus; the supported answer is “Because students already manage allowances and daily spending”.",
+                  "Incorrect. “Because banks sponsor schools” is not supported by the prompt or stimulus; the supported answer is “Because students already manage allowances and daily spending”."
+                ]
+              },
+              {
+                "qid": "q3",
+                "promptEn": "\"Small financial mistakes compound\" means they…",
+                "optionsEn": [
+                  "disappear over time",
+                  "grow bigger over time",
+                  "stay exactly the same",
+                  "are shared with friends"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"compound\" = menumpuk/berbunga makin besar.",
+                "optionRationales": [
+                  "Incorrect. “disappear over time” is not supported by the prompt or stimulus; the supported answer is “grow bigger over time”.",
+                  "Correct. \"compound\" = menumpuk/berbunga makin besar.",
+                  "Incorrect. “stay exactly the same” is not supported by the prompt or stimulus; the supported answer is “grow bigger over time”.",
+                  "Incorrect. “are shared with friends” is not supported by the prompt or stimulus; the supported answer is “grow bigger over time”."
+                ]
+              },
+              {
+                "qid": "q4",
+                "promptEn": "How does the writer answer the counter-argument?",
+                "optionsEn": [
+                  "By ignoring it",
+                  "By agreeing completely and dropping the thesis",
+                  "By accepting part of it, then explaining why schools must still fill the gap",
+                  "By attacking families"
+                ],
+                "answerIndex": 2,
+                "explanationId": "Pola konsesi: \"Families teach values, certainly — but…\".",
+                "optionRationales": [
+                  "Incorrect. “By ignoring it” is not supported by the prompt or stimulus; the supported answer is “By accepting part of it, then explaining why schools must still fill the gap”.",
+                  "Incorrect. “By agreeing completely and dropping the thesis” is not supported by the prompt or stimulus; the supported answer is “By accepting part of it, then explaining why schools must still fill the gap”.",
+                  "Correct. Pola konsesi: \"Families teach values, certainly — but…\".",
+                  "Incorrect. “By attacking families” is not supported by the prompt or stimulus; the supported answer is “By accepting part of it, then explaining why schools must still fill the gap”."
+                ]
+              },
+              {
+                "qid": "q5",
+                "promptEn": "\"Therefore\" in the final sentence signals…",
+                "optionsEn": [
+                  "a new argument",
+                  "the conclusion restating the thesis",
+                  "a joke",
+                  "a contrast"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Penanda kesimpulan eksposisi.",
+                "optionRationales": [
+                  "Incorrect. “a new argument” is not supported by the prompt or stimulus; the supported answer is “the conclusion restating the thesis”.",
+                  "Correct. Penanda kesimpulan eksposisi.",
+                  "Incorrect. “a joke” is not supported by the prompt or stimulus; the supported answer is “the conclusion restating the thesis”.",
+                  "Incorrect. “a contrast” is not supported by the prompt or stimulus; the supported answer is “the conclusion restating the thesis”."
+                ]
+              },
+              {
+                "qid": "q6",
+                "promptEn": "The library closed early; ___, the study group moved to the cafeteria.",
+                "optionsEn": [
+                  "as a result",
+                  "although",
+                  "in case",
+                  "unless"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Hubungan sebab-akibat antar klausa.",
+                "optionRationales": [
+                  "Correct. Hubungan sebab-akibat antar klausa.",
+                  "Incorrect. “although” is not supported by the prompt or stimulus; the supported answer is “as a result”.",
+                  "Incorrect. “in case” is not supported by the prompt or stimulus; the supported answer is “as a result”.",
+                  "Incorrect. “unless” is not supported by the prompt or stimulus; the supported answer is “as a result”."
+                ]
+              },
+              {
+                "qid": "q7",
+                "promptEn": "Choose the correct formal request line.",
+                "optionsEn": [
+                  "\"gimme the hall saturday ok\"",
+                  "\"We would appreciate the opportunity to use the hall on Saturday.\"",
+                  "\"THE HALL. SATURDAY. PLEASE.\"",
+                  "\"maybe hall? sat? 🙏\""
+                ],
+                "answerIndex": 1,
+                "explanationId": "Register formal dengan \"would appreciate\".",
+                "optionRationales": [
+                  "Incorrect. “\"gimme the hall saturday ok\"” is not supported by the prompt or stimulus; the supported answer is “\"We would appreciate the opportunity to use the hall on Saturday.\"”.",
+                  "Correct. Register formal dengan \"would appreciate\".",
+                  "Incorrect. “\"THE HALL. SATURDAY. PLEASE.\"” is not supported by the prompt or stimulus; the supported answer is “\"We would appreciate the opportunity to use the hall on Saturday.\"”.",
+                  "Incorrect. “\"maybe hall? sat? 🙏\"” is not supported by the prompt or stimulus; the supported answer is “\"We would appreciate the opportunity to use the hall on Saturday.\"”."
+                ]
+              },
+              {
+                "qid": "q8",
+                "promptEn": "\"___ the printer breaking down, all posters were delivered on time.\"",
+                "optionsEn": [
+                  "Because",
+                  "Despite",
+                  "Since",
+                  "Due"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Kontras (tetap berhasil walau ada masalah) memakai \"despite\".",
+                "optionRationales": [
+                  "Incorrect. “Because” is not supported by the prompt or stimulus; the supported answer is “Despite”.",
+                  "Correct. Kontras (tetap berhasil walau ada masalah) memakai \"despite\".",
+                  "Incorrect. “Since” is not supported by the prompt or stimulus; the supported answer is “Despite”.",
+                  "Incorrect. “Due” is not supported by the prompt or stimulus; the supported answer is “Despite”."
+                ]
+              },
+              {
+                "qid": "gen-sec-a-exposition-9",
+                "promptEn": "Why did Intan's team still complete every essential task for the career workshop?",
+                "passageEn": "The career workshop started late because the original room is being used for an exam. Intan informed the participants, shortened the opening activity, and kept the final practice unchanged. As a result, the team still completed every essential task.",
+                "optionsEn": [
+                  "Intan adjusted the opening activity after explaining the delay",
+                  "The event started earlier than planned",
+                  "The team cancelled the final practice",
+                  "The reason for the delay disappeared immediately"
+                ],
+                "answerIndex": 0,
+                "explanationId": "The passage links the completed tasks to the shortened opening activity and clear update.",
+                "optionRationales": [
+                  "Correct. The passage links the completed tasks to the shortened opening activity and clear update.",
+                  "Incorrect. “The event started earlier than planned” is not supported by the prompt or stimulus; the supported answer is “Intan adjusted the opening activity after explaining the delay”.",
+                  "Incorrect. “The team cancelled the final practice” is not supported by the prompt or stimulus; the supported answer is “Intan adjusted the opening activity after explaining the delay”.",
+                  "Incorrect. “The reason for the delay disappeared immediately” is not supported by the prompt or stimulus; the supported answer is “Intan adjusted the opening activity after explaining the delay”."
+                ]
+              },
+              {
+                "qid": "gen-sec-a-exposition-10",
+                "promptEn": "In Room 10-B, what must a student do immediately after reading the safety card?",
+                "passageEn": "Before using the equipment in Room 10-B, first read the safety card, then inspect the power cable, and finally ask the supervisor to confirm the setup. If the cable is damaged, stop and report it; do not attempt a repair.",
+                "optionsEn": [
+                  "Repair any damaged cable",
+                  "Turn on the equipment immediately",
+                  "Leave the room without reporting anything",
+                  "Inspect the power cable"
+                ],
+                "answerIndex": 3,
+                "explanationId": "The procedure orders the cable inspection directly after reading the safety card.",
+                "optionRationales": [
+                  "Incorrect. “Repair any damaged cable” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Incorrect. “Turn on the equipment immediately” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Incorrect. “Leave the room without reporting anything” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Correct. The procedure orders the cable inspection directly after reading the safety card."
+                ]
+              },
+              {
+                "qid": "gen-sec-a-exposition-11",
+                "promptEn": "According to the notice, when and where will the campus tour take place?",
+                "passageEn": "NOTICE: The campus tour was originally planned for Friday. It will now take place on Monday at 16:00 in the library hall because the delivery will arrive late. Bring a student ID card.",
+                "optionsEn": [
+                  "Monday at 09:30 in the library hall",
+                  "Monday at 16:00 in Workshop 2",
+                  "Monday at 16:00 in the library hall",
+                  "Friday at 16:00 in the library hall"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The revised schedule explicitly states Monday at 16:00 in the library hall.",
+                "optionRationales": [
+                  "Incorrect. “Monday at 09:30 in the library hall” is not supported by the prompt or stimulus; the supported answer is “Monday at 16:00 in the library hall”.",
+                  "Incorrect. “Monday at 16:00 in Workshop 2” is not supported by the prompt or stimulus; the supported answer is “Monday at 16:00 in the library hall”.",
+                  "Correct. The revised schedule explicitly states Monday at 16:00 in the library hall.",
+                  "Incorrect. “Friday at 16:00 in the library hall” is not supported by the prompt or stimulus; the supported answer is “Monday at 16:00 in the library hall”."
+                ]
+              },
+              {
+                "qid": "gen-sec-a-exposition-12",
+                "promptEn": "What should Lukman do?",
+                "passageEn": "Subject: Action needed for the project rehearsal. Hi Lukman, please email the safety checklist to the coordinator by Tuesday at 08:00. Do not leave it at the front desk because the office will be closed.",
+                "optionsEn": [
+                  "Call the office on Saturday",
+                  "Email the safety checklist by Tuesday at 08:00",
+                  "Leave the safety checklist at the front desk",
+                  "Bring the safety checklist after the event"
+                ],
+                "answerIndex": 1,
+                "explanationId": "The email requests an email submission by Tuesday at 08:00 and explicitly rejects the front-desk option.",
+                "optionRationales": [
+                  "Incorrect. “Call the office on Saturday” is not supported by the prompt or stimulus; the supported answer is “Email the safety checklist by Tuesday at 08:00”.",
+                  "Correct. The email requests an email submission by Tuesday at 08:00 and explicitly rejects the front-desk option.",
+                  "Incorrect. “Leave the safety checklist at the front desk” is not supported by the prompt or stimulus; the supported answer is “Email the safety checklist by Tuesday at 08:00”.",
+                  "Incorrect. “Bring the safety checklist after the event” is not supported by the prompt or stimulus; the supported answer is “Email the safety checklist by Tuesday at 08:00”."
+                ]
+              },
+              {
+                "qid": "gen-sec-a-exposition-13",
+                "promptEn": "For the safety orientation scheduled on Wednesday, which applicant clearly meets the stated requirements?",
+                "passageEn": "Alya's team needs a student assistant for the safety orientation. Applicants must be available on Wednesday, communicate politely with visitors, and know how to use a shared spreadsheet. Training is provided, so previous event experience is optional.",
+                "optionsEn": [
+                  "A student available on Wednesday who communicates politely and can use a shared spreadsheet",
+                  "A student available only on Monday who refuses visitor-facing tasks",
+                  "A student with event experience who cannot attend the required day",
+                  "A student who can attend but will not use the team spreadsheet"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Availability, visitor communication, and spreadsheet use are mandatory; prior event experience is optional.",
+                "optionRationales": [
+                  "Correct. Availability, visitor communication, and spreadsheet use are mandatory; prior event experience is optional.",
+                  "Incorrect. “A student available only on Monday who refuses visitor-facing tasks” is not supported by the prompt or stimulus; the supported answer is “A student available on Wednesday who communicates politely and can use a shared spreadsheet”.",
+                  "Incorrect. “A student with event experience who cannot attend the required day” is not supported by the prompt or stimulus; the supported answer is “A student available on Wednesday who communicates politely and can use a shared spreadsheet”.",
+                  "Incorrect. “A student who can attend but will not use the team spreadsheet” is not supported by the prompt or stimulus; the supported answer is “A student available on Wednesday who communicates politely and can use a shared spreadsheet”."
+                ]
+              },
+              {
+                "qid": "gen-sec-a-exposition-14",
+                "promptEn": "Why did Bagas's team still complete every essential task for the library volunteer shift?",
+                "passageEn": "The library volunteer shift started late because the projector needs repair. Bagas informed the participants, shortened the opening activity, and kept the final practice unchanged. As a result, the team still completed every essential task.",
+                "optionsEn": [
+                  "The event started earlier than planned",
+                  "The team cancelled the final practice",
+                  "The reason for the delay disappeared immediately",
+                  "Bagas adjusted the opening activity after explaining the delay"
+                ],
+                "answerIndex": 3,
+                "explanationId": "The passage links the completed tasks to the shortened opening activity and clear update.",
+                "optionRationales": [
+                  "Incorrect. “The event started earlier than planned” is not supported by the prompt or stimulus; the supported answer is “Bagas adjusted the opening activity after explaining the delay”.",
+                  "Incorrect. “The team cancelled the final practice” is not supported by the prompt or stimulus; the supported answer is “Bagas adjusted the opening activity after explaining the delay”.",
+                  "Incorrect. “The reason for the delay disappeared immediately” is not supported by the prompt or stimulus; the supported answer is “Bagas adjusted the opening activity after explaining the delay”.",
+                  "Correct. The passage links the completed tasks to the shortened opening activity and clear update."
+                ]
+              },
+              {
+                "qid": "gen-sec-a-exposition-15",
+                "promptEn": "In the main auditorium, what must a student do immediately after reading the safety card?",
+                "passageEn": "Before using the equipment in the main auditorium, first read the safety card, then inspect the power cable, and finally ask the supervisor to confirm the setup. If the cable is damaged, stop and report it; do not attempt a repair.",
+                "optionsEn": [
+                  "Turn on the equipment immediately",
+                  "Leave the room without reporting anything",
+                  "Inspect the power cable",
+                  "Repair any damaged cable"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The procedure orders the cable inspection directly after reading the safety card.",
+                "optionRationales": [
+                  "Incorrect. “Turn on the equipment immediately” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Incorrect. “Leave the room without reporting anything” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Correct. The procedure orders the cable inspection directly after reading the safety card.",
+                  "Incorrect. “Repair any damaged cable” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”."
+                ]
+              },
+              {
+                "qid": "gen-sec-a-exposition-16",
+                "promptEn": "According to the notice, when and where will the science club briefing take place?",
+                "passageEn": "NOTICE: The science club briefing was originally planned for Thursday. It will now take place on Saturday at 14:30 in Room 10-B because the supervisor has an urgent meeting. Bring the revised schedule.",
+                "optionsEn": [
+                  "Saturday at 14:30 in the library hall",
+                  "Saturday at 14:30 in Room 10-B",
+                  "Thursday at 14:30 in Room 10-B",
+                  "Saturday at 08:00 in Room 10-B"
+                ],
+                "answerIndex": 1,
+                "explanationId": "The revised schedule explicitly states Saturday at 14:30 in Room 10-B.",
+                "optionRationales": [
+                  "Incorrect. “Saturday at 14:30 in the library hall” is not supported by the prompt or stimulus; the supported answer is “Saturday at 14:30 in Room 10-B”.",
+                  "Correct. The revised schedule explicitly states Saturday at 14:30 in Room 10-B.",
+                  "Incorrect. “Thursday at 14:30 in Room 10-B” is not supported by the prompt or stimulus; the supported answer is “Saturday at 14:30 in Room 10-B”.",
+                  "Incorrect. “Saturday at 08:00 in Room 10-B” is not supported by the prompt or stimulus; the supported answer is “Saturday at 14:30 in Room 10-B”."
+                ]
+              }
+            ]
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-b-writing",
+            "skill": "WRITING",
+            "rubricRevisionId": "rubric-g11-writing-v1",
+            "tasks": [
+              {
+                "taskId": "w1",
+                "promptEn": "Write a 100–120 word persuasive paragraph: \"Our school should (or should not) allow food stalls run by students at school events.\" Include a clear thesis, two supported arguments, one answered counter-argument, and a call to action.",
+                "criteriaIds": [
+                  "task-fulfillment",
+                  "argument-structure",
+                  "grammar",
+                  "vocabulary",
+                  "register"
+                ]
+              }
+            ]
+          },
+          {
+            "blockType": "rubric-definition",
+            "rubricRevisionId": "rubric-g11-writing-v1",
+            "scale": "0-4 per criterion",
+            "criteria": [
+              {
+                "criterionId": "task-fulfillment",
+                "titleEn": "Task fulfillment",
+                "descriptorId": "Semua elemen tugas hadir dan relevan."
+              },
+              {
+                "criterionId": "argument-structure",
+                "titleEn": "Argument structure",
+                "descriptorId": "Tesis, dukungan, konsesi, dan ajakan tersusun logis."
+              },
+              {
+                "criterionId": "grammar",
+                "titleEn": "Grammar",
+                "descriptorId": "Struktur kompleks (sebab-akibat, konsesi) akurat."
+              },
+              {
+                "criterionId": "vocabulary",
+                "titleEn": "Vocabulary",
+                "descriptorId": "Kosakata argumen kelas 11 digunakan tepat."
+              },
+              {
+                "criterionId": "register",
+                "titleEn": "Register",
+                "descriptorId": "Nada persuasif formal konsisten."
+              }
+            ]
+          },
+          {
+            "blockType": "rubric-definition",
+            "rubricRevisionId": "rubric-g11-mcq-v1",
+            "scale": "0 or 1 per selected-response item",
+            "criteria": [
+              {
+                "criterionId": "answer-key",
+                "titleEn": "Answer-key accuracy",
+                "descriptorId": "Skor diberikan hanya ketika opsi cocok dengan kunci pada revisi soal."
+              },
+              {
+                "criterionId": "objective-lineage",
+                "titleEn": "Objective lineage",
+                "descriptorId": "Setiap skor ditelusuri ke objective dan skill item."
+              }
+            ]
+          },
+          {
+            "blockType": "rubric-definition",
+            "rubricRevisionId": "rubric-g11-mock-v1",
+            "scale": "0-4 per criterion",
+            "criteria": [
+              {
+                "criterionId": "section-score",
+                "titleEn": "Section score",
+                "descriptorId": "Selected-response dinilai dengan kunci revisi pada section masing-masing."
+              },
+              {
+                "criterionId": "constructed-response",
+                "titleEn": "Constructed response",
+                "descriptorId": "Tugas menulis dinilai dengan rubric writing yang direferensikan."
+              },
+              {
+                "criterionId": "recall-lineage",
+                "titleEn": "Recall lineage",
+                "descriptorId": "Section recall harus menyimpan source entry dan hook yang disetujui."
+              }
+            ]
+          }
+        ],
+        "vocabulary": [],
+        "expressions": [],
+        "recallHooks": [],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-writing-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "ex-g11-02",
+      "revision": 1,
+      "kind": "ASSESSMENT",
+      "grade": "GRADE_11",
+      "track": "EXAM_LAB",
+      "phase": "PHASE_F",
+      "title": "TOEIC-style: Listening (Conversations and Talks)",
+      "primarySkill": "LISTENING",
+      "supportingSkills": [],
+      "objectiveKeys": [
+        "obj-g11-03",
+        "obj-g11-09"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "exam-meta",
+            "modeId": "TOEIC_STYLE",
+            "instructionId": "Latihan gaya TOEIC menengah: percakapan pendek dan pembicaraan singkat.",
+            "timeSuggestionMinutes": 18,
+            "originalContentNote": "Konten latihan orisinal bergaya TOEIC. StoryArc tidak berafiliasi dengan ETS dan tidak mereproduksi soal TOEIC resmi.",
+            "disclaimerId": "TOEIC adalah merek dagang ETS. Latihan ini hanya meniru format interaksi umum."
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-conversations",
+            "skill": "LISTENING",
+            "formatId": "short-conversations",
+            "audioState": "generated-audio-temporary-approved",
+            "conversations": [
+              {
+                "convId": "c1",
+                "transcriptEn": "M: The venue called — they can only give us the room until nine, not eleven. W: That cuts the rehearsal short. Could we start two hours earlier instead? M: I'll check with the team, but most of them finish class at four. W: Then let's trim the break and run the second half faster.",
+                "questions": [
+                  {
+                    "qid": "q1",
+                    "promptEn": "What problem are the speakers discussing?",
+                    "optionsEn": [
+                      "The venue is available for less time than expected",
+                      "The venue cancelled entirely",
+                      "The team quit",
+                      "The class schedule changed"
+                    ],
+                    "answerIndex": 0,
+                    "explanationId": "\"only until nine, not eleven\" = waktu terpangkas.",
+                    "optionRationales": [
+                      "Correct. \"only until nine, not eleven\" = waktu terpangkas.",
+                      "Incorrect. “The venue cancelled entirely” is not supported by the prompt or stimulus; the supported answer is “The venue is available for less time than expected”.",
+                      "Incorrect. “The team quit” is not supported by the prompt or stimulus; the supported answer is “The venue is available for less time than expected”.",
+                      "Incorrect. “The class schedule changed” is not supported by the prompt or stimulus; the supported answer is “The venue is available for less time than expected”."
+                    ]
+                  },
+                  {
+                    "qid": "q2",
+                    "promptEn": "What does the woman finally suggest?",
+                    "optionsEn": [
+                      "Cancelling the rehearsal",
+                      "Trimming the break and speeding up the second half",
+                      "Moving to a new venue",
+                      "Complaining to the venue"
+                    ],
+                    "answerIndex": 1,
+                    "explanationId": "Solusi akhirnya menyesuaikan jadwal internal.",
+                    "optionRationales": [
+                      "Incorrect. “Cancelling the rehearsal” is not supported by the prompt or stimulus; the supported answer is “Trimming the break and speeding up the second half”.",
+                      "Correct. Solusi akhirnya menyesuaikan jadwal internal.",
+                      "Incorrect. “Moving to a new venue” is not supported by the prompt or stimulus; the supported answer is “Trimming the break and speeding up the second half”.",
+                      "Incorrect. “Complaining to the venue” is not supported by the prompt or stimulus; the supported answer is “Trimming the break and speeding up the second half”."
+                    ]
+                  }
+                ]
+              },
+              {
+                "convId": "c2",
+                "transcriptEn": "W: Did you send the sponsor the updated budget? M: Not yet — it turns out the printing quote went up fifteen percent, so I'm redoing the numbers first. W: Good call. Wrong numbers are worse than late numbers. M: Exactly. It'll be in their inbox by five.",
+                "questions": [
+                  {
+                    "qid": "q3",
+                    "promptEn": "Why hasn't the man sent the budget?",
+                    "optionsEn": [
+                      "He forgot",
+                      "A printing quote increased, so he is revising the numbers",
+                      "The sponsor rejected it",
+                      "The email system is down"
+                    ],
+                    "answerIndex": 1,
+                    "explanationId": "\"It turns out the printing quote went up… redoing the numbers\".",
+                    "optionRationales": [
+                      "Incorrect. “He forgot” is not supported by the prompt or stimulus; the supported answer is “A printing quote increased, so he is revising the numbers”.",
+                      "Correct. \"It turns out the printing quote went up… redoing the numbers\".",
+                      "Incorrect. “The sponsor rejected it” is not supported by the prompt or stimulus; the supported answer is “A printing quote increased, so he is revising the numbers”.",
+                      "Incorrect. “The email system is down” is not supported by the prompt or stimulus; the supported answer is “A printing quote increased, so he is revising the numbers”."
+                    ]
+                  },
+                  {
+                    "qid": "q4",
+                    "promptEn": "What does \"Wrong numbers are worse than late numbers\" imply?",
+                    "optionsEn": [
+                      "Speed matters more than accuracy",
+                      "Accuracy matters more than speed",
+                      "Numbers never matter",
+                      "The budget is cancelled"
+                    ],
+                    "answerIndex": 1,
+                    "explanationId": "Prinsip: akurasi > kecepatan.",
+                    "optionRationales": [
+                      "Incorrect. “Speed matters more than accuracy” is not supported by the prompt or stimulus; the supported answer is “Accuracy matters more than speed”.",
+                      "Correct. Prinsip: akurasi > kecepatan.",
+                      "Incorrect. “Numbers never matter” is not supported by the prompt or stimulus; the supported answer is “Accuracy matters more than speed”.",
+                      "Incorrect. “The budget is cancelled” is not supported by the prompt or stimulus; the supported answer is “Accuracy matters more than speed”."
+                    ]
+                  }
+                ]
+              },
+              {
+                "convId": "gen-sec-conversations-conversation-3",
+                "transcriptEn": "W: Damar, the project rehearsal cannot use the media lab this afternoon because the supervisor has an urgent meeting. M: Then I'll reserve the media lab for 16:00 and message the team. W: Good. Please ask everyone to bring a printed résumé. M: I will send the update before lunch.",
+                "questions": [
+                  {
+                    "qid": "gen-sec-conversations-c3-q1",
+                    "promptEn": "What problem are the speakers discussing about the project rehearsal?",
+                    "optionsEn": [
+                      "The material was lost",
+                      "The media lab is closed all week",
+                      "the media lab is unavailable",
+                      "The team has cancelled permanently"
+                    ],
+                    "answerIndex": 2,
+                    "explanationId": "The woman says the project rehearsal cannot use the media lab.",
+                    "optionRationales": [
+                      "Incorrect. “The material was lost” is not supported by the prompt or stimulus; the supported answer is “the media lab is unavailable”.",
+                      "Incorrect. “The media lab is closed all week” is not supported by the prompt or stimulus; the supported answer is “the media lab is unavailable”.",
+                      "Correct. The woman says the project rehearsal cannot use the media lab.",
+                      "Incorrect. “The team has cancelled permanently” is not supported by the prompt or stimulus; the supported answer is “the media lab is unavailable”."
+                    ]
+                  },
+                  {
+                    "qid": "gen-sec-conversations-c3-q2",
+                    "promptEn": "What will the man do for the project rehearsal?",
+                    "optionsEn": [
+                      "Wait until after the event",
+                      "Reserve the media lab for 16:00 and message the team",
+                      "Cancel the project",
+                      "Repair the original room"
+                    ],
+                    "answerIndex": 1,
+                    "explanationId": "He explicitly offers both actions.",
+                    "optionRationales": [
+                      "Incorrect. “Wait until after the event” is not supported by the prompt or stimulus; the supported answer is “Reserve the media lab for 16:00 and message the team”.",
+                      "Correct. He explicitly offers both actions.",
+                      "Incorrect. “Cancel the project” is not supported by the prompt or stimulus; the supported answer is “Reserve the media lab for 16:00 and message the team”.",
+                      "Incorrect. “Repair the original room” is not supported by the prompt or stimulus; the supported answer is “Reserve the media lab for 16:00 and message the team”."
+                    ]
+                  }
+                ]
+              },
+              {
+                "convId": "gen-sec-conversations-conversation-4",
+                "transcriptEn": "W: Eka, the safety orientation cannot use the school office this afternoon because the delivery will arrive late. M: Then I'll reserve the media lab for 08:00 and message the team. W: Good. Please ask everyone to bring the project outline. M: I will send the update before lunch.",
+                "questions": [
+                  {
+                    "qid": "gen-sec-conversations-c4-q1",
+                    "promptEn": "What problem are the speakers discussing about the safety orientation?",
+                    "optionsEn": [
+                      "The media lab is closed all week",
+                      "the school office is unavailable",
+                      "The team has cancelled permanently",
+                      "The material was lost"
+                    ],
+                    "answerIndex": 1,
+                    "explanationId": "The woman says the safety orientation cannot use the school office.",
+                    "optionRationales": [
+                      "Incorrect. “The media lab is closed all week” is not supported by the prompt or stimulus; the supported answer is “the school office is unavailable”.",
+                      "Correct. The woman says the safety orientation cannot use the school office.",
+                      "Incorrect. “The team has cancelled permanently” is not supported by the prompt or stimulus; the supported answer is “the school office is unavailable”.",
+                      "Incorrect. “The material was lost” is not supported by the prompt or stimulus; the supported answer is “the school office is unavailable”."
+                    ]
+                  },
+                  {
+                    "qid": "gen-sec-conversations-c4-q2",
+                    "promptEn": "What will the man do for the safety orientation?",
+                    "optionsEn": [
+                      "Reserve the media lab for 08:00 and message the team",
+                      "Cancel the project",
+                      "Repair the original room",
+                      "Wait until after the event"
+                    ],
+                    "answerIndex": 0,
+                    "explanationId": "He explicitly offers both actions.",
+                    "optionRationales": [
+                      "Correct. He explicitly offers both actions.",
+                      "Incorrect. “Cancel the project” is not supported by the prompt or stimulus; the supported answer is “Reserve the media lab for 08:00 and message the team”.",
+                      "Incorrect. “Repair the original room” is not supported by the prompt or stimulus; the supported answer is “Reserve the media lab for 08:00 and message the team”.",
+                      "Incorrect. “Wait until after the event” is not supported by the prompt or stimulus; the supported answer is “Reserve the media lab for 08:00 and message the team”."
+                    ]
+                  }
+                ]
+              },
+              {
+                "convId": "gen-sec-conversations-conversation-5",
+                "transcriptEn": "W: Farah, the library volunteer shift cannot use the main auditorium this afternoon because the weather forecast changed. M: Then I'll reserve the media lab for 09:30 and message the team. W: Good. Please ask everyone to bring a signed consent form. M: I will send the update before lunch.",
+                "questions": [
+                  {
+                    "qid": "gen-sec-conversations-c5-q1",
+                    "promptEn": "What problem are the speakers discussing about the library volunteer shift?",
+                    "optionsEn": [
+                      "the main auditorium is unavailable",
+                      "The team has cancelled permanently",
+                      "The material was lost",
+                      "The media lab is closed all week"
+                    ],
+                    "answerIndex": 0,
+                    "explanationId": "The woman says the library volunteer shift cannot use the main auditorium.",
+                    "optionRationales": [
+                      "Correct. The woman says the library volunteer shift cannot use the main auditorium.",
+                      "Incorrect. “The team has cancelled permanently” is not supported by the prompt or stimulus; the supported answer is “the main auditorium is unavailable”.",
+                      "Incorrect. “The material was lost” is not supported by the prompt or stimulus; the supported answer is “the main auditorium is unavailable”.",
+                      "Incorrect. “The media lab is closed all week” is not supported by the prompt or stimulus; the supported answer is “the main auditorium is unavailable”."
+                    ]
+                  },
+                  {
+                    "qid": "gen-sec-conversations-c5-q2",
+                    "promptEn": "What will the man do for the library volunteer shift?",
+                    "optionsEn": [
+                      "Cancel the project",
+                      "Repair the original room",
+                      "Wait until after the event",
+                      "Reserve the media lab for 09:30 and message the team"
+                    ],
+                    "answerIndex": 3,
+                    "explanationId": "He explicitly offers both actions.",
+                    "optionRationales": [
+                      "Incorrect. “Cancel the project” is not supported by the prompt or stimulus; the supported answer is “Reserve the media lab for 09:30 and message the team”.",
+                      "Incorrect. “Repair the original room” is not supported by the prompt or stimulus; the supported answer is “Reserve the media lab for 09:30 and message the team”.",
+                      "Incorrect. “Wait until after the event” is not supported by the prompt or stimulus; the supported answer is “Reserve the media lab for 09:30 and message the team”.",
+                      "Correct. He explicitly offers both actions."
+                    ]
+                  }
+                ]
+              },
+              {
+                "convId": "gen-sec-conversations-conversation-6",
+                "transcriptEn": "W: Gilang, the internship briefing cannot use Room 10-B this afternoon because the team needs more preparation time. M: Then I'll reserve the media lab for 11:00 and message the team. W: Good. Please ask everyone to bring the revised schedule. M: I will send the update before lunch.",
+                "questions": [
+                  {
+                    "qid": "gen-sec-conversations-c6-q1",
+                    "promptEn": "What problem are the speakers discussing about the internship briefing?",
+                    "optionsEn": [
+                      "The team has cancelled permanently",
+                      "The material was lost",
+                      "The media lab is closed all week",
+                      "Room 10-B is unavailable"
+                    ],
+                    "answerIndex": 3,
+                    "explanationId": "The woman says the internship briefing cannot use Room 10-B.",
+                    "optionRationales": [
+                      "Incorrect. “The team has cancelled permanently” is not supported by the prompt or stimulus; the supported answer is “Room 10-B is unavailable”.",
+                      "Incorrect. “The material was lost” is not supported by the prompt or stimulus; the supported answer is “Room 10-B is unavailable”.",
+                      "Incorrect. “The media lab is closed all week” is not supported by the prompt or stimulus; the supported answer is “Room 10-B is unavailable”.",
+                      "Correct. The woman says the internship briefing cannot use Room 10-B."
+                    ]
+                  },
+                  {
+                    "qid": "gen-sec-conversations-c6-q2",
+                    "promptEn": "What will the man do for the internship briefing?",
+                    "optionsEn": [
+                      "Repair the original room",
+                      "Wait until after the event",
+                      "Reserve the media lab for 11:00 and message the team",
+                      "Cancel the project"
+                    ],
+                    "answerIndex": 2,
+                    "explanationId": "He explicitly offers both actions.",
+                    "optionRationales": [
+                      "Incorrect. “Repair the original room” is not supported by the prompt or stimulus; the supported answer is “Reserve the media lab for 11:00 and message the team”.",
+                      "Incorrect. “Wait until after the event” is not supported by the prompt or stimulus; the supported answer is “Reserve the media lab for 11:00 and message the team”.",
+                      "Correct. He explicitly offers both actions.",
+                      "Incorrect. “Cancel the project” is not supported by the prompt or stimulus; the supported answer is “Reserve the media lab for 11:00 and message the team”."
+                    ]
+                  }
+                ]
+              }
+            ],
+            "audioAssetId": "audio-ex-g11-02-sec-conversations-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-talks",
+            "skill": "LISTENING",
+            "formatId": "short-talks",
+            "audioState": "generated-audio-temporary-approved",
+            "talks": [
+              {
+                "talkId": "t1",
+                "transcriptEn": "Good morning, everyone — quick briefing before the doors open. I'll cover three things: zones, breaks, and problems. Zones: your name tag color matches your zone map; stay in your zone unless a coordinator moves you. Breaks: fifteen minutes, staggered — check the schedule behind the info desk, not the group chat, which will be chaos today. Problems: anything involving guests goes to me directly; anything involving equipment goes to the technical booth beside the stage. Do not attempt heroic repairs yourselves — last year someone \"fixed\" a speaker into permanent silence. That's all. Doors in ten.",
+                "questions": [
+                  {
+                    "qid": "q5",
+                    "promptEn": "Who is this talk for?",
+                    "optionsEn": [
+                      "Festival guests",
+                      "Event volunteers/staff",
+                      "Sponsors",
+                      "Parents"
+                    ],
+                    "answerIndex": 1,
+                    "explanationId": "Briefing zona, istirahat, dan eskalasi masalah = untuk petugas.",
+                    "optionRationales": [
+                      "Incorrect. “Festival guests” is not supported by the prompt or stimulus; the supported answer is “Event volunteers/staff”.",
+                      "Correct. Briefing zona, istirahat, dan eskalasi masalah = untuk petugas.",
+                      "Incorrect. “Sponsors” is not supported by the prompt or stimulus; the supported answer is “Event volunteers/staff”.",
+                      "Incorrect. “Parents” is not supported by the prompt or stimulus; the supported answer is “Event volunteers/staff”."
+                    ]
+                  },
+                  {
+                    "qid": "q6",
+                    "promptEn": "Where should volunteers check the break schedule?",
+                    "optionsEn": [
+                      "The group chat",
+                      "Behind the info desk",
+                      "The main stage",
+                      "Their name tags"
+                    ],
+                    "answerIndex": 1,
+                    "explanationId": "Disebut eksplisit; group chat justru dilarang.",
+                    "optionRationales": [
+                      "Incorrect. “The group chat” is not supported by the prompt or stimulus; the supported answer is “Behind the info desk”.",
+                      "Correct. Disebut eksplisit; group chat justru dilarang.",
+                      "Incorrect. “The main stage” is not supported by the prompt or stimulus; the supported answer is “Behind the info desk”.",
+                      "Incorrect. “Their name tags” is not supported by the prompt or stimulus; the supported answer is “Behind the info desk”."
+                    ]
+                  },
+                  {
+                    "qid": "q7",
+                    "promptEn": "Where do equipment problems go?",
+                    "optionsEn": [
+                      "To the speaker directly",
+                      "To the technical booth beside the stage",
+                      "To the guests",
+                      "To the group chat"
+                    ],
+                    "answerIndex": 1,
+                    "explanationId": "Pemilahan eskalasi: tamu→pembicara, alat→booth teknis.",
+                    "optionRationales": [
+                      "Incorrect. “To the speaker directly” is not supported by the prompt or stimulus; the supported answer is “To the technical booth beside the stage”.",
+                      "Correct. Pemilahan eskalasi: tamu→pembicara, alat→booth teknis.",
+                      "Incorrect. “To the guests” is not supported by the prompt or stimulus; the supported answer is “To the technical booth beside the stage”.",
+                      "Incorrect. “To the group chat” is not supported by the prompt or stimulus; the supported answer is “To the technical booth beside the stage”."
+                    ]
+                  },
+                  {
+                    "qid": "q8",
+                    "promptEn": "Why does the speaker mention last year's speaker repair?",
+                    "optionsEn": [
+                      "To praise the volunteer",
+                      "To warn against fixing equipment yourself",
+                      "To request new speakers",
+                      "To start the show"
+                    ],
+                    "answerIndex": 1,
+                    "explanationId": "Anekdot memperkuat larangan \"heroic repairs\".",
+                    "optionRationales": [
+                      "Incorrect. “To praise the volunteer” is not supported by the prompt or stimulus; the supported answer is “To warn against fixing equipment yourself”.",
+                      "Correct. Anekdot memperkuat larangan \"heroic repairs\".",
+                      "Incorrect. “To request new speakers” is not supported by the prompt or stimulus; the supported answer is “To warn against fixing equipment yourself”.",
+                      "Incorrect. “To start the show” is not supported by the prompt or stimulus; the supported answer is “To warn against fixing equipment yourself”."
+                    ]
+                  }
+                ]
+              },
+              {
+                "talkId": "gen-sec-talks-talk-2",
+                "transcriptEn": "Attention participants in the project rehearsal. The opening session begins on Thursday at 11:00 in the main auditorium. Check in fifteen minutes early and bring a signed consent form. If you have an access problem, speak to the coordinator beside the information desk rather than asking the technical team. The technical team handles equipment only.",
+                "questions": [
+                  {
+                    "qid": "gen-sec-talks-t2-q1",
+                    "promptEn": "When and where does the project rehearsal opening session begin?",
+                    "optionsEn": [
+                      "Thursday at 14:30 in the main auditorium",
+                      "Saturday at 11:00 in the main auditorium",
+                      "Thursday at 11:00 at the information desk",
+                      "Thursday at 11:00 in the main auditorium"
+                    ],
+                    "answerIndex": 3,
+                    "explanationId": "The announcement states Thursday at 11:00 in the main auditorium.",
+                    "optionRationales": [
+                      "Incorrect. “Thursday at 14:30 in the main auditorium” is not supported by the prompt or stimulus; the supported answer is “Thursday at 11:00 in the main auditorium”.",
+                      "Incorrect. “Saturday at 11:00 in the main auditorium” is not supported by the prompt or stimulus; the supported answer is “Thursday at 11:00 in the main auditorium”.",
+                      "Incorrect. “Thursday at 11:00 at the information desk” is not supported by the prompt or stimulus; the supported answer is “Thursday at 11:00 in the main auditorium”.",
+                      "Correct. The announcement states Thursday at 11:00 in the main auditorium."
+                    ]
+                  },
+                  {
+                    "qid": "gen-sec-talks-t2-q2",
+                    "promptEn": "How early should project rehearsal participants check in?",
+                    "optionsEn": [
+                      "One hour early",
+                      "After the opening session",
+                      "Fifteen minutes early",
+                      "Five minutes late"
+                    ],
+                    "answerIndex": 2,
+                    "explanationId": "The announcement explicitly requests a fifteen-minute early check-in.",
+                    "optionRationales": [
+                      "Incorrect. “One hour early” is not supported by the prompt or stimulus; the supported answer is “Fifteen minutes early”.",
+                      "Incorrect. “After the opening session” is not supported by the prompt or stimulus; the supported answer is “Fifteen minutes early”.",
+                      "Correct. The announcement explicitly requests a fifteen-minute early check-in.",
+                      "Incorrect. “Five minutes late” is not supported by the prompt or stimulus; the supported answer is “Fifteen minutes early”."
+                    ]
+                  },
+                  {
+                    "qid": "gen-sec-talks-t2-q3",
+                    "promptEn": "Who handles an access problem during the project rehearsal?",
+                    "optionsEn": [
+                      "The equipment supplier",
+                      "The coordinator beside the information desk",
+                      "The technical team",
+                      "Another participant"
+                    ],
+                    "answerIndex": 1,
+                    "explanationId": "Access issues go to the coordinator; the technical team handles equipment only.",
+                    "optionRationales": [
+                      "Incorrect. “The equipment supplier” is not supported by the prompt or stimulus; the supported answer is “The coordinator beside the information desk”.",
+                      "Correct. Access issues go to the coordinator; the technical team handles equipment only.",
+                      "Incorrect. “The technical team” is not supported by the prompt or stimulus; the supported answer is “The coordinator beside the information desk”.",
+                      "Incorrect. “Another participant” is not supported by the prompt or stimulus; the supported answer is “The coordinator beside the information desk”."
+                    ]
+                  },
+                  {
+                    "qid": "gen-sec-talks-t2-q4",
+                    "promptEn": "What should participants bring to the project rehearsal?",
+                    "optionsEn": [
+                      "a signed consent form",
+                      "A toolbox",
+                      "A stage light",
+                      "A visitor badge for someone else"
+                    ],
+                    "answerIndex": 0,
+                    "explanationId": "The required item is a signed consent form.",
+                    "optionRationales": [
+                      "Correct. The required item is a signed consent form.",
+                      "Incorrect. “A toolbox” is not supported by the prompt or stimulus; the supported answer is “a signed consent form”.",
+                      "Incorrect. “A stage light” is not supported by the prompt or stimulus; the supported answer is “a signed consent form”.",
+                      "Incorrect. “A visitor badge for someone else” is not supported by the prompt or stimulus; the supported answer is “a signed consent form”."
+                    ]
+                  }
+                ]
+              },
+              {
+                "talkId": "gen-sec-talks-talk-3",
+                "transcriptEn": "Attention participants in the safety orientation. The opening session begins on Friday at 13:00 in Room 10-B. Check in fifteen minutes early and bring the revised schedule. If you have an access problem, speak to the coordinator beside the information desk rather than asking the technical team. The technical team handles equipment only.",
+                "questions": [
+                  {
+                    "qid": "gen-sec-talks-t3-q1",
+                    "promptEn": "When and where does the safety orientation opening session begin?",
+                    "optionsEn": [
+                      "Monday at 13:00 in Room 10-B",
+                      "Friday at 13:00 at the information desk",
+                      "Friday at 13:00 in Room 10-B",
+                      "Friday at 16:00 in Room 10-B"
+                    ],
+                    "answerIndex": 2,
+                    "explanationId": "The announcement states Friday at 13:00 in Room 10-B.",
+                    "optionRationales": [
+                      "Incorrect. “Monday at 13:00 in Room 10-B” is not supported by the prompt or stimulus; the supported answer is “Friday at 13:00 in Room 10-B”.",
+                      "Incorrect. “Friday at 13:00 at the information desk” is not supported by the prompt or stimulus; the supported answer is “Friday at 13:00 in Room 10-B”.",
+                      "Correct. The announcement states Friday at 13:00 in Room 10-B.",
+                      "Incorrect. “Friday at 16:00 in Room 10-B” is not supported by the prompt or stimulus; the supported answer is “Friday at 13:00 in Room 10-B”."
+                    ]
+                  },
+                  {
+                    "qid": "gen-sec-talks-t3-q2",
+                    "promptEn": "How early should safety orientation participants check in?",
+                    "optionsEn": [
+                      "After the opening session",
+                      "Fifteen minutes early",
+                      "Five minutes late",
+                      "One hour early"
+                    ],
+                    "answerIndex": 1,
+                    "explanationId": "The announcement explicitly requests a fifteen-minute early check-in.",
+                    "optionRationales": [
+                      "Incorrect. “After the opening session” is not supported by the prompt or stimulus; the supported answer is “Fifteen minutes early”.",
+                      "Correct. The announcement explicitly requests a fifteen-minute early check-in.",
+                      "Incorrect. “Five minutes late” is not supported by the prompt or stimulus; the supported answer is “Fifteen minutes early”.",
+                      "Incorrect. “One hour early” is not supported by the prompt or stimulus; the supported answer is “Fifteen minutes early”."
+                    ]
+                  },
+                  {
+                    "qid": "gen-sec-talks-t3-q3",
+                    "promptEn": "Who handles an access problem during the safety orientation?",
+                    "optionsEn": [
+                      "The coordinator beside the information desk",
+                      "The technical team",
+                      "Another participant",
+                      "The equipment supplier"
+                    ],
+                    "answerIndex": 0,
+                    "explanationId": "Access issues go to the coordinator; the technical team handles equipment only.",
+                    "optionRationales": [
+                      "Correct. Access issues go to the coordinator; the technical team handles equipment only.",
+                      "Incorrect. “The technical team” is not supported by the prompt or stimulus; the supported answer is “The coordinator beside the information desk”.",
+                      "Incorrect. “Another participant” is not supported by the prompt or stimulus; the supported answer is “The coordinator beside the information desk”.",
+                      "Incorrect. “The equipment supplier” is not supported by the prompt or stimulus; the supported answer is “The coordinator beside the information desk”."
+                    ]
+                  },
+                  {
+                    "qid": "gen-sec-talks-t3-q4",
+                    "promptEn": "What should participants bring to the safety orientation?",
+                    "optionsEn": [
+                      "A toolbox",
+                      "A stage light",
+                      "A visitor badge for someone else",
+                      "the revised schedule"
+                    ],
+                    "answerIndex": 3,
+                    "explanationId": "The required item is the revised schedule.",
+                    "optionRationales": [
+                      "Incorrect. “A toolbox” is not supported by the prompt or stimulus; the supported answer is “the revised schedule”.",
+                      "Incorrect. “A stage light” is not supported by the prompt or stimulus; the supported answer is “the revised schedule”.",
+                      "Incorrect. “A visitor badge for someone else” is not supported by the prompt or stimulus; the supported answer is “the revised schedule”.",
+                      "Correct. The required item is the revised schedule."
+                    ]
+                  }
+                ]
+              }
+            ],
+            "audioAssetId": "audio-ex-g11-02-sec-talks-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          }
+        ],
+        "vocabulary": [],
+        "expressions": [],
+        "recallHooks": [],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-mcq-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "ex-g11-03",
+      "revision": 1,
+      "kind": "ASSESSMENT",
+      "grade": "GRADE_11",
+      "track": "EXAM_LAB",
+      "phase": "PHASE_F",
+      "title": "TOEIC-style: Reading (Completion and Passages)",
+      "primarySkill": "READING",
+      "supportingSkills": [
+        "GRAMMAR"
+      ],
+      "objectiveKeys": [
+        "obj-g11-05",
+        "obj-g11-11",
+        "obj-g11-13"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "exam-meta",
+            "modeId": "TOEIC_STYLE",
+            "instructionId": "Latihan gaya TOEIC menengah: melengkapi teks dan memahami bacaan tempat kerja.",
+            "timeSuggestionMinutes": 20,
+            "originalContentNote": "Konten latihan orisinal bergaya TOEIC. StoryArc tidak berafiliasi dengan ETS.",
+            "disclaimerId": "TOEIC adalah merek dagang ETS. Latihan ini hanya meniru format interaksi umum."
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-text-completion",
+            "skill": "READING",
+            "formatId": "text-completion",
+            "textEn": "MEMO — To all event committee members. Due to the increased number of confirmed guests, the catering order has been revised. Members who submitted dietary information after Monday (1)___ receive their confirmation separately. Please note that the revised order (2)___ vegetarian options for approximately a third of attendees. If your section requires additional portions, submit the request form (3)___ Thursday noon. Late requests cannot be (4)___ because the caterer finalizes quantities on Friday morning.",
+            "questions": [
+              {
+                "qid": "q1",
+                "promptEn": "(1)",
+                "optionsEn": [
+                  "will",
+                  "would have",
+                  "did",
+                  "were"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Kejadian mendatang: \"will receive\".",
+                "optionRationales": [
+                  "Correct. Kejadian mendatang: \"will receive\".",
+                  "Incorrect. “would have” is not supported by the prompt or stimulus; the supported answer is “will”.",
+                  "Incorrect. “did” is not supported by the prompt or stimulus; the supported answer is “will”.",
+                  "Incorrect. “were” is not supported by the prompt or stimulus; the supported answer is “will”."
+                ]
+              },
+              {
+                "qid": "q2",
+                "promptEn": "(2)",
+                "optionsEn": [
+                  "includes",
+                  "including",
+                  "included by",
+                  "include of"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Subjek tunggal \"order\" + present: includes.",
+                "optionRationales": [
+                  "Correct. Subjek tunggal \"order\" + present: includes.",
+                  "Incorrect. “including” is not supported by the prompt or stimulus; the supported answer is “includes”.",
+                  "Incorrect. “included by” is not supported by the prompt or stimulus; the supported answer is “includes”.",
+                  "Incorrect. “include of” is not supported by the prompt or stimulus; the supported answer is “includes”."
+                ]
+              },
+              {
+                "qid": "q3",
+                "promptEn": "(3)",
+                "optionsEn": [
+                  "by",
+                  "until at",
+                  "since",
+                  "on at"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Tenggat memakai \"by\".",
+                "optionRationales": [
+                  "Correct. Tenggat memakai \"by\".",
+                  "Incorrect. “until at” is not supported by the prompt or stimulus; the supported answer is “by”.",
+                  "Incorrect. “since” is not supported by the prompt or stimulus; the supported answer is “by”.",
+                  "Incorrect. “on at” is not supported by the prompt or stimulus; the supported answer is “by”."
+                ]
+              },
+              {
+                "qid": "q4",
+                "promptEn": "(4)",
+                "optionsEn": [
+                  "accommodated",
+                  "accommodating",
+                  "accommodation",
+                  "accommodate"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Pasif: \"cannot be accommodated\".",
+                "optionRationales": [
+                  "Correct. Pasif: \"cannot be accommodated\".",
+                  "Incorrect. “accommodating” is not supported by the prompt or stimulus; the supported answer is “accommodated”.",
+                  "Incorrect. “accommodation” is not supported by the prompt or stimulus; the supported answer is “accommodated”.",
+                  "Incorrect. “accommodate” is not supported by the prompt or stimulus; the supported answer is “accommodated”."
+                ]
+              },
+              {
+                "qid": "gen-sec-text-completion-5",
+                "promptEn": "Choose the best word or form: The team revised the plan ___ the original budget was too high.",
+                "optionsEn": [
+                  "because",
+                  "although",
+                  "unless",
+                  "however"
+                ],
+                "answerIndex": 0,
+                "explanationId": "“Because” introduces the cause of the revision.",
+                "optionRationales": [
+                  "Correct. “Because” introduces the cause of the revision.",
+                  "Incorrect. “although” is not supported by the prompt or stimulus; the supported answer is “because”.",
+                  "Incorrect. “unless” is not supported by the prompt or stimulus; the supported answer is “because”.",
+                  "Incorrect. “however” is not supported by the prompt or stimulus; the supported answer is “because”."
+                ]
+              },
+              {
+                "qid": "gen-sec-text-completion-6",
+                "promptEn": "Choose the best word or form: Although the science club briefing started late, the volunteers ___ every essential task.",
+                "optionsEn": [
+                  "complete",
+                  "completing",
+                  "has complete",
+                  "completed"
+                ],
+                "answerIndex": 3,
+                "explanationId": "The completed past event requires “completed”.",
+                "optionRationales": [
+                  "Incorrect. “complete” is not supported by the prompt or stimulus; the supported answer is “completed”.",
+                  "Incorrect. “completing” is not supported by the prompt or stimulus; the supported answer is “completed”.",
+                  "Incorrect. “has complete” is not supported by the prompt or stimulus; the supported answer is “completed”.",
+                  "Correct. The completed past event requires “completed”."
+                ]
+              },
+              {
+                "qid": "gen-sec-text-completion-7",
+                "promptEn": "Choose the best word or form: Farah suggested ___ the break so the rehearsal could finish on time.",
+                "optionsEn": [
+                  "shortened",
+                  "to shortened",
+                  "shortening",
+                  "shorten"
+                ],
+                "answerIndex": 2,
+                "explanationId": "“Suggest” is followed by a gerund in this structure.",
+                "optionRationales": [
+                  "Incorrect. “shortened” is not supported by the prompt or stimulus; the supported answer is “shortening”.",
+                  "Incorrect. “to shortened” is not supported by the prompt or stimulus; the supported answer is “shortening”.",
+                  "Correct. “Suggest” is followed by a gerund in this structure.",
+                  "Incorrect. “shorten” is not supported by the prompt or stimulus; the supported answer is “shortening”."
+                ]
+              },
+              {
+                "qid": "gen-sec-text-completion-8",
+                "promptEn": "Choose the best word or form: The updated schedule ___ to every team member this morning.",
+                "optionsEn": [
+                  "has send",
+                  "was sent",
+                  "sent",
+                  "is sending"
+                ],
+                "answerIndex": 1,
+                "explanationId": "The passive form “was sent” focuses on the schedule receiving the action.",
+                "optionRationales": [
+                  "Incorrect. “has send” is not supported by the prompt or stimulus; the supported answer is “was sent”.",
+                  "Correct. The passive form “was sent” focuses on the schedule receiving the action.",
+                  "Incorrect. “sent” is not supported by the prompt or stimulus; the supported answer is “was sent”.",
+                  "Incorrect. “is sending” is not supported by the prompt or stimulus; the supported answer is “was sent”."
+                ]
+              }
+            ]
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-passage",
+            "skill": "READING",
+            "formatId": "single-passage",
+            "textEn": "NOTICE — TANJUNG LARAS YOUTH GRANT 2027. The city's Creative Youth Grant supports student-led projects with funding of up to 5 million rupiah. What changed this year: applications now require evidence of a completed smaller project — photographs, budgets, or evaluation reports — because last year, roughly half of funded proposals were never carried out. Priority is given to projects that involve more than one school and include a written risk plan. Applications open 1 May and close 30 June; results are announced on 1 August. Note that late submissions and proposals without an adult supervisor's signature will not be reviewed. Questions may be directed to the Youth Affairs Office on Jalan Dermaga.",
+            "questions": [
+              {
+                "qid": "q5",
+                "promptEn": "Why does the grant now require evidence of a completed smaller project?",
+                "optionsEn": [
+                  "To reduce paperwork",
+                  "Because about half of last year's funded proposals were never carried out",
+                  "Because photos are popular",
+                  "To limit funding to older students"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Sebab kebijakan dinyatakan dengan \"because…\".",
+                "optionRationales": [
+                  "Incorrect. “To reduce paperwork” is not supported by the prompt or stimulus; the supported answer is “Because about half of last year's funded proposals were never carried out”.",
+                  "Correct. Sebab kebijakan dinyatakan dengan \"because…\".",
+                  "Incorrect. “Because photos are popular” is not supported by the prompt or stimulus; the supported answer is “Because about half of last year's funded proposals were never carried out”.",
+                  "Incorrect. “To limit funding to older students” is not supported by the prompt or stimulus; the supported answer is “Because about half of last year's funded proposals were never carried out”."
+                ]
+              },
+              {
+                "qid": "q6",
+                "promptEn": "Which project would get priority?",
+                "optionsEn": [
+                  "A single-school project with no risk plan",
+                  "A two-school project with a written risk plan",
+                  "A project without a supervisor",
+                  "A late submission"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Dua kriteria prioritas disebut eksplisit.",
+                "optionRationales": [
+                  "Incorrect. “A single-school project with no risk plan” is not supported by the prompt or stimulus; the supported answer is “A two-school project with a written risk plan”.",
+                  "Correct. Dua kriteria prioritas disebut eksplisit.",
+                  "Incorrect. “A project without a supervisor” is not supported by the prompt or stimulus; the supported answer is “A two-school project with a written risk plan”.",
+                  "Incorrect. “A late submission” is not supported by the prompt or stimulus; the supported answer is “A two-school project with a written risk plan”."
+                ]
+              },
+              {
+                "qid": "q7",
+                "promptEn": "What happens to a proposal without a supervisor's signature?",
+                "optionsEn": [
+                  "It is reviewed last",
+                  "It is not reviewed at all",
+                  "It gets partial funding",
+                  "It is returned for revision"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"will not be reviewed\".",
+                "optionRationales": [
+                  "Incorrect. “It is reviewed last” is not supported by the prompt or stimulus; the supported answer is “It is not reviewed at all”.",
+                  "Correct. \"will not be reviewed\".",
+                  "Incorrect. “It gets partial funding” is not supported by the prompt or stimulus; the supported answer is “It is not reviewed at all”.",
+                  "Incorrect. “It is returned for revision” is not supported by the prompt or stimulus; the supported answer is “It is not reviewed at all”."
+                ]
+              },
+              {
+                "qid": "q8",
+                "promptEn": "\"Student-led\" projects are projects that…",
+                "optionsEn": [
+                  "are led by students",
+                  "teach students",
+                  "exclude students",
+                  "pay students"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Komposit \"X-led\" = dipimpin oleh X.",
+                "optionRationales": [
+                  "Correct. Komposit \"X-led\" = dipimpin oleh X.",
+                  "Incorrect. “teach students” is not supported by the prompt or stimulus; the supported answer is “are led by students”.",
+                  "Incorrect. “exclude students” is not supported by the prompt or stimulus; the supported answer is “are led by students”.",
+                  "Incorrect. “pay students” is not supported by the prompt or stimulus; the supported answer is “are led by students”."
+                ]
+              },
+              {
+                "qid": "q9",
+                "promptEn": "When are results announced?",
+                "optionsEn": [
+                  "30 June",
+                  "1 May",
+                  "1 August",
+                  "1 July"
+                ],
+                "answerIndex": 2,
+                "explanationId": "Scanning tanggal: hasil 1 Agustus.",
+                "optionRationales": [
+                  "Incorrect. “30 June” is not supported by the prompt or stimulus; the supported answer is “1 August”.",
+                  "Incorrect. “1 May” is not supported by the prompt or stimulus; the supported answer is “1 August”.",
+                  "Correct. Scanning tanggal: hasil 1 Agustus.",
+                  "Incorrect. “1 July” is not supported by the prompt or stimulus; the supported answer is “1 August”."
+                ]
+              },
+              {
+                "qid": "q10",
+                "promptEn": "The maximum funding is…",
+                "optionsEn": [
+                  "5 million rupiah",
+                  "50 million rupiah",
+                  "1 million rupiah",
+                  "unstated"
+                ],
+                "answerIndex": 0,
+                "explanationId": "\"up to 5 million rupiah\".",
+                "optionRationales": [
+                  "Correct. \"up to 5 million rupiah\".",
+                  "Incorrect. “50 million rupiah” is not supported by the prompt or stimulus; the supported answer is “5 million rupiah”.",
+                  "Incorrect. “1 million rupiah” is not supported by the prompt or stimulus; the supported answer is “5 million rupiah”.",
+                  "Incorrect. “unstated” is not supported by the prompt or stimulus; the supported answer is “5 million rupiah”."
+                ]
+              },
+              {
+                "qid": "gen-sec-passage-7",
+                "promptEn": "What should Gilang do?",
+                "passageEn": "Subject: Action needed for the internship briefing. Hi Gilang, please email a printed résumé to the coordinator by Wednesday at 09:30. Do not leave it at the front desk because the office will be closed.",
+                "optionsEn": [
+                  "Bring a printed résumé after the event",
+                  "Call the office on Monday",
+                  "Email a printed résumé by Wednesday at 09:30",
+                  "Leave a printed résumé at the front desk"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The email requests an email submission by Wednesday at 09:30 and explicitly rejects the front-desk option.",
+                "optionRationales": [
+                  "Incorrect. “Bring a printed résumé after the event” is not supported by the prompt or stimulus; the supported answer is “Email a printed résumé by Wednesday at 09:30”.",
+                  "Incorrect. “Call the office on Monday” is not supported by the prompt or stimulus; the supported answer is “Email a printed résumé by Wednesday at 09:30”.",
+                  "Correct. The email requests an email submission by Wednesday at 09:30 and explicitly rejects the front-desk option.",
+                  "Incorrect. “Leave a printed résumé at the front desk” is not supported by the prompt or stimulus; the supported answer is “Email a printed résumé by Wednesday at 09:30”."
+                ]
+              },
+              {
+                "qid": "gen-sec-passage-8",
+                "promptEn": "For the science club briefing scheduled on Thursday, which applicant clearly meets the stated requirements?",
+                "passageEn": "Hana's team needs a student assistant for the science club briefing. Applicants must be available on Thursday, communicate politely with visitors, and know how to use a shared spreadsheet. Training is provided, so previous event experience is optional.",
+                "optionsEn": [
+                  "A student who can attend but will not use the team spreadsheet",
+                  "A student available on Thursday who communicates politely and can use a shared spreadsheet",
+                  "A student available only on Tuesday who refuses visitor-facing tasks",
+                  "A student with event experience who cannot attend the required day"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Availability, visitor communication, and spreadsheet use are mandatory; prior event experience is optional.",
+                "optionRationales": [
+                  "Incorrect. “A student who can attend but will not use the team spreadsheet” is not supported by the prompt or stimulus; the supported answer is “A student available on Thursday who communicates politely and can use a shared spreadsheet”.",
+                  "Correct. Availability, visitor communication, and spreadsheet use are mandatory; prior event experience is optional.",
+                  "Incorrect. “A student available only on Tuesday who refuses visitor-facing tasks” is not supported by the prompt or stimulus; the supported answer is “A student available on Thursday who communicates politely and can use a shared spreadsheet”.",
+                  "Incorrect. “A student with event experience who cannot attend the required day” is not supported by the prompt or stimulus; the supported answer is “A student available on Thursday who communicates politely and can use a shared spreadsheet”."
+                ]
+              },
+              {
+                "qid": "gen-sec-passage-9",
+                "promptEn": "Why did Intan's team still complete every essential task for the career workshop?",
+                "passageEn": "The career workshop started late because the original room is being used for an exam. Intan informed the participants, shortened the opening activity, and kept the final practice unchanged. As a result, the team still completed every essential task.",
+                "optionsEn": [
+                  "Intan adjusted the opening activity after explaining the delay",
+                  "The event started earlier than planned",
+                  "The team cancelled the final practice",
+                  "The reason for the delay disappeared immediately"
+                ],
+                "answerIndex": 0,
+                "explanationId": "The passage links the completed tasks to the shortened opening activity and clear update.",
+                "optionRationales": [
+                  "Correct. The passage links the completed tasks to the shortened opening activity and clear update.",
+                  "Incorrect. “The event started earlier than planned” is not supported by the prompt or stimulus; the supported answer is “Intan adjusted the opening activity after explaining the delay”.",
+                  "Incorrect. “The team cancelled the final practice” is not supported by the prompt or stimulus; the supported answer is “Intan adjusted the opening activity after explaining the delay”.",
+                  "Incorrect. “The reason for the delay disappeared immediately” is not supported by the prompt or stimulus; the supported answer is “Intan adjusted the opening activity after explaining the delay”."
+                ]
+              },
+              {
+                "qid": "gen-sec-passage-10",
+                "promptEn": "In Room 10-B, what must a student do immediately after reading the safety card?",
+                "passageEn": "Before using the equipment in Room 10-B, first read the safety card, then inspect the power cable, and finally ask the supervisor to confirm the setup. If the cable is damaged, stop and report it; do not attempt a repair.",
+                "optionsEn": [
+                  "Repair any damaged cable",
+                  "Turn on the equipment immediately",
+                  "Leave the room without reporting anything",
+                  "Inspect the power cable"
+                ],
+                "answerIndex": 3,
+                "explanationId": "The procedure orders the cable inspection directly after reading the safety card.",
+                "optionRationales": [
+                  "Incorrect. “Repair any damaged cable” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Incorrect. “Turn on the equipment immediately” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Incorrect. “Leave the room without reporting anything” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Correct. The procedure orders the cable inspection directly after reading the safety card."
+                ]
+              },
+              {
+                "qid": "gen-sec-passage-11",
+                "promptEn": "According to the notice, when and where will the campus tour take place?",
+                "passageEn": "NOTICE: The campus tour was originally planned for Friday. It will now take place on Monday at 16:00 in the library hall because the delivery will arrive late. Bring a student ID card.",
+                "optionsEn": [
+                  "Monday at 09:30 in the library hall",
+                  "Monday at 16:00 in Workshop 2",
+                  "Monday at 16:00 in the library hall",
+                  "Friday at 16:00 in the library hall"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The revised schedule explicitly states Monday at 16:00 in the library hall.",
+                "optionRationales": [
+                  "Incorrect. “Monday at 09:30 in the library hall” is not supported by the prompt or stimulus; the supported answer is “Monday at 16:00 in the library hall”.",
+                  "Incorrect. “Monday at 16:00 in Workshop 2” is not supported by the prompt or stimulus; the supported answer is “Monday at 16:00 in the library hall”.",
+                  "Correct. The revised schedule explicitly states Monday at 16:00 in the library hall.",
+                  "Incorrect. “Friday at 16:00 in the library hall” is not supported by the prompt or stimulus; the supported answer is “Monday at 16:00 in the library hall”."
+                ]
+              },
+              {
+                "qid": "gen-sec-passage-12",
+                "promptEn": "What should Lukman do?",
+                "passageEn": "Subject: Action needed for the project rehearsal. Hi Lukman, please email the safety checklist to the coordinator by Tuesday at 08:00. Do not leave it at the front desk because the office will be closed.",
+                "optionsEn": [
+                  "Call the office on Saturday",
+                  "Email the safety checklist by Tuesday at 08:00",
+                  "Leave the safety checklist at the front desk",
+                  "Bring the safety checklist after the event"
+                ],
+                "answerIndex": 1,
+                "explanationId": "The email requests an email submission by Tuesday at 08:00 and explicitly rejects the front-desk option.",
+                "optionRationales": [
+                  "Incorrect. “Call the office on Saturday” is not supported by the prompt or stimulus; the supported answer is “Email the safety checklist by Tuesday at 08:00”.",
+                  "Correct. The email requests an email submission by Tuesday at 08:00 and explicitly rejects the front-desk option.",
+                  "Incorrect. “Leave the safety checklist at the front desk” is not supported by the prompt or stimulus; the supported answer is “Email the safety checklist by Tuesday at 08:00”.",
+                  "Incorrect. “Bring the safety checklist after the event” is not supported by the prompt or stimulus; the supported answer is “Email the safety checklist by Tuesday at 08:00”."
+                ]
+              },
+              {
+                "qid": "gen-sec-passage-13",
+                "promptEn": "For the safety orientation scheduled on Wednesday, which applicant clearly meets the stated requirements?",
+                "passageEn": "Alya's team needs a student assistant for the safety orientation. Applicants must be available on Wednesday, communicate politely with visitors, and know how to use a shared spreadsheet. Training is provided, so previous event experience is optional.",
+                "optionsEn": [
+                  "A student available on Wednesday who communicates politely and can use a shared spreadsheet",
+                  "A student available only on Monday who refuses visitor-facing tasks",
+                  "A student with event experience who cannot attend the required day",
+                  "A student who can attend but will not use the team spreadsheet"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Availability, visitor communication, and spreadsheet use are mandatory; prior event experience is optional.",
+                "optionRationales": [
+                  "Correct. Availability, visitor communication, and spreadsheet use are mandatory; prior event experience is optional.",
+                  "Incorrect. “A student available only on Monday who refuses visitor-facing tasks” is not supported by the prompt or stimulus; the supported answer is “A student available on Wednesday who communicates politely and can use a shared spreadsheet”.",
+                  "Incorrect. “A student with event experience who cannot attend the required day” is not supported by the prompt or stimulus; the supported answer is “A student available on Wednesday who communicates politely and can use a shared spreadsheet”.",
+                  "Incorrect. “A student who can attend but will not use the team spreadsheet” is not supported by the prompt or stimulus; the supported answer is “A student available on Wednesday who communicates politely and can use a shared spreadsheet”."
+                ]
+              },
+              {
+                "qid": "gen-sec-passage-14",
+                "promptEn": "Why did Bagas's team still complete every essential task for the library volunteer shift?",
+                "passageEn": "The library volunteer shift started late because the projector needs repair. Bagas informed the participants, shortened the opening activity, and kept the final practice unchanged. As a result, the team still completed every essential task.",
+                "optionsEn": [
+                  "The event started earlier than planned",
+                  "The team cancelled the final practice",
+                  "The reason for the delay disappeared immediately",
+                  "Bagas adjusted the opening activity after explaining the delay"
+                ],
+                "answerIndex": 3,
+                "explanationId": "The passage links the completed tasks to the shortened opening activity and clear update.",
+                "optionRationales": [
+                  "Incorrect. “The event started earlier than planned” is not supported by the prompt or stimulus; the supported answer is “Bagas adjusted the opening activity after explaining the delay”.",
+                  "Incorrect. “The team cancelled the final practice” is not supported by the prompt or stimulus; the supported answer is “Bagas adjusted the opening activity after explaining the delay”.",
+                  "Incorrect. “The reason for the delay disappeared immediately” is not supported by the prompt or stimulus; the supported answer is “Bagas adjusted the opening activity after explaining the delay”.",
+                  "Correct. The passage links the completed tasks to the shortened opening activity and clear update."
+                ]
+              },
+              {
+                "qid": "gen-sec-passage-15",
+                "promptEn": "In the main auditorium, what must a student do immediately after reading the safety card?",
+                "passageEn": "Before using the equipment in the main auditorium, first read the safety card, then inspect the power cable, and finally ask the supervisor to confirm the setup. If the cable is damaged, stop and report it; do not attempt a repair.",
+                "optionsEn": [
+                  "Turn on the equipment immediately",
+                  "Leave the room without reporting anything",
+                  "Inspect the power cable",
+                  "Repair any damaged cable"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The procedure orders the cable inspection directly after reading the safety card.",
+                "optionRationales": [
+                  "Incorrect. “Turn on the equipment immediately” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Incorrect. “Leave the room without reporting anything” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Correct. The procedure orders the cable inspection directly after reading the safety card.",
+                  "Incorrect. “Repair any damaged cable” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”."
+                ]
+              },
+              {
+                "qid": "gen-sec-passage-16",
+                "promptEn": "According to the notice, when and where will the science club briefing take place?",
+                "passageEn": "NOTICE: The science club briefing was originally planned for Thursday. It will now take place on Saturday at 14:30 in Room 10-B because the supervisor has an urgent meeting. Bring the revised schedule.",
+                "optionsEn": [
+                  "Saturday at 14:30 in the library hall",
+                  "Saturday at 14:30 in Room 10-B",
+                  "Thursday at 14:30 in Room 10-B",
+                  "Saturday at 08:00 in Room 10-B"
+                ],
+                "answerIndex": 1,
+                "explanationId": "The revised schedule explicitly states Saturday at 14:30 in Room 10-B.",
+                "optionRationales": [
+                  "Incorrect. “Saturday at 14:30 in the library hall” is not supported by the prompt or stimulus; the supported answer is “Saturday at 14:30 in Room 10-B”.",
+                  "Correct. The revised schedule explicitly states Saturday at 14:30 in Room 10-B.",
+                  "Incorrect. “Thursday at 14:30 in Room 10-B” is not supported by the prompt or stimulus; the supported answer is “Saturday at 14:30 in Room 10-B”.",
+                  "Incorrect. “Saturday at 08:00 in Room 10-B” is not supported by the prompt or stimulus; the supported answer is “Saturday at 14:30 in Room 10-B”."
+                ]
+              }
+            ]
+          }
+        ],
+        "vocabulary": [],
+        "expressions": [],
+        "recallHooks": [],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-mcq-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "ex-g11-04",
+      "revision": 1,
+      "kind": "ASSESSMENT",
+      "grade": "GRADE_11",
+      "track": "EXAM_LAB",
+      "phase": "PHASE_F",
+      "title": "Interview: Experience and Teamwork",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "LISTENING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-02",
+        "obj-g11-04",
+        "obj-g11-07",
+        "obj-g11-08",
+        "obj-g11-12"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "exam-meta",
+            "modeId": "INTERVIEW",
+            "instructionId": "Wawancara kelas 11 bersama John: pengalaman dan kerja tim. Dinilai dari transkrip dengan rubrik berbicara; tanpa penilaian pelafalan akustik.",
+            "timeSuggestionMinutes": 12
+          },
+          {
+            "blockType": "john-interview",
+            "johnContent": {
+              "learningContextId": "Wawancara tingkat menengah tentang pengalaman berkelompok dan penanganan masalah.",
+              "expectedStudentIntent": "Menceritakan pengalaman nyata dengan struktur dan menanggapi skenario interaktif.",
+              "tutorGoal": "Menggali contoh spesifik (bukan generalisasi), menguji hedging dan bahasa perbaikan dalam skenario.",
+              "relevantLanguage": [
+                "I see your point, but…",
+                "It turns out…",
+                "Can you take care of…?",
+                "That's on me",
+                "What if we…?"
+              ],
+              "acceptableResponseDimensions": [
+                "natural",
+                "understandable-unnatural",
+                "too-direct",
+                "vague"
+              ],
+              "contextualFollowUpIntent": "John menindaklanjuti isi jawaban siswa: jika jawaban umum (\"we worked together\"), ia minta satu kejadian spesifik dengan siapa/kapan/apa; jika siswa menyalahkan pihak lain, ia bertanya apa yang bisa siswa kendalikan; jika siswa memakai ungkapan target, ia menaikkan kesulitan skenario."
+            },
+            "prompts": [
+              {
+                "promptId": "p1",
+                "promptEn": "Tell me about a group project you worked on this year. What was your role, and what actually happened?",
+                "targetObjective": "obj-g11-07",
+                "followUpIntentId": "Minta detail pembagian tugas: siapa mengerjakan apa, dan bagaimana itu diputuskan."
+              },
+              {
+                "promptId": "p2",
+                "promptEn": "Describe a time when something went wrong in a team task. How did you report it, and what did you do next?",
+                "targetObjective": "obj-g11-08",
+                "followUpIntentId": "Uji kejujuran laporan: tanyakan kapan masalah dilaporkan dan apakah ada usulan solusi."
+              },
+              {
+                "promptId": "p3",
+                "promptEn": "Scenario: I'm your teammate, and I insist we finish the whole project tonight, the night before the deadline. Disagree with me — politely.",
+                "targetObjective": "obj-g11-02",
+                "followUpIntentId": "Balas keberatan siswa dengan argumen tandingan ringan; nilai apakah siswa tetap santun dan menawarkan alternatif."
+              },
+              {
+                "promptId": "p4",
+                "promptEn": "Scenario continues: we argued about it and I said something harsh. Now I'm upset. Repair the situation.",
+                "targetObjective": "obj-g11-12",
+                "followUpIntentId": "Nilai tiga bagian perbaikan (akui, tanggung jawab, tindak lanjut); jika siswa hanya minta maaf datar, pancing dengan \"sorry for what, exactly?\"."
+              },
+              {
+                "promptId": "p5",
+                "promptEn": "Last one: negotiate our study schedule for next week. I'm free evenings only; convince me of a plan that works for both of us.",
+                "targetObjective": "obj-g11-04",
+                "followUpIntentId": "Tolak usulan pertama dengan alasan realistis satu kali; nilai apakah siswa menawar ulang, bukan menyerah."
+              }
+            ]
+          },
+          {
+            "blockType": "rubric-definition",
+            "rubricRevisionId": "rubric-g11-speaking-v1",
+            "scale": "0-4 per criterion, transcript-based",
+            "criteria": [
+              {
+                "criterionId": "relevance",
+                "titleEn": "Response relevance",
+                "descriptorId": "Jawaban menjawab skenario yang diberikan, dengan contoh spesifik."
+              },
+              {
+                "criterionId": "grammar",
+                "titleEn": "Grammar",
+                "descriptorId": "Bentuk lampau, perfect, dan pengandaian ringan akurat."
+              },
+              {
+                "criterionId": "vocabulary",
+                "titleEn": "Vocabulary",
+                "descriptorId": "Ungkapan kolaborasi/perbaikan kelas 11 digunakan tepat."
+              },
+              {
+                "criterionId": "naturalness",
+                "titleEn": "Naturalness",
+                "descriptorId": "Hedging dan pelunak terdengar wajar, tidak dihafal."
+              },
+              {
+                "criterionId": "clarity",
+                "titleEn": "Clarity of expressed idea",
+                "descriptorId": "Alur kejadian dan solusi mudah diikuti dari transkrip."
+              }
+            ],
+            "pronunciationNoteId": "Pelafalan TIDAK dinilai: evaluasi akustik belum didukung implementasi (IMPLEMENTATION GAP G3)."
+          }
+        ],
+        "vocabulary": [],
+        "expressions": [],
+        "recallHooks": [],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-speaking-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "ex-g11-05",
+      "revision": 1,
+      "kind": "ASSESSMENT",
+      "grade": "GRADE_11",
+      "track": "EXAM_LAB",
+      "phase": "PHASE_F",
+      "title": "Presentation Assessment: Project Showcase",
+      "primarySkill": "SPEAKING",
+      "supportingSkills": [
+        "VOCABULARY"
+      ],
+      "objectiveKeys": [
+        "obj-g11-10",
+        "obj-g11-11"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "exam-meta",
+            "modeId": "INTERVIEW",
+            "instructionId": "Penilaian presentasi: siswa merekam presentasi 3–4 menit tentang sebuah proyek (nyata atau dari data yang disediakan), lalu menjawab dua pertanyaan lanjutan. Dinilai dari transkrip.",
+            "timeSuggestionMinutes": 15
+          },
+          {
+            "blockType": "presentation-task",
+            "taskEn": "Present a project of your choice (a real school project, or the provided festival case) in 3–4 minutes. Requirements: a hook, an explicit map (\"I'll cover…\"), at least two signposted sections, one data description using the provided figures, a \"so what\" conclusion, and a close.",
+            "providedDataEn": "Festival case figures: visitors 211 (target 150); booth income 1.68 million (target 1.5); complaints 9, of which 6 about queue times; volunteer no-shows 3 of 25.",
+            "questions": [
+              {
+                "qid": "qa1",
+                "promptEn": "Follow-up 1 (John asks based on the student's actual talk): probe the weakest-supported claim in the presentation and ask for evidence or an example.",
+                "followUpIntentId": "Adaptif: merujuk klaim nyata dari transkrip siswa."
+              },
+              {
+                "qid": "qa2",
+                "promptEn": "Follow-up 2: \"If you ran this project again with half the budget, what would you cut, and why?\"",
+                "followUpIntentId": "Menguji penalaran prioritas dan bahasa sebab-akibat secara spontan."
+              }
+            ]
+          },
+          {
+            "blockType": "rubric-definition",
+            "rubricRevisionId": "rubric-g11-presentation-v1",
+            "scale": "0-4 per criterion, transcript-based",
+            "criteria": [
+              {
+                "criterionId": "structure",
+                "titleEn": "Structure",
+                "descriptorId": "Hook, peta, bagian berurutan, ringkasan, penutup — semuanya hadir."
+              },
+              {
+                "criterionId": "signposting",
+                "titleEn": "Signposting",
+                "descriptorId": "Penanda bagian terdengar dan tepat guna."
+              },
+              {
+                "criterionId": "data-description",
+                "titleEn": "Data description",
+                "descriptorId": "Angka dideskripsikan dengan tren/perbandingan dan diberi makna (\"so what\")."
+              },
+              {
+                "criterionId": "interaction",
+                "titleEn": "Q&A interaction",
+                "descriptorId": "Jawaban lanjutan relevan dan tidak mengelak."
+              },
+              {
+                "criterionId": "clarity",
+                "titleEn": "Clarity",
+                "descriptorId": "Gagasan runtut dan dapat diikuti dari transkrip."
+              }
+            ],
+            "pronunciationNoteId": "Delivery vokal (intonasi, pelafalan) TIDAK dinilai dari transkrip; membutuhkan evaluasi akustik yang belum didukung (IMPLEMENTATION GAP G3)."
+          }
+        ],
+        "vocabulary": [],
+        "expressions": [],
+        "recallHooks": [],
+        "recallReferences": [],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-presentation-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    },
+    {
+      "stableId": "ex-g11-06",
+      "revision": 1,
+      "kind": "ASSESSMENT",
+      "grade": "GRADE_11",
+      "track": "EXAM_LAB",
+      "phase": "PHASE_F",
+      "title": "Grade 11 Mock Exam",
+      "primarySkill": "READING",
+      "supportingSkills": [
+        "LISTENING",
+        "WRITING"
+      ],
+      "objectiveKeys": [
+        "obj-g11-01",
+        "obj-g11-03",
+        "obj-g11-05",
+        "obj-g11-06",
+        "obj-g11-09",
+        "obj-g11-13",
+        "obj-g11-14",
+        "obj-g11-15"
+      ],
+      "content": {
+        "runtimeGeneration": false,
+        "instructionLanguage": "id",
+        "targetLanguage": "en",
+        "lessonBlocks": [
+          {
+            "blockType": "exam-meta",
+            "modeId": "MOCK_EXAM",
+            "instructionId": "Ujian gabungan kelas 11: tiga bagian berwaktu + dua bagian recall. Format berbeda dari latihan harian; menguji kompetensi yang sama.",
+            "timeSuggestionMinutes": 70,
+            "timedSectionsNote": "Runtime seksi berwaktu bergantung kapabilitas G5 (IMPLEMENTATION GAP); tanpa timer, seksi berjalan tanpa batas waktu."
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-1-listening",
+            "skill": "LISTENING",
+            "audioState": "generated-audio-temporary-approved",
+            "transcriptEn": "MEETING EXTRACT: A: \"Okay, decision time on the charity target. Proposals were the flood victims fund and the school library rebuild.\" B: \"The flood fund is urgent — but honestly, we raised for floods twice last year. Donors are tired.\" C: \"I see that, but the library rebuild is basically invisible. Nobody donates to bookshelves.\" B: \"Unless we make it visible. What if the drama club performs scenes from books the library lost?\" A: \"…That's actually brilliant. Are we agreed: library rebuild, with the drama tie-in?\" ALL: \"Agreed.\" A: \"Settled. B, you own the drama club liaison — first update by Friday.\"",
+            "questions": [
+              {
+                "qid": "q1",
+                "promptEn": "What two proposals were on the table?",
+                "optionsEn": [
+                  "Flood fund and library rebuild",
+                  "Drama show and sports day",
+                  "Two flood funds",
+                  "Library rebuild and canteen repair"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Dua usulan disebut di awal.",
+                "optionRationales": [
+                  "Correct. Dua usulan disebut di awal.",
+                  "Incorrect. “Drama show and sports day” is not supported by the prompt or stimulus; the supported answer is “Flood fund and library rebuild”.",
+                  "Incorrect. “Two flood funds” is not supported by the prompt or stimulus; the supported answer is “Flood fund and library rebuild”.",
+                  "Incorrect. “Library rebuild and canteen repair” is not supported by the prompt or stimulus; the supported answer is “Flood fund and library rebuild”."
+                ]
+              },
+              {
+                "qid": "q2",
+                "promptEn": "What concern is raised about the flood fund?",
+                "optionsEn": [
+                  "It is not urgent",
+                  "Donor fatigue — they raised for floods twice last year",
+                  "It is illegal",
+                  "It costs too much"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"Donors are tired\" setelah dua penggalangan sebelumnya.",
+                "optionRationales": [
+                  "Incorrect. “It is not urgent” is not supported by the prompt or stimulus; the supported answer is “Donor fatigue — they raised for floods twice last year”.",
+                  "Correct. \"Donors are tired\" setelah dua penggalangan sebelumnya.",
+                  "Incorrect. “It is illegal” is not supported by the prompt or stimulus; the supported answer is “Donor fatigue — they raised for floods twice last year”.",
+                  "Incorrect. “It costs too much” is not supported by the prompt or stimulus; the supported answer is “Donor fatigue — they raised for floods twice last year”."
+                ]
+              },
+              {
+                "qid": "q3",
+                "promptEn": "What is the final decision?",
+                "optionsEn": [
+                  "Flood fund only",
+                  "Library rebuild with a drama club tie-in",
+                  "No campaign this year",
+                  "Both campaigns equally"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"Settled\" menandai keputusan final.",
+                "optionRationales": [
+                  "Incorrect. “Flood fund only” is not supported by the prompt or stimulus; the supported answer is “Library rebuild with a drama club tie-in”.",
+                  "Correct. \"Settled\" menandai keputusan final.",
+                  "Incorrect. “No campaign this year” is not supported by the prompt or stimulus; the supported answer is “Library rebuild with a drama club tie-in”.",
+                  "Incorrect. “Both campaigns equally” is not supported by the prompt or stimulus; the supported answer is “Library rebuild with a drama club tie-in”."
+                ]
+              },
+              {
+                "qid": "q4",
+                "promptEn": "Who owns the next action, and by when?",
+                "optionsEn": [
+                  "B, drama liaison update by Friday",
+                  "A, budget by Monday",
+                  "C, posters by Thursday",
+                  "No one"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Keputusan + pemilik + tenggat = inti notulen.",
+                "optionRationales": [
+                  "Correct. Keputusan + pemilik + tenggat = inti notulen.",
+                  "Incorrect. “A, budget by Monday” is not supported by the prompt or stimulus; the supported answer is “B, drama liaison update by Friday”.",
+                  "Incorrect. “C, posters by Thursday” is not supported by the prompt or stimulus; the supported answer is “B, drama liaison update by Friday”.",
+                  "Incorrect. “No one” is not supported by the prompt or stimulus; the supported answer is “B, drama liaison update by Friday”."
+                ]
+              },
+              {
+                "qid": "gen-sec-1-listening-5",
+                "promptEn": "After Gilang's schedule update, when will the safety orientation take place?",
+                "transcriptEn": "A: Gilang, the safety orientation has moved from Friday to Saturday at 08:00 because the original room is being used for an exam. B: Thanks. I'll update the team calendar and bring a printed résumé.",
+                "optionsEn": [
+                  "Saturday at 08:00",
+                  "Friday at 08:00",
+                  "Saturday at 11:00",
+                  "Tuesday at 08:00"
+                ],
+                "answerIndex": 0,
+                "explanationId": "The first speaker gives the revised time as Saturday at 08:00.",
+                "optionRationales": [
+                  "Correct. The first speaker gives the revised time as Saturday at 08:00.",
+                  "Incorrect. “Friday at 08:00” is not supported by the prompt or stimulus; the supported answer is “Saturday at 08:00”.",
+                  "Incorrect. “Saturday at 11:00” is not supported by the prompt or stimulus; the supported answer is “Saturday at 08:00”.",
+                  "Incorrect. “Tuesday at 08:00” is not supported by the prompt or stimulus; the supported answer is “Saturday at 08:00”."
+                ]
+              },
+              {
+                "qid": "gen-sec-1-listening-6",
+                "promptEn": "What will Hana's teammate do next?",
+                "transcriptEn": "A: Hana, the library volunteer shift has moved from Saturday to Monday at 09:30 because the supervisor has an urgent meeting. B: Thanks. I'll update the team calendar and bring the project outline.",
+                "optionsEn": [
+                  "Cancel the event",
+                  "Repair the room",
+                  "Ignore the schedule change",
+                  "Update the team calendar"
+                ],
+                "answerIndex": 3,
+                "explanationId": "The second speaker explicitly says the team calendar will be updated.",
+                "optionRationales": [
+                  "Incorrect. “Cancel the event” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Incorrect. “Repair the room” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Incorrect. “Ignore the schedule change” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Correct. The second speaker explicitly says the team calendar will be updated."
+                ]
+              },
+              {
+                "qid": "gen-sec-1-listening-7",
+                "promptEn": "When will the internship briefing take place?",
+                "transcriptEn": "A: Intan, the internship briefing has moved from Monday to Tuesday at 11:00 because the delivery will arrive late. B: Thanks. I'll update the team calendar and bring a signed consent form.",
+                "optionsEn": [
+                  "Tuesday at 14:30",
+                  "Thursday at 11:00",
+                  "Tuesday at 11:00",
+                  "Monday at 11:00"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The first speaker gives the revised time as Tuesday at 11:00.",
+                "optionRationales": [
+                  "Incorrect. “Tuesday at 14:30” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 11:00”.",
+                  "Incorrect. “Thursday at 11:00” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 11:00”.",
+                  "Correct. The first speaker gives the revised time as Tuesday at 11:00.",
+                  "Incorrect. “Monday at 11:00” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 11:00”."
+                ]
+              },
+              {
+                "qid": "gen-sec-1-listening-8",
+                "promptEn": "What will Joko's teammate do next?",
+                "transcriptEn": "A: Joko, the science club briefing has moved from Tuesday to Wednesday at 13:00 because the weather forecast changed. B: Thanks. I'll update the team calendar and bring the revised schedule.",
+                "optionsEn": [
+                  "Ignore the schedule change",
+                  "Update the team calendar",
+                  "Cancel the event",
+                  "Repair the room"
+                ],
+                "answerIndex": 1,
+                "explanationId": "The second speaker explicitly says the team calendar will be updated.",
+                "optionRationales": [
+                  "Incorrect. “Ignore the schedule change” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Correct. The second speaker explicitly says the team calendar will be updated.",
+                  "Incorrect. “Cancel the event” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Incorrect. “Repair the room” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”."
+                ]
+              },
+              {
+                "qid": "gen-sec-1-listening-9",
+                "promptEn": "When will the career workshop take place?",
+                "transcriptEn": "A: Kirana, the career workshop has moved from Wednesday to Thursday at 14:30 because the team needs more preparation time. B: Thanks. I'll update the team calendar and bring a student ID card.",
+                "optionsEn": [
+                  "Thursday at 14:30",
+                  "Wednesday at 14:30",
+                  "Thursday at 08:00",
+                  "Saturday at 14:30"
+                ],
+                "answerIndex": 0,
+                "explanationId": "The first speaker gives the revised time as Thursday at 14:30.",
+                "optionRationales": [
+                  "Correct. The first speaker gives the revised time as Thursday at 14:30.",
+                  "Incorrect. “Wednesday at 14:30” is not supported by the prompt or stimulus; the supported answer is “Thursday at 14:30”.",
+                  "Incorrect. “Thursday at 08:00” is not supported by the prompt or stimulus; the supported answer is “Thursday at 14:30”.",
+                  "Incorrect. “Saturday at 14:30” is not supported by the prompt or stimulus; the supported answer is “Thursday at 14:30”."
+                ]
+              },
+              {
+                "qid": "gen-sec-1-listening-10",
+                "promptEn": "What will Lukman's teammate do next?",
+                "transcriptEn": "A: Lukman, the student council meeting has moved from Thursday to Friday at 16:00 because the projector needs repair. B: Thanks. I'll update the team calendar and bring the safety checklist.",
+                "optionsEn": [
+                  "Cancel the event",
+                  "Repair the room",
+                  "Ignore the schedule change",
+                  "Update the team calendar"
+                ],
+                "answerIndex": 3,
+                "explanationId": "The second speaker explicitly says the team calendar will be updated.",
+                "optionRationales": [
+                  "Incorrect. “Cancel the event” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Incorrect. “Repair the room” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Incorrect. “Ignore the schedule change” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Correct. The second speaker explicitly says the team calendar will be updated."
+                ]
+              },
+              {
+                "qid": "gen-sec-1-listening-11",
+                "promptEn": "When will the campus tour take place?",
+                "transcriptEn": "A: Alya, the campus tour has moved from Friday to Saturday at 08:00 because the original room is being used for an exam. B: Thanks. I'll update the team calendar and bring a printed résumé.",
+                "optionsEn": [
+                  "Saturday at 11:00",
+                  "Tuesday at 08:00",
+                  "Saturday at 08:00",
+                  "Friday at 08:00"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The first speaker gives the revised time as Saturday at 08:00.",
+                "optionRationales": [
+                  "Incorrect. “Saturday at 11:00” is not supported by the prompt or stimulus; the supported answer is “Saturday at 08:00”.",
+                  "Incorrect. “Tuesday at 08:00” is not supported by the prompt or stimulus; the supported answer is “Saturday at 08:00”.",
+                  "Correct. The first speaker gives the revised time as Saturday at 08:00.",
+                  "Incorrect. “Friday at 08:00” is not supported by the prompt or stimulus; the supported answer is “Saturday at 08:00”."
+                ]
+              },
+              {
+                "qid": "gen-sec-1-listening-12",
+                "promptEn": "What will Bagas's teammate do next?",
+                "transcriptEn": "A: Bagas, the project rehearsal has moved from Saturday to Monday at 09:30 because the supervisor has an urgent meeting. B: Thanks. I'll update the team calendar and bring the project outline.",
+                "optionsEn": [
+                  "Ignore the schedule change",
+                  "Update the team calendar",
+                  "Cancel the event",
+                  "Repair the room"
+                ],
+                "answerIndex": 1,
+                "explanationId": "The second speaker explicitly says the team calendar will be updated.",
+                "optionRationales": [
+                  "Incorrect. “Ignore the schedule change” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Correct. The second speaker explicitly says the team calendar will be updated.",
+                  "Incorrect. “Cancel the event” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Incorrect. “Repair the room” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”."
+                ]
+              },
+              {
+                "qid": "gen-sec-1-listening-13",
+                "promptEn": "After Citra's schedule update, when will the safety orientation take place?",
+                "transcriptEn": "A: Citra, the safety orientation has moved from Monday to Tuesday at 11:00 because the delivery will arrive late. B: Thanks. I'll update the team calendar and bring a signed consent form.",
+                "optionsEn": [
+                  "Tuesday at 11:00",
+                  "Monday at 11:00",
+                  "Tuesday at 14:30",
+                  "Thursday at 11:00"
+                ],
+                "answerIndex": 0,
+                "explanationId": "The first speaker gives the revised time as Tuesday at 11:00.",
+                "optionRationales": [
+                  "Correct. The first speaker gives the revised time as Tuesday at 11:00.",
+                  "Incorrect. “Monday at 11:00” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 11:00”.",
+                  "Incorrect. “Tuesday at 14:30” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 11:00”.",
+                  "Incorrect. “Thursday at 11:00” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 11:00”."
+                ]
+              },
+              {
+                "qid": "gen-sec-1-listening-14",
+                "promptEn": "What will Damar's teammate do next?",
+                "transcriptEn": "A: Damar, the library volunteer shift has moved from Tuesday to Wednesday at 13:00 because the weather forecast changed. B: Thanks. I'll update the team calendar and bring the revised schedule.",
+                "optionsEn": [
+                  "Cancel the event",
+                  "Repair the room",
+                  "Ignore the schedule change",
+                  "Update the team calendar"
+                ],
+                "answerIndex": 3,
+                "explanationId": "The second speaker explicitly says the team calendar will be updated.",
+                "optionRationales": [
+                  "Incorrect. “Cancel the event” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Incorrect. “Repair the room” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Incorrect. “Ignore the schedule change” is not supported by the prompt or stimulus; the supported answer is “Update the team calendar”.",
+                  "Correct. The second speaker explicitly says the team calendar will be updated."
+                ]
+              }
+            ],
+            "audioAssetId": "audio-ex-g11-06-sec-1-listening-v1",
+            "audioDisclosureId": "Suara ini dibuat oleh AI dan menunggu persetujuan final editor akademik."
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-2-reading",
+            "skill": "READING",
+            "textEn": "FROM THE CLUB'S FESTIVAL REVIEW (published in the school bulletin): Was the Bridge Festival worth three months of chaos? The numbers say yes: 211 visitors against a target of 150, and booth income twelve percent above plan. The honest answer is more complicated. The festival succeeded because of two decisions made early — phasing down from five schools to two, and writing a real safety plan — and it nearly failed because of one decision we avoided: leaving four task areas with a single owner. That overload led to a broken reporting system, which meant three lost days at the worst possible moment. Some will say the ends justify the means; we disagree. Next year's committee inherits a simple rule written in this year's bruises: no member owns more than two areas, ever. Success that damages people is a loan, not a profit.",
+            "questions": [
+              {
+                "qid": "q5",
+                "promptEn": "What is the writer's overall judgment of the festival?",
+                "optionsEn": [
+                  "Pure success",
+                  "Successful in numbers, but with real internal costs",
+                  "Complete failure",
+                  "Cancelled"
+                ],
+                "answerIndex": 1,
+                "explanationId": "\"The honest answer is more complicated\" + data vs proses.",
+                "optionRationales": [
+                  "Incorrect. “Pure success” is not supported by the prompt or stimulus; the supported answer is “Successful in numbers, but with real internal costs”.",
+                  "Correct. \"The honest answer is more complicated\" + data vs proses.",
+                  "Incorrect. “Complete failure” is not supported by the prompt or stimulus; the supported answer is “Successful in numbers, but with real internal costs”.",
+                  "Incorrect. “Cancelled” is not supported by the prompt or stimulus; the supported answer is “Successful in numbers, but with real internal costs”."
+                ]
+              },
+              {
+                "qid": "q6",
+                "promptEn": "Which early decisions made the festival succeed?",
+                "optionsEn": [
+                  "Phasing to two schools and a real safety plan",
+                  "Hiring professionals and raising fees",
+                  "Cancelling the demos",
+                  "Extending to ten schools"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Dua keputusan disebut eksplisit.",
+                "optionRationales": [
+                  "Correct. Dua keputusan disebut eksplisit.",
+                  "Incorrect. “Hiring professionals and raising fees” is not supported by the prompt or stimulus; the supported answer is “Phasing to two schools and a real safety plan”.",
+                  "Incorrect. “Cancelling the demos” is not supported by the prompt or stimulus; the supported answer is “Phasing to two schools and a real safety plan”.",
+                  "Incorrect. “Extending to ten schools” is not supported by the prompt or stimulus; the supported answer is “Phasing to two schools and a real safety plan”."
+                ]
+              },
+              {
+                "qid": "q7",
+                "promptEn": "\"That overload led to a broken reporting system, which meant three lost days\" — what chain is described?",
+                "optionsEn": [
+                  "Cause → effect → further consequence",
+                  "Three unrelated events",
+                  "A future plan",
+                  "A counter-argument"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Rantai kausal dengan led to / which meant.",
+                "optionRationales": [
+                  "Correct. Rantai kausal dengan led to / which meant.",
+                  "Incorrect. “Three unrelated events” is not supported by the prompt or stimulus; the supported answer is “Cause → effect → further consequence”.",
+                  "Incorrect. “A future plan” is not supported by the prompt or stimulus; the supported answer is “Cause → effect → further consequence”.",
+                  "Incorrect. “A counter-argument” is not supported by the prompt or stimulus; the supported answer is “Cause → effect → further consequence”."
+                ]
+              },
+              {
+                "qid": "q8",
+                "promptEn": "\"Success that damages people is a loan, not a profit\" means…",
+                "optionsEn": [
+                  "success always requires damage",
+                  "the cost of harming people comes due later",
+                  "loans are profitable",
+                  "people should avoid success"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Metafora: kerusakan pada orang akan \"ditagih\" kemudian.",
+                "optionRationales": [
+                  "Incorrect. “success always requires damage” is not supported by the prompt or stimulus; the supported answer is “the cost of harming people comes due later”.",
+                  "Correct. Metafora: kerusakan pada orang akan \"ditagih\" kemudian.",
+                  "Incorrect. “loans are profitable” is not supported by the prompt or stimulus; the supported answer is “the cost of harming people comes due later”.",
+                  "Incorrect. “people should avoid success” is not supported by the prompt or stimulus; the supported answer is “the cost of harming people comes due later”."
+                ]
+              },
+              {
+                "qid": "q9",
+                "promptEn": "What rule does next year's committee inherit?",
+                "optionsEn": [
+                  "No member owns more than two areas",
+                  "All members own four areas",
+                  "No festivals allowed",
+                  "Reports are optional"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Aturan hasil evaluasi.",
+                "optionRationales": [
+                  "Correct. Aturan hasil evaluasi.",
+                  "Incorrect. “All members own four areas” is not supported by the prompt or stimulus; the supported answer is “No member owns more than two areas”.",
+                  "Incorrect. “No festivals allowed” is not supported by the prompt or stimulus; the supported answer is “No member owns more than two areas”.",
+                  "Incorrect. “Reports are optional” is not supported by the prompt or stimulus; the supported answer is “No member owns more than two areas”."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-6",
+                "promptEn": "According to the notice, when and where will the library volunteer shift take place?",
+                "passageEn": "NOTICE: The library volunteer shift was originally planned for Saturday. It will now take place on Tuesday at 08:00 in Workshop 2 because the weather forecast changed. Bring the safety checklist.",
+                "optionsEn": [
+                  "Saturday at 08:00 in Workshop 2",
+                  "Tuesday at 11:00 in Workshop 2",
+                  "Tuesday at 08:00 in the media lab",
+                  "Tuesday at 08:00 in Workshop 2"
+                ],
+                "answerIndex": 3,
+                "explanationId": "The revised schedule explicitly states Tuesday at 08:00 in Workshop 2.",
+                "optionRationales": [
+                  "Incorrect. “Saturday at 08:00 in Workshop 2” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 08:00 in Workshop 2”.",
+                  "Incorrect. “Tuesday at 11:00 in Workshop 2” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 08:00 in Workshop 2”.",
+                  "Incorrect. “Tuesday at 08:00 in the media lab” is not supported by the prompt or stimulus; the supported answer is “Tuesday at 08:00 in Workshop 2”.",
+                  "Correct. The revised schedule explicitly states Tuesday at 08:00 in Workshop 2."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-7",
+                "promptEn": "What should Gilang do?",
+                "passageEn": "Subject: Action needed for the internship briefing. Hi Gilang, please email a printed résumé to the coordinator by Wednesday at 09:30. Do not leave it at the front desk because the office will be closed.",
+                "optionsEn": [
+                  "Bring a printed résumé after the event",
+                  "Call the office on Monday",
+                  "Email a printed résumé by Wednesday at 09:30",
+                  "Leave a printed résumé at the front desk"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The email requests an email submission by Wednesday at 09:30 and explicitly rejects the front-desk option.",
+                "optionRationales": [
+                  "Incorrect. “Bring a printed résumé after the event” is not supported by the prompt or stimulus; the supported answer is “Email a printed résumé by Wednesday at 09:30”.",
+                  "Incorrect. “Call the office on Monday” is not supported by the prompt or stimulus; the supported answer is “Email a printed résumé by Wednesday at 09:30”.",
+                  "Correct. The email requests an email submission by Wednesday at 09:30 and explicitly rejects the front-desk option.",
+                  "Incorrect. “Leave a printed résumé at the front desk” is not supported by the prompt or stimulus; the supported answer is “Email a printed résumé by Wednesday at 09:30”."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-8",
+                "promptEn": "For the science club briefing scheduled on Thursday, which applicant clearly meets the stated requirements?",
+                "passageEn": "Hana's team needs a student assistant for the science club briefing. Applicants must be available on Thursday, communicate politely with visitors, and know how to use a shared spreadsheet. Training is provided, so previous event experience is optional.",
+                "optionsEn": [
+                  "A student who can attend but will not use the team spreadsheet",
+                  "A student available on Thursday who communicates politely and can use a shared spreadsheet",
+                  "A student available only on Tuesday who refuses visitor-facing tasks",
+                  "A student with event experience who cannot attend the required day"
+                ],
+                "answerIndex": 1,
+                "explanationId": "Availability, visitor communication, and spreadsheet use are mandatory; prior event experience is optional.",
+                "optionRationales": [
+                  "Incorrect. “A student who can attend but will not use the team spreadsheet” is not supported by the prompt or stimulus; the supported answer is “A student available on Thursday who communicates politely and can use a shared spreadsheet”.",
+                  "Correct. Availability, visitor communication, and spreadsheet use are mandatory; prior event experience is optional.",
+                  "Incorrect. “A student available only on Tuesday who refuses visitor-facing tasks” is not supported by the prompt or stimulus; the supported answer is “A student available on Thursday who communicates politely and can use a shared spreadsheet”.",
+                  "Incorrect. “A student with event experience who cannot attend the required day” is not supported by the prompt or stimulus; the supported answer is “A student available on Thursday who communicates politely and can use a shared spreadsheet”."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-9",
+                "promptEn": "Why did Intan's team still complete every essential task for the career workshop?",
+                "passageEn": "The career workshop started late because the original room is being used for an exam. Intan informed the participants, shortened the opening activity, and kept the final practice unchanged. As a result, the team still completed every essential task.",
+                "optionsEn": [
+                  "Intan adjusted the opening activity after explaining the delay",
+                  "The event started earlier than planned",
+                  "The team cancelled the final practice",
+                  "The reason for the delay disappeared immediately"
+                ],
+                "answerIndex": 0,
+                "explanationId": "The passage links the completed tasks to the shortened opening activity and clear update.",
+                "optionRationales": [
+                  "Correct. The passage links the completed tasks to the shortened opening activity and clear update.",
+                  "Incorrect. “The event started earlier than planned” is not supported by the prompt or stimulus; the supported answer is “Intan adjusted the opening activity after explaining the delay”.",
+                  "Incorrect. “The team cancelled the final practice” is not supported by the prompt or stimulus; the supported answer is “Intan adjusted the opening activity after explaining the delay”.",
+                  "Incorrect. “The reason for the delay disappeared immediately” is not supported by the prompt or stimulus; the supported answer is “Intan adjusted the opening activity after explaining the delay”."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-10",
+                "promptEn": "In Room 10-B, what must a student do immediately after reading the safety card?",
+                "passageEn": "Before using the equipment in Room 10-B, first read the safety card, then inspect the power cable, and finally ask the supervisor to confirm the setup. If the cable is damaged, stop and report it; do not attempt a repair.",
+                "optionsEn": [
+                  "Repair any damaged cable",
+                  "Turn on the equipment immediately",
+                  "Leave the room without reporting anything",
+                  "Inspect the power cable"
+                ],
+                "answerIndex": 3,
+                "explanationId": "The procedure orders the cable inspection directly after reading the safety card.",
+                "optionRationales": [
+                  "Incorrect. “Repair any damaged cable” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Incorrect. “Turn on the equipment immediately” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Incorrect. “Leave the room without reporting anything” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Correct. The procedure orders the cable inspection directly after reading the safety card."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-11",
+                "promptEn": "According to the notice, when and where will the campus tour take place?",
+                "passageEn": "NOTICE: The campus tour was originally planned for Friday. It will now take place on Monday at 16:00 in the library hall because the delivery will arrive late. Bring a student ID card.",
+                "optionsEn": [
+                  "Monday at 09:30 in the library hall",
+                  "Monday at 16:00 in Workshop 2",
+                  "Monday at 16:00 in the library hall",
+                  "Friday at 16:00 in the library hall"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The revised schedule explicitly states Monday at 16:00 in the library hall.",
+                "optionRationales": [
+                  "Incorrect. “Monday at 09:30 in the library hall” is not supported by the prompt or stimulus; the supported answer is “Monday at 16:00 in the library hall”.",
+                  "Incorrect. “Monday at 16:00 in Workshop 2” is not supported by the prompt or stimulus; the supported answer is “Monday at 16:00 in the library hall”.",
+                  "Correct. The revised schedule explicitly states Monday at 16:00 in the library hall.",
+                  "Incorrect. “Friday at 16:00 in the library hall” is not supported by the prompt or stimulus; the supported answer is “Monday at 16:00 in the library hall”."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-12",
+                "promptEn": "What should Lukman do?",
+                "passageEn": "Subject: Action needed for the project rehearsal. Hi Lukman, please email the safety checklist to the coordinator by Tuesday at 08:00. Do not leave it at the front desk because the office will be closed.",
+                "optionsEn": [
+                  "Call the office on Saturday",
+                  "Email the safety checklist by Tuesday at 08:00",
+                  "Leave the safety checklist at the front desk",
+                  "Bring the safety checklist after the event"
+                ],
+                "answerIndex": 1,
+                "explanationId": "The email requests an email submission by Tuesday at 08:00 and explicitly rejects the front-desk option.",
+                "optionRationales": [
+                  "Incorrect. “Call the office on Saturday” is not supported by the prompt or stimulus; the supported answer is “Email the safety checklist by Tuesday at 08:00”.",
+                  "Correct. The email requests an email submission by Tuesday at 08:00 and explicitly rejects the front-desk option.",
+                  "Incorrect. “Leave the safety checklist at the front desk” is not supported by the prompt or stimulus; the supported answer is “Email the safety checklist by Tuesday at 08:00”.",
+                  "Incorrect. “Bring the safety checklist after the event” is not supported by the prompt or stimulus; the supported answer is “Email the safety checklist by Tuesday at 08:00”."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-13",
+                "promptEn": "For the safety orientation scheduled on Wednesday, which applicant clearly meets the stated requirements?",
+                "passageEn": "Alya's team needs a student assistant for the safety orientation. Applicants must be available on Wednesday, communicate politely with visitors, and know how to use a shared spreadsheet. Training is provided, so previous event experience is optional.",
+                "optionsEn": [
+                  "A student available on Wednesday who communicates politely and can use a shared spreadsheet",
+                  "A student available only on Monday who refuses visitor-facing tasks",
+                  "A student with event experience who cannot attend the required day",
+                  "A student who can attend but will not use the team spreadsheet"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Availability, visitor communication, and spreadsheet use are mandatory; prior event experience is optional.",
+                "optionRationales": [
+                  "Correct. Availability, visitor communication, and spreadsheet use are mandatory; prior event experience is optional.",
+                  "Incorrect. “A student available only on Monday who refuses visitor-facing tasks” is not supported by the prompt or stimulus; the supported answer is “A student available on Wednesday who communicates politely and can use a shared spreadsheet”.",
+                  "Incorrect. “A student with event experience who cannot attend the required day” is not supported by the prompt or stimulus; the supported answer is “A student available on Wednesday who communicates politely and can use a shared spreadsheet”.",
+                  "Incorrect. “A student who can attend but will not use the team spreadsheet” is not supported by the prompt or stimulus; the supported answer is “A student available on Wednesday who communicates politely and can use a shared spreadsheet”."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-14",
+                "promptEn": "Why did Bagas's team still complete every essential task for the library volunteer shift?",
+                "passageEn": "The library volunteer shift started late because the projector needs repair. Bagas informed the participants, shortened the opening activity, and kept the final practice unchanged. As a result, the team still completed every essential task.",
+                "optionsEn": [
+                  "The event started earlier than planned",
+                  "The team cancelled the final practice",
+                  "The reason for the delay disappeared immediately",
+                  "Bagas adjusted the opening activity after explaining the delay"
+                ],
+                "answerIndex": 3,
+                "explanationId": "The passage links the completed tasks to the shortened opening activity and clear update.",
+                "optionRationales": [
+                  "Incorrect. “The event started earlier than planned” is not supported by the prompt or stimulus; the supported answer is “Bagas adjusted the opening activity after explaining the delay”.",
+                  "Incorrect. “The team cancelled the final practice” is not supported by the prompt or stimulus; the supported answer is “Bagas adjusted the opening activity after explaining the delay”.",
+                  "Incorrect. “The reason for the delay disappeared immediately” is not supported by the prompt or stimulus; the supported answer is “Bagas adjusted the opening activity after explaining the delay”.",
+                  "Correct. The passage links the completed tasks to the shortened opening activity and clear update."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-15",
+                "promptEn": "In the main auditorium, what must a student do immediately after reading the safety card?",
+                "passageEn": "Before using the equipment in the main auditorium, first read the safety card, then inspect the power cable, and finally ask the supervisor to confirm the setup. If the cable is damaged, stop and report it; do not attempt a repair.",
+                "optionsEn": [
+                  "Turn on the equipment immediately",
+                  "Leave the room without reporting anything",
+                  "Inspect the power cable",
+                  "Repair any damaged cable"
+                ],
+                "answerIndex": 2,
+                "explanationId": "The procedure orders the cable inspection directly after reading the safety card.",
+                "optionRationales": [
+                  "Incorrect. “Turn on the equipment immediately” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Incorrect. “Leave the room without reporting anything” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”.",
+                  "Correct. The procedure orders the cable inspection directly after reading the safety card.",
+                  "Incorrect. “Repair any damaged cable” is not supported by the prompt or stimulus; the supported answer is “Inspect the power cable”."
+                ]
+              },
+              {
+                "qid": "gen-sec-2-reading-16",
+                "promptEn": "According to the notice, when and where will the science club briefing take place?",
+                "passageEn": "NOTICE: The science club briefing was originally planned for Thursday. It will now take place on Saturday at 14:30 in Room 10-B because the supervisor has an urgent meeting. Bring the revised schedule.",
+                "optionsEn": [
+                  "Saturday at 14:30 in the library hall",
+                  "Saturday at 14:30 in Room 10-B",
+                  "Thursday at 14:30 in Room 10-B",
+                  "Saturday at 08:00 in Room 10-B"
+                ],
+                "answerIndex": 1,
+                "explanationId": "The revised schedule explicitly states Saturday at 14:30 in Room 10-B.",
+                "optionRationales": [
+                  "Incorrect. “Saturday at 14:30 in the library hall” is not supported by the prompt or stimulus; the supported answer is “Saturday at 14:30 in Room 10-B”.",
+                  "Correct. The revised schedule explicitly states Saturday at 14:30 in Room 10-B.",
+                  "Incorrect. “Thursday at 14:30 in Room 10-B” is not supported by the prompt or stimulus; the supported answer is “Saturday at 14:30 in Room 10-B”.",
+                  "Incorrect. “Saturday at 08:00 in Room 10-B” is not supported by the prompt or stimulus; the supported answer is “Saturday at 14:30 in Room 10-B”."
+                ]
+              }
+            ]
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-3-writing",
+            "skill": "WRITING",
+            "rubricRevisionId": "rubric-g11-writing-v1",
+            "tasks": [
+              {
+                "taskId": "w1",
+                "promptEn": "Your club needs the city Youth Grant (see any project you invent). Write a 110–130 word formal email to the Youth Affairs Office: identify yourself and your club, state the project and the exact request, give two supporting facts, one reasoned deadline, and a formal close.",
+                "criteriaIds": [
+                  "task-fulfillment",
+                  "argument-structure",
+                  "grammar",
+                  "register"
+                ]
+              }
+            ]
+          },
+          {
+            "blockType": "exam-section",
+            "sectionId": "sec-4-recall",
+            "skill": "VOCABULARY",
+            "recallNoteId": "Bagian recall: ungkapan kelas 11 dalam konteks baru.",
+            "questions": [
+              {
+                "qid": "q10",
+                "promptEn": "A friend proposes an impossible schedule. Your hedged reply starts: \"___\"",
+                "optionsEn": [
+                  "I see your point, but…",
+                  "You are wrong, and…",
+                  "Whatever you say…",
+                  "Settled…"
+                ],
+                "answerIndex": 0,
+                "explanationId": "Recall hedging (sc-g11-02) pada situasi baru.",
+                "optionRationales": [
+                  "Correct. Recall hedging (sc-g11-02) pada situasi baru.",
+                  "Incorrect. “You are wrong, and…” is not supported by the prompt or stimulus; the supported answer is “I see your point, but…”.",
+                  "Incorrect. “Whatever you say…” is not supported by the prompt or stimulus; the supported answer is “I see your point, but…”.",
+                  "Incorrect. “Settled…” is not supported by the prompt or stimulus; the supported answer is “I see your point, but…”."
+                ]
+              },
+              {
+                "qid": "q11",
+                "promptEn": "Your part of a group task is late because a file corrupted. The best report opener is:",
+                "optionsEn": [
+                  "\"We're running behind — it turns out the file corrupted, so I'm redoing it. New ETA Thursday.\"",
+                  "\"Everything is fine. Mostly. Next topic.\"",
+                  "\"The file betrayed us. Nothing could be done.\"",
+                  "\"Someone else should explain this.\""
+                ],
+                "answerIndex": 0,
+                "explanationId": "Recall laporan status jujur (sc-g11-08): terlambat + sebab + tindakan + ETA.",
+                "optionRationales": [
+                  "Correct. Recall laporan status jujur (sc-g11-08): terlambat + sebab + tindakan + ETA.",
+                  "Incorrect. “\"Everything is fine. Mostly. Next topic.\"” is not supported by the prompt or stimulus; the supported answer is “\"We're running behind — it turns out the file corrupted, so I'm redoing it. New ETA Thursday.\"”.",
+                  "Incorrect. “\"The file betrayed us. Nothing could be done.\"” is not supported by the prompt or stimulus; the supported answer is “\"We're running behind — it turns out the file corrupted, so I'm redoing it. New ETA Thursday.\"”.",
+                  "Incorrect. “\"Someone else should explain this.\"” is not supported by the prompt or stimulus; the supported answer is “\"We're running behind — it turns out the file corrupted, so I'm redoing it. New ETA Thursday.\"”."
+                ]
+              },
+              {
+                "qid": "q12",
+                "promptEn": "You accidentally deleted a teammate's slide. Choose the full repair.",
+                "optionsEn": [
+                  "\"I deleted your slide — that's on me. I've restored a draft from history; check it, and I'll redo anything missing tonight.\"",
+                  "\"Slides come and go.\"",
+                  "\"Sorry, but you should back up your files.\"",
+                  "\"Let's never speak of this.\""
+                ],
+                "answerIndex": 0,
+                "explanationId": "Recall perbaikan tiga bagian (sc-g11-12): akui + tanggung jawab + tindakan.",
+                "optionRationales": [
+                  "Correct. Recall perbaikan tiga bagian (sc-g11-12): akui + tanggung jawab + tindakan.",
+                  "Incorrect. “\"Slides come and go.\"” is not supported by the prompt or stimulus; the supported answer is “\"I deleted your slide — that's on me. I've restored a draft from history; check it, and I'll redo anything missing tonight.\"”.",
+                  "Incorrect. “\"Sorry, but you should back up your files.\"” is not supported by the prompt or stimulus; the supported answer is “\"I deleted your slide — that's on me. I've restored a draft from history; check it, and I'll redo anything missing tonight.\"”.",
+                  "Incorrect. “\"Let's never speak of this.\"” is not supported by the prompt or stimulus; the supported answer is “\"I deleted your slide — that's on me. I've restored a draft from history; check it, and I'll redo anything missing tonight.\"”."
+                ]
+              },
+              {
+                "qid": "q13",
+                "promptEn": "Closing a data section in a talk, the strongest line is:",
+                "optionsEn": [
+                  "\"So what does this mean? We need one more volunteer per zone.\"",
+                  "\"Those were numbers.\"",
+                  "\"Moving on.\"",
+                  "\"The chart is blue.\""
+                ],
+                "answerIndex": 0,
+                "explanationId": "Recall data-talk (sc-g11-11): angka → makna → tindakan.",
+                "optionRationales": [
+                  "Correct. Recall data-talk (sc-g11-11): angka → makna → tindakan.",
+                  "Incorrect. “\"Those were numbers.\"” is not supported by the prompt or stimulus; the supported answer is “\"So what does this mean? We need one more volunteer per zone.\"”.",
+                  "Incorrect. “\"Moving on.\"” is not supported by the prompt or stimulus; the supported answer is “\"So what does this mean? We need one more volunteer per zone.\"”.",
+                  "Incorrect. “\"The chart is blue.\"” is not supported by the prompt or stimulus; the supported answer is “\"So what does this mean? We need one more volunteer per zone.\"”."
+                ]
+              },
+              {
+                "qid": "gen-sec-4-recall-5",
+                "promptEn": "During the project rehearsal, You are introducing the next part of a presentation. Which previously learned expression best fits?",
+                "recallSourceEntryId": "exp-i-see-your-point-but",
+                "optionsEn": [
+                  "I see your point, but ___",
+                  "I just moved here",
+                  "…, huh?",
+                  "Did you catch ___?"
+                ],
+                "answerIndex": 0,
+                "explanationId": "“I see your point, but ___” matches the communication purpose and preserves the intended register.",
+                "optionRationales": [
+                  "Correct. “I see your point, but ___” matches the communication purpose and preserves the intended register.",
+                  "Incorrect. “I just moved here” is not supported by the prompt or stimulus; the supported answer is “I see your point, but ___”.",
+                  "Incorrect. “…, huh?” is not supported by the prompt or stimulus; the supported answer is “I see your point, but ___”.",
+                  "Incorrect. “Did you catch ___?” is not supported by the prompt or stimulus; the supported answer is “I see your point, but ___”."
+                ]
+              },
+              {
+                "qid": "gen-sec-4-recall-6",
+                "promptEn": "During the safety orientation, You need to clarify a confusing instruction without sounding rude. Which previously learned expression best fits?",
+                "recallSourceEntryId": "exp-it-turns-out",
+                "optionsEn": [
+                  "…, huh?",
+                  "Did you catch ___?",
+                  "I'd better get going",
+                  "It turns out ___"
+                ],
+                "answerIndex": 3,
+                "explanationId": "“It turns out ___” matches the communication purpose and preserves the intended register.",
+                "optionRationales": [
+                  "Incorrect. “…, huh?” is not supported by the prompt or stimulus; the supported answer is “It turns out ___”.",
+                  "Incorrect. “Did you catch ___?” is not supported by the prompt or stimulus; the supported answer is “It turns out ___”.",
+                  "Incorrect. “I'd better get going” is not supported by the prompt or stimulus; the supported answer is “It turns out ___”.",
+                  "Correct. “It turns out ___” matches the communication purpose and preserves the intended register."
+                ]
+              },
+              {
+                "qid": "gen-sec-4-recall-7",
+                "promptEn": "During the library volunteer shift, You want to disagree politely before offering another idea. Which previously learned expression best fits?",
+                "recallSourceEntryId": "exp-thats-on-me",
+                "optionsEn": [
+                  "I'd better get going",
+                  "Right?",
+                  "That's on me",
+                  "Did you catch ___?"
+                ],
+                "answerIndex": 2,
+                "explanationId": "“That's on me” matches the communication purpose and preserves the intended register.",
+                "optionRationales": [
+                  "Incorrect. “I'd better get going” is not supported by the prompt or stimulus; the supported answer is “That's on me”.",
+                  "Incorrect. “Right?” is not supported by the prompt or stimulus; the supported answer is “That's on me”.",
+                  "Correct. “That's on me” matches the communication purpose and preserves the intended register.",
+                  "Incorrect. “Did you catch ___?” is not supported by the prompt or stimulus; the supported answer is “That's on me”."
+                ]
+              },
+              {
+                "qid": "gen-sec-4-recall-8",
+                "promptEn": "During the internship briefing, You are reporting an unexpected reason for a project delay. Which previously learned expression best fits?",
+                "recallSourceEntryId": "exp-so-what-does-this-mean",
+                "optionsEn": [
+                  "Anyway, …",
+                  "So what does this mean?",
+                  "I'd better get going",
+                  "Right?"
+                ],
+                "answerIndex": 1,
+                "explanationId": "“So what does this mean?” matches the communication purpose and preserves the intended register.",
+                "optionRationales": [
+                  "Incorrect. “Anyway, …” is not supported by the prompt or stimulus; the supported answer is “So what does this mean?”.",
+                  "Correct. “So what does this mean?” matches the communication purpose and preserves the intended register.",
+                  "Incorrect. “I'd better get going” is not supported by the prompt or stimulus; the supported answer is “So what does this mean?”.",
+                  "Incorrect. “Right?” is not supported by the prompt or stimulus; the supported answer is “So what does this mean?”."
+                ]
+              },
+              {
+                "qid": "gen-sec-4-recall-9",
+                "promptEn": "During the science club briefing, You need to take responsibility for a mistake in a team meeting. Which previously learned expression best fits?",
+                "recallSourceEntryId": "exp-i-see-your-point-but",
+                "optionsEn": [
+                  "I see your point, but ___",
+                  "Right?",
+                  "Anyway, …",
+                  "will be held"
+                ],
+                "answerIndex": 0,
+                "explanationId": "“I see your point, but ___” matches the communication purpose and preserves the intended register.",
+                "optionRationales": [
+                  "Correct. “I see your point, but ___” matches the communication purpose and preserves the intended register.",
+                  "Incorrect. “Right?” is not supported by the prompt or stimulus; the supported answer is “I see your point, but ___”.",
+                  "Incorrect. “Anyway, …” is not supported by the prompt or stimulus; the supported answer is “I see your point, but ___”.",
+                  "Incorrect. “will be held” is not supported by the prompt or stimulus; the supported answer is “I see your point, but ___”."
+                ]
+              },
+              {
+                "qid": "gen-sec-4-recall-10",
+                "promptEn": "During the career workshop, You are introducing the next part of a presentation. Which previously learned expression best fits?",
+                "recallSourceEntryId": "exp-it-turns-out",
+                "optionsEn": [
+                  "Anyway, …",
+                  "will be held",
+                  "by ___ (deadline)",
+                  "It turns out ___"
+                ],
+                "answerIndex": 3,
+                "explanationId": "“It turns out ___” matches the communication purpose and preserves the intended register.",
+                "optionRationales": [
+                  "Incorrect. “Anyway, …” is not supported by the prompt or stimulus; the supported answer is “It turns out ___”.",
+                  "Incorrect. “will be held” is not supported by the prompt or stimulus; the supported answer is “It turns out ___”.",
+                  "Incorrect. “by ___ (deadline)” is not supported by the prompt or stimulus; the supported answer is “It turns out ___”.",
+                  "Correct. “It turns out ___” matches the communication purpose and preserves the intended register."
+                ]
+              },
+              {
+                "qid": "gen-sec-4-recall-11",
+                "promptEn": "During the student council meeting, You need to clarify a confusing instruction without sounding rude. Which previously learned expression best fits?",
+                "recallSourceEntryId": "exp-thats-on-me",
+                "optionsEn": [
+                  "by ___ (deadline)",
+                  "sign up",
+                  "That's on me",
+                  "will be held"
+                ],
+                "answerIndex": 2,
+                "explanationId": "“That's on me” matches the communication purpose and preserves the intended register.",
+                "optionRationales": [
+                  "Incorrect. “by ___ (deadline)” is not supported by the prompt or stimulus; the supported answer is “That's on me”.",
+                  "Incorrect. “sign up” is not supported by the prompt or stimulus; the supported answer is “That's on me”.",
+                  "Correct. “That's on me” matches the communication purpose and preserves the intended register.",
+                  "Incorrect. “will be held” is not supported by the prompt or stimulus; the supported answer is “That's on me”."
+                ]
+              },
+              {
+                "qid": "gen-sec-4-recall-12",
+                "promptEn": "During the campus tour, You want to disagree politely before offering another idea. Which previously learned expression best fits?",
+                "recallSourceEntryId": "exp-so-what-does-this-mean",
+                "optionsEn": [
+                  "Don't forget…",
+                  "So what does this mean?",
+                  "by ___ (deadline)",
+                  "sign up"
+                ],
+                "answerIndex": 1,
+                "explanationId": "“So what does this mean?” matches the communication purpose and preserves the intended register.",
+                "optionRationales": [
+                  "Incorrect. “Don't forget…” is not supported by the prompt or stimulus; the supported answer is “So what does this mean?”.",
+                  "Correct. “So what does this mean?” matches the communication purpose and preserves the intended register.",
+                  "Incorrect. “by ___ (deadline)” is not supported by the prompt or stimulus; the supported answer is “So what does this mean?”.",
+                  "Incorrect. “sign up” is not supported by the prompt or stimulus; the supported answer is “So what does this mean?”."
+                ]
+              },
+              {
+                "qid": "gen-sec-4-recall-13",
+                "promptEn": "During the project rehearsal, You are reporting an unexpected reason for a project delay. Which previously learned expression best fits?",
+                "recallSourceEntryId": "exp-i-see-your-point-but",
+                "optionsEn": [
+                  "I see your point, but ___",
+                  "Nice to meet you too",
+                  "I'm really into ___",
+                  "How about you?"
+                ],
+                "answerIndex": 0,
+                "explanationId": "“I see your point, but ___” matches the communication purpose and preserves the intended register.",
+                "optionRationales": [
+                  "Correct. “I see your point, but ___” matches the communication purpose and preserves the intended register.",
+                  "Incorrect. “Nice to meet you too” is not supported by the prompt or stimulus; the supported answer is “I see your point, but ___”.",
+                  "Incorrect. “I'm really into ___” is not supported by the prompt or stimulus; the supported answer is “I see your point, but ___”.",
+                  "Incorrect. “How about you?” is not supported by the prompt or stimulus; the supported answer is “I see your point, but ___”."
+                ]
+              },
+              {
+                "qid": "gen-sec-4-recall-14",
+                "promptEn": "During the safety orientation, You need to take responsibility for a mistake in a team meeting. Which previously learned expression best fits?",
+                "recallSourceEntryId": "exp-it-turns-out",
+                "optionsEn": [
+                  "I'm really into ___",
+                  "How about you?",
+                  "See you around",
+                  "It turns out ___"
+                ],
+                "answerIndex": 3,
+                "explanationId": "“It turns out ___” matches the communication purpose and preserves the intended register.",
+                "optionRationales": [
+                  "Incorrect. “I'm really into ___” is not supported by the prompt or stimulus; the supported answer is “It turns out ___”.",
+                  "Incorrect. “How about you?” is not supported by the prompt or stimulus; the supported answer is “It turns out ___”.",
+                  "Incorrect. “See you around” is not supported by the prompt or stimulus; the supported answer is “It turns out ___”.",
+                  "Correct. “It turns out ___” matches the communication purpose and preserves the intended register."
+                ]
+              }
+            ]
+          }
+        ],
+        "vocabulary": [],
+        "expressions": [
+          {
+            "entryId": "exp-i-see-your-point-but",
+            "expression": "I see your point, but ___",
+            "meaningId": "saya-paham-tapi",
+            "register": "neutral",
+            "sourceIntentKey": "intent-disagreement",
+            "recallHookId": "rh-i-see-your-point-but"
+          },
+          {
+            "entryId": "exp-it-turns-out",
+            "expression": "It turns out ___",
+            "meaningId": "ternyata",
+            "register": "neutral",
+            "sourceIntentKey": "intent-progress",
+            "recallHookId": "rh-it-turns-out-g11"
+          },
+          {
+            "entryId": "exp-thats-on-me",
+            "expression": "That's on me",
+            "meaningId": "itu-salah-saya",
+            "register": "informal",
+            "sourceIntentKey": "intent-repair",
+            "recallHookId": "rh-thats-on-me"
+          },
+          {
+            "entryId": "exp-so-what-does-this-mean",
+            "expression": "So what does this mean?",
+            "meaningId": "jadi-apa-artinya",
+            "register": "neutral",
+            "sourceIntentKey": "intent-data-talk",
+            "recallHookId": "rh-so-what-does-this-mean"
+          }
+        ],
+        "recallHooks": [
+          {
+            "hookId": "rh-i-see-your-point-but",
+            "sourceEntryId": "exp-i-see-your-point-but",
+            "objectiveKey": "obj-g11-02",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-it-turns-out-g11",
+            "sourceEntryId": "exp-it-turns-out",
+            "objectiveKey": "obj-g11-08",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-thats-on-me",
+            "sourceEntryId": "exp-thats-on-me",
+            "objectiveKey": "obj-g11-12",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          },
+          {
+            "hookId": "rh-so-what-does-this-mean",
+            "sourceEntryId": "exp-so-what-does-this-mean",
+            "objectiveKey": "obj-g11-11",
+            "intendedEvidenceClass": "RECALL_EVIDENCE"
+          }
+        ],
+        "recallReferences": [
+          {
+            "hookId": "rh-i-see-your-point-but",
+            "sourceEntryId": "exp-i-see-your-point-but"
+          },
+          {
+            "hookId": "rh-it-turns-out-g11",
+            "sourceEntryId": "exp-it-turns-out"
+          },
+          {
+            "hookId": "rh-thats-on-me",
+            "sourceEntryId": "exp-thats-on-me"
+          },
+          {
+            "hookId": "rh-so-what-does-this-mean",
+            "sourceEntryId": "exp-so-what-does-this-mean"
+          }
+        ],
+        "assessment": {
+          "rubricRevisionId": "rubric-g11-mock-v1",
+          "evidenceIntent": "ASSESSED_EVIDENCE"
+        }
+      },
+      "sourceMetadata": {
+        "sourceType": "generated-draft",
+        "authorOrOperator": "Claude StoryArc Step 4",
+        "generatorProvider": "Anthropic",
+        "generatorModel": "claude-fable-5",
+        "promptTemplateVersion": "storyarc-step4-v1"
+      }
+    }
+  ]
+}
