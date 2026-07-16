@@ -182,6 +182,9 @@ export async function importStoryArcContentPackage(
         })),
       });
     }
+  }, {
+    maxWait: 10_000,
+    timeout: 60_000,
   });
 
   return report;
