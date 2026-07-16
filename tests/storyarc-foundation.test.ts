@@ -526,6 +526,26 @@ test("StoryArc routes retain server-side access and published-content guards", (
   assert.match(stateRoute, /STORYARC_DEMO_STABLE_ID/);
 });
 
+test("StoryArc canonical release stays admin-only, confirmed, and exact", () => {
+  const releaseRoute = readFileSync(
+    "app/api/admin/apps/storyarc/content/release/route.ts",
+    "utf8",
+  );
+  const releasePolicy = readFileSync("lib/storyarc/content/release.ts", "utf8");
+  const releasePackages = readFileSync(
+    "lib/storyarc/content/release-packages.ts",
+    "utf8",
+  );
+
+  assert.match(releaseRoute, /requireAdmin/);
+  assert.match(releaseRoute, /PUBLISH_STORYARC_90/);
+  assert.match(releasePolicy, /checkStoryArcCanonicalRelease\(adminId\)/);
+  assert.match(releasePolicy, /STORYARC_CANONICAL_RELEASE_SIZE/);
+  assert.match(releasePolicy, /state:\s*"SUPERSEDED"/);
+  assert.match(releasePolicy, /published\s*!==\s*STORYARC_CANONICAL_RELEASE_SIZE/);
+  assert.equal((releasePackages.match(/content:\s*batch\d/g) ?? []).length, 9);
+});
+
 let failed = 0;
 for (const item of tests) {
   try {

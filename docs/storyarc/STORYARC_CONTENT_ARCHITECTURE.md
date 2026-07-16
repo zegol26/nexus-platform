@@ -142,6 +142,8 @@ Release reports show:
 
 Reuse the `/admin` shell and `requireAdmin()`; add StoryArc-specific catalog, revision editor/import, validation report, review queue, approval, release, and archive views. Separate content editors/reviewers/approvers through an explicit authorization decision; current `UserRole` does not encode those workflow roles.
 
+The StoryArc content operations console now exposes a guarded canonical-release action for the repository-owned 90-item catalog. It always dry-runs all nine packages before importing, rejects revision conflicts or deterministic validation errors before writes, targets the exact stable ID plus revision pairs, advances only publishable lifecycle states, preserves older published revisions as `SUPERSEDED`, and verifies the final 45/27/18 catalog. The action is idempotent and requires both `requireAdmin()` and an explicit publication confirmation. Manual JSON import remains available as an advanced tool rather than the primary admin workflow.
+
 ## Seed policy
 
 StoryArc content may use a bootstrap importer in development, but production catalog changes use reviewed releases. Any seed remains idempotent and non-destructive, following `docs/database.md` and the production seed incident in `docs/lessons-learned.md`. No StoryArc seed should call `deleteMany()` on catalog or learner data.
