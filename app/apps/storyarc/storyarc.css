@@ -401,8 +401,8 @@
   .storyarc-episode-track > span { height: 34px; width: 34px; border-width: 3px; font-size: 10px; }
   .storyarc-episode-track > span[data-state="active"] { height: 40px; width: 40px; }
   .storyarc-reference-scene { height: 560px; }
-  .storyarc-cast-member { bottom: -12%; height: 105%; width: 68%; }
-  .storyarc-cast-member[data-character="char-ryo"] { bottom: -2%; height: 98%; width: 82%; }
+  .storyarc-cast-member { bottom: -2%; height: 105%; width: 68%; }
+  .storyarc-cast-member[data-character="char-ryo"] { bottom: 4%; height: 98%; width: 82%; }
   .storyarc-cast-member[data-character="char-ryo"] img { transform: scale(1.16); }
   .storyarc-cast-left { left: -19%; }
   .storyarc-cast-right { right: -18%; }

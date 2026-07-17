@@ -457,6 +457,37 @@ test("Story Mode keeps the Campus Arcade reference console structure", () => {
   assert.match(styles, /data-character="char-ryo"/);
   assert.match(styles, /data-character="char-ryo"\][^}]*width:\s*62%/);
   assert.match(styles, /data-character="char-ryo"\] img[^}]*object-fit:\s*contain/);
+  assert.match(styles, /@media \(max-width:\s*760px\)[\s\S]*storyarc-cast-member\s*\{\s*bottom:\s*-2%/);
+  assert.match(styles, /@media \(max-width:\s*760px\)[\s\S]*data-character="char-ryo"\]\s*\{\s*bottom:\s*4%/);
+});
+
+test("StoryArc access can be assigned to existing users from the primary admin console", () => {
+  const page = readFileSync("app/admin/users/page.tsx", "utf8");
+  const actions = readFileSync("app/admin/users/actions.ts", "utf8");
+  const legacyPage = readFileSync("app/platform/admin/page.tsx", "utf8");
+  const accessPanel = readFileSync("components/platform/AdminAccessPanel.tsx", "utf8");
+  const accessRoute = readFileSync("app/api/platform/admin/app-access/route.ts", "utf8");
+  const migration = readFileSync(
+    "prisma/migrations/20260717090000_storyarc_platform_access_catalog/migration.sql",
+    "utf8",
+  );
+
+  assert.match(page, /setStoryArcAccess/);
+  assert.match(page, /Grant StoryArc/);
+  assert.match(page, /Revoke StoryArc/);
+  assert.match(actions, /requireAdmin/);
+  assert.match(actions, /slug:\s*storyArcDefinition\.slug/);
+  assert.match(actions, /appUserAccess\.upsert/);
+  assert.match(actions, /accessGrantAudit\.create/);
+  assert.match(legacyPage, /platformApps\.map/);
+  assert.match(legacyPage, /registry:\$\{definition\.slug\}/);
+  assert.match(accessPanel, /appSlug:\s*selectedApp\?\.slug/);
+  assert.match(accessRoute, /platformApps\.find/);
+  assert.match(accessRoute, /platformApp\.upsert/);
+  assert.match(accessRoute, /resolvedAppId/);
+  assert.match(migration, /INSERT INTO "PlatformApp"/);
+  assert.match(migration, /ON CONFLICT \("slug"\) DO UPDATE/);
+  assert.doesNotMatch(migration, /DROP\s|DELETE\s|TRUNCATE\s/i);
 });
 
 test("StoryArc portrait provenance declares fictional synthetic identities", () => {

@@ -12,6 +12,7 @@ Date: 2026-07-15
 - Owner-approved teenage pitch mitigation applies only to student profiles: female students use a `1.11` sample-rate multiplier and male students use `1.08`. Adult mentors, teachers, the principal, and narrator remain unshifted. Student cache fingerprints use `storyarc-voice-v5-teen-pitch`, forcing regeneration without deleting historical cache rows.
 - School Core A/B transcripts are split into sequential dialogue turns. Speaker A and Speaker B use separate, stable student profiles instead of sending the entire transcript through the adult narrator profile.
 - Published School Core cards now open an interactive lesson runtime with objectives, warm-up responses, language patterns, listening playback and transcript, guided practice with rationale, production prompts, story links, and mastery checks.
+- Mobile Story Mode raises the cast framing above the dialogue card so faces and gestures remain visible; Ryo retains a separate positive bottom offset because his source asset uses a wider transparent canvas.
 
 ## Asset generation and processing
 

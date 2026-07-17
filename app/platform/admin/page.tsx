@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/auth-options";
 import { prisma } from "@/lib/db/prisma";
+import { platformApps } from "@/lib/platform/app-registry";
 import { AdminAccessPanel } from "@/components/platform/AdminAccessPanel";
 
 export const dynamic = "force-dynamic";
@@ -133,6 +134,17 @@ export default async function PlatformAdminPage() {
   const typedLessons = lessons as AdminLessonRow[];
   const typedPayments = payments as AdminPaymentRow[];
   const typedAudits = audits as AdminAuditRow[];
+  const accessControlApps = [
+    ...platformApps.map((definition) => {
+      const storedApp = typedApps.find((app) => app.slug === definition.slug);
+      return {
+        id: storedApp?.id ?? `registry:${definition.slug}`,
+        name: storedApp?.name ?? definition.name,
+        slug: definition.slug,
+      };
+    }),
+    ...typedApps.filter((app) => !platformApps.some((definition) => definition.slug === app.slug)),
+  ];
 
   return (
     <div className="mx-auto max-w-7xl space-y-6">
@@ -221,7 +233,7 @@ export default async function PlatformAdminPage() {
             },
           })),
         }))}
-        apps={typedApps.map((app: AdminAppRow) => ({
+        apps={accessControlApps.map((app: AdminAppRow) => ({
           id: app.id,
           name: app.name,
           slug: app.slug,

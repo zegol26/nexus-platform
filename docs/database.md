@@ -32,6 +32,7 @@ Recent migrations include:
 - `20260715213000_storyarc_assignment_scores`
 - `20260715230000_storyarc_digital_library`
 - `20260716090000_storyarc_private_blob_release1`
+- `20260717090000_storyarc_platform_access_catalog`
 
 ## Seed Policy
 

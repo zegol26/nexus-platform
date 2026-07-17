@@ -32,6 +32,10 @@ export function AdminAccessPanel({
     () => users.find((user) => user.id === selectedUserId),
     [selectedUserId, users]
   );
+  const selectedApp = useMemo(
+    () => apps.find((app) => app.id === selectedAppId),
+    [apps, selectedAppId]
+  );
 
   const mutateAccess = async (kind: "app" | "lesson", action: "grant" | "revoke") => {
     setStatus(`${action === "grant" ? "Granting" : "Revoking"} ${kind} access...`);
@@ -46,6 +50,7 @@ export function AdminAccessPanel({
         body: JSON.stringify({
           userId: selectedUserId,
           appId: selectedAppId,
+          appSlug: selectedApp?.slug,
           lessonId: selectedLessonId,
           action,
           durationDays,
