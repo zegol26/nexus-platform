@@ -1,5 +1,76 @@
 # Release Notes
 
+## [2026.07.21] - Nexus AI Nihongo Bottom-Nav Shell Redesign
+
+Status: UAT OK locally. Pending commit/push to production (blocked on a
+local git lock at authoring time — see Production Verification).
+
+### Changed
+
+- Removed the 224px `NihongoSidebar` and its `MobileSidebarDrawer` from
+  `app/apps/nihongo/layout.tsx`. Replaced with a new fixed bottom
+  navigation (`components/apps/nihongo/NihongoBottomNav.tsx`) shown at
+  every breakpoint: Home, Latihan (curriculum), Progress
+  (badges/JLPT readiness), and a "Lainnya" bottom sheet grouping
+  flashcards, quiz, AI tutor, reading, listening, Nexus Kingdoms,
+  pre-assessment, rehearsal N5/N4, and mock test N5/N4.
+- Slimmed the top header to a single 44–52px row (back-to-platform
+  pill, wordmark, language/theme toggle, logout) — no hamburger, no
+  secondary CTA row.
+- Rebuilt `NihongoDashboardClient.tsx` as a single-column "story mode"
+  home: one hero continue-lesson card with progress bar, a horizontal
+  "Perjalanan belajar" path preview of upcoming lessons, two compact
+  status chips (badge, JLPT N5 readiness), and two quick-action links
+  (flashcards, AI tutor) for discoverability now that they moved into
+  the "Lainnya" sheet.
+- Removed the redundant "Back to dashboard" button from
+  `app/apps/nihongo/curriculum/page.tsx` now that Home/Latihan live in
+  the bottom nav.
+- Bumped `docs/DESIGN.md` to `version: 2` with a new Bottom Navigation
+  component spec replacing the Sidebar spec, and an updated Responsive
+  Behavior table.
+
+### Fixed
+
+- The `rockstar` Nihongo theme had no `emerald-*` color translation.
+  Any "completed" card (`bg-emerald-50` background with
+  `text-slate-900`/`text-slate-400` children) rendered white text on a
+  light-mint background under `rockstar` — effectively invisible.
+  `app/globals.css` now includes a rockstar emerald mapping (dark
+  translucent tint + light-green text) mirroring the existing squid
+  theme's teal treatment, plus a descendant override so any
+  `text-slate-900`/`text-slate-400` nested inside an emerald card
+  flips to legible green instead of white.
+
+### Scope / Not Done Yet
+
+- Only the shared shell (layout, nav, header) and the dashboard got a
+  full visual pass. Curriculum lesson detail, quiz, flashcards, tutor,
+  reading, listening, rehearsal, and mock test pages still render
+  their prior denser styling inside the new shell — a content-level
+  redesign pass is tracked as future work in `docs/known-issues.md`.
+- `components/apps/nihongo/NihongoSidebar.tsx` and
+  `components/layout/MobileSidebarDrawer.tsx` are now unused but were
+  left in the repo rather than deleted, pending confirmation nothing
+  else references them.
+
+### Checks
+
+- `npx eslint` on every changed file — clean.
+- Full-project `npx tsc --noEmit --pretty false` did not finish inside
+  the authoring sandbox's per-command time budget; **run it locally
+  before merging** per `AGENTS.md`.
+
+### Production Verification
+
+- Not yet pushed. A stale `.git/index.lock` in the working environment
+  blocked `git add`/`git commit` at authoring time (likely an external
+  process — editor, OneDrive, antivirus — holding a handle on the
+  Windows-mounted repo folder). Push, Vercel deploy, and the usual
+  `/checkout`, `/api/auth/csrf`, `/login` smoke checks are outstanding
+  and must be completed before this entry can be marked "Production
+  deployed and verified."
+
 ## [2026.07.08] - John English PTT STT Language Lock
 
 Status: Production deployed and verified.

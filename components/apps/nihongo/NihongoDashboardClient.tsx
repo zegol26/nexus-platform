@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
@@ -19,12 +19,6 @@ type CurriculumProgress = {
   totalLessons: number;
   completedLessons: number;
   percentage: number;
-};
-
-type FlashcardPayload = {
-  total: number;
-  decks: string[];
-  levels: string[];
 };
 
 type NihongoProfilePayload = {
@@ -55,17 +49,21 @@ type MockReadinessPayload = {
   message: string;
 };
 
+/**
+ * Nexus AI Nihongo home screen.
+ *
+ * Redesigned as a single-column "story mode" entry point: one clear
+ * next step at the top, a horizontal path preview underneath, and a
+ * couple of compact status chips below. Deliberately kept to a small
+ * number of blocks (see docs/DESIGN.md dashboard rules) so the screen
+ * reads as calm and uncluttered instead of a dense admin-style grid.
+ */
 export function NihongoDashboardClient() {
   const [lessons, setLessons] = useState<Lesson[]>([]);
   const [progress, setProgress] = useState<CurriculumProgress>({
     totalLessons: 0,
     completedLessons: 0,
     percentage: 0,
-  });
-  const [flashcards, setFlashcards] = useState<FlashcardPayload>({
-    total: 0,
-    decks: [],
-    levels: [],
   });
   const [profile, setProfile] = useState<NihongoProfilePayload | null>(null);
   const [mockReadiness, setMockReadiness] = useState<MockReadinessPayload | null>(null);
@@ -78,10 +76,9 @@ export function NihongoDashboardClient() {
     });
 
     async function loadData() {
-      const [curriculumRes, progressRes, flashcardRes, profileRes] = await Promise.all([
+      const [curriculumRes, progressRes, profileRes] = await Promise.all([
         fetch("/api/apps/nihongo/curriculum"),
         fetch("/api/apps/nihongo/curriculum/progress/summary"),
-        fetch("/api/apps/nihongo/flashcards?limit=1"),
         fetch("/api/apps/nihongo/pre-assessment/profile"),
       ]);
 
@@ -92,10 +89,6 @@ export function NihongoDashboardClient() {
 
       if (progressRes.ok) {
         setProgress(await progressRes.json());
-      }
-
-      if (flashcardRes.ok) {
-        setFlashcards(await flashcardRes.json());
       }
 
       if (profileRes.ok) {
@@ -117,256 +110,171 @@ export function NihongoDashboardClient() {
     nextLesson && "description" in nextLesson
       ? (nextLesson.description as string | null)
       : "Rekomendasi dari hasil pre-assessment.";
+
   const badgeImageUrl = badgeImageFailed ? null : profile?.badge?.imageUrl ?? profile?.badge?.iconUrl;
 
-  const levelCount = useMemo(() => {
-    return lessons.reduce<Record<string, number>>((acc, lesson) => {
-      acc[lesson.level] = (acc[lesson.level] ?? 0) + 1;
-      return acc;
-    }, {});
-  }, [lessons]);
+  const upcomingLessons = useMemo(() => {
+    const sorted = [...lessons].sort((a, b) => a.order - b.order);
+    const startIndex = nextLesson
+      ? Math.max(sorted.findIndex((lesson) => lesson.id === nextLesson.id), 0)
+      : 0;
+    return sorted.slice(startIndex, startIndex + 6);
+  }, [lessons, nextLesson]);
 
   return (
-    <div className="mx-auto max-w-7xl space-y-8">
-      <section className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
-        <div className="grid gap-0 lg:grid-cols-[1.35fr_0.65fr]">
-          <div className="p-6 sm:p-8 lg:p-10">
-            <div className="mb-7 inline-flex items-center gap-5">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/Nexustalenta.svg"
-                alt="Nexus AI"
-                width={120}
-                height={120}
-                className="h-[120px] w-[120px] rounded-2xl object-contain shadow-sm ring-1 ring-slate-200"
-              />
-              <span className="flex flex-col">
-                <span className="text-[11px] font-bold uppercase tracking-[0.32em] text-cyan-700">
-                  Nexus AI
-                </span>
-                <span className="text-2xl font-bold tracking-tight text-slate-950">
-                  Nihongo
-                </span>
-                <span className="mt-1 text-[11px] font-medium text-slate-400">
-                  AI-led Japanese learning
-                </span>
-              </span>
-            </div>
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-700">
-              Nexus AI Nihongo
-            </p>
-            <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-              Your Japanese learning cockpit is ready.
-            </h1>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600">
-              Ikutin roadmap JLPT/JFT, review flashcards, dan lanjutkan lesson berikutnya dari satu dashboard yang rapi.
-            </p>
+    <div className="mx-auto max-w-2xl space-y-5">
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">
+          Nexus AI Nihongo
+        </p>
+        <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950">
+          Selamat datang kembali.
+        </h1>
+        <p className="mt-1.5 text-sm leading-6 text-slate-500">
+          Satu langkah berikutnya di perjalanan belajar Anda.
+        </p>
+      </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href={nextLesson ? `/apps/nihongo/curriculum/${nextLesson.id}` : "/apps/nihongo/curriculum"}
-                className="rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-cyan-700"
-              >
-                Continue Lesson
-              </Link>
-              <Link
-                href="/apps/nihongo/flashcards"
-                className="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition hover:border-cyan-300 hover:bg-cyan-50"
-              >
-                Review Flashcards
-              </Link>
-            </div>
-          </div>
-
-          <div className="border-t border-slate-200 bg-slate-950 p-6 text-white lg:border-l lg:border-t-0 lg:p-8">
-            <p className="text-sm font-medium text-slate-300">Progress</p>
-            <div className="mt-4 text-6xl font-semibold tracking-tight">
-              {progress.percentage}%
-            </div>
-            <p className="mt-3 text-sm leading-6 text-slate-300">
-              {progress.completedLessons} of {progress.totalLessons} lessons completed.
-            </p>
-            <div className="mt-6 h-3 overflow-hidden rounded-full bg-white/10">
-              <div
-                className="h-full rounded-full bg-cyan-300"
-                style={{ width: `${progress.percentage}%` }}
-              />
-            </div>
-          </div>
+      <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
+        <div className="flex items-center justify-between gap-3">
+          <span className="rounded-full bg-cyan-50 px-3 py-1 text-xs font-semibold text-cyan-700">
+            {nextLesson?.level ?? "Mulai"}
+          </span>
+          <span className="text-xs font-semibold text-slate-400">
+            {progress.completedLessons}/{progress.totalLessons} selesai
+          </span>
         </div>
+
+        <h2 className="mt-4 text-2xl font-semibold leading-snug text-slate-950">
+          {nextLesson?.title ?? "Curriculum belum tersedia"}
+        </h2>
+        <p className="mt-2 text-sm leading-6 text-slate-600">
+          {nextLessonDescription ?? "Selesaikan pre-assessment untuk rekomendasi personal."}
+        </p>
+
+        <div className="mt-5 h-2 overflow-hidden rounded-full bg-slate-100">
+          <div
+            className="h-full rounded-full bg-cyan-500 transition-[width]"
+            style={{ width: `${Math.min(progress.percentage, 100)}%` }}
+          />
+        </div>
+
+        <Link
+          href={nextLesson ? `/apps/nihongo/curriculum/${nextLesson.id}` : "/apps/nihongo/curriculum"}
+          className="mt-5 flex w-full items-center justify-center rounded-2xl bg-cyan-600 px-5 py-3.5 text-center text-base font-semibold text-white shadow-sm transition hover:bg-cyan-700"
+        >
+          Lanjutkan Pelajaran
+        </Link>
       </section>
 
-      <section className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="rounded-2xl border border-cyan-200 bg-cyan-50 p-6 shadow-sm">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-800">
-            Adaptive profile
-          </p>
-          <h2 className="mt-3 text-2xl font-semibold text-slate-950">
-            {profile?.currentLevel ?? "Level belum tersedia"}
-          </h2>
-          <p className="mt-3 text-sm leading-6 text-slate-700">
-            {profile?.recommendedDailyPlan ?? "Selesaikan pre-assessment untuk membuka rekomendasi harian."}
-          </p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {(profile?.weaknessTags?.length ? profile.weaknessTags : ["balanced"]).map((tag) => (
-              <span key={tag} className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-cyan-100">
-                {tag}
-              </span>
+      {upcomingLessons.length > 0 ? (
+        <section className="min-w-0">
+          <div className="mb-2.5 flex items-center justify-between px-1">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+              Perjalanan belajar
+            </p>
+            <Link href="/apps/nihongo/curriculum" className="text-xs font-semibold text-cyan-700">
+              Lihat semua
+            </Link>
+          </div>
+          <div className="-mx-1 flex gap-2.5 overflow-x-auto px-1 pb-1">
+            {upcomingLessons.map((lesson) => (
+              <Link
+                key={lesson.id}
+                href={`/apps/nihongo/curriculum/${lesson.id}`}
+                className={`min-w-[168px] shrink-0 rounded-2xl border p-3.5 transition ${
+                  lesson.completed
+                    ? "border-emerald-200 bg-emerald-50"
+                    : lesson.id === nextLesson?.id
+                      ? "border-cyan-300 bg-cyan-50"
+                      : "border-slate-200 bg-white hover:border-cyan-200"
+                }`}
+              >
+                <span
+                  className={`text-[10px] font-bold uppercase tracking-[0.16em] ${
+                    lesson.completed ? "text-emerald-600" : "text-slate-400"
+                  }`}
+                >
+                  {lesson.level}
+                </span>
+                <p
+                  className={`mt-1.5 line-clamp-2 text-sm font-semibold leading-snug ${
+                    lesson.completed ? "text-emerald-700" : "text-slate-900"
+                  }`}
+                >
+                  {lesson.title}
+                </p>
+                {lesson.completed ? (
+                  <span className="mt-2 inline-block text-[11px] font-semibold text-emerald-700">
+                    Selesai
+                  </span>
+                ) : null}
+              </Link>
             ))}
           </div>
-        </div>
+        </section>
+      ) : null}
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">
+      <section className="grid grid-cols-2 gap-3">
+        <Link
+          href="/apps/nihongo/badges"
+          className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 transition hover:border-cyan-200"
+        >
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
             Badge
           </p>
-          <div className="mt-3 flex items-center gap-4">
+          <div className="mt-2 flex items-center gap-2.5">
             {badgeImageUrl ? (
+              // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={badgeImageUrl}
                 alt={profile?.badge?.nameIndonesian ?? "Badge"}
                 onError={() => setBadgeImageFailed(true)}
-                className="h-16 w-16 rounded-2xl object-cover ring-1 ring-cyan-100"
+                className="h-9 w-9 shrink-0 rounded-xl object-cover ring-1 ring-cyan-100"
               />
             ) : (
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-cyan-600 text-xl font-semibold text-white">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-600 text-sm font-semibold text-white">
                 {profile?.badge?.nameIndonesian?.slice(0, 1) ?? "?"}
               </div>
             )}
-            <h2 className="text-2xl font-semibold text-slate-950">
-              {profile?.badge?.nameIndonesian ?? "Belum ada badge"}
-            </h2>
-          </div>
-          {profile?.badge ? (
-            <>
-              <p className="mt-1 text-lg text-slate-700">{profile.badge.nameJapanese}</p>
-              <p className="mt-3 text-sm leading-6 text-slate-600">{profile.badge.motivationalMessage}</p>
-            </>
-          ) : (
-            <p className="mt-3 text-sm leading-6 text-slate-600">
-              Badge akan muncul setelah assessment awal selesai.
+            <p className="min-w-0 truncate text-sm font-semibold text-slate-900">
+              {profile?.badge?.nameIndonesian ?? "Belum ada"}
             </p>
-          )}
-        </div>
-      </section>
+          </div>
+        </Link>
 
-      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-700">
-              JLPT N5 Mock Test
-            </p>
-            <h2 className="mt-2 text-2xl font-semibold text-slate-950">
-              {mockReadiness?.isReady ? "Mock test sudah kebuka." : "Mock test terbuka saat readiness 70%."}
-            </h2>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
-              {mockReadiness?.message ??
-                "Selesaikan pre-assessment untuk menghitung readiness dan membuka simulasi JLPT N5."}
-            </p>
-          </div>
-          <div className="min-w-48 rounded-2xl bg-slate-50 p-4 text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Readiness</p>
-            <p className="mt-2 text-3xl font-semibold text-slate-950">
+        <Link
+          href="/apps/nihongo/mock-test/n5"
+          className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 transition hover:border-cyan-200"
+        >
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+            JLPT N5 Readiness
+          </p>
+          <div className="mt-2 flex items-center gap-2.5">
+            <p className="text-xl font-semibold text-slate-950">
               {mockReadiness?.readinessScore ?? 0}%
             </p>
-            <div className="mt-3 h-2 overflow-hidden rounded-full bg-slate-200">
-              <div
-                className="h-full rounded-full bg-cyan-500"
-                style={{ width: `${Math.min(mockReadiness?.readinessScore ?? 0, 100)}%` }}
-              />
-            </div>
+            <p className="min-w-0 truncate text-xs text-slate-500">
+              {mockReadiness?.isReady ? "Siap mock test" : "Menuju siap"}
+            </p>
           </div>
-          <Link
-            href="/apps/nihongo/mock-test/n5"
-            className={`rounded-full px-5 py-3 text-center text-sm font-semibold transition ${
-              mockReadiness?.isReady
-                ? "bg-slate-950 text-white hover:bg-cyan-700"
-                : "border border-slate-300 bg-white text-slate-700 hover:bg-slate-50"
-            }`}
-          >
-            {mockReadiness?.isReady ? "Mulai Mock Test" : "Lihat Status"}
-          </Link>
-        </div>
+        </Link>
       </section>
 
-      <section className="grid gap-4 md:grid-cols-3">
-        <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-          <p className="text-sm font-medium text-slate-500">Curriculum</p>
-          <p className="mt-3 text-3xl font-semibold text-slate-950">
-            {progress.totalLessons}
-          </p>
-          <p className="mt-1 text-sm text-slate-500">seeded lessons</p>
-        </div>
-        <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-          <p className="text-sm font-medium text-slate-500">Flashcards</p>
-          <p className="mt-3 text-3xl font-semibold text-slate-950">
-            {flashcards.total}
-          </p>
-          <p className="mt-1 text-sm text-slate-500">cards across {flashcards.decks.length} decks</p>
-        </div>
-        <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-          <p className="text-sm font-medium text-slate-500">Coverage</p>
-          <p className="mt-3 text-3xl font-semibold text-slate-950">
-            {Object.keys(levelCount).length}
-          </p>
-          <p className="mt-1 text-sm text-slate-500">levels in roadmap</p>
-        </div>
-      </section>
-
-      <section className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">
-            Next up
-          </p>
-          <h2 className="mt-3 text-2xl font-semibold text-slate-950">
-            {nextLesson?.title ?? "No lesson yet"}
-          </h2>
-          <p className="mt-3 min-h-12 text-sm leading-6 text-slate-600">
-            {nextLessonDescription ?? "Run the curriculum seed to load lessons."}
-          </p>
-          <div className="mt-5 flex flex-wrap gap-2 text-xs font-semibold">
-            <span className="rounded-full bg-cyan-50 px-3 py-1 text-cyan-700">
-              {nextLesson?.level ?? "-"}
-            </span>
-            <span className="rounded-full bg-slate-100 px-3 py-1 text-slate-600">
-              {nextLesson?.module ?? "Roadmap"}
-            </span>
-          </div>
-        </div>
-
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="flex items-center justify-between gap-4">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">
-                Roadmap mix
-              </p>
-              <h2 className="mt-2 text-2xl font-semibold text-slate-950">
-                Level distribution
-              </h2>
-            </div>
-            <Link href="/apps/nihongo/curriculum" className="text-sm font-semibold text-cyan-700">
-              Open curriculum
-            </Link>
-          </div>
-          <div className="mt-6 space-y-3">
-            {Object.entries(levelCount).map(([level, count]) => (
-              <div key={level}>
-                <div className="mb-1 flex items-center justify-between text-sm">
-                  <span className="font-medium text-slate-700">{level}</span>
-                  <span className="text-slate-500">{count} lessons</span>
-                </div>
-                <div className="h-2 rounded-full bg-slate-100">
-                  <div
-                    className="h-full rounded-full bg-cyan-500"
-                    style={{ width: `${(count / Math.max(lessons.length, 1)) * 100}%` }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+      <section className="flex gap-2.5">
+        <Link
+          href="/apps/nihongo/flashcards"
+          className="flex-1 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-700 transition hover:border-cyan-200 hover:bg-cyan-50"
+        >
+          Flashcards
+        </Link>
+        <Link
+          href="/apps/nihongo/tutor"
+          className="flex-1 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-700 transition hover:border-cyan-200 hover:bg-cyan-50"
+        >
+          Tanya Aichan
+        </Link>
       </section>
     </div>
   );
 }
-

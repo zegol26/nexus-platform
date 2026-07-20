@@ -1,5 +1,5 @@
 ---
-version: 1
+version: 2
 name: Nexus AI Nihongo
 description: |
   An AI-led Japanese learning workspace for Indonesian learners.
@@ -432,8 +432,8 @@ These tokens are NOT used outside `/admin/analytics`.
   on mobile.
 - **Card spacing** — 16px between cards in a stack, 12–16px gutter
   in a grid.
-- **Sidebar width** — 224px (matches existing `w-56`).
-- **Header height** — 56–64px.
+- **Bottom nav height** — 56–64px plus `env(safe-area-inset-bottom)`.
+- **Header height** — 44–52px (slim, single row).
 
 ### Grid
 
@@ -458,31 +458,40 @@ breathe.
 
 ### Top Navigation Header
 
-- 56–64px tall, sticky, `{colors.canvas}` background, hairline border
-  at bottom.
-- Carries (left → right): mobile hamburger, "← Back to Platform"
-  outline pill, brand wordmark.
-- Right cluster: theme toggle, profile menu, logout button.
-- Theme toggle is a 3-state segmented control showing the Nexus
-  Aichan glyph + a star + a circle — see Theme Toggle below.
+- 44–52px tall, sticky, `{colors.canvas}` background, hairline border
+  at bottom. Slim single row — no hamburger, no secondary CTA row.
+- Carries (left → right): "← Back to Platform" outline pill, brand
+  wordmark, right cluster (language toggle, theme toggle, logout).
+- The header is intentionally minimal so the screen below it reads as
+  full-screen learning surface, not a dashboard chrome. It never
+  duplicates a link that already lives in the bottom nav.
 
-### Sidebar
+### Bottom Navigation
 
-- 224px wide, `{colors.canvas-strong}` background, hairline right
-  border.
-- Logo block at top: 64–72px Nexustalenta SVG inside a soft
-  `{colors.canvas-soft}` plate with hairline border. Wordmark
-  underneath in `caption-uppercase` persimmon.
-- Section eyebrow "Modul" / "Latihan" / etc. in `caption-uppercase`
-  muted.
-- Menu items: 6px-radius rectangles, 13px sans 600, marker icon
-  on the left (a single SVG glyph, not a number), label, optional
-  count pill on the right.
-- Active item: `{colors.primary}` background, white text,
-  `{elevation.primary-glow}` shadow.
-- Hover: `{colors.primary-soft}` background, `{colors.ink}` text.
-- Mobile sidebar slides from the left in a 320px drawer; overlay is
-  `rgba(28,25,23,0.45)`.
+> Replaces the former 224px sidebar (all breakpoints, including
+> desktop) so the Nihongo app reads as a focused, single-path "story
+> mode" experience instead of an admin-style multi-menu console.
+
+- Fixed to the bottom of the viewport on every breakpoint, `max-width`
+  centred container inside a full-width `{colors.surface-card}` bar,
+  hairline top border, `backdrop-blur`.
+- Adds `env(safe-area-inset-bottom)` padding so it clears the home
+  indicator / gesture bar on iOS.
+- Four slots: three direct tabs — **Home** (dashboard/story entry),
+  **Latihan** (curriculum roadmap — the primary learning path), and
+  **Progress** (badges + JLPT readiness) — plus a fourth **Lainnya**
+  button that opens a bottom sheet.
+- Active tab: `{colors.primary}` filled 36px circle behind the icon,
+  `{colors.primary}` label text. Inactive: `{colors.muted}` icon +
+  label, no fill.
+- **Lainnya sheet** — slides up from the bottom, max 75vh, rounded top
+  corners, dim overlay behind. Groups every secondary surface
+  (flashcards, quiz, AI tutor, reading, listening, Nexus Kingdoms,
+  pre-assessment, rehearsal N5/N4, mock test N5/N4) as a 2–3 column
+  icon-label grid instead of a flat 13-item list. Trial-locked items
+  keep the amber "Lock" pill and route to `/checkout`.
+- Touch targets ≥ 44×44px on every tab, matching the sidebar's old
+  accessibility bar.
 
 ### Theme Toggle (Nexus AI Nihongo only)
 
@@ -788,9 +797,9 @@ in priority order: pending Aichan reminder → next lesson → progress
 
 | Breakpoint | Width | Key changes |
 |---|---|---|
-| Mobile | < 640px | Hamburger nav. Single-column. Sidebar collapses to drawer. Hero h1 caps at `display-md`. Curriculum 1-up. Flashcards full-width. Aichan widget collapses to FAB. |
-| Tablet | 640–1024px | Curriculum 2-up. Two-column lesson layout when wide enough. Sidebar still drawer. |
-| Desktop | 1024–1440px | Sidebar visible. Curriculum 3-up. Lesson body caps at 720px. AI Tutor two-pane. |
+| Mobile | < 640px | Bottom nav (no hamburger, no drawer). Single-column. Hero h1 caps at `display-md`. Curriculum 1-up. Flashcards full-width. Aichan widget collapses to FAB. |
+| Tablet | 640–1024px | Curriculum 2-up. Two-column lesson layout when wide enough. Bottom nav unchanged. |
+| Desktop | 1024–1440px | Bottom nav stays fixed (no sidebar reappears). Curriculum 3-up. Lesson body caps at 720px. AI Tutor two-pane. |
 | Wide | > 1440px | Same as desktop with more outer breathing room. Max content 1100px. |
 
 Touch targets ≥ 44 × 44px. Theme toggle buttons each ≥ 36px on
@@ -876,6 +885,25 @@ the nexus tokens.
 
 ## Versioning
 
-This file is `version: 1`. Material additions append a section and
+This file is `version: 2`. Material additions append a section and
 bump the frontmatter version. Material removals require a deprecation
 note in the relevant section before the next bump.
+
+### v2 changelog (2026-07-21)
+
+- **Removed**: the 224px sidebar (`NihongoSidebar.tsx`) and its mobile
+  drawer (`MobileSidebarDrawer.tsx`) are no longer mounted in
+  `app/apps/nihongo/layout.tsx`. `NihongoSidebar.tsx` remains in the
+  repo unused pending a follow-up cleanup pass — do not re-wire it.
+- **Added**: `NihongoBottomNav.tsx` — fixed bottom nav on every
+  breakpoint (Home / Latihan / Progress / Lainnya sheet). See
+  Bottom Navigation under Components.
+- **Changed**: Top header shrank to a single slim row (44–52px);
+  dashboard rebuilt as a single-column "story mode" home (one hero
+  continue-CTA, a horizontal path preview, two compact status chips)
+  instead of the prior dense multi-card admin-style grid.
+- **Fixed**: the `rockstar` theme had no `emerald-*` colour
+  translation, so any "completed" card (`bg-emerald-50` +
+  `text-slate-900`/`text-slate-400`) rendered near-invisible white
+  text on light mint. Added a rockstar emerald mapping mirroring the
+  existing squid pattern in `app/globals.css`.

@@ -855,6 +855,40 @@ select {
   color: #000000;
 }
 
+/* Emerald/green "completed" accents — previously unmapped, which left
+   raw light-mint bg-emerald-50 cards with white text-slate-900 titles
+   from the rule below (near-invisible). Give rockstar its own dark
+   translation, mirroring the squid teal treatment above. */
+[data-theme="rockstar"] .bg-emerald-50,
+[data-theme="rockstar"] .bg-emerald-100,
+[data-theme="rockstar"] .bg-green-50,
+[data-theme="rockstar"] .bg-green-100 {
+  background-color: rgba(16, 163, 74, 0.16);
+}
+[data-theme="rockstar"] .border-emerald-200,
+[data-theme="rockstar"] .border-green-200 {
+  border-color: rgba(52, 211, 153, 0.45);
+}
+[data-theme="rockstar"] .bg-emerald-500,
+[data-theme="rockstar"] .bg-emerald-600,
+[data-theme="rockstar"] .bg-emerald-700,
+[data-theme="rockstar"] .bg-green-500,
+[data-theme="rockstar"] .bg-green-600,
+[data-theme="rockstar"] .bg-green-700 {
+  background-color: #10a34a;
+  color: #000000;
+}
+[data-theme="rockstar"] .text-emerald-900,
+[data-theme="rockstar"] .text-emerald-700,
+[data-theme="rockstar"] .text-emerald-600,
+[data-theme="rockstar"] .text-emerald-500,
+[data-theme="rockstar"] .text-green-900,
+[data-theme="rockstar"] .text-green-700,
+[data-theme="rockstar"] .text-green-600,
+[data-theme="rockstar"] .text-green-500 {
+  color: #34d399;
+}
+
 /* Text — dark-ink classes become white. */
 [data-theme="rockstar"] .text-slate-950,
 [data-theme="rockstar"] .text-slate-900,
@@ -866,6 +900,16 @@ select {
 [data-theme="rockstar"] .text-neutral-900,
 [data-theme="rockstar"] .text-black {
   color: #ffffff;
+}
+/* ...but a title sitting inside an emerald "completed" card must stay
+   dark since that card's bg is now a translucent dark-green tint, not
+   the black canvas — matches the same pattern used for the yellow
+   primary surface below. */
+[data-theme="rockstar"] .bg-emerald-50 .text-slate-900,
+[data-theme="rockstar"] .bg-emerald-100 .text-slate-900,
+[data-theme="rockstar"] .bg-emerald-50 .text-slate-400,
+[data-theme="rockstar"] .bg-emerald-100 .text-slate-400 {
+  color: #34d399;
 }
 [data-theme="rockstar"] .text-slate-700,
 [data-theme="rockstar"] .text-slate-600,

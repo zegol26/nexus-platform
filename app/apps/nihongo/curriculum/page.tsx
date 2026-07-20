@@ -53,24 +53,16 @@ export default function CurriculumPage() {
     <div className="mx-auto max-w-7xl space-y-8">
       <UserBadgeHeader />
 
-      <section className="flex flex-col justify-between gap-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8 lg:flex-row lg:items-end">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
-            Curriculum Roadmap
-          </p>
-          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-slate-950">
-            JLPT and JFT learning path
-          </h1>
-          <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600">
-            Start dari kana foundation, naik ke N5/N4 grammar, lalu masuk ke conversation praktis untuk kerja dan daily life.
-          </p>
-        </div>
-        <Link
-          href="/apps/nihongo/dashboard"
-          className="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition hover:bg-slate-50"
-        >
-          Back to dashboard
-        </Link>
+      <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
+          Perjalanan Belajar
+        </p>
+        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-slate-950">
+          JLPT and JFT learning path
+        </h1>
+        <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600">
+          Start dari kana foundation, naik ke N5/N4 grammar, lalu masuk ke conversation praktis untuk kerja dan daily life.
+        </p>
       </section>
 
       <div className="flex gap-2 overflow-x-auto pb-1">
